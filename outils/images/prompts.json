@@ -1,0 +1,977 @@
+{
+"modele": "fal-ai/flux/dev",
+"images": [
+{
+"id": "niveau-connaitre",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a young man and an elderly woman sitting on a wooden veranda at sunrise, reading an open Bible together. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "niveau-grandir",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a small group of adults studying the Bible around a wooden table under an open fare with a pandanus roof, warm evening lamplight. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "niveau-murir",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a multigenerational family praying together before a meal in a garden under a breadfruit tree, golden hour. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-fiabilite-bible",
+"prompt": "ancient scrolls, papyrus fragments and an old leather-bound Bible on a wooden table beside an oil lamp. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-prendre-vie",
+"prompt": "a green sprout breaking through dark volcanic soil at dawn, Tahitian valley in soft focus behind. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "prendre-vie-1",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a young man praying alone at sunrise on a hill overlooking the lagoon. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "prendre-vie-2",
+"prompt": "Jesus in the rocky Judean wilderness refusing the tempter, stones at his feet. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "prendre-vie-3",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a woman reading her Bible on a veranda in the morning, a notebook and a cup of tea beside her. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "prendre-vie-4",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a family kneeling in prayer in their living room, soft lamplight. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "prendre-vie-5",
+"prompt": "Noah and his sons building the great wooden ark, animals gathering in the distance. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "prendre-vie-6",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a man offering a basket of fruit to an elderly neighbor at her door, kindness. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "prendre-vie-7",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, church members sharing a joyful meal together outdoors under palm trees. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-vers-jesus",
+"prompt": "a winding path through a lush tropical valley leading up toward a bright light on a hilltop, a lone walker on the path. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-quete-certitude",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a man standing on a black sand beach at dawn holding a closed Bible, looking at the horizon thoughtfully. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-1",
+"prompt": "a man studying an open Bible at a desk with notes and a lamp, focused. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-2",
+"prompt": "a modern city at night under a dramatic stormy sky, an open Bible in the foreground. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-3",
+"prompt": "huge waves crashing on a reef under dark clouds, a lighthouse shining. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-4",
+"prompt": "Jesus returning in glory on the clouds with countless angels, people on a Tahitian beach looking up. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-5",
+"prompt": "a calm lagoon at dawn with a single outrigger canoe on mirror-like water. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-6",
+"prompt": "Nicodemus talking with Jesus at night on a rooftop in Jerusalem, an oil lamp between them. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-7",
+"prompt": "Adam and Eve leaving the Garden of Eden, an angel with a flaming sword at the gate. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-8",
+"prompt": "an angel flying in mid-heaven above the earth holding an open scroll. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-9",
+"prompt": "the prophet Daniel by a river receiving a vision from the angel Gabriel, a ram and a goat in the sky. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-10",
+"prompt": "a heavenly courtroom with books opened before a throne of fire, the Ancient of Days. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-11",
+"prompt": "a dark city street with broken windows, a person reading a Bible under a single streetlight. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-12",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a family welcoming the Sabbath at Friday sunset with a Bible and singing on the beach. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-13",
+"prompt": "two stone tablets of the Ten Commandments on the summit of Mount Sinai, lightning in the clouds. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-14",
+"prompt": "a shepherd protecting his sheep from a wolf disguised in sheep's clothing. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-15",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a family sharing a colorful healthy meal of local fruits and vegetables. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-16",
+"prompt": "a peaceful hillside cemetery at dawn with sunlight breaking through the clouds, hope. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-17",
+"prompt": "a distant fire on a dark plain while a radiant city shines in the sky above. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-18",
+"prompt": "a man in an outrigger canoe dropping a heavy stone into the deep blue ocean. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-19",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a family placing their tithe envelope in an offering basket in church. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-20",
+"prompt": "a coconut palm shown growing from a sprouting nut to a tall tree on a beach. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-21",
+"prompt": "a woman clothed with the sun, the moon under her feet and twelve stars above her head, Revelation 12. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-22",
+"prompt": "an elderly prophet writing on a scroll by lamplight, a vision of light above him. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-23",
+"prompt": "the ancient city of Babylon with its great walls and ziggurat under a dark sky. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-24",
+"prompt": "a white dove descending in a beam of light over a person praying. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-25",
+"prompt": "a group of nineteenth-century believers on a hillside at dawn looking at the sky with hope. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-26",
+"prompt": "a beast with seven heads rising from a stormy sea, Revelation 13, symbolic. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-27",
+"prompt": "a lamb-like beast with two horns rising from the earth over wide plains, Revelation 13, symbolic. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-28",
+"prompt": "seven angels holding golden bowls in a dramatic heavenly sky. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-29",
+"prompt": "a desolate dark earth under a red sky, an empty ruined city, silence. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-30",
+"prompt": "the New Jerusalem descending from heaven over a renewed earth, a radiant city with a river of life. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-A",
+"prompt": "Jesus smiling with children gathered around him in Galilee. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-B",
+"prompt": "Peter walking on the water toward the outstretched hand of Jesus. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-C",
+"prompt": "Jesus praying alone on a mountain at dawn. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-D",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a person standing on a mountaintop gazing at a starry night sky. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-F",
+"prompt": "church buildings of many different styles in a town, an open Bible in the foreground. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "quete-certitude-G",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a happy family laughing together on the beach at sunset. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-explorateur",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, teenagers sitting on the sand under palm trees, reading Bibles and taking notes together, curious faces. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-1",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, teenagers reading Bibles together on the beach, curious and smiling. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-2",
+"prompt": "a child pointing at the starry night sky above a lagoon. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-3",
+"prompt": "Jesus teaching a crowd on a hillside by the Sea of Galilee. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-4",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a teenager praying with eyes closed in a quiet garden. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-5",
+"prompt": "the creation of the world: light, ocean, mountains, plants and animals, vibrant and joyful. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-6",
+"prompt": "Adam and Eve living in harmony in the Garden of Eden among peaceful animals. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-7",
+"prompt": "a serpent in the tree of knowledge offering a fruit to Eve. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-8",
+"prompt": "an empty cross on a hill at sunrise, light breaking through the clouds. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-9",
+"prompt": "a man joyfully digging up a treasure chest in a field. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-10",
+"prompt": "angels with trumpets in a glorious sky as Jesus returns. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-11",
+"prompt": "a glorious heavenly city with gates of pearl, gardens and a crystal river. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-12",
+"prompt": "Moses holding the two tablets of the law on Mount Sinai. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-13",
+"prompt": "Abraham and young Isaac walking up Mount Moriah together. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-14",
+"prompt": "a king forgiving a servant kneeling before him in a palace. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-15",
+"prompt": "Pentecost: tongues of fire above the apostles in the upper room. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-16",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a baptism by immersion in a river, church members watching joyfully. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-17",
+"prompt": "Abraham looking up at the countless stars of the night sky, God's promise. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "explorateur-18",
+"prompt": "the Good Samaritan caring for a wounded man on the road. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-vivre-avec-jesus",
+"prompt": "clouds parting with radiant golden light above a calm turquoise lagoon, people on the shore looking up with hope. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-1",
+"prompt": "Jesus returning on the clouds with angels, seen from a Tahitian beach. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-2",
+"prompt": "resurrection morning: people rising from the graves to meet Jesus in the sky. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-3",
+"prompt": "the redeemed joyfully reunited around the throne of God in heaven. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-4",
+"prompt": "the new earth: a lush paradise where a lion and a lamb lie together, mountains and a lagoon. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-5",
+"prompt": "Lazarus coming out of the tomb at the call of Jesus. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-6",
+"prompt": "Lot and his family fleeing as fire falls on the distant cities of the plain. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-7",
+"prompt": "a narrow path leading to a bright gate while a wide road goes elsewhere. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-8",
+"prompt": "Jesus baptized by John in the Jordan River, a dove descending. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-9",
+"prompt": "Jesus standing beside a person as their advocate before a heavenly throne. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-10",
+"prompt": "Moses coming down Mount Sinai carrying the stone tablets. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-11",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a family walking together to a waterfall on a peaceful Sabbath afternoon. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-12",
+"prompt": "an emperor issuing a decree in the forum of ancient Rome, crowds listening. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-13",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a farmer offering the first fruits of his taro and banana harvest. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-14",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a young man jogging on the beach at sunrise, healthy and joyful. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "vivre-avec-jesus-15",
+"prompt": "a shepherd leading his flock into the sheepfold at sunset. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-rencontre-avec-jesus",
+"prompt": "Jesus speaking kindly with a man on a dusty road in first-century Galilee, olive trees, warm light. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-1",
+"prompt": "Jesus touching a kneeling leper with compassion, Galilee. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-2",
+"prompt": "Jesus tempted by Satan on the pinnacle of the temple in Jerusalem. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-3",
+"prompt": "Jesus calling the fishermen Peter and Andrew by the Sea of Galilee, boats and nets. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-4",
+"prompt": "the wedding at Cana: servants pouring water turned to wine from stone jars. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-5",
+"prompt": "Nicodemus visiting Jesus at night on a rooftop in Jerusalem, oil lamp. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-6",
+"prompt": "Jesus talking with the Samaritan woman at Jacob's well under the midday sun. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-7",
+"prompt": "a royal official kneeling before Jesus, begging him to heal his son, Cana. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-8",
+"prompt": "a Roman centurion bowing respectfully before Jesus in Capernaum. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-9",
+"prompt": "Jesus leading a blind man by the hand out of a village. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-10",
+"prompt": "Jesus speaking to a paralyzed man lying by the pool of Bethesda, stone porches. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-11",
+"prompt": "four friends lowering a paralyzed man through a roof to Jesus. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-12",
+"prompt": "Jesus healing a man before an amazed crowd while Pharisees whisper. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-13",
+"prompt": "Jesus calming the storm on the Sea of Galilee, the disciples in a small boat. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-14",
+"prompt": "Jesus freeing two men among the tombs near the sea, a herd of pigs on the hillside. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-15",
+"prompt": "a woman reaching out to touch the hem of Jesus' garment in a crowd. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-16",
+"prompt": "John the Baptist in camel-hair clothing preaching by the Jordan River. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-17",
+"prompt": "Jesus feeding the five thousand on a grassy hillside with loaves and fish. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-18",
+"prompt": "Jesus writing in the dust while the accusers drop their stones and walk away. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-19",
+"prompt": "a man washing his eyes at the pool of Siloam, seeing for the first time. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-20",
+"prompt": "Mary sitting at the feet of Jesus while Martha works busily in the house at Bethany. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-21",
+"prompt": "one healed leper returning to thank Jesus while nine others walk away. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-22",
+"prompt": "a rich young man in fine clothes walking away sadly from Jesus. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-23",
+"prompt": "blind Bartimaeus throwing off his cloak and running toward Jesus near Jericho. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-24",
+"prompt": "Zacchaeus in a sycamore tree looking down at Jesus in Jericho. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-25",
+"prompt": "a woman anointing the feet of Jesus with perfume at Simon's dinner. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-26",
+"prompt": "Peter warming himself by a fire in a courtyard at night, a rooster in the shadows. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-27",
+"prompt": "Jesus standing before Pontius Pilate in the Roman governor's hall. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-28",
+"prompt": "three crosses on Calvary under a darkening sky, silhouettes. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-29",
+"prompt": "two disciples walking to Emmaus with the risen Jesus at sunset. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "rencontre-avec-jesus-30",
+"prompt": "the risen Jesus with Peter beside a charcoal fire on the shore at dawn, fish on the coals. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-cep-sarment",
+"prompt": "a strong grapevine with lush green branches heavy with ripe purple grapes, morning sunlight. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "cep-sarment-1",
+"prompt": "a young branch firmly joined to a strong grapevine trunk, close-up, sunlight. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "cep-sarment-2",
+"prompt": "a vine branch heavy with ripe purple grapes. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "cep-sarment-3",
+"prompt": "a vineyard on a hillside at sunrise with a path running through it. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "cep-sarment-4",
+"prompt": "a vinedresser carefully pruning a grapevine with a small knife. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "cep-sarment-5",
+"prompt": "a woman praying in the early morning in a vineyard. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "cep-sarment-6",
+"prompt": "vine branches intertwined and growing together along a trellis. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "cep-sarment-7",
+"prompt": "Jesus teaching his disciples among the vines at night on the way to Gethsemane. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "cep-sarment-8",
+"prompt": "joyful workers carrying baskets of grapes at harvest time in a vineyard. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "cep-sarment-9",
+"prompt": "sunlight shining through green vine leaves, warm glow. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "cep-sarment-10",
+"prompt": "workers harvesting a ripe golden field next to a vineyard, baskets full. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-daniel",
+"prompt": "the prophet Daniel praying at an open window facing west in ancient Babylon, warm evening light. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-1",
+"prompt": "young Daniel and his three friends eating vegetables and drinking water at the Babylonian court. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-2",
+"prompt": "King Nebuchadnezzar troubled by a dream in his bedchamber at night. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-3",
+"prompt": "a great statue of gold, silver, bronze, iron and clay struck by a stone cut without hands. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-4",
+"prompt": "three young Hebrew men walking unharmed in a fiery furnace with a fourth radiant figure. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-5",
+"prompt": "King Nebuchadnezzar living like an animal in the field, long hair, grazing. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-6",
+"prompt": "a mysterious hand writing on the palace wall during Belshazzar's feast. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-7",
+"prompt": "Daniel standing calmly in the lions' den, an angel shutting the lions' mouths. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-8",
+"prompt": "four great beasts rising from a stormy sea: a winged lion, a bear, a leopard and a terrible beast. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-9",
+"prompt": "the Ancient of Days on a fiery throne and the Son of Man coming with the clouds. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-10",
+"prompt": "a ram and a male goat fighting by a river while Daniel watches. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-11",
+"prompt": "Daniel kneeling in prayer as the angel Gabriel arrives. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-12",
+"prompt": "Daniel on the bank of the Tigris seeing a glorious heavenly being. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-13",
+"prompt": "ancient armies of the kings of the north and of the south clashing in battle. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "daniel-14",
+"prompt": "the archangel Michael standing up as people rise from the dust at dawn. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-sanctuaire",
+"prompt": "the Hebrew tabernacle in the wilderness with its white-curtained courtyard and tent, a pillar of cloud above, desert camp. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "sanctuaire-1",
+"prompt": "aerial view of the Hebrew tabernacle in the wilderness with the tents of Israel around it. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "sanctuaire-2",
+"prompt": "the bronze altar of burnt offering with smoke rising in the tabernacle courtyard. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "sanctuaire-3",
+"prompt": "a priest washing at the bronze laver in the tabernacle courtyard. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "sanctuaire-4",
+"prompt": "the golden lampstand glowing inside the holy place of the tabernacle. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "sanctuaire-5",
+"prompt": "the table of showbread and the golden altar of incense inside the holy place. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "sanctuaire-6",
+"prompt": "the ark of the covenant with two golden cherubim in a divine light. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "sanctuaire-7",
+"prompt": "a priest offering incense in the morning, smoke rising before the veil. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "sanctuaire-8",
+"prompt": "the high priest in white linen garments on the Day of Atonement. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "sanctuaire-9",
+"prompt": "the scapegoat being led away into the wilderness. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "sanctuaire-10",
+"prompt": "a vision of the heavenly sanctuary above the clouds, Daniel looking up. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "sanctuaire-11",
+"prompt": "a Passover meal in an ancient home with unleavened bread and a lamb. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "sanctuaire-12",
+"prompt": "Jesus as high priest ministering in the radiant heavenly sanctuary. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-decouvrir",
+"prompt": "three angels flying across the sky above the earth, carrying a message, majestic and luminous. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-secrets-prophetie",
+"prompt": "a huge ancient statue with a head of gold, chest of silver, belly of bronze and legs of iron in a desert, a stone flying toward it. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-1",
+"prompt": "an ancient scroll unrolled with prophetic symbols beside an oil lamp. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-2",
+"prompt": "the great statue of Daniel 2 and the stone cut without hands becoming a mountain. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-3",
+"prompt": "a fig tree putting out new leaves under storm clouds above a modern city. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-4",
+"prompt": "Jesus coming in the clouds while the earth trembles below. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-5",
+"prompt": "war in heaven: the archangel Michael and his angels fighting a great dragon. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-6",
+"prompt": "a shepherd carrying a lost lamb on his shoulders. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-7",
+"prompt": "broken chains on the ground and a person walking out into the light. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-8",
+"prompt": "the heavens opening above Jesus at his baptism in the Jordan, as prophesied. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-9",
+"prompt": "people rebuilding the walls and the temple of Jerusalem under Nehemiah. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-10",
+"prompt": "the ark of the covenant hidden in a cave lit by a single beam of light. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-11",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a hammock between palm trees by the lagoon, peaceful Sabbath rest. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-12",
+"prompt": "an ancient sun temple at sunrise, symbolic. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-13",
+"prompt": "a little horn growing among ten horns on the head of a terrible beast, Daniel 7, symbolic. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-14",
+"prompt": "a beast with a little horn speaking proud words under a stormy sky, symbolic prophetic imagery. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-15",
+"prompt": "a lamb-like beast with two horns rising from the earth, symbolic. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-16",
+"prompt": "the seal of God shining on the foreheads of faithful people, symbolic light. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-17",
+"prompt": "Lazarus raised from the tomb as his sisters watch. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-18",
+"prompt": "the holy city shining above a distant lake of fire, symbolic, not gory. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-19",
+"prompt": "the redeemed in heaven seated on thrones reading open books, peaceful. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-20",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a baptism by immersion in the lagoon at sunrise. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-21",
+"prompt": "books opened before the throne of God in heaven. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-23",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a healthy family hiking in green mountains. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "secrets-prophetie-24",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a young man studying the Bible at a desk with determination. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-sept-eglises",
+"prompt": "seven golden lampstands glowing softly in darkness, Revelation vision. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-excellence",
+"prompt": "a brass compass resting on an open Bible and an old map, sunrise light. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "excellence-1",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a young student standing at a crossroads at sunrise. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "excellence-2",
+"prompt": "a golden key lying on an open Bible. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "excellence-3",
+"prompt": "a climber reaching a mountain summit at dawn. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "excellence-4",
+"prompt": "stone steps leading up a green mountain path. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "excellence-5",
+"prompt": "a compass on a map with a path drawn across it. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "excellence-6",
+"prompt": "an hourglass with sand running out on a wooden desk. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "excellence-7",
+"prompt": "two friends helping each other climb a rock. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-frequentations",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a young couple walking on the beach at sunset, talking and smiling, modest clothing. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "frequentations-1",
+"prompt": "Isaac meeting Rebekah at the well, camels resting nearby. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "frequentations-2",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a young woman praying for guidance in a garden. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "frequentations-3",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a joyful wedding in a small church decorated with tropical flowers. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "frequentations-4",
+"prompt": "a cracked clay pot being carefully mended. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "frequentations-5",
+"prompt": "Ruth clinging to Naomi on the road to Bethlehem. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "frequentations-6",
+"prompt": "Jacob working in the fields for Rachel, looking at her with love. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "frequentations-7",
+"prompt": "a white tiare flower covered in morning dew. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "frequentations-8",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a young woman walking confidently through a garden of white flowers. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "frequentations-9",
+"prompt": "Joseph fleeing from Potiphar's wife, leaving his cloak behind. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-enfants",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a mother and father reading a Bible story book to two small children at bedtime. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "enfants-1",
+"prompt": "Hannah presenting young Samuel at the temple. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "enfants-2",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, parents teaching their little child to pray at bedtime. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "enfants-3",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a father holding the hands of a toddler taking first steps. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "enfants-4",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a mother kneeling at eye level, gently guiding her child. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "enfants-5",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a grandmother telling a Bible story to small children. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "enfants-6",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, children reading a picture Bible together with delight. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "enfants-7",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a family singing during evening worship, one playing a ukulele. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "enfants-8",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a family on a Sabbath walk beside a waterfall. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "enfants-9",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, children singing in a church children's class. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "enfants-10",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a teenager surrounded by glowing screens, thoughtful. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "enfants-11",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a teenager putting down the phone to read with the family. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "enfants-12",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a child planting seeds in a garden with a parent. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-homme-de-dieu",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a father kneeling in prayer at dawn on his veranda, his family beside him. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "homme-de-dieu-1",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a couple's joined hands with wedding rings and a flower garland. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "homme-de-dieu-2",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a strong, humble man reading the Bible at dawn. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "homme-de-dieu-3",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a father carrying his child on his shoulders on the beach. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "homme-de-dieu-4",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a father and son building a fence around a garden. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "homme-de-dieu-5",
+"prompt": "Tahitian Polynesian people, lush green mountains and turquoise lagoon of Tahiti, a father leading family worship, the family holding hands in prayer. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-convoitise",
+"prompt": "a white lamb standing beside the bronze altar in the courtyard of the ancient tabernacle, soft dramatic light. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "convoitise-1",
+"prompt": "a pearl of great price held in an open hand. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "convoitise-2",
+"prompt": "a lamb at the altar and a priest in the courtyard of the tabernacle. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "convoitise-3",
+"prompt": "the high priest entering the most holy place with a golden censer. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "convoitise-4",
+"prompt": "Jesus reaching down to lift up a fallen man. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "convoitise-5",
+"prompt": "a young man turning away from a dark path toward the light. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "convoitise-6",
+"prompt": "a runner in a race, disciplined and focused. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "convoitise-7",
+"prompt": "a microscope and an open Bible side by side on a desk, soft light. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "serie-trinite",
+"prompt": "three beams of golden light descending from a cloudy sky over a calm ocean, a white dove in the light. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-1",
+"prompt": "a dove of light descending from the sky. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-2",
+"prompt": "three equal flames burning side by side, symbolic. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-3",
+"prompt": "Christ in heavenly glory surrounded by light. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-4",
+"prompt": "a scholar's desk with old books and an open Bible. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-5",
+"prompt": "wind blowing through palm trees, symbol of the Spirit. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-6",
+"prompt": "the apostles speaking to a crowd from many nations at Pentecost. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-7",
+"prompt": "the baptism of Jesus, the heavens opened and a dove descending. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-8",
+"prompt": "rain falling on a dry field that turns green. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-9",
+"prompt": "heavy rain falling on a ripe wheat field before harvest. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-10",
+"prompt": "a heart of stone turning into a living heart, symbolic. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-11",
+"prompt": "travelers from many nations listening amazed in a Jerusalem street. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-12",
+"prompt": "a crowded street of ancient Jerusalem full of travelers from many nations. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-13",
+"prompt": "nineteenth-century preachers studying the Bible around a table by oil lamps. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-14",
+"prompt": "a small nineteenth-century wooden chapel with believers gathered. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-15",
+"prompt": "the risen Jesus outside the empty tomb at dawn. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+},
+{
+"id": "trinite-16",
+"prompt": "an open Bible with a shield and a beam of light. Warm painterly digital illustration in the style of a modern illustrated Bible storybook, soft natural light, rich but gentle colors, respectful and expressive figures, simple uncluttered composition, no text, no letters, no words, no watermark."
+}
+]
+}
