@@ -1,0 +1,497 @@
+/* Mission — feuille de style
+   Couleurs : le lagon (#1E3D3A) et le récif (#8FC9B6) de la vision 2026-2030 de l'église,
+   l'écume en fond, le jaune pua pour la mise au point clavier et les bourgeons du cep. */
+
+@font-face {
+  font-family: "Alegreya";
+  src: url("fonts/alegreya-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("fonts/alegreya-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/atkinson-hyperlegible-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/atkinson-hyperlegible-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --lagon: #1E3D3A;
+  --encre: #2C4A47;
+  --gris: #4A6763;
+  --feuille: #2F6B5E;
+  --recif: #8FC9B6;
+  --recif-pale: #DCEDE6;
+  --ecume: #F2F6F4;
+  --blanc: #FFFFFF;
+  --pua: #F0C24B;
+
+  --serif: "Alegreya", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* échelle typographique (quarte augmentée ~1.25) */
+  --t-0: 0.889rem;   /* 16 px */
+  --t-1: 1.125rem;   /* 18 px, texte courant */
+  --t-2: 1.375rem;   /* 22 px */
+  --t-3: 1.75rem;    /* 28 px */
+  --t-4: 2.25rem;    /* 36 px */
+  --t-5: 2.875rem;   /* 46 px */
+
+  --large: 44rem;
+  --marge: clamp(1.125rem, 5vw, 2.5rem);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ecume);
+  color: var(--encre);
+  font-family: var(--sans);
+  font-size: var(--t-1);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; outline: none; }
+
+a { color: var(--feuille); text-underline-offset: 0.18em; }
+
+:focus-visible {
+  outline: 3px solid var(--lagon);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.evitement {
+  position: absolute;
+  left: -999px;
+  top: 0.5rem;
+  background: var(--blanc);
+  color: var(--lagon);
+  padding: 0.6rem 1rem;
+  z-index: 10;
+}
+.evitement:focus { left: 0.5rem; }
+
+/* ---------- En-tête ---------- */
+.entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem max(var(--marge), calc((100% - var(--large)) / 2 + var(--marge)));
+  padding-top: max(0.85rem, env(safe-area-inset-top));
+  background: var(--lagon);
+  color: var(--ecume);
+}
+.marque {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+  min-height: 44px;
+}
+.marque-signe { width: 1.6rem; height: 1.6rem; color: var(--recif); }
+.marque-nom {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: var(--t-2);
+  letter-spacing: 0.01em;
+}
+.entete-chercher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0 0.9rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(143, 201, 182, 0.55);
+  color: var(--ecume);
+  text-decoration: none;
+  font-size: var(--t-0);
+  font-weight: 700;
+}
+.entete-chercher svg {
+  width: 1.15rem; height: 1.15rem;
+  fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round;
+}
+.entete :focus-visible { outline-color: var(--pua); }
+
+/* ---------- Accueil : le cep ---------- */
+.cep {
+  background: var(--lagon);
+  color: var(--ecume);
+  padding: 1.25rem 0 3rem;
+}
+.cep-dedans { max-width: var(--large); margin: 0 auto; padding: 0 var(--marge); }
+.cep-intro {
+  margin: 0 0 1.75rem;
+  max-width: 30rem;
+  color: #C9DDD6;
+  font-size: var(--t-1);
+  font-weight: 400;
+  line-height: 1.5;
+}
+.cep-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+/* la tige qui relie les trois niveaux : de la pousse à la grappe */
+.cep-niveau { position: relative; }
+.cep-niveau:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: calc(1.5rem - 1.5px);
+  top: 4.25rem;
+  bottom: -0.85rem;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--recif);
+  transform-origin: top;
+}
+.cep-lien {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  column-gap: 1rem;
+  align-items: start;
+  padding: 0.5rem 0 1.6rem;
+  color: inherit;
+  text-decoration: none;
+}
+.cep-picto {
+  width: 3rem;
+  height: 3rem;
+  color: var(--recif);
+  background: var(--lagon);
+  position: relative;
+  z-index: 1;
+  margin-top: 0.55rem;
+}
+.cep-picto svg { width: 100%; height: 100%; display: block; }
+.cep-verbe {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(3.1rem, 15.5vw, 5.75rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--blanc);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.12em;
+  transition: text-decoration-color 0.2s;
+}
+.cep-lien:hover .cep-verbe { text-decoration-color: var(--recif); }
+.cep-lien:focus-visible { outline: 3px solid var(--pua); outline-offset: 4px; }
+.cep-texte {
+  display: block;
+  margin-top: 0.55rem;
+  max-width: 28rem;
+  color: #C9DDD6;
+}
+.cep-compte {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--recif);
+  font-weight: 700;
+  font-size: var(--t-0);
+}
+
+/* une seule animation : la tige pousse, les trois niveaux apparaissent */
+@media (prefers-reduced-motion: no-preference) {
+  .cep-liste.pousse .cep-niveau { animation: eclot 0.6s ease-out both; }
+  .cep-liste.pousse .cep-niveau::before { animation: tige 0.55s cubic-bezier(.3,.7,.2,1) both; animation-delay: 0.3s; }
+  .cep-liste.pousse .cep-niveau:nth-child(2) { animation-delay: 0.35s; }
+  .cep-liste.pousse .cep-niveau:nth-child(2)::before { animation-delay: 0.65s; }
+  .cep-liste.pousse .cep-niveau:nth-child(3) { animation-delay: 0.7s; }
+}
+@keyframes tige { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes eclot { from { opacity: 0; transform: translateY(0.4rem); } to { opacity: 1; transform: none; } }
+
+/* ---------- Bloc de recherche ---------- */
+.recherche {
+  max-width: var(--large);
+  margin: 0 auto;
+  padding: 2rem var(--marge) 0;
+}
+.recherche label {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: var(--t-3);
+  color: var(--lagon);
+  margin-bottom: 0.6rem;
+}
+.champ {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--blanc);
+  border: 2px solid #B9CFC8;
+  border-radius: 14px;
+  padding: 0 0.9rem;
+  min-height: 3.4rem;
+}
+.champ:focus-within { border-color: var(--lagon); }
+.champ svg {
+  flex: none;
+  width: 1.3rem; height: 1.3rem;
+  fill: none; stroke: var(--gris); stroke-width: 2.2; stroke-linecap: round;
+}
+.champ input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: var(--lagon);
+  padding: 0.75rem 0;
+}
+.champ input:focus { outline: none; }
+.champ input::placeholder { color: #6D8682; }
+.recherche-aide { margin: 0.5rem 0 0; color: var(--gris); font-size: var(--t-0); }
+
+/* ---------- Mode d'emploi ---------- */
+.mode {
+  max-width: var(--large);
+  margin: 0 auto;
+  padding: 2.25rem var(--marge) 1rem;
+}
+.mode h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: var(--t-3);
+  color: var(--lagon);
+  margin: 0 0 0.5rem;
+}
+.mode p { margin: 0 0 0.75rem; max-width: 36rem; }
+
+/* ---------- Pages intérieures ---------- */
+.page {
+  max-width: var(--large);
+  margin: 0 auto;
+  padding: 1.25rem var(--marge) 2.5rem;
+}
+.retour {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  color: var(--feuille);
+  font-weight: 700;
+  font-size: var(--t-0);
+  text-decoration: none;
+}
+.retour svg {
+  width: 1rem; height: 1rem;
+  fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round;
+}
+.retour:hover { text-decoration: underline; }
+
+.titre-page {
+  font-family: var(--serif);
+  font-weight: 600;
+  color: var(--lagon);
+  font-size: var(--t-4);
+  line-height: 1.1;
+  margin: 0.5rem 0 0.75rem;
+  outline: none;
+}
+.titre-niveau {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: clamp(2.75rem, 12vw, 4rem);
+  font-weight: 500;
+}
+.titre-niveau svg { width: 0.85em; height: 0.85em; color: var(--feuille); flex: none; }
+.chapeau { margin: 0 0 0.4rem; max-width: 36rem; }
+.compte { margin: 0; color: var(--gris); font-size: var(--t-0); font-weight: 700; }
+
+/* liste des séries d'un niveau */
+.series {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  border-top: 1.5px solid #C6D8D2;
+}
+.series li { border-bottom: 1.5px solid #C6D8D2; }
+.serie-lien {
+  display: block;
+  padding: 1.1rem 0.25rem 1.15rem;
+  color: inherit;
+  text-decoration: none;
+}
+.serie-lien:hover .serie-titre { text-decoration: underline; text-decoration-thickness: 1.5px; }
+.serie-titre {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: var(--t-2);
+  line-height: 1.2;
+  color: var(--lagon);
+}
+.serie-texte { display: block; margin-top: 0.3rem; max-width: 34rem; }
+.serie-compte { display: block; margin-top: 0.35rem; color: var(--gris); font-size: var(--t-0); font-weight: 700; }
+
+/* documents de la série */
+.ressources {
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.1rem 1.1rem;
+  background: var(--recif-pale);
+  border-radius: 14px;
+}
+.ressources h2 {
+  margin: 0 0 0.6rem;
+  font-size: var(--t-1);
+  font-weight: 700;
+  color: var(--lagon);
+}
+.ressources ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+
+/* liste des études */
+.etudes-titre {
+  margin: 2rem 0 0.25rem;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: var(--t-3);
+  color: var(--lagon);
+}
+.legende { margin: 0.25rem 0 0.75rem; max-width: 36rem; color: var(--gris); font-size: var(--t-0); }
+.etudes { list-style: none; margin: 0.5rem 0 0; padding: 0; }
+.etude {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  column-gap: 0.6rem;
+  padding: 0.95rem 0;
+  border-bottom: 1.5px solid #D3E2DD;
+}
+.etude:first-child { border-top: 1.5px solid #D3E2DD; }
+.etude.sans-num { grid-template-columns: 1fr; }
+.etude-num {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: var(--t-2);
+  line-height: 1.25;
+  color: var(--feuille);
+  text-align: right;
+  padding-right: 0.15rem;
+}
+.etude-titre {
+  margin: 0;
+  font-size: var(--t-1);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--lagon);
+}
+a.etude-titre { display: inline; text-decoration: none; }
+a.etude-titre:hover { text-decoration: underline; }
+.etude-docs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
+.etude-docs .doc { min-width: 7.5rem; justify-content: center; }
+
+/* boutons de document */
+.doc {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.45rem 0.9rem;
+  border-radius: 10px;
+  border: 1.5px solid var(--feuille);
+  background: var(--blanc);
+  color: var(--lagon);
+  font-size: var(--t-0);
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.2;
+}
+.doc:hover { background: var(--recif-pale); }
+.doc.principal { background: var(--lagon); border-color: var(--lagon); color: var(--blanc); }
+.doc.principal:hover { background: var(--feuille); }
+.doc-format {
+  font-weight: 400;
+  font-size: 0.8rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 6px;
+  background: var(--recif-pale);
+  color: var(--lagon);
+}
+.doc.principal .doc-format { background: rgba(255, 255, 255, 0.16); color: var(--blanc); }
+.format-seul {
+  margin-left: 0.4rem;
+  font-weight: 400;
+  font-size: 0.8rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 6px;
+  background: var(--recif-pale);
+  color: var(--lagon);
+  white-space: nowrap;
+}
+
+.groupe-titre {
+  margin: 1.75rem 0 0.25rem;
+  font-size: var(--t-1);
+  font-weight: 700;
+  color: var(--gris);
+}
+
+.ouvrir-seul { margin: 1.5rem 0 0; }
+.ouvrir-seul .doc { font-size: var(--t-1); padding: 0.7rem 1.2rem; min-height: 52px; }
+.recherche-page { margin: 1rem 0 0; }
+
+/* résultats de recherche */
+.resultats { list-style: none; margin: 1.25rem 0 0; padding: 0; }
+.resultat { padding: 0.9rem 0; border-bottom: 1.5px solid #D3E2DD; }
+.resultat:first-child { border-top: 1.5px solid #D3E2DD; }
+.resultat-ou { display: block; margin-top: 0.2rem; color: var(--gris); font-size: var(--t-0); }
+.resultat-ou a { color: inherit; }
+.vide { margin: 1.5rem 0 0; padding: 1rem 1.1rem; background: var(--recif-pale); border-radius: 14px; }
+
+/* ---------- Pied de page ---------- */
+.pied {
+  margin-top: 2rem;
+  padding: 1.75rem 0 max(2rem, env(safe-area-inset-bottom));
+  border-top: 1.5px solid #C6D8D2;
+  color: var(--gris);
+  font-size: var(--t-0);
+}
+.pied p { max-width: var(--large); margin: 0 auto 0.6rem; padding: 0 var(--marge); }
+.pied strong { color: var(--lagon); }
+
+.noscript { padding: 2rem var(--marge); }
+
+/* ---------- Écrans larges ---------- */
+@media (min-width: 46rem) {
+  .cep { padding-top: 2.25rem; padding-bottom: 4rem; }
+  .cep-niveau:not(:last-child)::before { left: calc(2rem - 1.5px); top: 5.6rem; bottom: -1.2rem; }
+  .cep-lien { grid-template-columns: 4rem 1fr; column-gap: 1.5rem; padding-bottom: 2.25rem; }
+  .cep-picto { width: 4rem; height: 4rem; margin-top: 0.9rem; }
+  .titre-page { font-size: var(--t-5); }
+  .etude { grid-template-columns: 3rem 1fr; }
+}
