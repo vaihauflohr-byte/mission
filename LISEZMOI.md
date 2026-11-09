@@ -50,7 +50,8 @@ Une nouvelle série = une ligne dans `SERIES` (niveau, identifiant, dossier Driv
 ## Images
 
 Une image par étape, par série et par étude (243 au total), dans `assets/images/<id>.webp` (800 × 600 au plus).
-Elles ont été générées avec fal.ai (modèle FLUX dev) à partir des scènes décrites dans `outils/images/scenes.py`
+Les trois étapes ont de vraies photos, prises sur Unsplash (licence libre, usage sur un site permis sans demande) : auteurs et pages d’origine dans `outils/photos/photos.json`, crédit dans le pied de page.
+Les autres images ont été générées avec fal.ai (modèle FLUX dev) à partir des scènes décrites dans `outils/images/scenes.py`
 (`outils/images/prompts.json`), avec `outils/images/generer_images.py` (clé fal dans `~/.fal_key`, jamais dans le dépôt).
 Le catalogue relie chaque étude à son image : `<série>-<numéro>` (ou `<série>-<position>` pour Daniel), `serie-<série>`, `niveau-<étape>`.
 Une image qui manque est simplement masquée.

@@ -1,0 +1,26 @@
+{
+ "licence": "Licence Unsplash (https://unsplash.com/fr/licence) : usage libre, y compris sur un site, sans autorisation à demander.",
+ "photos": [
+  {
+   "nom": "niveau-connaitre",
+   "url": "https://images.unsplash.com/photo-1748549544765-50d58f164fdd",
+   "auteur": "Simon Ray",
+   "page": "https://unsplash.com/fr/photos/une-main-tient-une-bible-ouverte-sur-la-plage-3nZ8EFnaQAc",
+   "sujet": "Une Bible ouverte tenue à la main, au bord de la mer"
+  },
+  {
+   "nom": "niveau-grandir",
+   "url": "https://images.unsplash.com/photo-1663162550928-2c2389cdb27d",
+   "auteur": "Meredith Spencer",
+   "page": "https://unsplash.com/fr/photos/un-couple-de-femmes-assises-sur-lherbe-yKLkWKjDlYw",
+   "sujet": "Deux amies parlent, leur Bible ouverte, assises dans l’herbe"
+  },
+  {
+   "nom": "niveau-murir",
+   "url": "https://images.unsplash.com/photo-1491439996916-067ed99cba60",
+   "auteur": "Priscilla Du Preez",
+   "page": "https://unsplash.com/fr/photos/mCXEsLd2sU",
+   "sujet": "La main d’un adulte et celle d’un enfant sur une Bible ouverte"
+  }
+ ]
+}
