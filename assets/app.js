@@ -15,7 +15,8 @@
   const esc = (s) =>
     String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   // typographie française : espace insécable avant : ? ! ; et dans les guillemets
-  const fr = (s) => esc(s).replace(/ ([:?!;»])/g, " $1").replace(/« /g, "« ");
+  const fr = (s) => esc(s).replace(/ ([:?!;»])/g, " $1").replace(/« /g, "« ")
+    .replace(/Jésus-Christ/g, '<span class="insecable">Jésus-Christ</span>');
   const norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’']/g, " ").toLowerCase();
   const pluriel = (n, un, plusieurs) => `${n} ${n > 1 ? plusieurs : un}`;
   const taille = (o) =>
@@ -132,7 +133,7 @@
           <a class="cep-lien" href="#/niveau/${n.id}">
             <span class="cep-picto">${picto(n.id)}</span>
             ${image(n.image, "cep-image", rang === 0)}
-            <span class="cep-verbe">${esc(n.verbe)}</span>
+            <span class="cep-etape"><span class="num-etape" aria-hidden="true">${n.num}</span><span class="cep-verbe">${fr(n.titre)}</span></span>
             <span class="cep-texte">${fr(n.texte)}</span>
             ${n.invite ? `<strong class="cep-invite">${fr(n.invite)}</strong>` : ""}
             <span class="cep-compte">${pluriel(ss.length, "série", "séries")}, ${pluriel(nbEtudes(ss), "étude", "études")}</span>
@@ -156,7 +157,7 @@
           </form>
         </div>
         <div class="dedans cep">
-          <h2 class="cep-titre">Trois étapes, de la découverte à la maturité</h2>
+          <h2 class="cep-titre">Trois étapes, de la rencontre à la maturité</h2>
           <ol class="cep-liste">${etapes}</ol>
         </div>
       </section>
@@ -188,15 +189,14 @@
     const n = niveaux[id];
     if (!n) return introuvable();
     const ss = seriesDe(id);
-    document.title = `${n.verbe} — ${n.titre} — Mission`;
+    document.title = `${n.titre} — Mission`;
     marquerNav(id);
     app.innerHTML = `
       <div class="page">
         ${fil([["Accueil", "#/"], [n.verbe]])}
         <header class="niveau-tete">
           <div class="niveau-texte">
-            <h1 class="titre-page titre-niveau" tabindex="-1">${picto(id)}${esc(n.verbe)}</h1>
-            <p class="niveau-sous">${fr(n.titre)}</p>
+            <h1 class="titre-page titre-niveau" tabindex="-1"><span class="num-etape" aria-hidden="true">${n.num}</span><span><span class="cache">Étape ${n.num} : </span>${fr(n.titre)}</span></h1>
             <p class="chapeau">${fr(n.texte)}</p>
             ${n.invite ? `<p class="niveau-invite">${fr(n.invite)}</p>` : ""}
             <p class="compte">${pluriel(ss.length, "série", "séries")}, ${pluriel(nbEtudes(ss), "étude", "études")}</p>

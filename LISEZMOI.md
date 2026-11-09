@@ -5,7 +5,7 @@ Aucun serveur, aucune base de données : le site range la bibliothèque d’étu
 
 ## Ce que fait le site
 
-- **Accueil** : les trois étapes, *Connaître*, *Grandir*, *Mûrir* (dossiers « 1 - Pour connaitre Jesus », « 2 - Pour grandir en Jésus », « 3 - Mûrir en Jésus » du Drive), la recherche et le mode d’emploi.
+- **Accueil** : les trois étapes, numérotées : *1. Rencontrer Jésus-Christ*, *2. Grandir en Jésus-Christ*, *3. Mûrir en Jésus-Christ* (dossiers « 1 - Pour connaitre Jesus », « 2 - Pour grandir en Jésus », « 3 - Mûrir en Jésus » du Drive ; l’identifiant de la première reste `connaitre` dans les liens), la recherche et le mode d’emploi. « Convient (aussi) à des invités » est en gras sous les étapes 1 et 2.
 - **Étape** : ses séries, avec une image, une phrase de présentation et le nombre d’études.
 - **Série** : les études dans l’ordre. Un bouton par document : *Participant* (fiche du participant), *Animateur* (guide de l’animateur), *Avec les réponses*, *Notes de présentation* ; *Ouvrir* ou *Voir* quand il n’y en a qu’un. Les plans du cours, brochures et révisions sont dans « Pour bien commencer ».
 - **Lecteur** (`#/lire/<série>/<document>`) : le document s’affiche dans le site (PDF.js), page après page, à la largeur de l’écran. On zoome en pinçant (téléphone), avec Ctrl + molette ou les boutons − / + (ordinateur). *Télécharger* donne le PDF ; pour les présentations, le menu propose aussi le PowerPoint d’origine, avec les animations, et *Projeter* les montre en plein écran, une diapositive à la fois (flèches ou clic pour avancer).
@@ -40,6 +40,10 @@ Après l’ajout ou le changement d’un fichier dans le Drive :
 
 Une nouvelle série = une ligne dans `SERIES` (niveau, identifiant, dossier Drive, titre, présentation).
 
+## Symbole de l’Église adventiste
+
+`assets/icones/adventiste-blanc.svg` (en-tête) et `adventiste-noir.svg` (pied de page) : le symbole officiel de l’Église adventiste du septième jour, marque déposée, tel que le diffuse la South England Conference (fichiers « adventist-symbol-white » et « adventist-symbol-black »), seulement recadré sur le dessin. Son usage est réservé à l’Église et à ses entités (églises locales, écoles) : ne pas le déformer, le recolorer ni l’associer à un autre dessin.
+
 ## Images
 
 Une image par étape, par série et par étude (243 au total), dans `assets/images/<id>.webp` (800 × 600 au plus).
@@ -60,7 +64,8 @@ Une image qui manque est simplement masquée.
 | `lecteur/` | PDF.js 6.5.438 (Mozilla, licence Apache 2.0), chargé à la première ouverture d’un document |
 | `donnees/bibliotheque.js` | catalogue généré : étapes, séries, études, documents |
 | `outils/` | générateur du catalogue, import et corrections des documents, images |
-| `sw.js`, `manifest.webmanifest`, `assets/icones/` | appli installable et hors ligne |
+| `sw.js`, `manifest.webmanifest` | appli installable et hors ligne |
+| `assets/icones/` | icônes de l’appli (feuille) et symbole adventiste |
 | `CNAME`, `.nojekyll` | domaine `mission.ka-ilei.com` ; fichiers publiés tels quels |
 
 ## Domaine

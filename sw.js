@@ -1,18 +1,20 @@
 /* Mission — fonctionnement hors ligne : la liste des études reste consultable sans réseau.
    Les documents (documents/*.pdf) passent directement par le réseau : ils sont lus par morceaux
    (requêtes partielles) et le bouton Télécharger permet de les garder sur l’appareil. */
-const CACHE = "mission-v4";
+const CACHE = "mission-v5";
 const COQUILLE = [
   "./",
   "index.html",
-  "assets/style.css?v=4",
-  "assets/app.js?v=4",
-  "donnees/bibliotheque.js?v=4",
+  "assets/style.css?v=5",
+  "assets/app.js?v=5",
+  "donnees/bibliotheque.js?v=5",
   "assets/fonts/alegreya-latin-500-normal.woff2",
   "assets/fonts/alegreya-latin-600-normal.woff2",
   "assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2",
   "assets/fonts/atkinson-hyperlegible-latin-700-normal.woff2",
   "assets/icones/favicon.svg",
+  "assets/icones/adventiste-blanc.svg",
+  "assets/icones/adventiste-noir.svg",
   "assets/icones/icone-192.png",
   "manifest.webmanifest",
 ];

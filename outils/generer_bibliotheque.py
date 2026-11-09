@@ -17,22 +17,25 @@ from pathlib import Path
 NIVEAUX = [
     {
         "id": "connaitre",
-        "verbe": "Connaître",
-        "titre": "Pour connaître Jésus",
+        "num": 1,
+        "verbe": "Rencontrer",
+        "titre": "Rencontrer Jésus-Christ",
         "texte": "Pour découvrir la Bible et Jésus.",
         "invite": "Convient à des invités.",
     },
     {
         "id": "grandir",
+        "num": 2,
         "verbe": "Grandir",
-        "titre": "Pour grandir en Jésus",
+        "titre": "Grandir en Jésus-Christ",
         "texte": "Pour approfondir la foi : la vie avec Jésus, le sanctuaire, les prophéties.",
         "invite": "Convient aussi à des invités.",
     },
     {
         "id": "murir",
+        "num": 3,
         "verbe": "Mûrir",
-        "titre": "Mûrir en Jésus",
+        "titre": "Mûrir en Jésus-Christ",
         "texte": "Pour la vie chrétienne de chaque jour : excellence, couple, enfants, pureté, doctrine.",
     },
 ]

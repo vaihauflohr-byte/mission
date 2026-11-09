@@ -126,13 +126,13 @@ a { color: var(--feuille); text-underline-offset: 0.18em; }
 .marque {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.75rem;
   margin-right: auto;
   min-height: 44px;
   color: inherit;
   text-decoration: none;
 }
-.marque-signe { flex: none; width: 1.85rem; height: 1.85rem; color: var(--recif); }
+.marque-symbole { flex: none; width: 2.4rem; height: auto; }
 .marque-texte { display: flex; flex-direction: column; line-height: 1.1; }
 .marque-nom {
   font-family: var(--serif);
@@ -150,7 +150,22 @@ a { color: var(--feuille); text-underline-offset: 0.18em; }
   font-weight: 700;
   text-decoration: none;
 }
+.entete-nav a { display: inline-flex; align-items: center; gap: 0.45rem; }
 .entete-nav a:hover { color: var(--blanc); background: var(--lagon-clair); }
+.nav-num {
+  display: inline-grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: rgba(143, 201, 182, 0.2);
+  color: var(--recif);
+  font-family: var(--serif);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.entete-nav a[aria-current] .nav-num { background: var(--recif); color: var(--lagon); }
 .entete-nav a[aria-current] {
   color: var(--blanc);
   text-decoration: underline 2px var(--recif);
@@ -298,8 +313,26 @@ a { color: var(--feuille); text-underline-offset: 0.18em; }
   background: var(--lagon);
 }
 .cep-picto svg { display: block; width: 100%; height: 100%; }
+.num-etape {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1;
+}
+.insecable { white-space: nowrap; }
+.cache {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 .cep-image,
-.cep-verbe,
+.cep-etape,
 .cep-texte,
 .cep-invite,
 .cep-compte { grid-column: 2; }
@@ -312,12 +345,20 @@ a { color: var(--feuille); text-underline-offset: 0.18em; }
   border-radius: 12px;
   background: var(--lagon-clair);
 }
+.cep-etape { display: flex; align-items: flex-start; gap: 0.7rem; margin-top: 0.9rem; }
+.cep-etape .num-etape {
+  width: 2.3rem;
+  height: 2.3rem;
+  margin-top: 0.1rem;
+  background: var(--recif);
+  color: var(--lagon);
+  font-size: 1.3rem;
+}
 .cep-verbe {
-  margin-top: 0.85rem;
   font-family: var(--serif);
   font-weight: 500;
-  font-size: 2.5rem;
-  line-height: 1;
+  font-size: 2.1rem;
+  line-height: 1.05;
   color: var(--blanc);
   text-decoration: underline 2px transparent;
   text-underline-offset: 0.14em;
@@ -416,19 +457,20 @@ a { color: var(--feuille); text-underline-offset: 0.18em; }
 }
 .titre-niveau {
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.4rem;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
   font-weight: 500;
-  font-size: clamp(2.75rem, 2.1rem + 3vw, 3.75rem);
+  font-size: clamp(2.3rem, 1.75rem + 2.4vw, 3.2rem);
+  line-height: 1.05;
 }
-.titre-niveau svg { flex: none; width: 0.85em; height: 0.85em; color: var(--feuille); }
-.niveau-sous {
-  margin: 0 0 0.6rem;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: var(--t-2);
-  color: var(--feuille);
+.titre-niveau .num-etape {
+  width: 1.7em;
+  height: 1.7em;
+  margin-top: 0.05em;
+  background: var(--feuille);
+  color: var(--blanc);
+  font-size: 0.6em;
 }
 .niveau-invite { margin: 0.1rem 0 0.6rem; font-size: 1.3rem; font-weight: 700; line-height: 1.3; color: var(--lagon); }
 .niveau-image {
@@ -814,18 +856,11 @@ summary.lecteur-bouton::-webkit-details-marker { display: none; }
   margin: 0 auto;
   padding: 0 var(--marge);
 }
-.pied-marque {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin: 0 0 0.35rem;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 1.35rem;
-  color: var(--lagon);
-}
-.pied-marque svg { width: 1.4rem; height: 1.4rem; color: var(--feuille); }
-.pied-a-propos p { margin: 0; max-width: 30rem; }
+.pied-eglise { display: flex; align-items: center; gap: 0.9rem; }
+.pied-symbole { flex: none; width: 3.1rem; height: auto; }
+.pied-eglise p { display: flex; flex-direction: column; margin: 0; line-height: 1.3; }
+.pied-eglise strong { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--lagon); }
+.pied-note strong { color: var(--lagon); }
 .pied-nav { display: flex; flex-wrap: wrap; gap: 0 1.4rem; }
 .pied-nav a {
   display: inline-flex;
@@ -891,12 +926,12 @@ summary.lecteur-bouton::-webkit-details-marker { display: none; }
   .cep-lien { grid-template-columns: minmax(0, 1fr); padding-bottom: 0; }
   .cep-picto { grid-row: auto; width: 3.25rem; height: 3.25rem; margin-bottom: 1rem; }
   .cep-image,
-  .cep-verbe,
+  .cep-etape,
   .cep-texte,
   .cep-invite,
   .cep-compte { grid-column: 1; }
   .cep-image { aspect-ratio: 4 / 3; }
-  .cep-verbe { font-size: 2.75rem; }
+  .cep-verbe { font-size: 2.3rem; }
   .cep-niveau:not(:last-child)::before {
     left: 4rem;
     right: auto;
