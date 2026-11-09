@@ -1,0 +1,28 @@
+# Tâche unique (branche photos-etapes) : télécharge les photos des trois étapes depuis Unsplash.
+name: Photos des étapes
+on:
+  push:
+    branches: [photos-etapes]
+    paths:
+      - outils/photos/**
+      - .github/workflows/photos-etapes.yml
+permissions:
+  contents: write
+jobs:
+  photos:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet pillow
+      - run: python3 outils/photos/telecharger.py
+      - name: Enregistrer dans la branche
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/images outils/photos/autres
+          git commit -q -m "Photos des trois étapes (Unsplash)"
+          git push origin HEAD:photos-etapes
