@@ -85,6 +85,11 @@ SERIES = [
      "Études bibliques et articles sur la Divinité et le Saint-Esprit."),
 ]
 
+# Précision affichée après le titre de la série dans le sommaire de l’accueil.
+NOTES = {
+    "excellence": "surtout pour les jeunes adultes",
+}
+
 # Fichiers laissés hors du site (doublons, documents propres à un autre pays, livres publiés).
 EXCLURE = [
     "Source chinoise",
@@ -368,10 +373,11 @@ def main(chemin):
             if v and vus[d["titre"]] > 1:
                 d["titre"] += f" ({v[0].lower() + v[1:]})"
         ressources.sort(key=lambda d: d["titre"])
-        series.append({
-            "id": slug, "niveau": niveau, "titre": titre, "texte": texte,
-            "lecons": liste, "ressources": ressources,
-        })
+        serie = {"id": slug, "niveau": niveau, "titre": titre, "texte": texte}
+        if slug in NOTES:
+            serie["note"] = NOTES[slug]
+        serie.update({"lecons": liste, "ressources": ressources})
+        series.append(serie)
 
     # images (assets/images/<id>.webp) : étape, série, étude
     dossier_img = Path(__file__).resolve().parent.parent / "assets" / "images"

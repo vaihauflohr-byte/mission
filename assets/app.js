@@ -33,13 +33,22 @@
     moins: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg>',
     plus: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12M12 6v12"/></svg>',
     ajuster: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>',
+    appli: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M12 7v7m0 0-3-3m3 3 3-3M10 18.5h4"/></svg>',
+    partager: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4M6 11H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1"/></svg>',
   };
   // images (assets/images/<nom>.webp, 4:3) : décoratives, le titre est juste à côté
   const image = (nom, classe, prioritaire) =>
     nom
       ? `<img class="${classe}" src="assets/images/${encodeURIComponent(nom)}.webp" alt="" width="800" height="600" ${
-          prioritaire ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" onerror="this.style.visibility='hidden'">`
+          prioritaire ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" onerror="reessayer(this)">`
       : "";
+
+  // image en échec : nouvel essai par le réseau (adresse différente, donc hors cache), puis masquée
+  window.reessayer = (img) => {
+    if (img.dataset.essai) { img.style.visibility = "hidden"; return; }
+    img.dataset.essai = "1";
+    img.src = img.getAttribute("src").split("?")[0] + "?r=" + Date.now();
+  };
 
   const seriesDe = (niveauId) => B.series.filter((s) => s.niveau === niveauId);
   const nbEtudes = (liste) => liste.reduce((t, s) => t + s.lecons.length, 0);
@@ -122,6 +131,83 @@
     });
   }
 
+  // ---------- application installable (PWA) ----------
+  const appareil = (() => {
+    const ua = navigator.userAgent;
+    if (/iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) return "ios";
+    return /Android/.test(ua) ? "android" : "ordinateur";
+  })();
+  const installee = () => matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+  let invitation = null; // proposition d’installation du navigateur (Android, ordinateur)
+  function majInstallation() {
+    document.querySelectorAll("[data-installer]").forEach((e) => { e.hidden = installee(); });
+    document.querySelectorAll("[data-invitation]").forEach((e) => { e.hidden = !invitation || installee(); });
+  }
+  window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); invitation = e; majInstallation(); });
+  window.addEventListener("appinstalled", () => { invitation = null; majInstallation(); });
+  document.addEventListener("click", async (e) => {
+    const b = e.target.closest("[data-action-installer]");
+    if (b && invitation) {
+      e.preventDefault();
+      const proposition = invitation;
+      invitation = null;
+      proposition.prompt();
+      await proposition.userChoice.catch(() => null);
+      majInstallation();
+      return;
+    }
+    const p = e.target.closest("[data-partager]");
+    if (p) {
+      const lien = "https://mission.ka-ilei.com/";
+      if (navigator.share) {
+        navigator.share({ title: "Mission", text: "Études bibliques pour les petits groupes", url: lien }).catch(() => {});
+      } else {
+        try { await navigator.clipboard.writeText(lien); p.textContent = "Lien copié"; } catch (err) { prompt("Lien à copier :", lien); }
+      }
+    }
+  });
+
+  function application() {
+    document.title = "L’application — Mission";
+    const cas = {
+      ios: `<section class="appli-cas"><h2>iPhone et iPad</h2><ol>
+          <li>Ouvrez <strong>mission.ka-ilei.com</strong> avec <strong>Safari</strong>.</li>
+          <li>Touchez le bouton <strong>Partager</strong> <span class="appli-icone">${icone.partager}</span>, en bas de l’écran (en haut sur iPad).</li>
+          <li>Choisissez <strong>Sur l’écran d’accueil</strong>, puis <strong>Ajouter</strong>.</li></ol></section>`,
+      android: `<section class="appli-cas"><h2>Téléphone Android</h2><ol>
+          <li>Ouvrez <strong>mission.ka-ilei.com</strong> avec <strong>Chrome</strong>.</li>
+          <li>Touchez le menu <strong>⋮</strong> en haut à droite, puis <strong>Installer l’application</strong> (parfois <strong>Ajouter à l’écran d’accueil</strong>).</li>
+          <li>Confirmez : l’icône Mission apparaît avec les autres applications.</li></ol></section>`,
+      ordinateur: `<section class="appli-cas"><h2>Ordinateur</h2><ol>
+          <li>Ouvrez le site avec <strong>Chrome</strong> ou <strong>Edge</strong>.</li>
+          <li>Cliquez sur l’icône d’installation, à droite de la barre d’adresse, puis sur <strong>Installer</strong>.</li></ol></section>`,
+    };
+    const ordre = [appareil, ...["ios", "android", "ordinateur"].filter((a) => a !== appareil)];
+    app.innerHTML = `
+      <div class="page page-appli">
+        ${fil([["Accueil", "#/"], ["L’application"]])}
+        <div class="appli-mise">
+          <div class="appli-texte">
+            <h1 class="titre-page" tabindex="-1">L’application Mission</h1>
+            <p class="chapeau">Installée sur le téléphone, Mission s’ouvre depuis son icône, en plein écran, comme une application. Elle se met à jour toute seule, et la liste des études reste consultable sans connexion.</p>
+            ${installee()
+              ? '<p class="appli-ok">L’application est installée sur cet appareil.</p>'
+              : `<p class="appli-installer" data-invitation hidden><button type="button" class="doc principal" data-action-installer>${icone.appli}Installer l’application</button></p>`}
+            ${ordre.map((a) => cas[a]).join("")}
+            <p class="appli-note">Les documents s’ouvrent avec une connexion. Pour en garder un sur le téléphone, touchez Télécharger dans le document.</p>
+          </div>
+          <aside class="appli-partage" aria-labelledby="partage-titre">
+            <h2 id="partage-titre">Faire connaître l’application</h2>
+            <img src="assets/icones/qr-mission.svg" alt="Code QR qui ouvre mission.ka-ilei.com" width="200" height="200">
+            <p>À scanner avec l’appareil photo du téléphone : il ouvre <strong>mission.ka-ilei.com</strong>, d’où l’on installe l’application.</p>
+            <button type="button" class="doc" data-partager>${icone.partager}Partager le lien</button>
+          </aside>
+        </div>
+      </div>`;
+    majInstallation();
+    return true;
+  }
+
   // ---------- pages ----------
   function accueil() {
     document.title = "Mission — études bibliques pour les petits groupes";
@@ -138,6 +224,10 @@
             ${n.invite ? `<strong class="cep-invite">${fr(n.invite)}</strong>` : ""}
             <span class="cep-compte">${pluriel(ss.length, "série", "séries")}, ${pluriel(nbEtudes(ss), "étude", "études")}</span>
           </a>
+          <ul class="cep-series" aria-label="Séries de l’étape ${n.num}">${ss
+            .map((s) => `<li><a href="#/serie/${s.id}"><span class="cep-serie-titre">${fr(s.titre)}${
+              s.note ? ` <span class="cep-serie-note">(${fr(s.note)})</span>` : ""}</span><span class="cep-serie-compte">${compteSerie(s)}</span></a></li>`)
+            .join("")}</ul>
         </li>`;
       })
       .join("");
@@ -147,6 +237,8 @@
           <div class="accueil-texte">
             <h1 id="accueil-titre" class="accueil-titre" tabindex="-1">Des études bibliques prêtes pour votre petit groupe</h1>
             <p class="accueil-chapeau">${total} études en français, rangées en trois étapes. Chaque étude a sa fiche du participant, souvent un guide pour l’animateur, et tout se lit ici, sur téléphone comme sur ordinateur.</p>
+            <p class="accueil-appli" data-installer><a class="lien-appli" href="#/application" data-action-installer>${icone.appli}Installer l’application ${
+              appareil === "ordinateur" ? "sur cet ordinateur" : "sur ce téléphone"}</a></p>
           </div>
           <form class="recherche" role="search" action="#/chercher">
             <label for="q-accueil">Chercher une étude par sujet, titre ou personnage</label>
@@ -170,6 +262,7 @@
             <div><dt>Le guide de l’animateur</dt><dd>Pour celui qui conduit le groupe : les réponses, les questions à poser et le déroulement.</dd></div>
             <div><dt>Lire, télécharger, imprimer</dt><dd>Chaque document s’ouvre ici, sur le site. Le bouton Télécharger donne le PDF, à garder sur son téléphone ou à imprimer.</dd></div>
             <div><dt>Partager</dt><dd>Chaque série et chaque document ont leur propre lien : envoyez-le pour inviter quelqu’un.</dd></div>
+            <div><dt>Comme une application</dt><dd>Installée sur le téléphone, Mission s’ouvre depuis son icône, en plein écran. <a href="#/application">Voir comment l’installer</a>.</dd></div>
           </dl>
         </div>
       </section>`;
@@ -182,6 +275,7 @@
       e.preventDefault();
       location.hash = "#/chercher/" + encodeURIComponent(e.target.q.value.trim());
     });
+    majInstallation();
     return true;
   }
 
@@ -634,6 +728,7 @@
     else if (page === "niveau") niveau(arg);
     else if (page === "serie") serie(arg);
     else if (page === "chercher") champ = chercher(arg);
+    else if (page === "application") application();
     else if (page === "lire") { fermerLecteur(); lire(arg); }
     else introuvable();
     // retour d’un document : on retrouve sa place dans la liste

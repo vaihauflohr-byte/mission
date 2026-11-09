@@ -3245,6 +3245,7 @@ window.BIBLIO = {
    "niveau": "murir",
    "titre": "L’excellence dans la vie",
    "texte": "7 études : le besoin, la clé, les objectifs, les étapes et le chemin de l’excellence, jusque dans les relations.",
+   "note": "surtout pour les jeunes adultes",
    "lecons": [
     {
      "num": "1",

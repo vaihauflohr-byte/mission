@@ -271,6 +271,35 @@ a { color: var(--feuille); text-underline-offset: 0.18em; }
 .champ button:hover { background: var(--lagon); }
 .recherche-aide { margin: 0.5rem 0 0; color: var(--gris); font-size: var(--t-petit); }
 .exemples { margin: 0.7rem 0 0; color: var(--brume); font-size: var(--t-petit); }
+.accueil-appli { margin: 0 0 1.75rem; }
+.accueil-appli[hidden] { display: none; }
+.lien-appli {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0 1rem 0 0.8rem;
+  border: 1.5px solid rgba(143, 201, 182, 0.55);
+  border-radius: 999px;
+  color: var(--blanc);
+  font-size: var(--t-0);
+  font-weight: 700;
+  text-decoration: none;
+}
+.lien-appli:hover { background: var(--lagon-clair); }
+.lien-appli svg,
+.doc svg,
+.appli-icone svg {
+  flex: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.doc svg { margin-right: 0.45rem; }
 .exemples a { color: var(--blanc); font-weight: 700; text-decoration-color: rgba(143, 201, 182, 0.7); }
 .exemples a:hover { text-decoration-color: var(--blanc); }
 
@@ -295,11 +324,11 @@ a { color: var(--feuille); text-underline-offset: 0.18em; }
   background: var(--recif);
   transform-origin: top;
 }
+.cep-niveau { padding-bottom: 2.5rem; }
 .cep-lien {
   display: grid;
   grid-template-columns: 3rem 1fr;
   column-gap: 1rem;
-  padding-bottom: 2.25rem;
   color: inherit;
   text-decoration: none;
 }
@@ -368,6 +397,27 @@ a { color: var(--feuille); text-underline-offset: 0.18em; }
 .cep-texte { margin-top: 0.5rem; max-width: 26rem; color: var(--brume); }
 .cep-invite { margin-top: 0.45rem; font-size: 1.25rem; font-weight: 700; line-height: 1.3; color: var(--blanc); }
 .cep-compte { margin-top: 0.35rem; color: var(--recif); font-size: var(--t-0); font-weight: 700; }
+.cep-series {
+  list-style: none;
+  margin: 1rem 0 0 4rem;
+  padding: 0;
+  border-top: 1px solid rgba(143, 201, 182, 0.28);
+}
+.cep-series li { border-bottom: 1px solid rgba(143, 201, 182, 0.28); }
+.cep-series a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding: 0.5rem 0;
+  color: var(--blanc);
+  text-decoration: none;
+}
+.cep-serie-titre { font-weight: 700; line-height: 1.3; }
+.cep-series a:hover .cep-serie-titre { text-decoration: underline 1.5px var(--recif); text-underline-offset: 0.2em; }
+.cep-serie-note { font-weight: 400; color: var(--brume); }
+.cep-serie-compte { flex: none; color: var(--recif); font-size: var(--t-petit); font-weight: 700; white-space: nowrap; }
 
 /* une seule animation : la tige pousse et relie les trois étapes (première visite) */
 @media (prefers-reduced-motion: no-preference) {
@@ -632,6 +682,46 @@ a.resultat-titre:hover { text-decoration-thickness: 2px; }
 .resultat-ou a { color: inherit; }
 .resultat .etude-docs { margin-top: 0.6rem; }
 .vide { margin: 1.25rem 0 0; padding: 1rem 1.1rem; background: var(--recif-pale); border-radius: 14px; }
+
+/* ---------- Page « L’application » ---------- */
+.appli-mise { display: grid; gap: 2rem; margin-top: 0.25rem; }
+.appli-texte > .chapeau { margin-bottom: 1rem; }
+.appli-installer { margin: 0 0 1.25rem; }
+.appli-installer[hidden] { display: none; }
+.appli-installer .doc { min-height: 52px; padding: 0.7rem 1.3rem; font-size: var(--t-1); }
+.appli-ok {
+  display: inline-block;
+  margin: 0 0 1.25rem;
+  padding: 0.6rem 1rem;
+  background: var(--recif-pale);
+  border-radius: 10px;
+  color: var(--lagon);
+  font-weight: 700;
+}
+.appli-cas {
+  max-width: 40rem;
+  margin: 0 0 1rem;
+  padding: 1rem 1.2rem 0.4rem;
+  background: var(--blanc);
+  border: 1px solid var(--ligne);
+  border-radius: 14px;
+}
+.appli-cas:first-of-type { border-color: var(--feuille); box-shadow: inset 4px 0 0 var(--feuille); }
+.appli-cas h2 { margin: 0 0 0.4rem; font-family: var(--serif); font-size: var(--t-2); font-weight: 600; color: var(--lagon); }
+.appli-cas ol { margin: 0 0 0.6rem; padding-left: 1.3rem; }
+.appli-cas li { margin-bottom: 0.4rem; }
+.appli-icone { display: inline-flex; vertical-align: -0.2em; color: var(--feuille); }
+.appli-note { max-width: 40rem; color: var(--gris); font-size: var(--t-petit); }
+.appli-partage {
+  align-self: start;
+  padding: 1.25rem;
+  background: var(--recif-pale);
+  border-radius: 16px;
+  text-align: center;
+}
+.appli-partage h2 { margin: 0 0 0.75rem; font-family: var(--serif); font-size: var(--t-2); font-weight: 600; color: var(--lagon); }
+.appli-partage img { display: block; width: 12.5rem; height: auto; margin: 0 auto 0.75rem; border-radius: 8px; }
+.appli-partage p { margin: 0 0 0.9rem; font-size: var(--t-0); color: var(--gris); }
 
 /* ---------- Lecteur de documents ---------- */
 body.en-lecture { height: 100vh; height: 100dvh; min-height: 0; overflow: hidden; }
@@ -925,6 +1015,9 @@ summary.lecteur-bouton::-webkit-details-marker { display: none; }
   .cep-liste { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 2.5rem; }
   .cep-lien { grid-template-columns: minmax(0, 1fr); padding-bottom: 0; }
   .cep-picto { grid-row: auto; width: 3.25rem; height: 3.25rem; margin-bottom: 1rem; }
+  .cep-niveau { padding-bottom: 0; }
+  .cep-series { margin-left: 0; }
+  .appli-mise { grid-template-columns: minmax(0, 1fr) 17rem; gap: 3rem; }
   .cep-image,
   .cep-etape,
   .cep-texte,
@@ -957,6 +1050,7 @@ summary.lecteur-bouton::-webkit-details-marker { display: none; }
     align-items: end;
   }
   .accueil-chapeau { margin-bottom: 0; }
+  .accueil-appli { margin: 1.25rem 0 0; }
   .accueil .recherche { padding: 1.4rem 1.5rem 1.3rem; background: var(--lagon-clair); border-radius: 16px; }
   .serie-mise { grid-template-columns: 21rem minmax(0, 1fr); gap: 3.5rem; align-items: start; }
   .serie-couverture { aspect-ratio: 4 / 3; }

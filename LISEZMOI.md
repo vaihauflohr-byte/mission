@@ -10,7 +10,8 @@ Aucun serveur, aucune base de données : le site range la bibliothèque d’étu
 - **Série** : les études dans l’ordre. Un bouton par document : *Participant* (fiche du participant), *Animateur* (guide de l’animateur), *Avec les réponses*, *Notes de présentation* ; *Ouvrir* ou *Voir* quand il n’y en a qu’un. Les plans du cours, brochures et révisions sont dans « Pour bien commencer ».
 - **Lecteur** (`#/lire/<série>/<document>`) : le document s’affiche dans le site (PDF.js), page après page, à la largeur de l’écran. On zoome en pinçant (téléphone), avec Ctrl + molette ou les boutons − / + (ordinateur). *Télécharger* donne le PDF ; pour les présentations, le menu propose aussi le PowerPoint d’origine, avec les animations, et *Projeter* les montre en plein écran, une diapositive à la fois (flèches ou clic pour avancer).
 - **Chercher** : par mot, sans tenir compte des accents (`bapteme` trouve « baptême »).
-- **Appli** : le site s’installe sur l’écran d’accueil du téléphone ; la liste des études reste consultable sans réseau. Les documents, eux, demandent une connexion (ou se téléchargent).
+- **Sommaire** : sur l’accueil, chaque étape montre la liste de ses séries avec le nombre d’études, comme la page « Study Guides » du Gateway Adventist Centre.
+- **Application** (`#/application`) : le site s’installe comme une application (PWA) sur Android, iPhone et ordinateur, sans passer par un magasin d’applications. Bouton « Installer l’application » quand le navigateur le permet (Android, Chrome, Edge), sinon les étapes à suivre (Safari sur iPhone) ; code QR et bouton « Partager le lien » pour la faire connaître. Une fois installée : icône sur l’écran d’accueil, plein écran, raccourcis vers les trois étapes et la recherche (appui long sur l’icône, Android), liste des études consultable sans réseau. Les documents, eux, demandent une connexion (ou se téléchargent).
 
 ## Les documents
 
@@ -64,8 +65,8 @@ Une image qui manque est simplement masquée.
 | `lecteur/` | PDF.js 6.5.438 (Mozilla, licence Apache 2.0), chargé à la première ouverture d’un document |
 | `donnees/bibliotheque.js` | catalogue généré : étapes, séries, études, documents |
 | `outils/` | générateur du catalogue, import et corrections des documents, images |
-| `sw.js`, `manifest.webmanifest` | appli installable et hors ligne |
-| `assets/icones/` | icônes de l’appli (feuille) et symbole adventiste |
+| `sw.js`, `manifest.webmanifest`, `assets/captures/` | application installable, hors ligne ; captures montrées dans la fenêtre d’installation (Android) |
+| `assets/icones/` | icônes de l’appli (feuille), symbole adventiste, code QR de `mission.ka-ilei.com` |
 | `CNAME`, `.nojekyll` | domaine `mission.ka-ilei.com` ; fichiers publiés tels quels |
 
 ## Domaine

@@ -1,16 +1,40 @@
 {
+  "id": "/",
   "name": "Mission — études bibliques",
   "short_name": "Mission",
-  "description": "Études bibliques en français pour les petits groupes : connaître, grandir, mûrir.",
+  "description": "Études bibliques en français pour les petits groupes de l’Église adventiste : rencontrer, grandir et mûrir en Jésus-Christ. Fiches du participant et guides de l’animateur à lire sur le téléphone.",
   "lang": "fr",
+  "dir": "ltr",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#F2F6F4",
+  "orientation": "any",
+  "background_color": "#F3F7F5",
   "theme_color": "#1E3D3A",
+  "categories": ["education", "books"],
   "icons": [
     { "src": "assets/icones/icone-192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "assets/icones/icone-512.png", "sizes": "512x512", "type": "image/png" },
     { "src": "assets/icones/icone-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "1. Rencontrer Jésus-Christ", "short_name": "Rencontrer", "url": "./#/niveau/connaitre",
+      "icons": [{ "src": "assets/icones/icone-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "2. Grandir en Jésus-Christ", "short_name": "Grandir", "url": "./#/niveau/grandir",
+      "icons": [{ "src": "assets/icones/icone-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "3. Mûrir en Jésus-Christ", "short_name": "Mûrir", "url": "./#/niveau/murir",
+      "icons": [{ "src": "assets/icones/icone-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Chercher une étude", "short_name": "Chercher", "url": "./#/chercher",
+      "icons": [{ "src": "assets/icones/icone-192.png", "sizes": "192x192", "type": "image/png" }] }
+  ],
+  "screenshots": [
+    { "src": "assets/captures/telephone-accueil.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow",
+      "label": "Les trois étapes et leurs séries" },
+    { "src": "assets/captures/telephone-serie.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow",
+      "label": "Les études d’une série, avec la fiche du participant et le guide de l’animateur" },
+    { "src": "assets/captures/telephone-lecteur.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow",
+      "label": "Une fiche ouverte dans l’application" },
+    { "src": "assets/captures/ordinateur-serie.jpg", "sizes": "1280x800", "type": "image/jpeg", "form_factor": "wide",
+      "label": "Une série sur ordinateur" }
   ]
 }
