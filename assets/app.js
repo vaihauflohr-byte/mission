@@ -134,6 +134,7 @@
             ${image(n.image, "cep-image", rang === 0)}
             <span class="cep-verbe">${esc(n.verbe)}</span>
             <span class="cep-texte">${fr(n.texte)}</span>
+            ${n.invite ? `<strong class="cep-invite">${fr(n.invite)}</strong>` : ""}
             <span class="cep-compte">${pluriel(ss.length, "série", "séries")}, ${pluriel(nbEtudes(ss), "étude", "études")}</span>
           </a>
         </li>`;
@@ -197,6 +198,7 @@
             <h1 class="titre-page titre-niveau" tabindex="-1">${picto(id)}${esc(n.verbe)}</h1>
             <p class="niveau-sous">${fr(n.titre)}</p>
             <p class="chapeau">${fr(n.texte)}</p>
+            ${n.invite ? `<p class="niveau-invite">${fr(n.invite)}</p>` : ""}
             <p class="compte">${pluriel(ss.length, "série", "séries")}, ${pluriel(nbEtudes(ss), "étude", "études")}</p>
           </div>
           ${image(n.image, "niveau-image", true)}

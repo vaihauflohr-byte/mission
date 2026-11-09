@@ -5,14 +5,16 @@ window.BIBLIO = {
    "id": "connaitre",
    "verbe": "Connaître",
    "titre": "Pour connaître Jésus",
-   "texte": "Pour découvrir la Bible et Jésus. Convient à un invité.",
+   "texte": "Pour découvrir la Bible et Jésus.",
+   "invite": "Convient à des invités.",
    "image": "niveau-connaitre"
   },
   {
    "id": "grandir",
    "verbe": "Grandir",
    "titre": "Pour grandir en Jésus",
-   "texte": "Pour approfondir la foi : la vie avec Jésus, le sanctuaire, les prophéties. Convient aussi à un invité.",
+   "texte": "Pour approfondir la foi : la vie avec Jésus, le sanctuaire, les prophéties.",
+   "invite": "Convient aussi à des invités.",
    "image": "niveau-grandir"
   },
   {
