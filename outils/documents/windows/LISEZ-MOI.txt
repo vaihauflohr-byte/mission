@@ -1,0 +1,17 @@
+﻿Mission — documents en PDF avec Word et PowerPoint
+=================================================
+
+Pourquoi : les PDF du site avaient été faits avec LibreOffice, qui ne respecte pas
+exactement la mise en page de Word et de PowerPoint (polices, retours à la ligne, images).
+Ce script les refait avec Word, PowerPoint et Excel de ce PC : la mise en page est
+celle des fichiers d'origine.
+
+Comment :
+1. Vérifiez que Google Drive est ouvert sur le PC (lecteur G:).
+2. Fermez Word, PowerPoint et Excel.
+3. Double-cliquez sur « convertir.bat ».
+4. Laissez tourner (les 24 présentations sont longues) : la fenêtre affiche l'avancement.
+   On peut l'arrêter et la relancer : elle reprend où elle en était.
+
+Les 148 PDF arrivent dans le dossier « pdf ». Les fichiers d'origine ne sont pas modifiés.
+Le détail est dans « journal.txt ».

@@ -25,7 +25,9 @@ L’import a été fait une fois par une tâche GitHub (`outils/documents/import
 - les modifications suivies des fichiers Word sont acceptées, les feuilles techniques du tableau Excel (« Formules », « Présentation ») ne sont pas imprimées ;
 - les PowerPoint d’origine (1,3 Go, trop lourds pour le site) sont dans la publication GitHub **powerpoint** du dépôt ; le tableau Excel d’origine est à côté de son PDF.
 
-`outils/documents/resultat.json` garde, pour chaque document, son poids, son nombre de pages et les polices du PDF.
+LibreOffice ne rend pas exactement comme Word et PowerPoint (retours à la ligne, polices, place des images). Pour respecter les originaux, les 148 documents Word, PowerPoint et Excel sont réexportés avec Microsoft Office : `outils/documents/windows/convertir.bat` (à lancer sur un PC Windows qui a Office et Google Drive ; il lit `Mon Drive\Eglise\Etude petit groupe`, n’y modifie rien et écrit les PDF dans son dossier `pdf`), puis `python3 outils/documents/office.py <dossier pdf>` les met en place (titre français, poids réduit au-delà de 15 Mo) et `outils/generer_bibliotheque.py` met à jour le catalogue.
+
+`outils/documents/resultat.json` garde, pour chaque document, son poids, son nombre de pages et, pour les conversions, l’outil qui a fait le PDF.
 `outils/documents/corriger.py` corrige ensuite les quelques mots restés en anglais dans les PDF (références bibliques de « Sept ingrédients pour le bonheur ») ; on peut le relancer sans risque.
 
 Laissés hors du site : les fiches « Source chinoise » (doublons), les documents propres au programme de Hong Kong (PolyU), les dossiers en anglais, et deux livres publiés (*Se préparer à un mariage heureux*, *Le sanctuaire expliqué simplement*).
