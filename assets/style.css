@@ -473,6 +473,69 @@ a.etude-titre:hover { text-decoration: underline; }
 .resultat-ou a { color: inherit; }
 .vide { margin: 1.5rem 0 0; padding: 1rem 1.1rem; background: var(--recif-pale); border-radius: 14px; }
 
+/* ---------- Images des études ---------- */
+.cep-image {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-top: 1rem;
+  border-radius: 14px;
+  background: #2A5551;
+}
+.page-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin: 1.1rem 0 0.4rem;
+  border-radius: 16px;
+  background: var(--recif-pale);
+}
+.serie-lien.avec-image {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  column-gap: 0.9rem;
+  align-items: start;
+}
+.serie-corps { display: block; }
+.serie-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--recif-pale);
+}
+.etude.avec-image { grid-template-columns: 5.25rem 1fr; column-gap: 0.85rem; }
+.etude-vignette { position: relative; display: block; align-self: start; }
+.etude-vignette img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--recif-pale);
+}
+.etude-vignette .etude-num {
+  position: absolute;
+  left: 0.3rem;
+  top: 0.3rem;
+  min-width: 1.6rem;
+  padding: 0 0.35rem;
+  border-radius: 7px;
+  background: var(--lagon);
+  color: var(--blanc);
+  font-size: var(--t-0);
+  line-height: 1.5;
+  text-align: center;
+}
+
 /* ---------- Pied de page ---------- */
 .pied {
   margin-top: 2rem;
@@ -494,4 +557,6 @@ a.etude-titre:hover { text-decoration: underline; }
   .cep-picto { width: 4rem; height: 4rem; margin-top: 0.9rem; }
   .titre-page { font-size: var(--t-5); }
   .etude { grid-template-columns: 3rem 1fr; }
+  .etude.avec-image { grid-template-columns: 7.5rem 1fr; }
+  .serie-lien.avec-image { grid-template-columns: 9.5rem 1fr; column-gap: 1.25rem; }
 }

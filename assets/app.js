@@ -20,6 +20,12 @@
     `<svg class="${classe || ""}" viewBox="0 0 48 48" aria-hidden="true"><use href="#${PICTOS[id]}"/></svg>`;
   const chevron = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>';
   const loupe = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>';
+  // images des études (assets/images/<nom>.webp, 4:3) : décoratives, le titre est juste à côté
+  const image = (nom, classe, prioritaire) =>
+    nom
+      ? `<img class="${classe}" src="assets/images/${encodeURIComponent(nom)}.webp" alt="" width="800" height="600" ${
+          prioritaire ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`
+      : "";
 
   const seriesDe = (niveauId) => B.series.filter((s) => s.niveau === niveauId);
   const nbEtudes = (liste) => liste.reduce((t, s) => t + s.lecons.length, 0);
@@ -70,6 +76,9 @@
             avecFormat, `${d.libelle}, ${nomComplet}, ${d.format}`)).join("")}
         </div>`;
     }
+    if (l.image) {
+      return `<li class="etude avec-image"><span class="etude-vignette">${image(l.image, "")}${num}</span><div>${corps}</div></li>`;
+    }
     return `<li class="etude${l.num ? "" : " sans-num"}">${num}<div>${corps}</div></li>`;
   }
 
@@ -77,7 +86,7 @@
   function accueil() {
     document.title = "Mission — études bibliques pour les petits groupes";
     const niveauxHtml = B.niveaux
-      .map((n) => {
+      .map((n, rang) => {
         const ss = seriesDe(n.id);
         return `<li class="cep-niveau">
           <a class="cep-lien" href="#/niveau/${n.id}">
@@ -86,6 +95,7 @@
               <span class="cep-verbe">${esc(n.verbe)}</span>
               <span class="cep-texte">${fr(n.texte)}</span>
               <span class="cep-compte">${pluriel(ss.length, "série", "séries")}, ${pluriel(nbEtudes(ss), "étude", "études")}</span>
+              ${image(n.image, "cep-image", rang === 0)}
             </span>
           </a>
         </li>`;
@@ -133,13 +143,17 @@
         <h1 class="titre-page titre-niveau" tabindex="-1">${picto(id)}${esc(n.verbe)}</h1>
         <p class="chapeau"><strong>${fr(n.titre)}.</strong> ${fr(n.texte)}</p>
         <p class="compte">${pluriel(ss.length, "série", "séries")}, ${pluriel(nbEtudes(ss), "étude", "études")}</p>
+        ${image(n.image, "page-image", true)}
         <ul class="series">
           ${ss
             .map(
-              (s) => `<li><a class="serie-lien" href="#/serie/${s.id}">
-                <span class="serie-titre">${fr(s.titre)}</span>
-                <span class="serie-texte">${fr(s.texte)}</span>
-                <span class="serie-compte">${compteSerie(s)}</span>
+              (s) => `<li><a class="serie-lien${s.image ? " avec-image" : ""}" href="#/serie/${s.id}">
+                ${image(s.image, "serie-image")}
+                <span class="serie-corps">
+                  <span class="serie-titre">${fr(s.titre)}</span>
+                  <span class="serie-texte">${fr(s.texte)}</span>
+                  <span class="serie-compte">${compteSerie(s)}</span>
+                </span>
               </a></li>`
             )
             .join("")}
@@ -193,6 +207,7 @@
         <h1 class="titre-page" tabindex="-1">${fr(s.titre)}</h1>
         <p class="chapeau">${fr(s.texte)}</p>
         <p class="compte">${compteSerie(s)}</p>
+        ${image(s.image, "page-image", true)}
         ${ressources}
         ${s.lecons.length ? `${s.lecons.length > 1 ? `<h2 class="etudes-titre">Les études</h2>${legende}` : ""}${html}` : ""}
       </div>`;

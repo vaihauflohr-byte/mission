@@ -281,7 +281,24 @@ def main(chemin):
             "lecons": liste, "ressources": ressources,
         })
 
-    donnees = {"niveaux": NIVEAUX, "series": series}
+    # images (assets/images/<id>.webp) : étape, série, étude
+    dossier_img = Path(__file__).resolve().parent.parent / "assets" / "images"
+    def image(nom):
+        return nom if (dossier_img / f"{nom}.webp").exists() else None
+    niveaux = [dict(n) for n in NIVEAUX]
+    for n in niveaux:
+        if image(f"niveau-{n['id']}"):
+            n["image"] = f"niveau-{n['id']}"
+    for se in series:
+        if image(f"serie-{se['id']}"):
+            se["image"] = f"serie-{se['id']}"
+        if len(se["lecons"]) > 1:
+            for i, le in enumerate(se["lecons"], 1):
+                nom = f"{se['id']}-{le['num'] or i}"
+                if image(nom):
+                    le["image"] = nom
+
+    donnees = {"niveaux": niveaux, "series": series}
     sortie = Path(__file__).resolve().parent.parent / "donnees" / "bibliotheque.js"
     sortie.parent.mkdir(exist_ok=True)
     texte_js = ("/* Généré par outils/generer_bibliotheque.py à partir du Drive — ne pas modifier à la main. */\n"
