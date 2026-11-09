@@ -158,6 +158,30 @@ TITRES = {
     "Les secrets de l’espérance - Les sept Églises": "Les secrets de l’espérance : les sept Églises",
 }
 
+# Études refaites sur la mise en page de l’original anglais (source « refonte » dans
+# outils/documents/resultat.json) : le titre affiché est celui de la nouvelle couverture.
+# Clé : chemin du document sur le site, qui ne change pas (liens déjà partagés).
+TITRES_REFAITS = {
+    "quete-certitude/02-notre-epoque-a-la-lumiere-des-propheties-bibliques": "Notre époque et la prophétie biblique",
+    "quete-certitude/03-un-monde-en-plein-bouleversement": "Un monde dans la tourmente",
+    "quete-certitude/07-un-dieu-bon-un-monde-mauvais-pourquoi": "Dieu bon, monde mauvais : pourquoi ?",
+    "quete-certitude/08-le-message-le-plus-passionnant-de-l-apocalypse": "Le message palpitant de l’Apocalypse",
+    "quete-certitude/09-la-prophetie-biblique-la-plus-longue-et-la-plus-etonnante": "La plus longue et la plus étonnante prophétie",
+    "quete-certitude/11-pourquoi-la-criminalite-la-violence-et-l-immoralite": "Crime, violence, immoralité : pourquoi ?",
+    "quete-certitude/13-la-constitution-du-ciel-modifiee": "Atteinte à la constitution du ciel",
+    "quete-certitude/14-cinq-moyens-de-reconnaitre-les-sectes-modernes": "Cinq signes pour reconnaître une secte",
+    "quete-certitude/15-notre-plus-grand-besoin-un-nouveau-mode-de-vie": "Notre plus grand besoin : un mode de vie nouveau",
+    "quete-certitude/17-l-amour-de-dieu-dans-les-feux-de-l-enfer": "L’amour de Dieu et le feu de l’enfer",
+    "quete-certitude/18-comment-enterrer-definitivement-le-passe": "Comment enterrer vraiment le passé",
+    "quete-certitude/20-grandir-dans-la-vie-chretienne": "Grandir comme chrétien",
+    "quete-certitude/22-prophetes-et-propheties-visions-et-reves": "Prophètes et prophétie, visions et songes",
+    "quete-certitude/23-le-mystere-de-la-babylone-spirituelle-devoile": "Le mystère de la Babylone spirituelle",
+    "quete-certitude/26-la-marque-de-la-bete-et-le-nombre-mysterieux-666": "La marque de la bête et le mystère du nombre 666",
+    "quete-certitude/28-harmaguedon-et-les-sept-derniers-fleaux": "Armageddon et les sept derniers fléaux",
+    "quete-certitude/29-l-apocalypse-annonce-mille-ans-de-tenebres-sur-le-monde": "L’Apocalypse annonce mille ans de ténèbres",
+    "quete-certitude/30-le-denouement-glorieux-de-l-apocalypse": "L’apothéose de l’Apocalypse",
+}
+
 FORMATS = {
     "application/pdf": "PDF",
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document": "Word",
@@ -401,6 +425,12 @@ def main(chemin):
     # documents : nom sur le site, liste pour l’import, lien vers le PDF importé
     DOSSIER_DOCS.mkdir(exist_ok=True)
     liste = chemins(series)
+    for se in series:
+        for le in se["lecons"]:
+            for d in le["docs"]:
+                le["titre"] = TITRES_REFAITS.get(d["_chemin"], le["titre"])
+    for e in liste:
+        e["titre"] = TITRES_REFAITS.get(e["chemin"], e["titre"])
     (DOSSIER_DOCS / "liste.json").write_text(json.dumps(liste, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     fichier_resultat = DOSSIER_DOCS / "resultat.json"
     if fichier_resultat.exists():

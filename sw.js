@@ -1,13 +1,13 @@
 /* Mission — fonctionnement hors ligne : la liste des études reste consultable sans réseau.
    Les documents (documents/*.pdf) passent directement par le réseau : ils sont lus par morceaux
    (requêtes partielles) et le bouton Télécharger permet de les garder sur l’appareil. */
-const CACHE = "mission-v7";
+const CACHE = "mission-v8";
 const COQUILLE = [
   "./",
   "index.html",
   "assets/style.css?v=6",
   "assets/app.js?v=6",
-  "donnees/bibliotheque.js?v=6",
+  "donnees/bibliotheque.js?v=7",
   "assets/fonts/alegreya-latin-500-normal.woff2",
   "assets/fonts/alegreya-latin-600-normal.woff2",
   "assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2",

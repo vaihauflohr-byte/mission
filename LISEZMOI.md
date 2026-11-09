@@ -15,7 +15,7 @@ Aucun serveur, aucune base de données : le site range la bibliothèque d’étu
 
 ## Les documents
 
-Ils sont dans `documents/<série>/<nom>.pdf` (333 fichiers, 370 Mo environ ; GitHub Pages accepte 1 Go).
+Ils sont dans `documents/<série>/<nom>.pdf` (333 fichiers, 380 Mo environ ; GitHub Pages accepte 1 Go).
 Ils viennent du dossier Drive **Eglise / Etude petit groupe** (compte vaihau.flohr@gmail.com) ; chaque série du site correspond à un dossier, listé dans `SERIES` en tête de `outils/generer_bibliotheque.py`.
 
 L’import a été fait une fois par une tâche GitHub (`outils/documents/importer.py`) :
@@ -29,6 +29,8 @@ LibreOffice ne rend pas exactement comme Word et PowerPoint (retours à la ligne
 
 `outils/documents/resultat.json` garde, pour chaque document, son poids, son nombre de pages et, pour les conversions, l’outil qui a fait le PDF.
 `outils/documents/corriger.py` corrige ensuite les quelques mots restés en anglais dans les PDF (références bibliques de « Sept ingrédients pour le bonheur ») ; on peut le relancer sans risque.
+
+Les 30 études de *En quête de certitude* sont refaites à partir des livrets anglais d’origine (It Is Written) : texte français posé sur les pages de l’original, avec sa mise en page et ses images (8 pages chacune). Elles ont la source `refonte` dans `resultat.json` : `importer.py` ne les remplace jamais par le fichier du Drive. Leur titre est celui de la nouvelle couverture (`TITRES_REFAITS` dans `outils/generer_bibliotheque.py`) ; le nom du fichier sur le site, lui, n’a pas changé. Les originaux anglais restent hors du dépôt.
 
 Laissés hors du site : les fiches « Source chinoise » (doublons), les documents propres au programme de Hong Kong (PolyU), les dossiers en anglais, et deux livres publiés (*Se préparer à un mariage heureux*, *Le sanctuaire expliqué simplement*).
 

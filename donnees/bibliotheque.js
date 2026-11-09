@@ -207,38 +207,38 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/01-comment-comprendre-la-bible",
-       "o": 85601,
-       "p": 5
+       "o": 516037,
+       "p": 8
       }
      ],
      "image": "quete-certitude-1"
     },
     {
      "num": "2",
-     "titre": "Notre époque à la lumière des prophéties bibliques",
+     "titre": "Notre époque et la prophétie biblique",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/02-notre-epoque-a-la-lumiere-des-propheties-bibliques",
-       "o": 84410,
-       "p": 5
+       "o": 601540,
+       "p": 8
       }
      ],
      "image": "quete-certitude-2"
     },
     {
      "num": "3",
-     "titre": "Un monde en plein bouleversement",
+     "titre": "Un monde dans la tourmente",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/03-un-monde-en-plein-bouleversement",
-       "o": 85632,
-       "p": 5
+       "o": 507674,
+       "p": 8
       }
      ],
      "image": "quete-certitude-3"
@@ -252,8 +252,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/04-comment-le-christ-reviendra",
-       "o": 83633,
-       "p": 4
+       "o": 504229,
+       "p": 8
       }
      ],
      "image": "quete-certitude-4"
@@ -267,8 +267,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/05-comment-trouver-la-paix-interieure",
-       "o": 84955,
-       "p": 4
+       "o": 530054,
+       "p": 8
       }
      ],
      "image": "quete-certitude-5"
@@ -282,53 +282,53 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/06-le-secret-d-une-vie-nouvelle",
-       "o": 82819,
-       "p": 4
+       "o": 502720,
+       "p": 8
       }
      ],
      "image": "quete-certitude-6"
     },
     {
      "num": "7",
-     "titre": "Un Dieu bon, un monde mauvais : pourquoi ?",
+     "titre": "Dieu bon, monde mauvais : pourquoi ?",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/07-un-dieu-bon-un-monde-mauvais-pourquoi",
-       "o": 83991,
-       "p": 4
+       "o": 511050,
+       "p": 8
       }
      ],
      "image": "quete-certitude-7"
     },
     {
      "num": "8",
-     "titre": "Le message le plus passionnant de l’Apocalypse",
+     "titre": "Le message palpitant de l’Apocalypse",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/08-le-message-le-plus-passionnant-de-l-apocalypse",
-       "o": 83813,
-       "p": 4
+       "o": 495078,
+       "p": 8
       }
      ],
      "image": "quete-certitude-8"
     },
     {
      "num": "9",
-     "titre": "La prophétie biblique la plus longue et la plus étonnante",
+     "titre": "La plus longue et la plus étonnante prophétie",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/09-la-prophetie-biblique-la-plus-longue-et-la-plus-etonnante",
-       "o": 84722,
-       "p": 5
+       "o": 569473,
+       "p": 8
       }
      ],
      "image": "quete-certitude-9"
@@ -342,23 +342,23 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/10-rendez-vous-avec-le-destin-le-jugement",
-       "o": 82977,
-       "p": 4
+       "o": 507749,
+       "p": 8
       }
      ],
      "image": "quete-certitude-10"
     },
     {
      "num": "11",
-     "titre": "Pourquoi la criminalité, la violence et l’immoralité augmentent-elles ?",
+     "titre": "Crime, violence, immoralité : pourquoi ?",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/11-pourquoi-la-criminalite-la-violence-et-l-immoralite",
-       "o": 84343,
-       "p": 4
+       "o": 521973,
+       "p": 8
       }
      ],
      "image": "quete-certitude-11"
@@ -372,53 +372,53 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/12-le-signe-particulier-du-christ",
-       "o": 82869,
-       "p": 4
+       "o": 522623,
+       "p": 8
       }
      ],
      "image": "quete-certitude-12"
     },
     {
      "num": "13",
-     "titre": "La constitution du ciel modifiée",
+     "titre": "Atteinte à la constitution du ciel",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/13-la-constitution-du-ciel-modifiee",
-       "o": 88352,
-       "p": 6
+       "o": 519186,
+       "p": 8
       }
      ],
      "image": "quete-certitude-13"
     },
     {
      "num": "14",
-     "titre": "Cinq moyens de reconnaître les sectes modernes",
+     "titre": "Cinq signes pour reconnaître une secte",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/14-cinq-moyens-de-reconnaitre-les-sectes-modernes",
-       "o": 83501,
-       "p": 4
+       "o": 530373,
+       "p": 8
       }
      ],
      "image": "quete-certitude-14"
     },
     {
      "num": "15",
-     "titre": "Notre plus grand besoin : un nouveau mode de vie",
+     "titre": "Notre plus grand besoin : un mode de vie nouveau",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/15-notre-plus-grand-besoin-un-nouveau-mode-de-vie",
-       "o": 83524,
-       "p": 4
+       "o": 530056,
+       "p": 8
       }
      ],
      "image": "quete-certitude-15"
@@ -432,38 +432,38 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/16-la-verite-sur-la-mort",
-       "o": 81877,
-       "p": 4
+       "o": 540723,
+       "p": 8
       }
      ],
      "image": "quete-certitude-16"
     },
     {
      "num": "17",
-     "titre": "L’amour de Dieu dans les feux de l’enfer",
+     "titre": "L’amour de Dieu et le feu de l’enfer",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/17-l-amour-de-dieu-dans-les-feux-de-l-enfer",
-       "o": 83594,
-       "p": 4
+       "o": 518966,
+       "p": 8
       }
      ],
      "image": "quete-certitude-17"
     },
     {
      "num": "18",
-     "titre": "Comment enterrer définitivement le passé",
+     "titre": "Comment enterrer vraiment le passé",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/18-comment-enterrer-definitivement-le-passe",
-       "o": 83296,
-       "p": 4
+       "o": 539470,
+       "p": 8
       }
      ],
      "image": "quete-certitude-18"
@@ -477,23 +477,23 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/19-un-secret-financier",
-       "o": 83132,
-       "p": 4
+       "o": 547762,
+       "p": 8
       }
      ],
      "image": "quete-certitude-19"
     },
     {
      "num": "20",
-     "titre": "Grandir dans la vie chrétienne",
+     "titre": "Grandir comme chrétien",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/20-grandir-dans-la-vie-chretienne",
-       "o": 82168,
-       "p": 4
+       "o": 523861,
+       "p": 8
       }
      ],
      "image": "quete-certitude-20"
@@ -507,38 +507,38 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/21-comment-reconnaitre-l-eglise-de-dieu",
-       "o": 83843,
-       "p": 4
+       "o": 511262,
+       "p": 8
       }
      ],
      "image": "quete-certitude-21"
     },
     {
      "num": "22",
-     "titre": "Prophètes et prophéties, visions et rêves",
+     "titre": "Prophètes et prophétie, visions et songes",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/22-prophetes-et-propheties-visions-et-reves",
-       "o": 83664,
-       "p": 4
+       "o": 508353,
+       "p": 8
       }
      ],
      "image": "quete-certitude-22"
     },
     {
      "num": "23",
-     "titre": "Le mystère de la Babylone spirituelle dévoilé",
+     "titre": "Le mystère de la Babylone spirituelle",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/23-le-mystere-de-la-babylone-spirituelle-devoile",
-       "o": 85539,
-       "p": 5
+       "o": 558235,
+       "p": 8
       }
      ],
      "image": "quete-certitude-23"
@@ -552,8 +552,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/24-le-saint-esprit-et-le-peche-impardonnable",
-       "o": 83206,
-       "p": 4
+       "o": 513795,
+       "p": 8
       }
      ],
      "image": "quete-certitude-24"
@@ -567,23 +567,23 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/25-de-la-deception-au-triomphe",
-       "o": 86804,
-       "p": 5
+       "o": 520559,
+       "p": 8
       }
      ],
      "image": "quete-certitude-25"
     },
     {
      "num": "26",
-     "titre": "La marque de la bête et le nombre mystérieux 666",
+     "titre": "La marque de la bête et le mystère du nombre 666",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/26-la-marque-de-la-bete-et-le-nombre-mysterieux-666",
-       "o": 85548,
-       "p": 5
+       "o": 544989,
+       "p": 8
       }
      ],
      "image": "quete-certitude-26"
@@ -597,53 +597,53 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/27-les-etats-unis-dans-la-prophetie",
-       "o": 84579,
-       "p": 4
+       "o": 511284,
+       "p": 8
       }
      ],
      "image": "quete-certitude-27"
     },
     {
      "num": "28",
-     "titre": "Harmaguédon et les sept derniers fléaux",
+     "titre": "Armageddon et les sept derniers fléaux",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/28-harmaguedon-et-les-sept-derniers-fleaux",
-       "o": 83072,
-       "p": 4
+       "o": 607897,
+       "p": 8
       }
      ],
      "image": "quete-certitude-28"
     },
     {
      "num": "29",
-     "titre": "L’Apocalypse annonce mille ans de ténèbres sur le monde",
+     "titre": "L’Apocalypse annonce mille ans de ténèbres",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/29-l-apocalypse-annonce-mille-ans-de-tenebres-sur-le-monde",
-       "o": 84038,
-       "p": 4
+       "o": 561530,
+       "p": 8
       }
      ],
      "image": "quete-certitude-29"
     },
     {
      "num": "30",
-     "titre": "Le dénouement glorieux de l’Apocalypse",
+     "titre": "L’apothéose de l’Apocalypse",
      "docs": [
       {
        "format": "PDF",
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/30-le-denouement-glorieux-de-l-apocalypse",
-       "o": 83840,
-       "p": 4
+       "o": 510416,
+       "p": 8
       }
      ],
      "image": "quete-certitude-30"

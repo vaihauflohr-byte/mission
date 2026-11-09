@@ -243,6 +243,11 @@ def main():
     ap.add_argument("--seulement", nargs="*", help="chemins à traiter (par défaut : tous)")
     args = ap.parse_args()
     liste = json.load(open(ICI / "liste.json", encoding="utf-8"))
+    fichier = Path(os.environ.get("RESULTAT", ICI / "resultat.json"))
+    anciens = json.load(open(fichier, encoding="utf-8")) if fichier.exists() else {}
+    # études refaites sur la mise en page de l’original anglais : jamais remplacées par le Drive
+    refaits = {k: r for k, r in anciens.items() if not k.startswith("_") and r.get("source") == "refonte"}
+    liste = [e for e in liste if e["chemin"] not in refaits]
     if args.seulement:
         liste = [e for e in liste if e["chemin"] in args.seulement]
     # les gros fichiers d’abord, pour finir plus tôt
@@ -253,8 +258,7 @@ def main():
         p = TRAVAIL / f"profil-libreoffice-{i}"
         p.mkdir(parents=True, exist_ok=True)
         profils.put(p)
-    fichier = Path(os.environ.get("RESULTAT", ICI / "resultat.json"))
-    resultats = json.load(open(fichier, encoding="utf-8")) if args.seulement and fichier.exists() else {}
+    resultats = anciens if args.seulement else dict(refaits)
     erreurs = {}
 
     def tache(entree):
