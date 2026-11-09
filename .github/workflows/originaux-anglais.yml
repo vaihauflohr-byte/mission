@@ -1,0 +1,68 @@
+# Tâche temporaire (branche originaux-anglais) : récupère les originaux anglais des études pour les comparer
+# aux traductions du site. Le résultat est chiffré avec la clé publique outils/originaux/cle-publique.pem
+# (seul le détenteur de la clé privée peut le lire), puis déposé dans la publication temporaire
+# « originaux-anglais ». Branche et publication sont supprimées après usage.
+name: Originaux anglais (comparaison)
+on:
+  push:
+    branches: [originaux-anglais]
+permissions:
+  contents: write
+concurrency:
+  group: originaux-anglais
+  cancel-in-progress: true
+jobs:
+  originaux:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clé de chiffrement et publication temporaire
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          openssl rand -hex 32 > /tmp/k.txt
+          openssl pkeyutl -encrypt -pubin -inkey outils/originaux/cle-publique.pem \
+            -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256 -in /tmp/k.txt -out /tmp/cle.enc
+          if ! gh release view originaux-anglais > /dev/null 2>&1; then
+            gh release create originaux-anglais --target originaux-anglais --prerelease --latest=false \
+              --title "Temporaire" --notes "Fichiers chiffrés pour une comparaison ; supprimés après usage."
+          fi
+          gh release upload originaux-anglais /tmp/cle.enc --clobber
+      - name: LibreOffice, Ghostscript et polices
+        run: |
+          echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
+          sudo apt-get update -q
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q --no-install-recommends \
+            libreoffice-core libreoffice-writer libreoffice-impress libreoffice-calc \
+            ghostscript poppler-utils fonts-opensymbol fonts-dejavu fonts-liberation fonts-liberation2 \
+            fonts-crosextra-carlito fonts-crosextra-caladea fonts-urw-base35 fonts-texgyre fonts-ebgaramond \
+            fonts-adf-gillius fonts-roboto-slab fonts-noto-core fonts-noto-cjk fonts-wine
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q ttf-mscorefonts-installer \
+            || echo "Polices Microsoft indisponibles : les équivalents Liberation sont utilisés."
+          sudo mkdir -p /usr/local/share/fonts/tahoma
+          sudo cp /usr/share/wine/fonts/tahoma*.ttf /usr/local/share/fonts/tahoma/
+          sudo cp outils/documents/polices.conf /etc/fonts/local.conf
+          sudo fc-cache -f > /dev/null
+          soffice --version
+      - name: Téléchargement et conversion
+        env:
+          TRAVAILLEURS: "4"
+          SORTIE: /tmp/sortie
+        run: python3 outils/originaux/telecharger.py 2>&1 | tee /tmp/journal.txt
+      - name: Archive chiffrée
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tar -C /tmp/sortie -cf /tmp/originaux.tar .
+          ls -la /tmp/originaux.tar
+          openssl enc -aes-256-cbc -pbkdf2 -salt -in /tmp/originaux.tar -out /tmp/originaux.tar.enc -pass file:/tmp/k.txt
+          gh release upload originaux-anglais /tmp/originaux.tar.enc --clobber
+      - name: Journal chiffré
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          touch /tmp/journal.txt
+          openssl enc -aes-256-cbc -pbkdf2 -salt -in /tmp/journal.txt -out /tmp/journal.enc -pass file:/tmp/k.txt
+          gh release upload originaux-anglais /tmp/journal.enc --clobber
