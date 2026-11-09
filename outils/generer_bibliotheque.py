@@ -193,6 +193,93 @@ def sans_accents(s):
     return "".join(c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn").lower()
 
 
+def slug(s, longueur=60):
+    s = sans_accents(s).replace("œ", "oe").replace("æ", "ae")
+    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    if len(s) > longueur:
+        s = s[:longueur].rsplit("-", 1)[0]
+    return s
+
+
+# suffixe du fichier PDF quand une étude a plusieurs documents
+SUFFIXES = {
+    "Fiche du participant": "participant",
+    "Guide de l’animateur": "animateur",
+    "Avec les réponses": "reponses",
+    "Avec les réponses (version 2)": "reponses-2",
+    "Notes de présentation": "notes",
+    "Présentation": "presentation",
+    "Étude": "etude",
+    "1re partie": "partie-1",
+    "2e partie": "partie-2",
+}
+
+DOSSIER_DOCS = Path(__file__).resolve().parent / "documents"
+DEPOT = "vaihauflohr-byte/mission"
+VERSION_ORIGINAUX = "powerpoint"  # publication GitHub qui garde les PowerPoint d’origine
+
+
+def chemins(series):
+    """Nom de fichier de chaque document sur le site : documents/<série>/<nom>.pdf.
+
+    Renvoie la liste des documents à importer (outils/documents/liste.json)."""
+    liste, pris = [], set()
+
+    def unique(chemin):
+        base, n = chemin, 2
+        while chemin in pris:
+            chemin = f"{base}-{n}"
+            n += 1
+        pris.add(chemin)
+        return chemin
+
+    for se in series:
+        for i, le in enumerate(se["lecons"], 1):
+            num = le["num"] if se["id"] != "daniel" else None
+            tete = f"{int(num):02d}" if num and num.isdigit() else (num.lower() if num else f"{i:02d}")
+            for d in le["docs"]:
+                nom = f"{tete}-{slug(le['titre'])}"
+                if len(le["docs"]) > 1:
+                    nom += "-" + SUFFIXES.get(d["libelle"], slug(d["libelle"]))
+                d["_chemin"] = unique(f"{se['id']}/{nom}")
+                titre = le["titre"] if len(le["docs"]) == 1 else f"{le['titre']} — {d['libelle']}"
+                liste.append((d, titre, se))
+        for d in se["ressources"]:
+            d["_chemin"] = unique(f"{se['id']}/{slug(d['titre'])}")
+            liste.append((d, d["titre"], se))
+    sortie = []
+    for d, titre, se in liste:
+        e = {"id": d["id"], "source": d["format"], "chemin": d["_chemin"], "titre": titre,
+             "sujet": f"{se['titre']} — Mission, études bibliques pour les petits groupes"}
+        if d["format"] == "PowerPoint":
+            e["original"] = d["_chemin"].replace("/", "-") + ".pptx"
+        elif d["format"] == "Excel":
+            e["original"] = d["_chemin"] + ".xlsx"
+        sortie.append(e)
+    return sortie
+
+
+def relier_documents(series, resultat):
+    """Remplace le lien Drive par le PDF importé sur le site (outils/documents/resultat.json)."""
+    manquants = []
+    for se in series:
+        for d in [d for le in se["lecons"] for d in le["docs"]] + se["ressources"]:
+            r = resultat.get(d["_chemin"])
+            if not r:
+                manquants.append(d["_chemin"])
+                continue
+            d["f"] = d["_chemin"]
+            d["o"] = r["octets"]
+            d["p"] = r["pages"]
+            if r.get("original"):
+                o = r["original"]
+                url = (f"https://github.com/{DEPOT}/releases/download/{VERSION_ORIGINAUX}/{o['nom']}"
+                       if d["format"] == "PowerPoint" else f"documents/{o['nom']}")
+                d["original"] = {"url": url, "o": o["octets"]}
+            del d["id"]
+    return manquants
+
+
 def main(chemin):
     fichiers = json.load(open(chemin, encoding="utf-8"))
     enfants = defaultdict(list)
@@ -299,6 +386,19 @@ def main(chemin):
                 nom = f"{se['id']}-{le['num'] or i}"
                 if image(nom):
                     le["image"] = nom
+
+    # documents : nom sur le site, liste pour l’import, lien vers le PDF importé
+    DOSSIER_DOCS.mkdir(exist_ok=True)
+    liste = chemins(series)
+    (DOSSIER_DOCS / "liste.json").write_text(json.dumps(liste, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    fichier_resultat = DOSSIER_DOCS / "resultat.json"
+    if fichier_resultat.exists():
+        manquants = relier_documents(series, json.load(open(fichier_resultat, encoding="utf-8")))
+        for m in manquants:
+            print("!! document non importé :", m, file=sys.stderr)
+    for se in series:
+        for d in [d for le in se["lecons"] for d in le["docs"]] + se["ressources"]:
+            d.pop("_chemin", None)
 
     donnees = {"niveaux": niveaux, "series": series}
     sortie = Path(__file__).resolve().parent.parent / "donnees" / "bibliotheque.js"
