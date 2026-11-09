@@ -28,12 +28,21 @@ Après l’ajout ou le changement d’un fichier dans le Drive :
 
 Une nouvelle série = une ligne dans `SERIES` (niveau, identifiant, dossier Drive, titre, présentation) et, si besoin, un partage par lien du dossier.
 
+## Images
+
+Une image par étape, par série et par étude (243 au total), dans `assets/images/<id>.webp` (800 × 600 au plus).
+Elles ont été générées avec fal.ai (modèle FLUX dev) à partir des scènes décrites dans `outils/images/scenes.py`
+(`outils/images/prompts.json`), avec `outils/images/generer_images.py` (clé fal dans `~/.fal_key`, jamais dans le dépôt).
+Le catalogue relie chaque étude à son image : `<série>-<numéro>` (ou `<série>-<position>` pour Daniel), `serie-<série>`, `niveau-<étape>`.
+Une image qui manque est simplement masquée.
+
 ## Fichiers
 
 | Fichier | Rôle |
 |---|---|
 | `index.html` | page unique (navigation par `#/niveau/…`, `#/serie/…`, `#/chercher/…`) |
 | `assets/app.js` | affichage, recherche, navigation |
+| `assets/images/` | images des étapes, séries et études |
 | `assets/style.css` | mise en page ; polices Alegreya (titres) et Atkinson Hyperlegible (texte, très lisible) |
 | `donnees/bibliotheque.js` | catalogue généré : étapes, séries, études, identifiants Drive |
 | `sw.js`, `manifest.webmanifest`, `assets/icones/` | appli installable et hors ligne |
