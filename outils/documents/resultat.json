@@ -1450,8 +1450,9 @@
  "quete-certitude/g-sept-ingredients-pour-le-bonheur": {
   "source": "PDF",
   "pages": 4,
-  "octets": 299443,
-  "secondes": 1.3
+  "octets": 513193,
+  "secondes": 1.3,
+  "corrections": 4
  },
  "rencontre-avec-jesus/01-le-lepreux-animateur": {
   "source": "Word",

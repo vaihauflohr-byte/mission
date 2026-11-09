@@ -1,20 +1,31 @@
 # Mission — études bibliques pour les petits groupes
 
 Site statique (GitHub Pages) publié sur **https://mission.ka-ilei.com**.
-Aucun serveur, aucune base de données : le site range la bibliothèque d’études et ouvre chaque document dans Google Drive.
+Aucun serveur, aucune base de données : le site range la bibliothèque d’études et affiche chaque document lui-même, en PDF, sans passer par Google Drive.
 
 ## Ce que fait le site
 
-- **Accueil** : les trois étapes, *Connaître*, *Grandir*, *Mûrir* (dossiers « 1 - Pour connaitre Jesus », « 2 - Pour grandir en Jésus », « 3 - Mûrir en Jésus » du Drive).
-- **Étape** : la liste de ses séries, avec une phrase de présentation et le nombre d’études.
-- **Série** : les études dans l’ordre. Un bouton par document : *Participant* (fiche du participant), *Animateur* (guide de l’animateur), *Avec les réponses*, *Notes de présentation*. Les plans du cours, brochures et révisions sont dans « Pour bien commencer ».
+- **Accueil** : les trois étapes, *Connaître*, *Grandir*, *Mûrir* (dossiers « 1 - Pour connaitre Jesus », « 2 - Pour grandir en Jésus », « 3 - Mûrir en Jésus » du Drive), la recherche et le mode d’emploi.
+- **Étape** : ses séries, avec une image, une phrase de présentation et le nombre d’études.
+- **Série** : les études dans l’ordre. Un bouton par document : *Participant* (fiche du participant), *Animateur* (guide de l’animateur), *Avec les réponses*, *Notes de présentation* ; *Ouvrir* ou *Voir* quand il n’y en a qu’un. Les plans du cours, brochures et révisions sont dans « Pour bien commencer ».
+- **Lecteur** (`#/lire/<série>/<document>`) : le document s’affiche dans le site (PDF.js), page après page, à la largeur de l’écran. On zoome en pinçant (téléphone), avec Ctrl + molette ou les boutons − / + (ordinateur). *Télécharger* donne le PDF ; pour les présentations, le menu propose aussi le PowerPoint d’origine, avec les animations, et *Projeter* les montre en plein écran, une diapositive à la fois (flèches ou clic pour avancer).
 - **Chercher** : par mot, sans tenir compte des accents (`bapteme` trouve « baptême »).
-- **Appli** : le site s’installe sur l’écran d’accueil du téléphone ; la liste des études reste consultable sans réseau (les documents, eux, demandent une connexion).
+- **Appli** : le site s’installe sur l’écran d’accueil du téléphone ; la liste des études reste consultable sans réseau. Les documents, eux, demandent une connexion (ou se téléchargent).
 
-## D’où viennent les documents
+## Les documents
 
-Dossier Drive **Eglise / Etude petit groupe** (compte vaihau.flohr@gmail.com). Chaque série du site correspond à un dossier, listé dans `SERIES` en tête de `outils/generer_bibliotheque.py`.
-Les dossiers des séries sont partagés « Tous les utilisateurs disposant du lien : lecteur », sinon les visiteurs ne peuvent pas ouvrir les documents.
+Ils sont dans `documents/<série>/<nom>.pdf` (333 fichiers, 370 Mo environ ; GitHub Pages accepte 1 Go).
+Ils viennent du dossier Drive **Eglise / Etude petit groupe** (compte vaihau.flohr@gmail.com) ; chaque série du site correspond à un dossier, listé dans `SERIES` en tête de `outils/generer_bibliotheque.py`.
+
+L’import a été fait une fois par une tâche GitHub (`outils/documents/importer.py`) :
+
+- les PDF sont repris tels quels, avec le titre français dans leurs propriétés ;
+- les Word, PowerPoint et Excel sont convertis en PDF avec LibreOffice. Les polices d’origine ne sont pas libres : `outils/documents/polices.conf` leur donne des équivalents (Century Gothic → URW Gothic, de mêmes dimensions ; Garamond → EB Garamond ; Gill Sans → Gillius ; Tahoma → la Tahoma de Wine). Les images des présentations sont réduites pour l’écran (30 à 86 Mo par présentation au départ, 4 à 14 Mo en PDF) ;
+- les modifications suivies des fichiers Word sont acceptées, les feuilles techniques du tableau Excel (« Formules », « Présentation ») ne sont pas imprimées ;
+- les PowerPoint d’origine (1,3 Go, trop lourds pour le site) sont dans la publication GitHub **powerpoint** du dépôt ; le tableau Excel d’origine est à côté de son PDF.
+
+`outils/documents/resultat.json` garde, pour chaque document, son poids, son nombre de pages et les polices du PDF.
+`outils/documents/corriger.py` corrige ensuite les quelques mots restés en anglais dans les PDF (références bibliques de « Sept ingrédients pour le bonheur ») ; on peut le relancer sans risque.
 
 Laissés hors du site : les fiches « Source chinoise » (doublons), les documents propres au programme de Hong Kong (PolyU), les dossiers en anglais, et deux livres publiés (*Se préparer à un mariage heureux*, *Le sanctuaire expliqué simplement*).
 
@@ -23,10 +34,11 @@ Laissés hors du site : les fiches « Source chinoise » (doublons), les documen
 Après l’ajout ou le changement d’un fichier dans le Drive :
 
 1. Exporter l’inventaire du dossier Drive en JSON (`{id: {id, title, mimeType, parentId}}`).
-2. `python3 outils/generer_bibliotheque.py inventaire.json` : réécrit `donnees/bibliotheque.js`.
-3. Augmenter le numéro de version (`?v=`) dans `index.html` et la constante `CACHE` de `sw.js`, puis publier.
+2. `python3 outils/generer_bibliotheque.py inventaire.json` : réécrit `donnees/bibliotheque.js` et la liste des documents à importer (`outils/documents/liste.json`).
+3. Réimporter les documents : remettre la tâche `.github/workflows/importer-documents.yml` (elle est dans l’historique du dépôt, commit « Documents en PDF sur le site ») ; elle télécharge les fichiers du Drive (les dossiers doivent alors être partagés par lien), les convertit et pousse le résultat dans la branche `documents-import`. Relire, verser dans `main`, lancer `outils/documents/corriger.py`, relancer le générateur, retirer la tâche.
+4. Augmenter le numéro de version (`?v=`) dans `index.html` et la constante `CACHE` de `sw.js`, puis publier.
 
-Une nouvelle série = une ligne dans `SERIES` (niveau, identifiant, dossier Drive, titre, présentation) et, si besoin, un partage par lien du dossier.
+Une nouvelle série = une ligne dans `SERIES` (niveau, identifiant, dossier Drive, titre, présentation).
 
 ## Images
 
@@ -40,13 +52,16 @@ Une image qui manque est simplement masquée.
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | page unique (navigation par `#/niveau/…`, `#/serie/…`, `#/chercher/…`) |
-| `assets/app.js` | affichage, recherche, navigation |
-| `assets/images/` | images des étapes, séries et études |
+| `index.html` | page unique (navigation par `#/niveau/…`, `#/serie/…`, `#/lire/…`, `#/chercher/…`) |
+| `assets/app.js` | affichage, recherche, navigation, lecteur de documents |
 | `assets/style.css` | mise en page ; polices Alegreya (titres) et Atkinson Hyperlegible (texte, très lisible) |
-| `donnees/bibliotheque.js` | catalogue généré : étapes, séries, études, identifiants Drive |
+| `assets/images/` | images des étapes, séries et études |
+| `documents/` | les documents en PDF (et le tableau Excel d’origine) |
+| `lecteur/` | PDF.js 6.5.438 (Mozilla, licence Apache 2.0), chargé à la première ouverture d’un document |
+| `donnees/bibliotheque.js` | catalogue généré : étapes, séries, études, documents |
+| `outils/` | générateur du catalogue, import et corrections des documents, images |
 | `sw.js`, `manifest.webmanifest`, `assets/icones/` | appli installable et hors ligne |
-| `CNAME` | domaine `mission.ka-ilei.com` |
+| `CNAME`, `.nojekyll` | domaine `mission.ka-ilei.com` ; fichiers publiés tels quels |
 
 ## Domaine
 

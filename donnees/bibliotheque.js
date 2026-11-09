@@ -35,10 +35,12 @@ window.BIBLIO = {
      "titre": "Fiabilité de la Bible",
      "docs": [
       {
-       "id": "10A3-fMkSYWE7Tz61rTty_oSOnTqOdxLR",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "fiabilite-bible/01-fiabilite-de-la-bible",
+       "o": 2204951,
+       "p": 57
       }
      ]
     }
@@ -57,10 +59,12 @@ window.BIBLIO = {
      "titre": "Une nouvelle relation avec Jésus",
      "docs": [
       {
-       "id": "1_ZG-7G5kx-MLD2M8eYQiS17OzFUV8fV0",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "prendre-vie/01-une-nouvelle-relation-avec-jesus",
+       "o": 1471112,
+       "p": 5
       }
      ],
      "image": "prendre-vie-1"
@@ -70,10 +74,12 @@ window.BIBLIO = {
      "titre": "La tentation",
      "docs": [
       {
-       "id": "1UY0r8vDf9L64GYfuS6LlsjbcTA7QL5Lc",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "prendre-vie/02-la-tentation",
+       "o": 1470383,
+       "p": 5
       }
      ],
      "image": "prendre-vie-2"
@@ -83,10 +89,12 @@ window.BIBLIO = {
      "titre": "L’étude de la Bible",
      "docs": [
       {
-       "id": "1b3YtpqDwjQcqNVqtuVSCfNVMb8Jdv_0a",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "prendre-vie/03-l-etude-de-la-bible",
+       "o": 1500422,
+       "p": 5
       }
      ],
      "image": "prendre-vie-3"
@@ -96,10 +104,12 @@ window.BIBLIO = {
      "titre": "La prière",
      "docs": [
       {
-       "id": "1Ci9GelVJ7C6AzISQ8nPkDwpEhdNn4Gsd",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "prendre-vie/04-la-priere",
+       "o": 1400592,
+       "p": 5
       }
      ],
      "image": "prendre-vie-4"
@@ -109,10 +119,12 @@ window.BIBLIO = {
      "titre": "L’obéissance",
      "docs": [
       {
-       "id": "1KXi9HMKFsB-Yn0wjS4DaRn3zs6lYlXrT",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "prendre-vie/05-l-obeissance",
+       "o": 1755365,
+       "p": 6
       }
      ],
      "image": "prendre-vie-5"
@@ -122,10 +134,12 @@ window.BIBLIO = {
      "titre": "Les fruits de la vie chrétienne",
      "docs": [
       {
-       "id": "1UeK_rD2140bJT74AmCydysi4lJyHimi8",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "prendre-vie/06-les-fruits-de-la-vie-chretienne",
+       "o": 1685309,
+       "p": 5
       }
      ],
      "image": "prendre-vie-6"
@@ -135,10 +149,12 @@ window.BIBLIO = {
      "titre": "La communion fraternelle",
      "docs": [
       {
-       "id": "1jYPi5y17M5W9cHO193CEOgUlKiy8X8C4",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "prendre-vie/07-la-communion-fraternelle",
+       "o": 1672338,
+       "p": 5
       }
      ],
      "image": "prendre-vie-7"
@@ -158,10 +174,12 @@ window.BIBLIO = {
      "titre": "Vers Jésus : fiches d’étude",
      "docs": [
       {
-       "id": "13wk2mBVPPSlDYi1Pkhf6Gs8nMTFLuTRe",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vers-jesus/01-vers-jesus-fiches-d-etude",
+       "o": 516093,
+       "p": 18
       }
      ]
     }
@@ -180,10 +198,12 @@ window.BIBLIO = {
      "titre": "Comment comprendre la Bible",
      "docs": [
       {
-       "id": "14r25wkPHkaieVXmpQL41t-fQgCjY6wXN",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/01-comment-comprendre-la-bible",
+       "o": 85601,
+       "p": 5
       }
      ],
      "image": "quete-certitude-1"
@@ -193,10 +213,12 @@ window.BIBLIO = {
      "titre": "Notre époque à la lumière des prophéties bibliques",
      "docs": [
       {
-       "id": "1fHQTRGa7qsjD5muDh6uHfCjdBHLJ-bjR",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/02-notre-epoque-a-la-lumiere-des-propheties-bibliques",
+       "o": 84410,
+       "p": 5
       }
      ],
      "image": "quete-certitude-2"
@@ -206,10 +228,12 @@ window.BIBLIO = {
      "titre": "Un monde en plein bouleversement",
      "docs": [
       {
-       "id": "1k9L9XiRQYz_S04t1e58WGrU2IAYye5NS",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/03-un-monde-en-plein-bouleversement",
+       "o": 85632,
+       "p": 5
       }
      ],
      "image": "quete-certitude-3"
@@ -219,10 +243,12 @@ window.BIBLIO = {
      "titre": "Comment le Christ reviendra",
      "docs": [
       {
-       "id": "1VUZWck1DqRy0_Umx3jc0BU6nx6IAua0N",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/04-comment-le-christ-reviendra",
+       "o": 83633,
+       "p": 4
       }
      ],
      "image": "quete-certitude-4"
@@ -232,10 +258,12 @@ window.BIBLIO = {
      "titre": "Comment trouver la paix intérieure",
      "docs": [
       {
-       "id": "1TvTECdUQ0gQr48ACF1KWC2PxKbF2w1VH",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/05-comment-trouver-la-paix-interieure",
+       "o": 84955,
+       "p": 4
       }
      ],
      "image": "quete-certitude-5"
@@ -245,10 +273,12 @@ window.BIBLIO = {
      "titre": "Le secret d’une vie nouvelle",
      "docs": [
       {
-       "id": "16Y39DA2jqNowdfnxHGROgp3EcAdv-Lu7",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/06-le-secret-d-une-vie-nouvelle",
+       "o": 82819,
+       "p": 4
       }
      ],
      "image": "quete-certitude-6"
@@ -258,10 +288,12 @@ window.BIBLIO = {
      "titre": "Un Dieu bon, un monde mauvais : pourquoi ?",
      "docs": [
       {
-       "id": "1PPIb9Bk2K1mKYLFYMaxWpNlB9SLaQkhB",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/07-un-dieu-bon-un-monde-mauvais-pourquoi",
+       "o": 83991,
+       "p": 4
       }
      ],
      "image": "quete-certitude-7"
@@ -271,10 +303,12 @@ window.BIBLIO = {
      "titre": "Le message le plus passionnant de l’Apocalypse",
      "docs": [
       {
-       "id": "1_T_xo_OVTuqzgMoSu5_1S9-TFe0chWIB",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/08-le-message-le-plus-passionnant-de-l-apocalypse",
+       "o": 83813,
+       "p": 4
       }
      ],
      "image": "quete-certitude-8"
@@ -284,10 +318,12 @@ window.BIBLIO = {
      "titre": "La prophétie biblique la plus longue et la plus étonnante",
      "docs": [
       {
-       "id": "1AjNrNys71WkT03RYl2sNkSta3QbtiAwy",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/09-la-prophetie-biblique-la-plus-longue-et-la-plus-etonnante",
+       "o": 84722,
+       "p": 5
       }
      ],
      "image": "quete-certitude-9"
@@ -297,10 +333,12 @@ window.BIBLIO = {
      "titre": "Rendez-vous avec le destin : le jugement",
      "docs": [
       {
-       "id": "1e61Do_7DHzgAeVAj4_uY8b-dAquaq4x9",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/10-rendez-vous-avec-le-destin-le-jugement",
+       "o": 82977,
+       "p": 4
       }
      ],
      "image": "quete-certitude-10"
@@ -310,10 +348,12 @@ window.BIBLIO = {
      "titre": "Pourquoi la criminalité, la violence et l’immoralité augmentent-elles ?",
      "docs": [
       {
-       "id": "1UV635Kw9CS8Sr0wH4n7SBx42WN9zOS7x",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/11-pourquoi-la-criminalite-la-violence-et-l-immoralite",
+       "o": 84343,
+       "p": 4
       }
      ],
      "image": "quete-certitude-11"
@@ -323,10 +363,12 @@ window.BIBLIO = {
      "titre": "Le signe particulier du Christ",
      "docs": [
       {
-       "id": "1QYX4Ve0v4i46h87iQT5DMe_pV110gyuH",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/12-le-signe-particulier-du-christ",
+       "o": 82869,
+       "p": 4
       }
      ],
      "image": "quete-certitude-12"
@@ -336,10 +378,12 @@ window.BIBLIO = {
      "titre": "La constitution du ciel modifiée",
      "docs": [
       {
-       "id": "1FL2HYG7OHm_LH-WWu64HNg_3tg1Ra5Eo",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/13-la-constitution-du-ciel-modifiee",
+       "o": 88352,
+       "p": 6
       }
      ],
      "image": "quete-certitude-13"
@@ -349,10 +393,12 @@ window.BIBLIO = {
      "titre": "Cinq moyens de reconnaître les sectes modernes",
      "docs": [
       {
-       "id": "1PCHl_t8HxvdfW3F3nFF-j_bBR7TJqGRo",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/14-cinq-moyens-de-reconnaitre-les-sectes-modernes",
+       "o": 83501,
+       "p": 4
       }
      ],
      "image": "quete-certitude-14"
@@ -362,10 +408,12 @@ window.BIBLIO = {
      "titre": "Notre plus grand besoin : un nouveau mode de vie",
      "docs": [
       {
-       "id": "1umEhvx-u9JtK6mCye_3POTz38eSLUaBU",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/15-notre-plus-grand-besoin-un-nouveau-mode-de-vie",
+       "o": 83524,
+       "p": 4
       }
      ],
      "image": "quete-certitude-15"
@@ -375,10 +423,12 @@ window.BIBLIO = {
      "titre": "La vérité sur la mort",
      "docs": [
       {
-       "id": "18OdFzbta9nPqHhE-hL8h5rbNes1TDWT4",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/16-la-verite-sur-la-mort",
+       "o": 81877,
+       "p": 4
       }
      ],
      "image": "quete-certitude-16"
@@ -388,10 +438,12 @@ window.BIBLIO = {
      "titre": "L’amour de Dieu dans les feux de l’enfer",
      "docs": [
       {
-       "id": "1n7hzQbYy6JF1Jr0miYQNBM-7BJpAEMhL",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/17-l-amour-de-dieu-dans-les-feux-de-l-enfer",
+       "o": 83594,
+       "p": 4
       }
      ],
      "image": "quete-certitude-17"
@@ -401,10 +453,12 @@ window.BIBLIO = {
      "titre": "Comment enterrer définitivement le passé",
      "docs": [
       {
-       "id": "1oDGfguawtCJTClMWCtGroevz60QS_keH",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/18-comment-enterrer-definitivement-le-passe",
+       "o": 83296,
+       "p": 4
       }
      ],
      "image": "quete-certitude-18"
@@ -414,10 +468,12 @@ window.BIBLIO = {
      "titre": "Un secret financier",
      "docs": [
       {
-       "id": "1Pg0inDcctsBtqR2PtiFAVViKD8AfMBWW",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/19-un-secret-financier",
+       "o": 83132,
+       "p": 4
       }
      ],
      "image": "quete-certitude-19"
@@ -427,10 +483,12 @@ window.BIBLIO = {
      "titre": "Grandir dans la vie chrétienne",
      "docs": [
       {
-       "id": "1V9lgFX-27vCZY-0LI6w2n2ZepOJQXBdx",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/20-grandir-dans-la-vie-chretienne",
+       "o": 82168,
+       "p": 4
       }
      ],
      "image": "quete-certitude-20"
@@ -440,10 +498,12 @@ window.BIBLIO = {
      "titre": "Comment reconnaître l’Église de Dieu",
      "docs": [
       {
-       "id": "16T0E8xG2CoKHiivP8aNrMzNyMRIhsxF-",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/21-comment-reconnaitre-l-eglise-de-dieu",
+       "o": 83843,
+       "p": 4
       }
      ],
      "image": "quete-certitude-21"
@@ -453,10 +513,12 @@ window.BIBLIO = {
      "titre": "Prophètes et prophéties, visions et rêves",
      "docs": [
       {
-       "id": "1uRc5faCmrt6Nwi7S61Ng0K65HExp14lv",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/22-prophetes-et-propheties-visions-et-reves",
+       "o": 83664,
+       "p": 4
       }
      ],
      "image": "quete-certitude-22"
@@ -466,10 +528,12 @@ window.BIBLIO = {
      "titre": "Le mystère de la Babylone spirituelle dévoilé",
      "docs": [
       {
-       "id": "10RwQRLKtY0ZTv-g5lyR3u57pexKjd1kZ",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/23-le-mystere-de-la-babylone-spirituelle-devoile",
+       "o": 85539,
+       "p": 5
       }
      ],
      "image": "quete-certitude-23"
@@ -479,10 +543,12 @@ window.BIBLIO = {
      "titre": "Le Saint-Esprit et le péché impardonnable",
      "docs": [
       {
-       "id": "1Kua6dvqzdORLMc5UxQ5pERIUQtmS55cg",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/24-le-saint-esprit-et-le-peche-impardonnable",
+       "o": 83206,
+       "p": 4
       }
      ],
      "image": "quete-certitude-24"
@@ -492,10 +558,12 @@ window.BIBLIO = {
      "titre": "De la déception au triomphe",
      "docs": [
       {
-       "id": "11ZDZOWn3CX1B9rZwdjZq5umSZVMlWGtn",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/25-de-la-deception-au-triomphe",
+       "o": 86804,
+       "p": 5
       }
      ],
      "image": "quete-certitude-25"
@@ -505,10 +573,12 @@ window.BIBLIO = {
      "titre": "La marque de la bête et le nombre mystérieux 666",
      "docs": [
       {
-       "id": "12ZO_qp6eZfJdp-qTU1gPQZHlXTqrhgnk",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/26-la-marque-de-la-bete-et-le-nombre-mysterieux-666",
+       "o": 85548,
+       "p": 5
       }
      ],
      "image": "quete-certitude-26"
@@ -518,10 +588,12 @@ window.BIBLIO = {
      "titre": "Les États-Unis dans la prophétie",
      "docs": [
       {
-       "id": "1JpzzjtujRM-jv3otKkC66MEESgURDUur",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/27-les-etats-unis-dans-la-prophetie",
+       "o": 84579,
+       "p": 4
       }
      ],
      "image": "quete-certitude-27"
@@ -531,10 +603,12 @@ window.BIBLIO = {
      "titre": "Harmaguédon et les sept derniers fléaux",
      "docs": [
       {
-       "id": "1dNNgtlvrnLpUeyUiVTs9xMPJoGmI_SWh",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/28-harmaguedon-et-les-sept-derniers-fleaux",
+       "o": 83072,
+       "p": 4
       }
      ],
      "image": "quete-certitude-28"
@@ -544,10 +618,12 @@ window.BIBLIO = {
      "titre": "L’Apocalypse annonce mille ans de ténèbres sur le monde",
      "docs": [
       {
-       "id": "18r37MDCmm7o9OqF3ITIv8NruxEr9q-_V",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/29-l-apocalypse-annonce-mille-ans-de-tenebres-sur-le-monde",
+       "o": 84038,
+       "p": 4
       }
      ],
      "image": "quete-certitude-29"
@@ -557,10 +633,12 @@ window.BIBLIO = {
      "titre": "Le dénouement glorieux de l’Apocalypse",
      "docs": [
       {
-       "id": "145C8TkPblgijRhc8024Q65xdM8BvWlfR",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/30-le-denouement-glorieux-de-l-apocalypse",
+       "o": 83840,
+       "p": 4
       }
      ],
      "image": "quete-certitude-30"
@@ -570,10 +648,12 @@ window.BIBLIO = {
      "titre": "Qui est Jésus ?",
      "docs": [
       {
-       "id": "1skErbXH7xAthMgE8Uph_6lceJO4JJBPZ",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/a-qui-est-jesus",
+       "o": 81304,
+       "p": 3
       }
      ],
      "groupe": "Études complémentaires",
@@ -584,10 +664,12 @@ window.BIBLIO = {
      "titre": "Qu’est-ce que la foi ?",
      "docs": [
       {
-       "id": "1HbfbbKIHEKsf9Bb0Qzk06vXl9cibXfG3",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/b-qu-est-ce-que-la-foi",
+       "o": 81671,
+       "p": 4
       }
      ],
      "groupe": "Études complémentaires",
@@ -598,10 +680,12 @@ window.BIBLIO = {
      "titre": "Comment prier",
      "docs": [
       {
-       "id": "1olnworEfHqOjGhwuxyJeFkp-8eyrwOMt",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/c-comment-prier",
+       "o": 82492,
+       "p": 4
       }
      ],
      "groupe": "Études complémentaires",
@@ -612,10 +696,12 @@ window.BIBLIO = {
      "titre": "Pourquoi sommes-nous ici ?",
      "docs": [
       {
-       "id": "1vwQH5ccRdReny9Wv-oWfhxs-jKxoCdQ5",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/d-pourquoi-sommes-nous-ici",
+       "o": 358592,
+       "p": 4
       }
      ],
      "groupe": "Études complémentaires",
@@ -626,10 +712,12 @@ window.BIBLIO = {
      "titre": "Pourquoi tant d’Églises ?",
      "docs": [
       {
-       "id": "1hlpbWDD4z8SxstyHwH4hADwrEkFMAEzH",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/f-pourquoi-tant-d-eglises",
+       "o": 295596,
+       "p": 4
       }
      ],
      "groupe": "Études complémentaires",
@@ -640,10 +728,12 @@ window.BIBLIO = {
      "titre": "Sept ingrédients pour le bonheur",
      "docs": [
       {
-       "id": "1W90nno2Q-fZrX-FHNpmzk91k21qya7Vy",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "quete-certitude/g-sept-ingredients-pour-le-bonheur",
+       "o": 513193,
+       "p": 4
       }
      ],
      "groupe": "Études complémentaires",
@@ -664,10 +754,12 @@ window.BIBLIO = {
      "titre": "La Bible : la Parole de Dieu",
      "docs": [
       {
-       "id": "1O0cEHi6jdwYox78I92P9_fxvgJWfBOT_",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/01-la-bible-la-parole-de-dieu",
+       "o": 128279,
+       "p": 1
       }
      ],
      "image": "explorateur-1"
@@ -677,10 +769,12 @@ window.BIBLIO = {
      "titre": "Nous pouvons croire en Dieu",
      "docs": [
       {
-       "id": "1Mv-xuXnAvO1TlXh_7zGcJ4ovscE_uhJ6",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/02-nous-pouvons-croire-en-dieu",
+       "o": 127619,
+       "p": 1
       }
      ],
      "image": "explorateur-2"
@@ -690,10 +784,12 @@ window.BIBLIO = {
      "titre": "Qui est Jésus ?",
      "docs": [
       {
-       "id": "1O7LlaU0X_bDQG7nQoFMMsRNCMaYipzlN",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/03-qui-est-jesus",
+       "o": 155131,
+       "p": 2
       }
      ],
      "image": "explorateur-3"
@@ -703,10 +799,12 @@ window.BIBLIO = {
      "titre": "Parler avec Jésus",
      "docs": [
       {
-       "id": "1ocSZ5cZ1JLOPgTrsj6mVSwtEz1WAG-2A",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/04-parler-avec-jesus",
+       "o": 128133,
+       "p": 1
       }
      ],
      "image": "explorateur-4"
@@ -716,10 +814,12 @@ window.BIBLIO = {
      "titre": "La création",
      "docs": [
       {
-       "id": "1IieJZwWVtntfEUHGGCpAwyArmvXMXKXT",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/05-la-creation",
+       "o": 130245,
+       "p": 1
       }
      ],
      "image": "explorateur-5"
@@ -729,10 +829,12 @@ window.BIBLIO = {
      "titre": "Le projet de Jésus pour une famille heureuse",
      "docs": [
       {
-       "id": "1iGAVqsyiXL6qa2N9GUyHcjta2yN-Pl0m",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/06-le-projet-de-jesus-pour-une-famille-heureuse",
+       "o": 131508,
+       "p": 1
       }
      ],
      "image": "explorateur-6"
@@ -742,10 +844,12 @@ window.BIBLIO = {
      "titre": "L’origine du péché",
      "docs": [
       {
-       "id": "1QQDooJCn5hQK3ManAKncN5cES8bufIY_",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/07-l-origine-du-peche",
+       "o": 131634,
+       "p": 1
       }
      ],
      "image": "explorateur-7"
@@ -755,10 +859,12 @@ window.BIBLIO = {
      "titre": "Le plan de Dieu pour nous sauver",
      "docs": [
       {
-       "id": "1oyCxen7PEE1slevRFjJxyd0vHdrOyXsG",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/08-le-plan-de-dieu-pour-nous-sauver",
+       "o": 132147,
+       "p": 1
       }
      ],
      "image": "explorateur-8"
@@ -768,10 +874,12 @@ window.BIBLIO = {
      "titre": "Le vrai trésor : la convoitise",
      "docs": [
       {
-       "id": "1WDSrQQbdKihgESvaLJqAKaUxteInIe5b",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/09-le-vrai-tresor-la-convoitise",
+       "o": 129537,
+       "p": 1
       }
      ],
      "image": "explorateur-9"
@@ -781,10 +889,12 @@ window.BIBLIO = {
      "titre": "Le retour de Jésus",
      "docs": [
       {
-       "id": "1NvLdFj9M4T77uObAiDyurdQUULBbPER6",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/10-le-retour-de-jesus",
+       "o": 128223,
+       "p": 1
       }
      ],
      "image": "explorateur-10"
@@ -794,10 +904,12 @@ window.BIBLIO = {
      "titre": "Le ciel",
      "docs": [
       {
-       "id": "1cmSegtcBVRfZPzUkMoODsL1sIBax4cq_",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/11-le-ciel",
+       "o": 127555,
+       "p": 1
       }
      ],
      "image": "explorateur-11"
@@ -807,10 +919,12 @@ window.BIBLIO = {
      "titre": "La loi",
      "docs": [
       {
-       "id": "194oreivSXIpGq4M1TI_TFs9b2LYQj_hk",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/12-la-loi",
+       "o": 130149,
+       "p": 1
       }
      ],
      "image": "explorateur-12"
@@ -820,10 +934,12 @@ window.BIBLIO = {
      "titre": "L’obéissance",
      "docs": [
       {
-       "id": "1WSBhrfB6o_ygj2Nyeq1bQb86akKIQaqZ",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/13-l-obeissance",
+       "o": 128304,
+       "p": 1
       }
      ],
      "image": "explorateur-13"
@@ -833,10 +949,12 @@ window.BIBLIO = {
      "titre": "Les deux serviteurs : le pardon",
      "docs": [
       {
-       "id": "17O5e6aNYiZpZOMpDjhJDjIfGT-Khx1q8",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/14-les-deux-serviteurs-le-pardon",
+       "o": 131543,
+       "p": 1
       }
      ],
      "image": "explorateur-14"
@@ -846,10 +964,12 @@ window.BIBLIO = {
      "titre": "Le Saint-Esprit",
      "docs": [
       {
-       "id": "1OeMeinsp4iwgGobk_kqUPvfuHoPS7TBr",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/15-le-saint-esprit",
+       "o": 128552,
+       "p": 1
       }
      ],
      "image": "explorateur-15"
@@ -859,10 +979,12 @@ window.BIBLIO = {
      "titre": "Le baptême",
      "docs": [
       {
-       "id": "19MrsClfDaeFbAtbpNm9uHpM3Vs3Mjp-o",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/16-le-bapteme",
+       "o": 126120,
+       "p": 1
       }
      ],
      "image": "explorateur-16"
@@ -872,10 +994,12 @@ window.BIBLIO = {
      "titre": "La foi en Jésus",
      "docs": [
       {
-       "id": "1q7b0JNqj7tsgEnq1EqBC7muS3MwQjLtN",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/17-la-foi-en-jesus",
+       "o": 134165,
+       "p": 1
       }
      ],
      "image": "explorateur-17"
@@ -885,10 +1009,12 @@ window.BIBLIO = {
      "titre": "La foi et les œuvres",
      "docs": [
       {
-       "id": "120yI8Hei2OrysLeGiaoAXTcAgqXLJTq0",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "explorateur/18-la-foi-et-les-oeuvres",
+       "o": 129530,
+       "p": 1
       }
      ],
      "image": "explorateur-18"
@@ -896,14 +1022,18 @@ window.BIBLIO = {
    ],
    "ressources": [
     {
-     "id": "1Zn_ZNeEWAweRUl8Ogbf-6t_BWlUdYf-O",
      "format": "PDF",
-     "titre": "Couverture et consignes"
+     "titre": "Couverture et consignes",
+     "f": "explorateur/couverture-et-consignes",
+     "o": 193953,
+     "p": 2
     },
     {
-     "id": "1n2IjsPSpU3ZFvJ3_JUHInVMTHjI3nEKF",
      "format": "PDF",
-     "titre": "Feuille des coordonnées des participants"
+     "titre": "Feuille des coordonnées des participants",
+     "f": "explorateur/feuille-des-coordonnees-des-participants",
+     "o": 133187,
+     "p": 2
     }
    ],
    "image": "serie-explorateur"
@@ -919,10 +1049,12 @@ window.BIBLIO = {
      "titre": "Il revient",
      "docs": [
       {
-       "id": "1zH2GXOeB7n4DKZ98nE04g_a7FlJpDDNf",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/01-il-revient",
+       "o": 846985,
+       "p": 5
       }
      ],
      "image": "vivre-avec-jesus-1"
@@ -932,10 +1064,12 @@ window.BIBLIO = {
      "titre": "Quand il reviendra",
      "docs": [
       {
-       "id": "1o7K5W8ckdCXbs88tGt8kRx9pADmGFxng",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/02-quand-il-reviendra",
+       "o": 821436,
+       "p": 5
       }
      ],
      "image": "vivre-avec-jesus-2"
@@ -945,10 +1079,12 @@ window.BIBLIO = {
      "titre": "Vos mille premières années avec Jésus",
      "docs": [
       {
-       "id": "1PZnoIw7BjxWLfC19_lJFhOf2F186K-rz",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/03-vos-mille-premieres-annees-avec-jesus",
+       "o": 831508,
+       "p": 5
       }
      ],
      "image": "vivre-avec-jesus-3"
@@ -958,10 +1094,12 @@ window.BIBLIO = {
      "titre": "La nouvelle terre que Dieu vous prépare",
      "docs": [
       {
-       "id": "1bolMQud1dtsD5foYo24nsrrXY_6FWaoD",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/04-la-nouvelle-terre-que-dieu-vous-prepare",
+       "o": 880955,
+       "p": 5
       }
      ],
      "image": "vivre-avec-jesus-4"
@@ -971,10 +1109,12 @@ window.BIBLIO = {
      "titre": "Où êtes-vous après la mort ?",
      "docs": [
       {
-       "id": "1zF339iJSY57oqDpoSFUakCn7crBkU4b_",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/05-ou-etes-vous-apres-la-mort",
+       "o": 860178,
+       "p": 5
       }
      ],
      "image": "vivre-avec-jesus-5"
@@ -984,10 +1124,12 @@ window.BIBLIO = {
      "titre": "La destruction des méchants",
      "docs": [
       {
-       "id": "1YgTpq7jdV5gLa2GFbSAoblo3OMCPG5DZ",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/06-la-destruction-des-mechants",
+       "o": 798734,
+       "p": 5
       }
      ],
      "image": "vivre-avec-jesus-6"
@@ -997,10 +1139,12 @@ window.BIBLIO = {
      "titre": "Un seul chemin vers le ciel",
      "docs": [
       {
-       "id": "1_ZV-V-8MY_iQWZq8MKbgU6Fj4-kNRizE",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/07-un-seul-chemin-vers-le-ciel",
+       "o": 811074,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-7"
@@ -1010,10 +1154,12 @@ window.BIBLIO = {
      "titre": "Le baptême est-il nécessaire ?",
      "docs": [
       {
-       "id": "1rEcPEj7PTLknS3fy4H1J7VzKf-EJqd73",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/08-le-bapteme-est-il-necessaire",
+       "o": 851812,
+       "p": 5
       }
      ],
      "image": "vivre-avec-jesus-8"
@@ -1023,10 +1169,12 @@ window.BIBLIO = {
      "titre": "Le Seigneur sera votre avocat",
      "docs": [
       {
-       "id": "14YP_sXnsOlrMhzGFerRh-Zcst39mmi6O",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/09-le-seigneur-sera-votre-avocat",
+       "o": 862210,
+       "p": 5
       }
      ],
      "image": "vivre-avec-jesus-9"
@@ -1036,10 +1184,12 @@ window.BIBLIO = {
      "titre": "Des instructions pour bien vivre",
      "docs": [
       {
-       "id": "1nLrRBbDR-V8COQkmcInVgygg_YrEWlzT",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/10-des-instructions-pour-bien-vivre",
+       "o": 878611,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-10"
@@ -1049,10 +1199,12 @@ window.BIBLIO = {
      "titre": "Le Seigneur de votre temps",
      "docs": [
       {
-       "id": "1z1gG4nqmpU5m5O71iUGzOyIJPQgs3YQ7",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/11-le-seigneur-de-votre-temps",
+       "o": 847545,
+       "p": 5
       }
      ],
      "image": "vivre-avec-jesus-11"
@@ -1062,10 +1214,12 @@ window.BIBLIO = {
      "titre": "Pourquoi tant de chrétiens célèbrent-ils le dimanche ?",
      "docs": [
       {
-       "id": "17E7ZDkuE4ilDxvdckKNzrgBmEZ_9RzhO",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/12-pourquoi-tant-de-chretiens-celebrent-ils-le-dimanche",
+       "o": 854811,
+       "p": 5
       }
      ],
      "image": "vivre-avec-jesus-12"
@@ -1075,10 +1229,12 @@ window.BIBLIO = {
      "titre": "Le Seigneur de vos biens",
      "docs": [
       {
-       "id": "1QPEUDLuv7umMdSstY4-xwtPl_w10kPH_",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/13-le-seigneur-de-vos-biens",
+       "o": 856173,
+       "p": 5
       }
      ],
      "image": "vivre-avec-jesus-13"
@@ -1088,10 +1244,12 @@ window.BIBLIO = {
      "titre": "Le Seigneur de votre corps",
      "docs": [
       {
-       "id": "1IIw1xuaKAZqHuSdmXbFudy3xmO9ztvJJ",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/14-le-seigneur-de-votre-corps",
+       "o": 861805,
+       "p": 5
       }
      ],
      "image": "vivre-avec-jesus-14"
@@ -1101,10 +1259,12 @@ window.BIBLIO = {
      "titre": "Il vous conduira vers son Église",
      "docs": [
       {
-       "id": "1c8rQaYZ9mET06_nm1jzjaR1a2kLfFqMW",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "vivre-avec-jesus/15-il-vous-conduira-vers-son-eglise",
+       "o": 861389,
+       "p": 5
       }
      ],
      "image": "vivre-avec-jesus-15"
@@ -1124,16 +1284,20 @@ window.BIBLIO = {
      "titre": "Le lépreux",
      "docs": [
       {
-       "id": "1ZPARYOm2tdbLChPAq88K557J_vNHRBUF",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/01-le-lepreux-participant",
+       "o": 56901,
+       "p": 1
       },
       {
-       "id": "1oqP8VfpS9rgMiZDEnnfQSWuFRhHrEU_S",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/01-le-lepreux-animateur",
+       "o": 84102,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-1"
@@ -1143,16 +1307,20 @@ window.BIBLIO = {
      "titre": "Le diable",
      "docs": [
       {
-       "id": "1wVpNILLbbB4n0K-CvX6adH7ivUuRWHi4",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/02-le-diable-participant",
+       "o": 58688,
+       "p": 1
       },
       {
-       "id": "1R4fIKxT8hLfYoRN4rSczorcmsTOLvo9d",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/02-le-diable-animateur",
+       "o": 99046,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-2"
@@ -1162,16 +1330,20 @@ window.BIBLIO = {
      "titre": "Les premiers disciples",
      "docs": [
       {
-       "id": "14PhmuROCSjLHXHolJJH64tUxDqFZykiQ",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/03-les-premiers-disciples-participant",
+       "o": 57556,
+       "p": 1
       },
       {
-       "id": "1ibGuxU6GSnVZFrZHjTTcUjCf7QMmWjIk",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/03-les-premiers-disciples-animateur",
+       "o": 121719,
+       "p": 3
       }
      ],
      "image": "rencontre-avec-jesus-3"
@@ -1181,16 +1353,20 @@ window.BIBLIO = {
      "titre": "Les noces de Cana",
      "docs": [
       {
-       "id": "1-hKrb9PJYDPAwe_eOzFd7xr-MBE6KKcA",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/04-les-noces-de-cana-participant",
+       "o": 58918,
+       "p": 1
       },
       {
-       "id": "1_DiUWh5OkXC5hQmQj0xqMZo-86q2Xi_j",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/04-les-noces-de-cana-animateur",
+       "o": 97647,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-4"
@@ -1200,16 +1376,20 @@ window.BIBLIO = {
      "titre": "Nicodème",
      "docs": [
       {
-       "id": "1JG2QWBtF0KRAZBmUCuH0hZTk1XpkYYwI",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/05-nicodeme-participant",
+       "o": 56634,
+       "p": 1
       },
       {
-       "id": "1fbbMTD1QS_v3GywSncFeuBj02jP6SBTI",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/05-nicodeme-animateur",
+       "o": 104625,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-5"
@@ -1219,16 +1399,20 @@ window.BIBLIO = {
      "titre": "La femme au puits",
      "docs": [
       {
-       "id": "1KjL7z7p_NjK_cykBOCjiQQa3azj_zSkv",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/06-la-femme-au-puits-participant",
+       "o": 59305,
+       "p": 1
       },
       {
-       "id": "1cPwmMvRPXxuiwlOTANhNfSAEhXtv1ij9",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/06-la-femme-au-puits-animateur",
+       "o": 129314,
+       "p": 4
       }
      ],
      "image": "rencontre-avec-jesus-6"
@@ -1238,16 +1422,20 @@ window.BIBLIO = {
      "titre": "L’officier royal",
      "docs": [
       {
-       "id": "11nc3dv_DvSza93E8mjZd-G81wjH5UtVp",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/07-l-officier-royal-participant",
+       "o": 53605,
+       "p": 1
       },
       {
-       "id": "18z_EnWW5_6ZTvkLxi4Mgwvi2H2wZBD5B",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/07-l-officier-royal-animateur",
+       "o": 93712,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-7"
@@ -1257,16 +1445,20 @@ window.BIBLIO = {
      "titre": "Le centurion",
      "docs": [
       {
-       "id": "1rQpI6GuX55r-h0v-fT03Qjcvqj3y3ip5",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/08-le-centurion-participant",
+       "o": 57300,
+       "p": 1
       },
       {
-       "id": "1clTRrQI5_ujT4AcerfP39op31V7bRlkM",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/08-le-centurion-animateur",
+       "o": 106235,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-8"
@@ -1276,16 +1468,20 @@ window.BIBLIO = {
      "titre": "L’aveugle de Bethsaïda",
      "docs": [
       {
-       "id": "17-bZRub0WdmY5z50gH393aTi9IszeCG4",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/09-l-aveugle-de-bethsaida-participant",
+       "o": 52934,
+       "p": 1
       },
       {
-       "id": "1rpDRwbuom9sWyXzOPZzuyx-dvhc0YDB3",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/09-l-aveugle-de-bethsaida-animateur",
+       "o": 102567,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-9"
@@ -1295,16 +1491,20 @@ window.BIBLIO = {
      "titre": "L’homme à la piscine de Béthesda",
      "docs": [
       {
-       "id": "1HNEH9cnd3O5TCqtWluz_nV4j7DSilWnU",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/10-l-homme-a-la-piscine-de-bethesda-participant",
+       "o": 58422,
+       "p": 1
       },
       {
-       "id": "1TKnrPXPA3Bz4HlvZrtPISttvN4dHwcJp",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/10-l-homme-a-la-piscine-de-bethesda-animateur",
+       "o": 102787,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-10"
@@ -1314,16 +1514,20 @@ window.BIBLIO = {
      "titre": "Le paralytique",
      "docs": [
       {
-       "id": "1WYAI0REm3BufIuPzj678w89bNrNNOVdt",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/11-le-paralytique-participant",
+       "o": 53057,
+       "p": 1
       },
       {
-       "id": "1MvQ1nT57dDUctrLuCYreApkOq22KGZp4",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/11-le-paralytique-animateur",
+       "o": 81641,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-11"
@@ -1333,16 +1537,20 @@ window.BIBLIO = {
      "titre": "Le démoniaque aveugle et muet",
      "docs": [
       {
-       "id": "1Rz5BHBQSuCQaXLbgKiDvAYXEpB70khwG",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/12-le-demoniaque-aveugle-et-muet-participant",
+       "o": 58854,
+       "p": 1
       },
       {
-       "id": "1Nu7_TQO_w2xWS7yHoKC78HalToOc46wE",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/12-le-demoniaque-aveugle-et-muet-animateur",
+       "o": 110337,
+       "p": 3
       }
      ],
      "image": "rencontre-avec-jesus-12"
@@ -1352,16 +1560,20 @@ window.BIBLIO = {
      "titre": "Les disciples dans la tempête",
      "docs": [
       {
-       "id": "1prfZV-zrZGAVwrOzLNXcAc7u_4hQjTlk",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/13-les-disciples-dans-la-tempete-participant",
+       "o": 59513,
+       "p": 1
       },
       {
-       "id": "186joKjf1I0zWXtKax6JjimQedKh8W1y_",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/13-les-disciples-dans-la-tempete-animateur",
+       "o": 105053,
+       "p": 3
       }
      ],
      "image": "rencontre-avec-jesus-13"
@@ -1371,16 +1583,20 @@ window.BIBLIO = {
      "titre": "Les démoniaques du pays des Gadaréniens",
      "docs": [
       {
-       "id": "1Hn5sQiSplO-BWZjaZMM8-J21R3kS-SGq",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/14-les-demoniaques-du-pays-des-gadareniens-participant",
+       "o": 55366,
+       "p": 1
       },
       {
-       "id": "1Mp4k2-2UFOczI6KIdOib45XjwfkuVZVT",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/14-les-demoniaques-du-pays-des-gadareniens-animateur",
+       "o": 91106,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-14"
@@ -1390,16 +1606,20 @@ window.BIBLIO = {
      "titre": "La femme atteinte d’une perte de sang",
      "docs": [
       {
-       "id": "19LIfvOdjty0ETEGzcAW4rM8bq67zibaS",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/15-la-femme-atteinte-d-une-perte-de-sang-participant",
+       "o": 58612,
+       "p": 1
       },
       {
-       "id": "18VvPQZCDmQcajDfGXQJArW6HjsLedjS-",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/15-la-femme-atteinte-d-une-perte-de-sang-animateur",
+       "o": 98659,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-15"
@@ -1409,16 +1629,20 @@ window.BIBLIO = {
      "titre": "Jean-Baptiste",
      "docs": [
       {
-       "id": "1-ff4EWeL4CWKgSErdTARpRqRzR6-DbOL",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/16-jean-baptiste-participant",
+       "o": 58254,
+       "p": 1
       },
       {
-       "id": "1xrS6KpWwoAqTQCRBEXua-kjyI-iXQJRw",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/16-jean-baptiste-animateur",
+       "o": 112245,
+       "p": 3
       }
      ],
      "image": "rencontre-avec-jesus-16"
@@ -1428,16 +1652,20 @@ window.BIBLIO = {
      "titre": "Les cinq mille",
      "docs": [
       {
-       "id": "10_cb7-z9YBC8iu9SPysJPFVmwkzzVZUp",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/17-les-cinq-mille-participant",
+       "o": 59647,
+       "p": 1
       },
       {
-       "id": "16Cpp6L6NwJC3vrT2DIxs9huScqGQsYRN",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/17-les-cinq-mille-animateur",
+       "o": 125908,
+       "p": 3
       }
      ],
      "image": "rencontre-avec-jesus-17"
@@ -1447,16 +1675,20 @@ window.BIBLIO = {
      "titre": "La femme surprise en adultère",
      "docs": [
       {
-       "id": "1WLsNtxuWkJfdY91oyha5gkO6KHNjyCZ8",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/18-la-femme-surprise-en-adultere-participant",
+       "o": 56522,
+       "p": 1
       },
       {
-       "id": "1sRxluX0mV7VEWX5Xsf5mjOjq-ggqwGvu",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/18-la-femme-surprise-en-adultere-animateur",
+       "o": 98384,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-18"
@@ -1466,16 +1698,20 @@ window.BIBLIO = {
      "titre": "L’aveugle de naissance",
      "docs": [
       {
-       "id": "1PjhBzfJyqOReoi_haV3btbQ_jdP9BtJ2",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/19-l-aveugle-de-naissance-participant",
+       "o": 61003,
+       "p": 1
       },
       {
-       "id": "1NoIc3P34dlhCrEYjSKfy2lwemPkMOj2v",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/19-l-aveugle-de-naissance-animateur",
+       "o": 125150,
+       "p": 3
       }
      ],
      "image": "rencontre-avec-jesus-19"
@@ -1485,16 +1721,20 @@ window.BIBLIO = {
      "titre": "Marie et Marthe",
      "docs": [
       {
-       "id": "17UH8anuR-VPmFKdXgr4G5LRilLmDL_qA",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/20-marie-et-marthe-participant",
+       "o": 58729,
+       "p": 1
       },
       {
-       "id": "1xzsMHob-FrLdbJmWZQvDjuV5_3KLFoaz",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/20-marie-et-marthe-animateur",
+       "o": 105703,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-20"
@@ -1504,16 +1744,20 @@ window.BIBLIO = {
      "titre": "Les dix lépreux",
      "docs": [
       {
-       "id": "196Xa-3xIAeCqFHJdh2HPvN_jhS6fO0Ue",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/21-les-dix-lepreux-participant",
+       "o": 60319,
+       "p": 1
       },
       {
-       "id": "1R_kaV4p5Kxqa1SmlNURcqVNxVprEwBdN",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/21-les-dix-lepreux-animateur",
+       "o": 107816,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-21"
@@ -1523,16 +1767,20 @@ window.BIBLIO = {
      "titre": "Le jeune homme riche",
      "docs": [
       {
-       "id": "1dhtSo2YPbKat8gZ16NwyyXmQ6tcnZeHD",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/22-le-jeune-homme-riche-participant",
+       "o": 56347,
+       "p": 1
       },
       {
-       "id": "1L2n2AiCgizeUxtLCo4zX8DU3ULuzpWLT",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/22-le-jeune-homme-riche-animateur",
+       "o": 119694,
+       "p": 3
       }
      ],
      "image": "rencontre-avec-jesus-22"
@@ -1542,16 +1790,20 @@ window.BIBLIO = {
      "titre": "Bartimée",
      "docs": [
       {
-       "id": "1Pt9o0qMyes1tPjeh9gzQA_wNlg2-0KsH",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/23-bartimee-participant",
+       "o": 57250,
+       "p": 1
       },
       {
-       "id": "1YQm8M2R2odD5qBrh6nGXmovb3bbffTYN",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/23-bartimee-animateur",
+       "o": 118281,
+       "p": 3
       }
      ],
      "image": "rencontre-avec-jesus-23"
@@ -1561,16 +1813,20 @@ window.BIBLIO = {
      "titre": "Zachée",
      "docs": [
       {
-       "id": "1i9k-XJP0MSNFU9fgbM4pi58F2zXlU74-",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/24-zachee-participant",
+       "o": 52181,
+       "p": 1
       },
       {
-       "id": "1LIkJOziTCrmSqe2mFjpfBAIIPZFQr5ju",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/24-zachee-animateur",
+       "o": 96569,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-24"
@@ -1580,16 +1836,20 @@ window.BIBLIO = {
      "titre": "Le repas chez Simon",
      "docs": [
       {
-       "id": "1pEvRW6-OP25ISc7q612e580UU3J1vVeA",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/25-le-repas-chez-simon-participant",
+       "o": 59273,
+       "p": 1
       },
       {
-       "id": "1ZECtgFCEcyz8qXqDRGbSVV8-MxzfO7H5",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/25-le-repas-chez-simon-animateur",
+       "o": 128814,
+       "p": 3
       }
      ],
      "image": "rencontre-avec-jesus-25"
@@ -1599,16 +1859,20 @@ window.BIBLIO = {
      "titre": "Le reniement de Pierre",
      "docs": [
       {
-       "id": "1V9B54NS8HPXeyY8umnpzgyAxFg0zN7F_",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/26-le-reniement-de-pierre-participant",
+       "o": 60685,
+       "p": 1
       },
       {
-       "id": "1AXByUhVB6kPZ5SNAXimKkO3LoYdYG5eS",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/26-le-reniement-de-pierre-animateur",
+       "o": 101989,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-26"
@@ -1618,16 +1882,20 @@ window.BIBLIO = {
      "titre": "Pilate",
      "docs": [
       {
-       "id": "1On51rAE9phIfglOG_ciyLy27-xXduUqj",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/27-pilate-participant",
+       "o": 57210,
+       "p": 1
       },
       {
-       "id": "1nRZjKCZJeJSm-DQFvDd7OTtPtBz4jfnA",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/27-pilate-animateur",
+       "o": 103999,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-27"
@@ -1637,16 +1905,20 @@ window.BIBLIO = {
      "titre": "La croix",
      "docs": [
       {
-       "id": "1guRsTfhRrdIv03DZuijWLdAk88oE7l5G",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/28-la-croix-participant",
+       "o": 61993,
+       "p": 1
       },
       {
-       "id": "10jJGKtXao4dMP78DqwzmnhLeouY-lT-9",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/28-la-croix-animateur",
+       "o": 93038,
+       "p": 3
       }
      ],
      "image": "rencontre-avec-jesus-28"
@@ -1656,16 +1928,20 @@ window.BIBLIO = {
      "titre": "Le chemin d’Emmaüs",
      "docs": [
       {
-       "id": "1gAFLmhaYqMXNmhj2mj0UgeKaT2xhA39R",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/29-le-chemin-d-emmaus-participant",
+       "o": 64423,
+       "p": 1
       },
       {
-       "id": "1DbdyvDjUXi30131hsyl-jacklzcSc4sK",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/29-le-chemin-d-emmaus-animateur",
+       "o": 102841,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-29"
@@ -1675,16 +1951,20 @@ window.BIBLIO = {
      "titre": "Pierre au bord de la mer de Tibériade",
      "docs": [
       {
-       "id": "1LFsrOJ5VCVPDMaAOysATR2F3nyxjYUAn",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "rencontre-avec-jesus/30-pierre-au-bord-de-la-mer-de-tiberiade-participant",
+       "o": 60464,
+       "p": 1
       },
       {
-       "id": "1BIdoor3aNQp9e5MrTRCYPjcsXJj5tPfL",
        "format": "Word",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "rencontre-avec-jesus/30-pierre-au-bord-de-la-mer-de-tiberiade-animateur",
+       "o": 94848,
+       "p": 2
       }
      ],
      "image": "rencontre-avec-jesus-30"
@@ -1704,16 +1984,20 @@ window.BIBLIO = {
      "titre": "Demeurer en Christ et dépendre de lui",
      "docs": [
       {
-       "id": "1Ic-I0qj7w9QaNdvsuZ02Px9kD09TssNV",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "cep-sarment/01-demeurer-en-christ-et-dependre-de-lui-participant",
+       "o": 170856,
+       "p": 2
       },
       {
-       "id": "1lTQq6n4e2D8KAH9E6ZgLMTFeFv83aAjg",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "cep-sarment/01-demeurer-en-christ-et-dependre-de-lui-animateur",
+       "o": 174277,
+       "p": 3
       }
      ],
      "image": "cep-sarment-1"
@@ -1723,16 +2007,20 @@ window.BIBLIO = {
      "titre": "Demeurer en Christ et porter du fruit",
      "docs": [
       {
-       "id": "17NzV9XlZp3N7LP--Q6NzTpnk7tOemRAR",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "cep-sarment/02-demeurer-en-christ-et-porter-du-fruit-participant",
+       "o": 209754,
+       "p": 3
       },
       {
-       "id": "1bA21OiCyZ6lLo5jjsSzqoSfFBBIbfnPL",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "cep-sarment/02-demeurer-en-christ-et-porter-du-fruit-animateur",
+       "o": 176469,
+       "p": 3
       }
      ],
      "image": "cep-sarment-2"
@@ -1742,16 +2030,20 @@ window.BIBLIO = {
      "titre": "Demeurer en Christ et découvrir le but de la vie",
      "docs": [
       {
-       "id": "15Q6ZpFzORlLiTtj8bv_JJi7MvFTDQiMe",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "cep-sarment/03-demeurer-en-christ-et-decouvrir-le-but-de-la-vie-participant",
+       "o": 171702,
+       "p": 2
       },
       {
-       "id": "1cSS5yH_VOCmiOpm_VC3hXi6jV0PhuWQE",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "cep-sarment/03-demeurer-en-christ-et-decouvrir-le-but-de-la-vie-animateur",
+       "o": 175323,
+       "p": 3
       }
      ],
      "image": "cep-sarment-3"
@@ -1761,16 +2053,20 @@ window.BIBLIO = {
      "titre": "Demeurer en Christ et être émondé",
      "docs": [
       {
-       "id": "1Yr1cQHHpkXPc2mYhUbd6MRYPTvIspdK_",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "cep-sarment/04-demeurer-en-christ-et-etre-emonde-participant",
+       "o": 172013,
+       "p": 2
       },
       {
-       "id": "15MnHm3yIwFDVPO6dpG-n9iDA-znd4hfa",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "cep-sarment/04-demeurer-en-christ-et-etre-emonde-animateur",
+       "o": 175452,
+       "p": 3
       }
      ],
      "image": "cep-sarment-4"
@@ -1780,16 +2076,20 @@ window.BIBLIO = {
      "titre": "Demeurer en Christ au quotidien",
      "docs": [
       {
-       "id": "1uYKFnFB5m-75U6DudbgoPV25kUWawV2M",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "cep-sarment/05-demeurer-en-christ-au-quotidien-participant",
+       "o": 172644,
+       "p": 2
       },
       {
-       "id": "1rRJGULBciMOv42aSILO1shOL43rXSugq",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "cep-sarment/05-demeurer-en-christ-au-quotidien-animateur",
+       "o": 175572,
+       "p": 3
       }
      ],
      "image": "cep-sarment-5"
@@ -1799,16 +2099,20 @@ window.BIBLIO = {
      "titre": "Demeurer en Christ et les autres sarments",
      "docs": [
       {
-       "id": "1cspA6TX3F0SzrCqAjdJ0_OShu59MLxo-",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "cep-sarment/06-demeurer-en-christ-et-les-autres-sarments-participant",
+       "o": 173326,
+       "p": 2
       },
       {
-       "id": "1GsPUSE-Zb8sV1TsM-qL1hC0IMDBPUtMb",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "cep-sarment/06-demeurer-en-christ-et-les-autres-sarments-animateur",
+       "o": 176099,
+       "p": 3
       }
      ],
      "image": "cep-sarment-6"
@@ -1818,16 +2122,20 @@ window.BIBLIO = {
      "titre": "Demeurer en Christ, comme Jésus en son Père",
      "docs": [
       {
-       "id": "1b14hVVimfV7Zmph-W23dLSR37BFPUtL_",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "cep-sarment/07-demeurer-en-christ-comme-jesus-en-son-pere-participant",
+       "o": 171711,
+       "p": 2
       },
       {
-       "id": "1-J2xY3JCYVuoFXkwXZrbV2YRfwjfklVD",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "cep-sarment/07-demeurer-en-christ-comme-jesus-en-son-pere-animateur",
+       "o": 175360,
+       "p": 3
       }
      ],
      "image": "cep-sarment-7"
@@ -1837,16 +2145,20 @@ window.BIBLIO = {
      "titre": "Demeurer en Christ et connaître une joie parfaite",
      "docs": [
       {
-       "id": "1Y7NdiKpopvxmWTLOuoR5qaU19sESuZbt",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "cep-sarment/08-demeurer-en-christ-et-connaitre-une-joie-parfaite-participant",
+       "o": 172968,
+       "p": 2
       },
       {
-       "id": "1YqBxkRJK3xx1qB9rbjJKqkx5tnu-COaM",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "cep-sarment/08-demeurer-en-christ-et-connaitre-une-joie-parfaite-animateur",
+       "o": 175650,
+       "p": 3
       }
      ],
      "image": "cep-sarment-8"
@@ -1856,16 +2168,20 @@ window.BIBLIO = {
      "titre": "Demeurer en Christ et refléter son amour",
      "docs": [
       {
-       "id": "1pyyVU3fIt_5z5XD36zGxdr-mBcuczN8h",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "cep-sarment/09-demeurer-en-christ-et-refleter-son-amour-participant",
+       "o": 174161,
+       "p": 3
       },
       {
-       "id": "1vxAcTI1upGAuj4TLU38AkxwQrWur4ayR",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "cep-sarment/09-demeurer-en-christ-et-refleter-son-amour-animateur",
+       "o": 175905,
+       "p": 3
       }
      ],
      "image": "cep-sarment-9"
@@ -1875,16 +2191,20 @@ window.BIBLIO = {
      "titre": "Demeurer en Christ et la moisson",
      "docs": [
       {
-       "id": "13IwvdD1bRucZcqdN5-KkcKSfo2lqRsjA",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "cep-sarment/10-demeurer-en-christ-et-la-moisson-participant",
+       "o": 174377,
+       "p": 3
       },
       {
-       "id": "1J9STcGzDBtlg-x7kTg2uzJj8wIT9A2Fx",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "cep-sarment/10-demeurer-en-christ-et-la-moisson-animateur",
+       "o": 175040,
+       "p": 3
       }
      ],
      "image": "cep-sarment-10"
@@ -1892,9 +2212,11 @@ window.BIBLIO = {
    ],
    "ressources": [
     {
-     "id": "1CQrHrL3mPZ4qfWpd7AgBxKsFuyWfTAqe",
      "format": "PDF",
-     "titre": "Plan du cours"
+     "titre": "Plan du cours",
+     "f": "cep-sarment/plan-du-cours",
+     "o": 141810,
+     "p": 2
     }
    ],
    "image": "serie-cep-sarment"
@@ -1910,10 +2232,12 @@ window.BIBLIO = {
      "titre": "Daniel 1",
      "docs": [
       {
-       "id": "1i7vEqddAYCnaBsqVlWcqBcs1Npl58zC9",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/01-daniel-1",
+       "o": 125679,
+       "p": 2
       }
      ],
      "image": "daniel-1"
@@ -1923,10 +2247,12 @@ window.BIBLIO = {
      "titre": "Daniel 2 (1re partie)",
      "docs": [
       {
-       "id": "1I8J9C048zoJlkFIn90Y_fyvqX0J9QSck",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/02-daniel-2-1re-partie",
+       "o": 139435,
+       "p": 2
       }
      ],
      "image": "daniel-2"
@@ -1936,10 +2262,12 @@ window.BIBLIO = {
      "titre": "Daniel 2 (2e partie)",
      "docs": [
       {
-       "id": "1FSWMOHZ9sUTXOO9gSj0UVG5pSy2CIKED",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/03-daniel-2-2e-partie",
+       "o": 131546,
+       "p": 2
       }
      ],
      "image": "daniel-3"
@@ -1949,10 +2277,12 @@ window.BIBLIO = {
      "titre": "Daniel 3",
      "docs": [
       {
-       "id": "1EOILJpgYa495P-m2xQPGZG9tj2K_Kk2g",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/04-daniel-3",
+       "o": 190285,
+       "p": 4
       }
      ],
      "image": "daniel-4"
@@ -1962,10 +2292,12 @@ window.BIBLIO = {
      "titre": "Daniel 4",
      "docs": [
       {
-       "id": "1E5AVZxkx-jvuFJSA0si7NXM6A6e9zdKH",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/05-daniel-4",
+       "o": 149789,
+       "p": 3
       }
      ],
      "image": "daniel-5"
@@ -1975,10 +2307,12 @@ window.BIBLIO = {
      "titre": "Daniel 5",
      "docs": [
       {
-       "id": "1ofaY6H-DD5IcfT7gMUSfLqPV-aljDdcd",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/06-daniel-5",
+       "o": 147039,
+       "p": 3
       }
      ],
      "image": "daniel-6"
@@ -1988,10 +2322,12 @@ window.BIBLIO = {
      "titre": "Daniel 6",
      "docs": [
       {
-       "id": "1RAkKTcXNgOdUBDdRJtX57PNF2f8TYP8_",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/07-daniel-6",
+       "o": 148807,
+       "p": 4
       }
      ],
      "image": "daniel-7"
@@ -2001,10 +2337,12 @@ window.BIBLIO = {
      "titre": "Daniel 7 (1re partie)",
      "docs": [
       {
-       "id": "1zymrzJaeJB2NR0o0lbEER3N2EZGoftbU",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/08-daniel-7-1re-partie",
+       "o": 226656,
+       "p": 6
       }
      ],
      "image": "daniel-8"
@@ -2014,10 +2352,12 @@ window.BIBLIO = {
      "titre": "Daniel 7 (2e partie)",
      "docs": [
       {
-       "id": "1SIqoSZ74XhZR5mqgBuby8EINcKvhzGZ7",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/09-daniel-7-2e-partie",
+       "o": 209206,
+       "p": 4
       }
      ],
      "image": "daniel-9"
@@ -2027,10 +2367,12 @@ window.BIBLIO = {
      "titre": "Daniel 8",
      "docs": [
       {
-       "id": "1MvPDE4DoxlMKoKE354MrCzgMpKOdwWcb",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/10-daniel-8",
+       "o": 226934,
+       "p": 5
       }
      ],
      "image": "daniel-10"
@@ -2040,10 +2382,12 @@ window.BIBLIO = {
      "titre": "Daniel 9",
      "docs": [
       {
-       "id": "1-olNNRDp6zxM0QX8JN1qfOcKrcvIugGD",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/11-daniel-9",
+       "o": 321182,
+       "p": 7
       }
      ],
      "image": "daniel-11"
@@ -2053,10 +2397,12 @@ window.BIBLIO = {
      "titre": "Daniel 10",
      "docs": [
       {
-       "id": "1Asz9poDp_tZzxqL9fwq6GKkeHykh_7hH",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/12-daniel-10",
+       "o": 167734,
+       "p": 4
       }
      ],
      "image": "daniel-12"
@@ -2066,10 +2412,12 @@ window.BIBLIO = {
      "titre": "Daniel 11",
      "docs": [
       {
-       "id": "16G_LiXb3SGswIjkRDqXykvMR6WD3OBUM",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/13-daniel-11",
+       "o": 199212,
+       "p": 4
       }
      ],
      "image": "daniel-13"
@@ -2079,10 +2427,12 @@ window.BIBLIO = {
      "titre": "Daniel 12",
      "docs": [
       {
-       "id": "1Wwy19BBdzjDpLDxIwJRtrx0g2quKMQhs",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "daniel/14-daniel-12",
+       "o": 254702,
+       "p": 5
       }
      ],
      "image": "daniel-14"
@@ -2102,16 +2452,20 @@ window.BIBLIO = {
      "titre": "Vue d’ensemble du sanctuaire",
      "docs": [
       {
-       "id": "1p8RuNwrqMGcZ6nPq9VhXEmngGqepXBsB",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "sanctuaire/01-vue-d-ensemble-du-sanctuaire-participant",
+       "o": 799757,
+       "p": 3
       },
       {
-       "id": "1oKdW3v3St_feV9F1kOEC8jI5dAWaD5eM",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "sanctuaire/01-vue-d-ensemble-du-sanctuaire-animateur",
+       "o": 800721,
+       "p": 3
       }
      ],
      "image": "sanctuaire-1"
@@ -2121,16 +2475,20 @@ window.BIBLIO = {
      "titre": "L’autel des holocaustes",
      "docs": [
       {
-       "id": "1TTI5mCeqOQHAvoL2t9-g4ytbCGlFO1-4",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "sanctuaire/02-l-autel-des-holocaustes-participant",
+       "o": 154818,
+       "p": 2
       },
       {
-       "id": "1wQCuE31qCxaaKdrB1scMqkxH9iPl9t-k",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "sanctuaire/02-l-autel-des-holocaustes-animateur",
+       "o": 155932,
+       "p": 2
       }
      ],
      "image": "sanctuaire-2"
@@ -2140,16 +2498,20 @@ window.BIBLIO = {
      "titre": "Le prêtre et la cuve",
      "docs": [
       {
-       "id": "17nK1d01THUXmTdsn9uY8qIDSbJ3UOWER",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "sanctuaire/03-le-pretre-et-la-cuve-participant",
+       "o": 156368,
+       "p": 2
       },
       {
-       "id": "1fWUGV2l60HiFm5OnPSVxrMuR0cVoYB5P",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "sanctuaire/03-le-pretre-et-la-cuve-animateur",
+       "o": 157215,
+       "p": 2
       }
      ],
      "image": "sanctuaire-3"
@@ -2159,16 +2521,20 @@ window.BIBLIO = {
      "titre": "Le lieu saint (1re partie)",
      "docs": [
       {
-       "id": "11DNJazoqbbGGYRulVnFpWWglWkCmc1bu",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "sanctuaire/04-le-lieu-saint-1re-partie-participant",
+       "o": 158107,
+       "p": 3
       },
       {
-       "id": "1RvI-3QHMAHzHKMy4dozG3NdxHpFIOk5b",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "sanctuaire/04-le-lieu-saint-1re-partie-animateur",
+       "o": 160299,
+       "p": 3
       }
      ],
      "image": "sanctuaire-4"
@@ -2178,16 +2544,20 @@ window.BIBLIO = {
      "titre": "Le lieu saint (2e partie)",
      "docs": [
       {
-       "id": "14iBMvHsIdkeIm88zvRO2wQ40WIq07yz4",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "sanctuaire/05-le-lieu-saint-2e-partie-participant",
+       "o": 157472,
+       "p": 2
       },
       {
-       "id": "11OVAVKW6hlXqrdvScxv8zvfyZ-utQpZj",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "sanctuaire/05-le-lieu-saint-2e-partie-animateur",
+       "o": 158870,
+       "p": 3
       }
      ],
      "image": "sanctuaire-5"
@@ -2197,16 +2567,20 @@ window.BIBLIO = {
      "titre": "Le lieu très saint",
      "docs": [
       {
-       "id": "1Dat9hPfi4gWj2dqfj4OOF3k_VtJq5gVv",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "sanctuaire/06-le-lieu-tres-saint-participant",
+       "o": 120263,
+       "p": 3
       },
       {
-       "id": "1dwZJFD1lgBRzQsq2V2tZs2vBdVl37AUo",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "sanctuaire/06-le-lieu-tres-saint-animateur",
+       "o": 121878,
+       "p": 3
       }
      ],
      "image": "sanctuaire-6"
@@ -2216,16 +2590,20 @@ window.BIBLIO = {
      "titre": "Le service quotidien du sanctuaire",
      "docs": [
       {
-       "id": "1gcVDuwBrY9x5ZohrUH19B-6hgjWIECxp",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "sanctuaire/07-le-service-quotidien-du-sanctuaire-participant",
+       "o": 156477,
+       "p": 2
       },
       {
-       "id": "1czEMxrj94rB68zZiFzSUnJ9oRAv3Ixcu",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "sanctuaire/07-le-service-quotidien-du-sanctuaire-animateur",
+       "o": 158634,
+       "p": 3
       }
      ],
      "image": "sanctuaire-7"
@@ -2235,16 +2613,20 @@ window.BIBLIO = {
      "titre": "Le service annuel du sanctuaire",
      "docs": [
       {
-       "id": "1ApLeM1K1i3eNqvOFeQBtZ79R5kOGhN-j",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "sanctuaire/08-le-service-annuel-du-sanctuaire-participant",
+       "o": 156865,
+       "p": 2
       },
       {
-       "id": "1g7Z3AU0E_Vk6kc3kk10k9SRw-TFKSwBA",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "sanctuaire/08-le-service-annuel-du-sanctuaire-animateur",
+       "o": 158343,
+       "p": 3
       }
      ],
      "image": "sanctuaire-8"
@@ -2254,16 +2636,20 @@ window.BIBLIO = {
      "titre": "Le jour des Expiations : le remède au péché",
      "docs": [
       {
-       "id": "1O0Xrm6Jm7ggTIhXWM6EFLIV3yIV6KUyY",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "sanctuaire/09-le-jour-des-expiations-le-remede-au-peche-participant",
+       "o": 158191,
+       "p": 2
       },
       {
-       "id": "1nrnmpDl_oX2AYbIkj1yLZ8HaMX0h31qh",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "sanctuaire/09-le-jour-des-expiations-le-remede-au-peche-animateur",
+       "o": 95815,
+       "p": 3
       }
      ],
      "image": "sanctuaire-9"
@@ -2273,16 +2659,20 @@ window.BIBLIO = {
      "titre": "La prophétie des 2300 jours",
      "docs": [
       {
-       "id": "1Jw-YsfwSD1qNUrTTYeYNK_GJwPZCQCyd",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "sanctuaire/10-la-prophetie-des-2300-jours-participant",
+       "o": 221410,
+       "p": 3
       },
       {
-       "id": "1Lf2WL-tM5fbuUJzkfQQkDbMbGLu-gNH8",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "sanctuaire/10-la-prophetie-des-2300-jours-animateur",
+       "o": 222477,
+       "p": 3
       }
      ],
      "image": "sanctuaire-10"
@@ -2292,16 +2682,20 @@ window.BIBLIO = {
      "titre": "Les fêtes et le ministère de Jésus",
      "docs": [
       {
-       "id": "13XwyJDArRRPiHDmj82t71RwIhm4wOcpX",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "sanctuaire/11-les-fetes-et-le-ministere-de-jesus-participant",
+       "o": 348892,
+       "p": 3
       },
       {
-       "id": "1uuibN9TSHOG6-Ri8gyqw_BrDK0ribCOL",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "sanctuaire/11-les-fetes-et-le-ministere-de-jesus-animateur",
+       "o": 384340,
+       "p": 3
       }
      ],
      "image": "sanctuaire-11"
@@ -2311,16 +2705,20 @@ window.BIBLIO = {
      "titre": "Jésus, notre souverain sacrificateur",
      "docs": [
       {
-       "id": "1-_kdSdn7flaAoBPGx-JdnI6EwuHqcnY_",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "sanctuaire/12-jesus-notre-souverain-sacrificateur-participant",
+       "o": 159427,
+       "p": 3
       },
       {
-       "id": "1NKh51qdikC3qA4HDjfgrk3QAyMRSgxZs",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "sanctuaire/12-jesus-notre-souverain-sacrificateur-animateur",
+       "o": 159678,
+       "p": 3
       }
      ],
      "image": "sanctuaire-12"
@@ -2328,9 +2726,11 @@ window.BIBLIO = {
    ],
    "ressources": [
     {
-     "id": "1WIcWS1vxr1eQF2B-GeYMgWl4yUk96gLf",
      "format": "PDF",
-     "titre": "Plan du cours"
+     "titre": "Plan du cours",
+     "f": "sanctuaire/plan-du-cours",
+     "o": 87829,
+     "p": 1
     }
    ],
    "image": "serie-sanctuaire"
@@ -2343,9 +2743,11 @@ window.BIBLIO = {
    "lecons": [],
    "ressources": [
     {
-     "id": "1cJVcYJgfeK9TTWaOSlfsY3Vu1TU9Ju4Y",
      "format": "PDF",
-     "titre": "Ressources pour l’animateur"
+     "titre": "Ressources pour l’animateur",
+     "f": "decouvrir/ressources-pour-l-animateur",
+     "o": 467222,
+     "p": 27
     }
    ],
    "image": "serie-decouvrir"
@@ -2361,10 +2763,16 @@ window.BIBLIO = {
      "titre": "Les secrets de la prophétie",
      "docs": [
       {
-       "id": "1rbrl62k82WQOrHuiyUIuBmUiYs4hXUOl",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/01-les-secrets-de-la-prophetie",
+       "o": 9279157,
+       "p": 95,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-01-les-secrets-de-la-prophetie.pptx",
+        "o": 60725661
+       }
       }
      ],
      "image": "secrets-prophetie-1"
@@ -2374,10 +2782,16 @@ window.BIBLIO = {
      "titre": "Qui dominera le monde ?",
      "docs": [
       {
-       "id": "1F3cTHMLStbTib5hgUXGdFw1SJzIrTBPp",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/02-qui-dominera-le-monde",
+       "o": 13356691,
+       "p": 121,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-02-qui-dominera-le-monde.pptx",
+        "o": 86220138
+       }
       }
      ],
      "image": "secrets-prophetie-2"
@@ -2387,16 +2801,28 @@ window.BIBLIO = {
      "titre": "Les signes des temps",
      "docs": [
       {
-       "id": "1l_osrrEdkUfNmLmYlxccY7KXZPR7xu4l",
        "format": "PowerPoint",
        "libelle": "1re partie",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/03-les-signes-des-temps-partie-1",
+       "o": 6529310,
+       "p": 48,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-03-les-signes-des-temps-partie-1.pptx",
+        "o": 63788803
+       }
       },
       {
-       "id": "1ao0zNgicLOM6JMABbZrY_zGyRhv7DWIt",
        "format": "PowerPoint",
        "libelle": "2e partie",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/03-les-signes-des-temps-partie-2",
+       "o": 4398787,
+       "p": 42,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-03-les-signes-des-temps-partie-2.pptx",
+        "o": 47709653
+       }
       }
      ],
      "image": "secrets-prophetie-3"
@@ -2406,10 +2832,16 @@ window.BIBLIO = {
      "titre": "Comment le monde finira-t-il ?",
      "docs": [
       {
-       "id": "1slWLtWetXfTIWtxx9qoPHui9EWGongsr",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/04-comment-le-monde-finira-t-il",
+       "o": 7093494,
+       "p": 98,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-04-comment-le-monde-finira-t-il.pptx",
+        "o": 84494846
+       }
       }
      ],
      "image": "secrets-prophetie-4"
@@ -2419,10 +2851,16 @@ window.BIBLIO = {
      "titre": "La zone de guerre",
      "docs": [
       {
-       "id": "1yGj9njBjJZ8WhdgzLZ9iMcd1PGO7x9P9",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/05-la-zone-de-guerre",
+       "o": 5713702,
+       "p": 92,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-05-la-zone-de-guerre.pptx",
+        "o": 53776048
+       }
       }
      ],
      "image": "secrets-prophetie-5"
@@ -2432,10 +2870,16 @@ window.BIBLIO = {
      "titre": "Dieu se soucie-t-il de nous ?",
      "docs": [
       {
-       "id": "1Cly1RMdBRpgea2uT2lZuxq6JNd3vex92",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/06-dieu-se-soucie-t-il-de-nous",
+       "o": 5712089,
+       "p": 77,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-06-dieu-se-soucie-t-il-de-nous.pptx",
+        "o": 61822890
+       }
       }
      ],
      "image": "secrets-prophetie-6"
@@ -2445,10 +2889,16 @@ window.BIBLIO = {
      "titre": "Les étapes vers la liberté spirituelle",
      "docs": [
       {
-       "id": "164nS_KsU904lunuAhOwrnMJ9GhivBgP0",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/07-les-etapes-vers-la-liberte-spirituelle",
+       "o": 5540652,
+       "p": 85,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-07-les-etapes-vers-la-liberte-spirituelle.pptx",
+        "o": 53453013
+       }
       }
      ],
      "image": "secrets-prophetie-7"
@@ -2458,10 +2908,16 @@ window.BIBLIO = {
      "titre": "L’homme mystérieux de la prophétie",
      "docs": [
       {
-       "id": "1Nz7fgwxA3AksZjtc7XkoYcZ-t5Tis8Xk",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/08-l-homme-mysterieux-de-la-prophetie",
+       "o": 5719775,
+       "p": 99,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-08-l-homme-mysterieux-de-la-prophetie.pptx",
+        "o": 63144301
+       }
       }
      ],
      "image": "secrets-prophetie-8"
@@ -2471,10 +2927,16 @@ window.BIBLIO = {
      "titre": "Reconstruire le temple",
      "docs": [
       {
-       "id": "1DLVngq2qyQb5j2xYfHPJYW5ZWdjEpf3w",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/09-reconstruire-le-temple",
+       "o": 6632697,
+       "p": 81,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-09-reconstruire-le-temple.pptx",
+        "o": 73743353
+       }
       }
      ],
      "image": "secrets-prophetie-9"
@@ -2484,10 +2946,16 @@ window.BIBLIO = {
      "titre": "À l’intérieur de l’arche perdue",
      "docs": [
       {
-       "id": "1MNtZhCBVttjgqwGAtC5iLkF_qhZEHky1",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/10-a-l-interieur-de-l-arche-perdue",
+       "o": 7466563,
+       "p": 123,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-10-a-l-interieur-de-l-arche-perdue.pptx",
+        "o": 50670547
+       }
       }
      ],
      "image": "secrets-prophetie-10"
@@ -2497,10 +2965,16 @@ window.BIBLIO = {
      "titre": "Du repos pour l’âme",
      "docs": [
       {
-       "id": "1mnFJ3n2STYLcnoB92_sgWhZgNyPkU5io",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/11-du-repos-pour-l-ame",
+       "o": 6114123,
+       "p": 95,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-11-du-repos-pour-l-ame.pptx",
+        "o": 30720603
+       }
       }
      ],
      "image": "secrets-prophetie-11"
@@ -2510,10 +2984,16 @@ window.BIBLIO = {
      "titre": "Le symbole du soleil",
      "docs": [
       {
-       "id": "1LCWx8sLtN8TjFTuNthRomgDDHGPPuB5E",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/12-le-symbole-du-soleil",
+       "o": 6634398,
+       "p": 110,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-12-le-symbole-du-soleil.pptx",
+        "o": 34520489
+       }
       }
      ],
      "image": "secrets-prophetie-12"
@@ -2523,10 +3003,16 @@ window.BIBLIO = {
      "titre": "Qui est l’Antichrist ? (1re partie)",
      "docs": [
       {
-       "id": "1cdLtux5lys9pl4qiiOTi8FqjIW2tXmk4",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/13-qui-est-l-antichrist-1re-partie",
+       "o": 8685452,
+       "p": 101,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-13-qui-est-l-antichrist-1re-partie.pptx",
+        "o": 56143221
+       }
       }
      ],
      "image": "secrets-prophetie-13"
@@ -2536,10 +3022,16 @@ window.BIBLIO = {
      "titre": "Qui est l’Antichrist ? (2e partie)",
      "docs": [
       {
-       "id": "1-PbQVn-bOuLpttvSRe7YLfZoYu9POb-g",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/14-qui-est-l-antichrist-2e-partie",
+       "o": 9878496,
+       "p": 82,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-14-qui-est-l-antichrist-2e-partie.pptx",
+        "o": 53996188
+       }
       }
      ],
      "image": "secrets-prophetie-14"
@@ -2549,10 +3041,16 @@ window.BIBLIO = {
      "titre": "La dernière superpuissance",
      "docs": [
       {
-       "id": "1mUGgojw4-TOnN4bRX6lcH5V11pRruuTz",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/15-la-derniere-superpuissance",
+       "o": 13745985,
+       "p": 111,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-15-la-derniere-superpuissance.pptx",
+        "o": 69207932
+       }
       }
      ],
      "image": "secrets-prophetie-15"
@@ -2562,10 +3060,16 @@ window.BIBLIO = {
      "titre": "La marque de la bête",
      "docs": [
       {
-       "id": "1ID6A7eVqn0kZPuK-3DzdlRcqH0ojquuX",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/16-la-marque-de-la-bete",
+       "o": 7873597,
+       "p": 102,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-16-la-marque-de-la-bete.pptx",
+        "o": 47580514
+       }
       }
      ],
      "image": "secrets-prophetie-16"
@@ -2575,10 +3079,16 @@ window.BIBLIO = {
      "titre": "La vie après la mort",
      "docs": [
       {
-       "id": "1uwRuTYcVzDhV8YosWD3jvz27b6sPzX96",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/17-la-vie-apres-la-mort",
+       "o": 7520316,
+       "p": 99,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-17-la-vie-apres-la-mort.pptx",
+        "o": 48753491
+       }
       }
      ],
      "image": "secrets-prophetie-17"
@@ -2588,10 +3098,16 @@ window.BIBLIO = {
      "titre": "Où se trouve l’enfer ?",
      "docs": [
       {
-       "id": "1jWnN5ScZoEaoJxydH9tLIoTnfZbSjO1i",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/18-ou-se-trouve-l-enfer",
+       "o": 6456423,
+       "p": 80,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-18-ou-se-trouve-l-enfer.pptx",
+        "o": 36423547
+       }
       }
      ],
      "image": "secrets-prophetie-18"
@@ -2601,10 +3117,16 @@ window.BIBLIO = {
      "titre": "Mille ans de paix",
      "docs": [
       {
-       "id": "1Ub-p52fHK3ijBBoE_OeXxBrE3FfRPsxL",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/19-mille-ans-de-paix",
+       "o": 7625083,
+       "p": 92,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-19-mille-ans-de-paix.pptx",
+        "o": 63190986
+       }
       }
      ],
      "image": "secrets-prophetie-19"
@@ -2614,10 +3136,16 @@ window.BIBLIO = {
      "titre": "Ensevelis dans l’eau",
      "docs": [
       {
-       "id": "1hXucBK_s85qI18N1Au0wqqsxPf7sq_C_",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/20-ensevelis-dans-l-eau",
+       "o": 8559960,
+       "p": 91,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-20-ensevelis-dans-l-eau.pptx",
+        "o": 46426970
+       }
       }
      ],
      "image": "secrets-prophetie-20"
@@ -2627,10 +3155,16 @@ window.BIBLIO = {
      "titre": "Le jugement",
      "docs": [
       {
-       "id": "124Txtck5-vneOTjUBiW_6SMNHYCsdIpK",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/21-le-jugement",
+       "o": 8643072,
+       "p": 87,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-21-le-jugement.pptx",
+        "o": 65638089
+       }
       }
      ],
      "image": "secrets-prophetie-21"
@@ -2640,10 +3174,16 @@ window.BIBLIO = {
      "titre": "Vivre pleinement",
      "docs": [
       {
-       "id": "1J3qMbj5wAGlFyehFgo-s1txLQaHkIhiI",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/23-vivre-pleinement",
+       "o": 8440416,
+       "p": 77,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-23-vivre-pleinement.pptx",
+        "o": 39905773
+       }
       }
      ],
      "image": "secrets-prophetie-23"
@@ -2653,10 +3193,16 @@ window.BIBLIO = {
      "titre": "Le secret de la réussite",
      "docs": [
       {
-       "id": "1gU4hSVZNMBa1ccdEVXPmvZOfCDVptm6A",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "secrets-prophetie/24-le-secret-de-la-reussite",
+       "o": 7656984,
+       "p": 100,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/secrets-prophetie-24-le-secret-de-la-reussite.pptx",
+        "o": 42372572
+       }
       }
      ],
      "image": "secrets-prophetie-24"
@@ -2676,10 +3222,12 @@ window.BIBLIO = {
      "titre": "Les secrets de l’espérance : les sept Églises",
      "docs": [
       {
-       "id": "1tpDuf-ae9jMRJ98WgUEZKbirLQcKAW53",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "sept-eglises/01-les-secrets-de-l-esperance-les-sept-eglises",
+       "o": 265313,
+       "p": 49
       }
      ]
     }
@@ -2698,16 +3246,20 @@ window.BIBLIO = {
      "titre": "Le besoin d’excellence",
      "docs": [
       {
-       "id": "1nZDdPPYRwR5-2ee4s1x61oYqrFy7hJFA",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "excellence/01-le-besoin-d-excellence-participant",
+       "o": 2294687,
+       "p": 3
       },
       {
-       "id": "1D37uVB63yqvB6_qSt0NFAiFgfyRej8OZ",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "excellence/01-le-besoin-d-excellence-animateur",
+       "o": 2262137,
+       "p": 3
       }
      ],
      "image": "excellence-1"
@@ -2717,16 +3269,20 @@ window.BIBLIO = {
      "titre": "La clé de l’excellence",
      "docs": [
       {
-       "id": "1_Ymw2_h3fxk9PMtGLQT4Bd6ItuJdipp_",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "excellence/02-la-cle-de-l-excellence-participant",
+       "o": 2229585,
+       "p": 2
       },
       {
-       "id": "1omfH4KXxCrdaUvbHzKwmzS9ITB61fK01",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "excellence/02-la-cle-de-l-excellence-animateur",
+       "o": 2261587,
+       "p": 3
       }
      ],
      "image": "excellence-2"
@@ -2736,16 +3292,20 @@ window.BIBLIO = {
      "titre": "Les objectifs de l’excellence",
      "docs": [
       {
-       "id": "1oaqJqKoqrvMKLZichsjKwVl6-D6n6JsB",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "excellence/03-les-objectifs-de-l-excellence-participant",
+       "o": 2295070,
+       "p": 3
       },
       {
-       "id": "1NOZtdQpMNKgMvkUBgx_BnRva83fh1d4L",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "excellence/03-les-objectifs-de-l-excellence-animateur",
+       "o": 2232710,
+       "p": 3
       }
      ],
      "image": "excellence-3"
@@ -2755,16 +3315,20 @@ window.BIBLIO = {
      "titre": "Les étapes vers l’excellence",
      "docs": [
       {
-       "id": "1UT2Qd-V3dp0kOqouKKJP9BkJPIM0bA1B",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "excellence/04-les-etapes-vers-l-excellence-participant",
+       "o": 2229349,
+       "p": 2
       },
       {
-       "id": "1esaIDQGvhvyDbdoqf_d_Cr2p511vOM2f",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "excellence/04-les-etapes-vers-l-excellence-animateur",
+       "o": 2233898,
+       "p": 3
       }
      ],
      "image": "excellence-4"
@@ -2774,16 +3338,20 @@ window.BIBLIO = {
      "titre": "Le chemin de l’excellence",
      "docs": [
       {
-       "id": "19BTPMBxLI9Rqc5xwudPfZRnvrWF_Npu0",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "excellence/05-le-chemin-de-l-excellence-participant",
+       "o": 2297159,
+       "p": 4
       },
       {
-       "id": "1PnOXv9OA1fOasDimKnnA-_O5ZX52W-uk",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "excellence/05-le-chemin-de-l-excellence-animateur",
+       "o": 2298456,
+       "p": 4
       }
      ],
      "image": "excellence-5"
@@ -2793,16 +3361,20 @@ window.BIBLIO = {
      "titre": "L’urgence de l’excellence",
      "docs": [
       {
-       "id": "1M2ZOAWIIq80291o7egBFDWEfPKzth-tn",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "excellence/06-l-urgence-de-l-excellence-participant",
+       "o": 2230560,
+       "p": 2
       },
       {
-       "id": "1EhiCAjctu2vCNdSJi219CiIAp2RNy7gw",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "excellence/06-l-urgence-de-l-excellence-animateur",
+       "o": 2234441,
+       "p": 3
       }
      ],
      "image": "excellence-6"
@@ -2812,16 +3384,20 @@ window.BIBLIO = {
      "titre": "L’excellence dans les relations",
      "docs": [
       {
-       "id": "12bmZCGxwZpdd1EdgUE2OvyP5aTQjy2lG",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "excellence/07-l-excellence-dans-les-relations-participant",
+       "o": 2295828,
+       "p": 3
       },
       {
-       "id": "1pV1JE1X0C_eySf7PUU8axdEs4glR4byw",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "excellence/07-l-excellence-dans-les-relations-animateur",
+       "o": 2261643,
+       "p": 3
       }
      ],
      "image": "excellence-7"
@@ -2829,14 +3405,26 @@ window.BIBLIO = {
    ],
    "ressources": [
     {
-     "id": "1KgnYeFWpMBBE94KjU0JhEPnKpZNl3CFR",
      "format": "PowerPoint",
-     "titre": "Brochure de présentation"
+     "titre": "Brochure de présentation",
+     "f": "excellence/brochure-de-presentation",
+     "o": 79357,
+     "p": 1,
+     "original": {
+      "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/excellence-brochure-de-presentation.pptx",
+      "o": 1492079
+     }
     },
     {
-     "id": "1xyMocp03B9iYARaQ-k-NAG_c1tNK0teZ",
      "format": "Excel",
-     "titre": "Tableau de planification (Stephen Covey)"
+     "titre": "Tableau de planification (Stephen Covey)",
+     "f": "excellence/tableau-de-planification-stephen-covey",
+     "o": 80950,
+     "p": 4,
+     "original": {
+      "url": "documents/excellence/tableau-de-planification-stephen-covey.xlsx",
+      "o": 84461
+     }
     }
    ],
    "image": "serie-excellence"
@@ -2852,22 +3440,28 @@ window.BIBLIO = {
      "titre": "Trouver l’âme sœur",
      "docs": [
       {
-       "id": "17aPzknIslY-0nruWhXH60HS5x6nNEKye",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "frequentations/01-trouver-l-ame-soeur-participant",
+       "o": 3708840,
+       "p": 3
       },
       {
-       "id": "1bh5LADrIcqGWYmtGw-oj5bZ6y4vtzCP1",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/01-trouver-l-ame-soeur-animateur",
+       "o": 3710310,
+       "p": 3
       },
       {
-       "id": "1PX99j5tRpzyaSmjRdlrNlZslYsB6n2Mm",
        "format": "Word",
        "libelle": "Notes de présentation",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/01-trouver-l-ame-soeur-notes",
+       "o": 77311,
+       "p": 5
       }
      ],
      "image": "frequentations-1"
@@ -2877,22 +3471,28 @@ window.BIBLIO = {
      "titre": "Que rechercher chez un conjoint",
      "docs": [
       {
-       "id": "1eAR2UBziB00x7VWwn8PALoZ_KjAgsbOE",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "frequentations/02-que-rechercher-chez-un-conjoint-participant",
+       "o": 3707599,
+       "p": 3
       },
       {
-       "id": "1llsHuFKtQE5ljOXuhP0kPcwrQdrjlkr9",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/02-que-rechercher-chez-un-conjoint-animateur",
+       "o": 3710375,
+       "p": 3
       },
       {
-       "id": "15bkIetty0Vxu4c_ESJjVCklBb0M3DotZ",
        "format": "Word",
        "libelle": "Notes de présentation",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/02-que-rechercher-chez-un-conjoint-notes",
+       "o": 53411,
+       "p": 4
       }
      ],
      "image": "frequentations-2"
@@ -2902,22 +3502,28 @@ window.BIBLIO = {
      "titre": "Épouser la bonne personne",
      "docs": [
       {
-       "id": "1Xwio5K8rb4zGnB-UI_JiKideUcZ93jPh",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "frequentations/03-epouser-la-bonne-personne-participant",
+       "o": 3643440,
+       "p": 3
       },
       {
-       "id": "1PNJrDNmr6Px1q6gA5_Jcz3jn4o4XeJFr",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/03-epouser-la-bonne-personne-animateur",
+       "o": 3645522,
+       "p": 3
       },
       {
-       "id": "1Iu3KGRvwZxWk2z6WLrdv_Wm7s2-svtd-",
        "format": "Word",
        "libelle": "Notes de présentation",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/03-epouser-la-bonne-personne-notes",
+       "o": 61848,
+       "p": 5
       }
      ],
      "image": "frequentations-3"
@@ -2927,22 +3533,28 @@ window.BIBLIO = {
      "titre": "Pourquoi les relations se dégradent",
      "docs": [
       {
-       "id": "1Uag46j5iKfzGHzJVBliYYiGppu1wTGWc",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "frequentations/04-pourquoi-les-relations-se-degradent-participant",
+       "o": 3672223,
+       "p": 3
       },
       {
-       "id": "11ZGhNmoeeoO0jnE258SsjCUlf1oACK5V",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/04-pourquoi-les-relations-se-degradent-animateur",
+       "o": 3646407,
+       "p": 3
       },
       {
-       "id": "1cHogPxdFFJzeBhZj1GpkVDQCrZqzPTZB",
        "format": "Word",
        "libelle": "Notes de présentation",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/04-pourquoi-les-relations-se-degradent-notes",
+       "o": 60817,
+       "p": 4
       }
      ],
      "image": "frequentations-4"
@@ -2952,22 +3564,28 @@ window.BIBLIO = {
      "titre": "Où tu iras, j’irai",
      "docs": [
       {
-       "id": "10p5Z2_nU1zWPpWiRydTnmbjaK9zfJO6S",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "frequentations/05-ou-tu-iras-j-irai-participant",
+       "o": 3671969,
+       "p": 3
       },
       {
-       "id": "1NkueYjwlIR_SA7bLJrhluHBBcZytkIv0",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/05-ou-tu-iras-j-irai-animateur",
+       "o": 3645753,
+       "p": 3
       },
       {
-       "id": "1Zf5MXW-OCDFgU_z3PU4R_niV43UlzACR",
        "format": "Word",
        "libelle": "Notes de présentation",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/05-ou-tu-iras-j-irai-notes",
+       "o": 56408,
+       "p": 4
       }
      ],
      "image": "frequentations-5"
@@ -2977,22 +3595,28 @@ window.BIBLIO = {
      "titre": "Le jeu de l’amour",
      "docs": [
       {
-       "id": "1ibnCmw1pPKbQ5un74HgrAQixZuqGINr8",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "frequentations/06-le-jeu-de-l-amour-participant",
+       "o": 3643802,
+       "p": 3
       },
       {
-       "id": "1iW6_ng0DuWG62G0BJvkGf3uggvunWHxA",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/06-le-jeu-de-l-amour-animateur",
+       "o": 3645826,
+       "p": 3
       },
       {
-       "id": "16cmghSKuqtM9yv-u6dP1303g0wQ7Chyj",
        "format": "Word",
        "libelle": "Notes de présentation",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/06-le-jeu-de-l-amour-notes",
+       "o": 50888,
+       "p": 4
       }
      ],
      "image": "frequentations-6"
@@ -3002,22 +3626,28 @@ window.BIBLIO = {
      "titre": "Passion et pureté",
      "docs": [
       {
-       "id": "1hpGqPWa4nHGxzHP4GIyBn7HuYOTXTLIR",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "frequentations/07-passion-et-purete-participant",
+       "o": 3671948,
+       "p": 2
       },
       {
-       "id": "192yjhqWhR_08HpOWIRgy7tWubAUkdOKE",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/07-passion-et-purete-animateur",
+       "o": 3646370,
+       "p": 3
       },
       {
-       "id": "1EDNk2MHlgMsj4FBDg2HL9knYxQoK0muK",
        "format": "Word",
        "libelle": "Notes de présentation",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/07-passion-et-purete-notes",
+       "o": 51324,
+       "p": 4
       }
      ],
      "image": "frequentations-7"
@@ -3027,22 +3657,28 @@ window.BIBLIO = {
      "titre": "La pureté sexuelle chez la femme",
      "docs": [
       {
-       "id": "1RD-SJsQD-1OkcCU1k3Gk_onKhq5JWDEP",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "frequentations/08-la-purete-sexuelle-chez-la-femme-participant",
+       "o": 3705944,
+       "p": 2
       },
       {
-       "id": "1pA8KbfbcUB-G9b0OFGg1pDmvATeBXYzi",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/08-la-purete-sexuelle-chez-la-femme-animateur",
+       "o": 3646184,
+       "p": 3
       },
       {
-       "id": "12e2_NDYoU4PKzkT2JK44n5heGIGyS7it",
        "format": "Word",
        "libelle": "Notes de présentation",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/08-la-purete-sexuelle-chez-la-femme-notes",
+       "o": 60980,
+       "p": 4
       }
      ],
      "image": "frequentations-8"
@@ -3052,22 +3688,28 @@ window.BIBLIO = {
      "titre": "L’intégrité sexuelle chez l’homme",
      "docs": [
       {
-       "id": "1bEni2wyzf-Dk84ohkq3hJP9_dyf8RTsl",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "frequentations/09-l-integrite-sexuelle-chez-l-homme-participant",
+       "o": 3708247,
+       "p": 3
       },
       {
-       "id": "1dYBKo5iAiDrct6qukB9TFwnPjBc5yCcB",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/09-l-integrite-sexuelle-chez-l-homme-animateur",
+       "o": 3675754,
+       "p": 3
       },
       {
-       "id": "1WGS1zSq0RfV87Z7qI7Fwcj_79xQvQY6j",
        "format": "Word",
        "libelle": "Notes de présentation",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "frequentations/09-l-integrite-sexuelle-chez-l-homme-notes",
+       "o": 60870,
+       "p": 4
       }
      ],
      "image": "frequentations-9"
@@ -3075,19 +3717,29 @@ window.BIBLIO = {
    ],
    "ressources": [
     {
-     "id": "1CvoLIEUE1qMSxB6k-meItLPwceO_jOw_",
      "format": "PowerPoint",
-     "titre": "Brochure de présentation"
+     "titre": "Brochure de présentation",
+     "f": "frequentations/brochure-de-presentation",
+     "o": 153426,
+     "p": 1,
+     "original": {
+      "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/frequentations-brochure-de-presentation.pptx",
+      "o": 2233567
+     }
     },
     {
-     "id": "1I0fVzxApX458BHR6PmW3NfmBCr-k67wN",
      "format": "PDF",
-     "titre": "Révision du cours (fiche du participant)"
+     "titre": "Révision du cours (fiche du participant)",
+     "f": "frequentations/revision-du-cours-fiche-du-participant",
+     "o": 3644818,
+     "p": 3
     },
     {
-     "id": "19eXKOpXxtxu07RSY8oGNq0xbn0Jfl6E6",
      "format": "PDF",
-     "titre": "Révision du cours (guide de l’animateur)"
+     "titre": "Révision du cours (guide de l’animateur)",
+     "f": "frequentations/revision-du-cours-guide-de-l-animateur",
+     "o": 3645222,
+     "p": 3
     }
    ],
    "image": "serie-frequentations"
@@ -3103,10 +3755,12 @@ window.BIBLIO = {
      "titre": "Nos enfants appartiennent à Dieu",
      "docs": [
       {
-       "id": "18_G6eTi0myx1w7fl7vRI7YlpPfaA4YCK",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "enfants/01-nos-enfants-appartiennent-a-dieu",
+       "o": 59843,
+       "p": 3
       }
      ],
      "image": "enfants-1"
@@ -3116,16 +3770,20 @@ window.BIBLIO = {
      "titre": "La mission divine confiée aux parents",
      "docs": [
       {
-       "id": "1y92jyeAft3o8Dj3TSpIE7CSJTRYm5ZZA",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "enfants/02-la-mission-divine-confiee-aux-parents-participant",
+       "o": 59514,
+       "p": 3
       },
       {
-       "id": "1UsUfKT1lY3konEpNAYOEEU-ySMNNsWyE",
        "format": "Word",
        "libelle": "Avec les réponses",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "enfants/02-la-mission-divine-confiee-aux-parents-reponses",
+       "o": 74899,
+       "p": 3
       }
      ],
      "image": "enfants-2"
@@ -3135,16 +3793,20 @@ window.BIBLIO = {
      "titre": "Les premiers pas : amour et confiance",
      "docs": [
       {
-       "id": "1BX0ev8KzIuq7o0JpiE0kCjCVMk5sIjzc",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "enfants/03-les-premiers-pas-amour-et-confiance-participant",
+       "o": 94357,
+       "p": 5
       },
       {
-       "id": "12qdtQvbKWM5VvIaUW4CWbZsCzzJ1yP0R",
        "format": "Word",
        "libelle": "Avec les réponses",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "enfants/03-les-premiers-pas-amour-et-confiance-reponses",
+       "o": 135408,
+       "p": 6
       }
      ],
      "image": "enfants-3"
@@ -3154,16 +3816,20 @@ window.BIBLIO = {
      "titre": "Les étapes suivantes : obéissance et discipline",
      "docs": [
       {
-       "id": "1FWKTg04r3jM4O7Gt_HUokIYx75qC43ZK",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "enfants/04-les-etapes-suivantes-obeissance-et-discipline-participant",
+       "o": 168989,
+       "p": 6
       },
       {
-       "id": "1gqrWnDVy2B0Xg4y0QAdReFN3dDcBXRz4",
        "format": "Word",
        "libelle": "Avec les réponses",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "enfants/04-les-etapes-suivantes-obeissance-et-discipline-reponses",
+       "o": 209671,
+       "p": 8
       }
      ],
      "image": "enfants-4"
@@ -3173,16 +3839,20 @@ window.BIBLIO = {
      "titre": "La spiritualité dans la petite enfance",
      "docs": [
       {
-       "id": "1-c8O66TClu4vP2e1eDSzs2aly_D9Mt6K",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "enfants/05-la-spiritualite-dans-la-petite-enfance-participant",
+       "o": 83827,
+       "p": 4
       },
       {
-       "id": "1-Jo1pLNxT2fjaZyI3bYLPhT0rUTXJnMU",
        "format": "Word",
        "libelle": "Avec les réponses",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "enfants/05-la-spiritualite-dans-la-petite-enfance-reponses",
+       "o": 126692,
+       "p": 6
       }
      ],
      "image": "enfants-5"
@@ -3192,16 +3862,20 @@ window.BIBLIO = {
      "titre": "Encourager une attitude positive envers les Écritures",
      "docs": [
       {
-       "id": "1Iba8mITmkv_mHPHxKS-faEAfhGeYQgSS",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "enfants/06-encourager-une-attitude-positive-envers-les-ecritures-participant",
+       "o": 74597,
+       "p": 3
       },
       {
-       "id": "1GIKCvZzcaeZGAD9knyGAt8nwUZthiQrf",
        "format": "Word",
        "libelle": "Avec les réponses",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "enfants/06-encourager-une-attitude-positive-envers-les-ecritures-reponses",
+       "o": 106961,
+       "p": 4
       }
      ],
      "image": "enfants-6"
@@ -3211,22 +3885,28 @@ window.BIBLIO = {
      "titre": "Le culte de famille et la prière",
      "docs": [
       {
-       "id": "1wEZQLs1_m7tmZy3ZIhDrGNLl-Ilag4F2",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "enfants/07-le-culte-de-famille-et-la-priere-participant",
+       "o": 76044,
+       "p": 3
       },
       {
-       "id": "1oyPukQcCS3mWyzZRZG7DYO3MluQG1UXd",
        "format": "Word",
        "libelle": "Avec les réponses",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "enfants/07-le-culte-de-famille-et-la-priere-reponses",
+       "o": 92380,
+       "p": 5
       },
       {
-       "id": "1maJ2TsIASI9Qk-MPuPABEIU17XuECCII",
        "format": "Word",
        "libelle": "Avec les réponses (version 2)",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "enfants/07-le-culte-de-famille-et-la-priere-reponses-2",
+       "o": 92077,
+       "p": 4
       }
      ],
      "image": "enfants-7"
@@ -3236,16 +3916,20 @@ window.BIBLIO = {
      "titre": "Le sabbat : un jour de délices",
      "docs": [
       {
-       "id": "1JA1apNsd3Nz1Io0tJ-zdKXeb2ymIbSBn",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "enfants/08-le-sabbat-un-jour-de-delices-participant",
+       "o": 77565,
+       "p": 3
       },
       {
-       "id": "1E2fV03B_zehgtx5zNI2N05WggpEDaMfB",
        "format": "Word",
        "libelle": "Avec les réponses",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "enfants/08-le-sabbat-un-jour-de-delices-reponses",
+       "o": 91222,
+       "p": 4
       }
      ],
      "image": "enfants-8"
@@ -3255,16 +3939,20 @@ window.BIBLIO = {
      "titre": "L’Église et l’enfant",
      "docs": [
       {
-       "id": "1MBlwFVgG20R70iIviy0Kk4bCIniFhho_",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "enfants/09-l-eglise-et-l-enfant-participant",
+       "o": 76167,
+       "p": 3
       },
       {
-       "id": "1DQnlSBLYEc6XpU5IT4QGQ5VBdzRFCQ-q",
        "format": "Word",
        "libelle": "Avec les réponses",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "enfants/09-l-eglise-et-l-enfant-reponses",
+       "o": 128853,
+       "p": 5
       }
      ],
      "image": "enfants-9"
@@ -3274,16 +3962,20 @@ window.BIBLIO = {
      "titre": "Face au monde (1re partie)",
      "docs": [
       {
-       "id": "12JZHxYzv5VC1OQCLKb4mueSBf8dPl5pW",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "enfants/10-face-au-monde-1re-partie-participant",
+       "o": 83127,
+       "p": 3
       },
       {
-       "id": "1r_Jtdjecf1doPajnd_eAOFb75QXock4K",
        "format": "Word",
        "libelle": "Avec les réponses",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "enfants/10-face-au-monde-1re-partie-reponses",
+       "o": 102947,
+       "p": 4
       }
      ],
      "image": "enfants-10"
@@ -3293,16 +3985,20 @@ window.BIBLIO = {
      "titre": "Face au monde (2e partie)",
      "docs": [
       {
-       "id": "1p5A_Hj4AO0aHzHi_Z5v63BEkkEz7WGZ9",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "enfants/11-face-au-monde-2e-partie-participant",
+       "o": 80764,
+       "p": 4
       },
       {
-       "id": "1493Ya1l7cwIGgE-zRxvyOfYvYRULGHY4",
        "format": "Word",
        "libelle": "Avec les réponses",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "enfants/11-face-au-monde-2e-partie-reponses",
+       "o": 101253,
+       "p": 4
       }
      ],
      "image": "enfants-11"
@@ -3312,16 +4008,20 @@ window.BIBLIO = {
      "titre": "L’éducation de l’enfant",
      "docs": [
       {
-       "id": "1pxxgSUN0BaWlaFM8laWonYBBJ6N4DxfZ",
        "format": "Word",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "enfants/12-l-education-de-l-enfant-participant",
+       "o": 67152,
+       "p": 3
       },
       {
-       "id": "1bW8ih1HNnWhTUZoDiTw7iU3Et4NCMpT-",
        "format": "Word",
        "libelle": "Avec les réponses",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "enfants/12-l-education-de-l-enfant-reponses",
+       "o": 94197,
+       "p": 3
       }
      ],
      "image": "enfants-12"
@@ -3329,14 +4029,18 @@ window.BIBLIO = {
    ],
    "ressources": [
     {
-     "id": "1dXDdmRioGnLZOfh8gghnGCutv-dbALtX",
      "format": "Word",
-     "titre": "Plan du cours"
+     "titre": "Plan du cours",
+     "f": "enfants/plan-du-cours",
+     "o": 48866,
+     "p": 1
     },
     {
-     "id": "1syasHxav2zUrmOsW0kAOJcJBWSsF7GTV",
      "format": "Word",
-     "titre": "Révision du cours"
+     "titre": "Révision du cours",
+     "f": "enfants/revision-du-cours",
+     "o": 37602,
+     "p": 2
     }
    ],
    "image": "serie-enfants"
@@ -3352,10 +4056,12 @@ window.BIBLIO = {
      "titre": "Le but du mariage",
      "docs": [
       {
-       "id": "1_yC123K7EYOHsgLPlKZkDpNQ_cyuprwS",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "homme-de-dieu/01-le-but-du-mariage",
+       "o": 113067,
+       "p": 1
       }
      ],
      "image": "homme-de-dieu-1"
@@ -3365,10 +4071,12 @@ window.BIBLIO = {
      "titre": "Définir l’homme de Dieu",
      "docs": [
       {
-       "id": "1olhxGWyNP9jxw_sqHagmD4xZ8wBPNvCm",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "homme-de-dieu/02-definir-l-homme-de-dieu",
+       "o": 91508,
+       "p": 3
       }
      ],
      "image": "homme-de-dieu-2"
@@ -3378,10 +4086,12 @@ window.BIBLIO = {
      "titre": "Responsabilité et autorité",
      "docs": [
       {
-       "id": "1fJSfe_Z44OEpuuf726PqeyI3IN5aCwtO",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "homme-de-dieu/03-responsabilite-et-autorite",
+       "o": 87215,
+       "p": 2
       }
      ],
      "image": "homme-de-dieu-3"
@@ -3391,10 +4101,12 @@ window.BIBLIO = {
      "titre": "Établir les règles : causes et conséquences",
      "docs": [
       {
-       "id": "1lemMVIOageocFAEENXAfTP0ur7ubRUt5",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "homme-de-dieu/04-etablir-les-regles-causes-et-consequences",
+       "o": 88757,
+       "p": 3
       }
      ],
      "image": "homme-de-dieu-4"
@@ -3404,10 +4116,12 @@ window.BIBLIO = {
      "titre": "Le prêtre du foyer",
      "docs": [
       {
-       "id": "1ZG8OniLo8JAH2gzBe9WpaJdf1yEplD9X",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "homme-de-dieu/05-le-pretre-du-foyer",
+       "o": 86790,
+       "p": 2
       }
      ],
      "image": "homme-de-dieu-5"
@@ -3427,16 +4141,20 @@ window.BIBLIO = {
      "titre": "Résoudre le grand problème : quelle est votre valeur ?",
      "docs": [
       {
-       "id": "1iFNEYUTNaOXeONFCR_h6PA0dvqZ28J7a",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "convoitise/01-resoudre-le-grand-probleme-quelle-est-votre-valeur-participant",
+       "o": 2424972,
+       "p": 3
       },
       {
-       "id": "1ocgph3ipX1MnwiYKTZ34lNkvdlud0KWA",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "convoitise/01-resoudre-le-grand-probleme-quelle-est-votre-valeur-animateur",
+       "o": 2390453,
+       "p": 3
       }
      ],
      "image": "convoitise-1"
@@ -3446,16 +4164,20 @@ window.BIBLIO = {
      "titre": "L’Agneau meurt et le Prêtre vit",
      "docs": [
       {
-       "id": "1UJjFSXhKwJ5BE-y0XLqT8GCGAVtT0u3i",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "convoitise/02-l-agneau-meurt-et-le-pretre-vit-participant",
+       "o": 2424217,
+       "p": 3
       },
       {
-       "id": "1bo6kwmuH5VOHualUl1PliudBsNC-Xsbc",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "convoitise/02-l-agneau-meurt-et-le-pretre-vit-animateur",
+       "o": 2425893,
+       "p": 3
       }
      ],
      "image": "convoitise-2"
@@ -3465,16 +4187,20 @@ window.BIBLIO = {
      "titre": "Le jour des Expiations : le remède au péché",
      "docs": [
       {
-       "id": "1cTmFITFVvmOzrXr4Wr3S8bGvEox-PKPG",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "convoitise/03-le-jour-des-expiations-le-remede-au-peche-participant",
+       "o": 2424894,
+       "p": 3
       },
       {
-       "id": "1Zi4UT78-VeAXz_iK6GFUzeGT8a6ejaYF",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "convoitise/03-le-jour-des-expiations-le-remede-au-peche-animateur",
+       "o": 2426880,
+       "p": 3
       }
      ],
      "image": "convoitise-3"
@@ -3484,16 +4210,20 @@ window.BIBLIO = {
      "titre": "Si je tombe : quand le sanctuaire pourra-t-il fermer ?",
      "docs": [
       {
-       "id": "1pgJCz38l_79uZvFm4bXB29lW2F9qgyYt",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "convoitise/04-si-je-tombe-quand-le-sanctuaire-pourra-t-il-fermer-participant",
+       "o": 2390481,
+       "p": 3
       },
       {
-       "id": "1jsML2Gbn-yWh3txysXm7T3szyWDKt2ms",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "convoitise/04-si-je-tombe-quand-le-sanctuaire-pourra-t-il-fermer-animateur",
+       "o": 2392129,
+       "p": 3
       }
      ],
      "image": "convoitise-4"
@@ -3503,16 +4233,20 @@ window.BIBLIO = {
      "titre": "Le péché sexuel et les conseils de l’Esprit de prophétie",
      "docs": [
       {
-       "id": "1CreB-9HNPxkV9bhApgU2mHUk3TblnGOJ",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "convoitise/05-le-peche-sexuel-et-les-conseils-de-l-esprit-de-prophetie-participant",
+       "o": 2390621,
+       "p": 3
       },
       {
-       "id": "16bT8CIbRz2JsMvU-f-RL5bnHJzbyotGr",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "convoitise/05-le-peche-sexuel-et-les-conseils-de-l-esprit-de-prophetie-animateur",
+       "o": 2391800,
+       "p": 4
       }
      ],
      "image": "convoitise-5"
@@ -3522,16 +4256,20 @@ window.BIBLIO = {
      "titre": "La maîtrise de soi : fruit de l’Esprit",
      "docs": [
       {
-       "id": "1bWbhA14KCxiObW3nySyR-F5M3c7SEJXj",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "convoitise/06-la-maitrise-de-soi-fruit-de-l-esprit-participant",
+       "o": 2360676,
+       "p": 3
       },
       {
-       "id": "1RSgtlIaq-J7ha5X2p9OTXaBjHP5N_qz1",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "convoitise/06-la-maitrise-de-soi-fruit-de-l-esprit-animateur",
+       "o": 2361923,
+       "p": 3
       }
      ],
      "image": "convoitise-6"
@@ -3541,16 +4279,20 @@ window.BIBLIO = {
      "titre": "Les recherches scientifiques",
      "docs": [
       {
-       "id": "1HRYKWJdSMauxaCQIw6fwIzJ5zgu6q9cR",
        "format": "PDF",
        "libelle": "Fiche du participant",
-       "role": "participant"
+       "role": "participant",
+       "f": "convoitise/07-les-recherches-scientifiques-participant",
+       "o": 2389287,
+       "p": 3
       },
       {
-       "id": "12f0F6LM9acHhBfLYXx0vSPMitdYO_l7u",
        "format": "PDF",
        "libelle": "Guide de l’animateur",
-       "role": "animateur"
+       "role": "animateur",
+       "f": "convoitise/07-les-recherches-scientifiques-animateur",
+       "o": 2389368,
+       "p": 3
       }
      ],
      "image": "convoitise-7"
@@ -3570,10 +4312,12 @@ window.BIBLIO = {
      "titre": "Étude sur le Saint-Esprit au sein de la Divinité",
      "docs": [
       {
-       "id": "1JlSaqqhF5D4KaQV5rvrPPKssXVUaR85v",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/01-etude-sur-le-saint-esprit-au-sein-de-la-divinite",
+       "o": 108517,
+       "p": 4
       }
      ],
      "image": "trinite-1"
@@ -3583,10 +4327,12 @@ window.BIBLIO = {
      "titre": "Tableau de l’égalité parfaite des membres de la Divinité",
      "docs": [
       {
-       "id": "14Jr_BTORLIimWxFLVg7J7id4w2IQOHnL",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/02-tableau-de-l-egalite-parfaite-des-membres-de-la-divinite",
+       "o": 127712,
+       "p": 2
       }
      ],
      "image": "trinite-2"
@@ -3596,10 +4342,12 @@ window.BIBLIO = {
      "titre": "Esprit de prophétie : le Christ et la Divinité",
      "docs": [
       {
-       "id": "1hNZypGyt1I6RK0hB2k1MIvFJaCJfND6J",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/03-esprit-de-prophetie-le-christ-et-la-divinite",
+       "o": 125968,
+       "p": 6
       }
      ],
      "image": "trinite-3"
@@ -3609,10 +4357,12 @@ window.BIBLIO = {
      "titre": "Réflexion sur la doctrine de la Trinité (Raoul Dederen)",
      "docs": [
       {
-       "id": "1eJv3TmtoEglKSV96t3ZNGxjkVa8NQUkv",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/04-reflexion-sur-la-doctrine-de-la-trinite-raoul-dederen",
+       "o": 107955,
+       "p": 11
       }
      ],
      "image": "trinite-4"
@@ -3622,10 +4372,12 @@ window.BIBLIO = {
      "titre": "Étude biblique sur le Saint-Esprit",
      "docs": [
       {
-       "id": "1-75Wqcjp-w7t0xWAEKYp61T77cq18FS4",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/05-etude-biblique-sur-le-saint-esprit",
+       "o": 90011,
+       "p": 1
       }
      ],
      "image": "trinite-5"
@@ -3635,10 +4387,12 @@ window.BIBLIO = {
      "titre": "Le Saint-Esprit : rôle, dons et langues",
      "docs": [
       {
-       "id": "1ZonyzdgHCX8giVU3ZpeF7Pk0mtAnmKMH",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/06-le-saint-esprit-role-dons-et-langues",
+       "o": 76688,
+       "p": 1
       }
      ],
      "image": "trinite-6"
@@ -3648,10 +4402,12 @@ window.BIBLIO = {
      "titre": "Étude biblique sur la Divinité",
      "docs": [
       {
-       "id": "1xRITSfcI5ijus50IIoV3Um8aKOl-lKRj",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/07-etude-biblique-sur-la-divinite",
+       "o": 63305,
+       "p": 1
       }
      ],
      "image": "trinite-7"
@@ -3661,10 +4417,12 @@ window.BIBLIO = {
      "titre": "Esprit de prophétie : le Saint-Esprit et son œuvre (Torres)",
      "docs": [
       {
-       "id": "1fSqBg7kxFVcXf5i0arxRFP9BjFJ_Nahq",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/08-esprit-de-prophetie-le-saint-esprit-et-son-oeuvre-torres",
+       "o": 131860,
+       "p": 6
       }
      ],
      "image": "trinite-8"
@@ -3674,10 +4432,12 @@ window.BIBLIO = {
      "titre": "Étude biblique : la pluie de l’arrière-saison",
      "docs": [
       {
-       "id": "1VXxCbhVugB7V0H-0l4UrBbyxGNYTsn-6",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/09-etude-biblique-la-pluie-de-l-arriere-saison",
+       "o": 72850,
+       "p": 3
       }
      ],
      "image": "trinite-9"
@@ -3687,10 +4447,12 @@ window.BIBLIO = {
      "titre": "Étude biblique : le péché impardonnable",
      "docs": [
       {
-       "id": "1UWj7j3CQc4vMvvMT7xqLyJS_1Bnii61D",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/10-etude-biblique-le-peche-impardonnable",
+       "o": 65248,
+       "p": 1
       }
      ],
      "image": "trinite-10"
@@ -3700,10 +4462,12 @@ window.BIBLIO = {
      "titre": "Étude biblique : le parler en langues",
      "docs": [
       {
-       "id": "1HlXGXR7xZP19QyEmFQpsjUU06QSssXm3",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/11-etude-biblique-le-parler-en-langues",
+       "o": 115991,
+       "p": 5
       }
      ],
      "image": "trinite-11"
@@ -3713,10 +4477,12 @@ window.BIBLIO = {
      "titre": "Le parler en langues (Amazing Facts)",
      "docs": [
       {
-       "id": "1_DJ3Jr1QdWNi81KA5k5MvHR9luF1y7zu",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/12-le-parler-en-langues-amazing-facts",
+       "o": 3110043,
+       "p": 10
       }
      ],
      "image": "trinite-12"
@@ -3726,10 +4492,12 @@ window.BIBLIO = {
      "titre": "Les pionniers adventistes et la doctrine de la Trinité (Gerhard Pfandl)",
      "docs": [
       {
-       "id": "166hcXm-0brmD31q2_dfbPfOecp6Ryurh",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/13-les-pionniers-adventistes-et-la-doctrine-de-la-trinite",
+       "o": 106116,
+       "p": 10
       }
      ],
      "image": "trinite-13"
@@ -3739,10 +4507,16 @@ window.BIBLIO = {
      "titre": "Les pionniers adventistes et la Trinité (présentation)",
      "docs": [
       {
-       "id": "1gtp_ZNU3Th5PmNhxRVi2JLOXnmz71Zyl",
        "format": "PowerPoint",
        "libelle": "Présentation",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/14-les-pionniers-adventistes-et-la-trinite-presentation",
+       "o": 128230,
+       "p": 13,
+       "original": {
+        "url": "https://github.com/vaihauflohr-byte/mission/releases/download/powerpoint/trinite-14-les-pionniers-adventistes-et-la-trinite-presentation.pptx",
+        "o": 94709
+       }
       }
      ],
      "image": "trinite-14"
@@ -3752,10 +4526,12 @@ window.BIBLIO = {
      "titre": "Jésus, le premier-né",
      "docs": [
       {
-       "id": "1GiyPohUosTXXVErkxkqk4Mz4pUKkPlSn",
        "format": "Word",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/15-jesus-le-premier-ne",
+       "o": 83586,
+       "p": 2
       }
      ],
      "image": "trinite-15"
@@ -3765,10 +4541,12 @@ window.BIBLIO = {
      "titre": "Défendre la Divinité (Vance Ferrell)",
      "docs": [
       {
-       "id": "1V-CPJ_WTUPhgWD3-iFpMN9eCjYYLygVr",
        "format": "PDF",
        "libelle": "Étude",
-       "role": "tous"
+       "role": "tous",
+       "f": "trinite/16-defendre-la-divinite-vance-ferrell",
+       "o": 3831058,
+       "p": 208
       }
      ],
      "image": "trinite-16"

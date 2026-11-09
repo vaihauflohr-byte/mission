@@ -4,32 +4,43 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Mission — études bibliques pour les petits groupes</title>
-  <meta name="description" content="Études bibliques en français pour les petits groupes : connaître Jésus, grandir en Jésus, mûrir en Jésus. Fiches du participant et guides de l’animateur à ouvrir sur téléphone.">
+  <meta name="description" content="Études bibliques en français pour les petits groupes : connaître Jésus, grandir en Jésus, mûrir en Jésus. Fiches du participant et guides de l’animateur à lire directement sur le site, sur téléphone ou sur ordinateur.">
   <meta name="theme-color" content="#1E3D3A">
   <meta property="og:title" content="Mission — études bibliques pour les petits groupes">
-  <meta property="og:description" content="Connaître, grandir, mûrir : 224 études bibliques en français, à ouvrir sur téléphone.">
+  <meta property="og:description" content="Connaître, grandir, mûrir : 224 études bibliques en français, à lire sur téléphone ou sur ordinateur.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mission.ka-ilei.com/">
   <meta property="og:image" content="https://mission.ka-ilei.com/assets/icones/icone-512.png">
   <link rel="icon" href="assets/icones/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icones/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="preload" href="assets/fonts/alegreya-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="resource" type="application/l10n" href="lecteur/locale/locale.json">
+  <link rel="preload" href="assets/fonts/alegreya-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/style.css?v=2">
+  <link rel="stylesheet" href="assets/style.css?v=3">
 </head>
 <body>
   <a class="evitement" href="#contenu">Aller au contenu</a>
 
   <header class="entete">
-    <a class="marque" href="#/" aria-label="Mission, accueil">
-      <svg class="marque-signe" viewBox="0 0 32 32" aria-hidden="true"><use href="#feuille"/></svg>
-      <span class="marque-nom">Mission</span>
-    </a>
-    <a class="entete-chercher" href="#/chercher" aria-label="Chercher une étude">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
-      <span>Chercher</span>
-    </a>
+    <div class="entete-dedans">
+      <a class="marque" href="#/" aria-label="Mission, accueil">
+        <svg class="marque-signe" viewBox="0 0 32 32" aria-hidden="true"><use href="#feuille"/></svg>
+        <span class="marque-texte">
+          <span class="marque-nom">Mission</span>
+          <span class="marque-sous">Études bibliques pour les petits groupes</span>
+        </span>
+      </a>
+      <nav class="entete-nav" aria-label="Les trois étapes">
+        <a href="#/niveau/connaitre" data-niveau="connaitre">Connaître</a>
+        <a href="#/niveau/grandir" data-niveau="grandir">Grandir</a>
+        <a href="#/niveau/murir" data-niveau="murir">Mûrir</a>
+      </nav>
+      <a class="entete-chercher" href="#/chercher" aria-label="Chercher une étude">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+        <span>Chercher</span>
+      </a>
+    </div>
   </header>
 
   <main id="contenu" tabindex="-1">
@@ -39,11 +50,24 @@
   </main>
 
   <footer class="pied">
-    <p><strong>Mission</strong> rassemble des études bibliques en français pour les petits groupes de l’Église adventiste de Mataiea, à Tahiti.</p>
-    <p>Les documents s’ouvrent dans Google Drive : on peut les lire sur le téléphone, les télécharger ou les imprimer. Les traductions françaises sont en cours de relecture.</p>
+    <div class="pied-dedans">
+      <div class="pied-a-propos">
+        <p class="pied-marque">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#feuille"/></svg>Mission
+        </p>
+        <p>Des études bibliques en français pour les petits groupes de l’Église adventiste de Mataiea, à Tahiti.</p>
+      </div>
+      <nav class="pied-nav" aria-label="Pied de page">
+        <a href="#/niveau/connaitre">Connaître</a>
+        <a href="#/niveau/grandir">Grandir</a>
+        <a href="#/niveau/murir">Mûrir</a>
+        <a href="#/chercher">Chercher une étude</a>
+      </nav>
+      <p class="pied-note">Chaque document se lit directement sur le site et se télécharge en PDF pour être gardé ou imprimé. Les traductions françaises sont en cours de relecture.</p>
+    </div>
   </footer>
 
-  <!-- Pictogrammes du cep : pousse (connaître), feuille (grandir), grappe (mûrir) -->
+  <!-- Pictogrammes : feuille (marque), pousse (connaître), rameau (grandir), grappe (mûrir) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="feuille" viewBox="0 0 32 32">
       <path d="M16 29V15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
@@ -73,7 +97,7 @@
     </symbol>
   </svg>
 
-  <script src="donnees/bibliotheque.js?v=2"></script>
-  <script src="assets/app.js?v=2"></script>
+  <script src="donnees/bibliotheque.js?v=3"></script>
+  <script src="assets/app.js?v=3"></script>
 </body>
 </html>

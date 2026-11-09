@@ -1,12 +1,13 @@
 /* Mission — fonctionnement hors ligne : la liste des études reste consultable sans réseau.
-   Les documents eux-mêmes sont sur Google Drive et demandent une connexion. */
-const CACHE = "mission-v2";
+   Les documents (documents/*.pdf) passent directement par le réseau : ils sont lus par morceaux
+   (requêtes partielles) et le bouton Télécharger permet de les garder sur l’appareil. */
+const CACHE = "mission-v3";
 const COQUILLE = [
   "./",
   "index.html",
-  "assets/style.css?v=2",
-  "assets/app.js?v=2",
-  "donnees/bibliotheque.js?v=2",
+  "assets/style.css?v=3",
+  "assets/app.js?v=3",
+  "donnees/bibliotheque.js?v=3",
   "assets/fonts/alegreya-latin-500-normal.woff2",
   "assets/fonts/alegreya-latin-600-normal.woff2",
   "assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2",
@@ -30,7 +31,10 @@ self.addEventListener("activate", (e) => {
 
 self.addEventListener("fetch", (e) => {
   const req = e.request;
-  if (req.method !== "GET" || new URL(req.url).origin !== location.origin) return;
+  const url = new URL(req.url);
+  if (req.method !== "GET" || url.origin !== location.origin) return;
+  // documents et requêtes partielles : réseau seulement
+  if (url.pathname.includes("/documents/") || req.headers.has("range")) return;
   // pages : réseau d'abord (pour recevoir les mises à jour), cache si hors ligne
   if (req.mode === "navigate") {
     e.respondWith(
@@ -40,11 +44,11 @@ self.addEventListener("fetch", (e) => {
     );
     return;
   }
-  // le reste : cache d'abord, mis à jour en arrière-plan
+  // le reste (feuilles de style, scripts, images, lecteur PDF) : cache d'abord, mis à jour en arrière-plan
   e.respondWith(
     caches.match(req).then((enCache) => {
       const reseau = fetch(req)
-        .then((rep) => { if (rep.ok) caches.open(CACHE).then((c) => c.put(req, rep.clone())); return rep; })
+        .then((rep) => { if (rep.ok && rep.status === 200) caches.open(CACHE).then((c) => c.put(req, rep.clone())); return rep; })
         .catch(() => enCache);
       return enCache || reseau;
     })
