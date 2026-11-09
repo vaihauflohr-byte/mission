@@ -1196,46 +1196,39 @@
   "secondes": 1.1
  },
  "prendre-vie/01-une-nouvelle-relation-avec-jesus": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 1471112,
-  "secondes": 2.0
+  "source": "refonte",
+  "pages": 4,
+  "octets": 607134
  },
  "prendre-vie/02-la-tentation": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 1470383,
-  "secondes": 2.1
+  "source": "refonte",
+  "pages": 4,
+  "octets": 578763
  },
  "prendre-vie/03-l-etude-de-la-bible": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 1500422,
-  "secondes": 2.0
+  "source": "refonte",
+  "pages": 4,
+  "octets": 639826
  },
  "prendre-vie/04-la-priere": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 1400592,
-  "secondes": 1.9
+  "source": "refonte",
+  "pages": 4,
+  "octets": 600846
  },
  "prendre-vie/05-l-obeissance": {
-  "source": "PDF",
-  "pages": 6,
-  "octets": 1755365,
-  "secondes": 2.1
+  "source": "refonte",
+  "pages": 4,
+  "octets": 653407
  },
  "prendre-vie/06-les-fruits-de-la-vie-chretienne": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 1685309,
-  "secondes": 2.2
+  "source": "refonte",
+  "pages": 4,
+  "octets": 633425
  },
  "prendre-vie/07-la-communion-fraternelle": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 1672338,
-  "secondes": 2.2
+  "source": "refonte",
+  "pages": 4,
+  "octets": 656707
  },
  "quete-certitude/01-comment-comprendre-la-bible": {
   "source": "refonte",
@@ -1245,12 +1238,12 @@
  "quete-certitude/02-notre-epoque-a-la-lumiere-des-propheties-bibliques": {
   "source": "refonte",
   "pages": 8,
-  "octets": 601540
+  "octets": 601532
  },
  "quete-certitude/03-un-monde-en-plein-bouleversement": {
   "source": "refonte",
   "pages": 8,
-  "octets": 507674
+  "octets": 507676
  },
  "quete-certitude/04-comment-le-christ-reviendra": {
   "source": "refonte",
@@ -1260,7 +1253,7 @@
  "quete-certitude/05-comment-trouver-la-paix-interieure": {
   "source": "refonte",
   "pages": 8,
-  "octets": 530054
+  "octets": 530064
  },
  "quete-certitude/06-le-secret-d-une-vie-nouvelle": {
   "source": "refonte",
@@ -1270,12 +1263,12 @@
  "quete-certitude/07-un-dieu-bon-un-monde-mauvais-pourquoi": {
   "source": "refonte",
   "pages": 8,
-  "octets": 511050
+  "octets": 511072
  },
  "quete-certitude/08-le-message-le-plus-passionnant-de-l-apocalypse": {
   "source": "refonte",
   "pages": 8,
-  "octets": 495078
+  "octets": 495076
  },
  "quete-certitude/09-la-prophetie-biblique-la-plus-longue-et-la-plus-etonnante": {
   "source": "refonte",
@@ -1285,12 +1278,12 @@
  "quete-certitude/10-rendez-vous-avec-le-destin-le-jugement": {
   "source": "refonte",
   "pages": 8,
-  "octets": 507749
+  "octets": 507746
  },
  "quete-certitude/11-pourquoi-la-criminalite-la-violence-et-l-immoralite": {
   "source": "refonte",
   "pages": 8,
-  "octets": 521973
+  "octets": 521975
  },
  "quete-certitude/12-le-signe-particulier-du-christ": {
   "source": "refonte",
@@ -1300,7 +1293,7 @@
  "quete-certitude/13-la-constitution-du-ciel-modifiee": {
   "source": "refonte",
   "pages": 8,
-  "octets": 519186
+  "octets": 519183
  },
  "quete-certitude/14-cinq-moyens-de-reconnaitre-les-sectes-modernes": {
   "source": "refonte",
@@ -1310,17 +1303,17 @@
  "quete-certitude/15-notre-plus-grand-besoin-un-nouveau-mode-de-vie": {
   "source": "refonte",
   "pages": 8,
-  "octets": 530056
+  "octets": 530047
  },
  "quete-certitude/16-la-verite-sur-la-mort": {
   "source": "refonte",
   "pages": 8,
-  "octets": 540723
+  "octets": 540720
  },
  "quete-certitude/17-l-amour-de-dieu-dans-les-feux-de-l-enfer": {
   "source": "refonte",
   "pages": 8,
-  "octets": 518966
+  "octets": 518965
  },
  "quete-certitude/18-comment-enterrer-definitivement-le-passe": {
   "source": "refonte",
@@ -1330,47 +1323,47 @@
  "quete-certitude/19-un-secret-financier": {
   "source": "refonte",
   "pages": 8,
-  "octets": 547762
+  "octets": 547760
  },
  "quete-certitude/20-grandir-dans-la-vie-chretienne": {
   "source": "refonte",
   "pages": 8,
-  "octets": 523861
+  "octets": 523859
  },
  "quete-certitude/21-comment-reconnaitre-l-eglise-de-dieu": {
   "source": "refonte",
   "pages": 8,
-  "octets": 511262
+  "octets": 511260
  },
  "quete-certitude/22-prophetes-et-propheties-visions-et-reves": {
   "source": "refonte",
   "pages": 8,
-  "octets": 508353
+  "octets": 508352
  },
  "quete-certitude/23-le-mystere-de-la-babylone-spirituelle-devoile": {
   "source": "refonte",
   "pages": 8,
-  "octets": 558235
+  "octets": 558233
  },
  "quete-certitude/24-le-saint-esprit-et-le-peche-impardonnable": {
   "source": "refonte",
   "pages": 8,
-  "octets": 513795
+  "octets": 513797
  },
  "quete-certitude/25-de-la-deception-au-triomphe": {
   "source": "refonte",
   "pages": 8,
-  "octets": 520559
+  "octets": 520557
  },
  "quete-certitude/26-la-marque-de-la-bete-et-le-nombre-mysterieux-666": {
   "source": "refonte",
   "pages": 8,
-  "octets": 544989
+  "octets": 544994
  },
  "quete-certitude/27-les-etats-unis-dans-la-prophetie": {
   "source": "refonte",
   "pages": 8,
-  "octets": 511284
+  "octets": 511263
  },
  "quete-certitude/28-harmaguedon-et-les-sept-derniers-fleaux": {
   "source": "refonte",
@@ -1380,7 +1373,7 @@
  "quete-certitude/29-l-apocalypse-annonce-mille-ans-de-tenebres-sur-le-monde": {
   "source": "refonte",
   "pages": 8,
-  "octets": 561530
+  "octets": 561527
  },
  "quete-certitude/30-le-denouement-glorieux-de-l-apocalypse": {
   "source": "refonte",
@@ -1390,7 +1383,7 @@
  "quete-certitude/a-qui-est-jesus": {
   "source": "refonte",
   "pages": 8,
-  "octets": 331789
+  "octets": 331790
  },
  "quete-certitude/b-qu-est-ce-que-la-foi": {
   "source": "refonte",
@@ -1405,12 +1398,12 @@
  "quete-certitude/d-pourquoi-sommes-nous-ici": {
   "source": "refonte",
   "pages": 8,
-  "octets": 293752
+  "octets": 293745
  },
  "quete-certitude/f-pourquoi-tant-d-eglises": {
   "source": "refonte",
   "pages": 8,
-  "octets": 316576
+  "octets": 316578
  },
  "quete-certitude/g-sept-ingredients-pour-le-bonheur": {
   "source": "refonte",

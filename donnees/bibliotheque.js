@@ -68,8 +68,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "prendre-vie/01-une-nouvelle-relation-avec-jesus",
-       "o": 1471112,
-       "p": 5
+       "o": 607134,
+       "p": 4
       }
      ],
      "image": "prendre-vie-1"
@@ -83,8 +83,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "prendre-vie/02-la-tentation",
-       "o": 1470383,
-       "p": 5
+       "o": 578763,
+       "p": 4
       }
      ],
      "image": "prendre-vie-2"
@@ -98,8 +98,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "prendre-vie/03-l-etude-de-la-bible",
-       "o": 1500422,
-       "p": 5
+       "o": 639826,
+       "p": 4
       }
      ],
      "image": "prendre-vie-3"
@@ -113,8 +113,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "prendre-vie/04-la-priere",
-       "o": 1400592,
-       "p": 5
+       "o": 600846,
+       "p": 4
       }
      ],
      "image": "prendre-vie-4"
@@ -128,8 +128,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "prendre-vie/05-l-obeissance",
-       "o": 1755365,
-       "p": 6
+       "o": 653407,
+       "p": 4
       }
      ],
      "image": "prendre-vie-5"
@@ -143,8 +143,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "prendre-vie/06-les-fruits-de-la-vie-chretienne",
-       "o": 1685309,
-       "p": 5
+       "o": 633425,
+       "p": 4
       }
      ],
      "image": "prendre-vie-6"
@@ -158,8 +158,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "prendre-vie/07-la-communion-fraternelle",
-       "o": 1672338,
-       "p": 5
+       "o": 656707,
+       "p": 4
       }
      ],
      "image": "prendre-vie-7"
@@ -222,7 +222,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/02-notre-epoque-a-la-lumiere-des-propheties-bibliques",
-       "o": 601540,
+       "o": 601532,
        "p": 8
       }
      ],
@@ -237,7 +237,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/03-un-monde-en-plein-bouleversement",
-       "o": 507674,
+       "o": 507676,
        "p": 8
       }
      ],
@@ -267,7 +267,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/05-comment-trouver-la-paix-interieure",
-       "o": 530054,
+       "o": 530064,
        "p": 8
       }
      ],
@@ -297,7 +297,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/07-un-dieu-bon-un-monde-mauvais-pourquoi",
-       "o": 511050,
+       "o": 511072,
        "p": 8
       }
      ],
@@ -312,7 +312,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/08-le-message-le-plus-passionnant-de-l-apocalypse",
-       "o": 495078,
+       "o": 495076,
        "p": 8
       }
      ],
@@ -342,7 +342,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/10-rendez-vous-avec-le-destin-le-jugement",
-       "o": 507749,
+       "o": 507746,
        "p": 8
       }
      ],
@@ -357,7 +357,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/11-pourquoi-la-criminalite-la-violence-et-l-immoralite",
-       "o": 521973,
+       "o": 521975,
        "p": 8
       }
      ],
@@ -387,7 +387,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/13-la-constitution-du-ciel-modifiee",
-       "o": 519186,
+       "o": 519183,
        "p": 8
       }
      ],
@@ -417,7 +417,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/15-notre-plus-grand-besoin-un-nouveau-mode-de-vie",
-       "o": 530056,
+       "o": 530047,
        "p": 8
       }
      ],
@@ -432,7 +432,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/16-la-verite-sur-la-mort",
-       "o": 540723,
+       "o": 540720,
        "p": 8
       }
      ],
@@ -447,7 +447,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/17-l-amour-de-dieu-dans-les-feux-de-l-enfer",
-       "o": 518966,
+       "o": 518965,
        "p": 8
       }
      ],
@@ -477,7 +477,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/19-un-secret-financier",
-       "o": 547762,
+       "o": 547760,
        "p": 8
       }
      ],
@@ -492,7 +492,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/20-grandir-dans-la-vie-chretienne",
-       "o": 523861,
+       "o": 523859,
        "p": 8
       }
      ],
@@ -507,7 +507,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/21-comment-reconnaitre-l-eglise-de-dieu",
-       "o": 511262,
+       "o": 511260,
        "p": 8
       }
      ],
@@ -522,7 +522,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/22-prophetes-et-propheties-visions-et-reves",
-       "o": 508353,
+       "o": 508352,
        "p": 8
       }
      ],
@@ -537,7 +537,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/23-le-mystere-de-la-babylone-spirituelle-devoile",
-       "o": 558235,
+       "o": 558233,
        "p": 8
       }
      ],
@@ -552,7 +552,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/24-le-saint-esprit-et-le-peche-impardonnable",
-       "o": 513795,
+       "o": 513797,
        "p": 8
       }
      ],
@@ -567,7 +567,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/25-de-la-deception-au-triomphe",
-       "o": 520559,
+       "o": 520557,
        "p": 8
       }
      ],
@@ -582,7 +582,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/26-la-marque-de-la-bete-et-le-nombre-mysterieux-666",
-       "o": 544989,
+       "o": 544994,
        "p": 8
       }
      ],
@@ -597,7 +597,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/27-les-etats-unis-dans-la-prophetie",
-       "o": 511284,
+       "o": 511263,
        "p": 8
       }
      ],
@@ -627,7 +627,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/29-l-apocalypse-annonce-mille-ans-de-tenebres-sur-le-monde",
-       "o": 561530,
+       "o": 561527,
        "p": 8
       }
      ],
@@ -657,7 +657,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/a-qui-est-jesus",
-       "o": 331789,
+       "o": 331790,
        "p": 8
       }
      ],
@@ -705,7 +705,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/d-pourquoi-sommes-nous-ici",
-       "o": 293752,
+       "o": 293745,
        "p": 8
       }
      ],
@@ -721,7 +721,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/f-pourquoi-tant-d-eglises",
-       "o": 316576,
+       "o": 316578,
        "p": 8
       }
      ],
