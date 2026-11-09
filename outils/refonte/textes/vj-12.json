@@ -1,0 +1,220 @@
+{
+ "source": "vivre-avec-jesus/12 Why do so Many Worship on Sunday.pdf",
+ "chemin": "vivre-avec-jesus/12-pourquoi-tant-de-chretiens-celebrent-ils-le-dimanche",
+ "livret": false,
+ "titre": "Pourquoi tant de chrétiens célèbrent-ils le dimanche ?",
+ "auteur": "PAPSDA — traduction française",
+ "effacer_dessins": {
+  "1": [
+   [
+    186,
+    106,
+    548,
+    275
+   ]
+  ]
+ },
+ "textes": {
+  "1": [
+   {
+    "x": 222,
+    "base": 236,
+    "texte": "Vivre",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 118,
+    "couleur": [
+     0.041,
+     0.461,
+     0.701
+    ]
+   },
+   {
+    "x": 536,
+    "base": 261,
+    "texte": "avec Jésus",
+    "police": [
+     "sourcenoir",
+     ""
+    ],
+    "taille": 17,
+    "couleur": [
+     0.644,
+     0.761,
+     0.86
+    ],
+    "aligne": "droite"
+   }
+  ]
+ },
+ "reglages": {
+  "cadre_colonnes": true,
+  "traits_fins": true
+ },
+ "u": {
+  "1.00": "Leçon 12 :",
+  "1.01": {
+   "html": "Pourquoi tant de chrétiens<br>célèbrent-ils le dimanche ?",
+   "ligne": false
+  },
+  "1.02": "Robert Whiteside, notable, homme d’affaires prospère et orateur de talent du siècle dernier, fit une découverte stupéfiante. Il devait bientôt participer à un débat public sur le culte et défendre l’observation du dimanche. Il n’avait jamais douté du bien-fondé du culte le premier jour de la semaine. Il était sûr que des textes en parlaient, car il avait toujours entendu dire que Jésus avait remplacé le samedi par le dimanche. Mais en étudiant le sujet, il ne trouva rien dans la Bible pour appuyer cette conviction jusque-là incontestée !",
+  "1.03": "Vous pouvez peut-être comprendre son étonnement. Vous aussi avez peut-être été surpris d’apprendre que la Bible enseigne l’observation du septième jour. Pourquoi tant de personnes célèbrent-elles donc le dimanche ? Que s’est-il passé ?",
+  "2.00": "TEXTES SUR LE PREMIER JOUR",
+  "2.01": "La Revised Standard Version dit : « Mettez quelque chose de côté et épargnez. » Paul collectait de l’argent pour les pauvres de Jérusalem : chaque premier jour de la semaine, chacun devait faire ses comptes et mettre de côté une part de ses gains.",
+  "2.02": "Huit textes du Nouveau Testament mentionnent le premier jour de la semaine. Vous en trouverez six dans les quatre premiers livres du Nouveau Testament. Peut-être aimeriez-vous les lire :",
+  "2.03": "Vous le voyez : aucun de ces huit textes ne prouve que le premier jour de la semaine soit devenu le jour de culte des apôtres. En fait, la Bible n’autorise nulle part à sanctifier le premier jour de la semaine.",
+  "2.04": "Matthieu 28:1<br>Marc 16:1-2<br>Marc 16:9<br>Luc 24:1<br>Jean 20:1<br>Jean 20:19",
+  "2.10": "Ni les apôtres ni Jésus n’ont changé le jour de culte. Qu’a dit Jésus au sujet d’un changement de la loi ? Matthieu 5:17-18",
+  "2.12": "Ces six textes parlent tous de la résurrection du Christ le premier jour de la semaine, mais ne disent rien d’un culte célébré ce jour-là.",
+  "2.13": "=",
+  "2.14": "=",
+  "2.15": "Le septième texte du Nouveau Testament qui mentionne le premier jour de la semaine se trouve en Actes 20:7-8.",
+  "2.16": "Où et comment est-on donc passé de l’observation du sabbat à celle du dimanche ?",
+  "2.17": "Pourquoi les croyants étaient-ils réunis le premier jour de la semaine ? Actes 20:7-8",
+  "2.18": "UN BREF APERÇU HISTORIQUE",
+  "2.19": "=",
+  "2.20": "=",
+  "2.21": {
+   "html": "<span class=\"n\">1.</span> Au premier siècle de notre ère, rien ne montre que des chrétiens aient célébré le culte le dimanche. Le Nouveau Testament dit que Jésus et les apôtres adoraient le septième jour.",
+   "famille": "caladea",
+   "taille": 11,
+   "interligne": 13.3,
+   "ligne": false,
+   "css": "body, body * {color: #6d6e71;} .n {font-family: sourcenoir; font-size: 14pt; color: #a4c3dc;}"
+  },
+  "2.22": null,
+  "2.23": "=",
+  "2.24": "« Luc, l’auteur des Actes, a rapporté 84 réunions de sabbat après l’ascension du Christ, et une seule réunion le premier jour de la semaine, celle du passage ci-dessus. »",
+  "2.25": {
+   "html": "<span class=\"n\">2.</span> Au deuxième siècle, des chrétiens de Rome et d’Alexandrie commencèrent à célébrer le culte le dimanche, tout en observant le sabbat.",
+   "famille": "caladea",
+   "taille": 11,
+   "interligne": 13.3,
+   "ligne": false,
+   "css": "body, body * {color: #6d6e71;} .n {font-family: sourcenoir; font-size: 14pt; color: #a4c3dc;}"
+  },
+  "2.26": null,
+  "2.27": "(Arthur G. Lickey, <i>God Speaks to Modern Man</i>, Washington DC, Review & Herald Publishing Assn., 1952, p. 430)",
+  "2.28": {
+   "html": "<span class=\"n\">3.</span> Du IIe au Ve siècle, le sabbat était encore observé dans tout l’Empire romain, mais peu à peu beaucoup de chrétiens se mirent à célébrer le culte à la fois le samedi et le dimanche. Pourquoi ?",
+   "famille": "caladea",
+   "taille": 11,
+   "interligne": 13.3,
+   "ligne": false,
+   "css": "body, body * {color: #6d6e71;} .n {font-family: sourcenoir; font-size: 14pt; color: #a4c3dc;}"
+  },
+  "2.29": null,
+  "2.30": "Cette réunion n’était pas un culte hebdomadaire habituel, mais une réunion d’adieu à Paul. Le fait qu’on y ait « rompu le pain » n’en faisait pas un jour saint, car en Actes 2:46, nous lisons que les croyants « rompaient le pain dans les maisons, chaque jour ». 1 Corinthiens 16:1-2 est le huitième et dernier texte du Nouveau Testament sur le premier jour. Que demandait Paul de faire le premier jour de la semaine ? 1 Corinthiens 16:1-2",
+  "2.31": {
+   "html": "<span class=\"n\">a.</span> L’antisémitisme, surtout à Rome, poussa les chrétiens à se distinguer des Juifs en abandonnant les pratiques qui paraissaient « juives ».",
+   "famille": "caladea",
+   "taille": 11,
+   "interligne": 13.3,
+   "ligne": false,
+   "css": "body, body * {color: #6d6e71;} .n {font-family: sourcenoir; font-size: 14pt; color: #a4c3dc;}"
+  },
+  "2.32": null,
+  "2.33": {
+   "html": "<span class=\"n\">b.</span> L’influence du culte du soleil chez les Romains païens contribua à faire accepter de plus en plus le dimanche comme jour de culte.",
+   "famille": "caladea",
+   "taille": 11,
+   "interligne": 13.3,
+   "ligne": false,
+   "css": "body, body * {color: #6d6e71;} .n {font-family: sourcenoir; font-size: 14pt; color: #a4c3dc;}"
+  },
+  "2.34": null,
+  "2.35": "=",
+  "2.36": "=",
+  "3.00": {
+   "html": "<span class=\"n\">4.</span> La première loi dominicale connue fut promulguée par l’empereur romain Constantin en 321 ; elle imposait le repos le dimanche.",
+   "famille": "caladea",
+   "taille": 11,
+   "interligne": 13.3,
+   "ligne": false,
+   "css": "body, body * {color: #6d6e71;} .n {font-family: sourcenoir; font-size: 14pt; color: #a4c3dc;}"
+  },
+  "3.01": "Derrière les gouvernements et les puissances de la terre, un « homme du péché » est à l’œuvre pour tenter de « changer les temps et la loi ». Cette force trompeuse n’est autre que Satan. Quel est son but ? Ésaïe 14:13-14 (surtout la fin du verset 14)",
+  "3.02": null,
+  "3.03": {
+   "html": "<span class=\"n\">5.</span> En 364, le concile de Laodicée publia la première loi ecclésiastique sur le dimanche. Elle demandait de travailler le samedi et de se reposer le dimanche. En 535, l’Église adopta une loi encore plus sévère sur le culte du dimanche.",
+   "famille": "caladea",
+   "taille": 11,
+   "interligne": 13.3,
+   "ligne": false,
+   "css": "body, body * {color: #6d6e71;} .n {font-family: sourcenoir; font-size: 14pt; color: #a4c3dc;}"
+  },
+  "3.04": null,
+  "3.05": "=",
+  "3.06": "=",
+  "3.07": "Quelle tentation Satan a-t-il présentée à Jésus ? Matthieu 4:9",
+  "3.08": "Vous le voyez, le changement s’est fait peu à peu, discrètement, sous l’effet de nombreux facteurs. L’Église catholique revendique cependant le passage du sabbat au dimanche comme l’une des marques de son autorité. L’édition de 1977 du <i>Convert’s Catechism</i> dit ceci :",
+  "3.09": "=",
+  "3.10": "=",
+  "3.11": "Satan veut être « semblable au Très-Haut ». Il désire recevoir l’adoration. En substituant un autre jour au jour de culte établi par Dieu, il a espéré obtenir, par la tromperie, l’adoration et la fidélité des êtres humains. Jésus a démasqué cette tromperie. Quelle a été sa réponse ? Matthieu 4:10",
+  "3.12": "Question :",
+  "3.13": "Quel est le jour du sabbat ?",
+  "3.14": "Réponse :",
+  "3.15": "Le samedi est le jour du sabbat.",
+  "3.16": "Question :",
+  "3.17": "=",
+  "3.18": "Pourquoi observons-nous le dimanche au lieu du samedi ?",
+  "3.19": "=",
+  "3.20": "Réponse :",
+  "3.21": "=",
+  "3.22": "Nous observons le dimanche au lieu du samedi parce que l’Église catholique a transféré la solennité du samedi au dimanche.",
+  "3.23": "Ces découvertes vous surprennent-elles autant que Robert Whiteside il y a plus d’un siècle ? Il lui fut difficile de changer les convictions et les habitudes de toute une vie. Il décida finalement de suivre la Parole de Dieu, devint pasteur et prêcha les vérités bibliques pendant plus d’un demi-siècle.",
+  "3.24": "(Peter Geiermann, <i>The Convert’s Catechism of Catholic Doctrine</i>, Rockford, IL, Tan Books and Publishers, 1977, p. 50)",
+  "3.25": "Il y a des siècles, Dieu avait annoncé par le prophète Daniel qu’une puissance tenterait de changer ses lois. Quelle était cette prophétie ? Daniel 7:25",
+  "3.26": "=",
+  "3.27": "=",
+  "3.28": "Paul a annoncé qu’une séduction aurait lieu avant le retour du Christ. Qu’a-t-il dit aux Thessaloniciens ? 2 Thessaloniciens 2:3-4",
+  "3.29": "=",
+  "3.30": "=",
+  "4.00": "POUR VOTRE RÉFLEXION",
+  "4.01": "Comment vais-je réagir à ce que je viens de découvrir ?",
+  "4.02": "=",
+  "4.03": "=",
+  "4.04": "=",
+  "4.05": "=",
+  "4.06": "=",
+  "4.07": "=",
+  "4.08": "=",
+  "4.09": "=",
+  "4.10": "=",
+  "4.11": "=",
+  "4.12": "=",
+  "4.13": "=",
+  "4.14": "=",
+  "4.15": "=",
+  "4.16": "=",
+  "4.17": "=",
+  "4.18": "=",
+  "4.19": "=",
+  "4.20": "=",
+  "4.21": "=",
+  "4.22": "=",
+  "4.23": "=",
+  "4.24": "=",
+  "4.25": "=",
+  "4.26": {
+   "html": "Église adventiste du septième jour de Papatoetoe",
+   "ligne": true
+  },
+  "4.27": "=",
+  "4.28": {
+   "html": "Tél. (09) 278-7786, fax (09) 278-4906",
+   "ligne": true
+  },
+  "4.29": "=",
+  "4.30": {
+   "html": "Courriel info@papsda.co.nz, site www.papsda.co.nz",
+   "ligne": true
+  },
+  "4.31": {
+   "html": "Reproduit avec autorisation",
+   "ligne": true
+  }
+ }
+}

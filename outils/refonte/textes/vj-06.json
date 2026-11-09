@@ -1,0 +1,197 @@
+{
+ "source": "vivre-avec-jesus/06 Destruction of the Wicked.pdf",
+ "chemin": "vivre-avec-jesus/06-la-destruction-des-mechants",
+ "livret": false,
+ "titre": "La destruction des méchants",
+ "auteur": "PAPSDA — traduction française",
+ "effacer_dessins": {
+  "1": [
+   [
+    186,
+    106,
+    548,
+    275
+   ]
+  ]
+ },
+ "textes": {
+  "1": [
+   {
+    "x": 222,
+    "base": 236,
+    "texte": "Vivre",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 118,
+    "couleur": [
+     0.041,
+     0.461,
+     0.701
+    ]
+   },
+   {
+    "x": 536,
+    "base": 261,
+    "texte": "avec Jésus",
+    "police": [
+     "sourcenoir",
+     ""
+    ],
+    "taille": 17,
+    "couleur": [
+     0.644,
+     0.761,
+     0.86
+    ],
+    "aligne": "droite"
+   }
+  ]
+ },
+ "reglages": {
+  "cadre_colonnes": true,
+  "traits_fins": true
+ },
+ "u": {
+  "1.00": "Leçon 6 :",
+  "1.01": "La destruction des méchants",
+  "1.02": {
+   "html": "Pendant la pause déjeuner, une chrétienne essaya de parler de Dieu à une collègue plus jeune. Celle-ci lui répondit : « Écoutez, je ne veux pas entendre parler de Dieu. Comment pourrait-il être plein d’amour, comme vous le dites, tout en torturant des gens dans le feu de l’enfer pendant toute l’éternité ? Si Dieu est ainsi, je ne veux rien avoir à faire avec lui. »",
+   "css": "body {text-align: justify;}"
+  },
+  "1.03": {
+   "decaler": 10,
+   "html": "« Eh bien, je suis heureuse de vous dire que Dieu n’est pas ainsi », répondit son aînée. Elle lui expliqua alors que l’on avait donné de Dieu une mauvaise image et que le sujet du feu de l’enfer avait été largement mal compris.",
+   "css": "body {text-align: justify;}"
+  },
+  "2.00": "Comment est Dieu ? 2 Pierre 3:9 ; 1 Timothée 2:4",
+  "2.01": "Elle dit aussi que Satan ne sera plus jamais. Toutes ces expressions semblent bien définitives. Ce qui est consumé ne continue pas de brûler : c’est détruit. Que devient un feu quand il n’a plus rien à brûler ? Il s’éteint.",
+  "2.02": "=",
+  "2.03": "=",
+  "2.04": "Dieu dit qu’il ne veut la mort de personne, mais qu’il désire le salut de tous. Pourtant, qu’arrive-t-il à ceux qui pèchent ? Romains 6:23 ; Ézéchiel 18:20",
+  "2.05": "Manifestement, le feu de l’enfer s’éteint lui aussi. Il ne brûlera pas éternellement.",
+  "2.06": "Mais que signifient les passages bibliques qui emploient, à propos de l’enfer, les expressions « aux siècles des siècles » ou « éternel » ? La Bible se contredit-elle ? Une brève étude de certains mots permettra d’éclaircir ces malentendus fréquents.",
+  "2.07": "=",
+  "2.08": "=",
+  "2.09": "Même lorsque des personnes choisissent de vivre dans le péché, que ressent Dieu face à leur mort ? Ézéchiel 33:11",
+  "2.10": "Tout d’abord, le mot « enfer » apparaît 55 fois dans la Bible anglaise, et 12 fois seulement il désigne un « lieu où l’on brûle ».",
+  "2.11": "=",
+  "2.12": "=",
+  "2.13": "Dans l’Ancien Testament, le mot hébreu « shéol » apparaît 31 fois et signifie « séjour invisible » ou « tombe ». Dans le Nouveau Testament, le mot grec « hadès » apparaît 11 fois et désigne le séjour des morts ou la tombe.",
+  "2.14": "=",
+  "2.15": "=",
+  "2.16": "Quand et où aura lieu la destruction des méchants ? Matthieu 13:40-42 ; Apocalypse 20:7-10, 13-15",
+  "2.17": "Le mot grec « tartare », qui désigne un abîme obscur, apparaît une fois dans le Nouveau Testament. Le mot « géhenne », qui désigne un lieu où l’on brûle, y apparaît 12 fois. Ce nom était donné au lieu où l’on brûlait les déchets à l’extérieur de Jérusalem, et ce feu ne brûlait pas éternellement.",
+  "2.18": "=",
+  "2.19": "=",
+  "2.20": "L’enfer ne brûle pas actuellement. La destruction des méchants aura lieu à la fin des mille ans, sur cette terre.",
+  "2.21": "L’ensemble de ces indices montre que les mots bibliques traduits par « enfer » désignent simplement la mort ou la tombe, et non un feu sans fin. Mais certains textes semblent dire que l’enfer dure toujours. Que dit Apocalypse 14:11 ?",
+  "2.22": "Comment Malachie 4:1-3 décrit-il le moment de la destruction finale ?",
+  "2.23": "=",
+  "2.24": "=",
+  "2.25": "=",
+  "2.26": "=",
+  "2.27": "Qu’arrivera-t-il à Satan ? Ézéchiel 28:18-19 ; Apocalypse 20:10",
+  "2.28": "Remarquez d’abord que c’est la fumée qui monte aux siècles des siècles. C’est une autre manière de dire que les conséquences du feu de l’enfer sont définitives : une fois détruits, les pécheurs ne revivront plus.",
+  "2.29": "=",
+  "2.30": "=",
+  "2.31": "Il est aussi important de comprendre l’emploi biblique du mot « toujours ». Son sens dépend de ce qu’il décrit. Quand il s’applique à Dieu, il signifie « sans fin ».",
+  "2.32": "Quand la Bible parle de la destruction finale des méchants, elle emploie des expressions comme « consumés », « dévorés », « brûlés » et « cendres ».",
+  "3.00": "Appliqué aux hommes, il signifie « aussi longtemps qu’ils vivent », « jusqu’à leur mort ».",
+  "3.01": "Que fera Dieu de la terre après l’avoir purifiée par le feu ? 2 Pierre 3:13 ; Apocalypse 21:1",
+  "3.02": "Pour combien de temps Anne disait-elle donner son fils au Seigneur ? 1 Samuel 1:22",
+  "3.03": "=",
+  "3.04": "=",
+  "3.05": "=",
+  "3.06": "=",
+  "3.07": "Dieu créera une nouvelle terre sans péché ! Ne désirez-vous pas en faire partie ? Comment pouvez-vous en avoir l’assurance ? Jean 3:16-17",
+  "3.08": "Que signifiait « pour toujours » dans ce cas ? 1 Samuel 1:28",
+  "3.09": "=",
+  "3.10": "=",
+  "3.11": "=",
+  "3.12": "=",
+  "3.13": "Jésus est l’unique chemin vers la vie éternelle et le seul moyen d’échapper à la destruction éternelle. Sa vie, sa mort et sa résurrection prouvent que Dieu aime les pécheurs et qu’il « ne veut pas qu’aucun périsse ». N’êtes-vous pas reconnaissant d’avoir un Dieu qui aime autant ?",
+  "3.14": "En appliquant ce sens aux méchants, on comprend qu’ils brûleront jusqu’à ce que leur vie prenne fin. Que dit la Bible à leur sujet ? Psaume 37:20 ; Malachie 4:1",
+  "3.15": "=",
+  "3.16": "=",
+  "3.17": "À CONSIDÉRER",
+  "3.18": "Remarquez à nouveau les mots « périr », « s’évanouir en fumée », « être consumés ». C’est une destruction totale et définitive. Les méchants ne seront pas punis sans fin, mais leur châtiment durera à jamais. Et le « feu éternel » dont parle Matthieu 25:41 ? Quels termes la Bible emploie-t-elle pour décrire la destruction de Sodome et Gomorrhe ? Jude 7",
+  "3.19": {
+   "html": "<span class=\"n\">1.</span> Selon la Bible, l’enfer a lieu sur cette terre, à la fin des mille ans ; ensuite, Dieu crée une nouvelle terre. Comment la nouvelle terre pourrait-elle exister là où le feu de l’enfer brûlerait sans fin ?",
+   "famille": "caladea",
+   "taille": 11,
+   "interligne": 13.3,
+   "ligne": false,
+   "css": "body, body * {color: #6d6e71;} .n {font-family: sourcenoir; font-size: 14pt; color: #a4c3dc;}"
+  },
+  "3.20": null,
+  "3.21": {
+   "html": "<span class=\"n\">2.</span> La Bible emploie des expressions comme « consumés », « détruits » et « ne plus être » pour décrire la destruction complète de Satan et de ses partisans. N’est-il pas incohérent de dire que les méchants continuent de vivre dans le feu de l’enfer, alors que la Bible dit qu’une fois détruits, ils cesseront d’exister ?",
+   "famille": "caladea",
+   "taille": 11,
+   "interligne": 13.3,
+   "ligne": false,
+   "css": "body, body * {color: #6d6e71;} .n {font-family: sourcenoir; font-size: 14pt; color: #a4c3dc;}"
+  },
+  "3.22": null,
+  "3.23": "=",
+  "3.24": "=",
+  "3.25": "Ces villes ne brûlent pas aujourd’hui ; pourtant la Bible parle de « feu éternel ». Là encore, ce sont les effets du feu qui sont éternels, non le feu lui-même.",
+  "3.26": {
+   "html": "<span class=\"n\">3.</span> La Bible dit que la seule façon d’avoir la vie éternelle, c’est Jésus-Christ. Si les méchants brûlaient sans fin, ils garderaient une forme de vie qui ne finirait jamais. Comment les méchants pourraient-ils avoir la vie éternelle sans Jésus ?",
+   "famille": "caladea",
+   "taille": 11,
+   "interligne": 13.3,
+   "ligne": false,
+   "css": "body, body * {color: #6d6e71;} .n {font-family: sourcenoir; font-size: 14pt; color: #a4c3dc;}"
+  },
+  "3.27": null,
+  "3.28": "À la fin des mille ans, qu’est-ce qui sera encore consumé, en plus du péché et des pécheurs ? 2 Pierre 3:10",
+  "3.29": "=",
+  "3.30": "=",
+  "3.31": "=",
+  "4.00": "POUR VOTRE RÉFLEXION",
+  "4.01": "Est-ce que j’ai hâte que Dieu supprime le péché et bâtisse une nouvelle terre parfaite ?",
+  "4.03": "Oui, parce que j’ai accepté Jésus et que j’ai la vie éternelle par lui.",
+  "4.05": "Je n’en suis pas certain, car je crains encore un peu de ne pas être sauvé.",
+  "4.06": "Certains membres de ma famille et certains amis me préoccupent. Je voudrais qu’ils soient sauvés, eux aussi. Je vais prier pour les personnes suivantes :",
+  "4.07": "=",
+  "4.08": "=",
+  "4.09": "=",
+  "4.10": "=",
+  "4.11": "=",
+  "4.12": "=",
+  "4.13": "=",
+  "4.14": "=",
+  "4.15": "=",
+  "4.16": "=",
+  "4.17": "=",
+  "4.18": "=",
+  "4.19": "=",
+  "4.20": "=",
+  "4.21": "=",
+  "4.22": "=",
+  "4.23": "=",
+  "4.24": "=",
+  "4.25": "=",
+  "4.26": {
+   "html": "Église adventiste du septième jour de Papatoetoe",
+   "ligne": true
+  },
+  "4.27": "=",
+  "4.28": {
+   "html": "Tél. (09) 278-7786, fax (09) 278-4906",
+   "ligne": true
+  },
+  "4.29": "=",
+  "4.30": {
+   "html": "Courriel info@papsda.co.nz, site www.papsda.co.nz",
+   "ligne": true
+  },
+  "4.31": {
+   "html": "Reproduit avec autorisation",
+   "ligne": true
+  }
+ }
+}

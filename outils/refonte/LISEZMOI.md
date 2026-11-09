@@ -32,6 +32,8 @@ telles quelles.
 - `sfc.py` (+ `refaire_scan.py`, `ocr.py`, `ocr_lot.py`) : *En quête de certitude* 1 à 30, livrets numérisés.
 - `aligner.py` : premier brouillon d’un document (unités anglaises -> paragraphes français déjà publiés).
 - `series/prendre_vie.py` : textes des sept leçons de *Prendre vie avec Jésus* -> `textes/pv-0N.json`.
+- `series/vivre_avec_jesus.py` : textes des quinze leçons de *Vivre avec Jésus* -> `textes/vj-NN.json`
+  (même gabarit en bleu ; part des brouillons alignés, corrigés leçon par leçon).
 - `publier.py` : copie `sortie/` à la place des PDF du site (mêmes noms de fichiers) et met à jour
   `donnees/bibliotheque.js`, `outils/documents/resultat.json` et `liste.json` (source `refonte`).
 - `textes/` : les traductions françaises de chaque document (`textes/brouillons/` : premiers jets alignés).
@@ -42,4 +44,4 @@ telles quelles.
     python3 series/prendre_vie.py 5      # textes/pv-05.json
     python3 natif.py pv-05               # sortie/pv-05.pdf + liste des unités réduites ou serrées
     python3 natif.py planche pv-05       # vérification visuelle
-    python3 publier.py pv 5              # sur le site ; puis ?v= de bibliotheque.js et CACHE de sw.js
+    python3 publier.py pv 5              # sur le site (séries : sfc, pv, vj) ; puis ?v= de bibliotheque.js et CACHE de sw.js

@@ -26,6 +26,9 @@ SERIES = {
     "pv": {"id": "prendre-vie", "prefixe": "pv",
            "sujet": "Prendre vie avec Jésus — Mission, études bibliques pour les petits groupes",
            "auteur": "PAPSDA — traduction française"},
+    "vj": {"id": "vivre-avec-jesus", "prefixe": "vj",
+           "sujet": "Vivre avec Jésus — Mission, études bibliques pour les petits groupes",
+           "auteur": "PAPSDA — traduction française"},
 }
 
 

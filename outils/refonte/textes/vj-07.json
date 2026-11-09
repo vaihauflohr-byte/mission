@@ -1,0 +1,193 @@
+{
+ "source": "vivre-avec-jesus/07 Only One Way to Heaven.pdf",
+ "chemin": "vivre-avec-jesus/07-un-seul-chemin-vers-le-ciel",
+ "livret": false,
+ "titre": "Un seul chemin vers le ciel",
+ "auteur": "PAPSDA — traduction française",
+ "effacer_dessins": {
+  "1": [
+   [
+    186,
+    106,
+    548,
+    275
+   ]
+  ]
+ },
+ "textes": {
+  "1": [
+   {
+    "x": 222,
+    "base": 236,
+    "texte": "Vivre",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 118,
+    "couleur": [
+     0.041,
+     0.461,
+     0.701
+    ]
+   },
+   {
+    "x": 536,
+    "base": 261,
+    "texte": "avec Jésus",
+    "police": [
+     "sourcenoir",
+     ""
+    ],
+    "taille": 17,
+    "couleur": [
+     0.644,
+     0.761,
+     0.86
+    ],
+    "aligne": "droite"
+   }
+  ]
+ },
+ "reglages": {
+  "cadre_colonnes": true,
+  "traits_fins": true
+ },
+ "u": {
+  "1.00": "Leçon 7 :",
+  "1.01": "Un seul chemin vers le ciel",
+  "1.02": {
+   "html": "En lisant ce que la Bible dit du ciel, ou de la nouvelle terre, on comprend vite que ce sera un lieu merveilleux. Cela semble presque trop beau pour être vrai : un lieu parfait, sans péché, habité par des êtres parfaits, sans péché. Vous vous demandez peut-être : « Suis-je assez bon pour y aller ? Comment être certain d’y parvenir ? »",
+   "css": "body {text-align: justify;}"
+  },
+  "1.03": {
+   "html": "C’est là que la Bible apporte une bonne nouvelle : vous n’avez pas besoin d’être « assez bon » pour y aller, il vous suffit de connaître la bonne personne pour y entrer. Et cette personne, c’est Jésus. Il est le seul et unique billet d’entrée pour le ciel.",
+   "css": "body {text-align: justify;}"
+  },
+  "1.04": null,
+  "1.05": null,
+  "1.06": null,
+  "1.07": null,
+  "1.08": null,
+  "1.09": null,
+  "1.10": null,
+  "1.11": null,
+  "1.12": null,
+  "1.13": null,
+  "1.14": null,
+  "2.00": "Dans le même esprit, quelqu’un a dit : « Il n’y a qu’une seule échelle pour monter au ciel : la croix. » Mais quelles sont les étapes de cette montée ? Comment être sûr de connaître Jésus ?",
+  "2.01": "Qui est ce Jésus en qui vous devez croire ? Colossiens 1:16",
+  "2.02": "=",
+  "2.03": "=",
+  "2.04": "PREMIÈRE ÉTAPE VERS LE CIEL",
+  "2.05": "Selon la Bible, il est votre Créateur. Puisqu’il possède la puissance de créer, vous pouvez être certain qu’il est Dieu. Vous pouvez aussi être certain qu’il aime les êtres qu’il a créés. Qu’est-il venu accomplir ? Matthieu 1:21 ; 1 Pierre 2:24",
+  "2.06": "Reconnaître votre besoin de Jésus",
+  "2.07": "Que dit la Bible de notre capacité à être bons ? Ésaïe 64:6",
+  "2.08": "=",
+  "2.09": "=",
+  "2.10": "=",
+  "2.11": "À quel point est-il difficile d’être bon ? Jérémie 13:23",
+  "2.12": "=",
+  "2.13": "La Bible affirme également qu’il est votre Sauveur. Sa vie parfaite sur terre et sa mort sur la croix vous sauvent de la condamnation à mort causée par le péché et de sa domination. Il est le seul moyen de sortir du péché et d’entrer au ciel.",
+  "2.14": "=",
+  "2.15": "=",
+  "2.16": "=",
+  "2.17": "En plus d’être votre Créateur et votre Sauveur, quels autres titres sont donnés à Jésus ? Jean 20:27-28",
+  "2.18": "=",
+  "2.19": "La Bible ne dit pas simplement que c’est difficile : elle dit que c’est impossible !",
+  "2.20": "=",
+  "2.21": "=",
+  "2.22": "Pourtant, Dieu vous aime et veut que vous soyez heureux avec lui au ciel. Qu’a-t-il donc fait ? Jean 3:16",
+  "2.23": "=",
+  "2.24": "Jésus est aussi votre Seigneur et votre Dieu. Puisqu’il vous a aimé au point de mourir pour vous, vous pouvez lui faire confiance pour conduire, guider et diriger votre vie. Vous l’acceptez donc comme celui à qui revient la première place, comme votre conseiller, votre guide, votre maître et votre roi !",
+  "2.25": "=",
+  "2.26": "=",
+  "2.27": "DEUXIÈME ÉTAPE VERS LE CIEL",
+  "2.28": "Croire en Jésus",
+  "2.29": "TROISIÈME ÉTAPE VERS LE CIEL",
+  "2.30": "Une fois que vous avez reconnu votre besoin de Jésus, que devez-vous faire ? Jean 3:16, deuxième partie ; Actes 16:31",
+  "2.31": "Venir à Jésus",
+  "2.32": "Après avoir cru en Jésus, quelle est l’étape suivante ? Matthieu 11:28 ; Apocalypse 3:19",
+  "2.33": "=",
+  "2.34": "=",
+  "2.35": "=",
+  "2.36": "=",
+  "2.37": "=",
+  "2.38": "=",
+  "3.00": "QUATRIÈME ÉTAPE VERS LE CIEL",
+  "3.01": "Vous repentir de vos péchés",
+  "3.02": "Lorsque vous venez à Jésus, que devez-vous faire au sujet de vos péchés ? Actes 3:19 ; 1 Jean 1:9",
+  "3.03": "=",
+  "3.04": "=",
+  "3.05": "CINQUIÈME ÉTAPE VERS LE CIEL",
+  "3.06": "Recevoir l’adoption et l’héritage",
+  "3.07": "Lorsque vous venez à Jésus, vous repentez de vos péchés et l’accueillez dans votre vie, que vous donne-t-il ? Jean 1:12",
+  "3.08": "=",
+  "3.09": "=",
+  "3.10": "En tant que membre de la famille de Dieu, quel est votre héritage ? Matthieu 25:34",
+  "3.11": "=",
+  "3.12": "=",
+  "3.13": "=",
+  "3.14": "Pouvez-vous vraiment être certain d’entrer dans le royaume de Dieu ? 1 Jean 5:11",
+  "3.15": "=",
+  "3.16": "=",
+  "3.17": "=",
+  "3.18": "Jésus est bien l’unique chemin vers le ciel. Si vous l’acceptez, vous pouvez avoir l’assurance de la vie éternelle et savoir que vous entrerez au ciel.",
+  "4.00": "POUR VOTRE RÉFLEXION",
+  "4.01": "Est-ce que je sais que j’ai la vie éternelle parce que j’ai accepté Jésus ?",
+  "4.02": "(Si vous n’en êtes pas sûr parce que vous n’avez jamais accepté Jésus comme Sauveur et Seigneur, pourquoi ne pas le faire maintenant ? Écrivez une prière pour lui demander le pardon de vos péchés et l’inviter dans votre vie.)",
+  "4.03": "=",
+  "4.04": "=",
+  "4.05": "=",
+  "4.06": "=",
+  "4.07": "(Si vous avez accepté Jésus comme Sauveur et Seigneur, pourquoi ne pas lui écrire quelques mots pour le remercier de son don de la vie éternelle ?)",
+  "4.08": "=",
+  "4.09": "=",
+  "4.10": "=",
+  "4.11": "=",
+  "4.12": "=",
+  "4.13": "=",
+  "4.14": "=",
+  "4.15": "=",
+  "4.16": "=",
+  "4.17": "=",
+  "4.18": "=",
+  "4.19": "=",
+  "4.20": "=",
+  "4.21": "=",
+  "4.22": "=",
+  "4.23": "=",
+  "4.24": {
+   "html": "Église adventiste du septième jour de Papatoetoe",
+   "ligne": true
+  },
+  "4.25": "=",
+  "4.26": {
+   "html": "Tél. (09) 278-7786, fax (09) 278-4906",
+   "ligne": true
+  },
+  "4.27": "=",
+  "4.28": {
+   "html": "Courriel info@papsda.co.nz, site www.papsda.co.nz",
+   "ligne": true
+  },
+  "4.29": {
+   "html": "Reproduit avec autorisation",
+   "ligne": true
+  }
+ },
+ "zones": {
+  "1": [
+   {
+    "rect": [
+     256,
+     538,
+     516,
+     740
+    ],
+    "html": "On peut aller au ciel<br>sans la santé,<br>sans la prospérité,<br>sans la gloire,<br>sans un nom dans l’histoire,<br>sans le savoir,<br>sans un gros avoir,<br>sans la culture,<br>sans amis,<br>sans mille autres choses,<br>mais on ne peut jamais aller au ciel<br>sans le Christ.<br><br>— Anonyme —",
+    "css": "body {text-align: center; font-family: caladea; font-size: 11pt; line-height: 13.15pt; color: #6d6e71;}"
+   }
+  ]
+ }
+}

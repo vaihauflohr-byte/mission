@@ -1,0 +1,177 @@
+{
+ "source": "vivre-avec-jesus/01 He is Coming Back.pdf",
+ "chemin": "vivre-avec-jesus/01-il-revient",
+ "livret": false,
+ "titre": "Il revient",
+ "auteur": "PAPSDA — traduction française",
+ "effacer_dessins": {
+  "1": [
+   [
+    186,
+    106,
+    548,
+    275
+   ]
+  ]
+ },
+ "textes": {
+  "1": [
+   {
+    "x": 222,
+    "base": 236,
+    "texte": "Vivre",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 118,
+    "couleur": [
+     0.041,
+     0.461,
+     0.701
+    ]
+   },
+   {
+    "x": 536,
+    "base": 261,
+    "texte": "avec Jésus",
+    "police": [
+     "sourcenoir",
+     ""
+    ],
+    "taille": 17,
+    "couleur": [
+     0.644,
+     0.761,
+     0.86
+    ],
+    "aligne": "droite"
+   }
+  ]
+ },
+ "reglages": {
+  "cadre_colonnes": true,
+  "traits_fins": true
+ },
+ "u": {
+  "1.00": "Leçon 1 :",
+  "1.01": "Il revient",
+  "1.02": {
+   "html": "Au fil des siècles, des familles ont vu partir un mari, une épouse, un père, une mère, un être aimé, un fils, une fille, un frère ou une sœur pour faire la guerre, explorer de nouvelles contrées ou gagner leur vie. Ceux qui restaient ont toujours gardé cet espoir : « Il reviendra. Elle reviendra. » L’amour pousse à guetter et à désirer le retour des absents.",
+   "css": "body {text-align: justify;}"
+  },
+  "1.03": {
+   "html": "Lorsque Jésus a quitté ses amis sur la terre, il leur a fait une promesse : « Je reviendrai. » Depuis, tous ceux qui l’aiment attendent son retour, et leur amour maintient cette espérance vivante dans leur cœur.",
+   "css": "body {text-align: justify;}"
+  },
+  "1.04": {
+   "decaler": 8,
+   "html": "À mesure que votre amour pour Jésus grandira, votre désir de le voir grandira aussi."
+  },
+  "2.00": "JÉSUS A PROMIS DE REVENIR",
+  "2.01": "qu’un autre des signes du retour du Christ est en train de s’accomplir.",
+  "2.02": "Que promet Jésus ? Jean 14:1-3 (remarquez surtout le verset 3)",
+  "2.03": "SIGNES DANS LE MONDE POLITIQUE",
+  "2.04": "=",
+  "2.05": "=",
+  "2.06": "Vous verrez aussi des signes dans le monde politique. Lesquels ? Matthieu 24:6-7",
+  "2.07": "Il revient ! Il l’a promis, et la Bible évoque cet événement 1 518 fois !",
+  "2.08": "=",
+  "2.09": "=",
+  "2.10": "QUAND JÉSUS REVIENDRA-T-IL ?",
+  "2.11": "=",
+  "2.12": "La lecture des journaux montre que les gouvernements du monde sont constamment en conflit. C’est une indication supplémentaire que nous approchons de la fin des temps.",
+  "2.13": "Les disciples se demandaient quand Jésus reviendrait. Ils lui ont demandé : « Quel sera le signe de ton avènement et de la fin du monde ? » (Matthieu 24:3)",
+  "2.14": "Jésus a clairement indiqué qu’il ne pouvait pas donner de date précise : « Pour ce qui est du jour et de l’heure, personne ne le sait, ni les anges des cieux, mais le Père seul » (Matthieu 24:36). Il a pourtant répondu à ses disciples en leur décrivant des signes, comme des bornes sur la route, qui leur permettraient de voir que l’histoire avance vers son grand dénouement : le retour du Christ.",
+  "2.15": "SIGNES DANS LE MONDE INTELLECTUEL",
+  "2.16": "Daniel, un prophète de l’Ancien Testament, a reçu de Dieu des révélations sur le temps de la fin. Qu’en a-t-il dit ? Daniel 12:4",
+  "2.17": "Examinons quelques-uns des signes auxquels Jésus a demandé à ses disciples de prêter attention.",
+  "2.18": "=",
+  "2.19": "=",
+  "2.20": "=",
+  "2.21": "SIGNES DANS LE MONDE PHYSIQUE",
+  "2.22": "Daniel a mentionné deux choses qui marqueraient la fin des temps : des gens qui courent çà et là, et l’accroissement de la connaissance. Les spécialistes de la Bible l’interprètent de deux façons :",
+  "2.23": "Quels sont quelques-uns des signes dans le monde physique ? Matthieu 24:7, deuxième partie",
+  "2.24": "=",
+  "2.26": "La connaissance des prophéties de Daniel, longtemps cachées, qui annoncent le retour du Christ, augmenterait.",
+  "2.27": "=",
+  "2.28": "Sur notre planète, 1,2 milliard de personnes n’ont pas les moyens de se procurer l’essentiel : nourriture, vêtements, logement. C’est près du quart de la population mondiale !",
+  "2.30": "Les connaissances en général et les voyages se multiplieraient.",
+  "2.31": "La famine est un signe que le monde se rapproche du retour du Christ. Quand vous pensez aux grands tremblements de terre de ces dernières années, vous constatez une fois de plus",
+  "2.32": "Quand on pense qu’en cent ans l’humanité est passée du cheval aux voyages dans l’espace, on reconnaît que la prophétie de Daniel s’est accomplie ! Et quand Daniel",
+  "3.00": "annonçait une augmentation des connaissances, il ne pouvait pas imaginer la « surcharge d’informations » que la plupart d’entre nous connaissent aujourd’hui. Les prophéties de Daniel sont des preuves frappantes que le Christ revient bientôt ; mais il y a encore d’autres signes à considérer.",
+  "3.01": "Que faut-il faire, selon Jésus, quand vous entendez de tels enseignements ? Matthieu 24:26, dernière partie",
+  "3.02": "=",
+  "3.03": "=",
+  "3.04": "=",
+  "3.05": "SIGNES DANS LE MONDE SOCIAL",
+  "3.06": "Pourquoi ? Matthieu 24:27-30 ; Apocalypse 1:7",
+  "3.07": "=",
+  "3.08": "Comment 2 Timothée 3:1-5 décrit-il les hommes des derniers jours ?",
+  "3.09": "=",
+  "3.10": "=",
+  "3.11": "Jésus décrit son retour comme un événement dont la gloire et la puissance attireront l’attention du monde entier : « Tout œil le verra. »",
+  "3.12": "=",
+  "3.13": "=",
+  "3.14": "En relisant les signes que le Christ a donnés à ses disciples dans Matthieu 24, vous remarquerez qu’ils conduisent tous à son retour. Matthieu 24:6 dit, à la fin : « Il faut que ces choses arrivent. Mais ce ne sera pas encore la fin. » Mais il y a un signe dont Jésus a dit qu’une fois accompli, il reviendrait.",
+  "3.15": "=",
+  "3.16": "En plus des signes dans le monde physique, intellectuel et social, vous trouverez des signes dans le monde religieux.",
+  "3.17": "Quel est ce signe ? Matthieu 24:14",
+  "3.18": "SIGNES DANS LE MONDE RELIGIEUX",
+  "3.19": "=",
+  "3.20": "Jésus a mis en garde contre une séduction qui aurait lieu avant son retour. De quelle séduction s’agit-il ? Matthieu 24:4-5, 23-24",
+  "3.21": "=",
+  "3.22": "=",
+  "3.23": "=",
+  "3.24": "=",
+  "3.25": "L’ÉVANGILE AU MONDE ENTIER",
+  "3.26": "=",
+  "3.27": "On peut mesurer la proximité du retour du Christ aux progrès de la proclamation de l’Évangile dans le monde. C’est pourquoi les premiers chrétiens l’annonçaient partout : ils désiraient que Jésus revienne bientôt ! Mais, au cours du Moyen Âge, cette préoccupation s’est estompée.",
+  "3.28": "=",
+  "3.29": "Qu’enseignent ces faux prophètes et ces faux christs ? Matthieu 24:23, 26",
+  "3.30": "=",
+  "3.31": "Puis, au siècle dernier, lorsque les chrétiens se sont de nouveau intéressés au message biblique du retour du Christ, ils ont été poussés à le faire connaître au monde. Des initiatives missionnaires ont vu le jour partout. Aujourd’hui, des milliers de chrétiens dévoués portent l’Évangile du Christ aux quatre coins du globe.",
+  "3.32": "=",
+  "3.33": "=",
+  "3.34": "Aujourd’hui, beaucoup de gens enseignent que Jésus reviendra en secret ou qu’il est déjà venu.",
+  "4.00": "Des pays autrefois fermés aux idées nouvelles s’ouvrent ; des murs de séparation tombent : de grandes occasions s’offrent à la prédication de l’Évangile. Dieu a mille moyens d’accomplir son œuvre. Qui sait avec quelle rapidité il pourrait achever de répandre l’Évangile !",
+  "4.01": "N’est-ce pas enthousiasmant ? Vous vivez au temps de la fin ! Ce Jésus que vous aimez revient bientôt vous chercher.",
+  "4.02": "POUR VOTRE RÉFLEXION",
+  "4.03": "Est-ce que j’attends avec joie le retour du Christ ? Pourquoi ?",
+  "4.04": "=",
+  "4.05": "=",
+  "4.06": "=",
+  "4.07": "=",
+  "4.08": "=",
+  "4.09": "=",
+  "4.10": "=",
+  "4.11": "=",
+  "4.12": "=",
+  "4.13": "=",
+  "4.14": "=",
+  "4.15": "=",
+  "4.16": "=",
+  "4.17": "=",
+  "4.18": "=",
+  "4.19": "=",
+  "4.20": "=",
+  "4.21": {
+   "html": "Église adventiste du septième jour de Papatoetoe",
+   "ligne": true
+  },
+  "4.22": "=",
+  "4.23": {
+   "html": "Tél. (09) 278-7786, fax (09) 278-4906",
+   "ligne": true
+  },
+  "4.24": "=",
+  "4.25": {
+   "html": "Courriel info@papsda.co.nz, site www.papsda.co.nz",
+   "ligne": true
+  },
+  "4.26": {
+   "html": "Reproduit avec autorisation",
+   "ligne": true
+  }
+ }
+}

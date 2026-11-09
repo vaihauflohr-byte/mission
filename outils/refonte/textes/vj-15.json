@@ -1,0 +1,193 @@
+{
+ "source": "vivre-avec-jesus/15 He will Guide You to His Church.pdf",
+ "chemin": "vivre-avec-jesus/15-il-vous-conduira-vers-son-eglise",
+ "livret": false,
+ "titre": "Il vous conduira vers son Église",
+ "auteur": "PAPSDA — traduction française",
+ "effacer_dessins": {
+  "1": [
+   [
+    186,
+    106,
+    548,
+    275
+   ]
+  ]
+ },
+ "textes": {
+  "1": [
+   {
+    "x": 222,
+    "base": 236,
+    "texte": "Vivre",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 118,
+    "couleur": [
+     0.041,
+     0.461,
+     0.701
+    ]
+   },
+   {
+    "x": 536,
+    "base": 261,
+    "texte": "avec Jésus",
+    "police": [
+     "sourcenoir",
+     ""
+    ],
+    "taille": 17,
+    "couleur": [
+     0.644,
+     0.761,
+     0.86
+    ],
+    "aligne": "droite"
+   }
+  ]
+ },
+ "reglages": {
+  "cadre_colonnes": true,
+  "traits_fins": true
+ },
+ "u": {
+  "1.00": "Leçon 15 :",
+  "1.01": "Il vous conduira vers son Église",
+  "1.02": "Lors d’un déjeuner associatif, un membre fut félicité parce qu’il travaillait pour une entreprise qui existait depuis cent ans.",
+  "1.03": "Quand les applaudissements cessèrent, le président demanda si quelqu’un travaillait pour une organisation plus ancienne. Un pasteur se leva. Tout le monde rit, puis comprit la portée de son geste : l’Église du Christ est l’organisation encore en activité la plus ancienne au monde. Fondée par le Seigneur Jésus lui-même, elle est organisée et active depuis plus de deux mille ans !",
+  "2.00": "L’ÉGLISE DU SEIGNEUR",
+  "2.01": "est donc aussi valable et important que le culte au temple. En misant à la fois sur les grandes assemblées et sur les petits groupes, l’Église du Nouveau Testament a grandi rapidement et s’est répandue dans le monde entier. Quelle est l’attitude du Seigneur envers l’Église ? Éphésiens 5:25-27",
+  "2.02": "Quelles sont les origines de l’Église chrétienne ? Matthieu 16:13-19",
+  "2.03": "=",
+  "2.04": "=",
+  "2.05": "=",
+  "2.06": "=",
+  "2.07": "Certains ont compris ces versets comme si Pierre était le rocher sur lequel l’Église est fondée, mais d’autres versets (1 Corinthiens 10:4 ; Éphésiens 2:20) montrent clairement que le Rocher, c’est Jésus. C’est la déclaration de foi de Pierre en la divinité du Christ qui devait être le fondement de l’Église, et non Pierre lui-même.",
+  "2.08": "Jésus aime l’Église comme un mari aime sa femme. Il est aussi présenté comme le chef de cette famille (Éphésiens 5:23). La Bible compare encore l’Église à un corps dont Jésus est la tête (1 Corinthiens 12:12-27), à un édifice dont il est la pierre angulaire (Éphésiens 2:19-22) et à un troupeau (Actes 20:28) dont il est le berger (Jean 10:14).",
+  "2.09": "Croire en Jésus reste le point de départ pour entrer dans l’Église. Selon la Bible, que faisaient les personnes dès qu’elles acceptaient le Christ ? Actes 2:41, 47",
+  "2.10": "Dans toutes ces images, Jésus occupe la première place ! Si vous cherchez une Église, assurez-vous qu’elle lui donne cette place. Une communauté qui remet en question sa divinité ou sa seigneurie ne fait pas partie de sa véritable Église.",
+  "2.11": "=",
+  "2.12": "=",
+  "2.13": "La version anglaise King James dit qu’elles étaient « ajoutées chaque jour à l’Église ». La New International Version indique que les nouveaux chrétiens étaient « ajoutés chaque jour à leur nombre ». Dans les deux cas, ceux qui acceptaient le Christ rejoignaient immédiatement une communauté de croyants. Il existait une Église organisée à laquelle ils pouvaient s’intégrer.",
+  "2.14": "LES CARACTÉRISTIQUES DE L’ÉGLISE DU SEIGNEUR",
+  "2.15": "Vous pouvez reconnaître l’Église de Dieu aux caractéristiques suivantes.",
+  "2.16": "Où les premiers chrétiens se réunissaient-ils ? Actes 2:46",
+  "2.17": "1. Jésus y occupe la première place.",
+  "2.18": "=",
+  "2.19": "Que dit Colossiens 1:18 de sa position ?",
+  "2.20": "=",
+  "2.21": "=",
+  "2.22": "Actes 16:13",
+  "2.23": "=",
+  "2.24": "=",
+  "2.25": {
+   "html": "2. L’Église est un lieu d’amour et de communion.",
+   "interligne": 14
+  },
+  "2.26": "=",
+  "2.27": "Comment Actes 2:42-46 décrit-il l’Église ?",
+  "2.28": "1 Corinthiens 16:19",
+  "2.29": "=",
+  "2.30": "=",
+  "2.31": "=",
+  "2.32": "=",
+  "2.33": "=",
+  "2.34": "Les chrétiens se réunissaient en grands et petits groupes : le culte en petit groupe",
+  "3.00": "4. L’Église aura le témoignage de Jésus.",
+  "3.01": "Le verset 42 met la communion au même rang que l’enseignement, la doctrine !",
+  "3.02": "Quelle est la deuxième caractéristique de l’Église des derniers jours ? Apocalypse 12:17, dernière partie",
+  "3.03": "Que dit Jésus des relations qui doivent unir les croyants ? Jean 13:35 ; 17.21-23",
+  "3.04": "=",
+  "3.05": "=",
+  "3.06": "=",
+  "3.07": "=",
+  "3.08": "Ses membres parleront de Jésus aux autres, pour le faire connaître au monde entier. Quelles furent les dernières consignes de Jésus à ses disciples ? Matthieu 28:19-20",
+  "3.09": "=",
+  "3.10": "L’amour et l’unité des membres de l’Église sont des moyens d’attirer le monde vers le Christ. Mais ils ne peuvent grandir sans communion fraternelle.",
+  "3.11": "La Bible donne une autre définition du « témoignage de Jésus ». Laquelle ? Apocalypse 19:10",
+  "3.12": "Dieu place dans la communauté chrétienne des personnes dotées de dons différents afin que l’Église fonctionne bien. Quels sont certains de ces dons ? 1 Corinthiens 12:28",
+  "3.13": "=",
+  "3.14": "=",
+  "3.15": "L’Église du Seigneur croit aux prophéties, notamment à celles que vous avez étudiées au sujet de son retour. Elle les enseigne également aux autres.",
+  "3.16": "=",
+  "3.17": "=",
+  "3.18": "=",
+  "3.19": {
+   "html": "5. Les membres de l’Église resteront fidèles à Jésus.",
+   "interligne": 14.5
+  },
+  "3.20": "Dans l’Église du Seigneur, vous trouverez des personnes aux dons et aux caractères variés. Elles seront pourtant unies par l’amour et la communion fraternelle.",
+  "3.21": "Que dit la Bible à leur sujet ? Apocalypse 14:12, dernière partie",
+  "3.22": "=",
+  "3.23": {
+   "html": "3. L’Église obéira aux commandements de Dieu.",
+   "interligne": 14.5
+  },
+  "3.24": "=",
+  "3.25": "Apocalypse 12:17 donne deux caractéristiques de l’Église des derniers jours. Quelle est la première que mentionne ce verset ?",
+  "3.26": "Quelles que soient les difficultés, le peuple de Dieu ne renoncera pas à sa foi en Jésus.",
+  "3.27": "Quel est le but ultime du Christ pour son Église ? Éphésiens 5:25-27",
+  "3.28": "=",
+  "3.29": "=",
+  "3.30": "=",
+  "3.31": "=",
+  "3.32": "=",
+  "3.33": "Si la véritable Église de Dieu observe les commandements, comment et quand ses membres célébreront-ils le culte ? Exode 20:8-11",
+  "3.34": "=",
+  "3.35": "=",
+  "3.36": "=",
+  "3.37": "=",
+  "4.00": "POUR VOTRE RÉFLEXION",
+  "4.01": "Ne devrais-je pas devenir membre de l’Église de mon Seigneur…",
+  "4.02": {
+   "gauche": 56.69,
+   "html": "<table><tr><td class=\"m\"><span>•</span></td><td><div>où il est exalté et aimé ;</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>où ses disciples vivent l’amour et la communion fraternelle, et où chacun peut exprimer ses dons particuliers ;</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>où ses commandements sont observés ;</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>où son témoignage est cru et partagé ;</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>où ses membres restent fidèles à Jésus ?</div></td></tr></table>",
+   "css": "table {border-collapse: collapse;} td {vertical-align: top; padding: 0;} td.m {width: 18pt;} td.m span {font-family: serif; font-size: 12pt; color: #231f20;} p {margin: 0;}"
+  },
+  "4.03": null,
+  "4.04": null,
+  "4.05": null,
+  "4.06": null,
+  "4.07": null,
+  "4.09": "Oui, je veux faire partie de la famille de l’Église dès que possible.",
+  "4.11": "J’y réfléchis encore. J’ai des questions sur :",
+  "4.12": "=",
+  "4.13": "=",
+  "4.14": "=",
+  "4.15": "=",
+  "4.16": "=",
+  "4.17": "=",
+  "4.18": "=",
+  "4.19": "=",
+  "4.20": "=",
+  "4.21": "=",
+  "4.22": "=",
+  "4.23": "=",
+  "4.24": "=",
+  "4.25": "=",
+  "4.26": "=",
+  "4.27": "=",
+  "4.28": "=",
+  "4.29": {
+   "html": "Église adventiste du septième jour de Papatoetoe",
+   "ligne": true
+  },
+  "4.30": "=",
+  "4.31": {
+   "html": "Tél. (09) 278-7786, fax (09) 278-4906",
+   "ligne": true
+  },
+  "4.32": "=",
+  "4.33": {
+   "html": "Courriel info@papsda.co.nz, site www.papsda.co.nz",
+   "ligne": true
+  },
+  "4.34": {
+   "html": "Reproduit avec autorisation",
+   "ligne": true
+  }
+ }
+}

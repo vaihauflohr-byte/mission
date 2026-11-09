@@ -2842,93 +2842,78 @@
   "secondes": 1.9
  },
  "vivre-avec-jesus/01-il-revient": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 846985,
-  "secondes": 1.5
+  "source": "refonte",
+  "pages": 4,
+  "octets": 518476
  },
  "vivre-avec-jesus/02-quand-il-reviendra": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 821436,
-  "secondes": 1.4
+  "source": "refonte",
+  "pages": 4,
+  "octets": 514671
  },
  "vivre-avec-jesus/03-vos-mille-premieres-annees-avec-jesus": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 831508,
-  "secondes": 1.6
+  "source": "refonte",
+  "pages": 4,
+  "octets": 526902
  },
  "vivre-avec-jesus/04-la-nouvelle-terre-que-dieu-vous-prepare": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 880955,
-  "secondes": 11.2
+  "source": "refonte",
+  "pages": 4,
+  "octets": 576398
  },
  "vivre-avec-jesus/05-ou-etes-vous-apres-la-mort": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 860178,
-  "secondes": 1.4
+  "source": "refonte",
+  "pages": 4,
+  "octets": 540319
  },
  "vivre-avec-jesus/06-la-destruction-des-mechants": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 798734,
-  "secondes": 1.5
+  "source": "refonte",
+  "pages": 4,
+  "octets": 484548
  },
  "vivre-avec-jesus/07-un-seul-chemin-vers-le-ciel": {
-  "source": "PDF",
+  "source": "refonte",
   "pages": 4,
-  "octets": 811074,
-  "secondes": 1.5
+  "octets": 478113
  },
  "vivre-avec-jesus/08-le-bapteme-est-il-necessaire": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 851812,
-  "secondes": 1.4
+  "source": "refonte",
+  "pages": 4,
+  "octets": 576834
  },
  "vivre-avec-jesus/09-le-seigneur-sera-votre-avocat": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 862210,
-  "secondes": 1.4
+  "source": "refonte",
+  "pages": 4,
+  "octets": 570564
  },
  "vivre-avec-jesus/10-des-instructions-pour-bien-vivre": {
-  "source": "PDF",
+  "source": "refonte",
   "pages": 4,
-  "octets": 878611,
-  "secondes": 1.6
+  "octets": 571792
  },
  "vivre-avec-jesus/11-le-seigneur-de-votre-temps": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 847545,
-  "secondes": 1.5
+  "source": "refonte",
+  "pages": 4,
+  "octets": 534465
  },
  "vivre-avec-jesus/12-pourquoi-tant-de-chretiens-celebrent-ils-le-dimanche": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 854811,
-  "secondes": 1.4
+  "source": "refonte",
+  "pages": 4,
+  "octets": 557918
  },
  "vivre-avec-jesus/13-le-seigneur-de-vos-biens": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 856173,
-  "secondes": 1.4
+  "source": "refonte",
+  "pages": 4,
+  "octets": 515278
  },
  "vivre-avec-jesus/14-le-seigneur-de-votre-corps": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 861805,
-  "secondes": 1.4
+  "source": "refonte",
+  "pages": 4,
+  "octets": 563908
  },
  "vivre-avec-jesus/15-il-vous-conduira-vers-son-eglise": {
-  "source": "PDF",
-  "pages": 5,
-  "octets": 861389,
-  "secondes": 1.3
+  "source": "refonte",
+  "pages": 4,
+  "octets": 583193
  }
 }

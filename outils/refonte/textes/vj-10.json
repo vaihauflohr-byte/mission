@@ -1,0 +1,167 @@
+{
+ "source": "vivre-avec-jesus/10 Directions for Living.pdf",
+ "chemin": "vivre-avec-jesus/10-des-instructions-pour-bien-vivre",
+ "livret": false,
+ "titre": "Des instructions pour bien vivre",
+ "auteur": "PAPSDA — traduction française",
+ "effacer_dessins": {
+  "1": [
+   [
+    186,
+    106,
+    548,
+    275
+   ]
+  ]
+ },
+ "textes": {
+  "1": [
+   {
+    "x": 222,
+    "base": 236,
+    "texte": "Vivre",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 118,
+    "couleur": [
+     0.041,
+     0.461,
+     0.701
+    ]
+   },
+   {
+    "x": 536,
+    "base": 261,
+    "texte": "avec Jésus",
+    "police": [
+     "sourcenoir",
+     ""
+    ],
+    "taille": 17,
+    "couleur": [
+     0.644,
+     0.761,
+     0.86
+    ],
+    "aligne": "droite"
+   }
+  ]
+ },
+ "reglages": {
+  "cadre_colonnes": true,
+  "traits_fins": true
+ },
+ "u": {
+  "1.00": "Leçon 10 :",
+  "1.01": "Des instructions pour bien vivre",
+  "1.02": "Acheter une voiture neuve est enthousiasmant. Elle est belle, agréable à conduire, son moteur tourne bien et elle sent même bon ! Chaque voiture neuve est accompagnée d’un livre particulier : le manuel du propriétaire. Il décrit ses équipements et explique comment l’entretenir pour qu’elle fonctionne correctement. Quel carburant utiliser, quelle pression maintenir dans les pneus et quand changer l’huile : voilà quelques-unes des informations qu’on y trouve.",
+  "1.03": "Vous pouvez, bien sûr, traiter votre voiture comme vous le voulez puisqu’elle vous appartient. Mais si vous êtes sage, vous suivrez les recommandations du constructeur. Après tout, ceux qui l’ont fabriquée savent mieux que personne comment en prendre soin.",
+  "1.04": "Il existe un manuel du propriétaire encore plus important. Il contient tout ce dont vous avez besoin pour conduire votre vie, et il vient du Créateur de la vie.",
+  "2.00": "Quel guide vous aide à réussir votre vie, et que peut-il vous apporter ? 2 Timothée 3:16-17",
+  "2.01": "Paul, l’auteur de l’épître aux Colossiens, et Jésus semblent ne pas être d’accord. Paul parle de prescriptions clouées à la croix, alors que Jésus a dit qu’il n’était pas venu abolir la loi, mais l’accomplir. Comment comprendre cela ?",
+  "2.02": "=",
+  "2.03": "=",
+  "2.04": "En comprenant ce que la Bible veut dire quand elle parle de lois et de prescriptions.",
+  "2.05": "Selon Jésus, que faut-il faire pour avoir la vie éternelle ? Luc 18:18-22",
+  "2.06": "Pour les Juifs du temps du Christ, le mot « Loi » ne désignait pas seulement les dix commandements, mais aussi les écrits de l’Ancien Testament (Exode, Lévitique, Nombres, Deutéronome) qui exposent les prescriptions données à Israël. Il désignait aussi les dix commandements eux-mêmes. Comment savoir de quoi parle la Bible ?",
+  "2.07": "=",
+  "2.08": "=",
+  "2.09": "Jésus a souligné deux choses essentielles pour avoir la vie éternelle : obéir aux commandements et le suivre. Ces deux traits marquent aussi le peuple de Dieu à la fin des temps. Comment la Bible décrit-elle le peuple de Dieu des derniers jours ? Apocalypse 12:17 (dernière partie)",
+  "2.10": "QUATRE CATÉGORIES DE LOIS",
+  "2.11": "On y voit plus clair lorsqu’on distingue quatre catégories de lois. Quelle est la première ? Exode 20:1-17",
+  "2.12": "=",
+  "2.13": null,
+  "2.14": "=",
+  "2.15": "=",
+  "2.16": "Deux traits distingueront toujours les vrais chrétiens : un attachement total à Jésus et l’obéissance à sa Parole. Autrement dit, ils aiment leur Créateur et suivent le guide qu’il leur donne pour vivre. Pourtant, on entend parfois dire que la loi a été abolie et que les chrétiens n’ont plus à l’observer. Certains affirment qu’elle a été « clouée à la croix ». Un passage semble aller dans ce sens : Colossiens 2:13-17.",
+  "2.17": "=",
+  "2.18": "La première est la loi morale de Dieu, sa règle de vie pour son peuple. Quelle est une autre catégorie de lois ? Exode 21 et 22. Parcourez rapidement ces chapitres pour avoir une idée de leur contenu.",
+  "2.19": "=",
+  "2.20": "Qu’est-ce qui a été cloué à la croix ? Colossiens 2:13-17",
+  "2.21": "=",
+  "2.22": null,
+  "2.23": "Ce sont des lois civiles, qui développent et appliquent les dix commandements. Elles ressemblent à beaucoup de nos lois actuelles. Quelqu’un a même estimé qu’il existe environ 35 millions de lois rien que pour faire respecter les dix commandements !",
+  "2.24": "=",
+  "2.25": "=",
+  "2.26": "Certaines lois ou prescriptions semblent avoir été supprimées. Mais qu’a déclaré Jésus ? Matthieu 5:17-18",
+  "2.27": "Quelle est une autre catégorie de lois ? Lévitique 11 à 15. Lisez les titres de ces chapitres pour avoir une idée de leur sujet.",
+  "2.28": "=",
+  "2.29": "=",
+  "2.30": "=",
+  "2.31": "=",
+  "2.32": "=",
+  "3.00": "La Bible contient aussi des lois cérémonielles. Elles régissent le service du sanctuaire, établi par Dieu pour montrer aux Israélites comment leurs péchés pouvaient être pris en charge.",
+  "3.01": "nous avons vu que nous sommes tous pécheurs, tous transgresseurs de la loi. Mais Jésus est devenu l’agneau sacrifié pour nos péchés. Quand nous l’acceptons, nos péchés sont pardonnés. Une fois pardonnés, allons-nous ignorer sa loi et continuer à pécher ? Romains 6:1-2",
+  "3.02": "En résumé, nous trouvons quatre catégories de lois dans la Bible :",
+  "3.03": "=",
+  "3.04": "La loi morale",
+  "3.05": "=",
+  "3.06": "La règle de vie de Dieu : les dix commandements",
+  "3.07": "=",
+  "3.08": "Les lois civiles",
+  "3.09": "L’application des dix commandements",
+  "3.10": "Qu’est-ce qui vous poussera à obéir aux commandements de Dieu ? Jean 14:15",
+  "3.11": "Les lois sanitaires",
+  "3.12": "Les règles d’hygiène et de santé",
+  "3.13": "=",
+  "3.14": "Les lois cérémonielles",
+  "3.15": "=",
+  "3.16": "Les instructions sur le culte et sur le traitement du péché",
+  "3.17": "=",
+  "3.18": "Lesquelles de ces lois ont donc été « clouées à la croix » ? Les dix commandements ? Difficilement : notre système judiciaire repose encore sur eux. Les lois civiles ? Pas si elles ne font que développer les dix commandements. Elles changent et s’adaptent aux sociétés, mais elles existent toujours. Et les lois sanitaires ? Nous n’avons pas les mêmes, mais nous avons bel et bien des lois pour protéger notre santé.",
+  "3.19": "Quelle aide supplémentaire Dieu vous propose-t-il pour vivre selon ses lois ? Hébreux 8:10",
+  "3.20": "=",
+  "3.21": "=",
+  "3.22": "=",
+  "3.23": "Il ne reste donc que les lois cérémonielles comme lois abolies. Et c’est logique, car toutes ces cérémonies avaient été établies dans un seul but : annoncer Jésus, l’Agneau de Dieu, qui allait se charger des péchés du monde. À sa mort, il n’a plus été nécessaire d’apporter un agneau au temple : on pouvait désormais se confier en Jésus, qui porte nos péchés.",
+  "3.24": "Revenez à Colossiens 2:13-17 et remarquez surtout le verset 17, qui dit que ces choses étaient « l’ombre des choses à venir ». Quelle loi est une ombre ? Hébreux 10:1",
+  "3.25": "=",
+  "3.26": "=",
+  "3.27": "Ce sont les lois cérémonielles, « l’ombre des choses à venir », qui ont été abolies. Plus besoin de sacrifier un agneau : nous pouvons nous confier en Jésus. Dans les leçons précédentes,",
+  "4.00": "POUR VOTRE RÉFLEXION",
+  "4.01": "L’amour et l’obéissance sont-ils tous deux présents dans ma vie ? Est-ce que j’aime le Christ et désire obéir à ses commandements, ce « manuel du propriétaire » pour ma vie ?",
+  "4.02": "=",
+  "4.03": "=",
+  "4.04": "=",
+  "4.05": "=",
+  "4.06": "=",
+  "4.07": "=",
+  "4.08": "=",
+  "4.09": "=",
+  "4.10": "=",
+  "4.11": "=",
+  "4.12": "=",
+  "4.13": "=",
+  "4.14": "=",
+  "4.15": "=",
+  "4.16": "=",
+  "4.17": "=",
+  "4.18": "=",
+  "4.19": "=",
+  "4.20": "=",
+  "4.21": "=",
+  "4.22": "=",
+  "4.23": "=",
+  "4.24": "=",
+  "4.25": {
+   "html": "Église adventiste du septième jour de Papatoetoe",
+   "ligne": true
+  },
+  "4.26": "=",
+  "4.27": {
+   "html": "Tél. (09) 278-7786, fax (09) 278-4906",
+   "ligne": true
+  },
+  "4.28": "=",
+  "4.29": {
+   "html": "Courriel info@papsda.co.nz, site www.papsda.co.nz",
+   "ligne": true
+  },
+  "4.30": {
+   "html": "Reproduit avec autorisation",
+   "ligne": true
+  }
+ }
+}

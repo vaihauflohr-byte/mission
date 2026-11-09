@@ -364,8 +364,9 @@ def allonger_traits(html, u, fam, st, taille, x0):
     if not m:
         return html
     tete = html[:m.start()]
+    derniere = re.split(r'<br\s*/?>', tete)[-1]        # trait seul sur sa ligne après un <br> : toute la largeur
     fin = max(l['bbox'][2] for l in u['lignes'])
-    place = fin - x0 - largeur_html(tete, fam, st, taille)
+    place = fin - x0 - largeur_html(derniere, fam, st, taille)
     n = max(3, int(place / fonte(fam, st).text_length('_', fontsize=taille)))
     return tete + '_' * n
 

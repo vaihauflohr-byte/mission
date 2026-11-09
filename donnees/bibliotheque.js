@@ -1058,8 +1058,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/01-il-revient",
-       "o": 846985,
-       "p": 5
+       "o": 518476,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-1"
@@ -1073,8 +1073,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/02-quand-il-reviendra",
-       "o": 821436,
-       "p": 5
+       "o": 514671,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-2"
@@ -1088,8 +1088,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/03-vos-mille-premieres-annees-avec-jesus",
-       "o": 831508,
-       "p": 5
+       "o": 526902,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-3"
@@ -1103,8 +1103,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/04-la-nouvelle-terre-que-dieu-vous-prepare",
-       "o": 880955,
-       "p": 5
+       "o": 576398,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-4"
@@ -1118,8 +1118,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/05-ou-etes-vous-apres-la-mort",
-       "o": 860178,
-       "p": 5
+       "o": 540319,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-5"
@@ -1133,8 +1133,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/06-la-destruction-des-mechants",
-       "o": 798734,
-       "p": 5
+       "o": 484548,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-6"
@@ -1148,7 +1148,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/07-un-seul-chemin-vers-le-ciel",
-       "o": 811074,
+       "o": 478113,
        "p": 4
       }
      ],
@@ -1163,8 +1163,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/08-le-bapteme-est-il-necessaire",
-       "o": 851812,
-       "p": 5
+       "o": 576834,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-8"
@@ -1178,8 +1178,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/09-le-seigneur-sera-votre-avocat",
-       "o": 862210,
-       "p": 5
+       "o": 570564,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-9"
@@ -1193,7 +1193,7 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/10-des-instructions-pour-bien-vivre",
-       "o": 878611,
+       "o": 571792,
        "p": 4
       }
      ],
@@ -1208,8 +1208,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/11-le-seigneur-de-votre-temps",
-       "o": 847545,
-       "p": 5
+       "o": 534465,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-11"
@@ -1223,8 +1223,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/12-pourquoi-tant-de-chretiens-celebrent-ils-le-dimanche",
-       "o": 854811,
-       "p": 5
+       "o": 557918,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-12"
@@ -1238,8 +1238,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/13-le-seigneur-de-vos-biens",
-       "o": 856173,
-       "p": 5
+       "o": 515278,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-13"
@@ -1253,8 +1253,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/14-le-seigneur-de-votre-corps",
-       "o": 861805,
-       "p": 5
+       "o": 563908,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-14"
@@ -1268,8 +1268,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "vivre-avec-jesus/15-il-vous-conduira-vers-son-eglise",
-       "o": 861389,
-       "p": 5
+       "o": 583193,
+       "p": 4
       }
      ],
      "image": "vivre-avec-jesus-15"

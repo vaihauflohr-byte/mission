@@ -1,0 +1,169 @@
+{
+ "source": "vivre-avec-jesus/09 Your Lord will be your Lawyer.pdf",
+ "chemin": "vivre-avec-jesus/09-le-seigneur-sera-votre-avocat",
+ "livret": false,
+ "titre": "Le Seigneur sera votre avocat",
+ "auteur": "PAPSDA — traduction française",
+ "effacer_dessins": {
+  "1": [
+   [
+    186,
+    106,
+    548,
+    275
+   ]
+  ]
+ },
+ "textes": {
+  "1": [
+   {
+    "x": 222,
+    "base": 236,
+    "texte": "Vivre",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 118,
+    "couleur": [
+     0.041,
+     0.461,
+     0.701
+    ]
+   },
+   {
+    "x": 536,
+    "base": 261,
+    "texte": "avec Jésus",
+    "police": [
+     "sourcenoir",
+     ""
+    ],
+    "taille": 17,
+    "couleur": [
+     0.644,
+     0.761,
+     0.86
+    ],
+    "aligne": "droite"
+   }
+  ]
+ },
+ "reglages": {
+  "cadre_colonnes": true,
+  "traits_fins": true
+ },
+ "u": {
+  "1.00": "Leçon 9 :",
+  "1.01": "Le Seigneur sera votre avocat",
+  "1.02": "« Prenez un bon avocat ! » Ce conseil revient souvent dans notre société, où les procès, les contre-procédures et les difficultés juridiques se multiplient comme des mines dans un terrain dangereux.",
+  "1.03": "Quiconque doit comparaître devant un tribunal souhaite avoir un avocat capable de gagner. Pourtant, l’issue d’un procès n’est jamais garantie. Même les meilleurs avocats du monde ne peuvent promettre de remporter toutes leurs affaires.",
+  "1.04": "Il existe cependant un avocat qui fait une telle promesse. Il n’a jamais perdu une affaire et n’en perdra jamais. Si vous deviez comparaître devant un tribunal, ne voudriez-vous pas d’un tel défenseur ?",
+  "2.00": "JÉSUS, VOTRE AVOCAT",
+  "2.01": "Ces versets parlent de « l’heure » du jugement de Dieu. Ils l’associent à la proclamation de l’Évangile par trois anges, alors que des êtres humains vivent encore sur terre, avant le retour du Christ.",
+  "2.02": "La Bible dit que votre Seigneur et Sauveur est aussi votre avocat. Quel titre lui donne-t-elle ? 1 Jean 2:1",
+  "2.03": "=",
+  "2.04": "b) Daniel 7:7-10",
+  "2.05": "=",
+  "2.06": "=",
+  "2.07": "Selon le dictionnaire, un avocat est « une personne qui plaide la cause d’une autre, notamment devant un tribunal ». Autrement dit, c’est un défenseur.",
+  "2.08": "=",
+  "2.09": "=",
+  "2.10": "Dans ce chapitre de la Bible, Daniel voit l’histoire du monde représentée par des animaux symboliques. Il y est question de quatre royaumes (les bêtes) qui se divisent en dix gouvernements ; l’un d’eux acquiert une grande puissance et persécute le peuple de Dieu. Vient ensuite une scène de jugement (« les juges s’assirent »), puis Dieu établit son royaume pour son peuple.",
+  "2.11": "Que fait actuellement au ciel Jésus, votre avocat ? Hébreux 7:25 ; 9:24",
+  "2.12": "=",
+  "2.13": "=",
+  "2.14": "Intercéder, c’est « présenter une requête ou une supplication en faveur de quelqu’un d’autre ». Pourquoi avez-vous besoin que Jésus intercède pour vous comme votre avocat ? 2 Corinthiens 5:10",
+  "2.15": "Ces versets donnent la chronologie suivante :",
+  "2.17": "Quatre empires mondiaux<br>Dix royaumes<br>Un royaume très puissant<br>Le jugement commence. Dieu établit son royaume (retour de Jésus)",
+  "2.19": "=",
+  "2.22": "=",
+  "2.23": "En comparant la vision de Daniel avec l’histoire du monde, des spécialistes de la Bible ont situé le début du jugement au début des années 1800. Cette leçon ne permet pas d’examiner tous les éléments qui conduisent à cette conclusion.",
+  "2.24": "UN PROCÈS AU CIEL",
+  "2.25": "La Bible dit qu’un jugement est en cours. Comment le décrit-elle ? Daniel 7:9-10",
+  "2.26": "(Pour en savoir plus, voir C. Mervyn Maxwell, <i>God Cares</i>, vol. 1, p. 195-249, Pacific Press Publishing Assoc., 1981)",
+  "2.27": "=",
+  "2.28": "=",
+  "2.29": "QUE S’EST-IL PASSÉ AU DÉBUT DES ANNÉES 1800 ?",
+  "2.30": "QUAND LE JUGEMENT A-T-IL LIEU ?",
+  "2.31": "Un réveil religieux toucha alors le monde entier autour de ce message : « Le Christ revient en 1844. » Nous savons bien sûr que Jésus n’est pas venu à cette date. On s’était trompé sur ce qui devait se passer, mais pas sur le moment. L’événement n’était pas le retour du Christ. C’était le",
+  "2.32": "a) Apocalypse 14:6-7",
+  "2.33": "=",
+  "2.34": "=",
+  "2.35": "=",
+  "3.00": "début du jugement, qui a lieu avant le retour du Christ, comme l’indique la chronologie de Daniel 7. Ce jugement se déroule actuellement au ciel.",
+  "3.01": "La Bible indique que Dieu garde une trace de nos pensées, de nos paroles, de nos motivations et de nos actes. Sa loi est la norme qui permet de les apprécier. Comment appelle-t-on la transgression de la loi ? 1 Jean 3:4",
+  "3.02": "Pourtant, dans la leçon sur les mille ans, vous avez étudié un jugement qui a lieu après le retour du Christ, pendant les mille premières années de l’éternité. La Bible se contredit-elle ? Non : elle présente simplement le jugement en trois phases, un peu comme notre système judiciaire. Les voici :",
+  "3.03": "=",
+  "3.04": "=",
+  "3.05": "Qu’arrive-t-il à ceux qui pèchent ? Exode 32:33 ; Romains 6:23",
+  "3.06": "1. Le jugement d’instruction",
+  "3.07": "=",
+  "3.08": "Il ressemble à une audience préliminaire destinée à déterminer s’il existe une accusation contre nous. Il a commencé en 1844 et se poursuit jusqu’au retour du Christ.",
+  "3.09": "=",
+  "3.10": "La situation semble sans espoir, n’est-ce pas ? Ceux qui entreront au ciel sont ceux dont le nom est écrit dans le livre de vie de l’Agneau. Pourtant, si vous péchez, votre nom est effacé. Et la Bible dit : « Tous ont péché » (Romains 3:23). Comment peut-on alors traverser le jugement ? Actes 3:19 ; Ésaïe 43:25",
+  "3.11": "2. Le jugement de révision",
+  "3.12": "Il correspond à un examen par un jury pour établir le degré de culpabilité et déterminer le châtiment. Il a lieu pendant les mille ans.",
+  "3.13": "3. Le prononcé du jugement",
+  "3.14": "=",
+  "3.15": "C’est la phase du prononcé de la sentence. Elle a lieu à la fin des mille ans.",
+  "3.16": "=",
+  "3.17": "Vous pouvez choisir que vos péchés soient effacés plutôt que votre nom !",
+  "3.18": "Remarque : la suite de cette leçon ne traite que de la première phase du jugement.",
+  "3.19": "Comment Zacharie décrit-il le temps du jugement ? Zacharie 3:1-5",
+  "3.20": "Lors de l’audience préliminaire, c’est-à-dire du jugement qui se déroule actuellement au ciel, « les livres furent ouverts ». Qu’y trouve-t-on ? Luc 10:20 ; Apocalypse 21:27",
+  "3.21": "=",
+  "3.22": "=",
+  "3.23": "=",
+  "3.24": "Dans ce récit, Satan est l’accusateur et Josué, l’accusé. Mais le Seigneur intervient comme Sauveur et avocat de Josué. Celui-ci accepte que le Seigneur retire ses vêtements sales, qui représentent ses péchés, et le revête de vêtements propres, qui représentent la vie sans péché du Christ. Satan ne peut alors plus l’accuser. Revêtu de la justice du Christ, Josué n’a plus d’accusation à redouter !",
+  "3.25": "=",
+  "3.26": "Seuls des noms sont inscrits dans le livre de vie. Si le nôtre s’y trouve, aucune accusation ne peut être retenue contre nous. Sur quoi Dieu fonde-t-il encore son jugement ? Ecclésiaste 12:14 ; Jacques 2:14",
+  "3.27": "=",
+  "3.28": "=",
+  "3.29": "Il en sera de même pour vous si vous laissez Jésus vous purifier. Que promet-il de faire ? 1 Jean 1:9",
+  "3.30": "=",
+  "3.31": "=",
+  "3.32": "=",
+  "4.00": "POUR VOTRE RÉFLEXION",
+  "4.01": "Ai-je accepté le Christ comme Sauveur afin de pouvoir lui demander d’être mon avocat lors du jugement ?",
+  "4.02": "=",
+  "4.03": "=",
+  "4.04": "=",
+  "4.05": "N’est-il pas réjouissant de savoir que vous n’avez pas à craindre le jugement, puisque votre avocat n’a jamais perdu une affaire ? Pourquoi ne pas prendre une minute pour lui écrire votre reconnaissance ?<br>___",
+  "4.06": "=",
+  "4.07": "=",
+  "4.08": "=",
+  "4.09": "=",
+  "4.10": "=",
+  "4.11": "=",
+  "4.12": "=",
+  "4.13": "=",
+  "4.14": "=",
+  "4.15": "=",
+  "4.16": "=",
+  "4.17": "=",
+  "4.18": "=",
+  "4.19": "=",
+  "4.20": "=",
+  "4.21": "=",
+  "4.22": "=",
+  "4.23": {
+   "html": "Église adventiste du septième jour de Papatoetoe",
+   "ligne": true
+  },
+  "4.24": "=",
+  "4.25": {
+   "html": "Tél. (09) 278-7786, fax (09) 278-4906",
+   "ligne": true
+  },
+  "4.26": "=",
+  "4.27": {
+   "html": "Courriel info@papsda.co.nz, site www.papsda.co.nz",
+   "ligne": true
+  },
+  "4.28": {
+   "html": "Reproduit avec autorisation",
+   "ligne": true
+  }
+ }
+}
