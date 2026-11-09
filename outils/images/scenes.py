@@ -131,7 +131,7 @@ ETUDES = {
         "8": "a Roman centurion bowing respectfully before Jesus in Capernaum",
         "9": "Jesus leading a blind man by the hand out of a village",
         "10": "Jesus speaking to a paralyzed man lying by the pool of Bethesda, stone porches",
-        "11": "four friends lowering a paralyzed man through a roof to Jesus",
+        "11": "inside a crowded house in Capernaum, a paralyzed man lying flat on a woven sleeping mat is gently lowered on four ropes through an opening in the flat roof, his friends kneeling on the roof holding the ropes, Jesus standing below looking up with compassion, people around amazed",
         "12": "Jesus healing a man before an amazed crowd while Pharisees whisper",
         "13": "Jesus calming the storm on the Sea of Galilee, the disciples in a small boat",
         "14": "Jesus freeing two men among the tombs near the sea, a herd of pigs on the hillside",

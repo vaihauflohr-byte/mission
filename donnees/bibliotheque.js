@@ -5,19 +5,22 @@ window.BIBLIO = {
    "id": "connaitre",
    "verbe": "Connaître",
    "titre": "Pour connaître Jésus",
-   "texte": "Pour découvrir la Bible et Jésus. Convient à un invité."
+   "texte": "Pour découvrir la Bible et Jésus. Convient à un invité.",
+   "image": "niveau-connaitre"
   },
   {
    "id": "grandir",
    "verbe": "Grandir",
    "titre": "Pour grandir en Jésus",
-   "texte": "Pour approfondir la foi : la vie avec Jésus, le sanctuaire, les prophéties. Convient aussi à un invité."
+   "texte": "Pour approfondir la foi : la vie avec Jésus, le sanctuaire, les prophéties. Convient aussi à un invité.",
+   "image": "niveau-grandir"
   },
   {
    "id": "murir",
    "verbe": "Mûrir",
    "titre": "Mûrir en Jésus",
-   "texte": "Pour la vie chrétienne de chaque jour : excellence, couple, enfants, pureté, doctrine."
+   "texte": "Pour la vie chrétienne de chaque jour : excellence, couple, enfants, pureté, doctrine.",
+   "image": "niveau-murir"
   }
  ],
  "series": [
@@ -40,7 +43,8 @@ window.BIBLIO = {
      ]
     }
    ],
-   "ressources": []
+   "ressources": [],
+   "image": "serie-fiabilite-bible"
   },
   {
    "id": "prendre-vie",
@@ -58,7 +62,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "prendre-vie-1"
     },
     {
      "num": "2",
@@ -70,7 +75,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "prendre-vie-2"
     },
     {
      "num": "3",
@@ -82,7 +88,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "prendre-vie-3"
     },
     {
      "num": "4",
@@ -94,7 +101,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "prendre-vie-4"
     },
     {
      "num": "5",
@@ -106,7 +114,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "prendre-vie-5"
     },
     {
      "num": "6",
@@ -118,7 +127,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "prendre-vie-6"
     },
     {
      "num": "7",
@@ -130,10 +140,12 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "prendre-vie-7"
     }
    ],
-   "ressources": []
+   "ressources": [],
+   "image": "serie-prendre-vie"
   },
   {
    "id": "vers-jesus",
@@ -154,7 +166,8 @@ window.BIBLIO = {
      ]
     }
    ],
-   "ressources": []
+   "ressources": [],
+   "image": "serie-vers-jesus"
   },
   {
    "id": "quete-certitude",
@@ -172,7 +185,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-1"
     },
     {
      "num": "2",
@@ -184,7 +198,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-2"
     },
     {
      "num": "3",
@@ -196,7 +211,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-3"
     },
     {
      "num": "4",
@@ -208,7 +224,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-4"
     },
     {
      "num": "5",
@@ -220,7 +237,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-5"
     },
     {
      "num": "6",
@@ -232,7 +250,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-6"
     },
     {
      "num": "7",
@@ -244,7 +263,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-7"
     },
     {
      "num": "8",
@@ -256,7 +276,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-8"
     },
     {
      "num": "9",
@@ -268,7 +289,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-9"
     },
     {
      "num": "10",
@@ -280,7 +302,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-10"
     },
     {
      "num": "11",
@@ -292,7 +315,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-11"
     },
     {
      "num": "12",
@@ -304,7 +328,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-12"
     },
     {
      "num": "13",
@@ -316,7 +341,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-13"
     },
     {
      "num": "14",
@@ -328,7 +354,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-14"
     },
     {
      "num": "15",
@@ -340,7 +367,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-15"
     },
     {
      "num": "16",
@@ -352,7 +380,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-16"
     },
     {
      "num": "17",
@@ -364,7 +393,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-17"
     },
     {
      "num": "18",
@@ -376,7 +406,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-18"
     },
     {
      "num": "19",
@@ -388,7 +419,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-19"
     },
     {
      "num": "20",
@@ -400,7 +432,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-20"
     },
     {
      "num": "21",
@@ -412,7 +445,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-21"
     },
     {
      "num": "22",
@@ -424,7 +458,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-22"
     },
     {
      "num": "23",
@@ -436,7 +471,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-23"
     },
     {
      "num": "24",
@@ -448,7 +484,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-24"
     },
     {
      "num": "25",
@@ -460,7 +497,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-25"
     },
     {
      "num": "26",
@@ -472,7 +510,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-26"
     },
     {
      "num": "27",
@@ -484,7 +523,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-27"
     },
     {
      "num": "28",
@@ -496,7 +536,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-28"
     },
     {
      "num": "29",
@@ -508,7 +549,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-29"
     },
     {
      "num": "30",
@@ -520,7 +562,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "quete-certitude-30"
     },
     {
      "num": "A",
@@ -533,7 +576,8 @@ window.BIBLIO = {
        "role": "tous"
       }
      ],
-     "groupe": "Études complémentaires"
+     "groupe": "Études complémentaires",
+     "image": "quete-certitude-A"
     },
     {
      "num": "B",
@@ -546,7 +590,8 @@ window.BIBLIO = {
        "role": "tous"
       }
      ],
-     "groupe": "Études complémentaires"
+     "groupe": "Études complémentaires",
+     "image": "quete-certitude-B"
     },
     {
      "num": "C",
@@ -559,7 +604,8 @@ window.BIBLIO = {
        "role": "tous"
       }
      ],
-     "groupe": "Études complémentaires"
+     "groupe": "Études complémentaires",
+     "image": "quete-certitude-C"
     },
     {
      "num": "D",
@@ -572,7 +618,8 @@ window.BIBLIO = {
        "role": "tous"
       }
      ],
-     "groupe": "Études complémentaires"
+     "groupe": "Études complémentaires",
+     "image": "quete-certitude-D"
     },
     {
      "num": "F",
@@ -585,7 +632,8 @@ window.BIBLIO = {
        "role": "tous"
       }
      ],
-     "groupe": "Études complémentaires"
+     "groupe": "Études complémentaires",
+     "image": "quete-certitude-F"
     },
     {
      "num": "G",
@@ -598,10 +646,12 @@ window.BIBLIO = {
        "role": "tous"
       }
      ],
-     "groupe": "Études complémentaires"
+     "groupe": "Études complémentaires",
+     "image": "quete-certitude-G"
     }
    ],
-   "ressources": []
+   "ressources": [],
+   "image": "serie-quete-certitude"
   },
   {
    "id": "explorateur",
@@ -619,7 +669,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-1"
     },
     {
      "num": "2",
@@ -631,7 +682,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-2"
     },
     {
      "num": "3",
@@ -643,7 +695,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-3"
     },
     {
      "num": "4",
@@ -655,7 +708,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-4"
     },
     {
      "num": "5",
@@ -667,7 +721,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-5"
     },
     {
      "num": "6",
@@ -679,7 +734,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-6"
     },
     {
      "num": "7",
@@ -691,7 +747,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-7"
     },
     {
      "num": "8",
@@ -703,7 +760,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-8"
     },
     {
      "num": "9",
@@ -715,7 +773,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-9"
     },
     {
      "num": "10",
@@ -727,7 +786,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-10"
     },
     {
      "num": "11",
@@ -739,7 +799,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-11"
     },
     {
      "num": "12",
@@ -751,7 +812,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-12"
     },
     {
      "num": "13",
@@ -763,7 +825,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-13"
     },
     {
      "num": "14",
@@ -775,7 +838,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-14"
     },
     {
      "num": "15",
@@ -787,7 +851,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-15"
     },
     {
      "num": "16",
@@ -799,7 +864,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-16"
     },
     {
      "num": "17",
@@ -811,7 +877,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-17"
     },
     {
      "num": "18",
@@ -823,7 +890,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "explorateur-18"
     }
    ],
    "ressources": [
@@ -837,7 +905,8 @@ window.BIBLIO = {
      "format": "PDF",
      "titre": "Feuille des coordonnées des participants"
     }
-   ]
+   ],
+   "image": "serie-explorateur"
   },
   {
    "id": "vivre-avec-jesus",
@@ -855,7 +924,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-1"
     },
     {
      "num": "2",
@@ -867,7 +937,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-2"
     },
     {
      "num": "3",
@@ -879,7 +950,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-3"
     },
     {
      "num": "4",
@@ -891,7 +963,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-4"
     },
     {
      "num": "5",
@@ -903,7 +976,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-5"
     },
     {
      "num": "6",
@@ -915,7 +989,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-6"
     },
     {
      "num": "7",
@@ -927,7 +1002,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-7"
     },
     {
      "num": "8",
@@ -939,7 +1015,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-8"
     },
     {
      "num": "9",
@@ -951,7 +1028,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-9"
     },
     {
      "num": "10",
@@ -963,7 +1041,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-10"
     },
     {
      "num": "11",
@@ -975,7 +1054,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-11"
     },
     {
      "num": "12",
@@ -987,7 +1067,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-12"
     },
     {
      "num": "13",
@@ -999,7 +1080,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-13"
     },
     {
      "num": "14",
@@ -1011,7 +1093,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-14"
     },
     {
      "num": "15",
@@ -1023,10 +1106,12 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "vivre-avec-jesus-15"
     }
    ],
-   "ressources": []
+   "ressources": [],
+   "image": "serie-vivre-avec-jesus"
   },
   {
    "id": "rencontre-avec-jesus",
@@ -1050,7 +1135,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-1"
     },
     {
      "num": "2",
@@ -1068,7 +1154,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-2"
     },
     {
      "num": "3",
@@ -1086,7 +1173,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-3"
     },
     {
      "num": "4",
@@ -1104,7 +1192,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-4"
     },
     {
      "num": "5",
@@ -1122,7 +1211,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-5"
     },
     {
      "num": "6",
@@ -1140,7 +1230,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-6"
     },
     {
      "num": "7",
@@ -1158,7 +1249,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-7"
     },
     {
      "num": "8",
@@ -1176,7 +1268,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-8"
     },
     {
      "num": "9",
@@ -1194,7 +1287,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-9"
     },
     {
      "num": "10",
@@ -1212,7 +1306,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-10"
     },
     {
      "num": "11",
@@ -1230,7 +1325,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-11"
     },
     {
      "num": "12",
@@ -1248,7 +1344,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-12"
     },
     {
      "num": "13",
@@ -1266,7 +1363,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-13"
     },
     {
      "num": "14",
@@ -1284,7 +1382,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-14"
     },
     {
      "num": "15",
@@ -1302,7 +1401,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-15"
     },
     {
      "num": "16",
@@ -1320,7 +1420,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-16"
     },
     {
      "num": "17",
@@ -1338,7 +1439,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-17"
     },
     {
      "num": "18",
@@ -1356,7 +1458,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-18"
     },
     {
      "num": "19",
@@ -1374,7 +1477,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-19"
     },
     {
      "num": "20",
@@ -1392,7 +1496,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-20"
     },
     {
      "num": "21",
@@ -1410,7 +1515,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-21"
     },
     {
      "num": "22",
@@ -1428,7 +1534,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-22"
     },
     {
      "num": "23",
@@ -1446,7 +1553,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-23"
     },
     {
      "num": "24",
@@ -1464,7 +1572,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-24"
     },
     {
      "num": "25",
@@ -1482,7 +1591,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-25"
     },
     {
      "num": "26",
@@ -1500,7 +1610,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-26"
     },
     {
      "num": "27",
@@ -1518,7 +1629,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-27"
     },
     {
      "num": "28",
@@ -1536,7 +1648,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-28"
     },
     {
      "num": "29",
@@ -1554,7 +1667,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-29"
     },
     {
      "num": "30",
@@ -1572,10 +1686,12 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "rencontre-avec-jesus-30"
     }
    ],
-   "ressources": []
+   "ressources": [],
+   "image": "serie-rencontre-avec-jesus"
   },
   {
    "id": "cep-sarment",
@@ -1599,7 +1715,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "cep-sarment-1"
     },
     {
      "num": "2",
@@ -1617,7 +1734,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "cep-sarment-2"
     },
     {
      "num": "3",
@@ -1635,7 +1753,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "cep-sarment-3"
     },
     {
      "num": "4",
@@ -1653,7 +1772,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "cep-sarment-4"
     },
     {
      "num": "5",
@@ -1671,7 +1791,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "cep-sarment-5"
     },
     {
      "num": "6",
@@ -1689,7 +1810,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "cep-sarment-6"
     },
     {
      "num": "7",
@@ -1707,7 +1829,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "cep-sarment-7"
     },
     {
      "num": "8",
@@ -1725,7 +1848,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "cep-sarment-8"
     },
     {
      "num": "9",
@@ -1743,7 +1867,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "cep-sarment-9"
     },
     {
      "num": "10",
@@ -1761,7 +1886,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "cep-sarment-10"
     }
    ],
    "ressources": [
@@ -1770,7 +1896,8 @@ window.BIBLIO = {
      "format": "PDF",
      "titre": "Plan du cours"
     }
-   ]
+   ],
+   "image": "serie-cep-sarment"
   },
   {
    "id": "daniel",
@@ -1788,7 +1915,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-1"
     },
     {
      "num": null,
@@ -1800,7 +1928,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-2"
     },
     {
      "num": null,
@@ -1812,7 +1941,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-3"
     },
     {
      "num": null,
@@ -1824,7 +1954,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-4"
     },
     {
      "num": null,
@@ -1836,7 +1967,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-5"
     },
     {
      "num": null,
@@ -1848,7 +1980,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-6"
     },
     {
      "num": null,
@@ -1860,7 +1993,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-7"
     },
     {
      "num": null,
@@ -1872,7 +2006,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-8"
     },
     {
      "num": null,
@@ -1884,7 +2019,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-9"
     },
     {
      "num": null,
@@ -1896,7 +2032,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-10"
     },
     {
      "num": null,
@@ -1908,7 +2045,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-11"
     },
     {
      "num": null,
@@ -1920,7 +2058,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-12"
     },
     {
      "num": null,
@@ -1932,7 +2071,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-13"
     },
     {
      "num": null,
@@ -1944,10 +2084,12 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "daniel-14"
     }
    ],
-   "ressources": []
+   "ressources": [],
+   "image": "serie-daniel"
   },
   {
    "id": "sanctuaire",
@@ -1971,7 +2113,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "sanctuaire-1"
     },
     {
      "num": "2",
@@ -1989,7 +2132,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "sanctuaire-2"
     },
     {
      "num": "3",
@@ -2007,7 +2151,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "sanctuaire-3"
     },
     {
      "num": "4",
@@ -2025,7 +2170,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "sanctuaire-4"
     },
     {
      "num": "5",
@@ -2043,7 +2189,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "sanctuaire-5"
     },
     {
      "num": "6",
@@ -2061,7 +2208,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "sanctuaire-6"
     },
     {
      "num": "7",
@@ -2079,7 +2227,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "sanctuaire-7"
     },
     {
      "num": "8",
@@ -2097,7 +2246,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "sanctuaire-8"
     },
     {
      "num": "9",
@@ -2115,7 +2265,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "sanctuaire-9"
     },
     {
      "num": "10",
@@ -2133,7 +2284,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "sanctuaire-10"
     },
     {
      "num": "11",
@@ -2151,7 +2303,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "sanctuaire-11"
     },
     {
      "num": "12",
@@ -2169,7 +2322,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "sanctuaire-12"
     }
    ],
    "ressources": [
@@ -2178,7 +2332,8 @@ window.BIBLIO = {
      "format": "PDF",
      "titre": "Plan du cours"
     }
-   ]
+   ],
+   "image": "serie-sanctuaire"
   },
   {
    "id": "decouvrir",
@@ -2192,7 +2347,8 @@ window.BIBLIO = {
      "format": "PDF",
      "titre": "Ressources pour l’animateur"
     }
-   ]
+   ],
+   "image": "serie-decouvrir"
   },
   {
    "id": "secrets-prophetie",
@@ -2210,7 +2366,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-1"
     },
     {
      "num": "2",
@@ -2222,7 +2379,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-2"
     },
     {
      "num": "3",
@@ -2240,7 +2398,8 @@ window.BIBLIO = {
        "libelle": "2e partie",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-3"
     },
     {
      "num": "4",
@@ -2252,7 +2411,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-4"
     },
     {
      "num": "5",
@@ -2264,7 +2424,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-5"
     },
     {
      "num": "6",
@@ -2276,7 +2437,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-6"
     },
     {
      "num": "7",
@@ -2288,7 +2450,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-7"
     },
     {
      "num": "8",
@@ -2300,7 +2463,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-8"
     },
     {
      "num": "9",
@@ -2312,7 +2476,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-9"
     },
     {
      "num": "10",
@@ -2324,7 +2489,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-10"
     },
     {
      "num": "11",
@@ -2336,7 +2502,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-11"
     },
     {
      "num": "12",
@@ -2348,7 +2515,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-12"
     },
     {
      "num": "13",
@@ -2360,7 +2528,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-13"
     },
     {
      "num": "14",
@@ -2372,7 +2541,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-14"
     },
     {
      "num": "15",
@@ -2384,7 +2554,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-15"
     },
     {
      "num": "16",
@@ -2396,7 +2567,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-16"
     },
     {
      "num": "17",
@@ -2408,7 +2580,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-17"
     },
     {
      "num": "18",
@@ -2420,7 +2593,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-18"
     },
     {
      "num": "19",
@@ -2432,7 +2606,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-19"
     },
     {
      "num": "20",
@@ -2444,7 +2619,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-20"
     },
     {
      "num": "21",
@@ -2456,7 +2632,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-21"
     },
     {
      "num": "23",
@@ -2468,7 +2645,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-23"
     },
     {
      "num": "24",
@@ -2480,10 +2658,12 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "secrets-prophetie-24"
     }
    ],
-   "ressources": []
+   "ressources": [],
+   "image": "serie-secrets-prophetie"
   },
   {
    "id": "sept-eglises",
@@ -2504,7 +2684,8 @@ window.BIBLIO = {
      ]
     }
    ],
-   "ressources": []
+   "ressources": [],
+   "image": "serie-sept-eglises"
   },
   {
    "id": "excellence",
@@ -2528,7 +2709,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "excellence-1"
     },
     {
      "num": "2",
@@ -2546,7 +2728,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "excellence-2"
     },
     {
      "num": "3",
@@ -2564,7 +2747,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "excellence-3"
     },
     {
      "num": "4",
@@ -2582,7 +2766,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "excellence-4"
     },
     {
      "num": "5",
@@ -2600,7 +2785,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "excellence-5"
     },
     {
      "num": "6",
@@ -2618,7 +2804,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "excellence-6"
     },
     {
      "num": "7",
@@ -2636,7 +2823,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "excellence-7"
     }
    ],
    "ressources": [
@@ -2650,7 +2838,8 @@ window.BIBLIO = {
      "format": "Excel",
      "titre": "Tableau de planification (Stephen Covey)"
     }
-   ]
+   ],
+   "image": "serie-excellence"
   },
   {
    "id": "frequentations",
@@ -2680,7 +2869,8 @@ window.BIBLIO = {
        "libelle": "Notes de présentation",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "frequentations-1"
     },
     {
      "num": "2",
@@ -2704,7 +2894,8 @@ window.BIBLIO = {
        "libelle": "Notes de présentation",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "frequentations-2"
     },
     {
      "num": "3",
@@ -2728,7 +2919,8 @@ window.BIBLIO = {
        "libelle": "Notes de présentation",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "frequentations-3"
     },
     {
      "num": "4",
@@ -2752,7 +2944,8 @@ window.BIBLIO = {
        "libelle": "Notes de présentation",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "frequentations-4"
     },
     {
      "num": "5",
@@ -2776,7 +2969,8 @@ window.BIBLIO = {
        "libelle": "Notes de présentation",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "frequentations-5"
     },
     {
      "num": "6",
@@ -2800,7 +2994,8 @@ window.BIBLIO = {
        "libelle": "Notes de présentation",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "frequentations-6"
     },
     {
      "num": "7",
@@ -2824,7 +3019,8 @@ window.BIBLIO = {
        "libelle": "Notes de présentation",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "frequentations-7"
     },
     {
      "num": "8",
@@ -2848,7 +3044,8 @@ window.BIBLIO = {
        "libelle": "Notes de présentation",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "frequentations-8"
     },
     {
      "num": "9",
@@ -2872,7 +3069,8 @@ window.BIBLIO = {
        "libelle": "Notes de présentation",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "frequentations-9"
     }
    ],
    "ressources": [
@@ -2891,7 +3089,8 @@ window.BIBLIO = {
      "format": "PDF",
      "titre": "Révision du cours (guide de l’animateur)"
     }
-   ]
+   ],
+   "image": "serie-frequentations"
   },
   {
    "id": "enfants",
@@ -2909,7 +3108,8 @@ window.BIBLIO = {
        "libelle": "Fiche du participant",
        "role": "participant"
       }
-     ]
+     ],
+     "image": "enfants-1"
     },
     {
      "num": "2",
@@ -2927,7 +3127,8 @@ window.BIBLIO = {
        "libelle": "Avec les réponses",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "enfants-2"
     },
     {
      "num": "3",
@@ -2945,7 +3146,8 @@ window.BIBLIO = {
        "libelle": "Avec les réponses",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "enfants-3"
     },
     {
      "num": "4",
@@ -2963,7 +3165,8 @@ window.BIBLIO = {
        "libelle": "Avec les réponses",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "enfants-4"
     },
     {
      "num": "5",
@@ -2981,7 +3184,8 @@ window.BIBLIO = {
        "libelle": "Avec les réponses",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "enfants-5"
     },
     {
      "num": "6",
@@ -2999,7 +3203,8 @@ window.BIBLIO = {
        "libelle": "Avec les réponses",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "enfants-6"
     },
     {
      "num": "7",
@@ -3023,7 +3228,8 @@ window.BIBLIO = {
        "libelle": "Avec les réponses (version 2)",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "enfants-7"
     },
     {
      "num": "8",
@@ -3041,7 +3247,8 @@ window.BIBLIO = {
        "libelle": "Avec les réponses",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "enfants-8"
     },
     {
      "num": "9",
@@ -3059,7 +3266,8 @@ window.BIBLIO = {
        "libelle": "Avec les réponses",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "enfants-9"
     },
     {
      "num": "10",
@@ -3077,7 +3285,8 @@ window.BIBLIO = {
        "libelle": "Avec les réponses",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "enfants-10"
     },
     {
      "num": "11",
@@ -3095,7 +3304,8 @@ window.BIBLIO = {
        "libelle": "Avec les réponses",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "enfants-11"
     },
     {
      "num": "12",
@@ -3113,7 +3323,8 @@ window.BIBLIO = {
        "libelle": "Avec les réponses",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "enfants-12"
     }
    ],
    "ressources": [
@@ -3127,7 +3338,8 @@ window.BIBLIO = {
      "format": "Word",
      "titre": "Révision du cours"
     }
-   ]
+   ],
+   "image": "serie-enfants"
   },
   {
    "id": "homme-de-dieu",
@@ -3145,7 +3357,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "homme-de-dieu-1"
     },
     {
      "num": "2",
@@ -3157,7 +3370,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "homme-de-dieu-2"
     },
     {
      "num": "3",
@@ -3169,7 +3383,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "homme-de-dieu-3"
     },
     {
      "num": "4",
@@ -3181,7 +3396,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "homme-de-dieu-4"
     },
     {
      "num": "5",
@@ -3193,10 +3409,12 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "homme-de-dieu-5"
     }
    ],
-   "ressources": []
+   "ressources": [],
+   "image": "serie-homme-de-dieu"
   },
   {
    "id": "convoitise",
@@ -3220,7 +3438,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "convoitise-1"
     },
     {
      "num": "2",
@@ -3238,7 +3457,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "convoitise-2"
     },
     {
      "num": "3",
@@ -3256,7 +3476,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "convoitise-3"
     },
     {
      "num": "4",
@@ -3274,7 +3495,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "convoitise-4"
     },
     {
      "num": "5",
@@ -3292,7 +3514,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "convoitise-5"
     },
     {
      "num": "6",
@@ -3310,7 +3533,8 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "convoitise-6"
     },
     {
      "num": "7",
@@ -3328,10 +3552,12 @@ window.BIBLIO = {
        "libelle": "Guide de l’animateur",
        "role": "animateur"
       }
-     ]
+     ],
+     "image": "convoitise-7"
     }
    ],
-   "ressources": []
+   "ressources": [],
+   "image": "serie-convoitise"
   },
   {
    "id": "trinite",
@@ -3349,7 +3575,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-1"
     },
     {
      "num": "2",
@@ -3361,7 +3588,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-2"
     },
     {
      "num": "3",
@@ -3373,7 +3601,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-3"
     },
     {
      "num": "4",
@@ -3385,7 +3614,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-4"
     },
     {
      "num": "5",
@@ -3397,7 +3627,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-5"
     },
     {
      "num": "6",
@@ -3409,7 +3640,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-6"
     },
     {
      "num": "7",
@@ -3421,7 +3653,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-7"
     },
     {
      "num": "8",
@@ -3433,7 +3666,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-8"
     },
     {
      "num": "9",
@@ -3445,7 +3679,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-9"
     },
     {
      "num": "10",
@@ -3457,7 +3692,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-10"
     },
     {
      "num": "11",
@@ -3469,7 +3705,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-11"
     },
     {
      "num": "12",
@@ -3481,7 +3718,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-12"
     },
     {
      "num": "13",
@@ -3493,7 +3731,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-13"
     },
     {
      "num": "14",
@@ -3505,7 +3744,8 @@ window.BIBLIO = {
        "libelle": "Présentation",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-14"
     },
     {
      "num": "15",
@@ -3517,7 +3757,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-15"
     },
     {
      "num": "16",
@@ -3529,10 +3770,12 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous"
       }
-     ]
+     ],
+     "image": "trinite-16"
     }
    ],
-   "ressources": []
+   "ressources": [],
+   "image": "serie-trinite"
   }
  ]
 };

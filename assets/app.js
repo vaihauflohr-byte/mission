@@ -24,7 +24,7 @@
   const image = (nom, classe, prioritaire) =>
     nom
       ? `<img class="${classe}" src="assets/images/${encodeURIComponent(nom)}.webp" alt="" width="800" height="600" ${
-          prioritaire ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`
+          prioritaire ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" onerror="this.style.visibility='hidden'">`
       : "";
 
   const seriesDe = (niveauId) => B.series.filter((s) => s.niveau === niveauId);

@@ -283,8 +283,10 @@ def main(chemin):
 
     # images (assets/images/<id>.webp) : étape, série, étude
     dossier_img = Path(__file__).resolve().parent.parent / "assets" / "images"
+    prompts = Path(__file__).resolve().parent / "images" / "prompts.json"
+    prevues = {i["id"] for i in json.load(open(prompts, encoding="utf-8"))["images"]} if prompts.exists() else set()
     def image(nom):
-        return nom if (dossier_img / f"{nom}.webp").exists() else None
+        return nom if (dossier_img / f"{nom}.webp").exists() or nom in prevues else None
     niveaux = [dict(n) for n in NIVEAUX]
     for n in niveaux:
         if image(f"niveau-{n['id']}"):

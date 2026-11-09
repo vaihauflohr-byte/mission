@@ -1,12 +1,12 @@
 /* Mission — fonctionnement hors ligne : la liste des études reste consultable sans réseau.
    Les documents eux-mêmes sont sur Google Drive et demandent une connexion. */
-const CACHE = "mission-v1";
+const CACHE = "mission-v2";
 const COQUILLE = [
   "./",
   "index.html",
-  "assets/style.css?v=1",
-  "assets/app.js?v=1",
-  "donnees/bibliotheque.js?v=1",
+  "assets/style.css?v=2",
+  "assets/app.js?v=2",
+  "donnees/bibliotheque.js?v=2",
   "assets/fonts/alegreya-latin-500-normal.woff2",
   "assets/fonts/alegreya-latin-600-normal.woff2",
   "assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2",
