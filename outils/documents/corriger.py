@@ -47,6 +47,9 @@ def main():
     for chemin, page, ancien, nouveau in CORRECTIONS:
         par_doc.setdefault(chemin, []).append((page, ancien, nouveau))
     for chemin, liste in par_doc.items():
+        if resultat.get(chemin, {}).get("source") == "refonte":
+            print(chemin, ": refait sur l’original anglais, rien à corriger")
+            continue
         pdf = RACINE / "documents" / f"{chemin}.pdf"
         doc = pymupdf.open(pdf)
         faites = deja = 0

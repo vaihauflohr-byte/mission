@@ -1388,41 +1388,34 @@
   "octets": 510416
  },
  "quete-certitude/a-qui-est-jesus": {
-  "source": "PDF",
-  "pages": 3,
-  "octets": 81304,
-  "secondes": 1.1
+  "source": "refonte",
+  "pages": 8,
+  "octets": 331789
  },
  "quete-certitude/b-qu-est-ce-que-la-foi": {
-  "source": "PDF",
-  "pages": 4,
-  "octets": 81671,
-  "secondes": 0.9
+  "source": "refonte",
+  "pages": 8,
+  "octets": 332106
  },
  "quete-certitude/c-comment-prier": {
-  "source": "PDF",
-  "pages": 4,
-  "octets": 82492,
-  "secondes": 0.9
+  "source": "refonte",
+  "pages": 8,
+  "octets": 332321
  },
  "quete-certitude/d-pourquoi-sommes-nous-ici": {
-  "source": "PDF",
-  "pages": 4,
-  "octets": 358592,
-  "secondes": 1.0
+  "source": "refonte",
+  "pages": 8,
+  "octets": 293752
  },
  "quete-certitude/f-pourquoi-tant-d-eglises": {
-  "source": "PDF",
-  "pages": 4,
-  "octets": 295596,
-  "secondes": 1.1
+  "source": "refonte",
+  "pages": 8,
+  "octets": 316576
  },
  "quete-certitude/g-sept-ingredients-pour-le-bonheur": {
-  "source": "PDF",
-  "pages": 4,
-  "octets": 513193,
-  "secondes": 1.3,
-  "corrections": 4
+  "source": "refonte",
+  "pages": 8,
+  "octets": 248870
  },
  "rencontre-avec-jesus/01-le-lepreux-animateur": {
   "source": "Word",

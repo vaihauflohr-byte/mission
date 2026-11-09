@@ -657,8 +657,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/a-qui-est-jesus",
-       "o": 81304,
-       "p": 3
+       "o": 331789,
+       "p": 8
       }
      ],
      "groupe": "Études complémentaires",
@@ -673,8 +673,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/b-qu-est-ce-que-la-foi",
-       "o": 81671,
-       "p": 4
+       "o": 332106,
+       "p": 8
       }
      ],
      "groupe": "Études complémentaires",
@@ -689,8 +689,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/c-comment-prier",
-       "o": 82492,
-       "p": 4
+       "o": 332321,
+       "p": 8
       }
      ],
      "groupe": "Études complémentaires",
@@ -705,8 +705,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/d-pourquoi-sommes-nous-ici",
-       "o": 358592,
-       "p": 4
+       "o": 293752,
+       "p": 8
       }
      ],
      "groupe": "Études complémentaires",
@@ -721,8 +721,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/f-pourquoi-tant-d-eglises",
-       "o": 295596,
-       "p": 4
+       "o": 316576,
+       "p": 8
       }
      ],
      "groupe": "Études complémentaires",
@@ -737,8 +737,8 @@ window.BIBLIO = {
        "libelle": "Étude",
        "role": "tous",
        "f": "quete-certitude/g-sept-ingredients-pour-le-bonheur",
-       "o": 513193,
-       "p": 4
+       "o": 248870,
+       "p": 8
       }
      ],
      "groupe": "Études complémentaires",
