@@ -1,0 +1,208 @@
+{
+ "source": "prendre-vie/05 You are Growing - Obedience.pdf",
+ "chemin": "prendre-vie/05-l-obeissance",
+ "livret": false,
+ "titre": "L’obéissance",
+ "auteur": "PAPSDA — traduction française",
+ "effacer_dessins": {
+  "1": [
+   [
+    186,
+    106,
+    548,
+    270
+   ],
+   [
+    205,
+    322,
+    548,
+    468
+   ]
+  ]
+ },
+ "textes": {
+  "1": [
+   {
+    "x": 206,
+    "base": 226,
+    "texte": "Prendre vie",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 70,
+    "couleur": [
+     0.494,
+     0.455,
+     0.361
+    ]
+   },
+   {
+    "x": 536,
+    "base": 261,
+    "texte": "avec Jésus",
+    "police": [
+     "sourcenoir",
+     ""
+    ],
+    "taille": 17,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   },
+   {
+    "x": 538,
+    "base": 424,
+    "texte": "L’obéissance",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 46,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   }
+  ]
+ },
+ "reglages": {
+  "cadre_colonnes": true,
+  "traits_fins": true
+ },
+ "u": {
+  "1.00": "Leçon 5",
+  "1.01": "Vous grandissez !<br>Comment le savoir ?",
+  "1.02": "À Saint-Louis, un petit garçon remporta un concours organisé par un journal sur le thème « La personne à qui je voudrais ressembler » : il avait choisi l’évangéliste Billy Graham. Celui-ci écrivit au garçon, Dan Fotsch : « Je suis très honoré et touché. Moi aussi, il y a quelques années, j’ai choisi un Homme pour modèle. J’ai lamentablement échoué bien des fois, mais je prie de tout mon cœur pour continuer à grandir et à ressembler à Jésus. »",
+  "2.00": "PORTER DU FRUIT",
+  "2.01": "L’OBÉISSANCE PAR LA FOI",
+  "2.02": "Le secret pour grandir et ressembler davantage à Jésus : passer du temps avec lui. Si votre relation avec Jésus est solide, la croissance se fera naturellement dans votre vie.",
+  "2.03": "Quel autre résultat produit la connaissance du Christ ? 1 Jean 2:3-4",
+  "2.04": "=",
+  "2.05": "Comment Jésus a-t-il illustré la croissance chrétienne ? Selon lui, que produit celui qui reste près de lui ? Jean 15:5",
+  "2.06": "=",
+  "2.07": "(Pour approfondir : 1 Jean 5:3)",
+  "2.08": "=",
+  "2.09": "Quel est le fondement de l’obéissance aux commandements de Dieu ? Jean 14:15",
+  "2.10": "=",
+  "2.11": "=",
+  "2.12": "=",
+  "2.13": "=",
+  "2.14": "=",
+  "2.15": "Vous avez commencé à l’aimer. Pourquoi ? 1 Jean 4:19",
+  "2.16": "De même qu’un sarment porte du fruit parce qu’il est attaché au cep, vous porterez du fruit si vous restez attaché à Jésus.",
+  "2.17": "=",
+  "2.18": "=",
+  "2.19": "Qu’est-ce que ce « fruit » ? Galates 5:22-23",
+  "2.20": "L’Évangile, cette incroyable nouvelle que Dieu vous a tant aimé qu’il est mort pour vous, a éveillé dans votre cœur l’amour pour lui. Ce même amour vous rendra obéissant à ses commandements. Mais cette obéissance, vous ne pouvez pas la produire tout seul.",
+  "2.21": "=",
+  "2.22": "=",
+  "2.23": "=",
+  "2.24": "Vous avez sans doute déjà remarqué, comme votre entourage, de nouveaux traits dans votre caractère. Là où vous haïssiez, vous aimez ; là où vous doutiez, vous croyez. Vous n’êtes pas parfait, mais votre vie chrétienne commence à se voir dans vos actes et vos paroles. Et tout cela vient de votre relation avec Jésus.",
+  "2.25": "Qui agit en vous ? Philippiens 2:13",
+  "2.26": "=",
+  "2.27": "=",
+  "2.28": "« S’il est vrai que nous ne pouvons rien faire pour changer nos cœurs, ou pour nous rendre tels que Dieu nous veut ; si nous ne devons avoir aucune confiance en nous-mêmes ou en nos bonnes œuvres, notre vie révélera néanmoins que l’Esprit de Dieu demeure en nous. Un changement se remarquera dans notre caractère, nos habitudes et nos préoccupations. » <i>Vers Jésus</i>, chap. « La pierre de touche »",
+  "2.29": "Que produira votre foi en Dieu ? Jacques 2:14-17",
+  "2.30": "=",
+  "2.31": "=",
+  "2.32": {
+   "decaler": 27,
+   "html": "« Nous ne gagnons pas le salut par notre obéissance, puisque le salut est un don gratuit de Dieu, qui s’obtient par la foi. Par contre, l’obéissance est le fruit de la foi. » <i>Vers Jésus</i>, chap. « La pierre de touche »"
+  },
+  "2.33": "=",
+  "2.34": "=",
+  "2.35": {
+   "decaler": 38,
+   "html": "Quand vous aimez Dieu, vous voulez lui obéir."
+  },
+  "3.00": "Dans ses paroles :",
+  "3.01": "Quels sont les commandements de Jésus auxquels vous voudrez obéir ? Jean 13:34-35",
+  "3.02": "D’où venaient ses paroles, selon lui ? Jean 12:49",
+  "3.03": "=",
+  "3.04": "=",
+  "3.05": "=",
+  "3.06": "=",
+  "3.07": "Qu’est-ce que l’amour ? Romains 13:8-10",
+  "3.08": "Dans sa mort :",
+  "3.09": "=",
+  "3.10": "Quels autres commandements Jésus dit-il avoir reçus de son Père ? Jean 10:17-18",
+  "3.11": "=",
+  "3.12": "=",
+  "3.13": "Comment Jésus a-t-il montré que l’amour est l’accomplissement de la loi ? Matthieu 22:36-40",
+  "3.14": "=",
+  "3.15": "=",
+  "3.16": "Même la mort de Jésus fut un acte d’obéissance : « Il s’est humilié lui-même, se rendant obéissant jusqu’à la mort, même jusqu’à la mort de la croix. » Philippiens 2:8.",
+  "3.17": "=",
+  "3.18": "Examinez les dix commandements (Exode 20:3-17) et voyez si vous pouvez découvrir comment l’amour accomplit chacun d’eux. Par exemple, le premier commandement dit : « Tu n’auras pas d’autres dieux devant ma face. » Si vous aimez vraiment Dieu, placerez-vous quoi que ce soit, un autre dieu, avant lui ? Non.",
+  "3.19": "Jésus vous demande de vivre la même vie d’obéissance. Il dit : « Si quelqu’un veut venir après moi, qu’il se charge chaque jour de sa croix, et qu’il me suive. » Cela paraît impossible, n’est-ce pas ? Mais Jésus vous promet son aide.",
+  "3.20": "Regardez maintenant le sixième commandement : « Tu ne tueras point. » Si vous aimez votre prochain, le tuerez-vous ? Non.",
+  "3.21": "DIEU VOUS AIDE À OBÉIR",
+  "3.22": "En lisant les dix commandements à la lumière des paroles de Jésus, « Tu aimeras le Seigneur, ton Dieu, de tout ton cœur » et « Tu aimeras ton prochain comme toi-même », vous voyez que seul l’amour permet de les accomplir, de les observer tous. Observer les quatre premiers commandements montre notre amour pour Dieu ; observer les six derniers, notre amour pour les hommes.",
+  "3.23": "D’après Jésus, comment pouvait-il faire ce que Dieu attendait de lui ? Jean 5:30, première partie ; Jean 10:30.",
+  "3.24": "=",
+  "3.25": "=",
+  "3.26": "=",
+  "3.27": "Jésus a dit que sa force pour obéir venait de son union avec le Père, et il désire que vous ayez la même force.",
+  "3.28": "JÉSUS, MODÈLE D’OBÉISSANCE",
+  "3.29": "Jésus a vécu une vie parfaite d’amour et d’obéissance envers Dieu. Voyez avec quelle fidélité il a gardé les commandements de son Père :",
+  "3.30": "Que demandait-il pour ses disciples dans sa prière ? Jean 17:21",
+  "3.31": "Dans sa vie :",
+  "3.32": "=",
+  "3.33": "Qu’a-t-il dit être venu faire ? Jean 6:38",
+  "3.34": "=",
+  "3.35": "=",
+  "3.36": "=",
+  "3.37": "=",
+  "4.00": "À MÉMORISER",
+  "4.01": "Comment pouvez-vous être « un avec Jésus et le Père » ? Jean 15:4, première partie.",
+  "4.02": "Jean 14:15<br>Philippiens 2:13",
+  "4.03": "=",
+  "4.04": "=",
+  "4.05": "=",
+  "4.06": "Comment Dieu vous aidera-t-il encore à garder ses lois et à lui obéir ? Hébreux 10:16",
+  "4.07": "Tout au long du chemin, Dieu vous aidera :",
+  "4.08": {
+   "taille": 11,
+   "famille": "caladea",
+   "interligne": 14.5,
+   "cesure": false,
+   "css": ".m {font-family: sourcenoir; font-size: 12pt; color: #b0a891;}",
+   "html": "Vos <span class=\"m\">ACTES</span> découlent de<br>votre <span class=\"m\">AMOUR</span>, qui découle de<br>votre <span class=\"m\">COMMUNION</span> avec lui."
+  },
+  "4.09": "Choisissez donc chaque jour de rester avec lui.",
+  "4.10": "AVEC VOS PROPRES MOTS",
+  "4.11": "Jésus vous a-t-il déjà montré, dans sa Parole, la Bible, des domaines où vous devriez lui obéir ? Prenez une minute pour y réfléchir, et demandez-lui de vous parler d’une chose précise qu’il aimerait vous voir commencer à faire. Avez-vous pensé à quelque chose ? Si oui, notez-le ; puis priez et dites à Jésus que vous voulez commencer à faire ce qu’il désire. Demandez-lui son aide, puis remerciez-le de vous aider à lui obéir.",
+  "4.12": "=",
+  "4.13": "=",
+  "4.14": "=",
+  "4.15": "=",
+  "4.16": "=",
+  "4.17": "=",
+  "4.18": "=",
+  "4.19": "=",
+  "4.20": {
+   "html": "Église adventiste du septième jour de Papatoetoe",
+   "ligne": true
+  },
+  "4.21": "=",
+  "4.22": {
+   "html": "Tél. (09) 278-7786, fax (09) 278-4906",
+   "ligne": true
+  },
+  "4.23": "=",
+  "4.24": {
+   "html": "Courriel info@papsda.co.nz, site www.papsda.co.nz",
+   "ligne": true
+  },
+  "4.25": {
+   "html": "Reproduit avec autorisation",
+   "ligne": true
+  }
+ }
+}

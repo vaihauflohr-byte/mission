@@ -1,0 +1,4 @@
+sortie/
+ocr-cache/
+__pycache__/
+*.bak

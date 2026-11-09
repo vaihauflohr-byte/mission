@@ -1,0 +1,207 @@
+{
+ "source": "prendre-vie/06 Get Your Exercise - Christian Fruits.pdf",
+ "chemin": "prendre-vie/06-les-fruits-de-la-vie-chretienne",
+ "livret": false,
+ "titre": "Les fruits de la vie chrétienne",
+ "auteur": "PAPSDA — traduction française",
+ "effacer_dessins": {
+  "1": [
+   [
+    186,
+    106,
+    548,
+    270
+   ],
+   [
+    205,
+    322,
+    548,
+    468
+   ]
+  ]
+ },
+ "textes": {
+  "1": [
+   {
+    "x": 206,
+    "base": 226,
+    "texte": "Prendre vie",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 70,
+    "couleur": [
+     0.494,
+     0.455,
+     0.361
+    ]
+   },
+   {
+    "x": 536,
+    "base": 261,
+    "texte": "avec Jésus",
+    "police": [
+     "sourcenoir",
+     ""
+    ],
+    "taille": 17,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   },
+   {
+    "x": 500,
+    "base": 392,
+    "texte": "Les fruits de la",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 36,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   },
+   {
+    "x": 538,
+    "base": 430,
+    "texte": "vie chrétienne",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 36,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   }
+  ]
+ },
+ "reglages": {
+  "cadre_colonnes": true,
+  "traits_fins": true
+ },
+ "u": {
+  "1.00": "Leçon 6",
+  "1.01": "Faites de l’exercice",
+  "1.02": "Les nouveau-nés se mettent à bouger le plus tôt possible : ils gigotent, s’étirent, se retournent, rampent, s’assoient, se mettent debout, marchent. C’est naturel pour eux. Pour vous aussi, qui venez de naître à la vie chrétienne, il sera naturel d’exercer votre foi en parlant de Jésus autour de vous.",
+  "1.03": "« La force s’acquiert par l’exercice ; l’activité est la condition même de la vie. Ceux qui prétendent maintenir leur vie chrétienne en se bornant à accepter passivement les grâces d’en haut, sans rien faire pour le Christ, essaient simplement de manger sans travailler. Or, dans le monde spirituel comme dans le monde matériel, ce système aboutit fatalement à la dégénérescence et à la mort. Celui qui refuserait de faire usage de ses jambes perdrait bientôt la faculté de s’en servir. De même, le chrétien qui se refuse à employer les facultés que Dieu lui a données, non seulement ne grandit pas en Christ, mais il perd les forces qu’il possédait. » <i>Vers Jésus</i>, chap. « L’œuvre de la vie »",
+  "1.04": {
+   "decaler": 28,
+   "html": "Alors, bougez avec le Christ : faites-le connaître autour de vous !"
+  },
+  "2.00": "Qu’a fait André dès qu’il a rencontré Jésus ? Jean 1:40-41",
+  "2.01": "tombé à l’eau ; il a sauté, m’a pris dans ses bras et m’a sauvé ! »",
+  "2.02": "=",
+  "2.03": "Il ajouta : « Je voudrais être son esclave toute ma vie, mais avec mes rhumatismes, je ne vaux plus rien, même comme esclave. Il passe ici en bateau une fois par mois et je le guette. J’aime tant le montrer ! N’a-t-il pas l’air le plus bon que vous ayez jamais vu ? J’aime tant le montrer ! »",
+  "2.04": "=",
+  "2.05": "Qu’a fait Philippe après avoir rencontré Jésus ? Jean 1:45-46",
+  "2.06": "=",
+  "2.07": "C’est cela, témoigner : tout simplement montrer aux autres l’homme qui vous a sauvé, Jésus-Christ.",
+  "2.08": "=",
+  "2.09": "Jésus a guéri un homme possédé : vous pouvez lire ce récit dans Marc 5:1-19. Quand cet homme vit comment Jésus l’avait purifié et avait changé sa vie, il voulut rester avec lui.",
+  "2.10": "MAIS PAR OÙ COMMENCER ? VERS QUI ALLER ?",
+  "2.11": "Mais que lui a répondu Jésus ? Marc 5:19",
+  "2.12": "Vers qui, et dans quel ordre, Jésus a-t-il dit à ses disciples d’aller ? Actes 1:8",
+  "2.13": "=",
+  "2.14": "=",
+  "2.15": "=",
+  "2.16": "Après sa résurrection, juste avant de retourner au ciel, Jésus donna des instructions semblables à tous les chrétiens.",
+  "2.17": "=",
+  "2.18": "=",
+  "2.19": "Quelles étaient ses directives ? Matthieu 28:19-20",
+  "2.20": "=",
+  "2.21": "=",
+  "2.22": "Les disciples devaient commencer à témoigner là où ils étaient, à Jérusalem, puis étendre leur œuvre jusqu’à ce qu’elle embrasse le monde entier.",
+  "2.23": "=",
+  "2.24": "Aller parler du Christ aux gens, cela paraît difficile, n’est-ce pas ? Cela peut même faire peur. Mais quand vous pensez à ce que Jésus a fait pour vous, cela ne semble plus si difficile.",
+  "2.25": "Voyez vers qui André est allé d’abord : Jean 1:41",
+  "2.26": "=",
+  "2.27": "=",
+  "2.28": "Il y a plus d’un siècle, un voyageur engagea un vieil homme noir pour lui faire traverser le Mississippi à la rame. Au milieu de la traversée, le batelier lâcha ses rames et s’écria : « Regardez ! Regardez ! C’est le capitaine ! »",
+  "2.29": "Votre témoignage peut commencer aux mêmes endroits : auprès de votre famille et de vos amis.",
+  "2.30": "« Nul n’est besoin, si nous voulons travailler pour Jésus-Christ, de nous rendre dans les pays païens, ni même peut-être de quitter le cercle étroit du foyer. Ce travail, nous pouvons l’accomplir dans notre famille, dans notre église, parmi ceux avec lesquels nous entrons en contact ou en relations commerciales. » <i>Vers Jésus</i>, chap. « L’œuvre de la vie »",
+  "2.31": "Le voyageur regarda dans la direction que montraient les gestes agités du batelier et vit un homme appuyé contre le mât d’un sloop qui venait vers eux.",
+  "2.32": "« Qui est cet homme ? demanda le voyageur. Qu’a-t-il donc fait pour vous ? — C’est l’homme qui m’a sauvé, répondit le vieil homme. Je suis",
+  "3.00": "QUE DIRE AUX GENS ?",
+  "3.01": "Jésus a dit que notre vie serait comme une lumière dans un monde obscur, et que nos « bonnes œuvres » aideraient notre entourage à voir le Seigneur. On dit souvent que « les actes parlent plus fort que les mots » : rien d’étonnant donc à ce que notre vie soit notre meilleur témoignage de ce que Jésus est pour nous.",
+  "3.02": "Qu’est-ce que Jésus a dit à l’ancien possédé de raconter à ses amis ? Marc 5:19",
+  "3.03": "=",
+  "3.04": "=",
+  "3.05": "Quelles sont quelques-unes des « bonnes œuvres » que feront les chrétiens ?",
+  "3.06": "Il devait raconter à ses amis comment Jésus avait fait de lui un homme nouveau. Vous aussi, vous pouvez raconter comment Jésus a fait de vous une personne nouvelle. En voyant votre vie changée, vos amis vous demanderont peut-être ce qui vous est arrivé. Ce sera l’occasion de leur expliquer comment Jésus a pardonné vos péchés, vous a réconcilié avec Dieu et a mis en vous de nouveaux désirs. Après avoir raconté ce que le Christ a fait pour vous, expliquez à votre interlocuteur comment cela peut lui arriver à lui aussi. Pour cela, vous pourriez reprendre la leçon 1, « Naître à une vie nouvelle », et parcourir avec lui les étapes bibliques de la conversion. Demandez-lui ensuite s’il ne voudrait pas laisser Jésus entrer dans son cœur.",
+  "3.07": "Jacques 1:27",
+  "3.08": "=",
+  "3.09": "=",
+  "3.10": "Matthieu 7:12",
+  "3.11": "=",
+  "3.12": "=",
+  "3.13": "Michée 6:8",
+  "3.14": "=",
+  "3.15": "=",
+  "3.16": "ET SI L’ON VOUS REPOUSSE ?",
+  "3.17": "Par la gentillesse envers vos voisins, une miche de pain, une assiette de biscuits, un sourire dans la rue, un coup de main au jardin, l’honnêteté en affaires, la compassion envers les malheureux, Dieu peut se servir de vous pour toucher les cœurs.",
+  "3.18": "Qu’a dit Jésus de ceux qui refusent l’invitation à l’accepter ? Luc 10:16",
+  "3.19": "=",
+  "3.20": "=",
+  "3.21": "Il y a bien des façons de vivre une vie chrétienne de partage. Certaines familles « adoptent » une grand-mère ou un grand-père isolé ; d’autres aident une mère seule par leurs talents de bricoleur : réparer un robinet qui fuit, faire la vidange de la voiture… Pourquoi ne pas noter quelques façons de vous donner à votre entourage ?",
+  "3.22": "Jésus a dit que ceux qui vous repoussent le repoussent en réalité, lui, et non pas vous. Mais n’oubliez pas ces personnes : priez pour elles. Votre témoignage a semé dans leur esprit une graine de réflexion. Demandez à Dieu de l’arroser, pour qu’elle puisse germer un autre jour.",
+  "3.23": "Allez à la page « AVEC VOS PROPRES MOTS » et notez dans l’espace prévu vos projets de témoignage.",
+  "3.24": "Pour approfondir la manière d’être un témoin efficace, lisez Colossiens 4:2-6.",
+  "3.25": "Jésus a utilisé une image intéressante pour décrire l’influence que ses disciples auraient sur le monde qui les entoure.",
+  "3.26": "Qu’a-t-il dit ? Matthieu 5:14-16",
+  "3.27": "=",
+  "4.00": "AVEC VOS PROPRES MOTS",
+  "4.01": "Notez les noms de quelques personnes à qui vous aimeriez faire connaître Jésus :",
+  "4.02": "=",
+  "4.03": "=",
+  "4.04": "=",
+  "4.05": "=",
+  "4.06": "Notez maintenant quelques façons de leur faire connaître Jésus :",
+  "4.07": "=",
+  "4.08": "=",
+  "4.09": "=",
+  "4.10": "=",
+  "4.11": "=",
+  "4.12": "=",
+  "4.13": "=",
+  "4.14": "=",
+  "4.15": "=",
+  "4.16": "=",
+  "4.17": "=",
+  "4.18": "=",
+  "4.19": "=",
+  "4.20": "=",
+  "4.21": "=",
+  "4.22": "À MÉMORISER",
+  "4.23": "Matthieu 28:19-20<br>Matthieu 24:14",
+  "4.24": {
+   "html": "Église adventiste du septième jour de Papatoetoe",
+   "ligne": true
+  },
+  "4.25": "=",
+  "4.26": {
+   "html": "Tél. (09) 278-7786, fax (09) 278-4906",
+   "ligne": true
+  },
+  "4.27": "=",
+  "4.28": {
+   "html": "Courriel info@papsda.co.nz, site www.papsda.co.nz",
+   "ligne": true
+  },
+  "4.29": {
+   "html": "Reproduit avec autorisation",
+   "ligne": true
+  }
+ }
+}

@@ -1,0 +1,208 @@
+{
+ "source": "prendre-vie/02 You have been Born Again - Temptation.pdf",
+ "chemin": "prendre-vie/02-la-tentation",
+ "livret": false,
+ "titre": "La tentation",
+ "auteur": "PAPSDA — traduction française",
+ "effacer_dessins": {
+  "1": [
+   [
+    186,
+    106,
+    548,
+    270
+   ],
+   [
+    205,
+    322,
+    548,
+    468
+   ]
+  ]
+ },
+ "textes": {
+  "1": [
+   {
+    "x": 206,
+    "base": 226,
+    "texte": "Prendre vie",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 70,
+    "couleur": [
+     0.494,
+     0.455,
+     0.361
+    ]
+   },
+   {
+    "x": 536,
+    "base": 261,
+    "texte": "avec Jésus",
+    "police": [
+     "sourcenoir",
+     ""
+    ],
+    "taille": 17,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   },
+   {
+    "x": 538,
+    "base": 384,
+    "texte": "La tentation",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 40,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   }
+  ]
+ },
+ "reglages": {
+  "cadre_colonnes": true,
+  "traits_fins": true
+ },
+ "u": {
+  "1.00": "Leçon 2",
+  "1.01": "Vous êtes né de nouveau",
+  "1.02": "Ken était devenu chrétien depuis peu. Il était né de nouveau, du moins le pensait-il. Pendant quelque temps, tout alla bien : il se sentait en pleine forme et n’avait jamais été aussi heureux. Puis les choses se gâtèrent. Cela commença à l’usine. Ses collègues se mirent à le provoquer et à se moquer de lui. Ils l’appelaient « le saint ».",
+  "1.03": "Longtemps, il encaissa sans rien dire. Puis, un jour, il explosa. Il perdit complètement le contrôle : jurons, cris, colère… exactement comme avant de devenir chrétien.",
+  "1.04": "Le soir, il était malheureux. Il avait déçu le Seigneur. Mais pourquoi ? Et que devait-il faire maintenant ?",
+  "2.00": "ET MAINTENANT ?",
+  "2.01": "COMME JÉSUS A ÉTÉ TENTÉ, VOUS SEREZ TENTÉ",
+  "2.02": "Comme Ken, vous êtes né de nouveau. Cela signifie-t-il que toutes vos tentations et vos difficultés ont disparu ? Romains 7:18-24",
+  "2.03": "Comment Paul décrit-il la vie chrétienne ? 1 Timothée 6:12",
+  "2.04": "=",
+  "2.05": "=",
+  "2.06": "=",
+  "2.07": "=",
+  "2.08": "Pour quelle raison, entre autres, les chrétiens connaissent-ils difficultés et tentations ? 1 Pierre 5:8",
+  "2.09": "Paul compare la vie chrétienne à un combat. Il énumère les armes dont vous avez besoin pour remporter la victoire sur le péché.",
+  "2.10": "=",
+  "2.11": "Quelles sont ces armes ? Éphésiens 6:13-18",
+  "2.12": "=",
+  "2.13": "=",
+  "2.14": "En dehors des attaques directes de Satan, d’où viennent les tentations ? Jacques 1:13-14",
+  "2.15": "=",
+  "2.16": "=",
+  "2.17": "=",
+  "2.18": "=",
+  "2.19": "=",
+  "2.20": "Dieu n’est pas à l’origine de la tentation, mais il permet que ses enfants soient mis à l’épreuve. Quel bien peut résulter des épreuves que vous surmontez ? Jacques 1:2-4",
+  "2.21": "=",
+  "2.22": "=",
+  "2.23": "Selon la Bible, comment pouvez-vous vaincre le péché ? Jacques 4:7 (fin du verset)",
+  "2.24": "=",
+  "2.25": "=",
+  "2.26": "=",
+  "2.27": "Vous êtes un nouveau-né dans la famille de Dieu. Vous vivez dans un monde de péché, avec une nature habituée à pécher, et vous avez un ennemi : Satan. Il a tenté de détruire Jésus quand il était bébé ; il voudrait aussi vous détruire.",
+  "2.28": "=",
+  "2.29": "Comment résister au diable ?",
+  "2.31": "Jacques 4:7 (début du verset)",
+  "2.32": "Vos difficultés ne sont donc pas terminées. Au début de votre vie chrétienne, attendez-vous à rencontrer des obstacles. Vous connaîtrez des hauts et des bas. Satan redoublera d’efforts pour vous tenter, vous décourager et vous détruire.",
+  "2.33": "=",
+  "2.35": "Colossiens 4:2",
+  "2.36": "=",
+  "2.37": "Qu’a vécu Jésus juste après son baptême ? Matthieu 4:1",
+  "2.39": "Matthieu 26:41",
+  "2.40": "=",
+  "2.41": "=",
+  "2.42": "Selon Jésus, quel est le secret d’une vie chrétienne réussie ? Jean 15:4",
+  "2.43": "=",
+  "2.44": "=",
+  "2.45": "=",
+  "2.46": "=",
+  "3.00": "VAINCRE LE PÉCHÉ",
+  "3.01": "relèvera lorsque vous trébucherez et tomberez.",
+  "3.02": "Que pouvez-vous affirmer tant que vous demeurez avec lui ? Philippiens 4:13",
+  "3.03": "Pour vaincre le péché, il faut :",
+  "3.04": null,
+  "3.05": {
+   "gauche": 57,
+   "html": "<table><tr><td class=\"m\"><span>a)</span></td><td><div>Se consacrer et se soumettre à Dieu chaque jour. (Jean 15:4 ; Jacques 4:7)</div></td></tr><tr><td class=\"m\"><span>b)</span></td><td><div>Rester vigilant et connaître ses propres points faibles. (Matthieu 26:41)</div></td></tr><tr><td class=\"m\"><span>c)</span></td><td><div>Prier chaque jour. (Colossiens 4:2)</div></td></tr><tr><td class=\"m\"><span>d)</span></td><td><div>Étudier la Bible chaque jour. (Jean 5:39)</div></td></tr></table>",
+   "css": "table {border-collapse: collapse;} td {vertical-align: top; padding: 0;} td.m {width: 36pt;}"
+  },
+  "3.06": "=",
+  "3.07": null,
+  "3.08": "=",
+  "3.09": "Après s’être mis en colère à l’usine, Ken eut l’impression d’avoir perdu sa vie nouvelle en Christ. Il appela son pasteur et découvrit les enseignements présentés dans cette leçon :",
+  "3.10": null,
+  "3.11": null,
+  "3.12": "Même en suivant ces conseils, vous aurez parfois l’impression d’être tenté et éprouvé au-delà de vos forces.",
+  "3.13": null,
+  "3.14": {
+   "gauche": 319,
+   "html": "<table><tr><td class=\"m\"><span>a)</span></td><td><div>Être chrétien ne signifie pas que l’on ne sera plus tenté. Les tentations peuvent même se multiplier, car Satan veut vous détruire et votre corps comme votre esprit sont habitués au péché.</div></td></tr><tr><td class=\"m\"><span>b)</span></td><td><div>La Bible promet de l’aide par l’étude des Écritures, la prière et la puissance de Dieu.</div></td></tr><tr><td class=\"m\"><span>c)</span></td><td><div>Lorsque vous péchez, vous pouvez le confesser à Dieu : il vous pardonnera et vous relèvera.</div></td></tr></table>",
+   "css": "table {border-collapse: collapse;} td {vertical-align: top; padding: 0;} td.m {width: 36pt;}"
+  },
+  "3.15": "Que vous promet Dieu ? 1 Corinthiens 10:13",
+  "3.16": null,
+  "3.17": "=",
+  "3.18": "=",
+  "3.19": null,
+  "3.20": "Dieu a aussi prévu les moments où le péché vous fait tomber. Que vous promet-il ? 1 Jean 1:9",
+  "3.21": "En découvrant ces secrets pour vaincre le péché, Ken remercia Dieu, se releva et reprit sa marche avec lui. Vous pouvez faire de même quand vous trébuchez et tombez.",
+  "3.22": "=",
+  "3.23": "=",
+  "3.24": "=",
+  "3.25": "Dieu ne vous « chasse pas de la famille » quand vous trébuchez et tombez dans le péché. Au contraire, il veut que vous y restiez : il promet de vous pardonner et de vous purifier quand vous confessez vos fautes. Mais la confession, c’est plus que dire simplement : « Je suis désolé. »",
+  "3.26": "Qu’implique-t-elle encore ? Proverbes 28:13",
+  "3.27": "=",
+  "3.28": "=",
+  "3.29": "Vous vous sentez peut-être très faible devant les tentations du monde, avec un corps et un esprit habitués au péché. Comme un nouveau-né, vous êtes sans défense face à la puissance de l’ennemi. Un bébé ne peut pas survivre tout seul ; vous non plus.",
+  "3.30": "Vous avez besoin de votre Père céleste. Il vous protégera, vous guidera et vous",
+  "4.00": "Vous avez peut-être trébuché dans votre vie chrétienne et vous vous dites : « Cela ne sert à rien d’essayer d’être chrétien. » Prenez quelques minutes pour recopier 1 Jean 1:9 et Philippiens 4:13 sur les lignes ci-dessous. Croyez à ces promesses, mettez-les en pratique et remerciez Dieu de vous relever.",
+  "4.01": "AVEC VOS PROPRES MOTS",
+  "4.02": "=",
+  "4.03": "=",
+  "4.04": "=",
+  "4.05": "=",
+  "4.06": "=",
+  "4.07": "=",
+  "4.08": "=",
+  "4.09": "=",
+  "4.10": "=",
+  "4.11": "=",
+  "4.12": "=",
+  "4.13": "=",
+  "4.14": "=",
+  "4.15": "=",
+  "4.16": "=",
+  "4.17": "=",
+  "4.18": "=",
+  "4.19": "=",
+  "4.20": "À MÉMORISER",
+  "4.21": "1 Jean 1:9<br>Philippiens 4:13",
+  "4.22": {
+   "html": "Église adventiste du septième jour de Papatoetoe",
+   "ligne": true
+  },
+  "4.23": "=",
+  "4.24": {
+   "html": "Tél. (09) 278-7786, fax (09) 278-4906",
+   "ligne": true
+  },
+  "4.25": "=",
+  "4.26": {
+   "html": "Courriel info@papsda.co.nz, site www.papsda.co.nz",
+   "ligne": true
+  },
+  "4.27": {
+   "html": "Reproduit avec autorisation",
+   "ligne": true
+  }
+ }
+}

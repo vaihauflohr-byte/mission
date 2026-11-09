@@ -1,0 +1,264 @@
+{
+ "source": "prendre-vie/07 As You Grow - Fellowship.pdf",
+ "chemin": "prendre-vie/07-la-communion-fraternelle",
+ "livret": false,
+ "titre": "La communion fraternelle",
+ "auteur": "PAPSDA — traduction française",
+ "effacer_dessins": {
+  "1": [
+   [
+    186,
+    106,
+    548,
+    270
+   ],
+   [
+    205,
+    322,
+    548,
+    468
+   ]
+  ],
+  "4": [
+   [
+    50,
+    75,
+    285,
+    200
+   ]
+  ]
+ },
+ "textes": {
+  "1": [
+   {
+    "x": 206,
+    "base": 226,
+    "texte": "Prendre vie",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 70,
+    "couleur": [
+     0.494,
+     0.455,
+     0.361
+    ]
+   },
+   {
+    "x": 536,
+    "base": 261,
+    "texte": "avec Jésus",
+    "police": [
+     "sourcenoir",
+     ""
+    ],
+    "taille": 17,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   },
+   {
+    "x": 538,
+    "base": 430,
+    "texte": "L’Église",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 46,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   }
+  ],
+  "4": [
+   {
+    "x": 58,
+    "base": 160,
+    "texte": "Résumé",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 66,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ]
+   }
+  ]
+ },
+ "reglages": {
+  "cadre_colonnes": true,
+  "traits_fins": true
+ },
+ "u": {
+  "1.00": "Leçon 7",
+  "1.01": "En grandissant, vous aurez<br>besoin d’amis",
+  "1.02": "Imaginez, si vous le pouvez, un nouveau-né déposé dès sa naissance dans un lit stérile, puis laissé grandir seul. Des infirmières en blouse, mais muettes, le changeraient quand il le faut ou poseraient un biberon à sa portée ; mais personne ne lui parlerait, ne lui sourirait, ne le prendrait dans ses bras. Il ne rentrerait pas à la maison, dans une famille. Pas de grands-parents, d’oncles, de tantes ou de cousins pour l’admirer. Il recevrait les meilleurs soins physiques : nourriture, environnement propre, examens médicaux. Mais aucune compagnie, aucune communication avec d’autres êtres humains.",
+  "1.03": {
+   "decaler": 14,
+   "html": "Il est impossible de croire qu’un tel enfant puisse devenir un adulte équilibré. On peut même se demander s’il survivrait. Pour bien grandir, les bébés ont besoin d’une présence aimante et de tendresse, autant que de nourriture et de chaleur."
+  },
+  "1.04": {
+   "decaler": 14,
+   "html": "Les chrétiens aussi ont besoin d’une présence aimante ; et Dieu veut que ses enfants vivent ensemble une heureuse communion fraternelle."
+  },
+  "2.00": "Quelle attitude Jésus demande-t-il aux chrétiens d’avoir les uns envers les autres ? Jean 13:34-35",
+  "2.01": "La Bible du Semeur traduit ce verset ainsi : « Encouragez-vous les uns les autres et aidez-vous mutuellement à grandir dans la foi. » N’est-ce pas beau ? Les chrétiens doivent s’aimer, se réconforter, s’encourager et s’entraider.",
+  "2.02": "=",
+  "2.03": "=",
+  "2.04": "Que doivent-ils encore faire ensemble ? Hébreux 10:24-25",
+  "2.05": "=",
+  "2.06": "Si les chrétiens s’aiment les uns les autres, quel en sera le résultat ? Jean 17:21",
+  "2.07": "=",
+  "2.08": "=",
+  "2.09": "=",
+  "2.10": "Qu’a promis Jésus, même aux petits groupes de croyants ? Matthieu 18:20",
+  "2.11": "=",
+  "2.12": "=",
+  "2.13": "=",
+  "2.14": "L’amour unira les chrétiens, afin qu’ils présentent au monde un solide témoignage d’amour ; et par cet amour, le monde verra Jésus.",
+  "2.15": "=",
+  "2.16": "La Bible indique clairement que les chrétiens ont besoin de se réunir. Vous voudrez donc aller à l’église et à d’autres rencontres de chrétiens, car vous serez encouragé et fortifié en adorant Dieu avec d’autres. Et vous pouvez être sûr que Jésus sera au milieu de vous, car il l’a promis.",
+  "2.17": "Que dit le psalmiste de l’unité chrétienne ? Psaume 133:1",
+  "2.18": "=",
+  "2.19": "=",
+  "2.20": "Mais comment trouver la bonne église ou le bon groupe de chrétiens ? La Bible dit que son peuple, aux derniers jours, aura deux caractéristiques.",
+  "2.21": "=",
+  "2.22": "Comment encore les chrétiens se comporteront-ils les uns envers les autres ? Éphésiens 5:21 ; 1 Pierre 5:5",
+  "2.23": "8. Quelles sont ces caractéristiques ? Apocalypse 12:17 (dernière partie)",
+  "2.24": "=",
+  "2.25": "=",
+  "2.26": "=",
+  "2.27": "Se soumettre ne veut pas dire se laisser marcher dessus, mais chercher à faire grandir l’autre plutôt que soi-même.",
+  "2.28": "=",
+  "2.29": "Trouver un groupe qui présente ces deux caractéristiques peut prendre du temps. Vous devrez poursuivre votre propre étude de la Bible pour connaître tous les commandements de Dieu et faire grandir votre relation avec Jésus. Mais, pour l’essentiel, cherchez des chrétiens qui obéissent à tous les commandements de Dieu et qui rendent témoignage de Jésus-Christ, leur Sauveur et Seigneur.",
+  "2.30": "Lisez 1 Thessaloniciens 5:11 et notez ce qu’il dit des relations que les chrétiens devraient avoir entre eux.",
+  "2.31": "=",
+  "2.32": "=",
+  "2.33": {
+   "decaler": 12,
+   "html": "Pour une autre description intéressante des chrétiens en tant que groupe, lisez 1 Corinthiens 12:12-31."
+  },
+  "2.34": "=",
+  "2.35": "=",
+  "2.36": "=",
+  "3.00": "AVEC VOS PROPRES MOTS",
+  "3.01": "À quoi Paul compare-t-il l’Église ? 1 Corinthiens 12:12-31",
+  "3.02": "Y a-t-il des façons concrètes de manifester votre amour à d’autres chrétiens ? Notez quelques idées qui vous viennent à l’esprit.",
+  "3.03": "=",
+  "3.04": "=",
+  "3.05": "Paul compare l’Église à un corps. Le corps a de nombreuses parties : bras, jambes, oreilles, yeux, bouche… Chaque organe a sa fonction, mais chaque partie est importante, si petite soit-elle. De même, les membres de l’Église sont différents : chacun a son don ou ses aptitudes, mais chacun est important pour l’ensemble.",
+  "3.06": "=",
+  "3.07": "=",
+  "3.08": "=",
+  "3.09": "=",
+  "3.10": "10. Mais qui est la tête de l’Église ? Éphésiens 5:23",
+  "3.11": "=",
+  "3.12": "=",
+  "3.13": "(Pour approfondir : Colossiens 1:18)",
+  "3.14": "=",
+  "3.15": "Le Christ est la tête du corps des croyants : regardez à lui, l’exemple parfait. Si vous regardez comment vivent les autres (même des membres d’église), vous risquez de trébucher, car eux aussi trébuchent. <i>L’Église n’est pas un rassemblement de gens parfaits, mais un groupe de gens qui grandissent.</i> Profitez de la communion avec d’autres chrétiens en croissance, mais gardez les yeux sur le Christ, votre modèle.",
+  "3.16": "À MÉMORISER",
+  "3.17": "Matthieu 18:20<br>Jean 13:34",
+  "3.18": null,
+  "3.19": null,
+  "3.20": "Quel est le but des différents « dons » ou talents dans l’Église ? Éphésiens 4:11-13",
+  "3.21": "=",
+  "3.22": "=",
+  "3.23": "=",
+  "3.24": "=",
+  "3.25": "=",
+  "3.26": "Les nombreux talents présents dans l’Église de Dieu ont un seul but : aider chaque membre à grandir « à la mesure de la stature parfaite de Christ ». Le même verset parle de parvenir « à l’état d’homme fait » : de devenir des chrétiens adultes, et vous le deviendrez. Vos relations avec les autres membres de l’église peuvent vous aider à atteindre cet idéal.",
+  "4.00": "Prendre vie",
+  "4.01": null,
+  "4.02": "Que signifie PRENDRE VIE<br>avec Jésus ?",
+  "4.03": null,
+  "4.04": "Cela veut dire :",
+  "4.05": null,
+  "4.06": null,
+  "4.07": null,
+  "4.08": null,
+  "4.09": null,
+  "4.10": null,
+  "4.11": null,
+  "4.12": null,
+  "4.13": null,
+  "4.14": null,
+  "4.15": null,
+  "4.16": null,
+  "4.17": null,
+  "4.18": null,
+  "4.19": null,
+  "4.20": null,
+  "4.21": null,
+  "4.22": null,
+  "4.23": null,
+  "4.24": null,
+  "4.25": null,
+  "4.26": null,
+  "4.27": null,
+  "4.28": null,
+  "4.29": null,
+  "4.30": null,
+  "4.31": null,
+  "4.32": null,
+  "4.33": null,
+  "4.34": null,
+  "4.35": null,
+  "4.36": null,
+  "4.37": null,
+  "4.38": null,
+  "4.39": {
+   "html": "Église adventiste du septième jour de Papatoetoe",
+   "ligne": true
+  },
+  "4.40": "=",
+  "4.41": {
+   "html": "Tél. (09) 278-7786, fax (09) 278-4906",
+   "ligne": true
+  },
+  "4.42": "=",
+  "4.43": {
+   "html": "Courriel info@papsda.co.nz, site www.papsda.co.nz",
+   "ligne": true
+  },
+  "4.44": {
+   "html": "Reproduit avec autorisation",
+   "ligne": true
+  }
+ },
+ "zones": {
+  "4": [
+   {
+    "rect": [
+     56.7,
+     312,
+     282,
+     770
+    ],
+    "html": "<table><tr><td class=\"m\"><span>•</span></td><td><div><span class=\"t\">VOUS ÊTES NÉ DE NOUVEAU</span> par la grâce de Dieu, par la foi en Jésus-Christ.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div><span class=\"t\">VOUS ÊTES UN BÉBÉ</span> qui trébuchera et tombera en apprenant à marcher. Mais Jésus vous relèvera, vous pardonnera et vous remettra sur pied.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div><span class=\"t\">VOUS AUREZ FAIM ET SOIF</span> de justice, et vous trouverez de quoi combler vos besoins en étudiant chaque jour la Parole de Dieu.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div><span class=\"t\">VOUS APPRENDREZ À PARLER</span> à Dieu, chaque jour, dans la prière.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div><span class=\"t\">VOUS OBÉIREZ À DIEU</span> et commencerez à porter les fruits de l’obéissance dans votre vie, grâce à votre union avec lui.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div><span class=\"t\">VOUS EXERCEREZ VOTRE AMOUR</span> en annonçant aux autres la bonne nouvelle du salut.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div><span class=\"t\">ET VOUS AUREZ LA JOIE DE GRANDIR</span> au sein d’une communauté de chrétiens.</div></td></tr></table>",
+    "css": "table {border-collapse: collapse;} td {vertical-align: top; padding: 0;} td {padding-bottom: 12.5pt;} td.m {width: 18pt;} td.m span {font-family: serif; font-size: 12pt; line-height: 16pt; color: #231f20;} span {font-family: inherit; font-size: inherit; color: inherit;} div {font-family: caladea; font-size: 11pt; line-height: 13.3pt; color: #6d6e71;} .t {font-family: sourcenoir; font-size: 14pt; color: #b0a891;}"
+   },
+   {
+    "rect": [
+     318.9,
+     236,
+     545,
+     770
+    ],
+    "html": "<div class=\"h\">NE VOUS ARRÊTEZ PAS LÀ :<br>CONTINUEZ À GRANDIR !</div><div class=\"p g\">Comment continuer à grandir ?</div><div class=\"h g\">1. CONTINUEZ À ÉTUDIER LA BIBLE CHAQUE JOUR.</div><div class=\"p\">D’autres cours d’étude à domicile peuvent vous aider à poursuivre un parcours méthodique d’apprentissage spirituel. Renseignez-vous auprès de votre accompagnateur.</div><div class=\"h g\">2. CONTINUEZ À PRIER CHAQUE JOUR.</div><div class=\"h g\">3. CHERCHEZ UN GROUPE BIBLIQUE DE MAISON OU UN GROUPE DE VIE À REJOINDRE.</div><div class=\"p\">Votre accompagnateur pourra peut-être vous aider à trouver un groupe qui vous plaira.</div><div class=\"h g\">4. CHERCHEZ UNE ÉGLISE ET COMMENCEZ À LA FRÉQUENTER RÉGULIÈREMENT.</div><div class=\"v g2\">Le souhait de Dieu pour vous :</div><div class=\"p g\">« Le Dieu de toute grâce, qui vous a appelés en Jésus-Christ à sa gloire éternelle, après que vous aurez souffert un peu de temps, vous perfectionnera lui-même, vous affermira, vous fortifiera, vous rendra inébranlables. » 1 Pierre 5:10</div>",
+    "css": "span {font-family: inherit; font-size: inherit; color: inherit;} .h {font-family: sourcenoir; font-size: 14pt; line-height: 17.5pt; color: #b0a891;} .p {font-family: caladea; font-size: 11pt; line-height: 13.3pt; color: #6d6e71;} .v {font-family: caladea; font-weight: bold; font-size: 11pt; line-height: 13.3pt; color: #7e745c;} .g {margin-top: 12pt;} .g2 {margin-top: 24pt;}"
+   }
+  ]
+ }
+}

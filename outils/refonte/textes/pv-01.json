@@ -1,0 +1,271 @@
+{
+ "source": "prendre-vie/01 Being Born - A New Relationship with Jesus.pdf",
+ "chemin": "prendre-vie/01-une-nouvelle-relation-avec-jesus",
+ "livret": false,
+ "titre": "Une nouvelle relation avec Jésus",
+ "auteur": "PAPSDA — traduction française",
+ "effacer_dessins": {
+  "1": [
+   [
+    186,
+    106,
+    548,
+    270
+   ],
+   [
+    205,
+    322,
+    548,
+    468
+   ]
+  ]
+ },
+ "textes": {
+  "1": [
+   {
+    "x": 206,
+    "base": 226,
+    "texte": "Prendre vie",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 70,
+    "couleur": [
+     0.494,
+     0.455,
+     0.361
+    ]
+   },
+   {
+    "x": 536,
+    "base": 261,
+    "texte": "avec Jésus",
+    "police": [
+     "sourcenoir",
+     ""
+    ],
+    "taille": 17,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   },
+   {
+    "x": 520,
+    "base": 380,
+    "texte": "Une nouvelle relation",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 34,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   },
+   {
+    "x": 538,
+    "base": 420,
+    "texte": "avec Jésus",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 34,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   }
+  ]
+ },
+ "reglages": {
+  "cadre_colonnes": true,
+  "traits_fins": true
+ },
+ "u": {
+  "1.00": "Leçon 1",
+  "1.01": "Naître à une vie nouvelle",
+  "1.02": "Jim se recula de son bureau, tourna son fauteuil vers la fenêtre et soupira en contemplant la ville, dix-huit étages plus bas. Il éprouvait un sentiment indéfinissable : agitation, ennui, découragement ? Il aurait dû se sentir bien, se disait-il. Il avait une belle carrière, une bonne santé, un mariage convenable, de beaux enfants, de l’argent. « La belle vie », comme on dit. Alors pourquoi ce vague mécontentement ? Était-il passé à côté de quelque chose ?",
+  "1.03": "Oui. Jim avait « la belle vie », mais il n’avait pas une « vie en abondance ». Or c’est précisément cette vie que Jésus a dit être venu offrir : « Je suis venu afin qu’ils aient la vie et qu’ils l’aient en abondance. » (Jean 10:10.) La vie que Jésus propose apporte une dimension nouvelle : un véritable épanouissement, la paix intérieure et le bonheur.",
+  "2.00": "LA VIE ÉTERNELLE, UN DON GRATUIT",
+  "2.01": "Que dit ce verset de notre capacité à choisir ce qui est juste ? Proverbes 14:12",
+  "2.02": "Comment la Bible décrit-elle cette vie ? Romains 6:23, dernière partie",
+  "2.03": "=",
+  "2.04": "=",
+  "2.05": "=",
+  "2.06": "=",
+  "2.07": "=",
+  "2.08": "Quelle est la conséquence du péché ? Romains 6:23",
+  "2.09": "Cette vie, appelée « vie éternelle », nous vient « par Jésus-Christ » : c’est un « don de Dieu ».",
+  "2.10": "=",
+  "2.11": "Pouvez-vous obtenir ce don en le gagnant ou en le méritant ? Éphésiens 2:8-9",
+  "2.12": "=",
+  "2.13": "=",
+  "2.14": "La situation paraît sans espoir, n’est-ce pas ? Nous sommes tous pécheurs. Nous ne pouvons pas nous transformer par nous-mêmes, et le salaire du péché, c’est la mort. Voilà pourquoi la vie éternelle doit nous être donnée par Dieu. Il ne suffit pas de réparer ou d’améliorer notre ancienne vie : pour vivre une vie vraiment bonne, il nous faut une vie nouvelle. C’est pourquoi Jésus a dit : « Il faut que vous naissiez de nouveau. » (Jean 3:3, 5.) Cette nouvelle naissance est le don que Dieu veut nous faire, parce qu’il nous aime.",
+  "2.15": "=",
+  "2.16": "=",
+  "2.17": "La Bible précise que ce don « ne vient pas de vous » et qu’il ne dépend pas des œuvres. Autrement dit, vous ne pouvez ni le gagner ni le mériter. Pourquoi ? Parce que :",
+  "2.18": "DIEU EST AMOUR",
+  "2.19": "TOUS SONT PÉCHEURS",
+  "2.20": "Quels sentiments Dieu éprouve-t-il pour le monde ? Jean 3:16",
+  "2.21": "Tous ont-ils péché ? Romains 3:10, 23",
+  "2.22": "=",
+  "2.23": "=",
+  "2.24": "=",
+  "2.25": "=",
+  "2.26": "Dieu aime les pécheurs. Mais quel effet le péché a-t-il sur notre relation avec lui ? Ésaïe 59:2",
+  "2.27": "=",
+  "2.28": "=",
+  "2.29": "Qu’est-ce que le péché ? 1 Jean 3:4",
+  "2.30": "=",
+  "2.31": "=",
+  "2.32": "Le péché nous sépare de Dieu. Mais qu’a fait Dieu pour nous sauver ?",
+  "2.33": "=",
+  "2.34": "=",
+  "2.35": "=",
+  "2.36": "=",
+  "2.37": "=",
+  "2.38": "La Bible affirme que tous sont pécheurs et transgressent donc la loi de Dieu. Elle montre aussi que nous ne savons pas toujours discerner le bon chemin. Lisez Proverbes 14:12.",
+  "2.39": "=",
+  "2.40": "=",
+  "3.00": "JÉSUS-CHRIST",
+  "3.01": "RECEVOIR CE DON",
+  "3.02": "Dieu a donné son Fils, Jésus, au monde.",
+  "3.03": "Comment pouvez-vous recevoir cette vie nouvelle ? 1 Jean 5:11-13",
+  "3.04": "Qui est Jésus ?",
+  "3.05": "=",
+  "3.06": "=",
+  "3.07": "Sous quelle forme Jésus est-il venu sur terre ? Jean 1:1-3, 14",
+  "3.08": "=",
+  "3.09": "=",
+  "3.10": "Ces versets déclarent que celui qui a le Fils a la vie.",
+  "3.11": "=",
+  "3.12": "Comment pouvez-vous le recevoir ? Jean 1:12",
+  "3.13": "=",
+  "3.14": "=",
+  "3.15": "Jésus est venu sur terre sous la forme d’un homme. Pourtant, il était plus qu’un homme : il était Dieu. Jean 1:1-3 dit qu’il existait en tant que Dieu avant de venir sur terre.",
+  "3.16": "=",
+  "3.17": "=",
+  "3.18": "Quelle puissance possédait-il ? Hébreux 1:2",
+  "3.19": "=",
+  "3.20": "=",
+  "3.21": "Recevoir Jésus et croire en lui engage à la fois notre intelligence et notre cœur. Cela signifie croire qu’il a une vie meilleure à vous offrir, puis agir selon cette conviction en adoptant sa manière de vivre à la place de la vôtre.",
+  "3.22": "=",
+  "3.23": "Jésus est celui qui a créé le monde. Comprenez-vous pourquoi il s’intéresse tant aux êtres humains ? C’est parce qu’il nous a créés et qu’il ne veut perdre aucun d’entre nous !",
+  "3.24": "Cela signifie que vous demandez :",
+  "3.25": "à Jésus d’être votre Sauveur",
+  "3.26": "Qu’a fait Jésus ?",
+  "3.27": "Que venait-il accomplir ? Matthieu 1:21",
+  "3.28": "Dites-lui que vous regrettez vos péchés et demandez-lui de vous pardonner.",
+  "3.29": "=",
+  "3.30": "Cela signifie aussi que vous demandez :",
+  "3.31": "=",
+  "3.32": "à Jésus d’être votre Seigneur",
+  "3.33": "Comment a-t-il sauvé les êtres humains du péché ? 1 Pierre 2:24 (pour approfondir : Ésaïe 53:6)",
+  "3.34": "Invitez-le à diriger votre vie, afin de pouvoir :",
+  "3.35": "=",
+  "3.36": "<b>ÊTRE</b> ce qu’il veut que vous soyez,",
+  "3.37": "=",
+  "3.38": "<b>FAIRE</b> ce qu’il veut que vous fassiez,",
+  "3.39": "<b>ALLER</b> là où il veut que vous alliez.",
+  "3.40": "=",
+  "3.41": "Jésus, le Dieu créateur de ce monde, est venu sur terre pour porter nos péchés et subir à notre place la peine de mort. En échange, il nous offre sa vie parfaite et éternelle. Quel échange extraordinaire pour des pécheurs !",
+  "4.00": "EST-CE CLAIR POUR VOUS ?",
+  "4.01": "Lorsque vous faites cette démarche, quelle promesse vous est donnée ? 1 Jean 5:11-13",
+  "4.02": "Reprenons l’ensemble :",
+  "4.03": "=",
+  "4.04": null,
+  "4.05": {
+   "gauche": 57,
+   "html": "<table><tr><td class=\"m\"><span>•</span></td><td><div>Dieu veut vous donner une vie nouvelle, une vie en abondance.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>Il vous la donne parce que vous ne pouvez ni la mériter ni la gagner vous-même.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>Il vous la donne parce qu’il vous aime.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>Il vous la donne par son Fils, Jésus, venu sur terre pour porter vos péchés afin que vous puissiez recevoir sa vie parfaite.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>Vous recevez ce don d’une vie nouvelle et abondante en croyant à ce que Jésus a fait pour vous et en l’invitant dans votre vie comme Sauveur et Seigneur. Cela s’appelle :</div></td></tr></table>",
+   "css": "table {border-collapse: collapse;} td {vertical-align: top; padding: 0;} td.m {width: 18pt;} td.m span {font-family: serif; font-size: 12pt; color: #231f20;} p {margin: 0;}"
+  },
+  "4.06": "=",
+  "4.07": null,
+  "4.08": "=",
+  "4.09": null,
+  "4.10": null,
+  "4.11": "=",
+  "4.12": "=",
+  "4.13": null,
+  "4.14": "=",
+  "4.15": "=",
+  "4.16": {
+   "decaler": 12,
+   "html": "NAÎTRE DE NOUVEAU"
+  },
+  "4.17": "=",
+  "4.18": {
+   "decaler": 12,
+   "html": "Souhaitez-vous recevoir ce don de la vie ? Si oui, voici comment faire : parlez à Dieu à voix haute et dites-lui :"
+  },
+  "4.19": "=",
+  "4.20": "=",
+  "4.21": {
+   "gauche": 57,
+   "html": "<table><tr><td class=\"m\"><span>•</span></td><td><div>que vous désirez le don de la vie éternelle ;</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>que vous avez besoin de son pardon ;</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>que vous invitez Jésus dans votre vie.</div></td></tr></table>",
+   "css": "table {border-collapse: collapse;} td {vertical-align: top; padding: 0;} td.m {width: 18pt;} td.m span {font-family: serif; font-size: 12pt; color: #231f20;} p {margin: 0;}",
+   "decaler": 12
+  },
+  "4.22": null,
+  "4.23": "=",
+  "4.24": null,
+  "4.25": null,
+  "4.26": "=",
+  "4.27": {
+   "decaler": 12,
+   "html": "Écrivez ci-dessous ce que vous souhaitez dire à Dieu, puis servez-vous de ces mots pour prier :"
+  },
+  "4.28": "=",
+  "4.29": "=",
+  "4.30": "=",
+  "4.31": "=",
+  "4.32": "=",
+  "4.33": "=",
+  "4.34": "=",
+  "4.35": "=",
+  "4.36": "=",
+  "4.37": "=",
+  "4.38": "=",
+  "4.39": "=",
+  "4.40": "=",
+  "4.41": "=",
+  "4.42": "=",
+  "4.43": "=",
+  "4.44": "=",
+  "4.45": "=",
+  "4.46": "=",
+  "4.47": "=",
+  "4.48": "=",
+  "4.49": "=",
+  "4.50": "=",
+  "4.51": "=",
+  "4.52": {
+   "html": "Église adventiste du septième jour de Papatoetoe",
+   "ligne": true
+  },
+  "4.53": "=",
+  "4.54": {
+   "html": "Tél. (09) 278-7786, fax (09) 278-4906",
+   "ligne": true
+  },
+  "4.55": "=",
+  "4.56": {
+   "html": "Courriel info@papsda.co.nz, site www.papsda.co.nz",
+   "ligne": true
+  },
+  "4.57": {
+   "html": "Reproduit avec autorisation",
+   "ligne": true
+  }
+ }
+}

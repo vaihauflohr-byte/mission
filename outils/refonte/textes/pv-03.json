@@ -1,0 +1,204 @@
+{
+ "source": "prendre-vie/03 You have got to Eat to Grow - Bible Study.pdf",
+ "chemin": "prendre-vie/03-l-etude-de-la-bible",
+ "livret": false,
+ "titre": "L’étude de la Bible",
+ "auteur": "PAPSDA — traduction française",
+ "effacer_dessins": {
+  "1": [
+   [
+    186,
+    106,
+    548,
+    270
+   ],
+   [
+    205,
+    322,
+    548,
+    468
+   ]
+  ]
+ },
+ "textes": {
+  "1": [
+   {
+    "x": 206,
+    "base": 226,
+    "texte": "Prendre vie",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 70,
+    "couleur": [
+     0.494,
+     0.455,
+     0.361
+    ]
+   },
+   {
+    "x": 536,
+    "base": 261,
+    "texte": "avec Jésus",
+    "police": [
+     "sourcenoir",
+     ""
+    ],
+    "taille": 17,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   },
+   {
+    "x": 538,
+    "base": 384,
+    "texte": "L’étude de la Bible",
+    "police": [
+     "script",
+     ""
+    ],
+    "taille": 38,
+    "couleur": [
+     0.69,
+     0.653,
+     0.567
+    ],
+    "aligne": "droite"
+   }
+  ]
+ },
+ "reglages": {
+  "cadre_colonnes": true,
+  "traits_fins": true
+ },
+ "u": {
+  "1.00": "Leçon 3",
+  "1.01": "Se nourrir pour grandir",
+  "1.02": "« J’étais vraiment inquiète pour notre premier bébé, raconte une jeune maman. Il ne voulait pas manger. Il dormait tout le temps. »",
+  "1.03": "« Quelle chance ! » s’esclaffèrent les autres mamans.",
+  "1.04": "« Oui, je sais, mais un bébé a besoin de manger ! On le réveillait, on essayait de le faire manger, mais il se rendormait avant d’avoir bu trente grammes de lait ! Et puis un jour, il s’est réveillé, il s’est mis à manger… et il ne s’arrêtait plus ! »",
+  "1.05": "Nous avons ri de l’inquiétude de cette maman pour un bébé qui ne semblait pas manger assez ; mais nous la comprenons, car chacun sait qu’un nouveau-né doit se nourrir pour vivre et grandir. Il doit manger souvent et régulièrement.",
+  "1.06": "Vous qui venez de naître à la vie chrétienne, vous devez vous aussi manger souvent, sinon vous dépérirez !",
+  "2.00": "Quelle sera votre nourriture ? Matthieu 4:4",
+  "2.01": "De quelles autres manières la Bible vous aidera-t-elle ? 2 Timothée 3:16",
+  "2.02": "=",
+  "2.03": "=",
+  "2.04": "=",
+  "2.05": "=",
+  "2.06": "Pourquoi avez-vous besoin de la Parole de Dieu ? 1 Pierre 2:2 (surtout la fin du verset)",
+  "2.07": "La Bible affirme être inspirée de Dieu. Comment a-t-elle été écrite ? 2 Pierre 1:20-21",
+  "2.08": "=",
+  "2.09": "=",
+  "2.10": "=",
+  "2.11": "=",
+  "2.12": "La Parole de Dieu est la nourriture du chrétien : sans nourriture, on ne grandit pas. Si des parents s’inquiètent pour un bébé qui refuse de manger, que doit ressentir Dieu pour les nouveaux chrétiens qui refusent de « manger » sa Parole ?",
+  "2.13": "L’Esprit de Dieu a guidé les auteurs de la Bible. Qui vous guidera dans l’étude de sa Parole ? Jean 16:13",
+  "2.14": "=",
+  "2.15": "Le moment du repas ne fait pas seulement grandir le bébé : il tisse aussi un lien entre le parent et l’enfant. Il en va de même pour le chrétien. Le temps passé dans la Parole de Dieu vous attachera à lui et construira une relation solide entre vous et votre Père céleste. Dieu désire passer ce temps avec vous. Il sait que sa Parole vous est vitale.",
+  "2.16": "=",
+  "2.17": "La meilleure façon de découvrir la valeur et l’inspiration de la Bible, c’est d’en faire l’expérience : lisez-la et étudiez-la vous-même.",
+  "2.18": "Quand vous ouvrez la Bible pour l’étudier, que devez-vous demander dans la prière ? Psaume 119:18, 27 ; Jacques 1:5",
+  "2.19": "La Bible compare d’ailleurs la Parole de Dieu à une arme offensive, celle du soldat.",
+  "2.20": "=",
+  "2.21": "=",
+  "2.22": "Quel nom donne-t-elle à la Parole de Dieu ? Éphésiens 6:17",
+  "2.23": "=",
+  "2.24": "=",
+  "2.25": "COMMENT ÉTUDIER LA BIBLE ?",
+  "2.26": "Un soldat ne partirait pas au combat sans arme ; vous non plus ne pouvez pas entrer sur le champ de bataille de la vie et affronter l’ennemi, Satan, sans arme. Jésus connaissait ce secret : à chaque tentation que Satan lui présenta dans le désert, il répondit : « Il est écrit. » (Matthieu 4:1-11) Le Christ a vaincu la tentation par les Écritures. Vous pouvez faire de même. Vous ne voulez pas pécher et décevoir votre nouvel ami, Jésus.",
+  "2.27": "Paul dit que les enfants en Christ ont besoin de lait avant la nourriture solide. 1 Corinthiens 3:1-2",
+  "2.28": "Commencez par les passages faciles de la Bible avant d’aborder les plus difficiles.",
+  "2.29": "Beaucoup de nouveaux chrétiens aiment l’Évangile selon Jean. Vous pourriez commencer par lui : il est facile à lire et plein de l’amour de Dieu.",
+  "2.30": "Une version récente de la Bible, en français courant, comme la Bible du Semeur, la Parole de Vie ou la Segond 21, vous paraîtra peut-être plus agréable à lire.",
+  "2.31": "Que pouvez-vous faire pour vaincre le péché ? Psaume 119:11",
+  "2.32": "=",
+  "2.33": "=",
+  "2.34": "N’essayez pas de vous gaver de la Bible : vous",
+  "3.00": "auriez une indigestion, comme le bébé qui avale trop de nourriture d’un seul coup.",
+  "3.01": "« Méditer », c’est s’arrêter pour réfléchir à ce que vous avez lu. Les versets à mémoriser de chaque leçon vous aideront à méditer la Parole de Dieu. Recopiez-les sur des cartes ou des bouts de papier, collez-les sur le miroir ou dans la cuisine, ou gardez-les dans votre poche ou votre sac. Dans les moments libres de la journée, et même en faisant la vaisselle ou en vous rasant, vous pourrez méditer la Parole de Dieu et graver ses promesses dans votre mémoire.",
+  "3.02": "« On ne retire que peu de profit d’une lecture hâtive des Écritures. On peut lire toute la Bible sans en voir la beauté ni en saisir le sens profond et caché. Un seul passage étudié jusqu’à ce que sa signification soit claire et que son rapport avec le plan du salut soit évident vaut mieux que la lecture de nombreux chapitres sans but précis et sans en tirer d’enseignement. » <i>Vers Jésus</i>, chap. « La connaissance de Dieu »",
+  "3.03": "OUTILS D’ÉTUDE BIBLIQUE",
+  "3.04": null,
+  "3.05": {
+   "gauche": 319,
+   "html": "<table><tr><td class=\"m\"><span>•</span></td><td><div>Un dictionnaire biblique donne la définition des mots de la Bible.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>Une concordance biblique répertorie les mots importants de la Bible et indique où ils se trouvent. Par exemple, pour étudier le sujet des anges, cherchez le mot « ange » dans la concordance : elle vous indiquera tous les passages de la Bible où il apparaît. Certaines Bibles contiennent une petite concordance, mais vous voudrez peut-être en acheter une plus complète. Dictionnaires et concordances bibliques sont en vente dans les librairies chrétiennes ; vous en trouverez même sur Internet.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>Les livres de récits bibliques pour enfants, comme les dix volumes des <i>Belles Histoires de la Bible</i> d’Arthur S. Maxwell, rendent la Bible intéressante et instructive pour les adultes comme pour les jeunes.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>La Bible existe aussi en enregistrement audio, pour l’écouter. On trouve également de nombreuses prédications et causeries chrétiennes enregistrées.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>Il existe aussi des vidéos sur des sujets et des récits bibliques.</div></td></tr><tr><td class=\"m\"><span>•</span></td><td><div>Et ne négligez pas de vous nourrir de la Parole de Dieu en participant aux cultes d’une église locale.</div></td></tr></table>",
+   "css": "table {border-collapse: collapse;} td {vertical-align: top; padding: 0;} td.m {width: 18pt;} td.m span {font-family: serif; font-size: 12pt; color: #231f20;} p {margin: 0;}"
+  },
+  "3.06": null,
+  "3.07": null,
+  "3.08": "POUR COMMENCER",
+  "3.09": "Servez-vous de la fiche « AVEC VOS PROPRES MOTS », à la fin de cette leçon, et procédez ainsi :",
+  "3.10": null,
+  "3.11": {
+   "gauche": 57,
+   "html": "<table><tr><td class=\"m\"><span>a)</span></td><td><div>Lisez le passage biblique.</div></td></tr><tr><td class=\"m\"><span>b)</span></td><td><div>Avec vos propres mots, écrivez ce qu’il semble dire. Imaginez que vous l’expliquez avec des mots qu’un enfant comprendrait.</div></td></tr><tr><td class=\"m\"><span>c)</span></td><td><div>Relisez le passage et notez ce qu’il signifie selon vous.</div></td></tr><tr><td class=\"m\"><span>d)</span></td><td><div>Des questions vous viendront peut-être à l’esprit : notez-les. Il y aura peut-être des mots que vous ne comprenez pas : notez-les aussi, pour chercher leur sens plus tard.</div></td></tr><tr><td class=\"m\"><span>e)</span></td><td><div>Réfléchissez aux façons d’appliquer ce passage à votre vie, et notez-les.</div></td></tr><tr><td class=\"m\"><span>f)</span></td><td><div>La place prévue dans la leçon ne suffira sans doute pas pour vos notes : ayez d’autres feuilles sous la main.</div></td></tr></table>",
+   "css": "table {border-collapse: collapse;} td {vertical-align: top; padding: 0;} td.m {width: 36pt;}"
+  },
+  "3.12": null,
+  "3.13": null,
+  "3.14": null,
+  "3.15": null,
+  "3.16": null,
+  "3.17": null,
+  "3.18": null,
+  "3.19": null,
+  "3.20": null,
+  "3.21": null,
+  "3.22": "Pourquoi est-il important de mettre la Bible en pratique au quotidien ? Jacques 1:22-25",
+  "3.23": "=",
+  "3.24": "=",
+  "3.25": "Quelle autre manière importante de faire entrer l’Écriture dans votre vie quotidienne ? Josué 1:8",
+  "3.26": "=",
+  "3.27": "=",
+  "4.00": "AVEC VOS PROPRES MOTS",
+  "4.01": "À MÉMORISER",
+  "4.02": "Voici quelques versets à étudier :",
+  "4.03": "Psaume 119:11<br>2 Timothée 2:15",
+  "4.04": "Texte : Jean 3:1-17",
+  "4.05": "Avec vos propres mots, écrivez ce qu’il dit :",
+  "4.06": "=",
+  "4.07": "=",
+  "4.08": "=",
+  "4.09": "Ce qu’il signifie :",
+  "4.10": "=",
+  "4.11": "=",
+  "4.12": "=",
+  "4.13": "=",
+  "4.14": "=",
+  "4.15": "Mes questions ; les mots que je ne comprends pas :",
+  "4.16": "=",
+  "4.17": "=",
+  "4.18": "=",
+  "4.19": "=",
+  "4.20": "=",
+  "4.21": "Application à ma vie :",
+  "4.22": "=",
+  "4.23": "=",
+  "4.24": "=",
+  "4.25": "=",
+  "4.26": "=",
+  "4.27": "=",
+  "4.28": {
+   "html": "Église adventiste du septième jour de Papatoetoe",
+   "ligne": true
+  },
+  "4.29": "=",
+  "4.30": {
+   "html": "Tél. (09) 278-7786, fax (09) 278-4906",
+   "ligne": true
+  },
+  "4.31": "=",
+  "4.32": {
+   "html": "Courriel info@papsda.co.nz, site www.papsda.co.nz",
+   "ligne": true
+  },
+  "4.33": {
+   "html": "Reproduit avec autorisation",
+   "ligne": true
+  }
+ }
+}
