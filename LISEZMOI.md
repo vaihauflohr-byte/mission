@@ -8,7 +8,9 @@ Aucun serveur, aucune base de données : le site range la bibliothèque d’étu
 - **Accueil** : les trois étapes, numérotées : *1. Rencontrer Jésus-Christ*, *2. Grandir en Jésus-Christ*, *3. Mûrir en Jésus-Christ* (dossiers « 1 - Pour connaitre Jesus », « 2 - Pour grandir en Jésus », « 3 - Mûrir en Jésus » du Drive ; l’identifiant de la première reste `connaitre` dans les liens), la recherche et le mode d’emploi. « Convient (aussi) à des invités » est en gras sous les étapes 1 et 2.
 - **Étape** : ses séries, avec une image, une phrase de présentation et le nombre d’études.
 - **Série** : les études dans l’ordre. Un bouton par document : *Participant* (fiche du participant), *Animateur* (guide de l’animateur), *Avec les réponses*, *Notes de présentation* ; *Ouvrir* ou *Voir* quand il n’y en a qu’un. Les plans du cours, brochures et révisions sont dans « Pour bien commencer ».
-- **Lecteur** (`#/lire/<série>/<document>`) : le document s’affiche dans le site (PDF.js), page après page, à la largeur de l’écran. On zoome en pinçant (téléphone), avec Ctrl + molette ou les boutons − / + (ordinateur). *Télécharger* donne le PDF ; pour les présentations, le menu propose aussi le PowerPoint d’origine, avec les animations, et *Projeter* les montre en plein écran, une diapositive à la fois (flèches ou clic pour avancer).
+- **Mode lecture** (`#/lire/<série>/<document>`) : les études s’ouvrent comme dans l’appli de l’École du sabbat ou un livre — texte qui s’adapte à l’écran, références bibliques cliquables (Louis Segond sur BibleGateway), une case « Votre réponse » sous chaque question, gardée sur l’appareil. *Sommaire*, *Affichage* (taille du texte, fond clair / sépia / nuit, police, défiler ou feuilleter page par page), *Imprimer* et *Original* (le PDF) sont toujours dans la barre du haut. Voir « Mode lecture » plus bas.
+- **Original** (`#/original/<série>/<document>`, et `#/lire/…` pour les documents sans mode lecture) : le PDF s’affiche dans le site (PDF.js), page après page, à la largeur de l’écran. On zoome en pinçant (téléphone), avec Ctrl + molette ou les boutons − / + (ordinateur). *Télécharger* donne le PDF ; pour les présentations, le menu propose aussi le PowerPoint d’origine, avec les animations, et *Projeter* les montre en plein écran, une diapositive à la fois (flèches ou clic pour avancer).
+- **Imprimer** : sur chaque document, en mode lecture comme en PDF. Au choix : *le document d’origine* (les pages du PDF, préparées dans le navigateur puis envoyées à l’imprimante), *ce que je lis, avec mes réponses* (en mode lecture) ou *Télécharger le PDF*.
 - **Chercher** : par mot, sans tenir compte des accents (`bapteme` trouve « baptême »).
 - **Sommaire** : sur l’accueil, chaque étape montre la liste de ses séries avec le nombre d’études, comme la page « Study Guides » du Gateway Adventist Centre.
 - **Application** (`#/application`) : le site s’installe comme une application (PWA) sur Android, iPhone et ordinateur, sans passer par un magasin d’applications. Bouton « Installer l’application » quand le navigateur le permet (Android, Chrome, Edge), sinon les étapes à suivre (Safari sur iPhone) ; code QR et bouton « Partager le lien » pour la faire connaître. Une fois installée : icône sur l’écran d’accueil, plein écran, raccourcis vers les trois étapes et la recherche (appui long sur l’icône, Android), liste des études consultable sans réseau. Les documents, eux, demandent une connexion (ou se téléchargent).
@@ -34,6 +36,27 @@ Les études de *En quête de certitude* (les 30 et les six complémentaires A à
 
 Laissés hors du site : les fiches « Source chinoise » (doublons), les documents propres au programme de Hong Kong (PolyU), les dossiers en anglais, et deux livres publiés (*Se préparer à un mariage heureux*, *Le sanctuaire expliqué simplement*).
 
+## Mode lecture
+
+Chaque étude en PDF a une version « lecture », faite à l’avance par `outils/lecture/convertir.py` (PyMuPDF et Pillow ; Tesseract en français pour une page numérisée sans texte) :
+
+- `lecture/<série>/<document>.html` : le texte de l’étude, en fragment HTML que le site insère ; ses images dans `lecture/<série>/<document>/img-N.webp` ;
+- `donnees/lecture.js` : la liste des documents qui ont une version lecture, avec leur nombre de questions et de sections.
+
+Le convertisseur remet les colonnes dans l’ordre de lecture, retire en-têtes, pieds de page et titres répétés, reconnaît titres, questions (numérotées, interrogatives ou suivies de lignes pour écrire), listes, cases à cocher, phrases à trous, tableaux, citations et images, et relie les références bibliques (`outils/lecture/versets.py`). La couverture et les lignes d’éditeur passent en mentions à la fin ; les logos d’éditeur (`LOGOS`) sont écartés ; un document rédigé en plan détaillé (A. › 1. › i. › a.) garde un point par ligne. Les présentations et le tableau Excel restent en PDF seulement (`EXCLUS_FORMATS`, `EXCLUS`).
+
+Les réponses écrites restent dans le navigateur (`localStorage`, clés `mission.rep.<document>…`), rien n’est envoyé.
+
+Après un changement de documents :
+
+```
+python3 outils/lecture/convertir.py                                  # tout (quelques minutes)
+python3 outils/lecture/convertir.py vivre-avec-jesus/01-il-revient   # un seul document
+python3 outils/lecture/convertir.py --plan vivre-avec-jesus/01-il-revient   # voir le découpage, sans rien écrire
+```
+
+puis augmenter `VERSION_LECTURE` dans `assets/app.js` et le `?v=` de `donnees/lecture.js` (dans `index.html` et `sw.js`), pour que les téléphones reprennent les nouvelles versions.
+
 ## Mettre la bibliothèque à jour
 
 Après l’ajout ou le changement d’un fichier dans le Drive :
@@ -41,7 +64,8 @@ Après l’ajout ou le changement d’un fichier dans le Drive :
 1. Exporter l’inventaire du dossier Drive en JSON (`{id: {id, title, mimeType, parentId}}`).
 2. `python3 outils/generer_bibliotheque.py inventaire.json` : réécrit `donnees/bibliotheque.js` et la liste des documents à importer (`outils/documents/liste.json`).
 3. Réimporter les documents : remettre la tâche `.github/workflows/importer-documents.yml` (elle est dans l’historique du dépôt, commit « Documents en PDF sur le site ») ; elle télécharge les fichiers du Drive (les dossiers doivent alors être partagés par lien), les convertit et pousse le résultat dans la branche `documents-import`. Relire, verser dans `main`, lancer `outils/documents/corriger.py`, relancer le générateur, retirer la tâche.
-4. Augmenter le numéro de version (`?v=`) dans `index.html` et la constante `CACHE` de `sw.js`, puis publier.
+4. Refaire le mode lecture : `python3 outils/lecture/convertir.py` (voir « Mode lecture »).
+5. Augmenter le numéro de version (`?v=`) dans `index.html` et la constante `CACHE` de `sw.js`, puis publier.
 
 Une nouvelle série = une ligne dans `SERIES` (niveau, identifiant, dossier Drive, titre, présentation).
 
@@ -62,14 +86,15 @@ Une image qui manque est simplement masquée.
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | page unique (navigation par `#/niveau/…`, `#/serie/…`, `#/lire/…`, `#/chercher/…`) |
+| `index.html` | page unique (navigation par `#/niveau/…`, `#/serie/…`, `#/lire/…`, `#/original/…`, `#/chercher/…`) |
 | `assets/app.js` | affichage, recherche, navigation, lecteur de documents |
 | `assets/style.css` | mise en page ; polices Alegreya (titres) et Atkinson Hyperlegible (texte, très lisible) |
 | `assets/images/` | images des étapes, séries et études |
 | `documents/` | les documents en PDF (et le tableau Excel d’origine) |
+| `lecture/`, `donnees/lecture.js` | mode lecture : textes des études et leurs images, liste des documents concernés (générés) |
 | `lecteur/` | PDF.js 6.5.438 (Mozilla, licence Apache 2.0), chargé à la première ouverture d’un document |
 | `donnees/bibliotheque.js` | catalogue généré : étapes, séries, études, documents |
-| `outils/` | générateur du catalogue, import et corrections des documents, images |
+| `outils/` | générateur du catalogue, import et corrections des documents, images, mode lecture (`outils/lecture/`) |
 | `sw.js`, `manifest.webmanifest`, `assets/captures/` | application installable, hors ligne ; captures montrées dans la fenêtre d’installation (Android) |
 | `assets/icones/` | icônes de l’appli (feuille), symbole adventiste, code QR de `mission.ka-ilei.com` |
 | `CNAME`, `.nojekyll` | domaine `mission.ka-ilei.com` ; fichiers publiés tels quels |
