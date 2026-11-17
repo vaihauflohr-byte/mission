@@ -17,7 +17,7 @@ Aucun serveur, aucune base de données : le site range la bibliothèque d’étu
 
 ## Les documents
 
-Ils sont dans `documents/<série>/<nom>.pdf` (333 fichiers, 380 Mo environ ; GitHub Pages accepte 1 Go).
+Ils sont dans `documents/<série>/<nom>.pdf` (358 fichiers, 385 Mo environ ; GitHub Pages accepte 1 Go).
 Ils viennent du dossier Drive **Eglise / Etude petit groupe** (compte vaihau.flohr@gmail.com) ; chaque série du site correspond à un dossier, listé dans `SERIES` en tête de `outils/generer_bibliotheque.py`.
 
 L’import a été fait une fois par une tâche GitHub (`outils/documents/importer.py`) :
@@ -34,6 +34,8 @@ LibreOffice ne rend pas exactement comme Word et PowerPoint (retours à la ligne
 
 Les études de *En quête de certitude* (les 30 et les six complémentaires A à G), les sept leçons de *Prendre vie avec Jésus* et les quinze de *Vivre avec Jésus* sont refaites à partir des documents anglais d’origine (It Is Written, Gateway Centre, PAPSDA) : texte français posé sur les pages de l’original, avec sa mise en page et ses images (8 pages pour chaque étude de *En quête de certitude*, les livrets imposés A à G remis page par page dans l’ordre de lecture ; 4 pages pour chaque leçon de *Prendre vie* et de *Vivre avec Jésus*, comme l’original). Elles ont la source `refonte` dans `resultat.json` : `importer.py` ne les remplace jamais par le fichier du Drive. Leur titre est celui de la nouvelle couverture (`TITRES_REFAITS` dans `outils/generer_bibliotheque.py`) ; le nom du fichier sur le site, lui, n’a pas changé. Les originaux anglais restent hors du dépôt ; les outils de refonte et les traductions sont dans `outils/refonte/` (voir son `LISEZMOI.md`).
 
+*Historacles et Prophétie* (dossier « 6 - Historacles et Prophéties » de l’étape 1) : les 24 dépliants d’Amazing Facts remis par le pasteur Jérémie Allamelou aux conférences bibliques de Mataiea (octobre 2026), et son étude « Les sept derniers fléaux » en étude complémentaire A ; importés depuis ses courriels, tels quels.
+
 Laissés hors du site : les fiches « Source chinoise » (doublons), les documents propres au programme de Hong Kong (PolyU), les dossiers en anglais, et deux livres publiés (*Se préparer à un mariage heureux*, *Le sanctuaire expliqué simplement*).
 
 ## Mode lecture
@@ -44,6 +46,8 @@ Chaque étude en PDF a une version « lecture », faite à l’avance par `outil
 - `donnees/lecture.js` : la liste des documents qui ont une version lecture, avec leur nombre de questions et de sections.
 
 Le convertisseur remet les colonnes dans l’ordre de lecture, retire en-têtes, pieds de page et titres répétés, reconnaît titres, questions (numérotées, interrogatives ou suivies de lignes pour écrire), listes, cases à cocher, phrases à trous, tableaux, citations et images, et relie les références bibliques (`outils/lecture/versets.py`). La couverture et les lignes d’éditeur passent en mentions à la fin ; les logos d’éditeur (`LOGOS`) sont écartés ; un document rédigé en plan détaillé (A. › 1. › i. › a.) garde un point par ligne. Les présentations et le tableau Excel restent en PDF seulement (`EXCLUS_FORMATS`, `EXCLUS`).
+
+Réglages par série : `VOLETS` (dépliant, plusieurs volets côte à côte sur une page à l’italienne, lus l’un après l’autre comme des pages : Historacles) ; `NUMEROTEES` (seules les questions numérotées sont des questions, les traits courts « ___ » sont des mots à compléter, et la réponse se donne dans les blancs, sans zone de texte). Dans un dépliant, un schéma tracé (ligne chronologique, calcul souligné) est rendu en image avec ses étiquettes, sauf s’il est surtout fait de phrases.
 
 Les réponses écrites restent dans le navigateur (`localStorage`, clés `mission.rep.<document>…`), rien n’est envoyé.
 
@@ -62,12 +66,12 @@ puis augmenter `VERSION_LECTURE` dans `assets/app.js` et le `?v=` de `donnees/le
 Après l’ajout ou le changement d’un fichier dans le Drive :
 
 1. Exporter l’inventaire du dossier Drive en JSON (`{id: {id, title, mimeType, parentId}}`).
-2. `python3 outils/generer_bibliotheque.py inventaire.json` : réécrit `donnees/bibliotheque.js` et la liste des documents à importer (`outils/documents/liste.json`).
+2. `python3 outils/generer_bibliotheque.py inventaire.json` : réécrit `donnees/bibliotheque.js` et la liste des documents à importer (`outils/documents/liste.json`). Pour ajouter ou refaire une seule série, l’inventaire de son dossier suffit : `--seulement <série>` garde les autres séries telles qu’elles sont.
 3. Réimporter les documents : remettre la tâche `.github/workflows/importer-documents.yml` (elle est dans l’historique du dépôt, commit « Documents en PDF sur le site ») ; elle télécharge les fichiers du Drive (les dossiers doivent alors être partagés par lien), les convertit et pousse le résultat dans la branche `documents-import`. Relire, verser dans `main`, lancer `outils/documents/corriger.py`, relancer le générateur, retirer la tâche.
 4. Refaire le mode lecture : `python3 outils/lecture/convertir.py` (voir « Mode lecture »).
 5. Augmenter le numéro de version (`?v=`) dans `index.html` et la constante `CACHE` de `sw.js`, puis publier.
 
-Une nouvelle série = une ligne dans `SERIES` (niveau, identifiant, dossier Drive, titre, présentation).
+Une nouvelle série = une ligne dans `SERIES` (niveau, identifiant, dossier Drive, titre, présentation). Les fichiers déjà téléchargés s’importent sans passer par la tâche GitHub : `python3 outils/documents/importer.py --source <dossier avec <id>.pdf> --seulement <chemins>`. Les études numérotées par une lettre (« A - … ») forment un groupe à part, titré dans `GROUPES_COMPLEMENTAIRES`.
 
 ## Symbole de l’Église adventiste
 
@@ -75,10 +79,11 @@ Une nouvelle série = une ligne dans `SERIES` (niveau, identifiant, dossier Driv
 
 ## Images
 
-Une image par étape, par série et par étude (243 au total), dans `assets/images/<id>.webp` (800 × 600 au plus).
+Une image par étape, par série et par étude (268 au total), dans `assets/images/<id>.webp` (800 × 600 au plus).
 Les trois étapes ont de vraies photos, prises sur Unsplash (licence libre, usage sur un site permis sans demande) : auteurs et pages d’origine dans `outils/photos/photos.json`, crédit dans le pied de page.
 Les autres images ont été générées avec fal.ai (modèle FLUX dev) à partir des scènes décrites dans `outils/images/scenes.py`
 (`outils/images/prompts.json`), avec `outils/images/generer_images.py` (clé fal dans `~/.fal_key`, jamais dans le dépôt).
+Historacles et Prophétie garde les illustrations de ses dépliants (récit de chaque étude, titre gravé de la couverture) : `outils/images/images_originaux.py`.
 Le catalogue relie chaque étude à son image : `<série>-<numéro>` (ou `<série>-<position>` pour Daniel), `serie-<série>`, `niveau-<étape>`.
 Une image qui manque est simplement masquée.
 

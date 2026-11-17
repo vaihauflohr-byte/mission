@@ -1044,6 +1044,391 @@ window.BIBLIO = {
    "image": "serie-explorateur"
   },
   {
+   "id": "historacles",
+   "niveau": "connaitre",
+   "titre": "Historacles et Prophétie",
+   "texte": "24 études : chaque leçon part d’une histoire de la Bible pour ouvrir une vérité, de Daniel 2 au retour de Jésus. Remises par le pasteur Jérémie Allamelou aux conférences bibliques de Mataiea, avec son étude sur les sept derniers fléaux.",
+   "lecons": [
+    {
+     "num": "1",
+     "titre": "L’homme millénaire",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/01-l-homme-millenaire",
+       "o": 488679,
+       "p": 2
+      }
+     ],
+     "image": "historacles-1"
+    },
+    {
+     "num": "2",
+     "titre": "De retour à Jérusalem",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/02-de-retour-a-jerusalem",
+       "o": 337543,
+       "p": 2
+      }
+     ],
+     "image": "historacles-2"
+    },
+    {
+     "num": "3",
+     "titre": "Le retour du Roi",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/03-le-retour-du-roi",
+       "o": 343489,
+       "p": 2
+      }
+     ],
+     "image": "historacles-3"
+    },
+    {
+     "num": "4",
+     "titre": "Le prince rebelle",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/04-le-prince-rebelle",
+       "o": 362117,
+       "p": 2
+      }
+     ],
+     "image": "historacles-4"
+    },
+    {
+     "num": "5",
+     "titre": "Le suprême sacrifice",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/05-le-supreme-sacrifice",
+       "o": 352577,
+       "p": 2
+      }
+     ],
+     "image": "historacles-5"
+    },
+    {
+     "num": "6",
+     "titre": "La loi du roi",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/06-la-loi-du-roi",
+       "o": 388671,
+       "p": 2
+      }
+     ],
+     "image": "historacles-6"
+    },
+    {
+     "num": "7",
+     "titre": "Des briques sans paille",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/07-des-briques-sans-paille",
+       "o": 390089,
+       "p": 2
+      }
+     ],
+     "image": "historacles-7"
+    },
+    {
+     "num": "8",
+     "titre": "Le glorieux royaume",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/08-le-glorieux-royaume",
+       "o": 375364,
+       "p": 2
+      }
+     ],
+     "image": "historacles-8"
+    },
+    {
+     "num": "9",
+     "titre": "La sorcière d’En-Dor",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/09-la-sorciere-d-en-dor",
+       "o": 375504,
+       "p": 2
+      }
+     ],
+     "image": "historacles-9"
+    },
+    {
+     "num": "10",
+     "titre": "Villes de cendres",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/10-villes-de-cendres",
+       "o": 417885,
+       "p": 2
+      }
+     ],
+     "image": "historacles-10"
+    },
+    {
+     "num": "11",
+     "titre": "Une rivière de vie",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/11-une-riviere-de-vie",
+       "o": 383847,
+       "p": 2
+      }
+     ],
+     "image": "historacles-11"
+    },
+    {
+     "num": "12",
+     "titre": "La terre en repos",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/12-la-terre-en-repos",
+       "o": 373154,
+       "p": 2
+      }
+     ],
+     "image": "historacles-12"
+    },
+    {
+     "num": "13",
+     "titre": "S’incliner devant Babylone",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/13-s-incliner-devant-babylone",
+       "o": 481748,
+       "p": 2
+      }
+     ],
+     "image": "historacles-13"
+    },
+    {
+     "num": "14",
+     "titre": "La marque de Caïn",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/14-la-marque-de-cain",
+       "o": 410118,
+       "p": 2
+      }
+     ],
+     "image": "historacles-14"
+    },
+    {
+     "num": "15",
+     "titre": "Un céleste modèle",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/15-un-celeste-modele",
+       "o": 529243,
+       "p": 2
+      }
+     ],
+     "image": "historacles-15"
+    },
+    {
+     "num": "16",
+     "titre": "La purification du temple",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/16-la-purification-du-temple",
+       "o": 416827,
+       "p": 2
+      }
+     ],
+     "image": "historacles-16"
+    },
+    {
+     "num": "17",
+     "titre": "L’histoire des deux femmes",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/17-l-histoire-des-deux-femmes",
+       "o": 398128,
+       "p": 2
+      }
+     ],
+     "image": "historacles-17"
+    },
+    {
+     "num": "18",
+     "titre": "Les écluses des cieux",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/18-les-ecluses-des-cieux",
+       "o": 418460,
+       "p": 2
+      }
+     ],
+     "image": "historacles-18"
+    },
+    {
+     "num": "19",
+     "titre": "La danse de la fille",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/19-la-danse-de-la-fille",
+       "o": 422339,
+       "p": 2
+      }
+     ],
+     "image": "historacles-19"
+    },
+    {
+     "num": "20",
+     "titre": "Dix fois plus sage",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/20-dix-fois-plus-sage",
+       "o": 373279,
+       "p": 2
+      }
+     ],
+     "image": "historacles-20"
+    },
+    {
+     "num": "21",
+     "titre": "Une voix dans le désert",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/21-une-voix-dans-le-desert",
+       "o": 367011,
+       "p": 2
+      }
+     ],
+     "image": "historacles-21"
+    },
+    {
+     "num": "22",
+     "titre": "De vrais et de faux prophètes",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/22-de-vrais-et-de-faux-prophetes",
+       "o": 343659,
+       "p": 2
+      }
+     ],
+     "image": "historacles-22"
+    },
+    {
+     "num": "23",
+     "titre": "Un vase d’huile",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/23-un-vase-d-huile",
+       "o": 429486,
+       "p": 2
+      }
+     ],
+     "image": "historacles-23"
+    },
+    {
+     "num": "24",
+     "titre": "Au-dessus de la foule",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/24-au-dessus-de-la-foule",
+       "o": 344200,
+       "p": 2
+      }
+     ],
+     "image": "historacles-24"
+    },
+    {
+     "num": "A",
+     "titre": "Les sept derniers fléaux avant le retour de Christ",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "historacles/a-les-sept-derniers-fleaux-avant-le-retour-de-christ",
+       "o": 191026,
+       "p": 4
+      }
+     ],
+     "groupe": "Étude complémentaire du pasteur Jérémie Allamelou"
+    }
+   ],
+   "ressources": [],
+   "image": "serie-historacles"
+  },
+  {
    "id": "vivre-avec-jesus",
    "niveau": "grandir",
    "titre": "Vivre avec Jésus",

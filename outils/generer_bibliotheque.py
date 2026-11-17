@@ -1,7 +1,10 @@
 """Construit donnees/bibliotheque.js à partir de l'inventaire du dossier Drive
 « Eglise / Etude petit groupe ».
 
-Usage : python3 outils/generer_bibliotheque.py inventaire.json
+Usage : python3 outils/generer_bibliotheque.py inventaire.json [--seulement SÉRIE…]
+
+--seulement : ne reconstruit que ces séries (inventaire limité à leurs dossiers) et garde
+les autres telles qu’elles sont dans donnees/bibliotheque.js et outils/documents/liste.json.
 
 inventaire.json : dictionnaire {id: fichier} tel que renvoyé par l'API Drive
 (champs id, title, mimeType, parentId). Chaque série du site correspond à un
@@ -53,6 +56,9 @@ SERIES = [
      "30 études sur les grandes questions : la Bible, les prophéties, le retour du Christ, la mort, le jugement, l’Église. Six études complémentaires en plus."),
     ("connaitre", "explorateur", "12QzizinAah_SguLWZ_LT7Xcu4dALKZ0B", "Classe Explorateur",
      "18 études sur les bases de la foi, de la Bible jusqu’au baptême."),
+    ("connaitre", "historacles", "1b5VCs1iSfJ9z9Em7OUB-b0llE4QZl79e", "Historacles et Prophétie",
+     "24 études : chaque leçon part d’une histoire de la Bible pour ouvrir une vérité, de Daniel 2 au retour de Jésus. "
+     "Remises par le pasteur Jérémie Allamelou aux conférences bibliques de Mataiea, avec son étude sur les sept derniers fléaux."),
     # Grandir
     ("grandir", "vivre-avec-jesus", "1_7vAlyGMjeBn3nFKpn674Lb_8UONxHoC", "Vivre avec Jésus",
      "15 études : le retour de Jésus, la mort, le baptême, le sabbat, le temps, les biens et le corps confiés au Seigneur."),
@@ -84,6 +90,12 @@ SERIES = [
     ("murir", "trinite", "1XaIjFEQc_GomQJP1C5T72zEcpiEB4XU-", "La Trinité et la Divinité",
      "Études bibliques et articles sur la Divinité et le Saint-Esprit."),
 ]
+
+# Études numérotées par une lettre (« A - … ») : titre du groupe affiché après les études de la série.
+GROUPES_COMPLEMENTAIRES = {
+    "quete-certitude": "Études complémentaires",
+    "historacles": "Étude complémentaire du pasteur Jérémie Allamelou",
+}
 
 # Précision affichée après le titre de la série dans le sommaire de l’accueil.
 NOTES = {
@@ -314,7 +326,7 @@ def relier_documents(series, resultat):
     return manquants
 
 
-def main(chemin):
+def main(chemin, seulement=None):
     fichiers = json.load(open(chemin, encoding="utf-8"))
     enfants = defaultdict(list)
     for f in fichiers.values():
@@ -330,6 +342,8 @@ def main(chemin):
     series = []
     oublies = []
     for niveau, slug, dossier, titre, texte in SERIES:
+        if seulement and slug not in seulement:
+            continue
         lecons = {}
         ressources = []
         for f in tous_les_fichiers(dossier):
@@ -384,8 +398,8 @@ def main(chemin):
         liste = []
         for le in sorted(lecons.values(), key=lambda x: x.pop("_tri")):
             le["docs"].sort(key=lambda d: (ordre_role[d["role"]], d["libelle"]))
-            if le["num"] and not le["num"].isdigit() and slug == "quete-certitude":
-                le["groupe"] = "Études complémentaires"
+            if le["num"] and not le["num"].isdigit() and slug in GROUPES_COMPLEMENTAIRES:
+                le["groupe"] = GROUPES_COMPLEMENTAIRES[slug]
             liste.append(le)
         if not liste and not ressources:
             print(f"!! série vide : {slug}", file=sys.stderr)
@@ -431,6 +445,9 @@ def main(chemin):
                 le["titre"] = TITRES_REFAITS.get(d["_chemin"], le["titre"])
     for e in liste:
         e["titre"] = TITRES_REFAITS.get(e["chemin"], e["titre"])
+    if seulement:  # les autres séries gardent leur liste d’import
+        anciens = json.load(open(DOSSIER_DOCS / "liste.json", encoding="utf-8"))
+        liste = [e for e in anciens if e["chemin"].split("/")[0] not in seulement] + liste
     (DOSSIER_DOCS / "liste.json").write_text(json.dumps(liste, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     fichier_resultat = DOSSIER_DOCS / "resultat.json"
     if fichier_resultat.exists():
@@ -441,8 +458,15 @@ def main(chemin):
         for d in [d for le in se["lecons"] for d in le["docs"]] + se["ressources"]:
             d.pop("_chemin", None)
 
-    donnees = {"niveaux": niveaux, "series": series}
     sortie = Path(__file__).resolve().parent.parent / "donnees" / "bibliotheque.js"
+    if seulement:  # les autres séries sont reprises telles quelles du catalogue actuel
+        texte = sortie.read_text(encoding="utf-8")
+        actuel = json.loads(texte[texte.index("{"): texte.rstrip().rindex(";")])
+        par_id = {s["id"]: s for s in actuel["series"]}
+        par_id.update({s["id"]: s for s in series})
+        series = [par_id[slug] for _, slug, *_ in SERIES if slug in par_id]
+        niveaux = actuel["niveaux"]
+    donnees = {"niveaux": niveaux, "series": series}
     sortie.parent.mkdir(exist_ok=True)
     texte_js = ("/* Généré par outils/generer_bibliotheque.py à partir du Drive — ne pas modifier à la main. */\n"
                 "window.BIBLIO = " + json.dumps(donnees, ensure_ascii=False, indent=1) + ";\n")
@@ -455,4 +479,10 @@ def main(chemin):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("inventaire")
+    ap.add_argument("--seulement", nargs="*",
+                    help="séries à (re)construire ; les autres restent comme dans le catalogue actuel")
+    args = ap.parse_args()
+    main(args.inventaire, set(args.seulement or []))

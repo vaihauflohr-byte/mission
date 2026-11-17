@@ -70,10 +70,16 @@ EXCLUS = {
     "fiabilite-bible/01-fiabilite-de-la-bible",            # présentation numérisée (images)
     "explorateur/feuille-des-coordonnees-des-participants",  # formulaire à remplir à la main
 }
+# Dépliants : chaque page à l'italienne porte n volets côte à côte, lus l'un après l'autre comme des pages.
+VOLETS = {"historacles": 3}
+# Séries dont seules les questions numérotées sont des questions (le récit en pose d'autres, sans réponse à écrire) ;
+# leurs lignes justifiées ne sont pas coupées aux grands espaces, et « ➢ 1) » est un numéro de question.
+NUMEROTEES = {"historacles"}
+RE_CODE_VOLET = re.compile(r"^\s*SP\d{2}\s*$")      # code d'impression en bas d'un volet (Historacles)
 NBSP, NNBSP = " ", " "
 PUCES = "•●▪■◦○◆◇►▶✓✔➢➤→–—-*·"
 RE_PUCE = re.compile(r"^\s*([" + re.escape(PUCES) + r"]|o(?= +[A-ZÀ-Ý«\d]))\s+")
-RE_NUM = re.compile(r"^\s*(\d{1,2})\s*[.)]\s+(?=\S)")
+RE_NUM = re.compile(r"^\s*(\d{1,2})\s*[.)]\s+(?=[^\s;,:.])")
 RE_LETTRE = re.compile(r"^\s*([a-hA-H])\s*[.)]\s+(?=\S)")
 RE_QUESTION_MOT = re.compile(r"^\s*(?:Question|Q)\s*(\d{1,2})\s*[:.)–-]?\s*", re.I)
 RE_COCHE = re.compile(r"^\s*(?:\[\s?\]|☐|□|❑|❒|\uf06f|\uf0a8|\uf071)\s*")
@@ -163,7 +169,7 @@ class Ligne:
 
 # ---------------------------------------------------------------- lecture d'une page
 
-def lignes_texte(page, num, ocr=False):
+def lignes_texte(page, num, ocr=False, coupures=(), ecarts=True):
     flags = fitz.TEXTFLAGS_DICT & ~fitz.TEXT_PRESERVE_IMAGES
     if ocr:
         # page numérisée : texte reconnu par Tesseract (français)
@@ -173,14 +179,18 @@ def lignes_texte(page, num, ocr=False):
         d = page.get_text("dict", flags=flags, textpage=tp)
     else:
         d = page.get_text("dict", flags=flags)
-    lignes = _lignes_dict(d, num, invisibles=False)
+    lignes = _lignes_dict(d, num, invisibles=False, coupures=coupures, ecarts=ecarts)
     if not lignes:
         # page numérisée avec une couche de texte invisible (reconnaissance déjà faite) : c'est le texte
-        lignes = _lignes_dict(d, num, invisibles=True)
+        lignes = _lignes_dict(d, num, invisibles=True, coupures=coupures, ecarts=ecarts)
     return lignes
 
 
-def _lignes_dict(d, num, invisibles):
+def _lignes_dict(d, num, invisibles, coupures=(), ecarts=True):
+    def volet(s):
+        c = (s["bbox"][0] + s["bbox"][2]) / 2
+        return sum(c >= x for x in coupures)
+
     lignes = []
     for b in d["blocks"]:
         if b.get("type") != 0:
@@ -194,7 +204,8 @@ def _lignes_dict(d, num, invisibles):
             for s in ln["spans"]:
                 if (s.get("alpha", 255) == 0 and not invisibles) or not s["text"]:
                     continue
-                if prec is not None and s["bbox"][0] - prec["bbox"][2] > max(18, 2.6 * s["size"]) and s["text"].strip():
+                if prec is not None and s["text"].strip() and (
+                        (ecarts and s["bbox"][0] - prec["bbox"][2] > max(18, 2.6 * s["size"])) or volet(s) != volet(prec)):
                     morceaux.append(courant)
                     courant = []
                 courant.append(s)
@@ -211,6 +222,118 @@ def _lignes_dict(d, num, invisibles):
                 spans = [(propre(s["text"]), est_gras(s), est_italique(s), round(s["size"], 1), s["color"]) for s in m]
                 lignes.append(Ligne(num, (x0, y0, x1, y1), spans))
     return lignes
+
+
+def corps_page(lignes):
+    c = collections.Counter()
+    for l in lignes:
+        for sp in l.spans:
+            if sp[0].strip():
+                c[round(sp[3])] += len(sp[0].strip())
+    return c.most_common(1)[0][0] if c else 11
+
+
+def schemas(page, lignes, coupures, cadres, corps):
+    """Schémas tracés (lignes chronologiques, calculs soulignés) : zone rendue en image, avec ses étiquettes.
+
+    Rend [(zone, lignes de texte absorbées)]. Traits isolés (filet, soulignement) : pas des schémas."""
+    def volet(r):
+        return sum((r.x0 + r.x1) / 2 >= x for x in coupures)
+    traces = []
+    for d in page.get_drawings():
+        if d.get("type") not in ("s", "fs"):
+            continue
+        r = fitz.Rect(d["rect"])
+        if r.width > 0.5 * page.rect.width and r.height > 0.5 * page.rect.height:
+            continue
+        if any(fitz.Rect(c.x0 - 6, c.y0 - 6, c.x1 + 6, c.y1 + 6).contains(r) for c in cadres):
+            continue
+        traces.append((r, len(d["items"])))
+    groupes = []
+    for r, n in sorted(traces, key=lambda t: (volet(t[0]), t[0].y0)):
+        for g in groupes:
+            if g[0] == volet(r) and r.y0 <= g[1].y1 + 30 and r.y1 >= g[1].y0 - 30:
+                g[1] |= r
+                g[2] += n
+                break
+        else:
+            groupes.append([volet(r), fitz.Rect(r), n])
+    res = []
+    for _, R, n in groupes:
+        if n < 3 or R.width < 150:
+            continue
+        pris, change = set(), True
+        while change:
+            change = False
+            for l in lignes:
+                if (id(l) in pris or l.genre != "texte" or l.x1 < R.x0 - 12 or l.x0 > R.x1 + 12
+                        or RE_PAGE.match(l.texte)):
+                    continue
+                court = len(l.texte) <= 25 or l.taille <= corps * 0.92 or (l.gras > 0.6 and len(l.texte) <= 40)
+                if court and l.y1 >= R.y0 - 20 and l.y0 <= R.y1 + 20:
+                    R |= fitz.Rect(l.x0, l.y0, l.x1, l.y1)
+                    pris.add(id(l))
+                    change = True
+        if sum(len(l.texte) > 45 for l in lignes if id(l) in pris) > 4:
+            continue            # schéma surtout fait de phrases (listes encadrées) : mieux lu en texte sur un téléphone
+        Z = fitz.Rect(R.x0 - 6, R.y0 - 6, R.x1 + 6, R.y1 + 6)
+        for l in lignes:           # le texte voisin, gardé dans le fil, ne doit pas déborder dans l'image
+            if id(l) in pris or l.genre != "texte" or l.x1 < Z.x0 or l.x0 > Z.x1:
+                continue
+            if R.y1 <= l.y0 < Z.y1:
+                Z.y1 = l.y0 - 0.5
+            elif Z.y0 < l.y1 <= R.y0:
+                Z.y0 = l.y1 + 0.5
+        res.append((Z, pris))
+    return res
+
+
+def meme_ligne(lignes, coupures):
+    """Mots d'une ligne justifiée lus comme des lignes séparées (grands espaces) : remis en une ligne."""
+    def volet(l):
+        return sum((l.x0 + l.x1) / 2 >= x for x in coupures)
+    res = []
+    for l in sorted(lignes, key=lambda l: (volet(l), round(l.y1), l.x0)):
+        p = res[-1] if res else None
+        if (p is not None and volet(p) == volet(l) and abs(p.y1 - l.y1) < 1.5 and abs(p.y0 - l.y0) < 2.5
+                and l.x0 >= p.x1 - 1 and abs(p.taille - l.taille) < 1):
+            res[-1] = Ligne(p.page, (p.x0, min(p.y0, l.y0), l.x1, max(p.y1, l.y1)),
+                            list(p.spans) + [(" ",) + tuple(l.spans[0][1:])] + list(l.spans))
+            continue
+        res.append(l)
+    return res
+
+
+RE_ELISION_ESPACE = re.compile(r"\b([lLdDjJmMnNsStTcC]|[qQ]u|[jJ]usqu|[lL]orsqu|[pP]uisqu)’ (?=[A-Za-zÀ-ÿ])")
+
+
+def numero_colle(l):
+    """« 1.Pourquoi … » : espace rétabli après le numéro ; « ➢ 1) Comment … » : la puce devant le numéro est retirée.
+    « l’ urgence » : l'espace après l'apostrophe est retiré."""
+    l.spans = [(RE_ELISION_ESPACE.sub(r"\1’", s[0]),) + tuple(s[1:]) for s in l.spans]
+    if l.spans and re.match(r"^[➢►▶➤→•]\s*\d{1,2}\)\s", l.texte):
+        retire = False
+        for k, s in enumerate(l.spans):
+            t = s[0]
+            if not retire:
+                if not t.strip():
+                    l.spans[k] = ("",) + tuple(s[1:])
+                    continue
+                t = re.sub(r"^\s*[➢►▶➤→•]", "", t, count=1)
+                retire = True
+            if retire:
+                t2 = t.lstrip()
+                l.spans[k] = (t2,) + tuple(s[1:])
+                if t2:
+                    break
+    if not l.spans or not re.match(r"^\d{1,2}\.(?=[A-ZÀ-Ý«])", l.texte):
+        return l
+    s = l.spans[0]
+    if re.match(r"^\s*\d{1,2}\.\s*$", s[0]):
+        l.spans[0] = (s[0].rstrip() + " ",) + tuple(s[1:])
+    else:
+        l.spans[0] = (re.sub(r"^(\s*\d{1,2}\.)", r"\1 ", s[0], count=1),) + tuple(s[1:])
+    return l
 
 
 def traits(page, num, lignes):
@@ -504,7 +627,14 @@ def bas_de_page(pages_lignes, hauteurs, corps, credits):
     if bas and any(RE_CREDIT.search(l.texte) for l in bas):
         zone_y = min(l.y0 for l in bas if RE_CREDIT.search(l.texte)) - 4
         a_retirer = [l for l in bas if l.y0 >= zone_y and (RE_CREDIT.search(l.texte) or l.taille < corps * 0.95)]
-        for l in sorted(a_retirer, key=lambda l: (l.y0, l.x0)):
+        ordre = sorted(a_retirer, key=lambda l: (l.y0, l.x0))
+        for x in sorted({l.x1 for l in a_retirer}):
+            gauche = [l for l in a_retirer if l.x1 <= x + 1]
+            droite = [l for l in a_retirer if l.x0 >= x + 4]
+            if gauche and droite and len(gauche) + len(droite) == len(a_retirer):   # deux colonnes côte à côte
+                ordre = sorted(gauche, key=lambda l: l.y0) + sorted(droite, key=lambda l: l.y0)
+                break
+        for l in ordre:
             if l.texte not in credits:
                 credits.append(l.texte)
         pages_lignes[-1] = [l for l in der if l not in a_retirer]
@@ -817,7 +947,7 @@ def titre_connu(texte, titres_connus):
     return False
 
 
-def classer(blocs, corps, titres_connus, role):
+def classer(blocs, corps, titres_connus, role, numerotees=False):
     """Titres, questions (numérotées ou finissant par ?), suites de paragraphes coupés par les colonnes."""
     # 1. titres
     for b in blocs:
@@ -890,11 +1020,12 @@ def classer(blocs, corps, titres_connus, role):
             m = RE_QUESTION_MOT.match(t) or RE_NUM.match(t)
             b.marque = m.group(1)
             corps_q = t[m.end():] if m else t
-            if traits_apres or interrogatif or (RE_CONSIGNE.match(corps_q) and len(t) < 400) or RE_QUESTION_MOT.match(t):
+            if (traits_apres or interrogatif or (RE_CONSIGNE.match(corps_q) and len(t) < 400) or RE_QUESTION_MOT.match(t)
+                    or (numerotees and "?" in corps_q[:250])):
                 b.genre = "q"
             elif not participant and "?" in corps_q[:300]:
                 b.genre = "q"        # guide de l'animateur : la réponse suit la question dans le même paragraphe
-        elif traits_apres or (interrogatif and len(t) < 400 and not a_traits):
+        elif traits_apres or (interrogatif and len(t) < 400 and not a_traits and not numerotees):
             b.genre = "q"
         if b.genre == "q":
             b.nb_traits = suivant.nb_traits if traits_apres else 0
@@ -923,6 +1054,11 @@ def classer(blocs, corps, titres_connus, role):
         res.append(b)
         k += 1
     blocs = res
+    # 4 quater. glossaire « Agneau = Jésus/sacrifice » (séries NUMEROTEES) : lignes en gras, pas des intertitres
+    if numerotees:
+        for b in blocs:
+            if b.genre == "titre" and b.lignes and " = " in b.texte:
+                b.genre = "p"
     # 4 bis. titre courant répété en haut de la page suivante : un seul suffit
     res, dernier = [], None
     for b in blocs:
@@ -936,7 +1072,8 @@ def classer(blocs, corps, titres_connus, role):
     # 5. lignes de références seules (« Texte biblique – Marc 1:40 ») : rattachées à la question au-dessus
     res = []
     for b in blocs:
-        if b.genre == "p" and b.lignes and res and res[-1].genre in ("q", "p", "num") and res[-1].lignes:
+        if ((b.genre == "p" or (numerotees and b.genre == "titre" and res and res[-1].genre == "q"))
+                and b.lignes and res and res[-1].genre in ("q", "p", "num") and res[-1].lignes):
             t = b.texte
             m = re.search(r"\s*R[ée]ponses?\s*:?\s*$", t)
             coeur = t[:m.start()] if m else t
@@ -1037,6 +1174,10 @@ def est_interrogatif(t):
 RE_BLANC = re.compile(r"_{4,}|\.{8,}|…{3,}")
 
 
+RE_BLANC_COURT = re.compile(r"_{2,}|\.{8,}|…{3,}")   # « ___ ________ » : un trait par mot (séries NUMEROTEES)
+motif_blanc = [RE_BLANC]
+
+
 def blancs(h, participant, compteur):
     if not participant:
         return h
@@ -1047,7 +1188,7 @@ def blancs(h, participant, compteur):
         return (f'<input class="lec-blanc" type="text" data-b="{n}" size="{largeur}" '
                 f'aria-label="Mot à compléter" autocomplete="off" spellcheck="false">')
     parts = re.split(r"(<[^>]+>)", h)
-    return "".join(x if x.startswith("<") else RE_BLANC.sub(champ, x) for x in parts)
+    return "".join(x if x.startswith("<") else motif_blanc[0].sub(champ, x) for x in parts)
 
 
 RE_ROMAIN_EN_LIGNE = re.compile(r"\s(?:i{1,3}|iv|vi{0,3}|ix|x)\.\s+[«\"“A-ZÀ-Ý]")
@@ -1237,7 +1378,11 @@ def rendu_html(blocs, f, dossier_img, doc, role, credits):
             badge = f'<span class="lec-q-num" aria-hidden="true">{html.escape(num)}</span>' if num else '<span class="lec-q-num lec-q-puce" aria-hidden="true"></span>'
             lignes = b.nb_traits
             zone = ""
-            if participant or lignes:
+            # texte à trous : la question se remplit dans ses blancs ou dans ceux du verset qui la suit
+            a_trous = f.split("/")[0] in NUMEROTEES and not lignes and (
+                RE_BLANC.search(b.texte) or (i + 1 < len(blocs) and blocs[i + 1].genre == "p" and blocs[i + 1].lignes
+                                             and RE_BLANC.search(blocs[i + 1].texte)))
+            if (participant or lignes) and not a_trous:
                 rangs = min(12, max(2, lignes or 3))
                 etiq = (f'<label class="lec-rep-titre" for="q{nq}">{html.escape(b.label_apres)}</label>' if b.label_apres
                         else f'<label class="lec-cache" for="q{nq}">Votre réponse</label>')
@@ -1260,7 +1405,7 @@ def rendu_html(blocs, f, dossier_img, doc, role, credits):
         elif g == "image":
             x, r = b.img
             n_img += 1
-            nom = enregistrer_image(doc, x, dossier_img, n_img)
+            nom = enregistrer_image(doc, x, dossier_img, n_img) if x else enregistrer_zone(doc, *r, dossier_img, n_img)
             if nom:
                 w, hh = nom[1]
                 out.append(f'<figure class="lec-img"><img src="lecture/{f}/{nom[0]}" alt="" width="{w}" height="{hh}" loading="lazy" decoding="async"></figure>')
@@ -1333,10 +1478,22 @@ def enregistrer_image(doc, xref, dossier, n):
     return nom, (im.width, im.height)
 
 
+def enregistrer_zone(doc, page, zone, dossier, n):
+    """Schéma tracé : la zone de la page, rendue en image (texte des étiquettes compris)."""
+    pix = doc[page].get_pixmap(dpi=200, clip=zone)
+    im = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+    im.thumbnail((1100, 1100))
+    dossier.mkdir(parents=True, exist_ok=True)
+    nom = f"img-{n}.webp"
+    im.save(dossier / nom, "WEBP", quality=80, method=6)
+    return nom, (im.width, im.height)
+
+
 # ---------------------------------------------------------------- un document
 
 def convertir(f, titres_connus, role, ecrire=True, plan=False):
     chemin = DOCS / f"{f}.pdf"
+    motif_blanc[0] = RE_BLANC_COURT if f.split("/")[0] in NUMEROTEES else RE_BLANC
     doc = fitz.open(chemin)
     nb = doc.page_count
     # pas de texte dans le PDF (pages numérisées) : reconnaissance des caractères, si les pages sont peu nombreuses
@@ -1349,7 +1506,15 @@ def convertir(f, titres_connus, role, ecrire=True, plan=False):
     dossier_img = SORTIE / f
     pages_lignes, hauteurs, tailles = [], [], collections.Counter()
     for num, page in enumerate(doc):
-        lt = lignes_texte(page, num, ocr)
+        W = page.rect.width
+        nv = VOLETS.get(f.split("/")[0], 1) if W > page.rect.height else 1
+        coupures = [W * k / nv for k in range(1, nv)]
+        numerotees = f.split("/")[0] in NUMEROTEES
+        lt = lignes_texte(page, num, ocr, coupures, ecarts=not numerotees)
+        if nv > 1:
+            lt = [l for l in lt if not RE_CODE_VOLET.match(l.texte)]
+        if numerotees:
+            lt = [numero_colle(l) for l in meme_ligne(lt, coupures)]
         tb = tables(page, num, lt)
         if tb:
             dedans = lambda l: any(t.x0 - 2 <= (l.x0 + l.x1) / 2 <= t.x1 + 2 and t.y0 - 2 <= l.cy <= t.y1 + 2 for t in tb)
@@ -1358,11 +1523,38 @@ def convertir(f, titres_connus, role, ecrire=True, plan=False):
         if tb:
             tr = [t for t in tr if not any(x.x0 - 2 <= t.x0 and t.x1 <= x.x1 + 2 and x.y0 - 2 <= t.y0 <= x.y1 + 2 for x in tb)]
         im = [] if ocr else images(doc, page, num, compteur, dossier_img, f, nb)
+        if nv > 1:      # fonds d'encadrés (texture grise sous le texte) : pas des illustrations
+            im = [i for i in im if sum(i.x0 <= (l.x0 + l.x1) / 2 <= i.x1 and i.y0 <= l.cy <= i.y1 for l in lt) < 2]
+            # cadre d'une illustration, filet au-dessus des mentions de droits : pas des lignes-réponses
+            tr = [t for t in tr
+                  if not any(i.x0 - 8 <= t.x0 and t.x1 <= i.x1 + 8 and i.y0 - 6 <= t.y0 <= i.y1 + 6 for i in im)
+                  and not any("©" in l.texte and 0 <= l.y0 - t.y1 < 40 and l.x0 < t.x1 and l.x1 > t.x0 for l in lt)]
+        if nv > 1:
+            for zone, pris in schemas(page, lt, coupures, im, corps_page(lt)):
+                for t in [t for t in tb if t.x1 > zone.x0 and t.x0 < zone.x1 and t.y1 >= zone.y0 - 20 and t.y0 <= zone.y1 + 20]:
+                    zone |= fitz.Rect(t.x0, t.y0, t.x1, t.y1)      # tableau qui fait partie du schéma (calcul)
+                    tb.remove(t)
+                lt = [l for l in lt if id(l) not in pris]
+                tr = [t for t in tr if not zone.intersects(fitz.Rect(t.x0, t.y0 - 1, t.x1, t.y1 + 1))]
+                im = [i for i in im if not zone.intersects(fitz.Rect(i.x0, i.y0, i.x1, i.y1))]
+                fig = Ligne(num, (zone.x0, zone.y0, zone.x1, zone.y1), genre="image")
+                fig.img = (None, (num, zone))
+                im.append(fig)
         tout = lt + tr + im + tb
-        if page.rect.width > page.rect.height:
-            tout = doublon_demi_page(tout, page.rect.width)
-        pages_lignes.append(tout)
-        hauteurs.append(page.rect.height)
+        if nv > 1:
+            for k in range(nv):
+                volet = [l for l in tout if sum((l.x0 + l.x1) / 2 >= x for x in coupures) == k]
+                for l in volet:
+                    l.page = len(pages_lignes)
+                pages_lignes.append(volet)
+                hauteurs.append(page.rect.height)
+        else:
+            if page.rect.width > page.rect.height:
+                tout = doublon_demi_page(tout, page.rect.width)
+            for l in tout:
+                l.page = len(pages_lignes)
+            pages_lignes.append(tout)
+            hauteurs.append(page.rect.height)
         for l in lt:
             for s in l.spans:
                 if s[0].strip():
@@ -1378,7 +1570,7 @@ def convertir(f, titres_connus, role, ecrire=True, plan=False):
     for ls in pages_lignes:
         ordre += ordonner(ls)
     blocs = construire_blocs(ordre, corps)
-    blocs = classer(blocs, corps, titres_connus, role)
+    blocs = classer(blocs, corps, titres_connus, role, numerotees=f.split("/")[0] in NUMEROTEES)
     blocs, credits = couverture(blocs, credits, nb, titres_connus)
     if plan:
         for b in blocs:
