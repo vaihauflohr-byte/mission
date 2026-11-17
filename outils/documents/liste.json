@@ -2660,20 +2660,6 @@
   "sujet": "FAST : Formation de base — Mission, études bibliques pour les petits groupes"
  },
  {
-  "id": "1FJi7K7WaTM-FWdpj4b_iG3iRs5zuAJ1b",
-  "source": "PDF",
-  "chemin": "fast-leaders/01-manuel-du-leader",
-  "titre": "Manuel du leader",
-  "sujet": "FAST : pour les leaders — Mission, études bibliques pour les petits groupes"
- },
- {
-  "id": "1KPMhhtPaOAgOfvAg8ooMZtxkUkE4HwJb",
-  "source": "PDF",
-  "chemin": "fast-leaders/02-la-formule-explosive",
-  "titre": "La formule explosive",
-  "sujet": "FAST : pour les leaders — Mission, études bibliques pour les petits groupes"
- },
- {
   "id": "1okCOIcygRJ0oe7iN_LrwZynMe3ZcyB8r",
   "source": "PDF",
   "chemin": "fast-tactiques-d-equipe/01-un-urgent-besoin",
@@ -2812,5 +2798,19 @@
   "chemin": "fast-cles-de-reveil/09-dans-une-course-enflammee",
   "titre": "Dans une course enflammée",
   "sujet": "FAST : Clés de réveil — Mission, études bibliques pour les petits groupes"
+ },
+ {
+  "id": "1FJi7K7WaTM-FWdpj4b_iG3iRs5zuAJ1b",
+  "source": "PDF",
+  "chemin": "fast-leaders/01-manuel-du-leader",
+  "titre": "Manuel du leader",
+  "sujet": "FAST : pour les leaders — Mission, études bibliques pour les petits groupes"
+ },
+ {
+  "id": "1KPMhhtPaOAgOfvAg8ooMZtxkUkE4HwJb",
+  "source": "PDF",
+  "chemin": "fast-leaders/02-la-formule-explosive",
+  "titre": "La formule explosive",
+  "sujet": "FAST : pour les leaders — Mission, études bibliques pour les petits groupes"
  }
 ]

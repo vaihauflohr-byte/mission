@@ -21,7 +21,7 @@
   <link rel="resource" type="application/l10n" href="lecteur/locale/locale.json">
   <link rel="preload" href="assets/fonts/alegreya-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/style.css?v=7">
+  <link rel="stylesheet" href="assets/style.css?v=8">
 </head>
 <body>
   <a class="evitement" href="#contenu">Aller au contenu</a>
@@ -35,10 +35,11 @@
           <span class="marque-sous">Études bibliques pour les petits groupes</span>
         </span>
       </a>
-      <nav class="entete-nav" aria-label="Les trois étapes">
+      <nav class="entete-nav" aria-label="Les étapes">
         <a href="#/niveau/connaitre" data-niveau="connaitre"><span class="nav-num">1</span>Rencontrer</a>
         <a href="#/niveau/grandir" data-niveau="grandir"><span class="nav-num">2</span>Grandir</a>
         <a href="#/niveau/murir" data-niveau="murir"><span class="nav-num">3</span>Mûrir</a>
+        <a href="#/niveau/disciple" data-niveau="disciple"><span class="nav-num">3</span>Disciple</a>
       </nav>
       <a class="entete-chercher" href="#/chercher" aria-label="Chercher une étude">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
@@ -63,6 +64,7 @@
         <a href="#/niveau/connaitre">1. Rencontrer</a>
         <a href="#/niveau/grandir">2. Grandir</a>
         <a href="#/niveau/murir">3. Mûrir</a>
+        <a href="#/niveau/disciple">3. Devenir disciple</a>
         <a href="#/chercher">Chercher une étude</a>
         <a href="#/application">L’application</a>
       </nav>
@@ -70,7 +72,7 @@
     </div>
   </footer>
 
-  <!-- Pictogrammes : feuille (marque), pousse (connaître), rameau (grandir), grappe (mûrir) -->
+  <!-- Pictogrammes : feuille (marque), pousse (connaître), rameau (grandir), grappe (mûrir), épi (devenir disciple) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="feuille" viewBox="0 0 32 32">
       <path d="M16 29V15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
@@ -88,6 +90,18 @@
       <path d="M24 31c0-7.5-4.5-12.5-12-13.5-1 8 4 13.5 12 13.5Z" fill="currentColor" opacity=".8"/>
       <path d="M24 40c0-6 4-10 10-10.5.5 6.5-3.5 10.5-10 10.5Z" fill="currentColor" opacity=".65"/>
     </symbol>
+    <symbol id="epi" viewBox="0 0 48 48">
+      <path d="M24 45V9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <g fill="currentColor">
+        <ellipse cx="24" cy="8" rx="3.2" ry="5.5"/>
+        <ellipse cx="18.5" cy="15.5" rx="3" ry="5.5" transform="rotate(-35 18.5 15.5)"/>
+        <ellipse cx="29.5" cy="15.5" rx="3" ry="5.5" transform="rotate(35 29.5 15.5)"/>
+        <ellipse cx="18.5" cy="24.5" rx="3" ry="5.5" transform="rotate(-35 18.5 24.5)" opacity=".85"/>
+        <ellipse cx="29.5" cy="24.5" rx="3" ry="5.5" transform="rotate(35 29.5 24.5)" opacity=".85"/>
+        <ellipse cx="18.5" cy="33.5" rx="3" ry="5.5" transform="rotate(-35 18.5 33.5)" opacity=".7"/>
+        <ellipse cx="29.5" cy="33.5" rx="3" ry="5.5" transform="rotate(35 29.5 33.5)" opacity=".7"/>
+      </g>
+    </symbol>
     <symbol id="grappe" viewBox="0 0 48 48">
       <path d="M24 4v7M24 9c4-4 9-4 12-2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
       <path d="M28 8.5c3.5-3 8-3 10.5-1-1.5 4-6 5-10.5 1Z" fill="currentColor" opacity=".7"/>
@@ -100,8 +114,8 @@
     </symbol>
   </svg>
 
-  <script src="donnees/bibliotheque.js?v=13"></script>
+  <script src="donnees/bibliotheque.js?v=14"></script>
   <script src="donnees/lecture.js?v=3"></script>
-  <script src="assets/app.js?v=7"></script>
+  <script src="assets/app.js?v=8"></script>
 </body>
 </html>

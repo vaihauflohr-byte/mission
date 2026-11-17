@@ -6,7 +6,7 @@
   const B = window.BIBLIO;
   const app = document.getElementById("contenu");
   const corps = document.body;
-  const PICTOS = { connaitre: "pousse", grandir: "rameau", murir: "grappe" };
+  const PICTOS = { connaitre: "pousse", grandir: "rameau", murir: "grappe", disciple: "epi" };
   const niveaux = Object.fromEntries(B.niveaux.map((n) => [n.id, n]));
   const series = Object.fromEntries(B.series.map((s) => [s.id, s]));
   const VERSION_PDFJS = "6.5.438";
@@ -221,10 +221,11 @@
     const etapes = B.niveaux
       .map((n, rang) => {
         const ss = seriesDe(n.id);
-        return `<li class="cep-niveau">
+        return `<li class="cep-niveau${n.parallele ? " cep-parallele" : ""}">
           <a class="cep-lien" href="#/niveau/${n.id}">
             <span class="cep-picto">${picto(n.id)}</span>
             ${image(n.image, "cep-image", rang === 0)}
+            ${n.parallele ? `<span class="cep-parallele-note">${fr(n.parallele)}</span>` : ""}
             <span class="cep-etape"><span class="num-etape" aria-hidden="true">${n.num}</span><span class="cep-verbe">${fr(n.titre)}</span></span>
             <span class="cep-texte">${fr(n.texte)}</span>
             ${n.invite ? `<strong class="cep-invite">${fr(n.invite)}</strong>` : ""}
@@ -300,6 +301,7 @@
             <h1 class="titre-page titre-niveau" tabindex="-1"><span class="num-etape" aria-hidden="true">${n.num}</span><span><span class="cache">Étape ${n.num} : </span>${fr(n.titre)}</span></h1>
             <p class="chapeau">${fr(n.texte)}</p>
             ${n.invite ? `<p class="niveau-invite">${fr(n.invite)}</p>` : ""}
+            ${n.parallele ? `<p class="niveau-parallele">${fr(n.parallele)}, <a href="#/niveau/murir">Mûrir en Jésus-Christ</a></p>` : ""}
             <p class="compte">${pluriel(ss.length, "série", "séries")}, ${pluriel(nbEtudes(ss), "étude", "études")}</p>
           </div>
           ${image(n.image, "niveau-image", true)}

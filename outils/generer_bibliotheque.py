@@ -41,6 +41,14 @@ NIVEAUX = [
         "titre": "Mûrir en Jésus-Christ",
         "texte": "Pour la vie chrétienne de chaque jour : excellence, couple, enfants, pureté, doctrine.",
     },
+    {
+        "id": "disciple",
+        "num": 3,
+        "verbe": "Devenir disciple",
+        "titre": "Devenir un disciple du Christ",
+        "texte": "Le parcours FAST : apprendre l’Écriture par cœur, vivre en disciple, former d’autres disciples.",
+        "parallele": "En parallèle de l’étape 3",
+    },
 ]
 
 # Une entrée par série : dossier Drive, niveau, titre affiché, présentation.
@@ -76,15 +84,6 @@ SERIES = [
      "Présentations à projeter sur les prophéties de Daniel et de l’Apocalypse."),
     ("grandir", "sept-eglises", "1QiKRIZOr90H3Zd8oym8oXHVgWoXe3sNu", "Les sept Églises de l’Apocalypse",
      "Étude des lettres aux sept Églises, d’Apocalypse 2 et 3."),
-    # FAST (Mémorisation de l’Écriture) : les premiers cours et les ressources des leaders ; la suite à l’étape 3
-    ("grandir", "fast-kit-de-survie", "1lUAFNBGzIzjSr1up8w-JzLP-IHlr94H-", "FAST : Kit de survie",
-     "5 études pour bien commencer : la grâce, regarder à Jésus, vaincre la tentation, connaître la volonté de Dieu, "
-     "la communion fraternelle. Un verset à apprendre par cœur chaque semaine."),
-    ("grandir", "fast-formation-de-base", "1nbbygdD7LUiPVC3mW2mHbSNwlqwaUb6B", "FAST : Formation de base",
-     "9 études pour vivre en disciple : l’engagement, la veille du matin, les promesses de Dieu, l’épée de l’Esprit, "
-     "le témoignage, les équipes de croyants, la multiplication."),
-    ("grandir", "fast-leaders", "1al__n4k2awCXC1XS0JNBAcNwWs6pEoCT", "FAST : pour les leaders",
-     "Le manuel du leader pour diriger les cours FAST, et La formule explosive : former les membres pour le ministère."),
     # Mûrir
     ("murir", "excellence", "1TN40N-S-d4xYHz-dO7SXDmXI1Y3box0g", "L’excellence dans la vie",
      "7 études : le besoin, la clé, les objectifs, les étapes et le chemin de l’excellence, jusque dans les relations."),
@@ -98,12 +97,21 @@ SERIES = [
      "Rançon et réconciliation : 7 études, du sanctuaire à la maîtrise de soi."),
     ("murir", "trinite", "1XaIjFEQc_GomQJP1C5T72zEcpiEB4XU-", "La Trinité et la Divinité",
      "Études bibliques et articles sur la Divinité et le Saint-Esprit."),
-    # FAST, suite du parcours (dossiers Drive dans « 9 - FAST - Mémorisation de l’Écriture », étape 2)
-    ("murir", "fast-tactiques-d-equipe", "1DVFtBttV7gx4Y8O7BF5d-kx8r7bh4V8q", "FAST : Tactiques d’équipe",
+    # Devenir disciple (en parallèle de Mûrir) : le parcours FAST, dans son ordre, puis les ressources des leaders
+    # (dossiers Drive dans « 9 - FAST - Mémorisation de l’Écriture », étape 2)
+    ("disciple", "fast-kit-de-survie", "1lUAFNBGzIzjSr1up8w-JzLP-IHlr94H-", "FAST : Kit de survie",
+     "5 études pour bien commencer : la grâce, regarder à Jésus, vaincre la tentation, connaître la volonté de Dieu, "
+     "la communion fraternelle. Un verset à apprendre par cœur chaque semaine."),
+    ("disciple", "fast-formation-de-base", "1nbbygdD7LUiPVC3mW2mHbSNwlqwaUb6B", "FAST : Formation de base",
+     "9 études pour vivre en disciple : l’engagement, la veille du matin, les promesses de Dieu, l’épée de l’Esprit, "
+     "le témoignage, les équipes de croyants, la multiplication."),
+    ("disciple", "fast-tactiques-d-equipe", "1DVFtBttV7gx4Y8O7BF5d-kx8r7bh4V8q", "FAST : Tactiques d’équipe",
      "9 études pour lancer un groupe qui forme des disciples et gagne des âmes : la stratégie, la Parole de vie, "
      "le lancement, l’appel au leadership, la vision du monde."),
-    ("murir", "fast-cles-de-reveil", "1F5pumNjCkupKh-Pp7OSaYd6upSI3LrtG", "FAST : Clés de réveil",
+    ("disciple", "fast-cles-de-reveil", "1F5pumNjCkupKh-Pp7OSaYd6upSI3LrtG", "FAST : Clés de réveil",
      "9 études sur le réveil, de l’embrasement spirituel à une course enflammée."),
+    ("disciple", "fast-leaders", "1al__n4k2awCXC1XS0JNBAcNwWs6pEoCT", "FAST : pour les leaders",
+     "Le manuel du leader pour diriger les cours FAST, et La formule explosive : former les membres pour le ministère."),
 ]
 
 # Études numérotées par une lettre (« A - … ») : titre du groupe affiché après les études de la série.
@@ -483,7 +491,6 @@ def main(chemin, seulement=None):
         par_id = {s["id"]: s for s in actuel["series"]}
         par_id.update({s["id"]: s for s in series})
         series = [par_id[slug] for _, slug, *_ in SERIES if slug in par_id]
-        niveaux = actuel["niveaux"]
     donnees = {"niveaux": niveaux, "series": series}
     sortie.parent.mkdir(exist_ok=True)
     texte_js = ("/* Généré par outils/generer_bibliotheque.py à partir du Drive — ne pas modifier à la main. */\n"

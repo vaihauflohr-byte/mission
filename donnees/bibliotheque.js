@@ -26,6 +26,14 @@ window.BIBLIO = {
    "titre": "Mûrir en Jésus-Christ",
    "texte": "Pour la vie chrétienne de chaque jour : excellence, couple, enfants, pureté, doctrine.",
    "image": "niveau-murir"
+  },
+  {
+   "id": "disciple",
+   "num": 3,
+   "verbe": "Devenir disciple",
+   "titre": "Devenir un disciple du Christ",
+   "texte": "Le parcours FAST : apprendre l’Écriture par cœur, vivre en disciple, former d’autres disciples.",
+   "parallele": "En parallèle de l’étape 3"
   }
  ],
  "series": [
@@ -3626,290 +3634,6 @@ window.BIBLIO = {
    "image": "serie-sept-eglises"
   },
   {
-   "id": "fast-kit-de-survie",
-   "niveau": "grandir",
-   "titre": "FAST : Kit de survie",
-   "texte": "5 études pour bien commencer : la grâce, regarder à Jésus, vaincre la tentation, connaître la volonté de Dieu, la communion fraternelle. Un verset à apprendre par cœur chaque semaine.",
-   "lecons": [
-    {
-     "num": "1",
-     "titre": "Grâce sublime",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-kit-de-survie/01-grace-sublime",
-       "o": 280198,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "2",
-     "titre": "Regarder à Jésus",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-kit-de-survie/02-regarder-a-jesus",
-       "o": 278956,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "3",
-     "titre": "Tacler la tentation",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-kit-de-survie/03-tacler-la-tentation",
-       "o": 280889,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "4",
-     "titre": "Connaître la volonté de Dieu",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-kit-de-survie/04-connaitre-la-volonte-de-dieu",
-       "o": 282846,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "5",
-     "titre": "Communion fraternelle",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-kit-de-survie/05-communion-fraternelle",
-       "o": 280504,
-       "p": 8
-      }
-     ]
-    }
-   ],
-   "ressources": [
-    {
-     "format": "PDF",
-     "titre": "Couverture du livret",
-     "f": "fast-kit-de-survie/couverture-du-livret",
-     "o": 326616,
-     "p": 2
-    },
-    {
-     "format": "Word",
-     "titre": "Les 10 clés de mémorisation",
-     "f": "fast-kit-de-survie/les-10-cles-de-memorisation",
-     "o": 61610,
-     "p": 2
-    }
-   ],
-   "image": "serie-fast-kit-de-survie"
-  },
-  {
-   "id": "fast-formation-de-base",
-   "niveau": "grandir",
-   "titre": "FAST : Formation de base",
-   "texte": "9 études pour vivre en disciple : l’engagement, la veille du matin, les promesses de Dieu, l’épée de l’Esprit, le témoignage, les équipes de croyants, la multiplication.",
-   "lecons": [
-    {
-     "num": "1",
-     "titre": "L’appel à l’engagement",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-formation-de-base/01-l-appel-a-l-engagement",
-       "o": 268245,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "2",
-     "titre": "La veille du matin",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-formation-de-base/02-la-veille-du-matin",
-       "o": 275278,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "3",
-     "titre": "Les promesses de Dieu",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-formation-de-base/03-les-promesses-de-dieu",
-       "o": 273970,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "4",
-     "titre": "Le nerf de la guerre",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-formation-de-base/04-le-nerf-de-la-guerre",
-       "o": 271812,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "5",
-     "titre": "L’épée de l’Esprit",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-formation-de-base/05-l-epee-de-l-esprit",
-       "o": 273567,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "6",
-     "titre": "Le témoignage personnel",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-formation-de-base/06-le-temoignage-personnel",
-       "o": 271335,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "7",
-     "titre": "Des équipes de croyants",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-formation-de-base/07-des-equipes-de-croyants",
-       "o": 275525,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "8",
-     "titre": "Le mystère de la multiplication",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-formation-de-base/08-le-mystere-de-la-multiplication",
-       "o": 273390,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "9",
-     "titre": "Une vie qui compte",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-formation-de-base/09-une-vie-qui-compte",
-       "o": 286600,
-       "p": 8
-      }
-     ]
-    }
-   ],
-   "ressources": [
-    {
-     "format": "PDF",
-     "titre": "Couverture du livret",
-     "f": "fast-formation-de-base/couverture-du-livret",
-     "o": 330117,
-     "p": 2
-    },
-    {
-     "format": "PDF",
-     "titre": "Les illustrations du cours",
-     "f": "fast-formation-de-base/les-illustrations-du-cours",
-     "o": 733662,
-     "p": 8
-    }
-   ],
-   "image": "serie-fast-formation-de-base"
-  },
-  {
-   "id": "fast-leaders",
-   "niveau": "grandir",
-   "titre": "FAST : pour les leaders",
-   "texte": "Le manuel du leader pour diriger les cours FAST, et La formule explosive : former les membres pour le ministère.",
-   "lecons": [
-    {
-     "num": "1",
-     "titre": "Manuel du leader",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-leaders/01-manuel-du-leader",
-       "o": 449369,
-       "p": 18
-      }
-     ]
-    },
-    {
-     "num": "2",
-     "titre": "La formule explosive",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-leaders/02-la-formule-explosive",
-       "o": 419703,
-       "p": 13
-      }
-     ]
-    }
-   ],
-   "ressources": [],
-   "image": "serie-fast-leaders"
-  },
-  {
    "id": "excellence",
    "niveau": "murir",
    "titre": "L’excellence dans la vie",
@@ -5231,8 +4955,254 @@ window.BIBLIO = {
    "image": "serie-trinite"
   },
   {
+   "id": "fast-kit-de-survie",
+   "niveau": "disciple",
+   "titre": "FAST : Kit de survie",
+   "texte": "5 études pour bien commencer : la grâce, regarder à Jésus, vaincre la tentation, connaître la volonté de Dieu, la communion fraternelle. Un verset à apprendre par cœur chaque semaine.",
+   "lecons": [
+    {
+     "num": "1",
+     "titre": "Grâce sublime",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-kit-de-survie/01-grace-sublime",
+       "o": 280198,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "2",
+     "titre": "Regarder à Jésus",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-kit-de-survie/02-regarder-a-jesus",
+       "o": 278956,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "3",
+     "titre": "Tacler la tentation",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-kit-de-survie/03-tacler-la-tentation",
+       "o": 280889,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "4",
+     "titre": "Connaître la volonté de Dieu",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-kit-de-survie/04-connaitre-la-volonte-de-dieu",
+       "o": 282846,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "5",
+     "titre": "Communion fraternelle",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-kit-de-survie/05-communion-fraternelle",
+       "o": 280504,
+       "p": 8
+      }
+     ]
+    }
+   ],
+   "ressources": [
+    {
+     "format": "PDF",
+     "titre": "Couverture du livret",
+     "f": "fast-kit-de-survie/couverture-du-livret",
+     "o": 326616,
+     "p": 2
+    },
+    {
+     "format": "Word",
+     "titre": "Les 10 clés de mémorisation",
+     "f": "fast-kit-de-survie/les-10-cles-de-memorisation",
+     "o": 61610,
+     "p": 2
+    }
+   ],
+   "image": "serie-fast-kit-de-survie"
+  },
+  {
+   "id": "fast-formation-de-base",
+   "niveau": "disciple",
+   "titre": "FAST : Formation de base",
+   "texte": "9 études pour vivre en disciple : l’engagement, la veille du matin, les promesses de Dieu, l’épée de l’Esprit, le témoignage, les équipes de croyants, la multiplication.",
+   "lecons": [
+    {
+     "num": "1",
+     "titre": "L’appel à l’engagement",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/01-l-appel-a-l-engagement",
+       "o": 268245,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "2",
+     "titre": "La veille du matin",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/02-la-veille-du-matin",
+       "o": 275278,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "3",
+     "titre": "Les promesses de Dieu",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/03-les-promesses-de-dieu",
+       "o": 273970,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "4",
+     "titre": "Le nerf de la guerre",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/04-le-nerf-de-la-guerre",
+       "o": 271812,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "5",
+     "titre": "L’épée de l’Esprit",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/05-l-epee-de-l-esprit",
+       "o": 273567,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "6",
+     "titre": "Le témoignage personnel",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/06-le-temoignage-personnel",
+       "o": 271335,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "7",
+     "titre": "Des équipes de croyants",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/07-des-equipes-de-croyants",
+       "o": 275525,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "8",
+     "titre": "Le mystère de la multiplication",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/08-le-mystere-de-la-multiplication",
+       "o": 273390,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "9",
+     "titre": "Une vie qui compte",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/09-une-vie-qui-compte",
+       "o": 286600,
+       "p": 8
+      }
+     ]
+    }
+   ],
+   "ressources": [
+    {
+     "format": "PDF",
+     "titre": "Couverture du livret",
+     "f": "fast-formation-de-base/couverture-du-livret",
+     "o": 330117,
+     "p": 2
+    },
+    {
+     "format": "PDF",
+     "titre": "Les illustrations du cours",
+     "f": "fast-formation-de-base/les-illustrations-du-cours",
+     "o": 733662,
+     "p": 8
+    }
+   ],
+   "image": "serie-fast-formation-de-base"
+  },
+  {
    "id": "fast-tactiques-d-equipe",
-   "niveau": "murir",
+   "niveau": "disciple",
    "titre": "FAST : Tactiques d’équipe",
    "texte": "9 études pour lancer un groupe qui forme des disciples et gagne des âmes : la stratégie, la Parole de vie, le lancement, l’appel au leadership, la vision du monde.",
    "lecons": [
@@ -5383,7 +5353,7 @@ window.BIBLIO = {
   },
   {
    "id": "fast-cles-de-reveil",
-   "niveau": "murir",
+   "niveau": "disciple",
    "titre": "FAST : Clés de réveil",
    "texte": "9 études sur le réveil, de l’embrasement spirituel à une course enflammée.",
    "lecons": [
@@ -5516,6 +5486,44 @@ window.BIBLIO = {
    ],
    "ressources": [],
    "image": "serie-fast-cles-de-reveil"
+  },
+  {
+   "id": "fast-leaders",
+   "niveau": "disciple",
+   "titre": "FAST : pour les leaders",
+   "texte": "Le manuel du leader pour diriger les cours FAST, et La formule explosive : former les membres pour le ministère.",
+   "lecons": [
+    {
+     "num": "1",
+     "titre": "Manuel du leader",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-leaders/01-manuel-du-leader",
+       "o": 449369,
+       "p": 18
+      }
+     ]
+    },
+    {
+     "num": "2",
+     "titre": "La formule explosive",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-leaders/02-la-formule-explosive",
+       "o": 419703,
+       "p": 13
+      }
+     ]
+    }
+   ],
+   "ressources": [],
+   "image": "serie-fast-leaders"
   }
  ]
 };
