@@ -3872,293 +3872,6 @@ window.BIBLIO = {
    "image": "serie-fast-formation-de-base"
   },
   {
-   "id": "fast-tactiques-d-equipe",
-   "niveau": "grandir",
-   "titre": "FAST : Tactiques d’équipe",
-   "texte": "9 études pour lancer un groupe qui forme des disciples et gagne des âmes : la stratégie, la Parole de vie, le lancement, l’appel au leadership, la vision du monde.",
-   "lecons": [
-    {
-     "num": "1",
-     "titre": "Un urgent besoin",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-tactiques-d-equipe/01-un-urgent-besoin",
-       "o": 277926,
-       "p": 9
-      }
-     ]
-    },
-    {
-     "num": "2",
-     "titre": "Une stratégie gagnante",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-tactiques-d-equipe/02-une-strategie-gagnante",
-       "o": 277231,
-       "p": 9
-      }
-     ]
-    },
-    {
-     "num": "3",
-     "titre": "Des matériaux de construction",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-tactiques-d-equipe/03-des-materiaux-de-construction",
-       "o": 275745,
-       "p": 9
-      }
-     ]
-    },
-    {
-     "num": "4",
-     "titre": "Le moteur de l’évangélisation",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-tactiques-d-equipe/04-le-moteur-de-l-evangelisation",
-       "o": 274856,
-       "p": 9
-      }
-     ]
-    },
-    {
-     "num": "5",
-     "titre": "La Parole de vie",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-tactiques-d-equipe/05-la-parole-de-vie",
-       "o": 276975,
-       "p": 9
-      }
-     ]
-    },
-    {
-     "num": "6",
-     "titre": "Œuvrer pour les âmes perdues",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-tactiques-d-equipe/06-oeuvrer-pour-les-ames-perdues",
-       "o": 278698,
-       "p": 9
-      }
-     ]
-    },
-    {
-     "num": "7",
-     "titre": "Le lancement",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-tactiques-d-equipe/07-le-lancement",
-       "o": 276713,
-       "p": 9
-      }
-     ]
-    },
-    {
-     "num": "8",
-     "titre": "L’appel au leadership",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-tactiques-d-equipe/08-l-appel-au-leadership",
-       "o": 273745,
-       "p": 9
-      }
-     ]
-    },
-    {
-     "num": "9",
-     "titre": "Vision du monde",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-tactiques-d-equipe/09-vision-du-monde",
-       "o": 290799,
-       "p": 9
-      }
-     ]
-    }
-   ],
-   "ressources": [
-    {
-     "format": "PDF",
-     "titre": "Couverture du livret",
-     "f": "fast-tactiques-d-equipe/couverture-du-livret",
-     "o": 327771,
-     "p": 2
-    },
-    {
-     "format": "PDF",
-     "titre": "Les illustrations du cours",
-     "f": "fast-tactiques-d-equipe/les-illustrations-du-cours",
-     "o": 499368,
-     "p": 8
-    }
-   ],
-   "image": "serie-fast-tactiques-d-equipe"
-  },
-  {
-   "id": "fast-cles-de-reveil",
-   "niveau": "grandir",
-   "titre": "FAST : Clés de réveil",
-   "texte": "9 études sur le réveil, de l’embrasement spirituel à une course enflammée.",
-   "lecons": [
-    {
-     "num": "1",
-     "titre": "Embrasement spirituel",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-cles-de-reveil/01-embrasement-spirituel",
-       "o": 126121,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "2",
-     "titre": "Un brasier intérieur",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-cles-de-reveil/02-un-brasier-interieur",
-       "o": 140346,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "3",
-     "titre": "La chandelle du Seigneur",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-cles-de-reveil/03-la-chandelle-du-seigneur",
-       "o": 128903,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "4",
-     "titre": "Attiser les flammes",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-cles-de-reveil/04-attiser-les-flammes",
-       "o": 128858,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "5",
-     "titre": "Explosion",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-cles-de-reveil/05-explosion",
-       "o": 129611,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "6",
-     "titre": "Répandre les étincelles",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-cles-de-reveil/06-repandre-les-etincelles",
-       "o": 129434,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "7",
-     "titre": "Machines à embraser l’âme",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-cles-de-reveil/07-machines-a-embraser-l-ame",
-       "o": 127616,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "8",
-     "titre": "Dynamite vivante",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-cles-de-reveil/08-dynamite-vivante",
-       "o": 135524,
-       "p": 8
-      }
-     ]
-    },
-    {
-     "num": "9",
-     "titre": "Dans une course enflammée",
-     "docs": [
-      {
-       "format": "PDF",
-       "libelle": "Étude",
-       "role": "tous",
-       "f": "fast-cles-de-reveil/09-dans-une-course-enflammee",
-       "o": 139569,
-       "p": 8
-      }
-     ]
-    }
-   ],
-   "ressources": [],
-   "image": "serie-fast-cles-de-reveil"
-  },
-  {
    "id": "fast-leaders",
    "niveau": "grandir",
    "titre": "FAST : pour les leaders",
@@ -5516,6 +5229,293 @@ window.BIBLIO = {
    ],
    "ressources": [],
    "image": "serie-trinite"
+  },
+  {
+   "id": "fast-tactiques-d-equipe",
+   "niveau": "murir",
+   "titre": "FAST : Tactiques d’équipe",
+   "texte": "9 études pour lancer un groupe qui forme des disciples et gagne des âmes : la stratégie, la Parole de vie, le lancement, l’appel au leadership, la vision du monde.",
+   "lecons": [
+    {
+     "num": "1",
+     "titre": "Un urgent besoin",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/01-un-urgent-besoin",
+       "o": 277926,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "2",
+     "titre": "Une stratégie gagnante",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/02-une-strategie-gagnante",
+       "o": 277231,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "3",
+     "titre": "Des matériaux de construction",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/03-des-materiaux-de-construction",
+       "o": 275745,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "4",
+     "titre": "Le moteur de l’évangélisation",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/04-le-moteur-de-l-evangelisation",
+       "o": 274856,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "5",
+     "titre": "La Parole de vie",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/05-la-parole-de-vie",
+       "o": 276975,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "6",
+     "titre": "Œuvrer pour les âmes perdues",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/06-oeuvrer-pour-les-ames-perdues",
+       "o": 278698,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "7",
+     "titre": "Le lancement",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/07-le-lancement",
+       "o": 276713,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "8",
+     "titre": "L’appel au leadership",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/08-l-appel-au-leadership",
+       "o": 273745,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "9",
+     "titre": "Vision du monde",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/09-vision-du-monde",
+       "o": 290799,
+       "p": 9
+      }
+     ]
+    }
+   ],
+   "ressources": [
+    {
+     "format": "PDF",
+     "titre": "Couverture du livret",
+     "f": "fast-tactiques-d-equipe/couverture-du-livret",
+     "o": 327771,
+     "p": 2
+    },
+    {
+     "format": "PDF",
+     "titre": "Les illustrations du cours",
+     "f": "fast-tactiques-d-equipe/les-illustrations-du-cours",
+     "o": 499368,
+     "p": 8
+    }
+   ],
+   "image": "serie-fast-tactiques-d-equipe"
+  },
+  {
+   "id": "fast-cles-de-reveil",
+   "niveau": "murir",
+   "titre": "FAST : Clés de réveil",
+   "texte": "9 études sur le réveil, de l’embrasement spirituel à une course enflammée.",
+   "lecons": [
+    {
+     "num": "1",
+     "titre": "Embrasement spirituel",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/01-embrasement-spirituel",
+       "o": 126121,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "2",
+     "titre": "Un brasier intérieur",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/02-un-brasier-interieur",
+       "o": 140346,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "3",
+     "titre": "La chandelle du Seigneur",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/03-la-chandelle-du-seigneur",
+       "o": 128903,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "4",
+     "titre": "Attiser les flammes",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/04-attiser-les-flammes",
+       "o": 128858,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "5",
+     "titre": "Explosion",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/05-explosion",
+       "o": 129611,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "6",
+     "titre": "Répandre les étincelles",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/06-repandre-les-etincelles",
+       "o": 129434,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "7",
+     "titre": "Machines à embraser l’âme",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/07-machines-a-embraser-l-ame",
+       "o": 127616,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "8",
+     "titre": "Dynamite vivante",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/08-dynamite-vivante",
+       "o": 135524,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "9",
+     "titre": "Dans une course enflammée",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/09-dans-une-course-enflammee",
+       "o": 139569,
+       "p": 8
+      }
+     ]
+    }
+   ],
+   "ressources": [],
+   "image": "serie-fast-cles-de-reveil"
   }
  ]
 };
