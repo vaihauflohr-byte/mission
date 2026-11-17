@@ -15,7 +15,7 @@ window.BIBLIO = {
    "num": 2,
    "verbe": "Grandir",
    "titre": "Grandir en Jésus-Christ",
-   "texte": "Pour approfondir la foi : la vie avec Jésus, le sanctuaire, les prophéties.",
+   "texte": "Pour approfondir la foi : la vie avec Jésus, le sanctuaire, les prophéties, et devenir un disciple du Christ.",
    "invite": "Convient aussi à des invités.",
    "image": "niveau-grandir"
   },
@@ -26,14 +26,6 @@ window.BIBLIO = {
    "titre": "Mûrir en Jésus-Christ",
    "texte": "Pour la vie chrétienne de chaque jour : excellence, couple, enfants, pureté, doctrine.",
    "image": "niveau-murir"
-  },
-  {
-   "id": "disciple",
-   "num": 3,
-   "verbe": "Devenir disciple",
-   "titre": "Devenir un disciple du Christ",
-   "texte": "Le parcours FAST : apprendre l’Écriture par cœur, vivre en disciple, former d’autres disciples.",
-   "parallele": "En parallèle de l’étape 3"
   }
  ],
  "series": [
@@ -4956,9 +4948,10 @@ window.BIBLIO = {
   },
   {
    "id": "fast-kit-de-survie",
-   "niveau": "disciple",
+   "niveau": "grandir",
    "titre": "FAST : Kit de survie",
    "texte": "5 études pour bien commencer : la grâce, regarder à Jésus, vaincre la tentation, connaître la volonté de Dieu, la communion fraternelle. Un verset à apprendre par cœur chaque semaine.",
+   "groupe": "Devenir un disciple du Christ",
    "lecons": [
     {
      "num": "1",
@@ -5051,9 +5044,10 @@ window.BIBLIO = {
   },
   {
    "id": "fast-formation-de-base",
-   "niveau": "disciple",
+   "niveau": "grandir",
    "titre": "FAST : Formation de base",
    "texte": "9 études pour vivre en disciple : l’engagement, la veille du matin, les promesses de Dieu, l’épée de l’Esprit, le témoignage, les équipes de croyants, la multiplication.",
+   "groupe": "Devenir un disciple du Christ",
    "lecons": [
     {
      "num": "1",
@@ -5202,9 +5196,10 @@ window.BIBLIO = {
   },
   {
    "id": "fast-tactiques-d-equipe",
-   "niveau": "disciple",
+   "niveau": "grandir",
    "titre": "FAST : Tactiques d’équipe",
    "texte": "9 études pour lancer un groupe qui forme des disciples et gagne des âmes : la stratégie, la Parole de vie, le lancement, l’appel au leadership, la vision du monde.",
+   "groupe": "Devenir un disciple du Christ",
    "lecons": [
     {
      "num": "1",
@@ -5353,9 +5348,10 @@ window.BIBLIO = {
   },
   {
    "id": "fast-cles-de-reveil",
-   "niveau": "disciple",
+   "niveau": "grandir",
    "titre": "FAST : Clés de réveil",
    "texte": "9 études sur le réveil, de l’embrasement spirituel à une course enflammée.",
+   "groupe": "Devenir un disciple du Christ",
    "lecons": [
     {
      "num": "1",
@@ -5489,9 +5485,10 @@ window.BIBLIO = {
   },
   {
    "id": "fast-leaders",
-   "niveau": "disciple",
+   "niveau": "grandir",
    "titre": "FAST : pour les leaders",
    "texte": "Le manuel du leader pour diriger les cours FAST, et La formule explosive : former les membres pour le ministère.",
+   "groupe": "Devenir un disciple du Christ",
    "lecons": [
     {
      "num": "1",
@@ -5525,5 +5522,8 @@ window.BIBLIO = {
    "ressources": [],
    "image": "serie-fast-leaders"
   }
- ]
+ ],
+ "groupes": {
+  "Devenir un disciple du Christ": "Le parcours FAST : apprendre l’Écriture par cœur, vivre en disciple, former d’autres disciples."
+ }
 };
