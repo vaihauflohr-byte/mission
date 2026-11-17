@@ -76,6 +76,20 @@ SERIES = [
      "Présentations à projeter sur les prophéties de Daniel et de l’Apocalypse."),
     ("grandir", "sept-eglises", "1QiKRIZOr90H3Zd8oym8oXHVgWoXe3sNu", "Les sept Églises de l’Apocalypse",
      "Étude des lettres aux sept Églises, d’Apocalypse 2 et 3."),
+    # FAST (Mémorisation de l’Écriture) : les cours dans l’ordre du parcours FAST, puis les ressources des leaders
+    ("grandir", "fast-kit-de-survie", "1lUAFNBGzIzjSr1up8w-JzLP-IHlr94H-", "FAST : Kit de survie",
+     "5 études pour bien commencer : la grâce, regarder à Jésus, vaincre la tentation, connaître la volonté de Dieu, "
+     "la communion fraternelle. Un verset à apprendre par cœur chaque semaine."),
+    ("grandir", "fast-formation-de-base", "1nbbygdD7LUiPVC3mW2mHbSNwlqwaUb6B", "FAST : Formation de base",
+     "9 études pour vivre en disciple : l’engagement, la veille du matin, les promesses de Dieu, l’épée de l’Esprit, "
+     "le témoignage, les équipes de croyants, la multiplication."),
+    ("grandir", "fast-tactiques-d-equipe", "1DVFtBttV7gx4Y8O7BF5d-kx8r7bh4V8q", "FAST : Tactiques d’équipe",
+     "9 études pour lancer un groupe qui forme des disciples et gagne des âmes : la stratégie, la Parole de vie, "
+     "le lancement, l’appel au leadership, la vision du monde."),
+    ("grandir", "fast-cles-de-reveil", "1F5pumNjCkupKh-Pp7OSaYd6upSI3LrtG", "FAST : Clés de réveil",
+     "9 études sur le réveil, de l’embrasement spirituel à une course enflammée."),
+    ("grandir", "fast-leaders", "1al__n4k2awCXC1XS0JNBAcNwWs6pEoCT", "FAST : pour les leaders",
+     "Le manuel du leader pour diriger les cours FAST, et La formule explosive : former les membres pour le ministère."),
     # Mûrir
     ("murir", "excellence", "1TN40N-S-d4xYHz-dO7SXDmXI1Y3box0g", "L’excellence dans la vie",
      "7 études : le besoin, la clé, les objectifs, les étapes et le chemin de l’excellence, jusque dans les relations."),
@@ -131,6 +145,9 @@ RESSOURCES = {
     "Élever les enfants de Dieu - Plan du cours": "Plan du cours",
     "Planification selon Stephen Covey": "Tableau de planification (Stephen Covey)",
     "Ressources pour l’animateur": "Ressources pour l’animateur",
+    "Couverture du livret": "Couverture du livret",
+    "Les illustrations": "Les illustrations du cours",
+    "Les 10 clés de mémorisation": "Les 10 clés de mémorisation",
 }
 
 # Titres corrigés à la main (points d’interrogation perdus dans les noms de fichiers, auteurs…).

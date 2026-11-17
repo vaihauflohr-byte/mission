@@ -76,6 +76,10 @@ VOLETS = {"historacles": 3}
 # leurs lignes justifiées ne sont pas coupées aux grands espaces, et « ➢ 1) » est un numéro de question.
 NUMEROTEES = {"historacles"}
 RE_CODE_VOLET = re.compile(r"^\s*SP\d{2}\s*$")      # code d'impression en bas d'un volet (Historacles)
+# Leçons FAST (pages de fastmissions.com imprimées) : séries « fast-… ».
+RE_FIL_FAST = re.compile(r"^.{0,40}?>\s*(?:Semaine\s*\d+|Illustrations)\s*>\s*(\S.*?)\s*$")   # « ++++ > Semaine 1 > Mémo »
+RE_CHAMP_FAST = re.compile(r"^\s*(?:Nom|Date|Paraphé par)\s*:\s*$")                      # cases à remplir du livret
+RE_LICENCE = re.compile(r"(?i)licensed for personal study|do not distribute")
 NBSP, NNBSP = " ", " "
 PUCES = "•●▪■◦○◆◇►▶✓✔➢➤→–—-*·"
 RE_PUCE = re.compile(r"^\s*([" + re.escape(PUCES) + r"]|o(?= +[A-ZÀ-Ý«\d]))\s+")
@@ -286,6 +290,39 @@ def schemas(page, lignes, coupures, cadres, corps):
                 Z.y0 = l.y1 + 0.5
         res.append((Z, pris))
     return res
+
+
+def lignes_fast(lt, tr):
+    """Leçons FAST : fil d'Ariane de chaque page → intertitre de section ; cases « Nom / Date / Paraphé par »
+    retirées avec leurs traits ; numéro de question posé à côté du texte, un peu plus haut : rattaché."""
+    res = []
+    champs = [l for l in lt if RE_CHAMP_FAST.match(l.texte)]
+    tr = [t for t in tr if not any(abs(t.cy - c.y1) < 8 for c in champs)]
+    for l in lt:
+        t = l.texte
+        if l in champs or re.fullmatch(r"Mémo\s*:", t):
+            continue
+        m = RE_FIL_FAST.match(t)
+        if m:
+            nom = m.group(1)
+            nom = nom[0].upper() + nom[1:].lower()
+            l = Ligne(l.page, (l.x0, l.y0, l.x1, l.y1), [(nom, True, False, l.taille * 1.3, l.couleur)])
+        elif t.startswith("!!"):          # « !!Le mandat évangélique » : reste de la page web
+            sp = list(l.spans)
+            sp[0] = (sp[0][0].lstrip().lstrip("!"),) + tuple(sp[0][1:])
+            l = Ligne(l.page, (l.x0, l.y0, l.x1, l.y1), sp)
+        elif re.match(r"(?:Le Rédacteur|L’Éditeur|Caché en Christ)", t):
+            l = Ligne(l.page, (l.x0, l.y0, l.x1, l.y1), [(s[0], False, True) + tuple(s[3:]) for s in l.spans])
+        res.append(l)
+    fusion = []
+    for l in sorted(res, key=lambda l: (l.y0, l.x0)):
+        m = next((x for x in fusion if RE_MARQUEUR_SEUL.match(x.texte) and l.x0 > x.x1 and 0 <= l.y0 - x.y0 < 9
+                  and not any(y is not x and y.y0 >= x.y0 - 1 and y.x0 > x.x1 and y.x0 < l.x0 and y in fusion for y in fusion)), None)
+        if m is not None and l.genre == "texte":
+            fusion[fusion.index(m)] = Ligne(l.page, (m.x0, m.y0, l.x1, l.y1), list(m.spans) + [(" ",) + tuple(l.spans[0][1:])] + list(l.spans))
+            continue
+        fusion.append(l)
+    return fusion, tr
 
 
 def meme_ligne(lignes, coupures):
@@ -641,7 +678,7 @@ def bas_de_page(pages_lignes, hauteurs, corps, credits):
     for i, ls in enumerate(pages_lignes):
         garde = []
         for l in ls:
-            if l.genre == "texte" and "©" in l.texte and l.taille <= corps and len(l.texte) < 200:
+            if l.genre == "texte" and ("©" in l.texte or RE_LICENCE.search(l.texte)) and l.taille <= corps and len(l.texte) < 200:
                 if l.texte not in credits:
                     credits.append(l.texte)
                 continue
@@ -1429,6 +1466,7 @@ def rendu_html(blocs, f, dossier_img, doc, role, credits):
 
 # logos d'éditeur, reconnus à leur empreinte visuelle : ce ne sont pas des illustrations
 LOGOS = {
+    0xe0a0f069e0f070b0: "FAST (lettres en colonne, leçons FAST)",
     0x344c1e963368070f: "Gateway Adventist Centre (carré orange)",
     0x1080a0a8a8929600: "Gateway Adventist Centre (bandeau)",
 }
@@ -1520,6 +1558,8 @@ def convertir(f, titres_connus, role, ecrire=True, plan=False):
             dedans = lambda l: any(t.x0 - 2 <= (l.x0 + l.x1) / 2 <= t.x1 + 2 and t.y0 - 2 <= l.cy <= t.y1 + 2 for t in tb)
             lt = [l for l in lt if not dedans(l)]
         tr = traits(page, num, lt)
+        if f.startswith("fast-"):
+            lt, tr = lignes_fast(lt, tr)
         if tb:
             tr = [t for t in tr if not any(x.x0 - 2 <= t.x0 and t.x1 <= x.x1 + 2 and x.y0 - 2 <= t.y0 <= x.y1 + 2 for x in tb)]
         im = [] if ocr else images(doc, page, num, compteur, dossier_img, f, nb)
@@ -1619,6 +1659,8 @@ def main():
         titres = ([s["titre"]] + ([l["titre"]] if l else []) + ([d.get("titre")] if d.get("titre") else [])
                   + ([d["libelle"]] if d.get("libelle") else []) + ["Fiche du participant", "Guide de l’animateur", "Guide de l'animateur"])
         role = "animateur" if (d.get("role") == "animateur" or "réponses" in (d.get("libelle") or "").lower()) else "participant"
+        if f.startswith("fast-leaders/") or (f.startswith("fast-") and l is None):
+            role = "animateur"      # manuel, couverture, illustrations FAST : à lire, rien à remplir
         try:
             r = convertir(f, titres, role, plan=plan)
         except Exception as e:  # noqa: BLE001

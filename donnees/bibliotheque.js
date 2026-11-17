@@ -3626,6 +3626,577 @@ window.BIBLIO = {
    "image": "serie-sept-eglises"
   },
   {
+   "id": "fast-kit-de-survie",
+   "niveau": "grandir",
+   "titre": "FAST : Kit de survie",
+   "texte": "5 études pour bien commencer : la grâce, regarder à Jésus, vaincre la tentation, connaître la volonté de Dieu, la communion fraternelle. Un verset à apprendre par cœur chaque semaine.",
+   "lecons": [
+    {
+     "num": "1",
+     "titre": "Grâce sublime",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-kit-de-survie/01-grace-sublime",
+       "o": 280198,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "2",
+     "titre": "Regarder à Jésus",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-kit-de-survie/02-regarder-a-jesus",
+       "o": 278956,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "3",
+     "titre": "Tacler la tentation",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-kit-de-survie/03-tacler-la-tentation",
+       "o": 280889,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "4",
+     "titre": "Connaître la volonté de Dieu",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-kit-de-survie/04-connaitre-la-volonte-de-dieu",
+       "o": 282846,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "5",
+     "titre": "Communion fraternelle",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-kit-de-survie/05-communion-fraternelle",
+       "o": 280504,
+       "p": 8
+      }
+     ]
+    }
+   ],
+   "ressources": [
+    {
+     "format": "PDF",
+     "titre": "Couverture du livret",
+     "f": "fast-kit-de-survie/couverture-du-livret",
+     "o": 326616,
+     "p": 2
+    },
+    {
+     "format": "Word",
+     "titre": "Les 10 clés de mémorisation",
+     "f": "fast-kit-de-survie/les-10-cles-de-memorisation",
+     "o": 61610,
+     "p": 2
+    }
+   ],
+   "image": "serie-fast-kit-de-survie"
+  },
+  {
+   "id": "fast-formation-de-base",
+   "niveau": "grandir",
+   "titre": "FAST : Formation de base",
+   "texte": "9 études pour vivre en disciple : l’engagement, la veille du matin, les promesses de Dieu, l’épée de l’Esprit, le témoignage, les équipes de croyants, la multiplication.",
+   "lecons": [
+    {
+     "num": "1",
+     "titre": "L’appel à l’engagement",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/01-l-appel-a-l-engagement",
+       "o": 268245,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "2",
+     "titre": "La veille du matin",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/02-la-veille-du-matin",
+       "o": 275278,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "3",
+     "titre": "Les promesses de Dieu",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/03-les-promesses-de-dieu",
+       "o": 273970,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "4",
+     "titre": "Le nerf de la guerre",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/04-le-nerf-de-la-guerre",
+       "o": 271812,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "5",
+     "titre": "L’épée de l’Esprit",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/05-l-epee-de-l-esprit",
+       "o": 273567,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "6",
+     "titre": "Le témoignage personnel",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/06-le-temoignage-personnel",
+       "o": 271335,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "7",
+     "titre": "Des équipes de croyants",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/07-des-equipes-de-croyants",
+       "o": 275525,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "8",
+     "titre": "Le mystère de la multiplication",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/08-le-mystere-de-la-multiplication",
+       "o": 273390,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "9",
+     "titre": "Une vie qui compte",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-formation-de-base/09-une-vie-qui-compte",
+       "o": 286600,
+       "p": 8
+      }
+     ]
+    }
+   ],
+   "ressources": [
+    {
+     "format": "PDF",
+     "titre": "Couverture du livret",
+     "f": "fast-formation-de-base/couverture-du-livret",
+     "o": 330117,
+     "p": 2
+    },
+    {
+     "format": "PDF",
+     "titre": "Les illustrations du cours",
+     "f": "fast-formation-de-base/les-illustrations-du-cours",
+     "o": 733662,
+     "p": 8
+    }
+   ],
+   "image": "serie-fast-formation-de-base"
+  },
+  {
+   "id": "fast-tactiques-d-equipe",
+   "niveau": "grandir",
+   "titre": "FAST : Tactiques d’équipe",
+   "texte": "9 études pour lancer un groupe qui forme des disciples et gagne des âmes : la stratégie, la Parole de vie, le lancement, l’appel au leadership, la vision du monde.",
+   "lecons": [
+    {
+     "num": "1",
+     "titre": "Un urgent besoin",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/01-un-urgent-besoin",
+       "o": 277926,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "2",
+     "titre": "Une stratégie gagnante",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/02-une-strategie-gagnante",
+       "o": 277231,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "3",
+     "titre": "Des matériaux de construction",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/03-des-materiaux-de-construction",
+       "o": 275745,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "4",
+     "titre": "Le moteur de l’évangélisation",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/04-le-moteur-de-l-evangelisation",
+       "o": 274856,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "5",
+     "titre": "La Parole de vie",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/05-la-parole-de-vie",
+       "o": 276975,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "6",
+     "titre": "Œuvrer pour les âmes perdues",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/06-oeuvrer-pour-les-ames-perdues",
+       "o": 278698,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "7",
+     "titre": "Le lancement",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/07-le-lancement",
+       "o": 276713,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "8",
+     "titre": "L’appel au leadership",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/08-l-appel-au-leadership",
+       "o": 273745,
+       "p": 9
+      }
+     ]
+    },
+    {
+     "num": "9",
+     "titre": "Vision du monde",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-tactiques-d-equipe/09-vision-du-monde",
+       "o": 290799,
+       "p": 9
+      }
+     ]
+    }
+   ],
+   "ressources": [
+    {
+     "format": "PDF",
+     "titre": "Couverture du livret",
+     "f": "fast-tactiques-d-equipe/couverture-du-livret",
+     "o": 327771,
+     "p": 2
+    },
+    {
+     "format": "PDF",
+     "titre": "Les illustrations du cours",
+     "f": "fast-tactiques-d-equipe/les-illustrations-du-cours",
+     "o": 499368,
+     "p": 8
+    }
+   ],
+   "image": "serie-fast-tactiques-d-equipe"
+  },
+  {
+   "id": "fast-cles-de-reveil",
+   "niveau": "grandir",
+   "titre": "FAST : Clés de réveil",
+   "texte": "9 études sur le réveil, de l’embrasement spirituel à une course enflammée.",
+   "lecons": [
+    {
+     "num": "1",
+     "titre": "Embrasement spirituel",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/01-embrasement-spirituel",
+       "o": 126121,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "2",
+     "titre": "Un brasier intérieur",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/02-un-brasier-interieur",
+       "o": 140346,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "3",
+     "titre": "La chandelle du Seigneur",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/03-la-chandelle-du-seigneur",
+       "o": 128903,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "4",
+     "titre": "Attiser les flammes",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/04-attiser-les-flammes",
+       "o": 128858,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "5",
+     "titre": "Explosion",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/05-explosion",
+       "o": 129611,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "6",
+     "titre": "Répandre les étincelles",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/06-repandre-les-etincelles",
+       "o": 129434,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "7",
+     "titre": "Machines à embraser l’âme",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/07-machines-a-embraser-l-ame",
+       "o": 127616,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "8",
+     "titre": "Dynamite vivante",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/08-dynamite-vivante",
+       "o": 135524,
+       "p": 8
+      }
+     ]
+    },
+    {
+     "num": "9",
+     "titre": "Dans une course enflammée",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-cles-de-reveil/09-dans-une-course-enflammee",
+       "o": 139569,
+       "p": 8
+      }
+     ]
+    }
+   ],
+   "ressources": [],
+   "image": "serie-fast-cles-de-reveil"
+  },
+  {
+   "id": "fast-leaders",
+   "niveau": "grandir",
+   "titre": "FAST : pour les leaders",
+   "texte": "Le manuel du leader pour diriger les cours FAST, et La formule explosive : former les membres pour le ministère.",
+   "lecons": [
+    {
+     "num": "1",
+     "titre": "Manuel du leader",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-leaders/01-manuel-du-leader",
+       "o": 449369,
+       "p": 18
+      }
+     ]
+    },
+    {
+     "num": "2",
+     "titre": "La formule explosive",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Étude",
+       "role": "tous",
+       "f": "fast-leaders/02-la-formule-explosive",
+       "o": 419703,
+       "p": 13
+      }
+     ]
+    }
+   ],
+   "ressources": [],
+   "image": "serie-fast-leaders"
+  },
+  {
    "id": "excellence",
    "niveau": "murir",
    "titre": "L’excellence dans la vie",

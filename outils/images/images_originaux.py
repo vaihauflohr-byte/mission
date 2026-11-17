@@ -1,9 +1,10 @@
-"""Images de la série « Historacles et Prophéties » tirées des documents d’origine (pas d’image générée).
+"""Images tirées des documents d’origine (pas d’image générée) : Historacles et Prophétie, séries FAST.
 
 Usage : python3 outils/images/images_originaux.py
 Pour chaque étude, l’illustration du récit (page 1, colonne de gauche) est posée au centre
 d’un fond fait de la même image, agrandie et floutée : assets/images/historacles-<n>.webp (800 × 600).
 L’image de la série reprend le titre gravé dans la pierre de la couverture : serie-historacles.webp.
+Séries FAST : la page de couverture des livrets, refaite en 800 × 600 (titre, dessin de la Bible ouverte).
 """
 import io
 from pathlib import Path
@@ -60,9 +61,38 @@ def composer(im, hauteur):
     return fond
 
 
+POLICE_GRAS = "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"   # mêmes chasses qu’Arial (couvertures FAST)
+FAST = {
+    "fast-kit-de-survie": "Kit de\nsurvie",
+    "fast-formation-de-base": "Formation\nde base",
+    "fast-tactiques-d-equipe": "Tactiques\nd’équipe",
+    "fast-cles-de-reveil": "Clés de\nréveil",
+    "fast-leaders": "Pour les\nleaders",
+}
+
+
+def fast():
+    """Séries FAST : la couverture des livrets (titre en grandes capitales, Bible ouverte dessinée)."""
+    from PIL import ImageDraw, ImageFont
+    doc = pymupdf.open(RACINE / "documents" / "fast-formation-de-base" / "couverture-du-livret.pdf")
+    info = max(doc[0].get_image_info(xrefs=True), key=lambda i: i["width"] * i["height"])
+    dessin = image_xref(doc, info["xref"])
+    dessin = dessin.resize((340, round(340 * dessin.height / dessin.width)), Image.LANCZOS)
+    tete = ImageFont.truetype(POLICE_GRAS, 21)
+    titre = ImageFont.truetype(POLICE_GRAS, 78)
+    for serie, texte in FAST.items():
+        im = Image.new("RGB", (L, H), "white")
+        d = ImageDraw.Draw(im)
+        d.text((44, 92), "Le Système FAST de Mémorisation de l’Écriture", font=tete, fill="black")
+        d.multiline_text((40, 132), texte, font=titre, fill="black", spacing=4)
+        im.paste(dessin, (L - dessin.width - 40, 520 - dessin.height))
+        im.save(SORTIE / f"serie-{serie}.webp", "WEBP", quality=82, method=6)
+    return len(FAST)
+
+
 def main():
     SORTIE.mkdir(parents=True, exist_ok=True)
-    n = 0
+    n = fast()
     for pdf in sorted(DOCS.glob("[0-9][0-9]-*.pdf")):
         doc = pymupdf.open(pdf)
         im = illustration(doc)

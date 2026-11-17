@@ -17,7 +17,7 @@ Aucun serveur, aucune base de données : le site range la bibliothèque d’étu
 
 ## Les documents
 
-Ils sont dans `documents/<série>/<nom>.pdf` (358 fichiers, 385 Mo environ ; GitHub Pages accepte 1 Go).
+Ils sont dans `documents/<série>/<nom>.pdf` (398 fichiers, 410 Mo environ ; GitHub Pages accepte 1 Go).
 Ils viennent du dossier Drive **Eglise / Etude petit groupe** (compte vaihau.flohr@gmail.com) ; chaque série du site correspond à un dossier, listé dans `SERIES` en tête de `outils/generer_bibliotheque.py`.
 
 L’import a été fait une fois par une tâche GitHub (`outils/documents/importer.py`) :
@@ -36,6 +36,8 @@ Les études de *En quête de certitude* (les 30 et les six complémentaires A à
 
 *Historacles et Prophétie* (dossier « 6 - Historacles et Prophéties » de l’étape 1) : les 24 dépliants d’Amazing Facts remis par le pasteur Jérémie Allamelou aux conférences bibliques de Mataiea (octobre 2026), et son étude « Les sept derniers fléaux » en étude complémentaire A ; importés depuis ses courriels, tels quels.
 
+Les cours FAST (dossier « 9 - FAST - Mémorisation de l’Écriture » de l’étape 2, un sous-dossier par série) : Kit de survie, Formation de base, Tactiques d’équipe, Clés de réveil et, pour les leaders, le Manuel du leader et La formule explosive. Ce sont les pages de fastmissions.com imprimées (février 2025 et avril 2026), avec couvertures et illustrations des livrets ; elles portent la mention « licensed for personal study … Please do not distribute » et le copyright de FAST Missions : mis en ligne à la demande d’Olivier, tels quels, mentions comprises (le mode lecture les garde dans ses mentions de fin).
+
 Laissés hors du site : les fiches « Source chinoise » (doublons), les documents propres au programme de Hong Kong (PolyU), les dossiers en anglais, et deux livres publiés (*Se préparer à un mariage heureux*, *Le sanctuaire expliqué simplement*).
 
 ## Mode lecture
@@ -47,7 +49,7 @@ Chaque étude en PDF a une version « lecture », faite à l’avance par `outil
 
 Le convertisseur remet les colonnes dans l’ordre de lecture, retire en-têtes, pieds de page et titres répétés, reconnaît titres, questions (numérotées, interrogatives ou suivies de lignes pour écrire), listes, cases à cocher, phrases à trous, tableaux, citations et images, et relie les références bibliques (`outils/lecture/versets.py`). La couverture et les lignes d’éditeur passent en mentions à la fin ; les logos d’éditeur (`LOGOS`) sont écartés ; un document rédigé en plan détaillé (A. › 1. › i. › a.) garde un point par ligne. Les présentations et le tableau Excel restent en PDF seulement (`EXCLUS_FORMATS`, `EXCLUS`).
 
-Réglages par série : `VOLETS` (dépliant, plusieurs volets côte à côte sur une page à l’italienne, lus l’un après l’autre comme des pages : Historacles) ; `NUMEROTEES` (seules les questions numérotées sont des questions, les traits courts « ___ » sont des mots à compléter, et la réponse se donne dans les blancs, sans zone de texte). Dans un dépliant, un schéma tracé (ligne chronologique, calcul souligné) est rendu en image avec ses étiquettes, sauf s’il est surtout fait de phrases.
+Réglages par série : `VOLETS` (dépliant, plusieurs volets côte à côte sur une page à l’italienne, lus l’un après l’autre comme des pages : Historacles) ; `NUMEROTEES` (seules les questions numérotées sont des questions, les traits courts « ___ » sont des mots à compléter, et la réponse se donne dans les blancs, sans zone de texte). Dans un dépliant, un schéma tracé (ligne chronologique, calcul souligné) est rendu en image avec ses étiquettes, sauf s’il est surtout fait de phrases. Leçons FAST (séries `fast-…`) : le fil d’Ariane de chaque page web (« > Semaine 1 > Mémo ») devient l’intertitre de la section, les cases « Nom / Date / Paraphé par » sont retirées, le logo FAST est écarté (`LOGOS`) ; le manuel, les couvertures et les illustrations se lisent sans zone de réponse.
 
 Les réponses écrites restent dans le navigateur (`localStorage`, clés `mission.rep.<document>…`), rien n’est envoyé.
 
@@ -79,11 +81,11 @@ Une nouvelle série = une ligne dans `SERIES` (niveau, identifiant, dossier Driv
 
 ## Images
 
-Une image par étape, par série et par étude (268 au total), dans `assets/images/<id>.webp` (800 × 600 au plus).
+Une image par étape, par série et par étude (273 au total ; les études FAST n’en ont pas), dans `assets/images/<id>.webp` (800 × 600 au plus).
 Les trois étapes ont de vraies photos, prises sur Unsplash (licence libre, usage sur un site permis sans demande) : auteurs et pages d’origine dans `outils/photos/photos.json`, crédit dans le pied de page.
 Les autres images ont été générées avec fal.ai (modèle FLUX dev) à partir des scènes décrites dans `outils/images/scenes.py`
 (`outils/images/prompts.json`), avec `outils/images/generer_images.py` (clé fal dans `~/.fal_key`, jamais dans le dépôt).
-Historacles et Prophétie garde les illustrations de ses dépliants (récit de chaque étude, titre gravé de la couverture) : `outils/images/images_originaux.py`.
+Historacles et Prophétie garde les illustrations de ses dépliants (récit de chaque étude, titre gravé de la couverture), et les séries FAST la couverture de leurs livrets (titre, Bible ouverte dessinée) : `outils/images/images_originaux.py`.
 Le catalogue relie chaque étude à son image : `<série>-<numéro>` (ou `<série>-<position>` pour Daniel), `serie-<série>`, `niveau-<étape>`.
 Une image qui manque est simplement masquée.
 
