@@ -3267,6 +3267,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Daniel 2 : la statue et les empires du monde",
      "image": "historacles-1"
     },
     {
@@ -3282,6 +3283,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "La Bible et comment l’étudier",
      "image": "historacles-2"
     },
     {
@@ -3297,6 +3299,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Le retour de Jésus",
      "image": "historacles-3"
     },
     {
@@ -3312,6 +3315,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Satan et l’origine du mal",
      "image": "historacles-4"
     },
     {
@@ -3327,6 +3331,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Le salut et la nouvelle naissance",
      "image": "historacles-5"
     },
     {
@@ -3342,6 +3347,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "La loi de Dieu, la grâce et les deux alliances",
      "image": "historacles-6"
     },
     {
@@ -3357,6 +3363,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Le sabbat, septième jour de la semaine",
      "image": "historacles-7"
     },
     {
@@ -3372,6 +3379,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Le ciel et la nouvelle terre",
      "image": "historacles-8"
     },
     {
@@ -3387,6 +3395,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "L’état des morts et le spiritisme",
      "image": "historacles-9"
     },
     {
@@ -3402,6 +3411,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "L’enfer et la fin des méchants",
      "image": "historacles-10"
     },
     {
@@ -3417,6 +3427,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Le baptême par immersion",
      "image": "historacles-11"
     },
     {
@@ -3432,6 +3443,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Les mille ans (le millénium)",
      "image": "historacles-12"
     },
     {
@@ -3447,6 +3459,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "La bête d’Apocalypse 13 et le nombre 666",
      "image": "historacles-13"
     },
     {
@@ -3462,6 +3475,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Le sceau de Dieu, la marque de la bête et le sabbat",
      "image": "historacles-14"
     },
     {
@@ -3477,6 +3491,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Le sanctuaire et le jour des expiations",
      "image": "historacles-15"
     },
     {
@@ -3492,6 +3507,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Les 2300 jours et le jugement (Daniel 8 et 9)",
      "image": "historacles-16"
     },
     {
@@ -3507,6 +3523,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "La vraie Église de la fin des temps (Apocalypse 12)",
      "image": "historacles-17"
     },
     {
@@ -3522,6 +3539,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "La dîme et les offrandes",
      "image": "historacles-18"
     },
     {
@@ -3537,6 +3555,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Babylone (Apocalypse 17) et les États-Unis dans la prophétie",
      "image": "historacles-19"
     },
     {
@@ -3552,6 +3571,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "La santé : aliments purs et impurs, alcool",
      "image": "historacles-20"
     },
     {
@@ -3567,6 +3587,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Le mode de vie chrétien : tenue, bijoux, musique, loisirs",
      "image": "historacles-21"
     },
     {
@@ -3582,6 +3603,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Le don de prophétie et comment éprouver un prophète",
      "image": "historacles-22"
     },
     {
@@ -3597,6 +3619,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Le Saint-Esprit, ses dons et le parler en langues",
      "image": "historacles-23"
     },
     {
@@ -3612,6 +3635,7 @@ window.BIBLIO = {
        "p": 2
       }
      ],
+     "sujet": "Obéir à Dieu plutôt qu’à la foule",
      "image": "historacles-24"
     },
     {
@@ -3627,7 +3651,8 @@ window.BIBLIO = {
        "p": 4
       }
      ],
-     "groupe": "Étude complémentaire du pasteur Jérémie Allamelou"
+     "groupe": "Étude complémentaire du pasteur Jérémie Allamelou",
+     "sujet": "Apocalypse 15 et 16, fléau par fléau"
     }
    ],
    "ressources": [],

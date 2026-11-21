@@ -73,7 +73,7 @@ Après l’ajout ou le changement d’un fichier dans le Drive :
 4. Refaire le mode lecture : `python3 outils/lecture/convertir.py` (voir « Mode lecture »).
 5. Augmenter le numéro de version (`?v=`) dans `index.html` et la constante `CACHE` de `sw.js`, puis publier.
 
-Une nouvelle série = une ligne dans `SERIES` (niveau, identifiant, dossier Drive, titre, présentation). Les fichiers déjà téléchargés s’importent sans passer par la tâche GitHub : `python3 outils/documents/importer.py --source <dossier avec <id>.pdf> --seulement <chemins>`. Les études numérotées par une lettre (« A - … ») forment un groupe à part, titré dans `GROUPES_COMPLEMENTAIRES`.
+Une nouvelle série = une ligne dans `SERIES` (niveau, identifiant, dossier Drive, titre, présentation). Les fichiers déjà téléchargés s’importent sans passer par la tâche GitHub : `python3 outils/documents/importer.py --source <dossier avec <id>.pdf> --seulement <chemins>`. Les études numérotées par une lettre (« A - … ») forment un groupe à part, titré dans `GROUPES_COMPLEMENTAIRES`. Quand le titre d’une étude ne dit pas son sujet (titres tirés d’une histoire, comme pour Historacles), `SUJETS` donne une ligne affichée sous le titre ; elle compte aussi pour la recherche (« sabbat » trouve « Des briques sans paille »).
 
 ## Symbole de l’Église adventiste
 

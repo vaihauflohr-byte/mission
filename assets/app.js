@@ -116,7 +116,7 @@
       : `<span class="etude-vignette sans-image">${num}</span>`;
     return `<li class="etude">
       ${vignette}
-      <p class="etude-titre">${fr(l.titre)}</p>
+      <p class="etude-titre">${fr(l.titre)}${l.sujet ? `<span class="cache"> — sujet : </span><span class="etude-sujet">${fr(l.sujet)}</span>` : ""}</p>
       <div class="etude-docs">${boutons}</div>
     </li>`;
   }
@@ -391,7 +391,7 @@
     index = [];
     B.series.forEach((s) => {
       index.push({ type: "serie", s, cle: norm(s.titre + " " + s.texte) });
-      s.lecons.forEach((l) => index.push({ type: "etude", s, l, cle: norm(l.titre + " " + s.titre) }));
+      s.lecons.forEach((l) => index.push({ type: "etude", s, l, cle: norm(l.titre + " " + (l.sujet || "") + " " + s.titre) }));
     });
   }
 
@@ -440,7 +440,7 @@
       const boutons = l.docs.length === 1
         ? bouton(l.docs[0], estPresentation(l.docs[0]) ? "Voir" : "Ouvrir", true, `${estPresentation(l.docs[0]) ? "Voir" : "Ouvrir"} : ${nomComplet}`)
         : l.docs.map((d, i) => bouton(d, COURTS[d.libelle] || d.libelle, i === 0 && d.role !== "animateur", `${d.libelle} : ${nomComplet}`)).join("");
-      return `<li class="resultat"><p class="resultat-titre">${fr(l.titre)}</p>
+      return `<li class="resultat"><p class="resultat-titre">${fr(l.titre)}${l.sujet ? `<span class="cache"> — sujet : </span><span class="etude-sujet">${fr(l.sujet)}</span>` : ""}</p>
         <span class="resultat-ou">${l.num ? `Étude ${esc(l.num)} de ` : ""}<a href="#/serie/${e.s.id}">${fr(e.s.titre)}</a>, étape ${esc(n.verbe)}</span>
         <div class="etude-docs">${boutons}</div></li>`;
     });

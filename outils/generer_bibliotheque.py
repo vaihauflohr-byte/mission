@@ -120,6 +120,38 @@ GROUPES_COMPLEMENTAIRES = {
     "historacles": "Étude complémentaire du pasteur Jérémie Allamelou",
 }
 
+# Sujet de chaque étude, affiché sous son titre quand le titre seul ne dit pas de quoi elle parle
+# (titres tirés d’une histoire). Clé : numéro de l’étude. Le sujet compte aussi pour la recherche.
+SUJETS = {
+    "historacles": {
+        "1": "Daniel 2 : la statue et les empires du monde",
+        "2": "La Bible et comment l’étudier",
+        "3": "Le retour de Jésus",
+        "4": "Satan et l’origine du mal",
+        "5": "Le salut et la nouvelle naissance",
+        "6": "La loi de Dieu, la grâce et les deux alliances",
+        "7": "Le sabbat, septième jour de la semaine",
+        "8": "Le ciel et la nouvelle terre",
+        "9": "L’état des morts et le spiritisme",
+        "10": "L’enfer et la fin des méchants",
+        "11": "Le baptême par immersion",
+        "12": "Les mille ans (le millénium)",
+        "13": "La bête d’Apocalypse 13 et le nombre 666",
+        "14": "Le sceau de Dieu, la marque de la bête et le sabbat",
+        "15": "Le sanctuaire et le jour des expiations",
+        "16": "Les 2300 jours et le jugement (Daniel 8 et 9)",
+        "17": "La vraie Église de la fin des temps (Apocalypse 12)",
+        "18": "La dîme et les offrandes",
+        "19": "Babylone (Apocalypse 17) et les États-Unis dans la prophétie",
+        "20": "La santé : aliments purs et impurs, alcool",
+        "21": "Le mode de vie chrétien : tenue, bijoux, musique, loisirs",
+        "22": "Le don de prophétie et comment éprouver un prophète",
+        "23": "Le Saint-Esprit, ses dons et le parler en langues",
+        "24": "Obéir à Dieu plutôt qu’à la foule",
+        "A": "Apocalypse 15 et 16, fléau par fléau",
+    },
+}
+
 # Précision affichée après le titre de la série dans le sommaire de l’accueil.
 NOTES = {
     "excellence": "surtout pour les jeunes adultes",
@@ -426,6 +458,8 @@ def main(chemin, seulement=None):
             le["docs"].sort(key=lambda d: (ordre_role[d["role"]], d["libelle"]))
             if le["num"] and not le["num"].isdigit() and slug in GROUPES_COMPLEMENTAIRES:
                 le["groupe"] = GROUPES_COMPLEMENTAIRES[slug]
+            if le["num"] in SUJETS.get(slug, {}):
+                le["sujet"] = SUJETS[slug][le["num"]]
             liste.append(le)
         if not liste and not ressources:
             print(f"!! série vide : {slug}", file=sys.stderr)

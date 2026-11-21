@@ -662,6 +662,14 @@ a { color: var(--feuille); text-underline-offset: 0.18em; }
   line-height: 1.35;
   color: var(--lagon);
 }
+.etude-sujet {
+  display: block;
+  margin-top: 0.15rem;
+  font-weight: 400;
+  font-size: var(--t-petit);
+  line-height: 1.4;
+  color: var(--encre);
+}
 .etude-docs { grid-area: docs; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
 /* boutons de document */
