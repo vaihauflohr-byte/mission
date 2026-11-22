@@ -980,8 +980,8 @@
           <ol class="sommaire-lecture"></ol>
         </div>
         <div class="panneau-lecture panneau-bible" id="panneau-bible" role="dialog" aria-modal="true" aria-labelledby="titre-bible" hidden>
-          <div class="panneau-tete"><h2 id="titre-bible" class="bible-titre">Bible</h2><button type="button" class="panneau-fermer" data-fermer>Fermer</button></div>
-          <div class="bible-outils"><span>Louis Segond 1910</span><button type="button" class="bible-tout" aria-pressed="false" hidden>Voir tout le chapitre</button></div>
+          <div class="panneau-tete"><div><h2 id="titre-bible" class="bible-titre">Bible</h2><p class="bible-version">Louis Segond 1910</p></div><button type="button" class="panneau-fermer" data-fermer>Fermer</button></div>
+          <div class="bible-outils"><button type="button" class="bible-tout" aria-pressed="false" hidden>Voir tout le chapitre</button><a class="bible-strong" href="https://www.lueur.org/bible/" target="_blank" rel="noopener" aria-label="Bible Strong : ce passage avec les mots hébreux et grecs, sur Lueur.org" hidden><span>Bible Strong</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
           <div class="bible-corps"><div class="bible-texte" aria-live="polite"></div></div>
         </div>
         ${panneauImpression(e, true)}

@@ -1271,20 +1271,21 @@ summary.lecteur-bouton::-webkit-details-marker { display: none; }
 }
 .panneau-bible .panneau-tete { flex: none; align-items: flex-start; }
 .panneau-bible h2 { padding-top: 0.35rem; color: var(--l-accent); line-height: 1.25; }
+.bible-version { margin: 0.1rem 0 0; color: var(--l-doux); font-size: var(--t-petit); }
 .panneau-bible .panneau-fermer { flex: none; background: var(--l-accent-pale); color: var(--l-accent); }
 .bible-outils {
   flex: none;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.6rem;
-  min-height: 40px;
-  padding-bottom: 0.5rem;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
   border-bottom: 1px solid var(--l-ligne);
-  color: var(--l-doux);
   font-size: var(--t-petit);
 }
-.bible-tout {
+.bible-outils:not(:has(> :not([hidden]))) { display: none; }
+.bible-tout,
+.bible-strong {
   min-height: 36px;
   padding: 0 0.85rem;
   border: 1.5px solid var(--l-ligne);
@@ -1296,6 +1297,9 @@ summary.lecteur-bouton::-webkit-details-marker { display: none; }
   cursor: pointer;
 }
 .bible-tout[aria-pressed="true"] { background: var(--l-accent-pale); border-color: var(--l-accent-pale); }
+.bible-strong { display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: none; }
+.bible-strong[hidden], .bible-tout[hidden] { display: none; }
+.bible-strong svg { width: 0.85em; height: 0.85em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .bible-corps {
   flex: 1 1 auto;
   min-height: 0;

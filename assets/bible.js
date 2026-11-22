@@ -5,7 +5,9 @@
    Texte : donnees/bible/NN.json, un livre par fichier, chargé à la demande puis gardé par le
    service worker (produit par outils/bible/construire_bible.py). Les versets y sont numérotés
    comme sur BibleGateway et YouVersion, que suivent la plupart des études ; « imprimee » donne,
-   pour les chapitres où la Segond imprimée numérote autrement, où commence chacun de ses versets. */
+   pour les chapitres où la Segond imprimée numérote autrement, où commence chacun de ses versets.
+   « Bible Strong » ouvre le même passage sur Lueur.org, en Segond avec les numéros Strong
+   (mots hébreux et grecs, définitions en français) : ce texte-là ne peut pas être copié ici. */
 (function (global) {
   "use strict";
 
@@ -29,6 +31,16 @@
     "Matthieu", "Marc", "Luc", "Jean", "Actes", "Romains", "1 Corinthiens", "2 Corinthiens", "Galates", "Éphésiens",
     "Philippiens", "Colossiens", "1 Thessaloniciens", "2 Thessaloniciens", "1 Timothée", "2 Timothée", "Tite",
     "Philémon", "Hébreux", "Jacques", "1 Pierre", "2 Pierre", "1 Jean", "2 Jean", "3 Jean", "Jude", "Apocalypse",
+  ];
+  // noms des livres dans les adresses de Lueur.org (Segond avec les numéros Strong)
+  const LUEUR = [
+    "genese", "exode", "levitique", "nombres", "deuteronome", "josue", "juges", "ruth", "1samuel", "2samuel",
+    "1rois", "2rois", "1chroniques", "2chroniques", "esdras", "nehemie", "esther", "job", "psaumes", "proverbes",
+    "ecclesiaste", "cantique", "esaie", "jeremie", "lamentations", "ezechiel", "daniel", "osee", "joel",
+    "amos", "abdias", "jonas", "michee", "nahum", "habacuc", "sophonie", "aggee", "zacharie", "malachie",
+    "matthieu", "marc", "luc", "jean", "actes", "romains", "1corinthiens", "2corinthiens", "galates", "ephesiens",
+    "philippiens", "colossiens", "1thessaloniciens", "2thessaloniciens", "1timothee", "2timothee", "tite",
+    "philemon", "hebreux", "jacques", "1pierre", "2pierre", "1jean", "2jean", "3jean", "jude", "apocalypse",
   ];
   const NUMERO = new Map(ANGLAIS.map((n, i) => [n.toLowerCase(), i + 1]));
   NUMERO.set("psalm", 19);
@@ -132,6 +144,18 @@
     return { seg: sortie, renumerote };
   }
 
+  // le passage sur Lueur.org, en Segond avec Strong (même numérotation que nos versets).
+  // Lueur ne lit pas les listes (« 16-18, 21 ») : on donne du premier au dernier verset.
+  function adresseStrong(seg, entier) {
+    const a = seg[0];
+    const z = seg[seg.length - 1];
+    let ref;
+    if (entier || !a.v1) ref = a.c1 === z.c2 ? `${a.c1}` : `${a.c1}-${z.c2}`;
+    else if (a.c1 === z.c2) ref = `${a.c1}.${a.v1}${z.v2 !== a.v1 ? `-${z.v2}` : ""}`;
+    else ref = `${a.c1}.${a.v1}-${z.c2}.${z.v2}`;
+    return `https://www.lueur.org/bible/${LUEUR[a.livre - 1]}${ref}/segond-strong`;
+  }
+
   const charges = new Map();
   function charger(l) {
     if (!charges.has(l)) {
@@ -178,9 +202,11 @@
     const corps = panneau.querySelector(".bible-corps");
     const zone = panneau.querySelector(".bible-texte");
     const bouton = panneau.querySelector(".bible-tout");
+    const strong = panneau.querySelector(".bible-strong");
     const jeton = {};
     panneau.jeton = jeton;
     bouton.hidden = true;
+    strong.hidden = true;
     corps.scrollTop = 0;
     const brut = analyser(passageDuLien(href));
     if (!brut || !brut.length) {
@@ -211,9 +237,11 @@
         }
         bouton.textContent = entier ? "Revenir au passage" : "Voir tout le chapitre";
         bouton.setAttribute("aria-pressed", String(entier));
+        strong.href = adresseStrong(seg, entier);
       };
       bouton.onclick = () => { entier = !entier; afficher(); };
       bouton.hidden = seg.every((s) => s.v1 === 0);
+      strong.hidden = false;
       afficher();
     }).catch(() => {
       if (panneau.jeton !== jeton) return;
@@ -221,6 +249,6 @@
     });
   }
 
-  global.Bible = { analyser, passageDuLien, titre, resoudre, passage, montrer };
+  global.Bible = { analyser, passageDuLien, titre, resoudre, passage, adresseStrong, montrer };
   if (typeof module === "object" && module.exports) module.exports = global.Bible;
 })(typeof window !== "undefined" ? window : globalThis);
