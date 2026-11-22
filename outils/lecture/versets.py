@@ -119,6 +119,50 @@ def lier(html_echappe):
     return "".join(morceaux)
 
 
+# Références fautives dans les documents d’origine (chiffres inversés, coquilles), vérifiées sur le
+# texte cité autour : la version lecture donne la bonne ; le PDF d’origine reste tel quel.
+# document -> [(texte fautif, texte juste)] ; un texte fautif qui est une référence liée est remplacé
+# avec son lien, sinon c’est du texte simple.
+CORRECTIONS = {
+    "decouvrir/ressources-pour-l-animateur": [
+        # « (Actes 1:50) » puis, à la ligne, « 8:1,4,5,27,29) – L’Évangile se répand parmi les Gentils »
+        ("Actes 1:50", "Actes 8:1,4,5,27,29"),
+        ("<p>8:1,4,5,27,29) – ", "<p>"),
+    ],
+    # « fait ce qu’il lui ordonne de faire » : Luc 6.46
+    "fast-formation-de-base/01-l-appel-a-l-engagement": [("Luc 64.6", "Luc 6.46")],
+    # les trois faits : versets 10, 11 et 12
+    "historacles/17-l-histoire-des-deux-femmes": [("Apocalypse 12.20-12", "Apocalypse 12.10-12")],
+    # « lavés de nos péchés par son propre sang » : Matthieu 26.28
+    "sept-eglises/01-les-secrets-de-l-esperance-les-sept-eglises": [("Matthieu 28:26", "Matthieu 26:28")],
+    # coquilles de l’article anglais de R. Dederen, reprises par la traduction
+    "trinite/04-reflexion-sur-la-doctrine-de-la-trinite-raoul-dederen": [
+        ("1 Corinthiens 31:16", "1 Corinthiens 3:16"),
+        ("2 Thessaloniciens 21,16", "2 Thessaloniciens 2,16"),
+        ("2 Rois 19:51", "2 Rois 19:15"),
+    ],
+    # « Voyez quel amour le Père nous a témoigné » : 1 Jean 3.1
+    "trinite/15-jesus-le-premier-ne": [("1 Jean 13:1", "1 Jean 3:1")],
+    # Vers Jésus, chapitre de la confession, cite Psaume 34.18
+    "vers-jesus/01-vers-jesus-fiches-d-etude": [("Prov 34:18", "Ps 34:18")],
+}
+
+
+def corriger(page, document):
+    """Applique les CORRECTIONS d’un document à son HTML de lecture. Relancer ne change rien."""
+    import html as _html
+    for faux, juste in CORRECTIONS.get(document, []):
+        motif = re.escape(faux).replace(r"\ ", _ESP)
+        lien = re.compile(r'<a class="ref" href="[^"]*"[^>]*>' + motif + "</a>")
+        if lien.search(page):
+            page = lien.sub(lambda m: lier(_html.escape(juste, quote=False)), page, count=1)
+        elif faux.startswith("<") and faux in page:
+            page = page.replace(faux, juste, 1)
+        elif not re.search(re.escape(juste).replace(r"\ ", _ESP), page):
+            raise ValueError(f"{document} : « {faux} » introuvable")
+    return page
+
+
 if __name__ == "__main__":
     essais = [
         "Que promet Jésus ? Jean 14:1-3 (remarquez surtout le verset 3)",

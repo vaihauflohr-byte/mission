@@ -730,7 +730,7 @@
   // ---------- mode lecture : le texte de l’étude adapté à l’écran ----------
   // lecture/<d.f>.html est produit par outils/lecture/convertir.py ; donnees/lecture.js liste ces documents.
   const TEXTES = window.LECTURE || {};
-  const VERSION_LECTURE = "1";
+  const VERSION_LECTURE = "2";
   const aTexte = (f) => Object.prototype.hasOwnProperty.call(TEXTES, f);
   const memoire = {
     lire(cle, defaut) { try { const v = localStorage.getItem(cle); return v === null ? defaut : v; } catch (e) { return defaut; } },

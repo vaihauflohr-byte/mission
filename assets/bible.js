@@ -9,7 +9,7 @@
 (function (global) {
   "use strict";
 
-  const VERSION_TEXTE = "1"; // à changer quand le texte est reconstruit
+  const VERSION_TEXTE = "2"; // à changer quand le texte est reconstruit
 
   // noms anglais des adresses BibleGateway et noms français, dans l’ordre des livres
   const ANGLAIS = [

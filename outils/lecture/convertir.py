@@ -32,7 +32,7 @@ import fitz  # noqa: E402  (PyMuPDF)
 from PIL import Image  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from versets import lier as _lier, REF as REF_ENTIER, REF_ABREGE  # noqa: E402
+from versets import lier as _lier, corriger as corriger_references, REF as REF_ENTIER, REF_ABREGE  # noqa: E402
 
 
 def equilibrer(h):
@@ -1620,6 +1620,7 @@ def convertir(f, titres_connus, role, ecrire=True, plan=False):
         for vieux in dossier_img.glob("img-*.webp"):
             vieux.unlink()
     h, nq, ns = rendu_html(blocs, f, dossier_img, doc, role, credits)
+    h = corriger_references(h, f)
     if ecrire:
         sortie = SORTIE / f"{f}.html"
         sortie.parent.mkdir(parents=True, exist_ok=True)

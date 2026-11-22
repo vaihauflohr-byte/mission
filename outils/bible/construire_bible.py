@@ -189,12 +189,28 @@ def renumeroter(imprime, cible):
         for k in range(n):
             vers_i[b + k] = a + k
     vers_i[len(mots_c)] = len(mots_i)
+    vers_c = [None] * len(mots_i)
+    for a, b, n in sm.get_matching_blocks():
+        for k in range(n):
+            vers_c[a + k] = b + k
+    debuts_i = [j for _, j in debut_verset]
     coupes = []
     for (cv, k) in debuts_c:
         d = 0
         while vers_i[k + d] is None:
             d += 1
         j = max(0, vers_i[k + d] - d)
+        # mots imprimés absents de la cible juste avant la coupe (« à » perdu en tête de 2 Rois 19.15) :
+        # s’ils ouvrent un verset de l’imprimée, ils ouvrent aussi celui-ci
+        p = j - 1
+        while p >= 0 and vers_c[p] is None:
+            p -= 1
+        dedans = [x for x in debuts_i[bisect.bisect_right(debuts_i, p):bisect.bisect_left(debuts_i, j)]]
+        if dedans:
+            j = dedans[-1]
+        # l’autre édition perd souvent un « à » en tête de verset : il revient à ce verset
+        while j > 0 and vers_c[j - 1] is None and mots_i[j - 1][0] == "a":
+            j -= 1
         coupes.append(mots_i[j][1] if j < len(mots_i) else len(texte))
     coupes.append(len(texte))
     # un guillemet ou une parenthèse ouvrante reste avec le verset qu’elle ouvre
@@ -210,10 +226,6 @@ def renumeroter(imprime, cible):
         propre = re.sub(r" *\n *", "\n", brut).strip()
         chapitres[c - 1].append(("\n" if ligne and n else "") + propre)
     # verset de la cible où commence chaque verset imprimé
-    vers_c = [None] * len(mots_i)
-    for a, b, n in sm.get_matching_blocks():
-        for k in range(n):
-            vers_c[a + k] = b + k
     debut_mot = [k for _, k in debuts_c]
     correspondance = {}
     for (ci, vi), j in debut_verset:
