@@ -8,7 +8,7 @@ Aucun serveur, aucune base de données : le site range la bibliothèque d’étu
 - **Accueil** : les trois étapes, numérotées : *1. Rencontrer Jésus-Christ*, *2. Grandir en Jésus-Christ*, *3. Mûrir en Jésus-Christ* (dossiers « 1 - Pour connaitre Jesus », « 2 - Pour grandir en Jésus », « 3 - Mûrir en Jésus » du Drive ; l’identifiant de la première reste `connaitre` dans les liens), la recherche et le mode d’emploi. « Convient (aussi) à des invités » est en gras sous les étapes 1 et 2. En parallèle de l’étape 3, une branche : *Devenir un disciple du Christ* (identifiant `disciple`, champ `parallele` dans `NIVEAUX`), le parcours FAST ; sur ordinateur elle se place sous Mûrir, sur téléphone après elle, reliée en pointillés ; elle a aussi son lien dans la barre du haut (grand écran) et le pied de page.
 - **Étape** : ses séries, avec une image, une phrase de présentation et le nombre d’études.
 - **Série** : les études dans l’ordre. Un bouton par document : *Participant* (fiche du participant), *Animateur* (guide de l’animateur), *Avec les réponses*, *Notes de présentation* ; *Ouvrir* ou *Voir* quand il n’y en a qu’un. Les plans du cours, brochures et révisions sont dans « Pour bien commencer ».
-- **Mode lecture** (`#/lire/<série>/<document>`) : les études s’ouvrent comme dans l’appli de l’École du sabbat ou un livre — texte qui s’adapte à l’écran, références bibliques cliquables (Louis Segond sur BibleGateway), une case « Votre réponse » sous chaque question, gardée sur l’appareil. *Sommaire*, *Affichage* (taille du texte, fond clair / sépia / nuit, police, défiler ou feuilleter page par page), *Imprimer* et *Original* (le PDF) sont toujours dans la barre du haut. Voir « Mode lecture » plus bas.
+- **Mode lecture** (`#/lire/<série>/<document>`) : les études s’ouvrent comme dans l’appli de l’École du sabbat ou un livre — texte qui s’adapte à l’écran, références bibliques qui s’ouvrent dans un panneau, sans quitter l’étude (Bible Louis Segond 1910 intégrée au site), une case « Votre réponse » sous chaque question, gardée sur l’appareil. *Sommaire*, *Affichage* (taille du texte, fond clair / sépia / nuit, police, défiler ou feuilleter page par page), *Imprimer* et *Original* (le PDF) sont toujours dans la barre du haut. Voir « Mode lecture » plus bas.
 - **Original** (`#/original/<série>/<document>`, et `#/lire/…` pour les documents sans mode lecture) : le PDF s’affiche dans le site (PDF.js), page après page, à la largeur de l’écran. On zoome en pinçant (téléphone), avec Ctrl + molette ou les boutons − / + (ordinateur). *Télécharger* donne le PDF ; pour les présentations, le menu propose aussi le PowerPoint d’origine, avec les animations, et *Projeter* les montre en plein écran, une diapositive à la fois (flèches ou clic pour avancer).
 - **Imprimer** : sur chaque document, en mode lecture comme en PDF. Au choix : *le document d’origine* (les pages du PDF, préparées dans le navigateur puis envoyées à l’imprimante), *ce que je lis, avec mes réponses* (en mode lecture) ou *Télécharger le PDF*.
 - **Chercher** : par mot, sans tenir compte des accents (`bapteme` trouve « baptême »).
@@ -52,6 +52,20 @@ Le convertisseur remet les colonnes dans l’ordre de lecture, retire en-têtes,
 Réglages par série : `VOLETS` (dépliant, plusieurs volets côte à côte sur une page à l’italienne, lus l’un après l’autre comme des pages : Historacles) ; `NUMEROTEES` (seules les questions numérotées sont des questions, les traits courts « ___ » sont des mots à compléter, et la réponse se donne dans les blancs, sans zone de texte). Dans un dépliant, un schéma tracé (ligne chronologique, calcul souligné) est rendu en image avec ses étiquettes, sauf s’il est surtout fait de phrases. Leçons FAST (séries `fast-…`) : le fil d’Ariane de chaque page web (« > Semaine 1 > Mémo ») devient l’intertitre de la section, les cases « Nom / Date / Paraphé par » sont retirées, le logo FAST est écarté (`LOGOS`) ; le manuel, les couvertures et les illustrations se lisent sans zone de réponse.
 
 Les réponses écrites restent dans le navigateur (`localStorage`, clés `mission.rep.<document>…`), rien n’est envoyé.
+
+### La Bible dans le site
+
+Toucher une référence d’une étude affiche le passage dans un panneau en bas de l’écran (aux couleurs et à la taille de texte du mode lecture), avec « Voir tout le chapitre » où le passage est surligné. Les références sont repérées par le convertisseur (`outils/lecture/versets.py`), qui en fait des liens vers BibleGateway ; `assets/bible.js` lit l’adresse du lien (« John 15:1-8 ») et affiche le passage à la place. Un clic avec Ctrl ou ⌘ ouvre toujours BibleGateway ; sans connexion, le panneau le propose aussi.
+
+Texte : Louis Segond 1910 (domaine public), dans `donnees/bible/01.json` … `66.json`, un livre par fichier, téléchargé à la première référence de ce livre puis gardé sur l’appareil. Les versets suivent la numérotation de BibleGateway et YouVersion, celle de la plupart des études (traduites de l’anglais) : titres des psaumes dans le verset 1, Ésaïe 9.6 « un enfant nous est né », Ecclésiaste 12.13… Une référence qui n’existe que dans la Segond imprimée (Ecclésiaste 12.15) est retrouvée, avec une ligne qui le signale. Une référence fautive dans une étude (Luc 64.6) affiche un message au lieu du texte.
+
+Pour reconstruire le texte (instructions en tête du script) :
+
+```
+python3 outils/bible/construire_bible.py <dossier p.sfm de la Segond UBS> <FrenchBible.xml de Beblia>
+```
+
+puis augmenter `VERSION_TEXTE` dans `assets/bible.js`.
 
 Après un changement de documents :
 
@@ -101,7 +115,8 @@ Une image qui manque est simplement masquée.
 | `lecture/`, `donnees/lecture.js` | mode lecture : textes des études et leurs images, liste des documents concernés (générés) |
 | `lecteur/` | PDF.js 6.5.438 (Mozilla, licence Apache 2.0), chargé à la première ouverture d’un document |
 | `donnees/bibliotheque.js` | catalogue généré : étapes, séries, études, documents |
-| `outils/` | générateur du catalogue, import et corrections des documents, images, mode lecture (`outils/lecture/`) |
+| `assets/bible.js`, `donnees/bible/` | la Bible (Louis Segond 1910) affichée quand on touche une référence |
+| `outils/` | générateur du catalogue, import et corrections des documents, images, mode lecture (`outils/lecture/`), texte de la Bible (`outils/bible/`) |
 | `sw.js`, `manifest.webmanifest`, `assets/captures/` | application installable, hors ligne ; captures montrées dans la fenêtre d’installation (Android) |
 | `assets/icones/` | icônes de l’appli (feuille), symbole adventiste, code QR de `mission.ka-ilei.com` |
 | `CNAME`, `.nojekyll` | domaine `mission.ka-ilei.com` ; fichiers publiés tels quels |

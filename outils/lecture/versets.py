@@ -1,7 +1,8 @@
 """Références bibliques en français : repérage dans le texte et lien vers la Bible Segond 1910 (BibleGateway).
 
 Les noms anglais servent à l'adresse du passage : BibleGateway les comprend toujours, et affiche
-le texte en français avec version=LSG.
+le texte en français avec version=LSG. Sur le site, assets/bible.js lit cette adresse et affiche
+le passage dans un panneau, sans quitter l’étude ; BibleGateway reste le recours (Ctrl-clic, hors ligne).
 """
 import re
 from urllib.parse import quote

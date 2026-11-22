@@ -799,6 +799,7 @@
     racine.addEventListener("click", (ev) => {
       const o = ev.target.closest("[data-ouvrir]");
       if (o) {
+        if (o.tagName === "A" && (ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey)) return;
         const panneau = racine.querySelector(`#panneau-${o.dataset.ouvrir}`);
         if (!panneau) return;
         retour = o;
@@ -978,6 +979,11 @@
           <div class="panneau-tete"><h2 id="titre-sommaire">Sommaire</h2><button type="button" class="panneau-fermer" data-fermer>Fermer</button></div>
           <ol class="sommaire-lecture"></ol>
         </div>
+        <div class="panneau-lecture panneau-bible" id="panneau-bible" role="dialog" aria-modal="true" aria-labelledby="titre-bible" hidden>
+          <div class="panneau-tete"><h2 id="titre-bible" class="bible-titre">Bible</h2><button type="button" class="panneau-fermer" data-fermer>Fermer</button></div>
+          <div class="bible-outils"><span>Louis Segond 1910</span><button type="button" class="bible-tout" aria-pressed="false" hidden>Voir tout le chapitre</button></div>
+          <div class="bible-corps"><div class="bible-texte" aria-live="polite"></div></div>
+        </div>
         ${panneauImpression(e, true)}
       </div>`;
 
@@ -992,6 +998,13 @@
     const { signal } = session.ac;
     const fermerPanneaux = brancherPanneaux(racine, signal);
     brancherImpression(racine, e, signal);
+    // toucher une référence biblique : le passage s’affiche dans le panneau (assets/bible.js)
+    racine.addEventListener("click", (ev) => {
+      const a = ev.target.closest('a.ref[data-ouvrir="bible"]');
+      if (!a || ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey) return;
+      ev.preventDefault();
+      Bible.montrer(racine.querySelector("#panneau-bible"), a.getAttribute("href"));
+    }, { signal });
     const livre = () => racine.classList.contains("livre");
 
     const position = () => {
@@ -1136,6 +1149,11 @@
       .then((h) => {
         if (signal.aborted) return;
         article.innerHTML = h;
+        if (window.Bible) {
+          article.querySelectorAll("a.ref").forEach((a) => {
+            if (Bible.analyser(Bible.passageDuLien(a.getAttribute("href")))) a.dataset.ouvrir = "bible";
+          });
+        }
         reponses(article, f, signal);
         const titres = [...article.querySelectorAll("h2")];
         const liste = titres.length >= 2 ? titres : [...article.querySelectorAll("h2, h3")];
