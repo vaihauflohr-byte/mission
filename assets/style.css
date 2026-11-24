@@ -672,6 +672,44 @@ a { color: var(--feuille); text-underline-offset: 0.18em; }
 }
 .etude-docs { grid-area: docs; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
+/* étude découpée jour par jour : « Leçons du jour » déplie la liste des jours sous l’étude */
+.etude.avec-jours {
+  grid-template-areas: "vignette titre" "docs docs" "jours jours";
+  grid-template-rows: auto auto auto;
+  row-gap: 0;
+}
+.etude.avec-jours .etude-docs { margin-top: 0.75rem; }
+.jours-bouton { gap: 0.45rem; font-family: inherit; cursor: pointer; }
+.jours-bouton .chevron-bas { width: 0.95rem; height: 0.95rem; }
+.jours-bouton[aria-expanded="true"] .chevron-bas { transform: rotate(180deg); }
+.jours {
+  grid-area: jours;
+  list-style: none;
+  margin: 0.8rem 0 0.1rem;
+  padding: 0.25rem 0.4rem;
+  background: var(--ecume);
+  border: 1px solid var(--ligne);
+  border-radius: 12px;
+}
+.jours[hidden] { display: none; }
+.jours li + li { border-top: 1px solid var(--ligne); }
+.jour {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding: 0.65rem 0.55rem;
+  border-radius: 8px;
+  color: var(--encre);
+  line-height: 1.35;
+  text-decoration: none;
+}
+.jour:hover { background: var(--recif-pale); }
+.jour-nom { flex: none; min-width: 3.5rem; font-weight: 700; color: var(--lagon); }
+.jour-titre { flex: 1 1 auto; min-width: 0; }
+.jour-semaine .jour-nom { color: var(--feuille); }
+.jour-semaine .jour-titre { color: var(--gris); font-size: var(--t-petit); }
+
 /* boutons de document */
 .doc {
   display: inline-flex;
@@ -1493,6 +1531,15 @@ summary.lecteur-bouton::-webkit-details-marker { display: none; }
     align-items: center;
   }
   .etude-docs { justify-content: flex-start; }
+  .etude.avec-jours,
+  .etude.avec-jours:has(.etude-docs > :nth-child(2):last-child),
+  .etude.avec-jours:has(.etude-docs > :only-child) {
+    grid-template-columns: 6.5rem minmax(0, 1fr) auto;
+    grid-template-areas: "vignette titre docs" ". jours jours";
+    grid-template-rows: auto auto;
+    align-items: center;
+  }
+  .etude.avec-jours .etude-docs { margin-top: 0; }
   .mode-liste { grid-template-columns: 1fr 1fr; }
 }
 

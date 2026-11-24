@@ -5554,7 +5554,7 @@ window.BIBLIO = {
    "id": "disciple-incroyable",
    "niveau": "disciple",
    "titre": "Devenir un disciple incroyable",
-   "texte": "13 semaines de formation d’Amazing Facts pour gagner des âmes et former des disciples : la commission divine, la méthode du Christ, l’amitié, les études bibliques, les objections, les décisions, les nouveaux croyants. Chaque semaine : la leçon en sept jours avec son quiz, et le guide de l’animateur.",
+   "texte": "13 semaines de formation d’Amazing Facts pour gagner des âmes et former des disciples : la commission divine, la méthode du Christ, l’amitié, les études bibliques, les objections, les décisions, les nouveaux croyants. Chaque semaine : une leçon par jour, le quiz de la semaine et le guide de l’animateur.",
    "lecons": [
     {
      "num": "1",
@@ -5575,6 +5575,132 @@ window.BIBLIO = {
        "f": "disciple-incroyable/01-la-commission-divine-animateur",
        "o": 146233,
        "p": 14
+      }
+     ],
+     "jours": [
+      {
+       "nom": "Introduction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/01-introduction",
+         "o": 42533,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 1",
+       "titre": "Le dernier message",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/01-jour-1-le-dernier-message",
+         "o": 44728,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 2",
+       "titre": "S’attarder sur le rivage",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/01-jour-2-s-attarder-sur-le-rivage",
+         "o": 43208,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 3",
+       "titre": "Trouver l’unité",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/01-jour-3-trouver-l-unite",
+         "o": 45115,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 4",
+       "titre": "Sauvé pour servir",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/01-jour-4-sauve-pour-servir",
+         "o": 33755,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 5",
+       "titre": "Des outils à votre disposition !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/01-jour-5-des-outils-a-votre-disposition",
+         "o": 35474,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 6",
+       "titre": "Des paroles pour vivre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/01-jour-6-des-paroles-pour-vivre",
+         "o": 38964,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 7",
+       "titre": "« Voici les chrétiens » (1re partie)",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/01-jour-7-voici-les-chretiens-1re-partie",
+         "o": 31501,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Quiz de la semaine",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/01-quiz-de-la-semaine",
+         "o": 39278,
+         "p": 2
+        }
+       ]
       }
      ]
     },
@@ -5598,6 +5724,132 @@ window.BIBLIO = {
        "o": 137877,
        "p": 15
       }
+     ],
+     "jours": [
+      {
+       "nom": "Introduction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/02-introduction",
+         "o": 48238,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 1",
+       "titre": "Voir avec Ses yeux",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/02-jour-1-voir-avec-ses-yeux",
+         "o": 40110,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 2",
+       "titre": "Nourrir la foi",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/02-jour-2-nourrir-la-foi",
+         "o": 39443,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 3",
+       "titre": "La guérison par le service",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/02-jour-3-la-guerison-par-le-service",
+         "o": 46308,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 4",
+       "titre": "Rendez-vous divins",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/02-jour-4-rendez-vous-divins",
+         "o": 32449,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 5",
+       "titre": "Des outils à votre disposition !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/02-jour-5-des-outils-a-votre-disposition",
+         "o": 42016,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 6",
+       "titre": "Des paroles pour vivre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/02-jour-6-des-paroles-pour-vivre",
+         "o": 38159,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 7",
+       "titre": "« Voici les chrétiens » (2e partie)",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/02-jour-7-voici-les-chretiens-2e-partie",
+         "o": 33422,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Quiz de la semaine",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/02-quiz-de-la-semaine",
+         "o": 38797,
+         "p": 2
+        }
+       ]
+      }
      ]
     },
     {
@@ -5619,6 +5871,132 @@ window.BIBLIO = {
        "f": "disciple-incroyable/03-notre-plus-grand-besoin-animateur",
        "o": 154342,
        "p": 18
+      }
+     ],
+     "jours": [
+      {
+       "nom": "Introduction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/03-introduction",
+         "o": 47012,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 1",
+       "titre": "L’abandon absolu",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/03-jour-1-l-abandon-absolu",
+         "o": 48571,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 2",
+       "titre": "La puissance de la prière",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/03-jour-2-la-puissance-de-la-priere",
+         "o": 46289,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 3",
+       "titre": "Creuser plus profondément",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/03-jour-3-creuser-plus-profondement",
+         "o": 45893,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 4",
+       "titre": "Insister avec foi",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/03-jour-4-insister-avec-foi",
+         "o": 43603,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 5",
+       "titre": "Des outils à votre disposition !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/03-jour-5-des-outils-a-votre-disposition",
+         "o": 33489,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 6",
+       "titre": "Des paroles pour vivre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/03-jour-6-des-paroles-pour-vivre",
+         "o": 39023,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 7",
+       "titre": "Dans les grottes ou dans les nuages (1re partie)",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/03-jour-7-dans-les-grottes-ou-dans-les-nuages-1re-partie",
+         "o": 40022,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Quiz de la semaine",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/03-quiz-de-la-semaine",
+         "o": 37073,
+         "p": 2
+        }
+       ]
       }
      ]
     },
@@ -5642,6 +6020,132 @@ window.BIBLIO = {
        "o": 142004,
        "p": 16
       }
+     ],
+     "jours": [
+      {
+       "nom": "Introduction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/04-introduction",
+         "o": 44355,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 1",
+       "titre": "Phase un : se lier d’amitié avec les membres de la communauté",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/04-jour-1-phase-un-se-lier-d-amitie-avec-les-membres-de-la-communaute",
+         "o": 43245,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 2",
+       "titre": "Phase deux : répondre aux besoins, gagner la confiance et fortifier les églises",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/04-jour-2-phase-deux-repondre-aux-besoins-gagner-la-confiance-et",
+         "o": 38061,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 3",
+       "titre": "Phase trois : inviter des amis à assister à la série de conférences d’évangélisation",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/04-jour-3-phase-trois-inviter-des-amis-a-assister-a-la-serie-de",
+         "o": 40515,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 4",
+       "titre": "Lancer le filet au large",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/04-jour-4-lancer-le-filet-au-large",
+         "o": 42139,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 5",
+       "titre": "Des outils à votre disposition !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/04-jour-5-des-outils-a-votre-disposition",
+         "o": 29334,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 6",
+       "titre": "Des paroles pour vivre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/04-jour-6-des-paroles-pour-vivre",
+         "o": 42534,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 7",
+       "titre": "Dans les grottes ou dans les nuages (2e partie)",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/04-jour-7-dans-les-grottes-ou-dans-les-nuages-2e-partie",
+         "o": 32810,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Quiz de la semaine",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/04-quiz-de-la-semaine",
+         "o": 36503,
+         "p": 2
+        }
+       ]
+      }
      ]
     },
     {
@@ -5663,6 +6167,132 @@ window.BIBLIO = {
        "f": "disciple-incroyable/05-l-evangelisation-par-l-amitie-1re-partie-animateur",
        "o": 165625,
        "p": 18
+      }
+     ],
+     "jours": [
+      {
+       "nom": "Introduction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/05-introduction",
+         "o": 47492,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 1",
+       "titre": "Atteindre le cœur",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/05-jour-1-atteindre-le-coeur",
+         "o": 40769,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 2",
+       "titre": "Le service désintéressé",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/05-jour-2-le-service-desinteresse",
+         "o": 44801,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 3",
+       "titre": "Inconnu (sans) danger",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/05-jour-3-inconnu-sans-danger",
+         "o": 39490,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 4",
+       "titre": "Le témoin craintif",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/05-jour-4-le-temoin-craintif",
+         "o": 35646,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 5",
+       "titre": "Des outils à votre disposition !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/05-jour-5-des-outils-a-votre-disposition",
+         "o": 38687,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 6",
+       "titre": "Des paroles pour vivre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/05-jour-6-des-paroles-pour-vivre",
+         "o": 39801,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 7",
+       "titre": "La vérité à tout prix",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/05-jour-7-la-verite-a-tout-prix",
+         "o": 50897,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Quiz de la semaine",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/05-quiz-de-la-semaine",
+         "o": 36152,
+         "p": 2
+        }
+       ]
       }
      ]
     },
@@ -5686,6 +6316,132 @@ window.BIBLIO = {
        "o": 143190,
        "p": 16
       }
+     ],
+     "jours": [
+      {
+       "nom": "Introduction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/06-introduction",
+         "o": 45202,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 1",
+       "titre": "L’instrument choisi par le Ciel",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/06-jour-1-l-instrument-choisi-par-le-ciel",
+         "o": 40530,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 2",
+       "titre": "L’occasion en or de Paul",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/06-jour-2-l-occasion-en-or-de-paul",
+         "o": 32488,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 3",
+       "titre": "Rien à craindre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/06-jour-3-rien-a-craindre",
+         "o": 44733,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 4",
+       "titre": "Réjouissez-vous toujours !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/06-jour-4-rejouissez-vous-toujours",
+         "o": 34717,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 5",
+       "titre": "Des outils à votre disposition !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/06-jour-5-des-outils-a-votre-disposition",
+         "o": 34112,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 6",
+       "titre": "Des paroles pour vivre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/06-jour-6-des-paroles-pour-vivre",
+         "o": 40221,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 7",
+       "titre": "Répondre à l’appel (1re partie)",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/06-jour-7-repondre-a-l-appel-1re-partie",
+         "o": 34848,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Quiz de la semaine",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/06-quiz-de-la-semaine",
+         "o": 37555,
+         "p": 2
+        }
+       ]
+      }
      ]
     },
     {
@@ -5707,6 +6463,132 @@ window.BIBLIO = {
        "f": "disciple-incroyable/07-donner-des-etudes-bibliques-1re-partie-animateur",
        "o": 179090,
        "p": 21
+      }
+     ],
+     "jours": [
+      {
+       "nom": "Introduction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/07-introduction",
+         "o": 48614,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 1",
+       "titre": "Chrétiens en toute saison",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/07-jour-1-chretiens-en-toute-saison",
+         "o": 40529,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 2",
+       "titre": "Le cœur de la prophétie",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/07-jour-2-le-coeur-de-la-prophetie",
+         "o": 36052,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 3",
+       "titre": "L’ABC des études bibliques",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/07-jour-3-l-abc-des-etudes-bibliques",
+         "o": 44725,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 4",
+       "titre": "Partager, c’est aimer",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/07-jour-4-partager-c-est-aimer",
+         "o": 61024,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 5",
+       "titre": "Des outils à votre disposition !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/07-jour-5-des-outils-a-votre-disposition",
+         "o": 37230,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 6",
+       "titre": "Des paroles pour vivre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/07-jour-6-des-paroles-pour-vivre",
+         "o": 38356,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 7",
+       "titre": "Répondre à l’appel (2e partie)",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/07-jour-7-repondre-a-l-appel-2e-partie",
+         "o": 36484,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Quiz de la semaine",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/07-quiz-de-la-semaine",
+         "o": 37706,
+         "p": 2
+        }
+       ]
       }
      ]
     },
@@ -5730,6 +6612,132 @@ window.BIBLIO = {
        "o": 180214,
        "p": 22
       }
+     ],
+     "jours": [
+      {
+       "nom": "Introduction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/08-introduction",
+         "o": 48903,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 1",
+       "titre": "N’épuisez pas les saints",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/08-jour-1-n-epuisez-pas-les-saints",
+         "o": 54423,
+         "p": 3
+        }
+       ]
+      },
+      {
+       "nom": "Jour 2",
+       "titre": "De fidèles inspecteurs de fruits",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/08-jour-2-de-fideles-inspecteurs-de-fruits",
+         "o": 43478,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 3",
+       "titre": "Parler sans mots",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/08-jour-3-parler-sans-mots",
+         "o": 43751,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 4",
+       "titre": "Répondre aux besoins ressentis",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/08-jour-4-repondre-aux-besoins-ressentis",
+         "o": 37821,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 5",
+       "titre": "Des outils à votre disposition !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/08-jour-5-des-outils-a-votre-disposition",
+         "o": 49064,
+         "p": 3
+        }
+       ]
+      },
+      {
+       "nom": "Jour 6",
+       "titre": "Des paroles pour vivre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/08-jour-6-des-paroles-pour-vivre",
+         "o": 37876,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 7",
+       "titre": "Le guerrier de prière tatoué",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/08-jour-7-le-guerrier-de-priere-tatoue",
+         "o": 44385,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Quiz de la semaine",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/08-quiz-de-la-semaine",
+         "o": 35093,
+         "p": 2
+        }
+       ]
+      }
      ]
     },
     {
@@ -5751,6 +6759,119 @@ window.BIBLIO = {
        "f": "disciple-incroyable/09-repondre-aux-objections-animateur",
        "o": 154325,
        "p": 16
+      }
+     ],
+     "jours": [
+      {
+       "nom": "Introduction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/09-introduction",
+         "o": 48738,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 1",
+       "titre": "Atteindre le cœur",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/09-jour-1-atteindre-le-coeur",
+         "o": 44397,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 2",
+       "titre": "M’entendez-vous maintenant ?",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/09-jour-2-m-entendez-vous-maintenant",
+         "o": 40887,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 3",
+       "titre": "Une humble confiance",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/09-jour-3-une-humble-confiance",
+         "o": 36336,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 4",
+       "titre": "Les quatre C de l’adventisme",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/09-jour-4-les-quatre-c-de-l-adventisme",
+         "o": 48951,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 5",
+       "titre": "Des outils à votre disposition !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/09-jour-5-des-outils-a-votre-disposition",
+         "o": 38773,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 6",
+       "titre": "Des paroles pour vivre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/09-jour-6-des-paroles-pour-vivre",
+         "o": 38038,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 7",
+       "titre": "De la bouche des enfants",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/09-jour-7-de-la-bouche-des-enfants",
+         "o": 46981,
+         "p": 1
+        }
+       ]
       }
      ]
     },
@@ -5774,6 +6895,132 @@ window.BIBLIO = {
        "o": 165501,
        "p": 19
       }
+     ],
+     "jours": [
+      {
+       "nom": "Introduction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/10-introduction",
+         "o": 47862,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 1",
+       "titre": "Captiver",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/10-jour-1-captiver",
+         "o": 44163,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 2",
+       "titre": "Convaincre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/10-jour-2-convaincre",
+         "o": 49151,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 3",
+       "titre": "Conduire à la conviction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/10-jour-3-conduire-a-la-conviction",
+         "o": 45870,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 4",
+       "titre": "Convertir",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/10-jour-4-convertir",
+         "o": 43499,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 5",
+       "titre": "Des outils à votre disposition !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/10-jour-5-des-outils-a-votre-disposition",
+         "o": 42963,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 6",
+       "titre": "Des paroles pour vivre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/10-jour-6-des-paroles-pour-vivre",
+         "o": 42512,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 7",
+       "titre": "Quand la vérité frappe à la porte",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/10-jour-7-quand-la-verite-frappe-a-la-porte",
+         "o": 41453,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Quiz de la semaine",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/10-quiz-de-la-semaine",
+         "o": 38594,
+         "p": 2
+        }
+       ]
+      }
      ]
     },
     {
@@ -5795,6 +7042,132 @@ window.BIBLIO = {
        "f": "disciple-incroyable/11-la-presentation-de-l-evangile-animateur",
        "o": 175011,
        "p": 21
+      }
+     ],
+     "jours": [
+      {
+       "nom": "Introduction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/11-introduction",
+         "o": 45940,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 1",
+       "titre": "L’assurance du salut",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/11-jour-1-l-assurance-du-salut",
+         "o": 42530,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 2",
+       "titre": "Foi contre sentiment",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/11-jour-2-foi-contre-sentiment",
+         "o": 43332,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 3",
+       "titre": "Est-ce maintenant le moment ?",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/11-jour-3-est-ce-maintenant-le-moment",
+         "o": 41468,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 4",
+       "titre": "La présentation de l’Évangile",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/11-jour-4-la-presentation-de-l-evangile",
+         "o": 41035,
+         "p": 3
+        }
+       ]
+      },
+      {
+       "nom": "Jour 5",
+       "titre": "Des outils à votre disposition !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/11-jour-5-des-outils-a-votre-disposition",
+         "o": 38129,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 6",
+       "titre": "Des paroles pour vivre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/11-jour-6-des-paroles-pour-vivre",
+         "o": 43824,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 7",
+       "titre": "Le cri d’une petite fille",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/11-jour-7-le-cri-d-une-petite-fille",
+         "o": 35478,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Quiz de la semaine",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/11-quiz-de-la-semaine",
+         "o": 37000,
+         "p": 2
+        }
+       ]
       }
      ]
     },
@@ -5818,6 +7191,132 @@ window.BIBLIO = {
        "o": 139612,
        "p": 15
       }
+     ],
+     "jours": [
+      {
+       "nom": "Introduction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/12-introduction",
+         "o": 42395,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 1",
+       "titre": "Notre premier appel",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/12-jour-1-notre-premier-appel",
+         "o": 33405,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 2",
+       "titre": "Un rôle irremplaçable",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/12-jour-2-un-role-irremplacable",
+         "o": 34433,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 3",
+       "titre": "La famille du Christ",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/12-jour-3-la-famille-du-christ",
+         "o": 42758,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 4",
+       "titre": "Les dons spirituels",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/12-jour-4-les-dons-spirituels",
+         "o": 33745,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 5",
+       "titre": "Des outils à votre disposition !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/12-jour-5-des-outils-a-votre-disposition",
+         "o": 34455,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 6",
+       "titre": "Des paroles pour vivre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/12-jour-6-des-paroles-pour-vivre",
+         "o": 36024,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 7",
+       "titre": "La prostituée pardonnée (1re partie)",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/12-jour-7-la-prostituee-pardonnee-1re-partie",
+         "o": 30446,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Quiz de la semaine",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/12-quiz-de-la-semaine",
+         "o": 37626,
+         "p": 2
+        }
+       ]
+      }
      ]
     },
     {
@@ -5839,6 +7338,132 @@ window.BIBLIO = {
        "f": "disciple-incroyable/13-ramener-les-membres-egares-animateur",
        "o": 159611,
        "p": 17
+      }
+     ],
+     "jours": [
+      {
+       "nom": "Introduction",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/13-introduction",
+         "o": 47327,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 1",
+       "titre": "Chercher à sauver",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/13-jour-1-chercher-a-sauver",
+         "o": 42919,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 2",
+       "titre": "Un ministère amer ou meilleur",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/13-jour-2-un-ministere-amer-ou-meilleur",
+         "o": 41651,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 3",
+       "titre": "Prendre soin du Thomas qui doute",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/13-jour-3-prendre-soin-du-thomas-qui-doute",
+         "o": 32827,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 4",
+       "titre": "Une chaise vide",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/13-jour-4-une-chaise-vide",
+         "o": 44903,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Jour 5",
+       "titre": "Des outils à votre disposition !",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/13-jour-5-des-outils-a-votre-disposition",
+         "o": 54300,
+         "p": 3
+        }
+       ]
+      },
+      {
+       "nom": "Jour 6",
+       "titre": "Des paroles pour vivre",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/13-jour-6-des-paroles-pour-vivre",
+         "o": 40610,
+         "p": 1
+        }
+       ]
+      },
+      {
+       "nom": "Jour 7",
+       "titre": "La prostituée pardonnée (2e partie)",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/13-jour-7-la-prostituee-pardonnee-2e-partie",
+         "o": 34857,
+         "p": 2
+        }
+       ]
+      },
+      {
+       "nom": "Quiz de la semaine",
+       "docs": [
+        {
+         "format": "PDF",
+         "libelle": "Leçon du jour",
+         "role": "participant",
+         "f": "disciple-incroyable/13-quiz-de-la-semaine",
+         "o": 37815,
+         "p": 2
+        }
+       ]
       }
      ]
     }

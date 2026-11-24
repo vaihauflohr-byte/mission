@@ -70,6 +70,7 @@
     "Avec les réponses (version 2)": "Réponses, version 2",
   };
   const AIDE = {
+    "Leçons du jour": "« Leçons du jour » déplie la leçon de chaque jour, puis toute la semaine en un document",
     "Participant": "« Participant » ouvre la fiche du participant",
     "Animateur": "« Animateur » ouvre le guide de l’animateur",
     "Avec les réponses": "« Avec les réponses » ouvre la fiche déjà remplie, pour l’animateur",
@@ -79,25 +80,32 @@
   // ---------- documents ----------
   // chaque document importé a un chemin (d.f) : documents/<d.f>.pdf, lu dans #/lire/<d.f>
   const documents = new Map();
+  // leçon du jour (j) d’une étude découpée jour par jour (l.jours) : { d, s, l, j }
   B.series.forEach((s) => {
-    s.lecons.forEach((l) => l.docs.forEach((d) => d.f && documents.set(d.f, { d, s, l })));
+    s.lecons.forEach((l) => {
+      l.docs.forEach((d) => d.f && documents.set(d.f, { d, s, l }));
+      (l.jours || []).forEach((j) => j.docs.forEach((d) => d.f && documents.set(d.f, { d, s, l, j })));
+    });
     s.ressources.forEach((d) => d.f && documents.set(d.f, { d, s, l: null }));
   });
+  const titreJour = (j) => (j.titre ? `${j.nom} : ${j.titre}` : j.nom);
   const fichierPdf = (d) => `documents/${d.f}.pdf`;
   // document pas encore importé : lien de secours vers le Drive
   const cible = (d) =>
     d.f ? `href="#/lire/${esc(d.f)}"` : `href="https://drive.google.com/file/d/${encodeURIComponent(d.id)}/view" target="_blank" rel="noopener"`;
   const estPresentation = (d) => d.format === "PowerPoint";
-  const titreDoc = ({ d, l }) => (l ? l.titre : d.titre);
-  const detailDoc = ({ d, l }) => {
+  const titreDoc = ({ d, l, j }) => (j ? titreJour(j) : l ? l.titre : d.titre);
+  const detailDoc = ({ d, l, j }) => {
     const parties = [];
-    if (l && l.docs.length > 1) parties.push(d.libelle);
+    if (j) parties.push(`Semaine ${l.num} : ${l.titre}`);
+    else if (l && l.docs.length > 1) parties.push(d.libelle);
     else if (estPresentation(d)) parties.push("Présentation");
     if (d.p) parties.push(estPresentation(d) ? pluriel(d.p, "diapositive", "diapositives") : pluriel(d.p, "page", "pages"));
     return parties.join(", ");
   };
-  const nomFichier = ({ d, l }) =>
-    ((l ? (l.num ? `Étude ${l.num} – ` : "") + l.titre + (l.docs.length > 1 ? ` (${d.libelle})` : "") : d.titre)
+  const nomFichier = ({ d, l, j }) =>
+    ((j ? `Semaine ${l.num} – ${j.nom}${j.titre ? `, ${j.titre}` : ""}`
+      : l ? (l.num ? `Étude ${l.num} – ` : "") + l.titre + (l.docs.length > 1 ? ` (${d.libelle})` : "") : d.titre)
       .replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").trim() + ".pdf");
 
   function bouton(d, libelle, principal, aria) {
@@ -108,18 +116,51 @@
   function etude(l, s) {
     const nomComplet = (l.num ? `Étude ${l.num} : ` : "") + l.titre;
     const num = l.num ? `<span class="etude-num" aria-hidden="true">${esc(l.num)}</span>` : "";
-    const boutons = l.docs.length === 1
+    let boutons = l.docs.length === 1
       ? bouton(l.docs[0], estPresentation(l.docs[0]) ? "Voir" : "Ouvrir", true, `${estPresentation(l.docs[0]) ? "Voir" : "Ouvrir"} : ${nomComplet}`)
       : l.docs.map((d, i) => bouton(d, COURTS[d.libelle] || d.libelle, i === 0 && d.role !== "animateur", `${d.libelle} : ${nomComplet}`)).join("");
+    // étude découpée jour par jour : « Leçons du jour » déplie la liste des jours, la fiche de toute la semaine en dernier
+    let jours = "";
+    if (aDesJours(l)) {
+      const id = `jours-${s.id}-${l.num}`;
+      const ouvert = joursOuverts.has(id);
+      const semaine = l.docs.find((d) => d.role === "participant");
+      boutons = `<button type="button" class="doc principal jours-bouton" aria-expanded="${ouvert}" aria-controls="${id}"
+          aria-label="Leçons du jour : ${esc(nomComplet)}">Leçons du jour${chevronBas}</button>`
+        + l.docs.filter((d) => d !== semaine).map((d) => bouton(d, COURTS[d.libelle] || d.libelle, false, `${d.libelle} : ${nomComplet}`)).join("");
+      const ligne = (d, nom, titre, classe) => `<li><a class="jour${classe || ""}" ${cible(d)}>
+          <span class="jour-nom">${fr(nom)}</span>${titre ? `<span class="jour-titre">${fr(titre)}</span>` : ""}</a></li>`;
+      jours = `<ol class="jours" id="${id}" aria-label="Leçons du jour : ${esc(l.titre)}"${ouvert ? "" : " hidden"}>
+          ${l.jours.map((j) => ligne(j.docs[0], j.nom, j.titre)).join("")}
+          ${semaine ? ligne(semaine, "Toute la semaine", "la fiche du participant en un seul document", " jour-semaine") : ""}
+        </ol>`;
+    }
     const vignette = l.image
       ? `<span class="etude-vignette">${image(l.image, "")}${num}</span>`
       : `<span class="etude-vignette sans-image">${num}</span>`;
-    return `<li class="etude">
+    return `<li class="etude${jours ? " avec-jours" : ""}">
       ${vignette}
       <p class="etude-titre">${fr(l.titre)}${l.sujet ? `<span class="cache"> — sujet : </span><span class="etude-sujet">${fr(l.sujet)}</span>` : ""}</p>
       <div class="etude-docs">${boutons}</div>
+      ${jours}
     </li>`;
   }
+  const aDesJours = (l) => !!(l.jours && l.jours.length);
+  const joursOuverts = new Set(); // listes « Leçons du jour » dépliées, gardées d’un affichage de la série à l’autre
+  const chevronBas = '<svg class="chevron chevron-bas" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 6 4.5 4.5L12.5 6"/></svg>';
+  function basculerJours(bouton, ouvrir) {
+    const liste = document.getElementById(bouton.getAttribute("aria-controls"));
+    if (!liste) return;
+    const ouvert = ouvrir === undefined ? bouton.getAttribute("aria-expanded") !== "true" : ouvrir;
+    bouton.setAttribute("aria-expanded", String(ouvert));
+    liste.hidden = !ouvert;
+    if (ouvert) joursOuverts.add(liste.id);
+    else joursOuverts.delete(liste.id);
+  }
+  app.addEventListener("click", (ev) => {
+    const b = ev.target.closest(".jours-bouton");
+    if (b) basculerJours(b);
+  });
 
   function fil(etapes) {
     return `<nav class="fil" aria-label="Vous êtes ici"><ol>${etapes
@@ -343,7 +384,9 @@
       const plusieurs = s.lecons.some((l) => l.docs.length > 1);
       let legende = "";
       if (plusieurs) {
-        const vus = new Set(s.lecons.flatMap((l) => l.docs.map((d) => COURTS[d.libelle] || d.libelle)));
+        // boutons affichés : une étude découpée jour par jour montre « Leçons du jour » à la place de « Participant »
+        const vus = new Set(s.lecons.flatMap((l) => (aDesJours(l) ? ["Leçons du jour"] : [])
+          .concat(l.docs.filter((d) => !(aDesJours(l) && d.role === "participant")).map((d) => COURTS[d.libelle] || d.libelle))));
         const phrases = Object.keys(AIDE).filter((k) => vus.has(k)).map((k) => AIDE[k]);
         if (phrases.length) legende = `<p class="legende">${fr(phrases.join(" ; "))}.</p>`;
       }
@@ -391,7 +434,11 @@
     index = [];
     B.series.forEach((s) => {
       index.push({ type: "serie", s, cle: norm(s.titre + " " + s.texte) });
-      s.lecons.forEach((l) => index.push({ type: "etude", s, l, cle: norm(l.titre + " " + (l.sujet || "") + " " + s.titre) }));
+      s.lecons.forEach((l) => {
+        index.push({ type: "etude", s, l, cle: norm(l.titre + " " + (l.sujet || "") + " " + s.titre) });
+        // leçons du jour : retrouvées par leur titre seul (le nom de la série ramènerait toutes les leçons)
+        (l.jours || []).forEach((j) => j.titre && index.push({ type: "jour", s, l, j, cle: norm(j.titre) }));
+      });
     });
   }
 
@@ -434,6 +481,12 @@
       if (e.type === "serie") {
         return `<li class="resultat"><a class="resultat-titre" href="#/serie/${e.s.id}">${fr(e.s.titre)}</a>
           <span class="resultat-ou">Série de ${compteSerie(e.s)}, étape ${esc(n.verbe)}</span></li>`;
+      }
+      if (e.type === "jour") {
+        const t = titreJour(e.j);
+        return `<li class="resultat"><p class="resultat-titre">${fr(t)}</p>
+          <span class="resultat-ou">Semaine ${esc(e.l.num)}, ${fr(e.l.titre)}, de <a href="#/serie/${e.s.id}">${fr(e.s.titre)}</a>, étape ${esc(n.verbe)}</span>
+          <div class="etude-docs">${bouton(e.j.docs[0], "Ouvrir", true, `Ouvrir : ${t}`)}</div></li>`;
       }
       const l = e.l;
       const nomComplet = (l.num ? `Étude ${l.num} : ` : "") + l.titre;
@@ -496,7 +549,7 @@
     const titre = titreDoc(e);
     const detail = detailDoc(e);
     const pdf = fichierPdf(d);
-    document.title = `${titre}${e.l && e.l.docs.length > 1 ? ` — ${d.libelle}` : ""} — Mission`;
+    document.title = `${titre}${!e.j && e.l && e.l.docs.length > 1 ? ` — ${d.libelle}` : ""} — Mission`;
     const telecharger = d.original
       ? `<details class="menu-telecharger">
           <summary class="lecteur-bouton" aria-label="Télécharger">${icone.telecharger}<span>Télécharger</span></summary>
@@ -746,10 +799,18 @@
   if (!TAILLES.includes(reglages.taille)) reglages.taille = 18;
   const mouvementReduit = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // document suivant de la série, du même genre (participant, animateur…)
+  // document suivant de la série, du même genre (participant, animateur…) ;
+  // après une leçon du jour : le jour suivant, puis l’introduction de la semaine suivante
   function suivant(e) {
-    const { d, s, l } = e;
+    const { d, s, l, j } = e;
     if (!l) return null;
+    if (j) {
+      const apres = [];
+      s.lecons.slice(s.lecons.indexOf(l)).forEach((n) => (n.jours || []).forEach((x) => apres.push({ l: n, j: x })));
+      const k = apres.findIndex((x) => x.j === j);
+      const n = apres.slice(k + 1).find((x) => x.j.docs[0].f);
+      return n ? { d: n.j.docs[0], l: n.l, j: n.j } : null;
+    }
     const i = s.lecons.indexOf(l);
     for (let k = i + 1; k < s.lecons.length; k++) {
       const n = s.lecons[k];
@@ -919,13 +980,16 @@
   function lireTexte(f) {
     const e = documents.get(f);
     if (!e) return introuvable();
-    const { d, s, l } = e;
+    const { d, s, l, j } = e;
     const titre = titreDoc(e);
-    const sous = l && l.docs.length > 1 ? d.libelle : "";
+    const sous = j ? `Semaine ${l.num} : ${l.titre}` : l && l.docs.length > 1 ? d.libelle : "";
     document.title = `${titre}${sous ? ` — ${sous}` : ""} — Mission`;
     const info = TEXTES[f] || {};
     const apres = suivant(e);
-    const num = l && l.num ? `Étude ${l.num}` : "";
+    const num = !j && l && l.num ? `Étude ${l.num}` : "";
+    // leçon suivante : « Semaine 2 — Introduction » quand elle ouvre une autre semaine
+    const titreApres = !apres ? "" : !apres.j ? apres.l.titre
+      : apres.l === l ? titreJour(apres.j) : `Semaine ${apres.l.num} — ${titreJour(apres.j)}`;
     const img = (l && l.image) || s.image;
     app.innerHTML = `
       <div class="lecture">
@@ -957,9 +1021,9 @@
               ${info.q ? `<p class="lecture-meta">${pluriel(info.q, "question", "questions")}. Vos réponses restent sur cet appareil.</p>` : ""}
               <article class="lecture-texte"><p class="lecture-attente">Ouverture de l’étude…</p></article>
               <footer class="lecture-fin">
-                <p class="lecture-fin-titre">Fin ${l ? "de l’étude" : "du document"}</p>
+                <p class="lecture-fin-titre">Fin ${j ? "de la leçon" : l ? "de l’étude" : "du document"}</p>
                 ${apres
-                  ? `<a class="lecture-action principale" href="#/lire/${esc(apres.d.f)}"><span>Suivante : ${fr(apres.l.titre)}</span>${chevronDroit}</a>`
+                  ? `<a class="lecture-action principale" href="#/lire/${esc(apres.d.f)}"><span>Suivante : ${fr(titreApres)}</span>${chevronDroit}</a>`
                   : `<a class="lecture-action principale" href="#/serie/${s.id}"><span>Retour à la série</span>${chevronDroit}</a>`}
                 <button type="button" class="lecture-action" data-ouvrir="imprimer"><span>Imprimer</span>${icone.imprimer}</button>
                 <a class="lecture-action" href="#/original/${esc(f)}"><span>Voir l’original (PDF)</span>${icone.original}</a>
@@ -1217,8 +1281,16 @@
     else introuvable();
     // retour d’un document : on retrouve sa place dans la liste
     const lienDoc = depuisDocument && app.querySelector(`a[href="#/lire/${CSS.escape(depuisDocument)}"]`);
+    // lien rangé dans une liste « Leçons du jour » repliée : on la déplie
+    const listeJours = lienDoc && lienDoc.closest(".jours");
+    if (listeJours && listeJours.hidden) {
+      const b = app.querySelector(`[aria-controls="${listeJours.id}"]`);
+      if (b) basculerJours(b, true);
+    }
     if (lienDoc && positions.has(h)) {
       window.scrollTo(0, positions.get(h));
+      const r = lienDoc.getBoundingClientRect();
+      if (r.top < 0 || r.bottom > window.innerHeight) lienDoc.scrollIntoView({ block: "center" });
       lienDoc.focus({ preventScroll: true });
     } else {
       window.scrollTo(0, 0);

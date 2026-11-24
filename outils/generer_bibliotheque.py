@@ -118,8 +118,15 @@ SERIES = [
     ("disciple", "disciple-incroyable", "1EA7SD4uvpjU8p7n2tQ40SS11hRuNHtye", "Devenir un disciple incroyable",
      "13 semaines de formation d’Amazing Facts pour gagner des âmes et former des disciples : la commission divine, "
      "la méthode du Christ, l’amitié, les études bibliques, les objections, les décisions, les nouveaux croyants. "
-     "Chaque semaine : la leçon en sept jours avec son quiz, et le guide de l’animateur."),
+     "Chaque semaine : une leçon par jour, le quiz de la semaine et le guide de l’animateur."),
 ]
+
+# Séries dont chaque étude (une semaine) se lit aussi jour par jour. Fichiers du sous-dossier « Leçons du jour » :
+# « NN - Introduction », « NN - Jour K - Titre du jour », « NN - Quiz de la semaine », rattachés à l’étude NN
+# (champ « jours » du catalogue). Un « : » ou un « ? » ne peut pas figurer dans un nom de fichier (Windows) :
+# « Phase un - se lier… » devient « Phase un : se lier… » ; les « ? » sont rendus par TITRES.
+JOUR_PAR_JOUR = {"disciple-incroyable"}
+RE_PARTIE = re.compile(r"^(Introduction|Jour (\d)|Quiz de la semaine)(?: - (.+))?$")
 
 # Études numérotées par une lettre (« A - … ») : titre du groupe affiché après les études de la série.
 GROUPES_COMPLEMENTAIRES = {
@@ -232,6 +239,8 @@ TITRES = {
     "Esprit de prophétie - Le Saint-Esprit et son œuvre - Torres": "Esprit de prophétie : le Saint-Esprit et son œuvre (Torres)",
     "Défendre la Divinité - Vance Ferrell": "Défendre la Divinité (Vance Ferrell)",
     "Fiabilité de la Bible": "Fiabilité de la Bible",
+    "M’entendez-vous maintenant": "M’entendez-vous maintenant ?",
+    "Est-ce maintenant le moment": "Est-ce maintenant le moment ?",
     "Vers Jésus - Fiches d’étude": "Vers Jésus : fiches d’étude",
     "Les secrets de l’espérance - Les sept Églises": "Les secrets de l’espérance : les sept Églises",
 }
@@ -356,6 +365,12 @@ def chemins(series):
                 d["_chemin"] = unique(f"{se['id']}/{nom}")
                 titre = le["titre"] if len(le["docs"]) == 1 else f"{le['titre']} — {d['libelle']}"
                 liste.append((d, titre, se))
+            for j in le.get("jours", []):  # leçons du jour : documents/<série>/01-jour-1-le-dernier-message.pdf
+                nom = f"{tete}-{slug(j['nom'])}" + (f"-{slug(j['titre'])}" if j.get("titre") else "")
+                titre = f"{le['titre']} — {j['nom']}" + (f" : {j['titre']}" if j.get("titre") else "")
+                for d in j["docs"]:
+                    d["_chemin"] = unique(f"{se['id']}/{nom}")
+                    liste.append((d, titre, se))
         for d in se["ressources"]:
             d["_chemin"] = unique(f"{se['id']}/{slug(d['titre'])}")
             liste.append((d, d["titre"], se))
@@ -371,11 +386,17 @@ def chemins(series):
     return sortie
 
 
+def tous_les_docs(se):
+    """Documents d’une série : ceux des études, de leurs leçons du jour, puis les ressources."""
+    return ([d for le in se["lecons"] for d in le["docs"]]
+            + [d for le in se["lecons"] for j in le.get("jours", []) for d in j["docs"]] + se["ressources"])
+
+
 def relier_documents(series, resultat):
     """Remplace le lien Drive par le PDF importé sur le site (outils/documents/resultat.json)."""
     manquants = []
     for se in series:
-        for d in [d for le in se["lecons"] for d in le["docs"]] + se["ressources"]:
+        for d in tous_les_docs(se):
             r = resultat.get(d["_chemin"])
             if not r:
                 manquants.append(d["_chemin"])
@@ -412,6 +433,7 @@ def main(chemin, seulement=None):
             continue
         lecons = {}
         ressources = []
+        jours = defaultdict(list)  # leçons du jour, par numéro d’étude
         for f in tous_les_fichiers(dossier):
             nom = sans_ext(f["title"]).replace("'", "’")
             if any(x in nom for x in EXCLURE):
@@ -427,6 +449,17 @@ def main(chemin, seulement=None):
             num = (m.group(1) or m.group(2) or m.group(3)) if m else None
             if num and num.isdigit():
                 num = str(int(num))
+            # leçon du jour d’une étude (JOUR_PAR_JOUR)
+            p = RE_PARTIE.match(corps) if slug in JOUR_PAR_JOUR and num else None
+            if p:
+                partie = {"nom": p.group(1)}
+                if p.group(3):
+                    partie["titre"] = joli(p.group(3))
+                doc.update(libelle="Leçon du jour", role="participant")
+                partie["docs"] = [doc]
+                partie["_ordre"] = 0 if p.group(1) == "Introduction" else int(p.group(2) or 8)
+                jours[num].append(partie)
+                continue
             # variante en fin de nom
             variante, role = None, None
             for suffixe, libelle, r in VARIANTES:
@@ -468,7 +501,13 @@ def main(chemin, seulement=None):
                 le["groupe"] = GROUPES_COMPLEMENTAIRES[slug]
             if le["num"] in SUJETS.get(slug, {}):
                 le["sujet"] = SUJETS[slug][le["num"]]
+            if jours.get(le["num"]):
+                le["jours"] = sorted(jours.pop(le["num"]), key=lambda j: j["_ordre"])
+                for j in le["jours"]:
+                    del j["_ordre"]
             liste.append(le)
+        for num in jours:
+            print(f"!! leçons du jour sans étude : {slug} {num}", file=sys.stderr)
         if not liste and not ressources:
             print(f"!! série vide : {slug}", file=sys.stderr)
         vus = defaultdict(int)
@@ -523,7 +562,7 @@ def main(chemin, seulement=None):
         for m in manquants:
             print("!! document non importé :", m, file=sys.stderr)
     for se in series:
-        for d in [d for le in se["lecons"] for d in le["docs"]] + se["ressources"]:
+        for d in tous_les_docs(se):
             d.pop("_chemin", None)
 
     sortie = Path(__file__).resolve().parent.parent / "donnees" / "bibliotheque.js"
@@ -539,8 +578,9 @@ def main(chemin, seulement=None):
                 "window.BIBLIO = " + json.dumps(donnees, ensure_ascii=False, indent=1) + ";\n")
     sortie.write_text(texte_js, encoding="utf-8")
     n_lecons = sum(len(s["lecons"]) for s in series)
-    n_docs = sum(len(l["docs"]) for s in series for l in s["lecons"]) + sum(len(s["ressources"]) for s in series)
-    print(f"{len(series)} séries, {n_lecons} études, {n_docs} documents -> {sortie}")
+    n_docs = sum(len(tous_les_docs(s)) for s in series)
+    n_jours = sum(len(l.get("jours", [])) for s in series for l in s["lecons"])
+    print(f"{len(series)} séries, {n_lecons} études, {n_jours} leçons du jour, {n_docs} documents -> {sortie}")
     for o in oublies:
         print("   format ignoré :", o, file=sys.stderr)
 

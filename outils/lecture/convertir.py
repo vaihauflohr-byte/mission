@@ -1646,6 +1646,9 @@ def catalogue():
         for l in s["lecons"]:
             for d in l["docs"]:
                 res.append((s, l, d))
+            for j in l.get("jours", []):  # leçons du jour : leur titre et « Semaine 4 — Jour 1 » comptent comme titres connus
+                for d in j["docs"]:
+                    res.append((s, dict(l, titre=j.get("titre") or j["nom"], autres_titres=[f"Semaine {l['num']} — {j['nom']}"]), d))
         for d in s["ressources"]:
             res.append((s, None, d))
     return res
@@ -1667,7 +1670,8 @@ def main():
             stats["exclus"] += 1
             index.pop(f, None)
             continue
-        titres = ([s["titre"]] + ([l["titre"]] if l else []) + ([d.get("titre")] if d.get("titre") else [])
+        titres = ([s["titre"]] + ([l["titre"]] if l else []) + (l.get("autres_titres", []) if l else [])
+                  + ([d.get("titre")] if d.get("titre") else [])
                   + ([d["libelle"]] if d.get("libelle") else []) + ["Fiche du participant", "Guide de l’animateur", "Guide de l'animateur"])
         role = "animateur" if (d.get("role") == "animateur" or "réponses" in (d.get("libelle") or "").lower()) else "participant"
         if f.startswith("fast-leaders/") or (f.startswith("fast-") and l is None):
