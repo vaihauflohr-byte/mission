@@ -1647,8 +1647,10 @@ def catalogue():
             for d in l["docs"]:
                 res.append((s, l, d))
             for j in l.get("jours", []):  # leçons du jour : leur titre et « Semaine 4 — Jour 1 » comptent comme titres connus
+                tete = f"Semaine {l['num']} — {j['nom']}"
+                livre = (j.get("titre") or "").replace(" (1re partie)", ", première partie").replace(" (2e partie)", ", deuxième partie")
                 for d in j["docs"]:
-                    res.append((s, dict(l, titre=j.get("titre") or j["nom"], autres_titres=[f"Semaine {l['num']} — {j['nom']}"]), d))
+                    res.append((s, dict(l, titre=j.get("titre") or j["nom"], autres_titres=[tete] + ([f"{tete} : {livre}"] if livre else [])), d))
         for d in s["ressources"]:
             res.append((s, None, d))
     return res
