@@ -5858,7 +5858,8 @@ window.BIBLIO = {
      "o": 57678,
      "p": 4
     }
-   ]
+   ],
+   "image": "serie-disciple-incroyable"
   }
  ]
 };
