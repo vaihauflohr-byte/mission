@@ -32,7 +32,7 @@ window.BIBLIO = {
    "num": 3,
    "verbe": "Devenir disciple",
    "titre": "Devenir un disciple du Christ",
-   "texte": "Le parcours FAST : apprendre l’Écriture par cœur, vivre en disciple, former d’autres disciples.",
+   "texte": "Le parcours FAST et la formation « Devenir un disciple incroyable » : apprendre l’Écriture par cœur, vivre en disciple, gagner des âmes et former d’autres disciples.",
    "parallele": "En parallèle de l’étape 3"
   }
  ],
@@ -5549,6 +5549,316 @@ window.BIBLIO = {
    ],
    "ressources": [],
    "image": "serie-fast-leaders"
+  },
+  {
+   "id": "disciple-incroyable",
+   "niveau": "disciple",
+   "titre": "Devenir un disciple incroyable",
+   "texte": "13 semaines de formation d’Amazing Facts pour gagner des âmes et former des disciples : la commission divine, la méthode du Christ, l’amitié, les études bibliques, les objections, les décisions, les nouveaux croyants. Chaque semaine : la leçon en sept jours avec son quiz, et le guide de l’animateur.",
+   "lecons": [
+    {
+     "num": "1",
+     "titre": "La commission divine",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Fiche du participant",
+       "role": "participant",
+       "f": "disciple-incroyable/01-la-commission-divine-participant",
+       "o": 113635,
+       "p": 10
+      },
+      {
+       "format": "PDF",
+       "libelle": "Guide de l’animateur",
+       "role": "animateur",
+       "f": "disciple-incroyable/01-la-commission-divine-animateur",
+       "o": 146233,
+       "p": 14
+      }
+     ]
+    },
+    {
+     "num": "2",
+     "titre": "La méthode du Christ, seule efficace",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Fiche du participant",
+       "role": "participant",
+       "f": "disciple-incroyable/02-la-methode-du-christ-seule-efficace-participant",
+       "o": 109055,
+       "p": 10
+      },
+      {
+       "format": "PDF",
+       "libelle": "Guide de l’animateur",
+       "role": "animateur",
+       "f": "disciple-incroyable/02-la-methode-du-christ-seule-efficace-animateur",
+       "o": 137877,
+       "p": 15
+      }
+     ]
+    },
+    {
+     "num": "3",
+     "titre": "Notre plus grand besoin",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Fiche du participant",
+       "role": "participant",
+       "f": "disciple-incroyable/03-notre-plus-grand-besoin-participant",
+       "o": 122012,
+       "p": 12
+      },
+      {
+       "format": "PDF",
+       "libelle": "Guide de l’animateur",
+       "role": "animateur",
+       "f": "disciple-incroyable/03-notre-plus-grand-besoin-animateur",
+       "o": 154342,
+       "p": 18
+      }
+     ]
+    },
+    {
+     "num": "4",
+     "titre": "Le cycle de l’évangélisation",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Fiche du participant",
+       "role": "participant",
+       "f": "disciple-incroyable/04-le-cycle-de-l-evangelisation-participant",
+       "o": 110573,
+       "p": 11
+      },
+      {
+       "format": "PDF",
+       "libelle": "Guide de l’animateur",
+       "role": "animateur",
+       "f": "disciple-incroyable/04-le-cycle-de-l-evangelisation-animateur",
+       "o": 142004,
+       "p": 16
+      }
+     ]
+    },
+    {
+     "num": "5",
+     "titre": "L’évangélisation par l’amitié (1re partie)",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Fiche du participant",
+       "role": "participant",
+       "f": "disciple-incroyable/05-l-evangelisation-par-l-amitie-1re-partie-participant",
+       "o": 132193,
+       "p": 12
+      },
+      {
+       "format": "PDF",
+       "libelle": "Guide de l’animateur",
+       "role": "animateur",
+       "f": "disciple-incroyable/05-l-evangelisation-par-l-amitie-1re-partie-animateur",
+       "o": 165625,
+       "p": 18
+      }
+     ]
+    },
+    {
+     "num": "6",
+     "titre": "L’évangélisation par l’amitié (2e partie)",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Fiche du participant",
+       "role": "participant",
+       "f": "disciple-incroyable/06-l-evangelisation-par-l-amitie-2e-partie-participant",
+       "o": 112622,
+       "p": 11
+      },
+      {
+       "format": "PDF",
+       "libelle": "Guide de l’animateur",
+       "role": "animateur",
+       "f": "disciple-incroyable/06-l-evangelisation-par-l-amitie-2e-partie-animateur",
+       "o": 143190,
+       "p": 16
+      }
+     ]
+    },
+    {
+     "num": "7",
+     "titre": "Donner des études bibliques (1re partie)",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Fiche du participant",
+       "role": "participant",
+       "f": "disciple-incroyable/07-donner-des-etudes-bibliques-1re-partie-participant",
+       "o": 142062,
+       "p": 14
+      },
+      {
+       "format": "PDF",
+       "libelle": "Guide de l’animateur",
+       "role": "animateur",
+       "f": "disciple-incroyable/07-donner-des-etudes-bibliques-1re-partie-animateur",
+       "o": 179090,
+       "p": 21
+      }
+     ]
+    },
+    {
+     "num": "8",
+     "titre": "Donner des études bibliques (2e partie)",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Fiche du participant",
+       "role": "participant",
+       "f": "disciple-incroyable/08-donner-des-etudes-bibliques-2e-partie-participant",
+       "o": 149252,
+       "p": 16
+      },
+      {
+       "format": "PDF",
+       "libelle": "Guide de l’animateur",
+       "role": "animateur",
+       "f": "disciple-incroyable/08-donner-des-etudes-bibliques-2e-partie-animateur",
+       "o": 180214,
+       "p": 22
+      }
+     ]
+    },
+    {
+     "num": "9",
+     "titre": "Répondre aux objections",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Fiche du participant",
+       "role": "participant",
+       "f": "disciple-incroyable/09-repondre-aux-objections-participant",
+       "o": 120150,
+       "p": 11
+      },
+      {
+       "format": "PDF",
+       "libelle": "Guide de l’animateur",
+       "role": "animateur",
+       "f": "disciple-incroyable/09-repondre-aux-objections-animateur",
+       "o": 154325,
+       "p": 16
+      }
+     ]
+    },
+    {
+     "num": "10",
+     "titre": "Gagner des décisions pour Christ",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Fiche du participant",
+       "role": "participant",
+       "f": "disciple-incroyable/10-gagner-des-decisions-pour-christ-participant",
+       "o": 132984,
+       "p": 13
+      },
+      {
+       "format": "PDF",
+       "libelle": "Guide de l’animateur",
+       "role": "animateur",
+       "f": "disciple-incroyable/10-gagner-des-decisions-pour-christ-animateur",
+       "o": 165501,
+       "p": 19
+      }
+     ]
+    },
+    {
+     "num": "11",
+     "titre": "La présentation de l’Évangile",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Fiche du participant",
+       "role": "participant",
+       "f": "disciple-incroyable/11-la-presentation-de-l-evangile-participant",
+       "o": 139389,
+       "p": 15
+      },
+      {
+       "format": "PDF",
+       "libelle": "Guide de l’animateur",
+       "role": "animateur",
+       "f": "disciple-incroyable/11-la-presentation-de-l-evangile-animateur",
+       "o": 175011,
+       "p": 21
+      }
+     ]
+    },
+    {
+     "num": "12",
+     "titre": "Nourrir les nouveaux croyants",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Fiche du participant",
+       "role": "participant",
+       "f": "disciple-incroyable/12-nourrir-les-nouveaux-croyants-participant",
+       "o": 107249,
+       "p": 10
+      },
+      {
+       "format": "PDF",
+       "libelle": "Guide de l’animateur",
+       "role": "animateur",
+       "f": "disciple-incroyable/12-nourrir-les-nouveaux-croyants-animateur",
+       "o": 139612,
+       "p": 15
+      }
+     ]
+    },
+    {
+     "num": "13",
+     "titre": "Ramener les membres égarés",
+     "docs": [
+      {
+       "format": "PDF",
+       "libelle": "Fiche du participant",
+       "role": "participant",
+       "f": "disciple-incroyable/13-ramener-les-membres-egares-participant",
+       "o": 126837,
+       "p": 13
+      },
+      {
+       "format": "PDF",
+       "libelle": "Guide de l’animateur",
+       "role": "animateur",
+       "f": "disciple-incroyable/13-ramener-les-membres-egares-animateur",
+       "o": 159611,
+       "p": 17
+      }
+     ]
+    }
+   ],
+   "ressources": [
+    {
+     "format": "PDF",
+     "titre": "Le livre complet",
+     "f": "disciple-incroyable/le-livre-complet",
+     "o": 1466203,
+     "p": 176
+    },
+    {
+     "format": "PDF",
+     "titre": "Plan du cours",
+     "f": "disciple-incroyable/plan-du-cours",
+     "o": 57678,
+     "p": 4
+    }
+   ]
   }
  ]
 };

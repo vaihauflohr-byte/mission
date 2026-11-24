@@ -69,12 +69,16 @@ EXCLUS_FORMATS = {"PowerPoint", "Excel"}
 EXCLUS = {
     "fiabilite-bible/01-fiabilite-de-la-bible",            # présentation numérisée (images)
     "explorateur/feuille-des-coordonnees-des-participants",  # formulaire à remplir à la main
+    "disciple-incroyable/le-livre-complet",                  # les 13 semaines ont chacune leur version lecture
 }
 # Dépliants : chaque page à l'italienne porte n volets côte à côte, lus l'un après l'autre comme des pages.
 VOLETS = {"historacles": 3}
 # Séries dont seules les questions numérotées sont des questions (le récit en pose d'autres, sans réponse à écrire) ;
 # leurs lignes justifiées ne sont pas coupées aux grands espaces, et « ➢ 1) » est un numéro de question.
 NUMEROTEES = {"historacles"}
+# Séries dont les questions sont marquées par une étiquette (« Réflexion — », « Discussion — ») : seules celles-là
+# ont une zone de réponse ; les questions du récit n'en ont pas, et les quiz se remplissent dans leurs cases et blancs.
+QUESTIONS_MARQUEES = {"disciple-incroyable": re.compile(r"^\s*(?:Réflexion|Discussion)\s*—")}
 RE_CODE_VOLET = re.compile(r"^\s*SP\d{2}\s*$")      # code d'impression en bas d'un volet (Historacles)
 # Leçons FAST (pages de fastmissions.com imprimées) : séries « fast-… ».
 RE_FIL_FAST = re.compile(r"^.{0,40}?>\s*(?:Semaine\s*\d+|Illustrations)\s*>\s*(\S.*?)\s*$")   # « ++++ > Semaine 1 > Mémo »
@@ -984,7 +988,7 @@ def titre_connu(texte, titres_connus):
     return False
 
 
-def classer(blocs, corps, titres_connus, role, numerotees=False):
+def classer(blocs, corps, titres_connus, role, numerotees=False, marquees=None):
     """Titres, questions (numérotées ou finissant par ?), suites de paragraphes coupés par les colonnes."""
     # 1. titres
     for b in blocs:
@@ -1052,6 +1056,11 @@ def classer(blocs, corps, titres_connus, role, numerotees=False):
         interrogatif = est_interrogatif(t)
         traits_apres = suivant is not None and suivant.genre == "traits" and (suivant.nb_traits >= 2 or interrogatif)
         if re.match(r"(?i)^\s*(la\s+)?semaine\s+prochaine", t):
+            continue
+        if marquees is not None:
+            if b.genre == "p" and marquees.match(t):
+                b.genre = "q"
+                b.nb_traits = 0
             continue
         if b.genre == "num":
             m = RE_QUESTION_MOT.match(t) or RE_NUM.match(t)
@@ -1610,7 +1619,8 @@ def convertir(f, titres_connus, role, ecrire=True, plan=False):
     for ls in pages_lignes:
         ordre += ordonner(ls)
     blocs = construire_blocs(ordre, corps)
-    blocs = classer(blocs, corps, titres_connus, role, numerotees=f.split("/")[0] in NUMEROTEES)
+    blocs = classer(blocs, corps, titres_connus, role, numerotees=f.split("/")[0] in NUMEROTEES,
+                    marquees=QUESTIONS_MARQUEES.get(f.split("/")[0]))
     blocs, credits = couverture(blocs, credits, nb, titres_connus)
     if plan:
         for b in blocs:

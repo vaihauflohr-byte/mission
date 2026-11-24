@@ -46,7 +46,8 @@ NIVEAUX = [
         "num": 3,
         "verbe": "Devenir disciple",
         "titre": "Devenir un disciple du Christ",
-        "texte": "Le parcours FAST : apprendre l’Écriture par cœur, vivre en disciple, former d’autres disciples.",
+        "texte": "Le parcours FAST et la formation « Devenir un disciple incroyable » : apprendre l’Écriture par cœur, "
+                 "vivre en disciple, gagner des âmes et former d’autres disciples.",
         "parallele": "En parallèle de l’étape 3",
     },
 ]
@@ -112,6 +113,12 @@ SERIES = [
      "9 études sur le réveil, de l’embrasement spirituel à une course enflammée."),
     ("disciple", "fast-leaders", "1al__n4k2awCXC1XS0JNBAcNwWs6pEoCT", "FAST : pour les leaders",
      "Le manuel du leader pour diriger les cours FAST, et La formule explosive : former les membres pour le ministère."),
+    # « Amazing Disciples » (Amazing Facts, édition de l’enseignant), traduit et vérifié sur l’original anglais
+    # (dossier Drive « 11 - Devenir un disciple incroyable » de l’étape 2)
+    ("disciple", "disciple-incroyable", "1EA7SD4uvpjU8p7n2tQ40SS11hRuNHtye", "Devenir un disciple incroyable",
+     "13 semaines de formation d’Amazing Facts pour gagner des âmes et former des disciples : la commission divine, "
+     "la méthode du Christ, l’amitié, les études bibliques, les objections, les décisions, les nouveaux croyants. "
+     "Chaque semaine : la leçon en sept jours avec son quiz, et le guide de l’animateur."),
 ]
 
 # Études numérotées par une lettre (« A - … ») : titre du groupe affiché après les études de la série.
@@ -189,6 +196,7 @@ RESSOURCES = {
     "Couverture du livret": "Couverture du livret",
     "Les illustrations": "Les illustrations du cours",
     "Les 10 clés de mémorisation": "Les 10 clés de mémorisation",
+    "Livre complet": "Le livre complet",
 }
 
 # Titres corrigés à la main (points d’interrogation perdus dans les noms de fichiers, auteurs…).
