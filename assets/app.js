@@ -36,6 +36,10 @@
     appli: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M12 7v7m0 0-3-3m3 3 3-3M10 18.5h4"/></svg>',
     partager: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4M6 11H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1"/></svg>',
     imprimer: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3.5h10V8M7 17H4.5A1.5 1.5 0 0 1 3 15.5v-6A1.5 1.5 0 0 1 4.5 8h15A1.5 1.5 0 0 1 21 9.5v6a1.5 1.5 0 0 1-1.5 1.5H17"/><path d="M7 13.5h10V21H7z"/><path d="M17.5 11h.01"/></svg>',
+    ecouter: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18.2 6.3a7.8 7.8 0 0 1 0 11.4"/></svg>',
+    pause: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.5v13M15.5 5.5v13"/></svg>',
+    jouer: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>',
+    arreter: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="1.5"/></svg>',
     sommaire: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>',
     affichage: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 8.5 5h1L15 19M5 14.5h8M15.5 19l3-8h.5l3 8M16.4 16.6h5.2"/></svg>',
     original: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/></svg>',
@@ -296,6 +300,7 @@
               .map((m) => `<a href="#/chercher/${encodeURIComponent(m)}">${esc(m)}</a>`).join(", ")}.</p>
           </form>
         </div>
+        ${reprise()}
         <div class="dedans cep">
           <h2 class="cep-titre">Trois étapes, de la rencontre à la maturité</h2>
           <ol class="cep-liste">${etapes}</ol>
@@ -326,6 +331,32 @@
     });
     majInstallation();
     return true;
+  }
+
+  // dernière étude lue en mode lecture : la reprendre où on s’était arrêté, ou passer à la suivante
+  function reprise() {
+    const f = memoire.lire("mission.derniere", "");
+    const e = f && aTexte(f) && documents.get(f);
+    if (!e) return "";
+    const pos = Math.min(1, Math.max(0, Number(memoire.lire(`mission.pos.${f}`, "0")) || 0));
+    let cible = { f, e, pos, etiquette: "Reprendre votre lecture" };
+    if (pos >= 0.98) {
+      const apres = suivant(e);
+      if (!apres || !apres.d.f || !aTexte(apres.d.f)) return "";
+      cible = { f: apres.d.f, e: documents.get(apres.d.f), pos: 0, etiquette: "Étude suivante" };
+    }
+    const { s, l, j } = cible.e;
+    const ou = j ? `Semaine ${l.num} · ` : l && l.num ? `Étude ${l.num} · ` : "";
+    const pct = Math.round(cible.pos * 100);
+    return `<div class="dedans reprise">
+      <a class="reprise-lien" href="#/lire/${esc(cible.f)}">
+        <span class="reprise-etiquette">${cible.etiquette}</span>
+        <span class="reprise-titre">${fr(titreDoc(cible.e))}</span>
+        <span class="reprise-ou">${esc(ou)}${fr(s.titre)}</span>
+        ${pct ? `<span class="reprise-barre" aria-hidden="true"><span style="width:${pct}%"></span></span><span class="reprise-pct">${pct} % lu</span>` : ""}
+        ${chevronDroit}
+      </a>
+    </div>`;
   }
 
   function niveau(id) {
@@ -428,6 +459,107 @@
     return true;
   }
 
+  // ---------- recherche dans le texte des études (donnees/recherche.json, outils/recherche/) ----------
+  const VERSION_RECHERCHE = "1";
+  // mots trop courants pour aider (les mêmes que l’index, sans accents)
+  const VIDES = new Set(("les des une aux mais donc car que qui quoi dont cet cette ces son ses sur sous leur leurs mon mes "
+    + "ton tes notre nos votre vos ils elles nous vous lui pas plus moins tres bien tout tous toute toutes est sont etait "
+    + "etaient ete etre avoir ont avait avaient sera seront fait faire peut doit dans par pour avec sans entre vers chez "
+    + "comme quand comment pourquoi alors aussi ainsi meme encore deja ici cela ceci celui celle ceux celles quel quelle "
+    + "quels quelles autre autres elle non oui apres avant puis etc lorsque parce selon chaque peu fois faits dit dire").split(" "));
+  // texte en minuscules sans accents ; carte[i] : place, dans le texte d’origine, du i-ème caractère
+  function aplatir(t) {
+    let n = "";
+    const carte = [];
+    for (let i = 0; i < t.length; i++) {
+      const c = t[i];
+      const d = c === "œ" || c === "Œ" ? "oe" : c === "æ" || c === "Æ" ? "ae" : c.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      for (const x of d) { n += x; carte.push(i); }
+    }
+    return { n, carte };
+  }
+  // mots cherchés ; « sabbats », « prières » : on cherche le début du mot (sabbat…, prier…)
+  function motsCherches(q) {
+    return [...new Set(aplatir(q).n.split(/[^a-z0-9]+/))]
+      .filter((m) => (/^\d+$/.test(m) ? m.length >= 3 : m.length >= 3 && !VIDES.has(m)))
+      .map((m) => ({ m, debut: /^\d+$/.test(m) || m.length < 4 ? null : m.length >= 5 ? m.replace(/(es|s|x|e)$/, "") : m }));
+  }
+  // trouve ces mots dans un texte aplati : le mot est dans le groupe 2
+  const motif = (mots) => new RegExp(`(^|[^a-z0-9])(${mots.map(({ m, debut }) => (debut ? `${debut}[a-z0-9]*` : `${m}(?![a-z0-9])`)).join("|")})`, "g");
+  function* trouvailles(a, re) {
+    re.lastIndex = 0;
+    let m;
+    while ((m = re.exec(a.n))) {
+      const debut = m.index + m[1].length;
+      yield [a.carte[debut], a.carte[m.index + m[0].length - 1] + 1];
+    }
+  }
+  // un texte, ses mots trouvés dans <mark>
+  function marquer(t, re) {
+    let h = "";
+    let i = 0;
+    for (const [d, f] of trouvailles(aplatir(t), re)) {
+      h += esc(t.slice(i, d)) + `<mark>${esc(t.slice(d, f))}</mark>`;
+      i = f;
+    }
+    return h + esc(t.slice(i));
+  }
+  let indexTexte = null;
+  function chargerIndexTexte() {
+    if (!indexTexte) {
+      indexTexte = fetch(`donnees/recherche.json?v=${VERSION_RECHERCHE}`)
+        .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+        .then((d) => ({ docs: d.docs, mots: d.mots, cles: Object.keys(d.mots) }));
+      indexTexte.catch(() => { indexTexte = null; });
+    }
+    return indexTexte;
+  }
+  // documents qui contiennent tous les mots, les plus riches d’abord
+  function chercherTexte(ix, mots) {
+    const parMot = mots.map(({ m, debut }) => {
+      const compte = new Map();
+      const cles = debut ? ix.cles.filter((k) => k.startsWith(debut)) : ix.mots[m] ? [m] : [];
+      cles.forEach((k) => {
+        const p = ix.mots[k];
+        for (let i = 0; i < p.length; i += 2) compte.set(p[i], (compte.get(p[i]) || 0) + p[i + 1]);
+      });
+      return compte;
+    });
+    const [premier, ...autres] = parMot;
+    const res = [];
+    premier.forEach((n, doc) => {
+      if (autres.every((c) => c.has(doc))) res.push({ f: ix.docs[doc], n: autres.reduce((t, c) => t + c.get(doc), n) });
+    });
+    return res.sort((x, y) => y.n - x.n);
+  }
+  // texte d’un document de lecture, pour l’extrait montré sous le résultat
+  const textesDocs = new Map();
+  function texteDoc(f) {
+    if (!textesDocs.has(f)) {
+      const p = fetch(`lecture/${f.split("/").map(encodeURIComponent).join("/")}.html?v=${VERSION_LECTURE}`)
+        .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.text(); })
+        .then((h) => {
+          const doc = new DOMParser().parseFromString(`<div>${h}</div>`, "text/html");
+          doc.querySelectorAll(".lec-credits, .lec-cache, textarea, script, style").forEach((x) => x.remove());
+          doc.querySelectorAll("p, li, h2, h3, h4, td, th, dt, dd, figcaption, blockquote, div, .lec-q-num").forEach((x) => x.append(" "));
+          const brut = doc.body.textContent.replace(/\s+/g, " ").trim();
+          return { brut, a: aplatir(brut) };
+        });
+      p.catch(() => textesDocs.delete(f));
+      textesDocs.set(f, p);
+    }
+    return textesDocs.get(f);
+  }
+  function extrait({ brut, a }, re) {
+    const t = trouvailles(a, re).next().value;
+    if (!t) return "";
+    let g = Math.max(0, t[0] - 80);
+    let d = Math.min(brut.length, t[1] + 120);
+    if (g > 0) g = brut.indexOf(" ", g) + 1;
+    if (d < brut.length) { const k = brut.lastIndexOf(" ", d); if (k > t[1]) d = k; }
+    return `${g > 0 ? "… " : ""}${marquer(brut.slice(g, d), re)}${d < brut.length ? " …" : ""}`;
+  }
+
   // ---------- recherche ----------
   let index = null;
   function construireIndex() {
@@ -442,6 +574,8 @@
     });
   }
 
+  let titresTrouves = new Set(); // études déjà trouvées par leur titre
+  let observateur = null;
   function chercher(q) {
     document.title = "Chercher une étude — Mission";
     app.innerHTML = `
@@ -449,33 +583,47 @@
         ${fil([["Accueil", "#/"], ["Chercher une étude"]])}
         <h1 class="titre-page" tabindex="-1">Chercher une étude</h1>
         <form class="recherche-page" role="search">
-          <div class="champ">${loupe}<input id="q" type="search" autocomplete="off" aria-label="Chercher une étude"
-            placeholder="baptême, prière, sabbat, Daniel…" enterkeyhint="search" value="${esc(q)}"></div>
+          <div class="champ">${loupe}<input id="q" type="search" autocomplete="off" aria-label="Chercher une étude ou un verset"
+            placeholder="sabbat, prière, Jean 3:16…" enterkeyhint="search" value="${esc(q)}"></div>
         </form>
-        <div id="resultats" aria-live="polite"></div>
+        <div id="resultats"></div>
       </div>`;
     const champ = app.querySelector("#q");
     const zone = app.querySelector("#resultats");
-    const afficher = () => {
+    let minuterie = 0;
+    const afficher = (texte) => {
+      zone.innerHTML = resultats(texte);
+      // une référence (« Jean 3:16 ») : le passage s’affiche en tête
+      const carte = zone.querySelector(".bible-carte");
+      if (carte) Bible.montrerPassage(carte, Bible.lireReference(texte));
+      clearTimeout(minuterie);
+      minuterie = setTimeout(() => rechercheTexte(texte, zone), 220);
+    };
+    champ.addEventListener("input", () => {
       const texte = champ.value.trim();
       history.replaceState(null, "", "#/chercher/" + encodeURIComponent(texte));
-      zone.innerHTML = resultats(texte);
-    };
-    champ.addEventListener("input", afficher);
+      afficher(texte);
+    });
     app.querySelector("form").addEventListener("submit", (e) => { e.preventDefault(); champ.blur(); });
-    zone.innerHTML = resultats(q);
+    // ouvrir un document trouvé dans le texte : ses passages y seront surlignés
+    zone.addEventListener("click", (ev) => {
+      const a = ev.target.closest("a[data-surligner]");
+      if (a) { try { sessionStorage.setItem("mission.surligner", JSON.stringify({ f: a.dataset.surligner, q: champ.value.trim() })); } catch (e) { /* navigation privée */ } }
+      const plus = ev.target.closest("[data-plus]");
+      if (plus) afficherTexte(zone, Number(plus.dataset.plus));
+    });
+    afficher(q);
     return champ;
   }
 
   function resultats(q) {
-    if (!q) return `<p class="recherche-aide">Tapez un mot : <em>baptême</em>, <em>prière</em>, <em>Nicodème</em>, <em>sanctuaire</em>…</p>`;
+    titresTrouves = new Set();
+    if (!q) return `<p class="recherche-aide">Tapez un mot : <em>baptême</em>, <em>prière</em>, <em>Nicodème</em>, <em>sanctuaire</em>… ou une référence : <em>Jean 3:16</em>.</p>`;
     if (!index) construireIndex();
-    const mots = norm(q).split(/\s+/).filter((m) => m.length > 1 || /\d/.test(m));
-    if (!mots.length) return "";
-    const trouves = index.filter((e) => mots.every((m) => e.cle.includes(m)));
-    if (!trouves.length) {
-      return `<p class="vide">Aucune étude ne contient « ${esc(q)} ». Essayez un autre mot, ou parcourez les trois étapes depuis l’accueil.</p>`;
-    }
+    // les petits mots (« le », « dans ») trouveraient tout
+    const mots = norm(q).split(/\s+/).filter((m) => /\d/.test(m) || (m.length > 2 && !VIDES.has(m)));
+    const trouves = mots.length ? index.filter((e) => mots.every((m) => e.cle.includes(m))) : [];
+    trouves.forEach((e) => e.type === "etude" && titresTrouves.add(e.l));
     const lignes = trouves.slice(0, 60).map((e) => {
       const n = niveaux[e.s.niveau];
       if (e.type === "serie") {
@@ -498,7 +646,82 @@
         <div class="etude-docs">${boutons}</div></li>`;
     });
     const plus = trouves.length > 60 ? `<p class="recherche-aide">Les 60 premiers résultats sur ${trouves.length}. Ajoutez un mot pour préciser.</p>` : "";
-    return `<p class="compte">${pluriel(trouves.length, "résultat", "résultats")}</p><ul class="resultats">${lignes.join("")}</ul>${plus}`;
+    const titres = trouves.length
+      ? `<h2 class="resultats-titre">Dans les titres <span class="compte">${pluriel(trouves.length, "résultat", "résultats")}</span></h2><ul class="resultats">${lignes.join("")}</ul>${plus}`
+      : "";
+    const verset = window.Bible && Bible.lireReference(q)
+      ? `<section class="bible-carte" aria-labelledby="titre-verset">
+          <div class="bible-carte-tete"><h2 id="titre-verset" class="bible-titre"></h2><p class="bible-version">Louis Segond 1910</p></div>
+          <div class="bible-outils"><button type="button" class="bible-tout" aria-pressed="false" hidden>Voir tout le chapitre</button><a class="bible-strong" href="https://www.lueur.org/bible/" target="_blank" rel="noopener" aria-label="Bible Strong : ce passage avec les mots hébreux et grecs, sur Lueur.org" hidden><span>Bible Strong</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+          <div class="bible-corps"><div class="bible-texte" aria-live="polite"></div></div>
+        </section>`
+      : "";
+    return `${verset}${titres}<section class="recherche-texte" data-titres="${trouves.length}" aria-live="polite"></section>`;
+  }
+
+  // documents dont le texte contient les mots cherchés, avec un extrait chargé quand il devient visible
+  let derniereRecherche = null;
+  function rechercheTexte(q, zone) {
+    const section = zone.querySelector(".recherche-texte");
+    if (!section) return;
+    const mots = motsCherches(q);
+    const aucun = `<p class="vide">Aucune étude ne contient « ${esc(q)} ». Essayez un autre mot, ou parcourez les trois étapes depuis l’accueil.</p>`;
+    const sansTitre = section.dataset.titres === "0";
+    if (!q || zone.querySelector(".bible-carte")) return; // une référence : le passage suffit
+    if (!mots.length) {
+      if (sansTitre) section.innerHTML = '<p class="recherche-aide">Tapez un mot plus précis : <em>baptême</em>, <em>prière</em>, <em>sabbat</em>…</p>';
+      return;
+    }
+    section.innerHTML = '<p class="recherche-aide">Recherche dans le texte des études…</p>';
+    chargerIndexTexte().then((ix) => {
+      if (!section.isConnected) return;
+      const res = chercherTexte(ix, mots).filter((r) => {
+        const e = documents.get(r.f);
+        return e && !(e.l && !e.j && titresTrouves.has(e.l));
+      });
+      derniereRecherche = { res, re: motif(mots), vus: 0 };
+      if (!res.length) { section.innerHTML = sansTitre ? aucun : ""; return; }
+      section.innerHTML = `<h2 class="resultats-titre">Dans le texte des études <span class="compte">${pluriel(res.length, "document", "documents")}</span></h2>
+        <ul class="resultats resultats-texte"></ul>`;
+      afficherTexte(zone, 0);
+    }).catch(() => {
+      if (section.isConnected) section.innerHTML = '<p class="recherche-aide">La recherche dans le texte des études a besoin d’une connexion la première fois.</p>';
+    });
+  }
+
+  function afficherTexte(zone, depuis) {
+    const r = derniereRecherche;
+    const liste = zone.querySelector(".resultats-texte");
+    if (!r || !liste) return;
+    const PAR = 30;
+    const tranche = r.res.slice(depuis, depuis + PAR);
+    const bout = zone.querySelector("[data-plus]");
+    if (bout) bout.remove();
+    liste.insertAdjacentHTML("beforeend", tranche.map(({ f, n }) => {
+      const e = documents.get(f);
+      const { d, s, l, j } = e;
+      const ou = j ? `Semaine ${esc(l.num)}, ${fr(l.titre)}, de ` : l && l.num ? `Étude ${esc(l.num)} de ` : "";
+      const genre = !j && l && l.docs.length > 1 ? ` · ${fr(d.libelle)}` : "";
+      return `<li class="resultat" data-f="${esc(f)}">
+        <a class="resultat-titre" href="#/lire/${esc(f)}" data-surligner="${esc(f)}">${fr(titreDoc(e))}</a>
+        <span class="resultat-ou">${ou}<a href="#/serie/${s.id}">${fr(s.titre)}</a>${genre} · ${pluriel(n, "passage", "passages")}</span>
+        <p class="resultat-extrait"></p></li>`;
+    }).join(""));
+    if (depuis + PAR < r.res.length) {
+      liste.insertAdjacentHTML("afterend", `<button type="button" class="plus-resultats" data-plus="${depuis + PAR}">Voir ${Math.min(PAR, r.res.length - depuis - PAR)} documents de plus</button>`);
+    }
+    if (observateur) observateur.disconnect();
+    observateur = new IntersectionObserver((entrees) => entrees.forEach((en) => {
+      if (!en.isIntersecting) return;
+      observateur.unobserve(en.target);
+      const li = en.target;
+      const re = r.re;
+      texteDoc(li.dataset.f).then((t) => {
+        const x = li.querySelector(".resultat-extrait");
+        if (x && derniereRecherche === r) x.innerHTML = extrait(t, re);
+      }).catch(() => {});
+    }), { rootMargin: "250px" });
+    liste.querySelectorAll("li[data-f]").forEach((li) => { if (!li.querySelector(".resultat-extrait").innerHTML) observateur.observe(li); });
   }
 
   function introuvable() {
@@ -1001,6 +1224,7 @@
           </div>
           <div class="lecteur-actions">
             <button type="button" class="lecteur-bouton" data-ouvrir="sommaire" aria-label="Sommaire" hidden>${icone.sommaire}<span>Sommaire</span></button>
+            <button type="button" class="lecteur-bouton" data-ecouter aria-label="Écouter l’étude à voix haute" hidden>${icone.ecouter}<span>Écouter</span></button>
             <button type="button" class="lecteur-bouton" data-ouvrir="affichage" aria-label="Affichage : taille du texte, fond, façon de lire">${icone.affichage}<span>Affichage</span></button>
             <button type="button" class="lecteur-bouton" data-ouvrir="imprimer" aria-label="Imprimer">${icone.imprimer}<span>Imprimer</span></button>
             <a class="lecteur-bouton" href="#/original/${esc(f)}" aria-label="Voir l’original en PDF">${icone.original}<span>Original</span></a>
@@ -1036,6 +1260,21 @@
             <span class="lecture-page-num" aria-live="polite"></span>
             <button type="button" data-page="1" aria-label="Page suivante">›</button>
           </nav>
+          <div class="lecture-bas">
+            <div class="lecture-note reprise-note" role="status" hidden><span>Vous reprenez où vous vous étiez arrêté.</span><button type="button" data-debut>Revenir au début</button></div>
+            <div class="lecture-note ecoute-barre" role="group" aria-label="Lecture à voix haute" hidden>
+              <span class="ecoute-etat" aria-live="polite">Lecture à voix haute</span>
+              <button type="button" data-ecoute="pause" aria-label="Pause">${icone.pause}</button>
+              <button type="button" data-ecoute="vitesse" aria-label="Vitesse normale">1×</button>
+              <button type="button" data-ecoute="stop" aria-label="Arrêter la lecture">${icone.arreter}</button>
+            </div>
+            <div class="lecture-note trouve-barre" role="group" aria-label="Passages trouvés" hidden>
+              <span class="trouve-mot"></span><span class="trouve-compte" aria-live="polite"></span>
+              <button type="button" data-trouve="-1" aria-label="Passage précédent">‹</button>
+              <button type="button" data-trouve="1" aria-label="Passage suivant">›</button>
+              <button type="button" data-trouve="0" aria-label="Effacer le surlignage">✕</button>
+            </div>
+          </div>
         </div>
         <div class="voile-lecture" hidden></div>
         ${panneauAffichage()}
@@ -1129,6 +1368,227 @@
         progression();
       }
     };
+    // montrer un élément du texte : sa page (livre), ou le faire défiler en haut (au tiers si « milieu »)
+    const allerA = (cible, anime, milieu) => {
+      if (livre()) {
+        const m = parseFloat(getComputedStyle(defile).paddingLeft) || 16;
+        const x = cible.getBoundingClientRect().left - defile.getBoundingClientRect().left - m + defile.scrollLeft;
+        allerPage(Math.floor((x + 2) / session.pas), anime);
+      } else {
+        const haut = cible.getBoundingClientRect().top - defile.getBoundingClientRect().top + defile.scrollTop;
+        defile.scrollTo({ top: Math.max(0, haut - (milieu ? defile.clientHeight / 3 : 12)), behavior: anime && milieu && !mouvementReduit() ? "smooth" : "auto" });
+      }
+    };
+
+    // où on en est : gardé sur l’appareil, pour reprendre la lecture (accueil, réouverture)
+    let pret = false;
+    let minuteur = 0;
+    const retenir = () => {
+      if (!pret) return;
+      clearTimeout(minuteur);
+      minuteur = setTimeout(() => memoire.ecrire(`mission.pos.${f}`, position().toFixed(4)), 400);
+    };
+    memoire.ecrire("mission.derniere", f);
+    signal.addEventListener("abort", () => {
+      clearTimeout(minuteur);
+      if (pret) memoire.ecrire(`mission.pos.${f}`, position().toFixed(4));
+    });
+    const noteReprise = racine.querySelector(".reprise-note");
+    let minuteurNote = 0;
+    noteReprise.querySelector("[data-debut]").addEventListener("click", () => {
+      noteReprise.hidden = true;
+      if (livre()) allerPage(0, true); else defile.scrollTo({ top: 0 });
+    }, { signal });
+
+    // passages trouvés par la recherche : surlignés, et une barre pour aller de l’un à l’autre
+    const barreTrouve = racine.querySelector(".trouve-barre");
+    let marques = [];
+    let actuelle = -1;
+    const montrerMarque = (i) => {
+      if (!marques.length) return;
+      actuelle = (i + marques.length) % marques.length;
+      marques.forEach((m, k) => m.classList.toggle("trouve-actuel", k === actuelle));
+      barreTrouve.querySelector(".trouve-compte").textContent = `${actuelle + 1} sur ${marques.length}`;
+      allerA(marques[actuelle], true, true);
+    };
+    barreTrouve.addEventListener("click", (ev) => {
+      const b = ev.target.closest("[data-trouve]");
+      if (!b) return;
+      const n = Number(b.dataset.trouve);
+      if (n) { montrerMarque(actuelle + n); return; }
+      marques.forEach((m) => m.replaceWith(...m.childNodes));
+      article.normalize();
+      marques = [];
+      barreTrouve.hidden = true;
+    }, { signal });
+    const surligner = (q) => {
+      const mots = motsCherches(q);
+      if (!mots.length) return;
+      const re = motif(mots);
+      const noeuds = [];
+      const w = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
+        acceptNode: (n) => (n.parentElement.closest("textarea, .lec-cache, .lec-credits") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT),
+      });
+      while (w.nextNode()) noeuds.push(w.currentNode);
+      noeuds.forEach((t) => {
+        const coupes = [...trouvailles(aplatir(t.data), re)];
+        if (!coupes.length) return;
+        const morceaux = document.createDocumentFragment();
+        let i = 0;
+        coupes.forEach(([d, fin]) => {
+          morceaux.append(t.data.slice(i, d));
+          const m = document.createElement("mark");
+          m.className = "trouve";
+          m.textContent = t.data.slice(d, fin);
+          morceaux.append(m);
+          marques.push(m);
+          i = fin;
+        });
+        morceaux.append(t.data.slice(i));
+        t.replaceWith(morceaux);
+      });
+      if (!marques.length) return;
+      barreTrouve.querySelector(".trouve-mot").textContent = `« ${q} »`;
+      barreTrouve.hidden = false;
+    };
+
+    // écouter : le téléphone lit l’étude à voix haute (synthèse vocale du navigateur, voix française)
+    const synthese = "speechSynthesis" in window && typeof SpeechSynthesisUtterance === "function" ? window.speechSynthesis : null;
+    const boutonEcouter = racine.querySelector("[data-ecouter]");
+    const barreEcoute = racine.querySelector(".ecoute-barre");
+    const VITESSES = [[1, "1×", "Vitesse normale"], [1.25, "1,25×", "Plus rapide"], [0.8, "0,8×", "Plus lent"]];
+    let ecoute = null; // { blocs, i, morceaux, j, vitesse, pause, u }
+    const voixFr = () => {
+      const v = synthese.getVoices().filter((x) => /^fr([-_]|$)/i.test(x.lang));
+      return v.find((x) => /fr[-_]FR/i.test(x.lang) && x.localService) || v.find((x) => /fr[-_]FR/i.test(x.lang)) || v[0] || null;
+    };
+    // « Jean 3:16-18 » se dit « Jean chapitre 3, versets 16 à 18 »
+    const pourOreille = (t) => t
+      .replace(/(\d+):(\d+) – (\d+):(\d+)/g, "chapitre $1, verset $2, au chapitre $3, verset $4")
+      .replace(/(\d+):(\d+)-(\d+)/g, "chapitre $1, versets $2 à $3")
+      .replace(/(\d+):(\d+)/g, "chapitre $1, verset $2");
+    const texteADire = (el) => {
+      const c = el.cloneNode(true);
+      c.querySelectorAll(".lec-cache, textarea, .lec-credits").forEach((x) => x.remove());
+      c.querySelectorAll("input.lec-blanc").forEach((x) => x.replaceWith("…"));
+      c.querySelectorAll("a.ref").forEach((a) => {
+        const seg = Bible.analyser(Bible.passageDuLien(a.getAttribute("href")));
+        a.replaceWith(seg && seg.length ? pourOreille(Bible.titre(seg)) : a.textContent);
+      });
+      let t = c.textContent.replace(/\s+/g, " ").trim();
+      const q = el.closest(".lec-q");
+      if (q && t && q.querySelector(".lec-q-corps p, .lec-q-corps li") === el) {
+        const num = q.querySelector(".lec-q-num");
+        if (num && /\d/.test(num.textContent)) t = `Question ${num.textContent.trim()}. ${t}`;
+      }
+      return t;
+    };
+    // des morceaux courts : certaines voix s’arrêtent sur une phrase trop longue
+    const decouper = (t) => {
+      const sortie = [];
+      (t.match(/(?:[^.!?;:]|[.:](?=\d))+(?:[.!?;:]+(?:\s*[»”)])*|$)/g) || [t]).forEach((phrase) => {
+        let x = phrase.trim();
+        while (x.length > 200) {
+          const k = Math.max(x.lastIndexOf(", ", 200), x.lastIndexOf(" ", 200));
+          sortie.push(x.slice(0, k > 60 ? k + 1 : 200).trim());
+          x = x.slice(k > 60 ? k + 1 : 200).trim();
+        }
+        if (x) sortie.push(x);
+      });
+      return sortie;
+    };
+    const blocsADire = () => [...article.querySelectorAll("h2, h3, h4, p, li, blockquote, figcaption, td, th, dt, dd")]
+      .filter((el) => !el.closest(".lec-credits, .lec-cache") && !el.querySelector("p, li, h2, h3, h4, blockquote, td, th"))
+      .filter((el) => texteADire(el));
+    const visible = (el) => {
+      const r = el.getBoundingClientRect();
+      const d = defile.getBoundingClientRect();
+      return livre() ? r.left >= d.left - 2 && r.left < d.right - 2 : r.bottom > d.top + 8 && r.top < d.bottom - 8;
+    };
+    const finEcoute = () => {
+      if (!ecoute) return;
+      ecoute.u = null;
+      ecoute = null;
+      synthese.cancel();
+      article.querySelectorAll(".lu-en-cours").forEach((x) => x.classList.remove("lu-en-cours"));
+      barreEcoute.hidden = true;
+      boutonEcouter.setAttribute("aria-pressed", "false");
+    };
+    const dire = () => {
+      if (!ecoute || ecoute.pause) return;
+      const bloc = ecoute.blocs[ecoute.i];
+      if (!bloc) { finEcoute(); return; }
+      if (!ecoute.morceaux) {
+        ecoute.morceaux = decouper(texteADire(bloc));
+        ecoute.j = 0;
+        article.querySelectorAll(".lu-en-cours").forEach((x) => x.classList.remove("lu-en-cours"));
+        bloc.classList.add("lu-en-cours");
+        if (!visible(bloc)) allerA(bloc, true, true);
+      }
+      const u = new SpeechSynthesisUtterance(ecoute.morceaux[ecoute.j]);
+      u.lang = "fr-FR";
+      const v = voixFr();
+      if (v) u.voice = v;
+      u.rate = ecoute.vitesse;
+      u.onend = () => {
+        if (!ecoute || ecoute.u !== u) return;
+        ecoute.j += 1;
+        if (ecoute.j >= ecoute.morceaux.length) { ecoute.i += 1; ecoute.morceaux = null; }
+        dire();
+      };
+      u.onerror = (ev) => { if (ecoute && ecoute.u === u && !/interrupted|canceled/.test(ev.error || "")) finEcoute(); };
+      ecoute.u = u;
+      synthese.speak(u);
+    };
+    const majBarre = () => {
+      if (!ecoute) return;
+      const b = barreEcoute.querySelector('[data-ecoute="pause"]');
+      b.innerHTML = ecoute.pause ? icone.jouer : icone.pause;
+      b.setAttribute("aria-label", ecoute.pause ? "Reprendre la lecture" : "Pause");
+      barreEcoute.querySelector(".ecoute-etat").textContent = ecoute.pause ? "En pause" : "Lecture à voix haute";
+      const [, court, long] = VITESSES.find(([x]) => x === ecoute.vitesse);
+      const bv = barreEcoute.querySelector('[data-ecoute="vitesse"]');
+      bv.textContent = court;
+      bv.setAttribute("aria-label", `${long} (changer la vitesse)`);
+    };
+    if (synthese) {
+      boutonEcouter.hidden = false;
+      boutonEcouter.setAttribute("aria-pressed", "false");
+      synthese.getVoices(); // certaines voix se chargent au premier appel
+      boutonEcouter.addEventListener("click", () => {
+        if (ecoute) { finEcoute(); return; }
+        const blocs = blocsADire();
+        if (!blocs.length) return;
+        const depart = Math.max(0, blocs.findIndex(visible));
+        ecoute = { blocs, i: depart, morceaux: null, j: 0, vitesse: Number(memoire.lire("mission.lecture.vitesse", "1")) || 1, pause: false, u: null };
+        if (!VITESSES.some(([x]) => x === ecoute.vitesse)) ecoute.vitesse = 1;
+        synthese.cancel();
+        barreEcoute.hidden = false;
+        boutonEcouter.setAttribute("aria-pressed", "true");
+        majBarre();
+        dire();
+      }, { signal });
+      barreEcoute.addEventListener("click", (ev) => {
+        const b = ev.target.closest("[data-ecoute]");
+        if (!b || !ecoute) return;
+        const quoi = b.dataset.ecoute;
+        if (quoi === "stop") { finEcoute(); return; }
+        if (quoi === "pause") {
+          ecoute.pause = !ecoute.pause;
+          ecoute.u = null;
+          synthese.cancel();
+          if (!ecoute.pause) dire();
+        } else if (quoi === "vitesse") {
+          const k = VITESSES.findIndex(([x]) => x === ecoute.vitesse);
+          ecoute.vitesse = VITESSES[(k + 1) % VITESSES.length][0];
+          memoire.ecrire("mission.lecture.vitesse", String(ecoute.vitesse));
+          if (!ecoute.pause) { ecoute.u = null; synthese.cancel(); dire(); }
+        }
+        majBarre();
+      }, { signal });
+      signal.addEventListener("abort", finEcoute);
+    }
+
     const regler = (cle, val) => {
       reglages[cle] = val;
       memoire.ecrire(`mission.lecture.${cle}`, String(val));
@@ -1149,14 +1609,7 @@
       if (aller) {
         const cible = article.querySelector(`#${CSS.escape(aller.dataset.aller)}`);
         fermerPanneaux();
-        if (!cible) return;
-        if (livre()) {
-          const m = parseFloat(getComputedStyle(defile).paddingLeft) || 16;
-          const x = cible.getBoundingClientRect().left - defile.getBoundingClientRect().left - m + defile.scrollLeft;
-          allerPage(Math.floor((x + 2) / session.pas), true);
-        } else {
-          defile.scrollTo({ top: cible.getBoundingClientRect().top - defile.getBoundingClientRect().top + defile.scrollTop - 12 });
-        }
+        if (cible) allerA(cible, true);
       }
     }, { signal });
 
@@ -1194,9 +1647,11 @@
           numero.textContent = `Page ${n + 1} sur ${session.pages}`;
           progression();
         }
+        retenir();
         return;
       }
       progression();
+      retenir();
     }, { passive: true, signal });
     let attente = 0;
     const surveillance = new ResizeObserver(() => {
@@ -1219,6 +1674,12 @@
           });
         }
         reponses(article, f, signal);
+        let demande = null;
+        try {
+          demande = JSON.parse(sessionStorage.getItem("mission.surligner") || "null");
+          sessionStorage.removeItem("mission.surligner");
+        } catch (er) { demande = null; }
+        if (demande && demande.f === f && demande.q) surligner(demande.q);
         const titres = [...article.querySelectorAll("h2")];
         const liste = titres.length >= 2 ? titres : [...article.querySelectorAll("h2, h3")];
         if (liste.length >= 2) {
@@ -1228,6 +1689,17 @@
           racine.querySelector('[data-ouvrir="sommaire"]').hidden = false;
         }
         appliquer(false);
+        const garde = Number(memoire.lire(`mission.pos.${f}`, "0")) || 0;
+        if (marques.length) {
+          montrerMarque(0);
+        } else if (garde > 0.02 && garde < 0.98) {
+          if (livre()) paginer(garde);
+          else { defile.scrollTop = garde * (defile.scrollHeight - defile.clientHeight); progression(); }
+          noteReprise.hidden = false;
+          minuteurNote = setTimeout(() => { noteReprise.hidden = true; }, 7000);
+          signal.addEventListener("abort", () => clearTimeout(minuteurNote));
+        }
+        pret = true;
         if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if (!signal.aborted && livre()) paginer(position()); });
       })
       .catch(() => {

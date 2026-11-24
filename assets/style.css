@@ -748,6 +748,78 @@ a.resultat-titre:hover { text-decoration-thickness: 2px; }
 .resultat .etude-docs { margin-top: 0.6rem; }
 .vide { margin: 1.25rem 0 0; padding: 1rem 1.1rem; background: var(--recif-pale); border-radius: 14px; }
 
+/* recherche : un verset tapé (« Jean 3:16 ») s’affiche en tête, aux couleurs du site */
+.bible-carte {
+  --l-accent: var(--feuille);
+  --l-accent-pale: var(--recif-pale);
+  --l-texte: var(--encre);
+  --l-doux: var(--gris);
+  --l-ligne: var(--ligne);
+  --l-carte: var(--blanc);
+  --l-taille: 1.0625rem;
+  max-width: 46rem;
+  margin: 1.25rem 0 0;
+  padding: 1rem 1.1rem 0.4rem;
+  border: 1px solid var(--ligne);
+  border-radius: 16px;
+  background: var(--blanc);
+  color: var(--encre);
+}
+.bible-carte .bible-titre { margin: 0; color: var(--lagon); font-family: var(--serif); font-size: var(--t-3); font-weight: 600; line-height: 1.2; }
+.bible-carte .bible-corps { padding-bottom: 0.6rem; }
+
+/* recherche : dans les titres, puis dans le texte des études */
+.resultats-titre {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.6rem;
+  margin: 1.5rem 0 0;
+  color: var(--lagon);
+  font-family: var(--serif);
+  font-size: var(--t-2);
+  font-weight: 600;
+}
+.resultats-titre .compte { font-family: var(--sans); }
+.resultat-extrait { margin: 0.35rem 0 0; color: var(--encre); font-size: var(--t-0); line-height: 1.5; }
+.resultat-extrait:empty { display: none; }
+.resultat-extrait mark { padding: 0 0.1em; border-radius: 3px; background: #FBE5A0; color: inherit; }
+.plus-resultats {
+  min-height: 44px;
+  margin-top: 1rem;
+  padding: 0 1.1rem;
+  border: 1.5px solid var(--ligne);
+  border-radius: 999px;
+  background: var(--blanc);
+  color: var(--lagon);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* accueil : reprendre sa lecture */
+.reprise { margin-top: -1.25rem; margin-bottom: 2rem; }
+.reprise-lien {
+  position: relative;
+  display: grid;
+  gap: 0.15rem;
+  max-width: 36rem;
+  padding: 0.95rem 3rem 1rem 1.1rem;
+  border-radius: 16px;
+  background: var(--blanc);
+  color: var(--encre);
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(6, 20, 18, 0.25);
+}
+.reprise-lien:hover .reprise-titre { text-decoration: underline; }
+.reprise-etiquette { color: var(--feuille); font-size: var(--t-petit); font-weight: 700; }
+.reprise-titre { color: var(--lagon); font-family: var(--serif); font-size: var(--t-2); font-weight: 600; line-height: 1.25; }
+.reprise-ou { color: var(--gris); font-size: var(--t-petit); }
+.reprise-barre { display: block; height: 6px; margin-top: 0.55rem; overflow: hidden; border-radius: 999px; background: var(--recif-pale); }
+.reprise-barre span { display: block; height: 100%; border-radius: inherit; background: var(--feuille); }
+.reprise-pct { color: var(--gris); font-size: var(--t-petit); }
+.reprise-lien .chevron { position: absolute; top: 50%; right: 1rem; width: 1.2rem; height: 1.2rem; transform: translateY(-50%); color: var(--lagon); }
+
 /* ---------- Page « L’application » ---------- */
 .appli-mise { display: grid; gap: 2rem; margin-top: 0.25rem; }
 .appli-texte > .chapeau { margin-bottom: 1rem; }
@@ -840,6 +912,12 @@ body.en-lecture main { display: flex; flex-direction: column; min-height: 0; }
   text-overflow: ellipsis;
 }
 .lecteur-actions { display: flex; align-items: center; gap: 0.5rem; }
+@media (max-width: 26rem) {
+  /* téléphone : six boutons, on resserre pour laisser de la place au titre */
+  .lecteur-barre { gap: 0.4rem; }
+  .lecteur-actions { gap: 0.25rem; }
+  .lecteur-actions .lecteur-bouton { min-width: 42px; min-height: 42px; padding: 0; }
+}
 .lecteur-bouton {
   display: inline-flex;
   align-items: center;
@@ -1088,6 +1166,7 @@ summary.lecteur-bouton::-webkit-details-marker { display: none; }
   line-height: 1.5;
   text-decoration: none;
   white-space: nowrap;
+  text-indent: 0; /* sinon le retrait négatif des plans (lec-plan) décale le texte hors de la pastille */
 }
 .lecture-texte .ref:hover { text-decoration: underline; }
 .lec-q {
@@ -1264,6 +1343,63 @@ summary.lecteur-bouton::-webkit-details-marker { display: none; }
 }
 .lecture-pages button:disabled { opacity: 0.35; cursor: default; }
 .lecture-page-num { font-variant-numeric: tabular-nums; }
+
+/* bas de la lecture : reprise, passages trouvés */
+.lecture-bas {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: max(0.8rem, env(safe-area-inset-bottom));
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.75rem;
+  pointer-events: none;
+}
+.lecture.livre .lecture-bas { bottom: calc(3.4rem + 0.6rem + env(safe-area-inset-bottom)); }
+.lecture-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem 0.6rem;
+  max-width: 34rem;
+  padding: 0.4rem 0.45rem 0.4rem 1rem;
+  border-radius: 16px;
+  background: var(--lagon);
+  color: var(--blanc);
+  font-family: var(--sans);
+  font-size: var(--t-0);
+  box-shadow: 0 6px 20px rgba(12, 26, 24, 0.28);
+  pointer-events: auto;
+}
+.lecture-note[hidden] { display: none; }
+.lecture-note button {
+  min-width: 44px;
+  min-height: 40px;
+  padding: 0 0.8rem;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--blanc);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.lecture-note button:hover { background: rgba(255, 255, 255, 0.26); }
+.lecture-note :focus-visible { outline: 3px solid var(--pua); outline-offset: 2px; }
+.ecoute-etat { font-weight: 700; }
+.lecture-note button svg { width: 1.15rem; height: 1.15rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
+.lecteur-bouton[aria-pressed="true"] { background: var(--pua); color: var(--lagon); }
+.lecture-texte .lu-en-cours { background: var(--l-accent-pale); border-radius: 6px; box-shadow: 0 0 0 4px var(--l-accent-pale); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.trouve-mot { font-weight: 700; }
+.trouve-compte { font-variant-numeric: tabular-nums; }
+.lecture-texte mark.trouve { padding: 0 0.08em; border-radius: 3px; background: #FBE5A0; color: inherit; }
+.lecture-texte mark.trouve-actuel { background: var(--pua); box-shadow: 0 0 0 2px var(--pua); }
+.lecture.fond-nuit .lecture-texte mark.trouve { background: #5E5122; }
+.lecture.fond-nuit .lecture-texte mark.trouve-actuel { background: #8A7425; box-shadow: 0 0 0 2px #8A7425; }
 
 /* panneaux : affichage, sommaire, impression */
 .voile-lecture { position: fixed; inset: 0; z-index: 40; background: rgba(12, 26, 24, 0.5); }

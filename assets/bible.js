@@ -91,6 +91,63 @@
     return seg;
   }
 
+  // ---------- une référence tapée en français : « Jean 3:16 », « jn 3.16 », « 1 Co 13 », « Ps 23 » ----------
+  const sansAccent = (t) => t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/œ/g, "oe").replace(/[^a-z0-9]/g, "");
+  const ALIAS = { // abréviations courantes ; les noms entiers viennent de NOMS
+    gn: 1, ge: 1, gen: 1, ex: 2, exo: 2, exod: 2, lv: 3, lev: 3, nb: 4, nomb: 4, dt: 5, deut: 5, deu: 5,
+    jos: 6, jg: 7, jug: 7, rt: 8, ru: 8, "1s": 9, "1sa": 9, "1sam": 9, "2s": 10, "2sa": 10, "2sam": 10,
+    "1r": 11, "1rs": 11, "2r": 12, "2rs": 12, "1ch": 13, "1chr": 13, "1chron": 13, "2ch": 14, "2chr": 14, "2chron": 14,
+    esd: 15, ne: 16, neh: 16, est: 17, jb: 18, ps: 19, psa: 19, psaume: 19, pr: 20, pro: 20, prov: 20, proverbe: 20,
+    ec: 21, ecc: 21, eccl: 21, qo: 21, qohelet: 21, qoheleth: 21, ct: 22, cant: 22, cantique: 22,
+    es: 23, esa: 23, is: 23, isa: 23, isaie: 23, jr: 24, jer: 24, lm: 25, lam: 25, ez: 26, eze: 26, ezekiel: 26,
+    dn: 27, da: 27, dan: 27, os: 28, jl: 29, joe: 29, am: 30, ab: 31, abd: 31, jon: 32, mi: 33, mic: 33,
+    na: 34, nah: 34, ha: 35, hab: 35, habakuk: 35, so: 36, soph: 36, ag: 37, agg: 37, za: 38, zac: 38, zach: 38,
+    ml: 39, mal: 39, mt: 40, mat: 40, matt: 40, math: 40, mc: 41, mr: 41, mar: 41, lc: 42, lu: 42, jn: 43, jea: 43,
+    ac: 44, act: 44, actesdesapotres: 44, rm: 45, ro: 45, rom: 45, "1co": 46, "1cor": 46, "2co": 47, "2cor": 47,
+    ga: 48, gal: 48, ep: 49, eph: 49, ph: 50, phil: 50, php: 50, col: 51, "1th": 52, "1thes": 52, "1thess": 52,
+    "2th": 53, "2thes": 53, "2thess": 53, "1tm": 54, "1ti": 54, "1tim": 54, "2tm": 55, "2ti": 55, "2tim": 55,
+    tt: 56, tit: 56, phm: 57, philem: 57, he: 58, heb: 58, jc: 59, ja: 59, jac: 59, jq: 59,
+    "1p": 60, "1pi": 60, "1pie": 60, "2p": 61, "2pi": 61, "2pie": 61, "1jn": 62, "2jn": 63, "3jn": 64,
+    jd: 65, jud: 65, ap: 66, apo: 66, apoc: 66,
+  };
+  const ENTIERS = NOMS.map((n) => sansAccent(n)); // « 1samuel », « cantiquedescantiques »…
+  ENTIERS.forEach((n, i) => { ALIAS[n] = i + 1; });
+  function livreTape(chiffre, nom) {
+    const cle = (chiffre || "") + sansAccent(nom);
+    if (!sansAccent(nom)) return 0;
+    if (ALIAS[cle]) return ALIAS[cle];
+    // début d’un nom entier, s’il n’en désigne qu’un : « apocal », « deuter »
+    if (cle.length - (chiffre ? 1 : 0) < 3) return 0;
+    const possibles = ENTIERS.map((n, i) => (n.startsWith(cle) ? i + 1 : 0)).filter(Boolean);
+    return possibles.length === 1 ? possibles[0] : 0;
+  }
+  function lireReference(texte) {
+    const m = /^\s*(?:([1-3])\s*(?:ère|ere|er|re|e)?\s*)?([A-Za-zÀ-ÿœŒ][A-Za-zÀ-ÿœŒ .’']*?)\s*\.?\s*(\d{1,3})(?:\s*(?:[:.,]|\s)\s*(\d{1,3}))?(?:\s*[-–]\s*(\d{1,3})(?:\s*[:.]\s*(\d{1,3}))?)?\s*$/
+      .exec(String(texte || ""));
+    if (!m) return null;
+    const livre = livreTape(m[1], m[2]);
+    if (!livre) return null;
+    const c = Number(m[3]);
+    const v = m[4] ? Number(m[4]) : 0;
+    const fin = m[5] ? Number(m[5]) : 0;
+    if (UN_CHAPITRE.has(livre) && !v) {
+      // « Jude 3 », « Jude 3-5 » : des versets
+      if (c === 1 && !fin) return [{ livre, c1: 1, v1: 0, c2: 1, v2: 0 }];
+      return [{ livre, c1: 1, v1: c, c2: 1, v2: fin >= c ? fin : c }];
+    }
+    if (!v) return [{ livre, c1: c, v1: 0, c2: fin > c ? fin : c, v2: 0 }]; // chapitre(s) entier(s)
+    if (m[6]) return [{ livre, c1: c, v1: v, c2: fin, v2: Number(m[6]) }]; // d’un chapitre à l’autre
+    return [{ livre, c1: c, v1: v, c2: c, v2: fin >= v ? fin : v }];
+  }
+  // adresse BibleGateway d’un passage : recours sans connexion
+  function adresseBibleGateway(seg) {
+    const a = seg[0];
+    const z = seg[seg.length - 1];
+    const ref = !a.v1 ? `${a.c1}${z.c2 !== a.c1 ? `-${z.c2}` : ""}`
+      : a.c1 === z.c2 ? `${a.c1}:${a.v1}${z.v2 !== a.v1 ? `-${z.v2}` : ""}` : `${a.c1}:${a.v1}-${z.c2}:${z.v2}`;
+    return `https://www.biblegateway.com/passage/?search=${encodeURIComponent(`${ANGLAIS[a.livre - 1]} ${ref}`)}&version=LSG`;
+  }
+
   const passageDuLien = (href) => {
     try {
       return new URL(href, "https://exemple.org/").searchParams.get("search") || "";
@@ -198,6 +255,11 @@
 
   // remplit le panneau (déjà ouvert) avec le passage du lien
   function montrer(panneau, href) {
+    montrerPassage(panneau, analyser(passageDuLien(href)), href);
+  }
+
+  // remplit un panneau ou une carte (.bible-titre, .bible-corps, .bible-texte, .bible-tout, .bible-strong)
+  function montrerPassage(panneau, brut, href) {
     const titreEl = panneau.querySelector(".bible-titre");
     const corps = panneau.querySelector(".bible-corps");
     const zone = panneau.querySelector(".bible-texte");
@@ -208,7 +270,7 @@
     bouton.hidden = true;
     strong.hidden = true;
     corps.scrollTop = 0;
-    const brut = analyser(passageDuLien(href));
+    if (brut && brut.length && !href) href = adresseBibleGateway(brut);
     if (!brut || !brut.length) {
       titreEl.textContent = "Passage introuvable";
       zone.innerHTML = '<p class="bible-info">Cette référence n’a pas pu être lue.</p>';
@@ -230,7 +292,11 @@
           const dans = (c, v) => seg.some((s) => s.v1 && (c > s.c1 || (c === s.c1 && v >= s.v1)) && (c < s.c2 || (c === s.c2 && v <= s.v2)));
           zone.innerHTML = versets(livre.chapitres, seg[0].c1, 0, seg[seg.length - 1].c2, 0, dans);
           const m = zone.querySelector(".bible-marque");
-          corps.scrollTop = m ? m.getBoundingClientRect().top - corps.getBoundingClientRect().top + corps.scrollTop - 12 : 0;
+          if (corps.scrollHeight > corps.clientHeight + 2) {
+            corps.scrollTop = m ? m.getBoundingClientRect().top - corps.getBoundingClientRect().top + corps.scrollTop - 12 : 0;
+          } else if (m) {
+            m.scrollIntoView({ block: "center" }); // carte dans la page : c’est la page qui défile
+          }
         } else {
           zone.innerHTML = note + passage(livre.chapitres, seg);
           corps.scrollTop = 0;
@@ -249,6 +315,6 @@
     });
   }
 
-  global.Bible = { analyser, passageDuLien, titre, resoudre, passage, adresseStrong, montrer };
+  global.Bible = { analyser, passageDuLien, titre, resoudre, passage, adresseStrong, lireReference, montrer, montrerPassage };
   if (typeof module === "object" && module.exports) module.exports = global.Bible;
 })(typeof window !== "undefined" ? window : globalThis);

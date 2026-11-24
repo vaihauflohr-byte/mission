@@ -11,7 +11,9 @@ Aucun serveur, aucune base de données : le site range la bibliothèque d’étu
 - **Mode lecture** (`#/lire/<série>/<document>`) : les études s’ouvrent comme dans l’appli de l’École du sabbat ou un livre — texte qui s’adapte à l’écran, références bibliques qui s’ouvrent dans un panneau, sans quitter l’étude (Bible Louis Segond 1910 intégrée au site), une case « Votre réponse » sous chaque question, gardée sur l’appareil. *Sommaire*, *Affichage* (taille du texte, fond clair / sépia / nuit, police, défiler ou feuilleter page par page), *Imprimer* et *Original* (le PDF) sont toujours dans la barre du haut. Voir « Mode lecture » plus bas.
 - **Original** (`#/original/<série>/<document>`, et `#/lire/…` pour les documents sans mode lecture) : le PDF s’affiche dans le site (PDF.js), page après page, à la largeur de l’écran. On zoome en pinçant (téléphone), avec Ctrl + molette ou les boutons − / + (ordinateur). *Télécharger* donne le PDF ; pour les présentations, le menu propose aussi le PowerPoint d’origine, avec les animations, et *Projeter* les montre en plein écran, une diapositive à la fois (flèches ou clic pour avancer).
 - **Imprimer** : sur chaque document, en mode lecture comme en PDF. Au choix : *le document d’origine* (les pages du PDF, préparées dans le navigateur puis envoyées à l’imprimante), *ce que je lis, avec mes réponses* (en mode lecture) ou *Télécharger le PDF*.
-- **Chercher** : par mot, sans tenir compte des accents (`bapteme` trouve « baptême »).
+- **Chercher** : par mot, sans tenir compte des accents (`bapteme` trouve « baptême ») : d’abord dans les titres et sujets, puis dans le texte des études (« sabbat » : 84 documents, du plus riche au plus pauvre, avec un extrait) ; ouvrir un document trouvé surligne le mot et une barre passe d’un passage à l’autre. Une référence tapée (« Jean 3:16 », « 1 co 13:4-7 », « Ps 23 ») affiche le passage en tête. Voir « Recherche » plus bas.
+- **Reprendre** : le mode lecture retient où on s’est arrêté dans chaque document ; l’accueil propose la dernière étude ouverte (ou la suivante quand elle est finie), et la rouvrir y ramène.
+- **Écouter** : dans le mode lecture, le téléphone lit l’étude à voix haute (voix française du téléphone), en surlignant le paragraphe lu ; pause, vitesse (1×, 1,25×, 0,8×), arrêt.
 - **Sommaire** : sur l’accueil, chaque étape montre la liste de ses séries avec le nombre d’études, comme la page « Study Guides » du Gateway Adventist Centre.
 - **Application** (`#/application`) : le site s’installe comme une application (PWA) sur Android, iPhone et ordinateur, sans passer par un magasin d’applications. Bouton « Installer l’application » quand le navigateur le permet (Android, Chrome, Edge), sinon les étapes à suivre (Safari sur iPhone) ; code QR et bouton « Partager le lien » pour la faire connaître. Une fois installée : icône sur l’écran d’accueil, plein écran, raccourcis vers les trois étapes et la recherche (appui long sur l’icône, Android), liste des études consultable sans réseau. Les documents, eux, demandent une connexion (ou se téléchargent).
 
@@ -77,7 +79,17 @@ python3 outils/lecture/convertir.py vivre-avec-jesus/01-il-revient   # un seul d
 python3 outils/lecture/convertir.py --plan vivre-avec-jesus/01-il-revient   # voir le découpage, sans rien écrire
 ```
 
-puis augmenter `VERSION_LECTURE` dans `assets/app.js` et le `?v=` de `donnees/lecture.js` (dans `index.html` et `sw.js`), pour que les téléphones reprennent les nouvelles versions.
+puis augmenter `VERSION_LECTURE` dans `assets/app.js` et le `?v=` de `donnees/lecture.js` (dans `index.html` et `sw.js`), pour que les téléphones reprennent les nouvelles versions, et refaire l’index de recherche (ci-dessous).
+
+### Recherche dans le texte des études
+
+`outils/recherche/construire_index.py` lit chaque document de lecture et compte ses mots (sans accents, sans les petits mots) dans `donnees/recherche.json` (environ 1,3 Mo, 360 Ko compressé). La page Chercher ne le télécharge qu’à la première recherche, puis le garde hors ligne ; les extraits viennent des documents eux-mêmes, chargés quand le résultat apparaît à l’écran. Après chaque conversion :
+
+```
+python3 outils/recherche/construire_index.py
+```
+
+puis augmenter `VERSION_RECHERCHE` dans `assets/app.js`. Positions de lecture : `localStorage`, clés `mission.pos.<document>` et `mission.derniere` ; vitesse de la voix : `mission.lecture.vitesse`.
 
 ## Mettre la bibliothèque à jour
 
@@ -118,7 +130,8 @@ Une image qui manque est simplement masquée.
 | `lecteur/` | PDF.js 6.5.438 (Mozilla, licence Apache 2.0), chargé à la première ouverture d’un document |
 | `donnees/bibliotheque.js` | catalogue généré : étapes, séries, études, documents |
 | `assets/bible.js`, `donnees/bible/` | la Bible (Louis Segond 1910) affichée quand on touche une référence |
-| `outils/` | générateur du catalogue, import et corrections des documents, images, mode lecture (`outils/lecture/`), texte de la Bible (`outils/bible/`) |
+| `donnees/recherche.json` | index des mots du texte des études, pour la recherche (généré) |
+| `outils/` | générateur du catalogue, import et corrections des documents, images, mode lecture (`outils/lecture/`), texte de la Bible (`outils/bible/`), index de recherche (`outils/recherche/`) |
 | `sw.js`, `manifest.webmanifest`, `assets/captures/` | application installable, hors ligne ; captures montrées dans la fenêtre d’installation (Android) |
 | `assets/icones/` | icônes de l’appli (feuille), symbole adventiste, code QR de `mission.ka-ilei.com` |
 | `CNAME`, `.nojekyll` | domaine `mission.ka-ilei.com` ; fichiers publiés tels quels |
