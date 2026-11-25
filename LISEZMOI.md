@@ -111,9 +111,10 @@ FAL_KEY=… python3 outils/shorts/generer_images.py                # toutes cell
 FAL_KEY=… python3 outils/shorts/generer_images.py --refaire daniel-8 historacles-9
 python3 outils/shorts/generer_images.py --planches               # planches contact, pour tout relire
 python3 outils/shorts/construire_shorts.py                       # les shorts prennent leur image
+python3 outils/shorts/generer_images.py --vignettes              # les études sans image prennent celle de leur short
 ```
 
-Images : `assets/images/shorts/<série>-<numéro>.webp`, 720 × 1280 (moins d’un mégapixel : fal facture au mégapixel entamé). Modèle : `fal-ai/flux/dev` par défaut (`--modele` ou `FAL_MODELE` pour un autre) ; modèle, graine et scène de chaque image dans `outils/shorts/images.json`. La clé fal vient de `FAL_KEY` (ou `~/.fal_key`), jamais du dépôt ; l’espace de travail doit avoir l’accès réseau à `fal.run` et `fal.media`. Tant qu’un short n’a pas son image, il prend celle de l’étude ; les livrets FAST, dont l’image est une couverture, prennent un fond dégradé et le pictogramme de l’étape.
+Images : `assets/images/shorts/<série>-<numéro>.webp`, 720 × 1280 (moins d’un mégapixel : fal facture au mégapixel entamé). Modèle : `fal-ai/flux/dev` par défaut (`--modele` ou `FAL_MODELE` pour un autre) ; modèle, graine et scène de chaque image dans `outils/shorts/images.json`. La clé fal vient de `FAL_KEY` (ou `~/.fal_key`), jamais du dépôt ; l’espace de travail doit avoir l’accès réseau à `fal.run` et `fal.media`. Tant qu’un short n’a pas son image, il prend celle de l’étude ; les livrets FAST, dont l’image est une couverture, prennent un fond dégradé et le pictogramme de l’étape. Les études sans image (livrets FAST, *Devenir un disciple incroyable*…) montrent ce même dégradé dans la liste de leur série, jusqu’à ce que `--vignettes` leur donne une vignette découpée dans le haut de l’image de leur short (`assets/images/<série>-<numéro>.webp`, le nom que reprend `generer_bibliotheque.py`).
 
 ## Mettre la bibliothèque à jour
 

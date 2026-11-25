@@ -10,6 +10,7 @@ reçoit le texte du short.
     FAL_KEY=… python3 outils/shorts/generer_images.py historacles-7   # celles-là seulement
     FAL_KEY=… python3 outils/shorts/generer_images.py --refaire historacles-7 daniel-8
     python3 outils/shorts/generer_images.py --planches                # planches contact pour relire
+    python3 outils/shorts/generer_images.py --vignettes               # après construire_shorts.py
 
 La clé fal.ai vient de FAL_KEY (ou de ~/.fal_key) : jamais dans le dépôt. Le modèle, la graine et la
 scène de chaque image sont notés dans outils/shorts/images.json, pour pouvoir refaire la même.
@@ -144,6 +145,37 @@ def planches(dossier_sortie, par_planche=24):
         print(sortie)
 
 
+def vignettes():
+    """Études sans image (livrets FAST…) : leur vignette, 800 × 600, est découpée dans le haut de l’image de
+    leur short, là où est le sujet. Elle est rangée sous le nom que lui donnerait outils/generer_bibliotheque.py
+    (<série>-<numéro>), qui la reprendra donc à la prochaine reconstruction ; donnees/bibliotheque.js est
+    complété tout de suite, sans autre changement."""
+    shorts = json.loads((RACINE / "donnees/shorts.json").read_text(encoding="utf-8"))["shorts"]
+    chemin = RACINE / "donnees/bibliotheque.js"
+    t = chemin.read_text(encoding="utf-8")
+    i = t.index("{")
+    biblio = json.loads(t[i: t.rstrip().rindex(";")])
+    series = {s["id"]: s for s in biblio["series"]}
+    faites = []
+    for x in shorts:
+        s = series[x["s"]]
+        l = s["lecons"][x["n"]]
+        if "p" not in x or l.get("image") or len(s["lecons"]) < 2:
+            continue
+        nom = f"{s['id']}-{l.get('num') or x['n'] + 1}"
+        dst = RACINE / f"assets/images/{nom}.webp"
+        if not dst.exists():
+            img = Image.open(DOSSIER / f"{x['p']}.webp").convert("RGB")
+            haut = int(img.height * 0.09)
+            img.crop((0, haut, img.width, haut + img.width * 3 // 4)).resize((800, 600), Image.LANCZOS) \
+                .save(dst, "WEBP", quality=72, method=6)
+        l["image"] = nom
+        faites.append(nom)
+    if faites:
+        chemin.write_text(t[:i] + json.dumps(biblio, ensure_ascii=False, indent=1) + ";\n", encoding="utf-8")
+    print(f"{len(faites)} vignette(s) d’étude tirée(s) des shorts" + (" : monter le ?v= de bibliotheque.js" if faites else ""))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("cles", nargs="*", help="clés d’images (ex. historacles-7) ; toutes par défaut")
@@ -154,9 +186,14 @@ def main():
     ap.add_argument("--planches", nargs="?", const=str(Path.home() / "travail/planches"),
                     help="faire les planches contact (dans ce dossier) au lieu de générer")
     ap.add_argument("--paralleles", type=int, default=4)
+    ap.add_argument("--vignettes", action="store_true",
+                    help="donner aux études sans image une vignette tirée de leur short (après construire_shorts.py)")
     a = ap.parse_args()
     if a.planches:
         planches(Path(a.planches))
+        return
+    if a.vignettes:
+        vignettes()
         return
     toutes = scenes()
     par_cle = {it["cle"]: it for it in toutes}
