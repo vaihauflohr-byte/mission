@@ -44,6 +44,11 @@
     affichage: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 8.5 5h1L15 19M5 14.5h8M15.5 19l3-8h.5l3 8M16.4 16.6h5.2"/></svg>',
     original: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/></svg>',
     lecture: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5zM12 6.5V19.5"/></svg>',
+    coeur: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3s-7.6-4.6-9.3-9.5C1.5 7.3 3.8 4.2 7.1 4.2c2.1 0 3.7 1.1 4.9 2.9 1.2-1.8 2.8-2.9 4.9-2.9 3.3 0 5.6 3.1 4.4 6.6-1.7 4.9-9.3 9.5-9.3 9.5z"/></svg>',
+    shorts: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="2.5" width="13" height="19" rx="3.5"/><path d="M10.3 8.9v6.2l5-3.1z"/></svg>',
+    maison: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11.2 12 4.2l8.5 7M6 9.5V20h4.5v-5.5h3V20H18V9.5"/></svg>',
+    serie: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7.5" width="13" height="13" rx="2"/><path d="M7.5 4.5h10a2 2 0 0 1 2 2v10"/></svg>',
+    haut: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0-5.5 5.5M12 5l5.5 5.5"/></svg>',
   };
   const chevronDroit = '<svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg>';
   // images (assets/images/<nom>.webp, 4:3) : décoratives, le titre est juste à côté
@@ -301,6 +306,7 @@
           </form>
         </div>
         ${reprise()}
+        ${etagereShorts()}
         <div class="dedans cep">
           <h2 class="cep-titre">Trois étapes, de la rencontre à la maturité</h2>
           <ol class="cep-liste">${etapes}</ol>
@@ -329,22 +335,25 @@
       e.preventDefault();
       location.hash = "#/chercher/" + encodeURIComponent(e.target.q.value.trim());
     });
+    remplirEtagere();
     majInstallation();
     return true;
   }
 
   // dernière étude lue en mode lecture : la reprendre où on s’était arrêté, ou passer à la suivante
-  function reprise() {
+  function cibleReprise() {
     const f = memoire.lire("mission.derniere", "");
     const e = f && aTexte(f) && documents.get(f);
-    if (!e) return "";
+    if (!e) return null;
     const pos = Math.min(1, Math.max(0, Number(memoire.lire(`mission.pos.${f}`, "0")) || 0));
-    let cible = { f, e, pos, etiquette: "Reprendre votre lecture" };
-    if (pos >= 0.98) {
-      const apres = suivant(e);
-      if (!apres || !apres.d.f || !aTexte(apres.d.f)) return "";
-      cible = { f: apres.d.f, e: documents.get(apres.d.f), pos: 0, etiquette: "Étude suivante" };
-    }
+    if (pos < 0.98) return { f, e, pos, etiquette: "Reprendre votre lecture" };
+    const apres = suivant(e);
+    if (!apres || !apres.d.f || !aTexte(apres.d.f)) return null;
+    return { f: apres.d.f, e: documents.get(apres.d.f), pos: 0, etiquette: "Étude suivante" };
+  }
+  function reprise() {
+    const cible = cibleReprise();
+    if (!cible) return "";
     const { s, l, j } = cible.e;
     const ou = j ? `Semaine ${l.num} · ` : l && l.num ? `Étude ${l.num} · ` : "";
     const pct = Math.round(cible.pos * 100);
@@ -786,7 +795,7 @@
     app.innerHTML = `
       <div class="lecteur">
         <div class="lecteur-barre">
-          <a class="lecteur-retour" href="#/serie/${s.id}" aria-label="Retour à la série ${esc(s.titre)}">${chevron}<span>${fr(s.titre)}</span></a>
+          ${lienRetour(s, f)}
           <div class="lecteur-titres">
             <h1 class="lecteur-titre" tabindex="-1">${fr(titre)}</h1>
             ${detail ? `<p class="lecteur-detail">${fr(detail)}</p>` : ""}
@@ -1217,7 +1226,7 @@
     app.innerHTML = `
       <div class="lecture">
         <div class="lecteur-barre">
-          <a class="lecteur-retour" href="#/serie/${s.id}" aria-label="Retour à la série ${esc(s.titre)}">${chevron}<span>${fr(s.titre)}</span></a>
+          ${lienRetour(s, f)}
           <div class="lecteur-titres">
             <h1 class="lecteur-titre" tabindex="-1">${fr(titre)}</h1>
             ${sous ? `<p class="lecteur-detail">${fr(sous)}</p>` : ""}
@@ -1727,6 +1736,458 @@
     });
   }
 
+  // ---------- shorts des études : une idée clé et un verset clé par étude (donnees/shorts.json, outils/shorts/) ----------
+  const VERSION_SHORTS = "1";
+  let shortsCharges = null;
+  function chargerShorts() {
+    if (!shortsCharges) {
+      shortsCharges = fetch(`donnees/shorts.json?v=${VERSION_SHORTS}`)
+        .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+        .then((d) => d.shorts.map((x) => {
+          const s = series[x.s];
+          const l = s && s.lecons[x.n];
+          // les couvertures des livrets FAST sont des pages de titre : un fond de couleur leur va mieux
+          const img = l.image || (s.id.startsWith("fast-") ? "" : s.image);
+          return s && l && aTexte(x.f) ? { ...x, id: x.f, serie: s, lecon: l, niveau: s.niveau, img } : null;
+        }).filter(Boolean));
+      shortsCharges.catch(() => { shortsCharges = null; });
+    }
+    return shortsCharges;
+  }
+  // l’ordre du jour : le même pour tous, nouveau chaque jour, sans deux shorts de la même série à la suite
+  function ordreDuJour(tous) {
+    const j = new Date();
+    let a = (j.getFullYear() * 512 + j.getMonth() * 32 + j.getDate()) >>> 0;
+    const hasard = () => {
+      a = (a + 0x6d2b79f5) | 0;
+      let t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+    const l = tous.slice();
+    for (let i = l.length - 1; i > 0; i--) {
+      const k = Math.floor(hasard() * (i + 1));
+      [l[i], l[k]] = [l[k], l[i]];
+    }
+    for (let i = 1; i < l.length; i++) {
+      if (l[i].s !== l[i - 1].s) continue;
+      const k = l.findIndex((x, m) => m > i && x.s !== l[i - 1].s && (!l[m + 1] || l[m + 1].s !== l[i].s));
+      if (k > 0) [l[i], l[k]] = [l[k], l[i]];
+    }
+    return l;
+  }
+  // shorts aimés, gardés sur l’appareil, les derniers en premier
+  const aimes = {
+    liste() { try { const l = JSON.parse(memoire.lire("mission.shorts.aimes", "[]")); return Array.isArray(l) ? l : []; } catch (e) { return []; } },
+    a(id) { return this.liste().includes(id); },
+    basculer(id) {
+      const avant = this.liste();
+      const oui = !avant.includes(id);
+      memoire.ecrire("mission.shorts.aimes", JSON.stringify(oui ? [id, ...avant] : avant.filter((x) => x !== id)));
+      return oui;
+    },
+  };
+  const imgShort = (nom) => `assets/images/${encodeURIComponent(nom)}.webp`;
+  const ouShort = (l) => (l.num ? `Étude ${l.num} · ${l.titre}` : l.titre);
+
+  // sur l’accueil : une étagère des shorts du jour, comme sur les applications de vidéos
+  function etagereShorts() {
+    return `<section class="dedans etagere" aria-labelledby="etagere-titre">
+      <div class="etagere-tete">
+        <h2 id="etagere-titre" class="etagere-titre">${icone.shorts}Shorts</h2>
+        <p class="etagere-sous">Une idée clé et un verset clé par étude. Faites défiler, touchez pour ouvrir l’étude.</p>
+        <a class="etagere-tout" href="#/shorts">Tout voir${chevronDroit}</a>
+      </div>
+      <ol class="etagere-liste" data-etagere aria-label="Shorts du jour">${'<li class="etagere-attente" aria-hidden="true"></li>'.repeat(6)}</ol>
+    </section>`;
+  }
+  function remplirEtagere() {
+    chargerShorts().then((tous) => {
+      const ol = app.querySelector("[data-etagere]");
+      if (!ol) return;
+      ol.innerHTML = ordreDuJour(tous).slice(0, 12).map((x) => `<li><a class="etagere-short" href="#/shorts/${esc(x.id)}">
+          ${x.img ? `<img src="${imgShort(x.img)}" alt="" width="800" height="600" loading="lazy" decoding="async" onerror="reessayer(this)">`
+            : `<span class="sans-photo" data-niveau="${x.niveau}">${picto(x.niveau, "fond-picto")}</span>`}
+          <span class="etagere-texte">${fr(x.i)}</span>
+          <span class="etagere-ref">${fr(x.r)}</span>
+        </a></li>`).join("");
+    }).catch(() => {
+      const s = app.querySelector(".etagere");
+      if (s) s.hidden = true;
+    });
+  }
+
+  function carteShort(x, rang, total) {
+    const { serie: s, lecon: l } = x;
+    const aime = aimes.a(x.id);
+    return `<article class="short" data-id="${esc(x.id)}" aria-posinset="${rang + 1}" aria-setsize="${total}" aria-labelledby="short-${rang}">
+      <a class="short-lien" href="#/lire/${esc(x.f)}">
+        ${x.img ? `<span class="short-fond" data-img="${esc(x.img)}" aria-hidden="true"></span>`
+          : `<span class="short-fond sans-photo" data-niveau="${x.niveau}" aria-hidden="true">${picto(x.niveau, "fond-picto")}</span>`}
+        <span class="short-contenu">
+          <span class="short-auteur">
+            <span class="short-avatar" aria-hidden="true" style="background-image:url('${imgShort(s.image)}')"></span>
+            <span class="short-qui"><strong>${fr(s.titre)}</strong><span>${fr(ouShort(l))}</span></span>
+          </span>
+          <span class="short-idee" id="short-${rang}">${fr(x.i)}</span>
+          <span class="short-verset"><span class="short-verset-texte">${x.t.split("\n").map(fr).join("<br>")}</span><span class="short-ref">${fr(x.r)}</span></span>
+          <span class="short-ouvrir">Ouvrir l’étude${chevronDroit}</span>
+        </span>
+      </a>
+      <div class="short-actions">
+        <button type="button" class="short-action" data-aimer aria-pressed="${aime}">${icone.coeur}<span>J’aime</span></button>
+        <button type="button" class="short-action" data-partager-short>${icone.partager}<span>Partager</span></button>
+        <a class="short-action" href="#/serie/${s.id}" aria-label="La série : ${esc(s.titre)}">${icone.serie}<span>Série</span></a>
+      </div>
+    </article>`;
+  }
+
+  const FILTRES_SHORTS = [["tout", "Pour vous"], ["connaitre", "Rencontrer"], ["grandir", "Grandir"], ["murir", "Mûrir"],
+    ["disciple", "Disciple"], ["aimes", "J’aime"]];
+  let filtreShorts = "tout";
+  try { filtreShorts = sessionStorage.getItem("mission.shorts.filtre") || "tout"; } catch (e) { /* navigation privée */ }
+  let shortsFin = null;
+  function fermerShorts() {
+    if (shortsFin) { shortsFin.abort(); shortsFin = null; }
+  }
+  // #/shorts, #/shorts/<f> : les shorts en plein écran, un par écran ; on les fait défiler du doigt
+  function shortsPage(cible) {
+    fermerShorts();
+    const fin = (shortsFin = new AbortController());
+    const { signal } = fin;
+    document.title = "Shorts : une idée clé, un verset clé — Mission";
+    app.innerHTML = `
+      <div class="shorts-page">
+        <div class="shorts-tete">
+          <a class="shorts-retour" href="#/" aria-label="Retour à l’accueil">${chevron}</a>
+          <h1 class="cache" tabindex="-1">Shorts : une idée clé et un verset clé par étude</h1>
+          <div class="shorts-filtres" role="group" aria-label="Quels shorts">${FILTRES_SHORTS.map(([id, nom]) =>
+            `<button type="button" data-filtre="${id}" aria-pressed="${id === filtreShorts}">${id === "aimes" ? icone.coeur : ""}${nom}</button>`).join("")}</div>
+        </div>
+        <div class="shorts" role="feed" aria-busy="true" aria-label="Shorts des études"></div>
+      </div>`;
+    const flux = app.querySelector(".shorts");
+    const tete = app.querySelector(".shorts-tete");
+    let SH = [];
+    let liste = [];
+    let rendus = 0;
+    const PAQUET = 8;
+    const voirImage = new IntersectionObserver((es) => es.forEach((e) => {
+      if (!e.isIntersecting) return;
+      voirImage.unobserve(e.target);
+      e.target.style.backgroundImage = `url("${imgShort(e.target.dataset.img)}")`;
+    }), { root: flux, rootMargin: "150% 0px" });
+    const voirFin = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) ajouter(); },
+      { root: flux, rootMargin: "300% 0px" });
+    // le short à l’écran devient l’adresse : un retour depuis l’étude y ramène
+    const voirCourant = new IntersectionObserver((es) => es.forEach((e) => {
+      if (!e.isIntersecting) return;
+      const id = e.target.dataset.id;
+      if (location.hash !== `#/shorts/${id}`) history.replaceState(null, "", `#/shorts/${id}`);
+      if (e.target !== flux.firstElementChild) cacherAstuce();
+    }), { root: flux, threshold: 0.6 });
+    signal.addEventListener("abort", () => { voirImage.disconnect(); voirFin.disconnect(); voirCourant.disconnect(); });
+
+    // texte trop long pour l’écran : on le resserre d’un cran, puis d’un autre
+    const ajuster = (a) => {
+      const c = a.querySelector(".short-contenu");
+      const libre = tete.offsetHeight + 4;
+      a.classList.remove("serre", "tres-serre");
+      if (c.offsetTop < libre) a.classList.add("serre");
+      if (c.offsetTop < libre) a.classList.add("tres-serre");
+    };
+    function ajouter() {
+      if (rendus >= liste.length) return;
+      const morceau = liste.slice(rendus, rendus + PAQUET);
+      flux.insertAdjacentHTML("beforeend", morceau.map((x, k) => carteShort(x, rendus + k, liste.length)).join(""));
+      rendus += morceau.length;
+      flux.querySelectorAll(".short:not([data-suivi])").forEach((a) => {
+        a.dataset.suivi = "1";
+        ajuster(a);
+        const fond = a.querySelector(".short-fond[data-img]");
+        if (fond) voirImage.observe(fond);
+        voirCourant.observe(a);
+      });
+      voirFin.disconnect();
+      if (rendus < liste.length) voirFin.observe(flux.lastElementChild);
+    }
+    function remplir(cibleId) {
+      liste = filtreShorts === "aimes"
+        ? aimes.liste().map((id) => SH.find((x) => x.id === id)).filter(Boolean)
+        : ordreDuJour(SH).filter((x) => filtreShorts === "tout" || x.niveau === filtreShorts);
+      flux.innerHTML = "";
+      rendus = 0;
+      flux.setAttribute("aria-busy", "false");
+      if (!liste.length) {
+        flux.innerHTML = `<div class="shorts-vide">${icone.coeur}<p>Touchez « J’aime » sur un short pour le retrouver ici.</p>
+          <button type="button" class="shorts-bouton" data-filtre="tout">Voir tous les shorts</button></div>`;
+        return;
+      }
+      const k = cibleId ? liste.findIndex((x) => x.id === cibleId) : -1;
+      do ajouter(); while (k >= rendus);
+      flux.scrollTop = k > 0 ? flux.children[k].offsetTop : 0;
+    }
+    function choisir(id) {
+      filtreShorts = id;
+      try { sessionStorage.setItem("mission.shorts.filtre", id); } catch (e) { /* navigation privée */ }
+      tete.querySelectorAll("[data-filtre]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.filtre === id)));
+    }
+    function montrerAstuce() {
+      const a = flux.firstElementChild;
+      if (a && a.classList.contains("short") && liste.length > 1)
+        a.insertAdjacentHTML("beforeend", `<div class="shorts-astuce" aria-hidden="true">${icone.haut}<span>${
+          matchMedia("(pointer: coarse)").matches ? "Glissez vers le haut" : "Faites défiler, ou touche ↓"}</span></div>`);
+    }
+    function cacherAstuce() {
+      const a = flux.querySelector(".shorts-astuce");
+      if (a) { a.remove(); memoire.ecrire("mission.shorts.astuce", "1"); }
+    }
+
+    chargerShorts().then((tous) => {
+      if (signal.aborted) return;
+      SH = tous;
+      const x = cible && SH.find((y) => y.id === cible);
+      // short demandé hors du filtre choisi : on revient à « Pour vous »
+      if (x && filtreShorts !== "tout" && !(filtreShorts === "aimes" ? aimes.a(x.id) : x.niveau === filtreShorts)) choisir("tout");
+      remplir(x ? x.id : "");
+      if (!memoire.lire("mission.shorts.astuce", "")) montrerAstuce();
+      if (document.fonts) document.fonts.ready.then(() => { if (!signal.aborted) flux.querySelectorAll(".short").forEach(ajuster); });
+    }).catch(() => {
+      if (signal.aborted) return;
+      flux.setAttribute("aria-busy", "false");
+      flux.innerHTML = `<div class="shorts-vide"><p>Les shorts n’ont pas pu être chargés. Vérifiez la connexion, puis réessayez.</p>
+        <button type="button" class="shorts-bouton" data-recharger>Réessayer</button></div>`;
+    });
+
+    app.addEventListener("click", (ev) => {
+      const f = ev.target.closest("[data-filtre]");
+      if (f) {
+        choisir(f.dataset.filtre);
+        remplir("");
+        history.replaceState(null, "", "#/shorts");
+        return;
+      }
+      if (ev.target.closest("[data-recharger]")) { shortsPage(cible); return; }
+      const carte = ev.target.closest(".short");
+      const x = carte && SH.find((y) => y.id === carte.dataset.id);
+      if (!x) return;
+      const aimer = ev.target.closest("[data-aimer]");
+      if (aimer) {
+        const oui = aimes.basculer(x.id);
+        aimer.setAttribute("aria-pressed", String(oui));
+        aimer.classList.remove("bat");
+        if (oui) { void aimer.offsetWidth; aimer.classList.add("bat"); }
+        return;
+      }
+      const p = ev.target.closest("[data-partager-short]");
+      if (p) partagerShort(x, p);
+    }, { signal });
+    // l’image à partager se prépare dès que le doigt touche le bouton
+    app.addEventListener("pointerdown", (ev) => {
+      const p = ev.target.closest("[data-partager-short]");
+      const carte = p && p.closest(".short");
+      const x = carte && SH.find((y) => y.id === carte.dataset.id);
+      if (x) fichierShort(x).catch(() => {});
+    }, { signal });
+    // au clavier : flèches, Page suivante, j et k
+    document.addEventListener("keydown", (ev) => {
+      if (ev.altKey || ev.ctrlKey || ev.metaKey || (ev.target.closest && ev.target.closest("input, textarea, select"))) return;
+      const sens = { ArrowDown: 1, PageDown: 1, j: 1, ArrowUp: -1, PageUp: -1, k: -1 }[ev.key];
+      if (!sens) return;
+      ev.preventDefault();
+      flux.scrollBy({ top: sens * flux.clientHeight, behavior: mouvementReduit() ? "auto" : "smooth" });
+    }, { signal });
+    let attente = 0;
+    window.addEventListener("resize", () => {
+      clearTimeout(attente);
+      attente = setTimeout(() => flux.querySelectorAll(".short").forEach(ajuster), 150);
+    }, { signal });
+    return true;
+  }
+
+  // partager un short : une image (comme une carte de verset) avec le lien de l’étude
+  const imagesShorts = new Map();
+  const chargerImage = (src) => new Promise((ok, ko) => {
+    const i = new Image();
+    i.onload = () => ok(i);
+    i.onerror = ko;
+    i.src = src;
+  });
+  const insecables = (t) => t.replace(/ ([:?!;»])/g, " $1").replace(/« /g, "« ");
+  function couper(g, texte, largeur) {
+    const lignes = [];
+    for (const para of insecables(texte).split("\n")) {
+      let ligne = "";
+      for (const mot of para.split(" ")) {
+        const essai = ligne ? `${ligne} ${mot}` : mot;
+        if (ligne && g.measureText(essai).width > largeur) { lignes.push(ligne); ligne = mot; } else ligne = essai;
+      }
+      lignes.push(ligne);
+    }
+    return lignes;
+  }
+  function arrondi(g, x, y, l, h, r) {
+    g.beginPath();
+    g.moveTo(x + r, y);
+    g.arcTo(x + l, y, x + l, y + h, r);
+    g.arcTo(x + l, y + h, x, y + h, r);
+    g.arcTo(x, y + h, x, y, r);
+    g.arcTo(x, y, x + l, y, r);
+    g.closePath();
+  }
+  async function imageShort(x) {
+    const L = 1080, H = 1350, M = 84;
+    const c = document.createElement("canvas");
+    c.width = L;
+    c.height = H;
+    const g = c.getContext("2d");
+    if (document.fonts) {
+      await Promise.all(['600 60px "Alegreya"', '400 36px "Atkinson Hyperlegible"', '700 30px "Atkinson Hyperlegible"']
+        .map((f) => document.fonts.load(f))).catch(() => {});
+    }
+    const [photo, symbole] = await Promise.all([x.img ? chargerImage(imgShort(x.img)).catch(() => null) : null,
+      chargerImage("assets/icones/adventiste-blanc.svg").catch(() => null)]);
+    g.fillStyle = "#0f2321";
+    g.fillRect(0, 0, L, H);
+    if (photo) g.drawImage(photo, 0, 0, L, (L * photo.height) / photo.width);
+    else {
+      // sans photo : le dégradé et le pictogramme de l’étape, comme à l’écran
+      const fond = g.createLinearGradient(0, 0, L, H);
+      fond.addColorStop(0, "#2f6b5e");
+      fond.addColorStop(1, "#0f2321");
+      g.fillStyle = fond;
+      g.fillRect(0, 0, L, H);
+      const motif = document.getElementById(PICTOS[x.niveau]);
+      const svg = motif && `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${motif.getAttribute("viewBox")}" color="#8fc9b6">${motif.innerHTML}</svg>`;
+      const dessin = svg && await chargerImage(`data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`).catch(() => null);
+      if (dessin) {
+        g.globalAlpha = 0.16;
+        g.drawImage(dessin, L - 620, 60, 680, 680);
+        g.globalAlpha = 1;
+      }
+    }
+    const voile = g.createLinearGradient(0, 0, 0, H);
+    voile.addColorStop(0, "rgba(15,35,33,0.5)");
+    voile.addColorStop(0.28, "rgba(15,35,33,0.42)");
+    voile.addColorStop(0.58, "rgba(15,35,33,0.94)");
+    voile.addColorStop(1, "#0f2321");
+    g.fillStyle = voile;
+    g.fillRect(0, 0, L, H);
+    g.textBaseline = "alphabetic";
+    g.fillStyle = "#fff";
+    // en haut : la série et l’étude
+    g.font = '700 32px "Atkinson Hyperlegible", sans-serif';
+    g.fillText(couper(g, x.serie.titre, L - 2 * M)[0], M, M + 28);
+    g.font = '400 29px "Atkinson Hyperlegible", sans-serif';
+    g.globalAlpha = 0.82;
+    g.fillText(couper(g, ouShort(x.lecon), L - 2 * M)[0], M, M + 72);
+    g.globalAlpha = 1;
+    // en bas : la signature
+    const bas = H - M;
+    if (symbole) g.drawImage(symbole, M, bas - 38, 44, 40);
+    g.font = '700 30px "Atkinson Hyperlegible", sans-serif';
+    g.fillText("Mission", M + 60, bas - 8);
+    const lm = g.measureText("Mission  ").width;
+    g.font = '400 28px "Atkinson Hyperlegible", sans-serif';
+    g.globalAlpha = 0.82;
+    g.fillText("mission.ka-ilei.com", M + 60 + lm, bas - 8);
+    g.globalAlpha = 1;
+    // au milieu, posés sur la signature : l’idée, puis le verset ; plus petits s’ils ne tiennent pas
+    const large = L - 2 * M;
+    let k = 1, idee, vers, ref, hIdee, hVers, total;
+    for (let essai = 0; essai < 7; essai++, k *= 0.93) {
+      g.font = `600 ${Math.round(62 * k)}px "Alegreya", serif`;
+      idee = couper(g, x.i, large);
+      g.font = `400 ${Math.round(36 * k)}px "Atkinson Hyperlegible", sans-serif`;
+      vers = couper(g, x.t, large - 80);
+      hIdee = idee.length * 72 * k;
+      hVers = vers.length * 51 * k + 30 * k + 22 + 80;
+      total = hIdee + 48 + hVers;
+      if (bas - 90 - total >= M + 140) break;
+    }
+    let y = bas - 90 - total;
+    g.font = `600 ${Math.round(62 * k)}px "Alegreya", serif`;
+    idee.forEach((t, i) => g.fillText(t, M, y + (i + 0.78) * 72 * k));
+    y += hIdee + 48;
+    g.fillStyle = "rgba(255,255,255,0.11)";
+    arrondi(g, M, y, large, hVers, 28);
+    g.fill();
+    g.strokeStyle = "rgba(255,255,255,0.16)";
+    g.lineWidth = 2;
+    g.stroke();
+    g.fillStyle = "rgba(255,255,255,0.94)";
+    g.font = `400 ${Math.round(36 * k)}px "Atkinson Hyperlegible", sans-serif`;
+    vers.forEach((t, i) => g.fillText(t, M + 40, y + 40 + (i + 0.78) * 51 * k));
+    g.fillStyle = "#f0c24b";
+    g.font = `700 ${Math.round(31 * k)}px "Atkinson Hyperlegible", sans-serif`;
+    g.fillText(insecables(x.r), M + 40, y + 40 + vers.length * 51 * k + 22 + 26 * k);
+    return new Promise((ok, ko) => c.toBlob((b) => (b ? ok(b) : ko(new Error("image"))), "image/jpeg", 0.9));
+  }
+  function fichierShort(x) {
+    if (!imagesShorts.has(x.id)) {
+      const p = imageShort(x).then((b) => new File([b], `mission-${x.s}-${x.n + 1}.jpg`, { type: "image/jpeg" }));
+      p.catch(() => imagesShorts.delete(x.id));
+      imagesShorts.set(x.id, p);
+    }
+    return imagesShorts.get(x.id);
+  }
+  async function partagerShort(x, bouton) {
+    const lien = `${location.origin}${location.pathname}#/lire/${x.f}`;
+    const texte = `${x.i}\n${x.r}`;
+    bouton.setAttribute("aria-busy", "true");
+    try {
+      let fichier = null;
+      if (navigator.canShare) fichier = await fichierShort(x).catch(() => null);
+      if (fichier && navigator.canShare({ files: [fichier] })) {
+        await navigator.share({ files: [fichier], title: x.lecon.titre, text: `${texte}\n${lien}` });
+      } else if (navigator.share) {
+        await navigator.share({ title: x.lecon.titre, text: texte, url: lien });
+      } else {
+        await navigator.clipboard.writeText(`${texte}\n${lien}`);
+        bulle("Lien copié : collez-le dans un message.");
+      }
+    } catch (e) {
+      // le partage demande un toucher tout frais : l’image est prête, un second toucher suffit
+      if (e && e.name === "NotAllowedError") bulle("L’image est prête : touchez encore « Partager ».");
+      else if (!e || e.name !== "AbortError") bulle("Le partage n’a pas abouti.");
+    } finally {
+      bouton.removeAttribute("aria-busy");
+    }
+  }
+  function bulle(texte) {
+    let b = document.querySelector(".bulle");
+    if (!b) {
+      b = document.createElement("div");
+      b.className = "bulle";
+      b.setAttribute("role", "status");
+      document.body.append(b);
+    }
+    b.textContent = texte;
+    b.classList.add("visible");
+    clearTimeout(bulle.minuterie);
+    bulle.minuterie = setTimeout(() => b.classList.remove("visible"), 3500);
+  }
+
+  // barre d’onglets, en bas sur téléphone
+  function majOnglets(page) {
+    const actif = !page ? "accueil" : page === "shorts" ? "shorts" : page === "chercher" ? "chercher" : "";
+    document.querySelectorAll(".onglets a").forEach((a) => {
+      if (a.dataset.onglet === actif) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    });
+    const lecture = document.querySelector('.onglets [data-onglet="lecture"]');
+    const c = lecture && cibleReprise();
+    if (lecture) {
+      lecture.hidden = !c;
+      if (c) lecture.setAttribute("href", `#/lire/${c.f}`);
+    }
+  }
+  // document ouvert depuis les shorts : son bouton retour y ramène
+  let retourShorts = null;
+  const lienRetour = (s, f) => (retourShorts === f
+    ? `<a class="lecteur-retour" href="#/shorts/${esc(f)}" aria-label="Retour aux shorts">${chevron}<span>Shorts</span></a>`
+    : `<a class="lecteur-retour" href="#/serie/${s.id}" aria-label="Retour à la série ${esc(s.titre)}">${chevron}<span>${fr(s.titre)}</span></a>`);
+
   // ---------- navigation ----------
   const positions = new Map(); // défilement des pages quittées pour un document
   let premiere = true;
@@ -1740,13 +2201,18 @@
     if ((page === "lire" || page === "original") && precedente && !estDoc(precedente)) positions.set(precedente, window.scrollY);
     const depuisDocument = docDe(precedente);
     if (page !== "lire" && page !== "original") { fermerLecteur(); fermerTexte(); }
+    if (page !== "shorts") fermerShorts();
+    if (page === "lire" || page === "original") retourShorts = precedente.startsWith("shorts") || retourShorts === arg ? arg : null;
     corps.classList.toggle("en-lecture", page === "lire" || page === "original");
+    corps.classList.toggle("en-shorts", page === "shorts");
     marquerNav(null);
+    majOnglets(page);
     let champ = null;
     if (!page) accueil();
     else if (page === "niveau") niveau(arg);
     else if (page === "serie") serie(arg);
     else if (page === "chercher") champ = chercher(arg);
+    else if (page === "shorts") shortsPage(arg);
     else if (page === "application") application();
     else if (page === "lire") { fermerLecteur(); fermerTexte(); if (aTexte(arg)) lireTexte(arg); else lire(arg); }
     else if (page === "original") { fermerLecteur(); fermerTexte(); lire(arg); }

@@ -24,6 +24,8 @@
       "icons": [{ "src": "assets/icones/icone-192.png", "sizes": "192x192", "type": "image/png" }] },
     { "name": "3. Mûrir en Jésus-Christ", "short_name": "Mûrir", "url": "./#/niveau/murir",
       "icons": [{ "src": "assets/icones/icone-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Shorts : une idée clé, un verset clé", "short_name": "Shorts", "url": "./#/shorts",
+      "icons": [{ "src": "assets/icones/icone-192.png", "sizes": "192x192", "type": "image/png" }] },
     { "name": "Chercher une étude", "short_name": "Chercher", "url": "./#/chercher",
       "icons": [{ "src": "assets/icones/icone-192.png", "sizes": "192x192", "type": "image/png" }] }
   ],

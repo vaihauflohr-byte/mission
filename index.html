@@ -21,7 +21,7 @@
   <link rel="resource" type="application/l10n" href="lecteur/locale/locale.json">
   <link rel="preload" href="assets/fonts/alegreya-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/style.css?v=15">
+  <link rel="stylesheet" href="assets/style.css?v=16">
 </head>
 <body>
   <a class="evitement" href="#contenu">Aller au contenu</a>
@@ -41,6 +41,10 @@
         <a href="#/niveau/murir" data-niveau="murir"><span class="nav-num">3</span>Mûrir</a>
         <a href="#/niveau/disciple" data-niveau="disciple"><span class="nav-num">3</span>Disciple</a>
       </nav>
+      <a class="entete-shorts" href="#/shorts" aria-label="Shorts : une idée clé et un verset clé par étude">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="2.5" width="13" height="19" rx="3.5"/><path d="M10.3 8.9v6.2l5-3.1z"/></svg>
+        <span>Shorts</span>
+      </a>
       <a class="entete-chercher" href="#/chercher" aria-label="Chercher une étude">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
         <span>Chercher</span>
@@ -53,6 +57,12 @@
       <p class="noscript">Ce site a besoin de JavaScript pour afficher la liste des études.</p>
     </noscript>
   </main>
+  <nav class="onglets" aria-label="Navigation principale">
+    <a href="#/" data-onglet="accueil"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11.2 12 4.2l8.5 7M6 9.5V20h4.5v-5.5h3V20H18V9.5"/></svg>Accueil</a>
+    <a href="#/shorts" data-onglet="shorts"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="2.5" width="13" height="19" rx="3.5"/><path d="M10.3 8.9v6.2l5-3.1z"/></svg>Shorts</a>
+    <a href="#/chercher" data-onglet="chercher"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>Chercher</a>
+    <a href="#/" data-onglet="lecture" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5zM12 6.5V19.5"/></svg>Ma lecture</a>
+  </nav>
 
   <footer class="pied">
     <div class="pied-dedans">
@@ -65,6 +75,7 @@
         <a href="#/niveau/grandir">2. Grandir</a>
         <a href="#/niveau/murir">3. Mûrir</a>
         <a href="#/niveau/disciple">3. Devenir disciple</a>
+        <a href="#/shorts">Les shorts des études</a>
         <a href="#/chercher">Chercher une étude</a>
         <a href="#/application">L’application</a>
       </nav>
@@ -117,6 +128,6 @@
   <script src="donnees/bibliotheque.js?v=20"></script>
   <script src="donnees/lecture.js?v=6"></script>
   <script src="assets/bible.js?v=4"></script>
-  <script src="assets/app.js?v=16"></script>
+  <script src="assets/app.js?v=17"></script>
 </body>
 </html>

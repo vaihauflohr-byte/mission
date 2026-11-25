@@ -13,6 +13,8 @@ Aucun serveur, aucune base de données : le site range la bibliothèque d’étu
 - **Imprimer** : sur chaque document, en mode lecture comme en PDF. Au choix : *le document d’origine* (les pages du PDF, préparées dans le navigateur puis envoyées à l’imprimante), *ce que je lis, avec mes réponses* (en mode lecture) ou *Télécharger le PDF*.
 - **Chercher** : par mot, sans tenir compte des accents (`bapteme` trouve « baptême ») : d’abord dans les titres et sujets, puis dans le texte des études (« sabbat » : 84 documents, du plus riche au plus pauvre, avec un extrait) ; ouvrir un document trouvé surligne le mot et une barre passe d’un passage à l’autre. Une référence tapée (« Jean 3:16 », « 1 co 13:4-7 », « Ps 23 ») affiche le passage en tête. Voir « Recherche » plus bas.
 - **Reprendre** : le mode lecture retient où on s’est arrêté dans chaque document ; l’accueil propose la dernière étude ouverte (ou la suivante quand elle est finie), et la rouvrir y ramène.
+- **Shorts** (`#/shorts`, `#/shorts/<document>`) : comme les « shorts » des applications de vidéos, une étude par écran, qu’on fait défiler du doigt : son idée clé, en grand, et son verset clé (Segond 1910) sur l’image de l’étude. Un toucher ouvre l’étude ; son bouton retour ramène au même short. *J’aime* garde le short sur l’appareil (filtre « J’aime »), *Partager* envoie une image carrée-haute (1080 × 1350, comme une carte de verset) avec le lien de l’étude, *Série* ouvre la série. Filtres par étape en haut ; l’ordre change chaque jour (le même pour tous), sans deux shorts de la même série à la suite. Sur l’accueil, une étagère montre les douze premiers du jour. Au clavier : flèches, Page suivante, j et k. Voir « Shorts » plus bas.
+- **Barre d’onglets** (téléphone) : *Accueil*, *Shorts*, *Chercher* et *Ma lecture* (l’étude en cours, dès qu’on en a ouvert une), toujours sous le pouce, comme dans les applications ; cachée en mode lecture. Sur grand écran, *Shorts* est dans la barre du haut.
 - **Écouter** : dans le mode lecture, le téléphone lit l’étude à voix haute (voix française du téléphone), en surlignant le paragraphe lu ; pause, vitesse (1×, 1,25×, 0,8×), arrêt.
 - **Sommaire** : sur l’accueil, chaque étape montre la liste de ses séries avec le nombre d’études, comme la page « Study Guides » du Gateway Adventist Centre.
 - **Application** (`#/application`) : le site s’installe comme une application (PWA) sur Android, iPhone et ordinateur, sans passer par un magasin d’applications. Bouton « Installer l’application » quand le navigateur le permet (Android, Chrome, Edge), sinon les étapes à suivre (Safari sur iPhone) ; code QR et bouton « Partager le lien » pour la faire connaître. Une fois installée : icône sur l’écran d’accueil, plein écran, raccourcis vers les trois étapes et la recherche (appui long sur l’icône, Android), liste des études consultable sans réseau. Les documents, eux, demandent une connexion (ou se téléchargent).
@@ -91,6 +93,16 @@ python3 outils/recherche/construire_index.py
 
 puis augmenter `VERSION_RECHERCHE` dans `assets/app.js`. Positions de lecture : `localStorage`, clés `mission.pos.<document>` et `mission.derniere` ; vitesse de la voix : `mission.lecture.vitesse`.
 
+### Shorts
+
+`outils/shorts/shorts.txt` : pour chaque étude qui a un mode lecture, une ligne `numéro | verset | idée clé`, rangée sous `[identifiant de la série]` (`-` pour l’étude unique d’une série, `#3` pour la 3e étude d’une série sans numéros, comme Daniel). Les idées sont écrites à la main, à partir des questions et des versets de chaque étude ; le verset clé est toujours un verset que l’étude cite. Puis :
+
+```
+python3 outils/shorts/construire_shorts.py
+```
+
+Le script prend le texte du verset dans `donnees/bible/` (sans le titre des psaumes, vers par vers pour la poésie), vérifie que l’étude le cite (liens de versets de `lecture/<document>.html`) et écrit `donnees/shorts.json` (269 shorts, 100 Ko) ; il s’arrête sur toute erreur. Augmenter ensuite `VERSION_SHORTS` dans `assets/app.js` (et le `?v=` de `donnees/shorts.json` dans `sw.js`). Les études sans mode lecture (*Les secrets de la prophétie*, *Fiabilité de la Bible*) et sans verset cité n’ont pas de short. Les livrets FAST n’ont qu’une couverture en guise d’image : leurs shorts ont un fond dégradé et le pictogramme de l’étape. Shorts aimés : `localStorage`, clé `mission.shorts.aimes` ; filtre choisi : `sessionStorage`, `mission.shorts.filtre`.
+
 ## Mettre la bibliothèque à jour
 
 Après l’ajout ou le changement d’un fichier dans le Drive :
@@ -121,7 +133,7 @@ Une image qui manque est simplement masquée.
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | page unique (navigation par `#/niveau/…`, `#/serie/…`, `#/lire/…`, `#/original/…`, `#/chercher/…`) |
+| `index.html` | page unique (navigation par `#/niveau/…`, `#/serie/…`, `#/lire/…`, `#/original/…`, `#/chercher/…`, `#/shorts/…`) ; barre d’onglets du téléphone |
 | `assets/app.js` | affichage, recherche, navigation, lecteur de documents |
 | `assets/style.css` | mise en page ; polices Alegreya (titres) et Atkinson Hyperlegible (texte, très lisible) |
 | `assets/images/` | images des étapes, séries et études |
@@ -131,6 +143,7 @@ Une image qui manque est simplement masquée.
 | `donnees/bibliotheque.js` | catalogue généré : étapes, séries, études, documents |
 | `assets/bible.js`, `donnees/bible/` | la Bible (Louis Segond 1910) affichée quand on touche une référence |
 | `donnees/recherche.json` | index des mots du texte des études, pour la recherche (généré) |
+| `outils/shorts/shorts.txt`, `donnees/shorts.json` | shorts : idée clé et verset clé de chaque étude (écrits à la main), et leur version publiée (générée) |
 | `outils/` | générateur du catalogue, import et corrections des documents, images, mode lecture (`outils/lecture/`), texte de la Bible (`outils/bible/`), index de recherche (`outils/recherche/`) |
 | `sw.js`, `manifest.webmanifest`, `assets/captures/` | application installable, hors ligne ; captures montrées dans la fenêtre d’installation (Android) |
 | `assets/icones/` | icônes de l’appli (feuille), symbole adventiste, code QR de `mission.ka-ilei.com` |
