@@ -6,317 +6,317 @@
 #   python3 outils/shorts/construire_shorts.py   (puis monter VERSION_SHORTS dans assets/app.js)
 
 [prendre-vie]
-1 | 1 Jean 5:12 | La vie éternelle ne se gagne pas : Dieu la donne à celui qui reçoit Jésus.
-2 | Philippiens 4:13 | Les tentations ne disparaissent pas quand on devient chrétien, mais Christ donne la force de leur résister.
-3 | Psaumes 119:11 | La Parole de Dieu est la nourriture de la vie nouvelle : la lire chaque jour nous garde du péché.
-4 | Jérémie 29:13 | Prier, c’est parler à Dieu comme à un ami. Il se laisse trouver par ceux qui le cherchent de tout leur cœur.
-5 | Jean 14:15 | On n’obéit pas pour être sauvé, mais parce qu’on aime Jésus. C’est Dieu qui nous en donne le vouloir et le faire.
-6 | Marc 5:19 | Celui qui a rencontré Jésus a envie de le faire connaître. On commence par raconter aux siens ce que le Seigneur a fait.
-7 | Matthieu 18:20 | On ne grandit pas seul dans la foi : quand nous nous réunissons en son nom, Jésus est au milieu de nous.
+1 | 1 Jean 5:12 | La vie éternelle ne se gagne pas. Elle se reçoit, en recevant Jésus.
+2 | Philippiens 4:13 | Devenir chrétien n’efface pas la tentation. Christ donne la force de dire non.
+3 | Psaumes 119:11 | Une Parole gardée dans le cœur ferme la porte au péché.
+4 | Jérémie 29:13 | Dieu ne se cache pas. Qui le cherche de tout son cœur le trouve.
+5 | Jean 14:15 | On n’obéit pas pour être aimé. On obéit parce qu’on est aimé.
+6 | Marc 5:19 | Le premier champ de mission, c’est votre maison. Racontez ce que Jésus a fait pour vous.
+7 | Matthieu 18:20 | Deux ou trois réunis en son nom : Jésus est déjà là.
 
 [vers-jesus]
-- | 1 Jean 3:1 | Dieu est amour. Il nous cherche le premier, nous pardonne et veut faire de nous ses enfants.
+- | 1 Jean 3:1 | Dieu ne vous attend pas les bras croisés : il court vers vous, les bras ouverts.
 
 [quete-certitude]
-1 | 2 Pierre 1:21 | La Bible n’est pas une invention humaine : des hommes ont parlé de la part de Dieu, poussés par le Saint-Esprit.
-2 | Ésaïe 46:10 | Seul Dieu annonce l’avenir longtemps à l’avance. La prophétie biblique montre qu’il tient l’histoire en main.
-3 | Luc 21:36 | Guerres, catastrophes, angoisse : Jésus les avait annoncées. Elles ne doivent pas nous effrayer, mais nous inviter à veiller.
-4 | Actes 1:11 | Jésus reviendra comme il est parti : en personne, visiblement, sur les nuées, pour chercher les siens.
-5 | Romains 6:23 | Le péché nous sépare de Dieu et nous ôte la paix. En Jésus, Dieu nous offre gratuitement le pardon et la vie.
-6 | 2 Corinthiens 5:17 | Nous ne pouvons pas nous changer nous-mêmes. En Christ, Dieu fait de nous une nouvelle création.
-7 | Jérémie 31:3 | Dieu n’est pas l’auteur du mal : il nous aime d’un amour éternel. La souffrance vient d’un ennemi, que Jésus est venu vaincre.
-8 | Apocalypse 14:7 | Apocalypse 14 contient le dernier message de Dieu au monde : l’Évangile éternel, et l’appel à adorer le Créateur.
-9 | Daniel 8:14 | La plus longue prophétie de la Bible annonce la venue du Messie et l’ouverture du jugement dans le sanctuaire céleste.
-10 | Daniel 7:10 | Le jugement a commencé au ciel, les livres sont ouverts. Pour qui est en Christ, c’est une bonne nouvelle.
-11 | Jérémie 17:9 | Notre cœur n’est pas un juge fiable du bien et du mal. Face au désordre moral, Dieu nous appelle à revenir à sa loi.
-12 | Marc 2:27-28 | Le sabbat est le signe de Jésus Créateur : il en est le Seigneur, et il l’a fait pour le bien de l’homme.
-13 | Daniel 7:25 | Daniel avait annoncé une puissance qui tenterait de changer la loi de Dieu. Mais la constitution du ciel, elle, ne change pas.
-14 | Jean 8:32 | Une secte met un homme à la place de Dieu et des traditions à la place de la Bible. La vérité de la Parole, elle, rend libre.
-15 | 3 Jean 2 | Dieu se soucie de tout notre être. Prendre soin de son corps fait partie de l’adoration que nous lui rendons.
-16 | Genèse 2:7 | L’homme n’a pas une âme immortelle : il est devenu un être vivant par le souffle de Dieu. À la mort, il attend la résurrection.
-17 | Ésaïe 28:21 | Un Dieu d’amour ne torture pas sans fin. Détruire le mal est pour lui une « œuvre étrange » : le feu final y mettra fin pour toujours.
-18 | Jean 3:5 | Le baptême, c’est enterrer le passé : l’ancienne vie est ensevelie avec Christ et une vie nouvelle commence.
-19 | Psaumes 24:1 | Tout appartient à Dieu, et nous en sommes les gérants. Lui rendre la dîme, c’est le reconnaître comme propriétaire.
-20 | 1 Corinthiens 10:13 | Grandir avec Christ, c’est compter sur ses promesses : aucune tentation n’est trop forte avec lui, il ouvre toujours une issue.
-21 | Apocalypse 14:6 | À la fin des temps, l’Église de Dieu se reconnaît : elle garde ses commandements et annonce l’Évangile éternel à toute nation.
-22 | 1 Corinthiens 1:7 | Le don de prophétie n’a pas disparu avec les apôtres : Dieu l’a placé dans son Église pour la guider jusqu’au retour de Jésus.
-23 | 2 Corinthiens 11:2 | Dans la Bible, une femme pure représente l’Église fidèle, une prostituée l’Église infidèle. Christ veut une Épouse qui n’aime que lui.
-24 | Jean 16:8 | Le péché impardonnable, c’est résister jusqu’au bout à la voix du Saint-Esprit, qui nous appelle à la repentance.
-25 | Apocalypse 10:10 | La grande déception de 1844 était annoncée : un message doux à la bouche, amer aux entrailles. Puis Dieu a relancé son peuple.
-26 | Apocalypse 7:3 | Avant la fin, chacun choisira qui adorer. Dieu marque de son sceau ceux qui lui restent fidèles.
-27 | Apocalypse 13:11 | La bête aux cornes d’agneau d’Apocalypse 13 représente les États-Unis : une nation de liberté qui finira par imposer un culte.
-28 | Apocalypse 16:15 | Au temps des derniers fléaux, Dieu protège les siens. Jésus nous invite à veiller et à rester prêts.
-29 | Apocalypse 20:6 | Au retour de Jésus, les justes montent au ciel et la terre reste désolée, dans les ténèbres, pendant mille ans.
-30 | Apocalypse 22:4 | L’histoire se termine bien : le royaume du monde revient à Christ, et les sauvés verront sa face pour toujours.
-A | Jean 14:9 | Jésus était pleinement homme : il a eu faim, soif, il a pleuré. Et pleinement Dieu : qui l’a vu a vu le Père.
-B | Romains 10:17 | La foi, c’est faire confiance à Dieu. Elle naît et grandit en écoutant sa Parole.
-C | Luc 11:1 | Jésus priait souvent, à l’écart. Comme ses disciples, on peut lui demander : « Seigneur, enseigne-nous à prier. »
-D | Ésaïe 43:7 | Nous ne sommes pas le fruit du hasard : Dieu nous a créés par sa Parole, pour sa gloire et pour vivre avec lui.
-F | Jean 17:17 | Il y a tant d’Églises parce que des traditions humaines se sont ajoutées à la Bible. La vérité, c’est ce que Dieu dit dans sa Parole.
-G | Actes 3:19 | Dieu a une recette pour le bonheur, donnée dès le jardin d’Éden. En Jésus, il veut nous rendre cette vie-là.
+1 | 2 Pierre 1:21 | La Bible n’est pas née de la plume des hommes, mais du souffle de Dieu.
+2 | Ésaïe 46:10 | Seul Dieu écrit l’histoire avant qu’elle arrive. Et il ne s’est jamais trompé.
+3 | Luc 21:36 | Le monde tremble ? Jésus l’avait annoncé. Ne paniquez pas : veillez et priez.
+4 | Actes 1:11 | Il est parti sur les nuées. Il reviendra de la même manière, et pas en secret.
+5 | Romains 6:23 | Le péché paie en mort. Dieu, lui, offre la vie. Gratuitement.
+6 | 2 Corinthiens 5:17 | Vous ne pouvez pas vous refaire. En Christ, Dieu vous recrée.
+7 | Jérémie 31:3 | Le mal ne vient pas de Dieu. Son amour, lui, est éternel.
+8 | Apocalypse 14:7 | Le dernier message du ciel tient en un appel : adorez le Créateur.
+9 | Daniel 8:14 | La plus longue prophétie de la Bible pointe droit vers le Messie, et vers le jugement au ciel.
+10 | Daniel 7:10 | Les livres sont ouverts au ciel. Pour qui est en Christ, c’est une bonne nouvelle.
+11 | Jérémie 17:9 | Notre cœur nous trompe. La loi de Dieu, elle, ne trompe pas.
+12 | Marc 2:27-28 | Le sabbat n’est pas une cage, c’est un cadeau du Créateur. Et Jésus en est le Seigneur.
+13 | Daniel 7:25 | Des hommes ont voulu changer la loi de Dieu. Elle n’a pas bougé d’un iota.
+14 | Jean 8:32 | Une secte enchaîne à un homme. La vérité de Dieu rend libre.
+15 | 3 Jean 2 | Prendre soin de son corps, c’est aussi adorer Dieu.
+16 | Genèse 2:7 | L’homme n’a pas une âme immortelle. Il vit du souffle de Dieu, et les morts attendent la résurrection.
+17 | Ésaïe 28:21 | Dieu ne torture pas sans fin. Le feu final mettra fin au mal, pour toujours.
+18 | Jean 3:5 | Le baptême, c’est enterrer son passé et sortir de l’eau pour une vie neuve.
+19 | Psaumes 24:1 | Rien ne nous appartient : tout est à Dieu, et nous en sommes les gérants.
+20 | 1 Corinthiens 10:13 | Aucune tentation n’est plus forte que Dieu. Il ouvre toujours une issue.
+21 | Apocalypse 14:6 | L’Église de la fin ne se cache pas : elle porte l’Évangile éternel à toute la terre.
+22 | 1 Corinthiens 1:7 | Le don de prophétie n’a pas pris sa retraite avec les apôtres.
+23 | 2 Corinthiens 11:2 | Christ ne veut pas une Église à moitié fidèle. Il veut une épouse qui n’aime que lui.
+24 | Jean 16:8 | Le seul péché sans pardon, c’est celui qu’on refuse de laisser pardonner.
+25 | Apocalypse 10:10 | 1844 : une déception amère, annoncée d’avance. Dieu en a fait le départ d’une mission mondiale.
+26 | Apocalypse 7:3 | À la fin, chacun portera une marque : le sceau de Dieu, ou celle de la bête.
+27 | Apocalypse 13:11 | Cornes d’agneau, voix de dragon : Apocalypse 13 avait annoncé le rôle des États-Unis.
+28 | Apocalypse 16:15 | Quand tomberont les derniers fléaux, Dieu gardera les siens. Restez éveillés.
+29 | Apocalypse 20:6 | Mille ans de silence sur la terre. Mille ans de joie au ciel pour les sauvés.
+30 | Apocalypse 22:4 | La fin de l’histoire ? Les sauvés verront son visage. Pour toujours.
+A | Jean 14:9 | Vous voulez voir Dieu ? Regardez Jésus.
+B | Romains 10:17 | La foi ne tombe pas du ciel : elle naît en écoutant la Parole.
+C | Luc 11:1 | Même les disciples ne savaient pas prier. Ils l’ont demandé à Jésus. Vous aussi, vous pouvez.
+D | Ésaïe 43:7 | Vous n’êtes pas un accident. Dieu vous a voulu, pour sa gloire.
+F | Jean 17:17 | Tant d’Églises, une seule Bible. La vérité, c’est ce que Dieu dit, pas nos traditions.
+G | Actes 3:19 | Le bonheur a une recette, écrite en Éden. Dieu veut vous la rendre.
 
 [explorateur]
-1 | 2 Timothée 3:16 | La Bible est la Parole de Dieu, inspirée par lui. Elle nous apprend à vivre et nous conduit à Jésus.
-2 | Psaumes 19:1 | La création parle de Dieu : le ciel, la nature et notre propre corps montrent qu’un Créateur sage existe.
-3 | Matthieu 1:21 | Des siècles à l’avance, les prophètes ont annoncé où Jésus naîtrait et comment il mourrait. Son nom veut dire : Dieu sauve.
-4 | Psaumes 5:3 | Jésus prenait du temps pour prier, souvent dès le matin. Nous pouvons, nous aussi, lui parler à tout moment.
-5 | Psaumes 33:9 | Dieu a parlé, et tout a été créé. À la fin de la création, il a vu que tout était très bon.
-6 | 1 Corinthiens 13:4 | Le mariage est une idée de Dieu. Une famille heureuse se construit avec lui, sur un amour patient et fidèle.
-7 | 1 Pierre 5:8 | Le péché est né dans le cœur de Lucifer, un ange parfait devenu orgueilleux. Il reste notre adversaire, mais Jésus l’a vaincu.
-8 | Romains 5:8 | Nous avons tous péché, mais Dieu avait un plan : Jésus est mort pour nous alors que nous étions encore pécheurs.
-9 | Luc 12:15 | La vie ne dépend pas de ce qu’on possède. Le vrai trésor, c’est d’être riche pour Dieu.
-10 | Apocalypse 22:20 | Jésus a promis : « Je viens bientôt. » Ceux qui l’aiment l’attendent avec joie.
-11 | Jean 14:2 | Le ciel est un vrai lieu, que Jésus prépare pour nous. Dieu y habitera avec les hommes.
-12 | 1 Jean 5:3 | La loi de Dieu n’est pas un fardeau : elle montre son amour, et nous la gardons parce que nous l’aimons.
-13 | Matthieu 7:21 | Dire oui ne suffit pas : comme dans la parabole des deux fils, ce qui compte, c’est de faire la volonté du Père.
-14 | Matthieu 18:33 | Dieu nous a pardonné une dette immense. Comment refuser de pardonner aux autres ?
-15 | Jean 14:26 | Jésus n’a pas laissé ses disciples seuls : il a envoyé le Saint-Esprit pour les enseigner et changer leur cœur.
-16 | Actes 8:36 | Comme l’Éthiopien, celui qui découvre Jésus peut demander : « Qu’est-ce qui empêche que je sois baptisé ? »
-17 | Matthieu 13:23 | La Parole de Dieu est une semence. La foi grandit dans le cœur qui l’accueille et la garde.
-18 | Jacques 2:20 | Croire ne se limite pas à savoir : même les démons croient. La vraie foi change la vie et se voit dans nos actes.
+1 | 2 Timothée 3:16 | La Bible n’est pas un vieux livre : c’est Dieu qui parle, aujourd’hui encore.
+2 | Psaumes 19:1 | Levez les yeux : chaque étoile signe l’œuvre du Créateur.
+3 | Matthieu 1:21 | Son nom dit tout : Jésus, « Dieu sauve ».
+4 | Psaumes 5:3 | Le matin, avant tout le reste : un mot pour Dieu. Il écoute.
+5 | Psaumes 33:9 | Dieu a parlé, et le monde a existé. Sa parole a ce pouvoir.
+6 | 1 Corinthiens 13:4 | Une famille heureuse ne tombe pas du ciel : elle se construit avec Dieu, sur un amour patient.
+7 | 1 Pierre 5:8 | Le mal est né d’un orgueil. Le diable rôde encore, mais Jésus l’a déjà vaincu.
+8 | Romains 5:8 | Jésus n’a pas attendu que nous soyons parfaits pour mourir pour nous.
+9 | Luc 12:15 | Votre vie ne se mesure pas à ce que vous possédez.
+10 | Apocalypse 22:20 | « Je viens bientôt. » La plus belle promesse de toute la Bible.
+11 | Jean 14:2 | Le ciel n’est pas un rêve : Jésus y prépare votre place.
+12 | 1 Jean 5:3 | Ses commandements ne sont pas un poids : ce sont les mots d’un Père qui aime.
+13 | Matthieu 7:21 | Dire « oui » à Dieu, c’est bien. Faire sa volonté, c’est mieux.
+14 | Matthieu 18:33 | Pardonné d’une dette immense, comment refuser de pardonner une petite ?
+15 | Jean 14:26 | Jésus ne nous a pas laissés seuls : il nous a donné son Esprit.
+16 | Actes 8:36 | Voici de l’eau : qu’est-ce qui vous empêche d’être baptisé ?
+17 | Matthieu 13:23 | La Parole est une graine. Dans un cœur ouvert, elle porte du fruit au centuple.
+18 | Jacques 2:20 | Même les démons croient. La vraie foi, elle, se voit dans les actes.
 
 [vivre-avec-jesus]
-1 | Jean 14:3 | Jésus a promis de revenir chercher les siens. Les signes qu’il a annoncés montrent que ce jour approche.
-2 | Apocalypse 1:7 | Le retour de Jésus ne sera pas secret : tout œil le verra, comme l’éclair qui traverse le ciel.
-3 | 1 Thessaloniciens 4:17 | Au retour de Jésus, les morts en Christ ressusciteront et, avec les vivants, ils seront pour toujours avec le Seigneur.
-4 | Apocalypse 21:4 | Dieu prépare une terre nouvelle, sans larmes, sans mort et sans douleur : une vraie terre, où il vivra avec nous.
-5 | Jean 5:28 | La mort est un sommeil, pas un passage vers un autre monde. L’espérance du chrétien, c’est la résurrection au retour de Jésus.
-6 | 2 Pierre 3:9 | Dieu ne prend aucun plaisir à la mort du méchant. Il patiente, car il veut que tous viennent à la repentance.
-7 | Jean 3:16 | Nos efforts ne peuvent pas nous sauver. Le seul chemin vers le ciel, c’est croire en Jésus, que Dieu a donné par amour.
-8 | Marc 16:16 | Le baptême est la réponse de celui qui croit : il marque publiquement le début de la vie avec Jésus.
-9 | 1 Jean 2:1 | Au jugement, nous ne serons pas seuls : Jésus est notre avocat auprès du Père, et il intercède pour nous.
-10 | Matthieu 5:17 | Les dix commandements ne sont pas abolis : ce sont les instructions d’un Père pour bien vivre. Jésus est venu les accomplir.
-11 | Exode 20:8 | Dès la création, Dieu a béni le septième jour, et Jésus avait l’habitude de le sanctifier. Le sabbat est un rendez-vous avec lui.
-12 | Matthieu 28:1 | Le Nouveau Testament parle huit fois du premier jour de la semaine, sans jamais en faire le jour du repos.
-13 | Proverbes 3:9 | Tout ce que nous avons vient de Dieu. Lui rendre la dîme et lui donner avec joie, c’est lui dire merci.
-14 | 1 Corinthiens 6:19 | Notre corps est le temple du Saint-Esprit. En prendre soin, c’est honorer celui qui nous a créés et rachetés.
-15 | Apocalypse 12:17 | Jésus aime son Église et la conduit. À la fin, elle se reconnaît : elle garde les commandements de Dieu et le témoignage de Jésus.
+1 | Jean 14:3 | Jésus a promis de revenir. Il n’a jamais manqué à une promesse.
+2 | Apocalypse 1:7 | Son retour ne sera pas secret : tout œil le verra.
+3 | 1 Thessaloniciens 4:17 | Au retour de Jésus, les tombes s’ouvriront. Et nous serons pour toujours avec lui.
+4 | Apocalypse 21:4 | Une terre sans larmes, sans deuil, sans mort. Dieu la prépare pour vous.
+5 | Jean 5:28 | La mort n’a pas le dernier mot : ceux qui dorment entendront sa voix.
+6 | 2 Pierre 3:9 | Si Dieu tarde, c’est par amour : il veut que personne ne périsse.
+7 | Jean 3:16 | Il n’y a pas mille chemins vers le ciel. Il y a Jésus.
+8 | Marc 16:16 | Croire, puis être baptisé : le baptême, c’est dire « oui » à Jésus devant tous.
+9 | 1 Jean 2:1 | Au jugement, vous ne serez pas seul face au juge : Jésus sera votre avocat.
+10 | Matthieu 5:17 | Jésus n’est pas venu effacer la loi, mais l’accomplir.
+11 | Exode 20:8 | Le sabbat, c’est un rendez-vous que Dieu n’a jamais annulé.
+12 | Matthieu 28:1 | Le Nouveau Testament parle huit fois du dimanche. Jamais comme d’un jour saint.
+13 | Proverbes 3:9 | Tout vient de Dieu. Lui rendre la dîme, c’est lui dire merci.
+14 | 1 Corinthiens 6:19 | Votre corps est un temple : le Saint-Esprit y habite.
+15 | Apocalypse 12:17 | L’Église de la fin a une signature : les commandements de Dieu et le témoignage de Jésus.
 
 [historacles]
-1 | Daniel 2:44 | Les empires de la statue de Daniel 2 se sont succédé comme annoncé. Le prochain royaume sera celui de Dieu, et il ne finira jamais.
-2 | Luc 24:27 | Comme les disciples d’Emmaüs, on découvre Jésus dans toute l’Écriture, en laissant la Bible s’expliquer par elle-même.
-3 | Matthieu 25:31 | Jésus reviendra en Roi, dans sa gloire, avec tous les anges : un retour que personne ne pourra manquer.
-4 | Ésaïe 14:14 | Le mal n’a pas été créé par Dieu : il est né dans le cœur d’un ange orgueilleux, qui a voulu prendre sa place.
-5 | Jean 1:29 | Comme Isaac sur la montagne, nous méritions la mort, et Dieu a fourni l’Agneau. En Jésus, il commence en nous une œuvre nouvelle.
-6 | Romains 7:12 | Comme la loi des Mèdes et des Perses, la loi de Dieu ne change pas. Elle est sainte et bonne, et la grâce nous donne de la vivre.
-7 | Exode 20:11 | Dès la création, Dieu a béni et sanctifié le septième jour. Le sabbat est le repos qu’il offre à ses enfants libérés.
-8 | Ésaïe 65:21 | Le royaume de Dieu n’est pas un rêve flou : sur la nouvelle terre, on bâtira, on plantera, et l’on vivra pour toujours.
-9 | Ecclésiaste 9:5 | Les morts ne communiquent pas avec les vivants. Les esprits qui se font passer pour eux sont des esprits de démons.
-10 | 2 Pierre 2:6 | Le feu de Sodome ne brûle plus aujourd’hui. De même, le feu final détruira le mal pour toujours : il ne brûlera pas sans fin.
-11 | Romains 6:4 | Comme Naaman plongé dans le Jourdain, le baptême par immersion montre la mort à l’ancienne vie et la naissance d’une vie nouvelle.
-12 | Jérémie 4:23 | Pendant les mille ans, les sauvés sont au ciel avec Jésus, et la terre, désolée, reste en repos.
-13 | Daniel 3:17 | Comme les trois Hébreux devant la statue d’or, le peuple de Dieu refusera, à la fin, d’adorer la bête. Dieu reste avec les fidèles.
-14 | Ézéchiel 20:12 | Dieu marque les siens de son sceau. Le sabbat, signe entre Dieu et son peuple, montre qui est notre Créateur et notre Seigneur.
-15 | Hébreux 9:22 | Le sanctuaire de Moïse était la copie d’un modèle céleste : chaque sacrifice annonçait Jésus, dont le sang ôte nos péchés.
-16 | Daniel 8:14 | La prophétie des 2300 jours, la plus longue de la Bible, annonce la venue du Messie et le début du jugement au ciel.
-17 | Apocalypse 14:12 | Dans la prophétie, une femme représente l’Église. Celle de la fin garde les commandements de Dieu et la foi de Jésus.
-18 | Malachie 3:10 | Rendre la dîme, c’est reconnaître que tout vient de Dieu. Il promet d’ouvrir les écluses des cieux à ceux qui lui font confiance.
-19 | Apocalypse 18:4 | Babylone, c’est la confusion religieuse qui séduit le monde. Dieu appelle encore ses enfants à en sortir.
-20 | Daniel 1:8 | Daniel a refusé de se souiller par les mets du roi, et Dieu l’a rendu dix fois plus sage. Notre santé compte pour Dieu.
-21 | Matthieu 3:3 | Jean-Baptiste a préparé le chemin du Seigneur par une vie simple et différente. Notre façon de vivre peut, elle aussi, préparer son retour.
-22 | 1 Thessaloniciens 5:20-21 | Dieu parle encore par ses prophètes, mais il faut tout examiner à la lumière de sa Parole et retenir ce qui est bon.
-23 | 2 Timothée 2:21 | Comme l’huile de la veuve, qui coulait tant qu’il y avait des vases vides, le Saint-Esprit remplit ceux qui se donnent à Dieu.
-24 | Actes 5:29 | Pierre a renié Jésus par peur de la foule, puis il a appris à tenir bon : il faut obéir à Dieu plutôt qu’aux hommes.
-A | Apocalypse 15:2 | Avant le retour de Christ, les sept derniers fléaux frapperont la terre, mais les fidèles chanteront la victoire de Dieu.
+1 | Daniel 2:44 | Les empires passent, comme annoncé. Le royaume de Dieu, lui, ne passera jamais.
+2 | Luc 24:27 | Toute l’Écriture parle de Jésus. Il suffit de l’ouvrir avec lui.
+3 | Matthieu 25:31 | Il est venu comme un enfant. Il reviendra comme un Roi.
+4 | Ésaïe 14:14 | Le mal est né d’un « je » : « Je serai semblable au Très-Haut. »
+5 | Jean 1:29 | Sur le mont Moriah, Dieu a fourni un agneau. À la croix, il a donné son Fils.
+6 | Romains 7:12 | La loi de Dieu ne se modifie pas. Elle est sainte, juste et bonne.
+7 | Exode 20:11 | Pharaon voulait un peuple qui ne se repose jamais. Dieu offre le sabbat à des enfants libres.
+8 | Ésaïe 65:21 | Au ciel, on ne flottera pas sur des nuages : on bâtira, on plantera, on vivra.
+9 | Ecclésiaste 9:5 | Les morts ne savent rien. Ce qui se fait passer pour eux vient d’ailleurs.
+10 | 2 Pierre 2:6 | Sodome n’est plus que cendres : le feu a détruit, puis s’est éteint. Ainsi finira le mal.
+11 | Romains 6:4 | Naaman est descendu dans le Jourdain lépreux, il en est sorti neuf. C’est cela, le baptême.
+12 | Jérémie 4:23 | Pendant mille ans, la terre se taira. Les sauvés, eux, seront avec Jésus.
+13 | Daniel 3:17 | Tous se sont prosternés. Trois sont restés debout. Et Dieu était avec eux dans le feu.
+14 | Ézéchiel 20:12 | Le sabbat est une signature : celle du Créateur sur son peuple.
+15 | Hébreux 9:22 | Chaque agneau offert au sanctuaire montrait déjà la croix.
+16 | Daniel 8:14 | Une prophétie de 2300 ans, une date précise : le jugement au ciel a commencé.
+17 | Apocalypse 14:12 | Dans la prophétie, une femme, c’est une Église. Celle de la fin garde les commandements et la foi de Jésus.
+18 | Malachie 3:10 | « Mettez-moi à l’épreuve », dit Dieu : il ouvrira les écluses des cieux.
+19 | Apocalypse 18:4 | « Sortez de Babylone, mon peuple ! » Dieu appelle encore.
+20 | Daniel 1:8 | Daniel a dit non au menu du roi. Dieu l’a rendu dix fois plus sage.
+21 | Matthieu 3:3 | Jean-Baptiste a préparé la venue de Jésus. Notre vie peut préparer son retour.
+22 | 1 Thessaloniciens 5:20-21 | Ne croyez pas tout ce qu’on dit au nom de Dieu : examinez tout à la lumière de sa Parole.
+23 | 2 Timothée 2:21 | L’huile coulait tant qu’il restait un vase vide. L’Esprit remplit ceux qui se rendent disponibles.
+24 | Actes 5:29 | Hier, Pierre a cédé devant une servante. Devant le Sanhédrin, il tient bon : il faut obéir à Dieu.
+A | Apocalypse 15:2 | Quand les derniers fléaux tomberont, les fidèles chanteront la victoire.
 
 [excellence]
-1 | Psaumes 8:1 | Notre Dieu est excellent en tout. Ses enfants sont appelés à refléter cette excellence dans leur vie.
-2 | Philippiens 3:12 | L’excellence est un chemin, pas une destination : comme Paul, on n’est jamais arrivé, mais on continue d’avancer avec Christ.
-3 | Philippiens 3:13 | Sans but, on dérive. Oublier ce qui est en arrière et se fixer des objectifs devant Dieu donne une direction à la vie.
-4 | Philippiens 3:14 | On ne devient pas excellent d’un coup : c’est pas à pas, en courant chaque jour vers le but que Dieu nous fixe.
-5 | Proverbes 6:9 | Soit nous gérons notre temps, soit il nous gère. Le chemin de l’excellence passe par des choix faits chaque jour.
-6 | Proverbes 18:9 | L’échec n’arrive pas d’un coup, mais petit à petit, par une suite de mauvais choix. L’excellence n’attend pas.
-7 | Matthieu 7:12 | Nos paroles révèlent notre cœur. L’excellence dans les relations commence par écouter, et traiter l’autre comme on voudrait l’être.
+1 | Psaumes 8:1 | Dieu fait tout avec excellence. Ses enfants aussi peuvent viser haut.
+2 | Philippiens 3:12 | Personne n’est arrivé. Même Paul courait encore.
+3 | Philippiens 3:13 | Oubliez ce qui est derrière. Visez ce qui est devant.
+4 | Philippiens 3:14 | L’excellence n’est pas un saut, c’est une course : un pas après l’autre.
+5 | Proverbes 6:9 | Soit vous gérez votre temps, soit il vous gère.
+6 | Proverbes 18:9 | La paresse ne détruit pas d’un coup. Elle ronge, jour après jour.
+7 | Matthieu 7:12 | Traitez les autres comme vous voulez être traité. Tout commence par écouter.
 
 [fast-formation-de-base]
-1 | Jean 17:3 | La vie éternelle commence maintenant : c’est connaître Jésus. À côté de lui, tout le reste perd sa valeur.
-2 | Psaumes 143:8 | Commencer chaque journée seul avec Dieu, dans sa Parole et la prière : c’est la clé d’une vie spirituelle qui dure.
-3 | Jean 15:7 | Les promesses de Dieu sont faites pour être réclamées. Comme Abraham, on peut s’y appuyer sans douter.
-4 | Proverbes 13:4 | Les bonnes intentions ne suffisent pas : c’est la persévérance qui fait la différence dans la vie chrétienne.
-5 | Deutéronome 6:6 | Mémoriser la Parole de Dieu, c’est garder à portée de main l’épée de l’Esprit, vivante et efficace.
-6 | 1 Jean 1:3 | Notre histoire avec Jésus est un témoignage que personne ne peut contester. La raconter simplement ouvre les cœurs.
-7 | Marc 3:14 | Jésus n’a pas formé des disciples isolés, mais une équipe. Ensemble, on s’encourage et on va plus loin.
-8 | 2 Timothée 2:2 | Former quelqu’un qui en formera d’autres : c’est ainsi que l’Évangile se multiplie, bien plus vite qu’en additionnant.
-9 | 1 Corinthiens 15:58 | Une vie qui compte, c’est une vie donnée à l’œuvre de Dieu : rien de ce qu’on fait pour lui n’est perdu.
+1 | Jean 17:3 | La vie éternelle ne commence pas après la mort : elle commence en connaissant Jésus.
+2 | Psaumes 143:8 | Votre journée commence avec Dieu, ou sans lui. Choisissez le matin.
+3 | Jean 15:7 | Les promesses de Dieu ne sont pas des vœux pieux : elles sont faites pour être réclamées.
+4 | Proverbes 13:4 | Les bonnes intentions ne mènent nulle part. La persévérance, si.
+5 | Deutéronome 6:6 | Un verset appris par cœur, c’est une épée toujours à portée de main.
+6 | 1 Jean 1:3 | Votre histoire avec Jésus, personne ne peut la contester. Racontez-la.
+7 | Marc 3:14 | Jésus n’a pas formé des solitaires, mais une équipe.
+8 | 2 Timothée 2:2 | Additionner, c’est bien. Multiplier, c’est la méthode de Jésus.
+9 | 1 Corinthiens 15:58 | Rien de ce que vous faites pour Dieu n’est perdu. Rien.
 
 [rencontre-avec-jesus]
-1 | Marc 1:41 | Personne ne touchait un lépreux. Jésus, lui, a tendu la main : aucune souillure ne le fait reculer.
-2 | Matthieu 4:4 | Là où Adam est tombé, Jésus a vaincu. À chaque tentation, il a répondu par la Parole de Dieu : « Il est écrit. »
-3 | Luc 5:5 | Après une nuit sans rien prendre, Pierre a jeté le filet sur la parole de Jésus. Puis il a tout laissé pour le suivre.
-4 | Jean 2:5 | À Cana, Marie a dit simplement : « Faites ce qu’il vous dira. » Quand on obéit à Jésus, l’eau devient du vin.
-5 | Jean 3:3 | Même un docteur de la loi avait besoin de naître de nouveau. On n’entre pas dans le royaume par ses efforts, mais par une vie nouvelle.
-6 | Jean 4:14 | Jésus a franchi toutes les barrières pour parler à une Samaritaine. Il offre l’eau vive, qui étanche la soif pour toujours.
-7 | Jean 4:50 | L’officier est rentré chez lui sans signe, simplement sur la parole de Jésus. La foi croit avant de voir.
-8 | Luc 7:7 | Un officier romain a étonné Jésus par sa foi : « Dis un mot, et mon serviteur sera guéri. »
-9 | Marc 8:25 | Jésus a guéri cet aveugle en deux temps. Il ne nous laisse pas à mi-chemin : il continue jusqu’à ce que nous voyions clairement.
-10 | Jean 5:6 | Trente-huit ans d’attente au bord de la piscine. Jésus pose une question simple, « Veux-tu être guéri ? », puis il fait ce que personne ne pouvait faire.
-11 | Marc 2:5 | Quatre amis ont ouvert le toit pour amener leur ami à Jésus. Il a vu leur foi : il a d’abord pardonné, puis guéri.
-12 | Matthieu 12:28 | Les chefs religieux ont attribué au diable l’œuvre de Dieu. Mais quand Jésus chasse les démons, c’est le royaume de Dieu qui arrive.
-13 | Marc 4:39 | Les disciples croyaient que Jésus ne se souciait pas d’eux. D’une parole, il a calmé la tempête : avec lui à bord, la barque ne coule pas.
-14 | Marc 5:15 | Personne ne pouvait dompter cet homme. Après sa rencontre avec Jésus, il était assis, vêtu, dans son bon sens, et prêt à témoigner.
-15 | Marc 5:34 | Dans la foule, beaucoup touchaient Jésus. Une seule femme l’a touché avec foi, et elle a été guérie. Jésus voulait qu’elle reparte en paix.
-16 | Matthieu 11:4-5 | Même Jean-Baptiste a douté en prison. Jésus ne l’a pas rejeté : il lui a montré ses œuvres, puis a fait son plus bel éloge.
-17 | Marc 6:34 | Jésus voulait se reposer, mais il a eu compassion de la foule. Ce que nous lui donnons, même peu, il le multiplie.
-18 | Jean 8:11 | Ses accusateurs voulaient la lapider. Jésus ne l’a pas condamnée, mais il ne l’a pas laissée dans son péché : « Va, et ne pèche plus. »
-19 | Jean 9:5 | La souffrance n’est pas toujours une punition. En guérissant l’aveugle-né, Jésus a montré qu’il est la lumière du monde.
-20 | Luc 10:42 | Marthe s’affairait pour Jésus ; Marie s’est assise à ses pieds pour l’écouter. Le service compte, mais être avec lui passe d’abord.
-21 | Luc 17:15 | Dix lépreux ont été guéris, mais un seul est revenu dire merci. La reconnaissance complète la guérison.
-22 | Marc 10:21 | Jésus a regardé le jeune homme riche, et il l’a aimé. Il lui demandait tout, pour lui donner bien plus.
-23 | Luc 18:39 | On voulait faire taire Bartimée, mais il a crié encore plus fort. Jésus s’est arrêté pour lui.
-24 | Luc 19:10 | Zachée voulait seulement voir Jésus. Jésus, lui, voulait entrer chez lui : il est venu chercher ce qui était perdu.
-25 | Marc 14:8 | Marie a versé sur Jésus un parfum de grand prix. Ce que l’on donne par amour n’est jamais du gaspillage à ses yeux.
-26 | Luc 22:32 | Jésus savait que Pierre le renierait, et il avait déjà prié pour lui. Après la chute, son regard d’amour a ouvert le chemin du retour.
-27 | Matthieu 27:22 | Pilate savait que Jésus était innocent, mais il a cédé à la foule. Personne ne peut rester neutre face à Jésus.
-28 | Luc 23:34 | Sur la croix, Jésus a prié pour ceux qui le crucifiaient. Son amour va jusqu’au bout, et même l’officier romain l’a reconnu.
-29 | Luc 24:32 | Les disciples d’Emmaüs marchaient tristes, sans reconnaître Jésus. Quand il leur a ouvert les Écritures, leur cœur s’est mis à brûler.
-30 | Jean 21:17 | Trois fois Pierre avait renié Jésus ; trois fois Jésus lui demande : « M’aimes-tu ? » Puis il lui confie ses brebis. Jésus relève.
+1 | Marc 1:41 | Tout le monde fuyait le lépreux. Jésus, lui, l’a touché.
+2 | Matthieu 4:4 | Trois tentations, une seule arme : « Il est écrit. »
+3 | Luc 5:5 | Une nuit pour rien. Puis un mot de Jésus, et le filet déborde.
+4 | Jean 2:5 | « Faites ce qu’il vous dira. » Le plus court chemin vers un miracle.
+5 | Jean 3:3 | Même un docteur de la loi devait naître de nouveau. Personne n’y échappe.
+6 | Jean 4:14 | Elle venait chercher de l’eau. Elle a trouvé une source qui ne tarit jamais.
+7 | Jean 4:50 | Il est reparti sans miracle sous les yeux, avec une seule parole. Et elle a suffi.
+8 | Luc 7:7 | « Dis seulement un mot. » Une foi qui a étonné Jésus lui-même.
+9 | Marc 8:25 | Jésus ne guérit pas à moitié. Il reprend, jusqu’à ce que vous voyiez clair.
+10 | Jean 5:6 | Trente-huit ans d’attente. Une seule question : « Veux-tu être guéri ? »
+11 | Marc 2:5 | Quatre amis ont percé un toit. Voilà ce que la foi fait pour un ami.
+12 | Matthieu 12:28 | Quand Jésus libère, c’est le royaume de Dieu qui s’avance.
+13 | Marc 4:39 | La tempête hurle ? Un mot de Jésus, et c’est le grand calme.
+14 | Marc 5:15 | Personne ne pouvait le dompter. Une rencontre avec Jésus, et le voilà assis, en paix.
+15 | Marc 5:34 | Toute la foule touchait Jésus. Une seule femme l’a touché avec foi.
+16 | Matthieu 11:4-5 | Même Jean-Baptiste a douté. Jésus ne l’a pas rejeté : il lui a montré ses œuvres.
+17 | Marc 6:34 | Cinq pains, deux poissons. Entre les mains de Jésus, peu devient beaucoup.
+18 | Jean 8:11 | « Je ne te condamne pas. Va, et ne pèche plus. » La grâce et la vérité dans la même phrase.
+19 | Jean 9:5 | La souffrance n’est pas toujours une punition. Parfois, c’est là que brille la lumière du monde.
+20 | Luc 10:42 | Servir Jésus, c’est bien. S’asseoir à ses pieds, c’est mieux.
+21 | Luc 17:15 | Dix ont été guéris. Un seul est revenu dire merci.
+22 | Marc 10:21 | Jésus l’a regardé, et il l’a aimé. Il lui demandait tout, pour lui donner plus.
+23 | Luc 18:39 | Ils voulaient le faire taire. Il a crié plus fort. Jésus s’est arrêté.
+24 | Luc 19:10 | Zachée cherchait à voir Jésus. Jésus, lui, cherchait Zachée.
+25 | Marc 14:8 | Rien n’est gaspillé quand on le donne à Jésus.
+26 | Luc 22:32 | Avant même la chute de Pierre, Jésus avait prié pour son retour.
+27 | Matthieu 27:22 | Pilate s’est lavé les mains. Mais personne ne reste neutre devant Jésus.
+28 | Luc 23:34 | Cloué sur la croix, il priait pour ceux qui l’y clouaient.
+29 | Luc 24:32 | Quand Jésus ouvre les Écritures, le cœur se met à brûler.
+30 | Jean 21:17 | Trois reniements, trois « M’aimes-tu ? ». Jésus ne laisse pas tomber ceux qui tombent.
 
 [cep-sarment]
-1 | Jean 15:5 | Un sarment ne produit rien seul : sa vie vient du cep. Sans Jésus, nous ne pouvons rien faire.
-2 | Galates 5:22 | Le fruit ne s’obtient pas à force d’efforts, mais en restant attaché au cep. L’amour, la joie et la paix poussent chez celui qui demeure en Christ.
-3 | Jean 15:8 | Nous sommes faits pour porter du fruit. C’est ainsi que le Père est glorifié, et que notre vie trouve son sens.
-4 | Jean 15:2 | Quand le vigneron taille, ce n’est pas pour punir : c’est pour que le sarment porte encore plus de fruit.
-5 | Jean 15:4 | Demeurer en Christ ne concerne pas qu’une partie de la journée : c’est toute la vie, heure après heure, qui reste reliée à lui.
-6 | Jean 15:16 | Jésus nous a choisis pour que nous allions porter du fruit, un fruit qui demeure, pour le bien de ceux qui nous entourent.
-7 | Jean 15:9 | Jésus nous aime comme le Père l’aime. Demeurer dans son amour, c’est vivre avec lui comme il vivait avec son Père.
-8 | Jean 15:11 | Jésus veut que sa joie soit en nous, et qu’elle soit parfaite. Elle naît d’une amitié avec celui qui a donné sa vie pour nous.
-9 | Jean 15:12 | Comme des ambassadeurs, nous représentons Jésus. Ceux qui ne le connaissent pas le découvrent à travers notre amour.
-10 | Marc 4:29 | Le fruit mûrit pour la moisson. Quand il est prêt, Jésus revient le récolter.
+1 | Jean 15:5 | Sans lui, rien. Avec lui, beaucoup de fruit.
+2 | Galates 5:22 | Le fruit ne se force pas. Il pousse quand on reste attaché au cep.
+3 | Jean 15:8 | Vous êtes faits pour porter du fruit. C’est ainsi que le Père est glorifié.
+4 | Jean 15:2 | Quand Dieu taille, ce n’est pas pour punir. C’est pour plus de fruit.
+5 | Jean 15:4 | Demeurer en lui, ce n’est pas un moment par semaine. C’est toute la vie.
+6 | Jean 15:16 | Ce n’est pas vous qui l’avez choisi. C’est lui qui vous a choisis, pour un fruit qui demeure.
+7 | Jean 15:9 | Jésus vous aime comme le Père l’aime. Demeurez dans cet amour.
+8 | Jean 15:11 | Sa joie en vous, et une joie parfaite : c’est sa promesse.
+9 | Jean 15:12 | Le monde ne lit pas la Bible. Il lit notre amour.
+10 | Marc 4:29 | Le fruit mûrit pour la moisson. Et la moisson approche.
 
 [daniel]
-#1 | Daniel 1:8 | Jeune captif à Babylone, Daniel a résolu dans son cœur de rester fidèle à Dieu. Dieu honore ceux qui l’honorent.
-#2 | Daniel 2:22 | Menacé de mort, Daniel n’a pas paniqué : il a prié avec ses amis, et Dieu lui a révélé le secret du roi.
-#3 | Amos 3:7 | Dieu ne fait rien sans le révéler à ses prophètes. La statue de Daniel 2 annonçait les empires jusqu’à la fin, puis le royaume de Dieu.
-#4 | Daniel 3:25 | Les trois amis de Daniel ont préféré la fournaise à l’idolâtrie. Dans le feu, ils n’étaient pas seuls : un quatrième marchait avec eux.
-#5 | Daniel 4:37 | L’orgueil a fait tomber Nabuchodonosor, le plus grand roi de son temps. Humilié, il a reconnu que Dieu abaisse les orgueilleux.
-#6 | Daniel 5:27 | Belschatsar savait ce qui était arrivé à son père, mais il ne s’est pas humilié. Cette nuit-là, Dieu l’a pesé, et Babylone est tombée.
-#7 | Daniel 6:10 | Daniel a continué à prier trois fois par jour, au risque de la fosse aux lions. Sa fidélité est un modèle pour le peuple de Dieu à la fin.
-#8 | Daniel 7:8 | Les quatre bêtes de Daniel 7 reprennent les empires de Daniel 2. Puis paraît une petite corne, une puissance qui s’en prend à Dieu et à sa loi.
-#9 | Daniel 7:14 | Après le règne de la petite corne, le jugement s’ouvre au ciel, et le royaume est donné pour toujours au Fils de l’homme et aux saints.
-#10 | Daniel 8:14 | Après le bélier et le bouc, une petite corne s’attaque au sanctuaire. Mais Dieu annonce le jour où son sanctuaire sera purifié.
-#11 | Daniel 9:24 | Daniel a prié en lisant les prophéties. Dieu lui a répondu : soixante-dix semaines, jusqu’au Messie qui mettra fin au péché.
-#12 | Daniel 10:21 | Derrière l’histoire se joue un combat invisible. Daniel apprend que Michel, le chef céleste, combat pour son peuple.
-#13 | Daniel 11:32 | Daniel 11 retrace l’histoire jusqu’au temps de la fin avec précision. Au milieu des conflits, ceux qui connaissent leur Dieu tiennent ferme.
-#14 | Daniel 12:4 | Le livre de Daniel devait rester scellé jusqu’au temps de la fin. Aujourd’hui, ses prophéties s’ouvrent, et la connaissance augmente.
+#1 | Daniel 1:8 | Captif à Babylone, Daniel a décidé dans son cœur. La fidélité commence là.
+#2 | Daniel 2:22 | Face à la mort, Daniel n’a pas paniqué. Il a prié, et Dieu a révélé le secret.
+#3 | Amos 3:7 | Dieu ne fait rien sans prévenir. La statue de Daniel 2 annonçait l’histoire jusqu’à la fin.
+#4 | Daniel 3:25 | Dans la fournaise, ils n’étaient pas trois, mais quatre.
+#5 | Daniel 4:37 | Le plus grand roi du monde a dû l’apprendre : Dieu abaisse les orgueilleux.
+#6 | Daniel 5:27 | Pesé, et trouvé trop léger. La même nuit, Babylone tombait.
+#7 | Daniel 6:10 | Un décret contre la prière ? Daniel a ouvert sa fenêtre, et il a prié.
+#8 | Daniel 7:8 | Après les quatre bêtes, une petite corne s’élève contre Dieu et contre sa loi.
+#9 | Daniel 7:14 | Les empires tombent. Le royaume du Fils de l’homme ne tombera jamais.
+#10 | Daniel 8:14 | Le bélier, le bouc, la petite corne… et au bout, le sanctuaire purifié.
+#11 | Daniel 9:24 | Daniel priait. Dieu lui a répondu par une date : celle du Messie.
+#12 | Daniel 10:21 | Derrière l’histoire, un combat invisible. Et Michel combat pour son peuple.
+#13 | Daniel 11:32 | Quand les royaumes s’affrontent, ceux qui connaissent leur Dieu tiennent bon.
+#14 | Daniel 12:4 | Scellé jusqu’au temps de la fin. Le temps de la fin, c’est maintenant.
 
 [sanctuaire]
-1 | Exode 25:8 | Dieu a demandé un sanctuaire pour habiter au milieu de son peuple. Chacune de ses parties raconte le plan du salut.
-2 | 1 Corinthiens 15:3 | Sur l’autel des holocaustes, l’agneau mourait à la place du pécheur. Il annonçait Jésus, mort pour nos péchés.
-3 | Tite 3:5 | Avant de servir, le prêtre se lavait à la cuve. Elle annonçait la purification que Dieu offre par le baptême et par son Esprit.
-4 | Jean 1:14 | Le tabernacle était la tente où Dieu habitait parmi son peuple. En Jésus, la Parole a été faite chair et a habité parmi nous.
-5 | Jean 8:12 | Le pain, la lumière et l’encens du lieu saint parlent de Jésus : il nous nourrit, il éclaire notre vie, il présente nos prières au Père.
-6 | Exode 25:22 | Au cœur du sanctuaire, dans l’arche, se trouvait la loi de Dieu, et au-dessus, le propitiatoire : la justice et la grâce s’y rencontrent.
-7 | 1 Pierre 2:24 | Chaque jour, un sacrifice rappelait que le pardon a un prix. Jésus a porté nos péchés en son corps sur la croix.
-8 | Lévitique 16:30 | Une fois par an, le jour des Expiations, le sanctuaire était purifié de tous les péchés : un jour de jugement et de grâce.
-9 | Hébreux 9:12 | Jésus est entré une fois pour toutes dans le sanctuaire céleste avec son propre sang. Son œuvre là-haut est le remède au péché.
-10 | Daniel 9:25 | Les 2300 jours de Daniel 8 commencent avec les soixante-dix semaines de Daniel 9, et mènent à la purification du sanctuaire céleste.
-11 | 1 Corinthiens 5:7 | Les fêtes d’Israël formaient un calendrier prophétique : chacune annonçait une étape du ministère de Jésus, à commencer par la Pâque.
-12 | Hébreux 4:16 | Nous avons au ciel un souverain sacrificateur qui comprend nos faiblesses. Approchons-nous avec assurance du trône de la grâce.
+1 | Exode 25:8 | Dieu a voulu une tente au milieu de son peuple. Il veut habiter avec nous.
+2 | 1 Corinthiens 15:3 | Sur l’autel, l’agneau mourait à la place du pécheur. À la croix, Jésus est mort à la nôtre.
+3 | Tite 3:5 | Personne ne servait Dieu sans passer par la cuve. Dieu lave d’abord.
+4 | Jean 1:14 | Dieu a planté sa tente parmi nous. Elle s’appelle Jésus.
+5 | Jean 8:12 | Le pain, la lumière, l’encens : dans le lieu saint, tout parle de Jésus.
+6 | Exode 25:22 | Dans l’arche, la loi ; sur elle, le propitiatoire. Là, la justice et la grâce se rencontrent.
+7 | 1 Pierre 2:24 | Le pardon a un prix. Jésus l’a payé de son corps, sur la croix.
+8 | Lévitique 16:30 | Un jour par an, tout le péché était effacé du sanctuaire. Ce jour annonçait le nôtre.
+9 | Hébreux 9:12 | Jésus est entré au ciel avec son propre sang. Une fois pour toutes.
+10 | Daniel 9:25 | Daniel 8 donne la durée, Daniel 9 donne le départ. Le compte tombe juste.
+11 | 1 Corinthiens 5:7 | Chaque fête d’Israël était un rendez-vous avec Jésus. La première : la Pâque.
+12 | Hébreux 4:16 | Au ciel, un prêtre qui connaît vos faiblesses. Approchez-vous sans crainte.
 
 [sept-eglises]
-- | Apocalypse 1:17-18 | Le Christ de l’Apocalypse est vivant, et il tient son Église dans sa main. À chaque époque, il lui dit : « Ne crains point ! »
+- | Apocalypse 1:17-18 | « Ne crains point. » À chaque époque, Jésus le redit à son Église.
 
 
 [frequentations]
-1 | Genèse 29:20 | Jacob a servi sept ans pour Rachel, et ces années lui ont paru quelques jours. Le vrai amour sait attendre.
-2 | 1 Samuel 16:7 | L’apparence attire, mais Dieu regarde au cœur. Chercher un conjoint, c’est d’abord chercher un caractère.
-3 | 2 Corinthiens 6:14 | Le choix du conjoint engage toute une vie, et même sa foi. Achab en a fait l’expérience avec Jézabel.
-4 | Apocalypse 2:4 | Les relations se dégradent quand on délaisse son premier amour. Revenir aux premières attentions peut tout changer.
-5 | Luc 22:42 | Se soumettre n’est pas s’effacer : Jésus lui-même a dit « que ta volonté soit faite ». Dans le couple, l’amour cherche le bien de l’autre.
-6 | 1 Corinthiens 13:6 | Le vrai amour ne manipule pas et ne joue pas avec l’autre : il se réjouit de la vérité.
-7 | 1 Corinthiens 13:7 | À notre époque comme au temps de Sodome, la passion sans limites détruit. L’amour vrai protège, et il sait attendre.
-8 | Jean 4:13-14 | La Samaritaine cherchait l’amour d’une relation à l’autre. Jésus lui offre une eau qui comble vraiment, et pour toujours.
-9 | Matthieu 5:28 | La chute de David a commencé par un regard, quand il aurait dû être au combat. L’intégrité se garde d’abord dans le cœur et les yeux.
+1 | Genèse 29:20 | Sept ans pour Rachel, et ils lui ont paru quelques jours. L’amour vrai sait attendre.
+2 | 1 Samuel 16:7 | L’apparence attire. Le cœur, lui, fait durer.
+3 | 2 Corinthiens 6:14 | Deux bœufs mal assortis sous le même joug tirent chacun de leur côté.
+4 | Apocalypse 2:4 | Un couple ne meurt pas d’un coup. Il meurt d’avoir oublié son premier amour.
+5 | Luc 22:42 | « Que ta volonté soit faite. » L’amour vrai commence là.
+6 | 1 Corinthiens 13:6 | L’amour vrai ne joue pas avec l’autre. Il se réjouit de la vérité.
+7 | 1 Corinthiens 13:7 | La passion sans limites détruit. L’amour vrai protège, et il sait attendre.
+8 | Jean 4:13-14 | Elle cherchait l’amour de relation en relation. Jésus lui a offert une source.
+9 | Matthieu 5:28 | La chute de David a commencé par un regard. L’intégrité se garde dans les yeux.
 
 [enfants]
-2 | Genèse 5:22 | Hénoc a commencé à marcher avec Dieu après la naissance de son fils. Être parent est une mission reçue de Dieu.
-3 | Psaumes 36:7 | L’enfant apprend d’abord à faire confiance en étant aimé. C’est ainsi qu’il découvre la bonté de Dieu.
-4 | Proverbes 22:6 | La discipline n’est pas une punition : c’est un enseignement donné avec amour, pour que l’enfant apprenne le chemin à suivre.
-5 | Ecclésiaste 12:1 | La foi peut naître très tôt. Les tout-petits découvrent Dieu à travers ce qu’ils vivent avec nous, chaque jour.
-6 | 3 Jean 4 | Les enfants aiment la Bible quand ils voient leurs parents l’aimer. La plus grande joie, c’est de les voir marcher dans la vérité.
-7 | Joël 1:3 | Le culte de famille transmet la foi d’une génération à l’autre : ce que les parents racontent, les enfants le raconteront à leur tour.
-8 | Ésaïe 58:13 | Pour un enfant, le sabbat peut être le plus beau jour de la semaine : un jour de joie, de famille, et de découverte de Dieu.
-9 | Psaumes 100:4 | L’enfant doit se sentir chez lui à l’église. Y venir est une fête : on entre avec joie dans la maison de Dieu.
-10 | Jean 17:15 | Nous ne pouvons pas enfermer nos enfants loin du monde. Comme Jésus, prions pour qu’ils soient gardés du mal au milieu de lui.
-11 | Philippiens 4:8 | Ce qui entre dans l’esprit d’un enfant le façonne. Aidons-le à nourrir sa pensée de ce qui est vrai, pur et aimable.
-12 | Proverbes 1:7 | La vraie éducation ne s’arrête pas aux connaissances : elle commence par la crainte de l’Éternel, le début de la sagesse.
+2 | Genèse 5:22 | Hénoc a commencé à marcher avec Dieu quand il est devenu père. Être parent est une mission.
+3 | Psaumes 36:7 | Un enfant aimé apprend à faire confiance. C’est là qu’il découvre Dieu.
+4 | Proverbes 22:6 | Discipliner, ce n’est pas punir. C’est montrer le chemin.
+5 | Ecclésiaste 12:1 | La foi peut naître dès le berceau. Les petits apprennent Dieu en nous regardant.
+6 | 3 Jean 4 | Un enfant aimera la Bible s’il voit ses parents l’aimer.
+7 | Joël 1:3 | Ce que vous racontez ce soir, vos petits-enfants le raconteront demain.
+8 | Ésaïe 58:13 | Pour un enfant, le sabbat peut être le plus beau jour de la semaine. À nous d’en faire une fête.
+9 | Psaumes 100:4 | À l’église, un enfant doit se sentir chez lui. Entrons-y avec joie.
+10 | Jean 17:15 | On ne peut pas enfermer nos enfants loin du monde. On peut prier pour eux, comme Jésus.
+11 | Philippiens 4:8 | Ce qui entre dans l’esprit d’un enfant le façonne. Choisissez bien.
+12 | Proverbes 1:7 | Le savoir sans Dieu reste incomplet. La sagesse commence par la crainte de l’Éternel.
 
 [homme-de-dieu]
-1 | Ecclésiaste 4:12 | Le mariage est un projet de Dieu depuis l’Éden. Deux valent mieux qu’un, et un couple uni à Dieu est une corde à trois fils.
-2 | 1 Corinthiens 16:13-14 | Un homme de Dieu veille, reste ferme dans la foi, et fait tout avec amour. Il guide sa famille vers Dieu.
-3 | Éphésiens 6:4 | L’autorité vient de Dieu, et elle est d’abord une responsabilité : le père répond devant Dieu de ceux qu’il conduit.
-4 | Genèse 18:19 | Dieu a choisi Abraham pour qu’il enseigne à sa maison la voie de l’Éternel. Des règles claires, vécues avec constance, protègent la famille.
-5 | Genèse 12:7 | Partout où il s’installait, Abraham bâtissait un autel. Le père est le prêtre de son foyer : il conduit sa famille dans l’adoration.
+1 | Ecclésiaste 4:12 | Un couple uni à Dieu, c’est une corde à trois fils : elle ne se rompt pas facilement.
+2 | 1 Corinthiens 16:13-14 | Ferme dans la foi, doux dans l’amour : voilà un homme de Dieu.
+3 | Éphésiens 6:4 | L’autorité d’un père n’est pas un pouvoir. C’est une responsabilité devant Dieu.
+4 | Genèse 18:19 | Abraham enseignait à sa maison la voie de Dieu. Des règles claires, vécues avec constance, protègent la famille.
+5 | Genèse 12:7 | Partout où il passait, Abraham bâtissait un autel. Le père est le prêtre de son foyer.
 
 [convoitise]
-1 | Psaumes 149:4 | Avant de lutter contre la convoitise, il faut savoir qui l’on est : nous avons une valeur immense aux yeux de Dieu, qui prend plaisir en son peuple.
-2 | Galates 2:20 | Jésus est à la fois l’Agneau mort pour nos péchés et le Prêtre vivant qui intercède pour nous. C’est en lui qu’on trouve la victoire.
-3 | Hébreux 10:10 | Le sacrifice de Jésus, offert une fois pour toutes, ne fait pas que pardonner : il purifie et sanctifie celui qui se confie en lui.
-4 | 2 Corinthiens 7:10 | Tomber n’est pas la fin. La tristesse selon Dieu conduit à la repentance, et tant que Jésus intercède, la porte de la grâce reste ouverte.
-6 | Proverbes 25:28 | La maîtrise de soi ne se tire pas de soi-même : c’est un fruit de l’Esprit. Sans elle, on est comme une ville sans murailles.
-7 | Psaumes 119:37 | Ce que nous regardons façonne notre cerveau et notre cœur. Avec Dieu, on peut détourner les yeux et amener chaque pensée captive à Christ.
+1 | Psaumes 149:4 | Avant de combattre la convoitise, sachez ceci : Dieu prend plaisir en vous.
+2 | Galates 2:20 | L’Agneau est mort pour vous. Le Prêtre vit pour vous. La victoire est là.
+3 | Hébreux 10:10 | Une seule offrande, une fois pour toutes : elle pardonne, et elle purifie.
+4 | 2 Corinthiens 7:10 | Tomber n’est pas la fin. Tant que Jésus intercède, la porte reste ouverte.
+6 | Proverbes 25:28 | Sans maîtrise de soi, on est une ville sans murailles. L’Esprit rebâtit les murs.
+7 | Psaumes 119:37 | Ce que vous regardez vous façonne. Dieu peut détourner vos yeux.
 
 [trinite]
-1 | Actes 13:2 | Le Saint-Esprit n’est pas une simple force : il parle, il appelle, il enseigne. C’est une personne divine.
-2 | 1 Jean 5:20 | Le Père, le Fils et le Saint-Esprit ont les mêmes attributs : éternels, tout-puissants, présents partout. Le Fils est « le Dieu véritable ».
-3 | Colossiens 2:9 | Jésus n’a pas commencé à Bethléem : ses origines remontent à l’éternité. En lui habite toute la plénitude de la divinité.
-4 | Deutéronome 6:4 | La Bible affirme qu’il n’y a qu’un seul Dieu, et présente pourtant le Père, le Fils et l’Esprit comme Dieu. La Trinité tient ensemble ces deux vérités.
-5 | Éphésiens 4:30 | Le Saint-Esprit est une personne : on peut l’attrister. Jésus l’a envoyé pour être avec nous et nous conduire.
-6 | Actes 1:8 | Le Saint-Esprit nous fait naître de nouveau, nous conduit dans la vérité et nous donne la force de témoigner jusqu’au bout du monde.
-7 | 2 Corinthiens 13:14 | Au baptême de Jésus, le Père parle, le Fils est baptisé et l’Esprit descend : un seul Dieu, en trois personnes.
-8 | Jean 14:18 | Jésus ne nous laisse pas orphelins : le Saint-Esprit, le Consolateur, est avec nous pour toujours.
-9 | Joël 2:23 | Comme la pluie de l’arrière-saison mûrit la récolte, Dieu promet une dernière effusion du Saint-Esprit avant le retour de Jésus.
-10 | Matthieu 12:31 | Dieu pardonne tout péché confessé. Le seul impardonnable, c’est de fermer définitivement son cœur à l’Esprit qui appelle.
-11 | Actes 2:6 | À la Pentecôte, chacun entendait les apôtres dans sa propre langue. Le vrai don des langues sert à annoncer l’Évangile et à être compris.
-12 | 1 Jean 2:3 | Une expérience spectaculaire ne prouve pas la présence de Dieu. Le signe que l’on connaît Jésus, c’est que l’on garde ses commandements.
-13 | Jean 8:58 | Les premiers adventistes ont mis du temps à comprendre la Trinité. En revenant sans cesse à la Bible, l’Église a reconnu que Jésus est Dieu de toute éternité.
-15 | Colossiens 1:18 | « Premier-né » ne veut pas dire que Jésus a été créé : c’est un titre de prééminence. Il est le premier en toutes choses.
-16 | Ésaïe 9:6 | Le Fils est Dieu de toute éternité : l’enfant de Bethléem est le « Dieu puissant » annoncé par Ésaïe.
+1 | Actes 13:2 | Le Saint-Esprit n’est pas une force : il parle, il appelle, il envoie.
+2 | 1 Jean 5:20 | Le Fils n’est pas un dieu de second rang : il est le Dieu véritable.
+3 | Colossiens 2:9 | Jésus n’a pas commencé à Bethléem. En lui habite toute la plénitude de la divinité.
+4 | Deutéronome 6:4 | Un seul Dieu, et pourtant Père, Fils et Esprit. La Bible tient les deux ensemble.
+5 | Éphésiens 4:30 | On n’attriste pas une force. On attriste une personne : le Saint-Esprit en est une.
+6 | Actes 1:8 | L’Esprit ne donne pas seulement la paix. Il donne la puissance pour témoigner.
+7 | 2 Corinthiens 13:14 | Au baptême de Jésus, le Père parle, le Fils est là, l’Esprit descend : un seul Dieu.
+8 | Jean 14:18 | « Je ne vous laisserai pas orphelins. » L’Esprit est là, pour toujours.
+9 | Joël 2:23 | Une dernière pluie va tomber : l’Esprit, avant la grande moisson.
+10 | Matthieu 12:31 | Dieu pardonne tout péché confessé. Le seul danger : fermer son cœur à l’Esprit.
+11 | Actes 2:6 | À la Pentecôte, chacun comprenait dans sa langue. Le vrai don des langues, c’est être compris.
+12 | 1 Jean 2:3 | Le spectaculaire ne prouve rien. Garder ses commandements, si.
+13 | Jean 8:58 | « Avant qu’Abraham fût, je suis. » Jésus est Dieu de toute éternité.
+15 | Colossiens 1:18 | « Premier-né » ne veut pas dire créé : Jésus est le premier en tout.
+16 | Ésaïe 9:6 | L’enfant de Bethléem est le « Dieu puissant » annoncé par Ésaïe.
 
 [fast-kit-de-survie]
-1 | Lamentations 3:22-23 | La grâce de Dieu se renouvelle chaque matin. Son amour éternel est le fondement de toute la vie chrétienne.
-2 | 2 Corinthiens 4:16 | On ne grandit pas en se regardant soi-même, mais en regardant à Jésus. Jour après jour, l’homme intérieur se renouvelle.
-3 | 1 Corinthiens 15:57 | La tentation se combat tôt, avec la Parole. Et la victoire, c’est Dieu qui nous la donne en Jésus.
-4 | Proverbes 3:5-6 | Dieu ne cache pas sa volonté : il conduit ceux qui se confient en lui de tout leur cœur, plutôt qu’en leur propre sagesse.
-5 | Hébreux 10:24-25 | Les chrétiens ont besoin les uns des autres. Se retrouver, c’est s’encourager à l’amour et aux bonnes œuvres.
+1 | Lamentations 3:22-23 | Chaque matin, la grâce de Dieu est neuve. Pas une seule journée sans elle.
+2 | 2 Corinthiens 4:16 | Regardez-vous, vous coulez. Regardez Jésus, vous marchez.
+3 | 1 Corinthiens 15:57 | La tentation se combat tôt. Et la victoire vient de Dieu.
+4 | Proverbes 3:5-6 | Ne vous fiez pas à votre propre sagesse. Dieu trace le chemin.
+5 | Hébreux 10:24-25 | Les braises isolées s’éteignent. Ensemble, on reste en feu.
 
 [fast-tactiques-d-equipe]
-1 | 2 Rois 7:9 | Comme les lépreux de Samarie, nous avons trouvé une bonne nouvelle. La garder pour nous, ce n’est pas bien.
-2 | Actes 2:46-47 | L’Église primitive se réunissait dans les maisons, et chaque jour le Seigneur ajoutait des sauvés. Les petits groupes restent une stratégie gagnante.
-3 | Actes 2:42 | La Parole, la communion fraternelle, le pain partagé et la prière : voilà les matériaux avec lesquels l’Église primitive a été bâtie.
-4 | 2 Corinthiens 5:14 | Le moteur de l’évangélisation, c’est l’amour : l’amour de Christ nous presse d’aller vers les autres.
-5 | 1 Pierre 1:23 | La Parole de Dieu est une semence incorruptible : c’est elle qui fait naître et grandir la vie nouvelle dans les cœurs.
-6 | Matthieu 9:37-38 | La moisson est grande, et les ouvriers peu nombreux. Servir le Seigneur avec ferveur, c’est se donner pour ceux qui sont perdus.
-7 | Jean 4:35 | Le moment est venu de lancer le filet : les champs sont déjà blancs pour la moisson.
-8 | 2 Timothée 2:1 | Un leader chrétien est fort dans la grâce de Christ. Comme un bon soldat, il accepte l’effort pour former d’autres ouvriers.
-9 | Jean 20:21 | Comme le Père a envoyé Jésus, Jésus nous envoie. Notre mission n’a pas de frontières : c’est le monde entier.
+1 | 2 Rois 7:9 | Garder la bonne nouvelle pour soi ? « Nous n’agissons pas bien ! »
+2 | Actes 2:46-47 | L’Église a commencé dans les maisons. Chaque jour, des sauvés s’ajoutaient.
+3 | Actes 2:42 | La Parole, la communion, le pain, la prière : l’Église primitive n’avait besoin de rien d’autre.
+4 | 2 Corinthiens 5:14 | Ce n’est pas la culpabilité qui pousse à témoigner. C’est l’amour de Christ.
+5 | 1 Pierre 1:23 | La Parole de Dieu est une semence qui ne meurt jamais.
+6 | Matthieu 9:37-38 | La moisson est immense, les ouvriers manquent. Priez, puis allez.
+7 | Jean 4:35 | N’attendez pas « plus tard » : les champs sont déjà prêts.
+8 | 2 Timothée 2:1 | Un vrai leader n’est pas fort par lui-même. Il est fort dans la grâce.
+9 | Jean 20:21 | Le Père a envoyé Jésus. Jésus vous envoie.
 
 [fast-cles-de-reveil]
-1 | Ésaïe 60:1 | Dieu veut réveiller son peuple : avant la fin, sa gloire éclairera toute la terre. Le réveil commence quand on se lève pour briller.
-2 | Jean 6:63 | Le feu du réveil s’allume au contact de la Parole : les paroles de Jésus sont esprit et vie.
-3 | Actes 1:14 | Le réveil naît dans la prière, seul et ensemble. Comme les disciples avant la Pentecôte, persévérons d’un commun accord dans la prière.
-4 | Hébreux 3:13 | Un feu s’éteint si on le laisse seul. On attise la flamme en s’encourageant les uns les autres, chaque jour.
-5 | Luc 5:6 | Quand on obéit à la parole de Jésus, les filets se remplissent au point de se rompre. Le réveil conduit toujours à la mission.
-6 | Luc 11:13 | Des ossements desséchés ont repris vie quand l’Esprit a soufflé. Dieu donne son Esprit à ceux qui le lui demandent.
-7 | Hébreux 6:11-12 | Une petite équipe engagée est comme un moteur : la flamme, bien dirigée, produit une puissance incroyable. Ce qui compte, c’est le zèle jusqu’au bout.
-8 | Ésaïe 60:22 | Des disciples formés qui en forment d’autres deviennent une dynamite vivante : le plus petit deviendra un millier.
-9 | Apocalypse 18:1 | Avant la fin, la terre sera éclairée de la gloire de Dieu. Le réveil, c’est courir la course jusqu’au bout, porté par son Esprit.
+1 | Ésaïe 60:1 | Lève-toi, brille ! Le réveil commence par se lever.
+2 | Jean 6:63 | Le feu du réveil s’allume au contact de la Parole.
+3 | Actes 1:14 | Avant la Pentecôte, il y a eu dix jours de prière.
+4 | Hébreux 3:13 | Un feu laissé seul s’éteint. Encouragez-vous chaque jour.
+5 | Luc 5:6 | Un mot de Jésus, et les filets se rompent. Le réveil mène toujours à la mission.
+6 | Luc 11:13 | Des os desséchés se sont relevés. Dieu donne son Esprit à qui le demande.
+7 | Hébreux 6:11-12 | Une petite équipe unie va plus loin qu’une foule dispersée.
+8 | Ésaïe 60:22 | Le plus petit deviendra un millier. Dieu multiplie ce qu’on lui confie.
+9 | Apocalypse 18:1 | Avant la fin, la terre entière sera éclairée de sa gloire.
 
 [fast-leaders]
-1 | Luc 14:28 | Avant de bâtir, on calcule la dépense. Un bon leader prépare son groupe avec soin, et s’engage à aller jusqu’au bout.
-2 | Actes 19:10 | La formule de Paul à Éphèse : enseigner chaque jour quelques disciples fidèles. En deux ans, toute l’Asie a entendu la Parole.
+1 | Luc 14:28 | Avant de bâtir, on calcule. Un bon leader prépare, puis va jusqu’au bout.
+2 | Actes 19:10 | Quelques disciples, chaque jour, pendant deux ans : toute l’Asie a entendu.
 
 [disciple-incroyable]
-1 | Matthieu 28:19-20 | Faire des disciples n’est pas une option : c’est l’ordre de Jésus, et il promet d’être avec nous tous les jours.
-2 | Ésaïe 58:10 | Jésus se mêlait aux gens, répondait à leurs besoins et gagnait leur confiance, puis il disait : « Suis-moi. » C’est la seule méthode qui marche.
-3 | Jean 17:3 | Notre plus grand besoin n’est pas une méthode, mais connaître Dieu personnellement. Comme les vierges sages, il faut de l’huile en réserve.
-4 | Ecclésiaste 11:6 | On ne récolte que ce que l’on sème. Semer largement, sans savoir ce qui germera : c’est le cycle de l’évangélisation.
-5 | Exode 4:12 | Dieu n’appelle pas des orateurs parfaits. À Moïse comme à Jérémie, il dit : « Je serai avec ta bouche. »
-6 | Apocalypse 12:11 | Notre témoignage personnel a une force que rien ne remplace : on vainc par le sang de l’Agneau et par la parole de son témoignage.
-7 | Actes 8:35 | Comme Philippe avec l’Éthiopien, on peut ouvrir la Bible avec quelqu’un et lui annoncer Jésus, en partant du passage qu’il lit.
-8 | Ésaïe 50:4 | Une bonne étude biblique se prépare : savoir soutenir par la parole celui qui est abattu, et se faire tout à tous.
-9 | 2 Timothée 2:24 | Face aux objections, il ne s’agit pas de gagner un débat, mais de gagner une personne : avec douceur, patience et compassion.
-10 | Josué 24:15 | Tôt ou tard, chacun doit choisir. Aider quelqu’un à décider pour Christ, c’est l’inviter avec amour à faire ce choix aujourd’hui.
-11 | Actes 16:31 | L’Évangile tient en une bonne nouvelle : celui qui croit au Seigneur Jésus est sauvé, et il peut savoir qu’il a la vie éternelle.
-12 | 1 Pierre 5:2 | Un nouveau croyant a besoin d’un Ananias : quelqu’un qui l’accueille, l’accompagne et l’aide à grandir dans la foi.
-13 | Luc 15:4 | Le berger laisse les quatre-vingt-dix-neuf pour chercher la brebis perdue. Aucun membre éloigné n’est oublié de Dieu.
+1 | Matthieu 28:19-20 | Faire des disciples n’est pas une option. C’est le dernier ordre de Jésus.
+2 | Ésaïe 58:10 | Jésus aidait d’abord, gagnait la confiance, puis disait : « Suis-moi. »
+3 | Jean 17:3 | Notre plus grand besoin n’est pas une méthode. C’est de connaître Dieu.
+4 | Ecclésiaste 11:6 | Semez le matin, semez le soir. Vous ne savez pas ce qui germera.
+5 | Exode 4:12 | Dieu n’appelle pas les plus éloquents. Il dit : « Je serai avec ta bouche. »
+6 | Apocalypse 12:11 | On vainc par le sang de l’Agneau, et par la parole de son témoignage.
+7 | Actes 8:35 | Une Bible ouverte, un passage, et Jésus annoncé : c’est ainsi que tout commence.
+8 | Ésaïe 50:4 | Une bonne étude biblique n’est pas un cours. Elle relève quelqu’un d’abattu.
+9 | 2 Timothée 2:24 | On peut gagner un débat et perdre une âme. Choisissez l’âme.
+10 | Josué 24:15 | Tôt ou tard, il faut choisir. « Moi et ma maison, nous servirons l’Éternel. »
+11 | Actes 16:31 | « Crois au Seigneur Jésus, et tu seras sauvé. » L’Évangile tient en une phrase.
+12 | 1 Pierre 5:2 | Chaque nouveau croyant a besoin d’un Ananias.
+13 | Luc 15:4 | Le berger laisse les quatre-vingt-dix-neuf. Aucun égaré n’est oublié.

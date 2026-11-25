@@ -146,7 +146,7 @@
     }
     const vignette = l.image
       ? `<span class="etude-vignette">${image(l.image, "")}${num}</span>`
-      : `<span class="etude-vignette sans-image">${num}</span>`;
+      : `<span class="etude-vignette sans-image">${picto(s.niveau, "fond-picto")}${num}</span>`;
     return `<li class="etude${jours ? " avec-jours" : ""}">
       ${vignette}
       <p class="etude-titre">${fr(l.titre)}${l.sujet ? `<span class="cache"> — sujet : </span><span class="etude-sujet">${fr(l.sujet)}</span>` : ""}</p>
@@ -1737,7 +1737,7 @@
   }
 
   // ---------- shorts des études : une idée clé et un verset clé par étude (donnees/shorts.json, outils/shorts/) ----------
-  const VERSION_SHORTS = "1";
+  const VERSION_SHORTS = "2";
   let shortsCharges = null;
   function chargerShorts() {
     if (!shortsCharges) {
@@ -1821,7 +1821,8 @@
   function carteShort(x, rang, total) {
     const { serie: s, lecon: l } = x;
     const aime = aimes.a(x.id);
-    return `<article class="short" data-id="${esc(x.id)}" aria-posinset="${rang + 1}" aria-setsize="${total}" aria-labelledby="short-${rang}">
+    // une idée courte s’affiche en plus grand : c’est une phrase-choc
+    return `<article class="short${x.i.length <= 64 ? " court" : ""}" data-id="${esc(x.id)}" aria-posinset="${rang + 1}" aria-setsize="${total}" aria-labelledby="short-${rang}">
       <a class="short-lien" href="#/lire/${esc(x.f)}">
         ${x.img ? `<span class="short-fond" data-img="${esc(x.img)}" aria-hidden="true"></span>`
           : `<span class="short-fond sans-photo" data-niveau="${x.niveau}" aria-hidden="true">${picto(x.niveau, "fond-picto")}</span>`}

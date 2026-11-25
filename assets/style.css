@@ -640,6 +640,12 @@ a { color: var(--feuille); text-underline-offset: 0.18em; }
   border-radius: 9px;
   background: var(--recif-pale);
 }
+/* étude sans image (livrets FAST…) : le dégradé et le pictogramme de son étape, comme ses shorts */
+.etude-vignette.sans-image {
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--feuille), #0f2321 85%);
+}
+.etude-vignette.sans-image .fond-picto { top: 6%; right: -12%; width: 72%; opacity: 0.22; }
 .etude-num {
   position: absolute;
   left: 0.3rem;
@@ -2162,6 +2168,7 @@ body.en-shorts .onglets a[aria-current] { color: var(--blanc); }
   font-weight: 700;
 }
 .short-ouvrir .chevron { width: 1rem; height: 1rem; stroke-width: 2.4; }
+.short.court .short-idee { font-size: 2.05rem; line-height: 1.1; }
 .short.serre .short-idee { font-size: 1.4rem; }
 .short.serre .short-verset { font-size: 0.9rem; line-height: 1.4; }
 .short.serre .short-contenu { gap: 0.6rem; }
