@@ -1,0 +1,320 @@
+# Images des shorts : pour chaque short, la scène à peindre (en anglais, pour le modèle d’image).
+# Mêmes clés que shorts.txt. La scène suit le verset clé et l’idée clé du short, et le récit de l’étude :
+# décor, vêtements et époque bibliques exacts. « TAHITI: » en tête : une scène d’aujourd’hui, à Tahiti.
+# Le style commun et le cadrage (sujet dans le haut de l’image, bas plus sombre pour le texte)
+# sont ajoutés par outils/shorts/generer_images.py.
+
+[prendre-vie]
+1 | TAHITI: a young man kneeling on a grassy hill at sunrise with his open hands lifted, a warm beam of light falling into his palms like a gift, the lagoon far below
+2 | TAHITI: a young man standing firm on a black lava rock while a huge wave crashes around him, unmoved and calm, dawn light breaking through dark clouds above him
+3 | TAHITI: a young woman reading an open Bible at dawn on a wooden veranda, a cup of tea beside her, soft golden light on the pages, mist over the green mountains
+4 | TAHITI: a middle-aged man kneeling in prayer beside a rustic wooden bench in a quiet tropical garden at dawn, eyes closed, sincere, light falling through palm leaves
+5 | two rounded stone tablets of the law resting on a wooden table beside an open Bible, a red hibiscus flower laid on them with love, warm light from a window, the tablets show only faint carved lines with no readable letters
+6 | the healed man of Gadara, now calm and clothed, running down a hillside path toward his village by the Sea of Galilee to tell his family what Jesus did for him, first-century Galilee
+7 | TAHITI: five adults of different ages praying together hand in hand in a simple home at night, open Bibles on a low table, a soft warm glow in the middle of their circle
+
+[vers-jesus]
+- | the father of the prodigal son running with open arms to embrace his returning son on a dusty road at sunset, an ancient Middle Eastern village behind them
+
+[quete-certitude]
+1 | an ancient Hebrew prophet writing on a scroll by lamplight in a stone room, a soft beam of heavenly light falling on the scroll, reverent focus
+2 | an aged prophet holding an unrolled scroll on a mountaintop at dawn, looking over a vast panorama where the ziggurat of Babylon, Persian columns, a Greek temple and Roman arches stand along the far horizon
+3 | TAHITI: a woman praying calmly at a lit window at night while a violent storm rages over the sea outside, lightning in the distance, peace on her face
+4 | Jesus rising into the sky on a bright cloud above the Mount of Olives, his disciples looking up, two men in white robes standing beside them, first-century Judea
+5 | a person kneeling with relief at the foot of the cross on a hill at dawn, the cross bathed in warm light, a deep sense of peace
+6 | a butterfly emerging from its chrysalis on a branch at sunrise, wings slowly unfolding, dewdrops, soft green tropical background
+7 | a shepherd in first-century clothing carrying a lamb in his arms through a storm, sheltering it under his cloak, rays of light breaking through the clouds ahead
+8 | an angel flying through the sky above the earth carrying an open book, below him mountains, the sea and springs of water at sunrise, majestic
+9 | the prophet Daniel on the bank of the Ulai river receiving a vision from the angel Gabriel, the citadel of Susa in ancient Persia behind him
+10 | a vast heavenly courtroom of light: a throne of fire in the distance too bright to look at, countless angels in white, great ancient books lying open before the throne
+11 | a lighthouse on a rocky coast at night shining a steady beam that guides a small boat through a storm
+12 | Jesus walking with his disciples through a field of ripe grain on the Sabbath, the disciples plucking heads of grain, golden afternoon in first-century Galilee
+13 | the two stone tablets of the law standing firm on a granite rock on Mount Sinai while dark storm clouds swirl around them, a break in the clouds letting sunlight fall on the tablets, no readable letters
+14 | a man stepping out of an open prison door into bright sunlight, holding an open Bible, broken chains on the ground behind him
+15 | TAHITI: a family walking on the beach at sunrise carrying a basket of fresh fruit and vegetables, healthy and joyful
+16 | Adam being formed from the dust of the earth in the garden of Eden, a soft breath of golden light flowing into his face from above, seen from the side at a distance, his body covered by tall grass and flowers, lush garden at dawn
+17 | a great fire consuming thorns and weeds across a dark plain at night, while on a hill above a new green land glows in the light of dawn
+18 | TAHITI: a baptism by full immersion in the turquoise lagoon, a pastor in white lowering a young man in white into the water, people watching from the beach, morning light
+19 | TAHITI: a farmer standing in his taro garden at sunrise, hands raised in gratitude, looking over the green valley and the ocean
+20 | a young man walking through a dark narrow canyon toward a bright opening of light at the end, a clear path out
+21 | people of many nations and cultures holding open Bibles on a hilltop, looking up at an angel flying across the sky with an open book
+22 | a young prophet in biblical times receiving a vision at night, a radiant angel speaking to him, scrolls and an oil lamp beside him
+23 | a bride in a pure white robe, ancient Middle Eastern style, standing in a garden at dawn holding a lit oil lamp, waiting for the bridegroom
+24 | a man kneeling in repentance on a hill under a starry sky, a soft wind moving his robe and the grass around him, a gentle light touching him
+25 | the apostle John on the island of Patmos eating a small scroll from the hand of a mighty angel who stands with one foot on the sea and one on the land, a rainbow over the angel's head
+26 | four angels holding back the four winds at the corners of the earth while another angel rises from the east carrying a golden seal, sunrise over the world
+27 | a symbolic beast rising out of the earth in a vast open prairie, with two small horns like a lamb, under a dramatic sky, in the manner of a classic prophecy painting
+28 | a family keeping watch at night in a lit house, white garments ready, while hail and storm fall outside, a calm protective light around the house
+29 | a desolate dark earth with ruined cities under a black sky, while far above, in brilliant light, a multitude in white robes rises toward a radiant city
+30 | the redeemed in white robes walking beside the river of life toward a throne of light in the New Jerusalem, the tree of life on both banks, faces lifted in joy
+A | Jesus at the table of the last supper looking with deep tenderness at the disciple Philip, the other disciples around, oil lamps, upper room in Jerusalem
+B | TAHITI: a grandfather reading the Bible aloud to his attentive grandchildren on a veranda at dusk
+C | Jesus praying alone on a hillside at dawn above the Sea of Galilee while his disciples climb toward him, one of them reaching out to ask him to teach them
+D | the creation of the world seen from high above: light breaking over a newborn earth with oceans, mountains, forests and animals
+F | an old dusty library of human tradition books in shadow, and in the foreground one open Bible on a wooden lectern lit by a beam of light
+G | the garden of Eden at dawn: a clear river, fruit trees, gentle animals resting together, sunlight and abundance
+
+[explorateur]
+1 | TAHITI: teenagers sitting in a circle on the sand under palm trees, one reading aloud from an open Bible while the others listen, afternoon light
+2 | TAHITI: a teenager lying on the sand at night looking up at the Milky Way, silhouettes of palm trees and mountains, awe
+3 | the birth of Jesus at night in a simple stable in Bethlehem: Mary holding the newborn, Joseph beside her, a lamp, shepherds at the doorway
+4 | TAHITI: a teenage girl kneeling by her bed in the morning light to pray, window open onto green mountains
+5 | the first light of creation bursting over dark primordial waters, clouds parting, the first sunrise
+6 | TAHITI: a father, a mother and two children laughing together while preparing a meal outdoors under a mango tree
+7 | a once shining angel falling from heaven like lightning, his light turning to shadow, other angels watching in sorrow
+8 | Jesus carrying his cross on the road to Calvary, turning to look with love at a sinner kneeling by the roadside, first-century Jerusalem, respectful, no blood
+9 | the rich fool of the parable at night before his huge new barns full of grain, counting gold coins by lamplight, worried, a starry sky above
+10 | TAHITI: people on a beach looking up with joy and raised arms as Jesus appears on the clouds in glory with countless angels
+11 | the New Jerusalem: a radiant city with walls of jasper and gates of pearl, the river of life flowing beside fruit trees, happy people in white
+12 | Jesus sitting on a hillside in Galilee with a group of children, reading to them from a scroll and explaining with a warm smile
+13 | the parable of the two sons: in a vineyard one son works among the vines while his brother sits idle by the gate, their father looking on, ancient Judea
+14 | the parable of the unforgiving servant: a king tearing up a huge debt record while a servant kneels before him in gratitude, ancient palace
+15 | Pentecost: the disciples gathered in the upper room with small flames of fire above their heads, faces lit with joy
+16 | Philip and the Ethiopian official standing beside a chariot near water on a desert road, the Ethiopian pointing at the water with joy
+17 | a sower in first-century clothing scattering seed across a field at dawn, the seed falling on rich dark soil where green shoots grow strong
+18 | TAHITI: young people helping an elderly neighbor repair the roof of her house, carrying materials and smiling
+
+[vivre-avec-jesus]
+1 | Jesus seated on the Mount of Olives at sunset with his disciples gathered around him asking questions, the temple of Jerusalem in the distance
+2 | TAHITI: Jesus appearing on a great white cloud in the eastern sky, shining like lightning, a crowd on the island looking up
+3 | the resurrection at the return of Jesus: people rising from open graves on a tropical hillside and lifted with the living into the sky toward Jesus on the clouds, joyful reunions
+4 | the new earth: a radiant paradise valley with children playing beside a lion and a lamb, families embracing, waterfalls, no sorrow
+5 | TAHITI: a peaceful hillside cemetery at dawn, the first rays of sunrise touching the graves, a feeling of hope and waiting
+6 | the father of the prodigal son standing at the gate of his house at dusk, looking patiently down the long empty road, waiting
+7 | a narrow bridge in the shape of a cross spanning a deep chasm between a dark cliff and a bright green land, a person walking across it
+8 | John the Baptist baptizing a believer by full immersion in the Jordan river, people waiting on the riverbank, first-century Judea
+9 | Jesus standing as an advocate in a heavenly courtroom of light, his hand on the shoulder of a kneeling person, defending them before a throne of light
+10 | Jesus teaching the Sermon on the Mount to a large crowd on a green hillside above the Sea of Galilee
+11 | Jesus standing to read from a scroll in the synagogue of Nazareth on the Sabbath, people listening, warm light through the windows
+12 | at dawn after the Sabbath, Mary Magdalene and the other Mary walking toward the garden tomb carrying spices, the first light of the first day of the week
+13 | TAHITI: a family bringing the first fruits of their harvest, breadfruit, bananas and taro, to a small church on a Sabbath morning, giving with joy
+14 | TAHITI: a young man running along the beach at sunrise, healthy and full of energy, the mountains behind him
+15 | the woman of Revelation 12, clothed with the sun, the moon under her feet and a crown of twelve stars on her head, in the sky, symbolic painting
+
+[historacles]
+1 | Nebuchadnezzar's dream: a colossal statue with a head of gold, chest and arms of silver, belly and thighs of bronze, legs of iron and feet of iron mixed with clay, a great stone cut without hands striking its feet
+2 | on the road to Emmaus at sunset, the risen Jesus walking with two disciples and explaining the Scriptures to them, olive trees and a village ahead
+3 | Jesus coming in glory as King on the clouds of heaven, surrounded by countless angels, majestic
+4 | Lucifer, a splendid angel of light, standing on a heavenly mountain and lifting himself proudly toward a throne of light, other angels stepping back in dismay
+5 | Abraham on Mount Moriah untying his son Isaac from the altar, a ram caught by its horns in a thicket nearby, dawn light
+6 | Daniel standing calm in the lions' den, the lions lying peacefully around him, a beam of light falling from the opening above
+7 | a Hebrew family freed from slavery resting together at sunset on the Sabbath outside their tent in the wilderness, the Egyptian brick kilns and pyramids fading far behind them
+8 | on the new earth, a joyful family building their own house and planting a vineyard in a paradise valley, golden light
+9 | the witch of En-dor in a dark cave conjuring a ghostly apparition before King Saul, who kneels in fear, eerie candlelight
+10 | the ruins of Sodom and Gomorrah as a silent field of ashes beside the Dead Sea, the fire long gone out, a desolate landscape under a pale sky
+11 | Naaman the Syrian commander coming up from the Jordan river after dipping seven times, his skin restored like a child's, his servants rejoicing on the bank
+12 | the desolate earth during the thousand years: empty ruined cities, no people, a dark sky without light, the land formless and empty
+13 | on the plain of Dura, a vast crowd bowing down before a huge golden statue while three young Hebrew men stand upright, refusing to bow
+14 | the seventh day of creation: a peaceful garden of Eden at sunset, the work finished, animals resting, golden light
+15 | the wilderness tabernacle: a priest at the bronze altar offering a lamb, smoke rising, the tent of meeting behind, the camp of Israel in the desert
+16 | the heavenly sanctuary: Jesus as high priest in white linen entering the Most Holy Place through the inner veil, the ark of the covenant glowing between golden cherubim
+17 | two women in prophecy: on one side a pure woman in white holding a lamp on a mountain at dawn, on the other side a woman in scarlet and gold sitting on a beast in shadow
+18 | the windows of heaven opening above a field in ancient Israel, rain and light pouring onto the crops, a storehouse overflowing with grain
+19 | people walking out of a dark, crumbling golden city of Babylon toward a bright open countryside, an angel above calling them
+20 | young Daniel politely refusing a golden platter of rich meats and wine at the Babylonian court and choosing a simple plate of vegetables and water, his three friends beside him
+21 | John the Baptist preaching in the wilderness of Judea, wearing camel's hair clothing with a leather belt, crowds listening by the Jordan river
+22 | a man holding a scroll up to the light of an oil lamp and carefully comparing it with an open Bible, examining everything
+23 | the widow and her two sons pouring olive oil from one small jar into many borrowed clay jars in their stone house, the oil flowing without end
+24 | the apostles Peter and John standing boldly before the Sanhedrin council in Jerusalem, Peter speaking with courage
+A | the redeemed standing on a sea of glass mingled with fire before the throne of God, holding harps and singing their victory
+
+[excellence]
+1 | TAHITI: a woman on a cliff with hands raised in praise as the sun rises over Moorea, golden light across the sea
+2 | a runner in an ancient Greek stadium pressing forward toward the finish line, determined, dust in the air
+3 | TAHITI: a young woman climbing a mountain path toward the summit at dawn, not looking back, the valley in mist below
+4 | a long stone staircase carved into a mountain leading up to a bright summit, a person climbing step by step
+5 | TAHITI: a young man getting up at dawn and opening his window onto a beautiful sunrise, ready to start the day
+6 | a neglected house with a sagging roof and a garden overgrown with thorns beside a well-kept house with a flourishing garden, ancient village
+7 | TAHITI: two friends sitting on a bench by the lagoon, one listening attentively while the other speaks
+
+[fast-formation-de-base]
+1 | the merchant of the parable holding a magnificent pearl in his palm with joy, having sold everything he had, ancient marketplace
+2 | TAHITI: a man sitting alone on his veranda before sunrise with an open Bible and a notebook, praying, the mountains in mist
+3 | Abraham standing outside his tent at night looking up at a sky full of countless stars, trusting God's promise
+4 | a diligent farmer plowing his field at dawn, his hand on the plow, rows of sprouting crops behind him
+5 | a Roman soldier's sword resting across an open Bible, light glinting along the blade
+6 | TAHITI: a young woman sharing her story with a friend over coconut drinks at a small beach café, both smiling
+7 | Jesus choosing his twelve disciples on a mountainside in Galilee, the men gathering around him
+8 | an elder teaching a young man from a scroll by lamplight, and behind them small groups studying together, receding into the distance
+9 | a farmer's hands planting a young tree in rich soil at sunset, a large fruitful orchard grown behind him
+
+[rencontre-avec-jesus]
+1 | Jesus reaching out to touch a leper kneeling before him on a dusty road, the crowd shrinking back in shock, first-century Galilee
+2 | Jesus fasting in the Judean wilderness, weak but resolute, refusing the stones offered to him by a shadowy tempter
+3 | Peter, tired after a night without fish, casting his net again from the boat at the word of Jesus, who sits in the boat, morning light on the Sea of Galilee
+4 | the wedding at Cana: servants pouring water from large stone jars that has become red wine, Mary nearby, a festive courtyard
+5 | Nicodemus meeting Jesus at night on a rooftop in Jerusalem, an oil lamp between them, deep conversation
+6 | Jesus sitting by Jacob's well at noon, speaking with a Samaritan woman who holds a water jar
+7 | a royal official in rich clothes kneeling before Jesus in Cana, begging for his dying son, Jesus answering him kindly
+8 | Jesus on a road in Capernaum listening to Jewish elders and friends sent by a Roman centurion, the centurion's house visible in the background
+9 | Jesus placing his hands on the eyes of a blind man outside the village of Bethsaida, the man beginning to see clearly
+10 | Jesus speaking to a paralyzed man lying on a mat beside the pool of Bethesda with its porches, many sick people around
+11 | four men lowering their paralyzed friend on a mat through an opening in the roof into a crowded house where Jesus is teaching
+12 | Jesus healing a blind and mute man freed from a demon, the man now seeing and speaking, Pharisees whispering in the background
+13 | Jesus standing in a small boat on the stormy Sea of Galilee, raising his hand to calm the wind and the waves, terrified disciples clinging to the boat
+14 | the healed man of Gadara sitting calmly, clothed and in his right mind, at the feet of Jesus by the lakeshore, townspeople arriving in amazement
+15 | in a pressing crowd, a woman reaching out to touch the edge of Jesus' cloak, Jesus turning to look at her with compassion
+16 | John the Baptist in a dark prison cell listening to his disciples report what Jesus is doing, a ray of light through the barred window
+17 | Jesus blessing five loaves and two fish before a vast crowd seated on green grass by the Sea of Galilee
+18 | Jesus writing in the dust while the accusers drop their stones and walk away, a woman standing alone before him in the temple courts
+19 | a man born blind washing the mud from his eyes at the pool of Siloam and seeing light for the first time, joy on his face
+20 | Mary sitting at the feet of Jesus and listening, while Martha stands busy with dishes behind them, a simple home in Bethany
+21 | a healed Samaritan leper kneeling at the feet of Jesus to give thanks, while the nine others walk away in the distance
+22 | Jesus looking with love at a rich young man in fine robes who stands before him, hesitant, holding a money pouch
+23 | blind Bartimaeus by the roadside near Jericho crying out to Jesus as the crowd tries to silence him, Jesus stopping
+24 | Jesus stopping under a sycamore tree in Jericho and looking up at Zacchaeus perched in the branches
+25 | Mary breaking an alabaster jar and pouring precious perfume on the head of Jesus at a dinner in Bethany, the guests watching
+26 | Peter by a fire in a courtyard at night as a rooster crows, Jesus turning to look at him from across the courtyard with sorrowful love
+27 | Pilate on the judgment seat washing his hands before a shouting crowd, Jesus standing bound with dignity
+28 | Jesus on the cross at Calvary praying for those who crucify him, Roman soldiers below, darkened sky, respectful, no blood
+29 | two disciples at a table in Emmaus recognizing the risen Jesus as he breaks the bread, lamplight, amazement
+30 | the risen Jesus and Peter talking beside a charcoal fire on the shore of the Sea of Galilee at dawn, the other disciples and boats behind them
+
+[cep-sarment]
+1 | a strong old grapevine trunk with green branches growing from it, heavy with ripe purple grapes, morning sunlight
+2 | a woman gathering abundant ripe grapes from a flourishing vine into a basket, warm morning light in the vineyard
+3 | a vineyard at harvest time, workers carrying baskets full of grapes, the owner of the vineyard smiling
+4 | a vinedresser carefully pruning a grapevine with a small knife, cut branches on the ground, new buds on the vine
+5 | close-up of a young branch firmly joined to an old twisted vine, fresh green leaves and small clusters of grapes, soft light
+6 | vine branches spreading along a long trellis across a sunlit vineyard, fruit hanging everywhere within reach of passers-by
+7 | Jesus walking with his disciples through a vineyard at night by torchlight, speaking to them about the vine and the branches
+8 | friends laughing together at a joyful meal in a vineyard at sunset, grapes and bread on the table
+9 | TAHITI: church members bringing food and help to a family in need, warm embraces at the door of a simple house
+10 | a farmer swinging a sickle in a golden field of ripe wheat at harvest time, sunset
+
+[daniel]
+#1 | young Daniel and his three friends in the court of Babylon, Daniel speaking respectfully to the chief official, palace walls of blue glazed bricks
+#2 | Daniel and his three friends praying together at night on a rooftop in Babylon under the stars, a soft light falling on them
+#3 | Daniel standing before King Nebuchadnezzar on his throne, explaining the dream of the great statue, which appears as a faint vision behind them
+#4 | three young Hebrews walking unharmed in the fiery furnace with a fourth radiant figure beside them, King Nebuchadnezzar looking in astonished
+#5 | King Nebuchadnezzar, restored after his humiliation, lifting his eyes to heaven in praise on the palace roof of Babylon
+#6 | a mysterious hand writing strange glowing script on the plaster wall of the banquet hall at Belshazzar's feast, the king terrified, golden vessels on the tables
+#7 | Daniel kneeling in prayer at an open upper window facing Jerusalem while men spy on him from the street below
+#8 | Daniel's vision of four great beasts rising from a stormy sea: a lion with eagle's wings, a bear, a leopard with four wings and four heads, and a terrible fourth beast with iron teeth and ten horns, a little horn with eyes among them
+#9 | one like a Son of man coming with the clouds of heaven before a throne of brilliant light, receiving an everlasting kingdom, multitudes of angels
+#10 | Daniel's vision: a ram with two horns charging and a male goat with a great horn between its eyes racing across the earth without touching the ground, ancient Persia
+#11 | Daniel kneeling in prayer with the scroll of Jeremiah open beside him as the angel Gabriel arrives at the time of the evening offering
+#12 | Daniel by the great river Tigris seeing a glorious heavenly being clothed in linen with a golden belt, his face like lightning, Daniel falling to his knees
+#13 | armies of rival kings clashing far away across ancient lands, while in the foreground a small group of faithful people stand firm in prayer
+#14 | an aged Daniel sealing a scroll with wax by lamplight in a quiet room, the window opening onto a distant world full of travelers and movement
+
+[sanctuaire]
+1 | the wilderness tabernacle in the middle of the camp of Israel, a pillar of cloud above it, tents of the tribes all around, desert mountains
+2 | a priest at the bronze altar of burnt offering in the tabernacle courtyard, an Israelite with his hand on the head of a lamb, smoke rising toward the sky
+3 | the bronze laver in the tabernacle courtyard, a priest in white linen washing his hands before entering the tent, light shimmering on the water
+4 | the tabernacle tent covered with skins, its entrance curtain of blue, purple and scarlet, the cloud of glory resting above it
+5 | inside the holy place of the tabernacle: the golden seven-branched lampstand glowing, the table of bread, the golden altar of incense before the veil
+6 | the Most Holy Place: the golden ark of the covenant with two golden cherubim on the mercy seat, a brilliant light shining between them
+7 | the cross on Calvary at dusk seen from afar, the sky darkened, a sense of sacrifice and love, respectful, no blood
+8 | the Day of Atonement: the high priest in white linen sprinkling blood before the ark in the Most Holy Place, incense smoke filling the room
+9 | Jesus in the robes of a high priest with the breastplate of twelve stones entering a heavenly temple of light
+10 | the rebuilding of the walls of Jerusalem after the decree of the Persian king, workers laying stones, Nehemiah overseeing the work
+11 | the first Passover in Egypt: a Hebrew family eating the lamb with unleavened bread at night, sandals on and staff in hand, blood on the doorpost
+12 | Jesus, the high priest, reaching out with compassion to a weary person who approaches a throne of grace bathed in light
+
+[sept-eglises]
+- | the apostle John on Patmos fallen at the feet of the glorified Christ, who stands among seven golden lampstands in a long robe with a golden sash, holding seven stars in his right hand, his face shining like the sun
+
+[frequentations]
+1 | the young shepherd Jacob gazing with love at Rachel as she waters her father's sheep at a well, ancient Haran, golden light
+2 | the prophet Samuel anointing the young shepherd David with oil while his tall older brothers stand aside
+3 | two oxen of very different sizes yoked together, struggling to plow a field
+4 | TAHITI: a married couple in their forties walking hand in hand on the beach at sunset, laughing together
+5 | Jesus praying in the garden of Gethsemane at night, kneeling by a rock, surrendered to his Father's will
+6 | TAHITI: a young couple talking honestly face to face on a bench, open and sincere, respectful distance
+7 | TAHITI: a young man holding an umbrella over a young woman as they walk side by side in the rain, protective and respectful
+8 | the Samaritan woman leaving her water jar at the well and listening to Jesus, sunlight, hope in her eyes
+9 | King David on the palace roof in Jerusalem at dusk, troubled, the campfires of his army on the distant horizon
+
+[enfants]
+2 | Enoch walking at sunset along a path holding the hand of his small son, a soft light ahead of them, ancient times
+3 | TAHITI: a mother holding her toddler close under a large tree, the child looking up at her with trust
+4 | TAHITI: a father kneeling to speak gently but firmly to his young son, eye to eye, in a garden
+5 | TAHITI: a toddler folding her small hands in prayer beside her mother at bedtime, soft lamplight
+6 | TAHITI: children reading the Bible with their parents on the living room floor, laughing, colorful cushions
+7 | TAHITI: a family singing hymns together in the evening with a ukulele, the youngest on his father's knees
+8 | TAHITI: a family on a Sabbath afternoon walk in a lush valley beside a waterfall, the children exploring nature
+9 | TAHITI: children in their best clothes running happily into a small white church decorated with flowers on a Sabbath morning
+10 | TAHITI: parents kneeling at the bedside of their sleeping children at night, praying for them
+11 | TAHITI: a child reading a beautiful picture book under a flowering tree, a tablet screen left aside, sunlight
+12 | TAHITI: a teacher beginning the school day with prayer with her pupils in a small classroom, an open Bible on her desk
+
+[homme-de-dieu]
+1 | the joined hands of a husband and wife holding a strong three-strand cord, their wedding rings visible, warm light
+2 | TAHITI: a father standing firm on a rocky point by the sea at dawn, his young son on his shoulders, strong and gentle
+3 | TAHITI: a father patiently teaching his young son to fish from a canoe in the lagoon
+4 | Abraham teaching his household at the entrance of his tent under the oaks of Mamre, children and servants listening
+5 | Abraham and his family building a stone altar and worshiping God in the land of Canaan, tents behind them, sunrise
+
+[convoitise]
+1 | a shepherd lifting a small lamb to his chest and looking at it tenderly, green pastures
+2 | a lamb at the altar in the tabernacle courtyard, and in the doorway of the tent behind it the high priest standing alive and watchful
+3 | the empty cross at sunrise with a white linen cloth draped over it, light flooding the hill
+4 | a man kneeling in tears of repentance at the entrance of the tabernacle in the evening, the light of the holy place still glowing through the open door
+6 | a strong walled ancient city on a hill at dawn, its gates closed and watchmen on the walls
+7 | TAHITI: a young man turning his face away from a glowing phone screen and looking out at a peaceful sunrise over the lagoon
+
+[trinite]
+1 | the church of Antioch praying and fasting, laying hands on Barnabas and Saul to send them out, a soft light descending on them
+2 | three streams of light converging into one brilliant light in the sky above the ocean at dawn
+3 | a radiant figure of light creating the stars and galaxies in the vastness of space, cosmic dawn
+4 | a father in ancient Israel reciting the Shema with his family at the door of their house, his hand on the doorpost
+5 | a white dove descending gently through rays of light toward a person praying
+6 | a road leading out of Jerusalem across the land toward distant seas and islands, travelers with staffs walking out to the ends of the earth
+7 | the baptism of Jesus in the Jordan: Jesus coming up out of the water, the Spirit descending like a dove, light breaking from the opened heavens
+8 | the disciples gathered in a room in Jerusalem, a warm comforting light filling the room, peace on their faces
+9 | a gentle rain falling over ripe golden fields at harvest, the sun breaking through, a rainbow
+10 | a man at a crossroads at night hesitating between a path toward a warm light where a figure calls him and a path into darkness
+11 | Pentecost: Peter preaching to a crowd of many nations in Jerusalem, each person hearing in his own language, amazed faces
+12 | the single steady flame of an oil lamp beside an open Bible, while in the blurred background a frenzied crowd moves under flashing lights
+13 | Jesus in the temple courts of Jerusalem declaring that before Abraham was, he is, the leaders picking up stones, Jesus calm and majestic
+15 | the risen Christ stepping out of the tomb at dawn, the firstborn from the dead, light radiating around him
+16 | the prophet Isaiah writing his prophecy on a scroll at night, a vision above him of a newborn child surrounded by light
+
+[fast-kit-de-survie]
+1 | TAHITI: sunrise over the lagoon, a fisherman pushing his canoe into the calm water under the first rays of a new morning
+2 | Peter stepping out of the boat onto the water with his eyes fixed on Jesus, who walks toward him on the Sea of Galilee
+3 | young David with his sling facing the giant Goliath in the valley of Elah, courageous
+4 | a traveler following a clear path through a mountain landscape behind a shepherd who leads the way, the fog lifting
+5 | TAHITI: a small group of friends encouraging one another with a group hug after a Bible study in a home
+
+[fast-tactiques-d-equipe]
+1 | four lepers at night in the abandoned Aramean camp outside Samaria, holding gold and food, realizing they must go tell the city
+2 | the first Christians sharing a meal with joy in a courtyard in Jerusalem, breaking bread together, oil lamps, an open door
+3 | an apostle reading from a scroll to believers gathered in a house in Jerusalem, people praying together, bread on the table
+4 | the apostle Paul warmly embracing a new believer in a street of an ancient city, compassion on his face
+5 | a green shoot sprouting from the pages of an open Bible and rising toward the light
+6 | Jesus looking with compassion at a vast golden harvest field with very few workers in it
+7 | Jesus with his disciples on a hill in Samaria pointing toward fields white for harvest and townspeople coming toward them
+8 | the apostle Paul in chains handing a scroll to young Timothy and encouraging him, light through a Roman prison window
+9 | the risen Jesus appearing to his disciples in a locked room with his hands extended, sending them out, dawn light through the window
+
+[fast-cles-de-reveil]
+1 | TAHITI: a young woman rising from the shadows into the light of the sunrise over the mountains, arms open
+2 | a person reading the Bible by firelight, the flames reflecting warmly on the pages
+3 | the disciples with Mary and the women praying together in the upper room in Jerusalem before Pentecost
+4 | people adding wood together to a campfire at night to keep the flames bright, glowing coals
+5 | Peter and his companions hauling in a net so full of fish that it begins to break, a second boat coming to help, Sea of Galilee
+6 | the prophet Ezekiel in the valley of dry bones watching the bones come together and the breath of life entering them, wind blowing
+7 | TAHITI: a team of rowers in a Polynesian outrigger canoe paddling in perfect unison at sunrise
+8 | a single small candle lighting many other candles in a dark room, the light multiplying
+9 | a mighty angel descending from heaven, the whole earth lit up with his glory
+
+[fast-leaders]
+1 | a builder sitting with plans by lamplight, calculating the cost before building a tower, the foundation stones ready beside him
+2 | the apostle Paul teaching daily in the lecture hall of Tyrannus in Ephesus, a group of disciples writing on scrolls
+
+[disciple-incroyable]
+1 | the risen Jesus on a mountain in Galilee giving the great commission to his eleven disciples, pointing toward the horizon
+2 | Jesus sharing bread with poor people and touching the sick in a village street, compassion
+3 | the parable of the ten virgins: five wise young women with brightly burning lamps and extra oil, waiting at night for the bridegroom
+4 | a farmer sowing seed by hand at sunset, part of the field already sprouting behind him
+5 | Moses at the burning bush, hesitant, kneeling with his shoes removed, the voice of God coming from the fire
+6 | the apostle Paul telling the story of his conversion before King Agrippa in a Roman hall, passionate
+7 | Philip sitting beside the Ethiopian official in his chariot on a desert road, explaining the scroll of Isaiah
+8 | TAHITI: a woman giving a Bible study to a weary neighbor at a kitchen table, her hand gently on the neighbor's arm, an open Bible between them
+9 | TAHITI: two men having a calm and respectful conversation on a porch, one listening patiently as the other expresses his doubts, an open Bible between them
+10 | Joshua standing before the assembled tribes of Israel at Shechem, his family beside him, declaring that they will serve the Lord
+11 | the Philippian jailer kneeling before Paul and Silas at night after the earthquake, the prison doors open, chains fallen
+12 | Ananias laying his hands on Saul of Tarsus in a house in Damascus, Saul's sight restored
+13 | a shepherd carrying a lost sheep on his shoulders back across rocky hills at dusk, joyful

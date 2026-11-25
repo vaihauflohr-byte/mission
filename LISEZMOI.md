@@ -101,7 +101,19 @@ puis augmenter `VERSION_RECHERCHE` dans `assets/app.js`. Positions de lecture : 
 python3 outils/shorts/construire_shorts.py
 ```
 
-Le script prend le texte du verset dans `donnees/bible/` (sans le titre des psaumes, vers par vers pour la poésie), vérifie que l’étude le cite (liens de versets de `lecture/<document>.html`) et écrit `donnees/shorts.json` (269 shorts, 100 Ko) ; il s’arrête sur toute erreur. Augmenter ensuite `VERSION_SHORTS` dans `assets/app.js` (et le `?v=` de `donnees/shorts.json` dans `sw.js`). Les études sans mode lecture (*Les secrets de la prophétie*, *Fiabilité de la Bible*) et sans verset cité n’ont pas de short. Les livrets FAST n’ont qu’une couverture en guise d’image : leurs shorts ont un fond dégradé et le pictogramme de l’étape. Shorts aimés : `localStorage`, clé `mission.shorts.aimes` ; filtre choisi : `sessionStorage`, `mission.shorts.filtre`.
+Le script prend le texte du verset dans `donnees/bible/` (sans le titre des psaumes, vers par vers pour la poésie), vérifie que l’étude le cite (liens de versets de `lecture/<document>.html`) et écrit `donnees/shorts.json` (269 shorts, 100 Ko) ; il s’arrête sur toute erreur. Augmenter ensuite `VERSION_SHORTS` dans `assets/app.js` (et le `?v=` de `donnees/shorts.json` dans `sw.js`). Les études sans mode lecture (*Les secrets de la prophétie*, *Fiabilité de la Bible*) et sans verset cité n’ont pas de short. Shorts aimés : `localStorage`, clé `mission.shorts.aimes` ; filtre choisi : `sessionStorage`, `mission.shorts.filtre`.
+
+**Images des shorts.** Chaque short a sa propre image, peinte pour lui avec fal.ai : `outils/shorts/images.txt` décrit, pour chaque short (mêmes clés que `shorts.txt`), la scène à peindre, en anglais, fidèle au verset clé, à l’idée clé et au récit de l’étude (décor, vêtements et époque bibliques ; `TAHITI:` en tête pour une scène d’aujourd’hui à Tahiti). Le script ajoute le style commun (celui des images des études) et le cadrage vertical : sujet dans le haut, bas plus sombre pour le texte.
+
+```
+FAL_KEY=… python3 outils/shorts/generer_images.py --essai 8      # un essai, 8 séries différentes
+FAL_KEY=… python3 outils/shorts/generer_images.py                # toutes celles qui manquent
+FAL_KEY=… python3 outils/shorts/generer_images.py --refaire daniel-8 historacles-9
+python3 outils/shorts/generer_images.py --planches               # planches contact, pour tout relire
+python3 outils/shorts/construire_shorts.py                       # les shorts prennent leur image
+```
+
+Images : `assets/images/shorts/<série>-<numéro>.webp`, 720 × 1280 (moins d’un mégapixel : fal facture au mégapixel entamé). Modèle : `fal-ai/flux/dev` par défaut (`--modele` ou `FAL_MODELE` pour un autre) ; modèle, graine et scène de chaque image dans `outils/shorts/images.json`. La clé fal vient de `FAL_KEY` (ou `~/.fal_key`), jamais du dépôt ; l’espace de travail doit avoir l’accès réseau à `fal.run` et `fal.media`. Tant qu’un short n’a pas son image, il prend celle de l’étude ; les livrets FAST, dont l’image est une couverture, prennent un fond dégradé et le pictogramme de l’étape.
 
 ## Mettre la bibliothèque à jour
 
@@ -144,6 +156,7 @@ Une image qui manque est simplement masquée.
 | `assets/bible.js`, `donnees/bible/` | la Bible (Louis Segond 1910) affichée quand on touche une référence |
 | `donnees/recherche.json` | index des mots du texte des études, pour la recherche (généré) |
 | `outils/shorts/shorts.txt`, `donnees/shorts.json` | shorts : idée clé et verset clé de chaque étude (écrits à la main), et leur version publiée (générée) |
+| `outils/shorts/images.txt`, `assets/images/shorts/` | shorts : scène de chaque image (écrite à la main) et images peintes avec fal.ai (`generer_images.py`) |
 | `outils/` | générateur du catalogue, import et corrections des documents, images, mode lecture (`outils/lecture/`), texte de la Bible (`outils/bible/`), index de recherche (`outils/recherche/`) |
 | `sw.js`, `manifest.webmanifest`, `assets/captures/` | application installable, hors ligne ; captures montrées dans la fenêtre d’installation (Android) |
 | `assets/icones/` | icônes de l’appli (feuille), symbole adventiste, code QR de `mission.ka-ilei.com` |

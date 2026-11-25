@@ -170,14 +170,20 @@ def main():
         if (sid, i) in vus:
             erreurs.append(f"ligne {n} : étude {cle} de {sid} en double")
         vus.add((sid, i))
-        shorts.append({"s": sid, "n": i, "f": d["f"], "r": ref, "t": t, "i": idee})
+        x = {"s": sid, "n": i, "f": d["f"], "r": ref, "t": t, "i": idee}
+        # son image, peinte pour lui (outils/shorts/generer_images.py) ; sinon, le site prend celle de l’étude
+        k = f"{sid}-{'1' if cle == '-' else cle.lstrip('#')}".lower()
+        if (RACINE / f"assets/images/shorts/{k}.webp").exists():
+            x["p"] = k
+        shorts.append(x)
     if erreurs:
         print("\n".join(erreurs), file=sys.stderr)
         raise SystemExit(1)
     shorts.sort(key=lambda x: (rang[x["s"]], x["n"]))
     SORTIE.write_text(json.dumps({"shorts": shorts}, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     longs = sorted(shorts, key=lambda x: -len(x["t"]))[:5]
-    print(f"{len(shorts)} shorts → {SORTIE.relative_to(RACINE)} ({SORTIE.stat().st_size // 1024} ko)")
+    print(f"{len(shorts)} shorts → {SORTIE.relative_to(RACINE)} ({SORTIE.stat().st_size // 1024} ko), "
+          f"{sum('p' in x for x in shorts)} avec leur propre image")
     print("versets les plus longs :", ", ".join(f"{x['r']} ({len(x['t'])})" for x in longs))
     print("idées les plus longues :", ", ".join(f"{x['s']} {x['n'] + 1} ({len(x['i'])})"
                                              for x in sorted(shorts, key=lambda x: -len(x["i"]))[:5]))

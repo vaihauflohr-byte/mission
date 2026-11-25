@@ -1,0 +1,204 @@
+#!/usr/bin/env python3
+"""Images des shorts avec fal.ai : outils/shorts/images.txt → assets/images/shorts/<clé>.webp
+
+Une image verticale (720 × 1280) par short, peinte d’après la scène écrite dans images.txt, elle-même
+tirée du verset clé et de l’idée clé du short (shorts.txt). Le sujet est dans le haut de l’image : le bas
+reçoit le texte du short.
+
+    FAL_KEY=… python3 outils/shorts/generer_images.py                 # toutes les images qui manquent
+    FAL_KEY=… python3 outils/shorts/generer_images.py --essai 8       # un essai : 8 images variées
+    FAL_KEY=… python3 outils/shorts/generer_images.py historacles-7   # celles-là seulement
+    FAL_KEY=… python3 outils/shorts/generer_images.py --refaire historacles-7 daniel-8
+    python3 outils/shorts/generer_images.py --planches                # planches contact pour relire
+
+La clé fal.ai vient de FAL_KEY (ou de ~/.fal_key) : jamais dans le dépôt. Le modèle, la graine et la
+scène de chaque image sont notés dans outils/shorts/images.json, pour pouvoir refaire la même.
+Ensuite : python3 outils/shorts/construire_shorts.py (les shorts prennent leur image), puis monter
+VERSION_SHORTS dans assets/app.js.
+"""
+import argparse
+import concurrent.futures as cf
+import io
+import json
+import os
+import random
+import re
+import sys
+import time
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+from PIL import Image, ImageDraw, ImageFont
+
+RACINE = Path(__file__).resolve().parents[2]
+ICI = RACINE / "outils/shorts"
+DOSSIER = RACINE / "assets/images/shorts"
+JOURNAL = ICI / "images.json"
+LARGEUR, HAUTEUR = 720, 1280  # moins d’un mégapixel : fal facture au mégapixel entamé
+
+STYLE = ("Warm painterly digital illustration in the style of a modern illustrated Bible storybook, "
+         "soft natural light, rich but gentle colors, respectful and expressive figures, "
+         "historically accurate clothing and setting, simple uncluttered composition. "
+         "Tall vertical composition: the main subject in the upper half of the frame, "
+         "the lower third calmer and darker, simple ground or shadow. "
+         "No text, no letters, no words, no captions, no watermark.")
+TAHITI = "Tahitian Polynesian people of today, lush green mountains and turquoise lagoon of Tahiti, "
+
+
+def lire(fichier):
+    """[série] puis « clé | … | … » : {(série, clé): [champs]}"""
+    serie, lignes = None, {}
+    for n, brut in enumerate((ICI / fichier).read_text(encoding="utf-8").splitlines(), 1):
+        ligne = brut.strip()
+        if not ligne or ligne == "#" or ligne.startswith("# "):
+            continue
+        m = re.fullmatch(r"\[([a-z0-9-]+)\]", ligne)
+        if m:
+            serie = m.group(1)
+            continue
+        champs = [x.strip() for x in ligne.split("|")]
+        if not serie or len(champs) < 2:
+            raise SystemExit(f"{fichier}, ligne {n} : « clé | … » attendu")
+        if (serie, champs[0]) in lignes:
+            raise SystemExit(f"{fichier}, ligne {n} : {serie} {champs[0]} en double")
+        lignes[(serie, champs[0])] = champs[1:]
+    return lignes
+
+
+def cle_image(serie, cle):
+    """« historacles », « 7 » → historacles-7 ; « #3 » → daniel-3 ; « - » → vers-jesus-1."""
+    c = "1" if cle == "-" else cle.lstrip("#")
+    return f"{serie}-{c}".lower()
+
+
+def scenes():
+    shorts, images = lire("shorts.txt"), lire("images.txt")
+    manque = sorted(set(shorts) - set(images))
+    trop = sorted(set(images) - set(shorts))
+    if manque or trop:
+        raise SystemExit("images.txt ne suit pas shorts.txt :\n"
+                         + "".join(f"  sans scène : {s} {c}\n" for s, c in manque)
+                         + "".join(f"  scène sans short : {s} {c}\n" for s, c in trop))
+    res = []
+    for (serie, cle), (scene,) in images.items():
+        texte = TAHITI + scene[len("TAHITI:"):].strip() if scene.startswith("TAHITI:") else scene
+        res.append({"cle": cle_image(serie, cle), "prompt": f"{texte[0].upper()}{texte[1:]}. {STYLE}"})
+    return res
+
+
+def charger_journal():
+    return json.loads(JOURNAL.read_text(encoding="utf-8")) if JOURNAL.exists() else {}
+
+
+def generer(it, modele, cle_fal):
+    dst = DOSSIER / f"{it['cle']}.webp"
+    graine = it.get("graine") or random.randrange(1, 2**31)
+    corps = {"prompt": it["prompt"], "image_size": {"width": LARGEUR, "height": HAUTEUR}, "num_images": 1,
+             "seed": graine, "enable_safety_checker": True, "output_format": "jpeg"}
+    if modele == "fal-ai/flux/dev":
+        corps.update(num_inference_steps=28, guidance_scale=3.5)
+    erreur = ""
+    for essai in range(3):
+        try:
+            req = urllib.request.Request(f"https://fal.run/{modele}", data=json.dumps(corps).encode(),
+                                         headers={"Authorization": f"Key {cle_fal}", "Content-Type": "application/json"})
+            r = json.load(urllib.request.urlopen(req, timeout=240))
+            if (r.get("has_nsfw_concepts") or [False])[0]:
+                return it["cle"], "FILTRÉE (refaire avec une autre scène)", None
+            brut = urllib.request.urlopen(r["images"][0]["url"], timeout=120).read()
+            img = Image.open(io.BytesIO(brut)).convert("RGB")
+            if img.size != (LARGEUR, HAUTEUR):
+                img = img.resize((LARGEUR, HAUTEUR), Image.LANCZOS)
+            img.save(dst, "WEBP", quality=72, method=6)
+            return it["cle"], "ok", {"modele": modele, "graine": graine, "prompt": it["prompt"]}
+        except urllib.error.HTTPError as e:
+            erreur = f"HTTP {e.code} {e.read()[:300]!r}"
+            if 400 <= e.code < 500 and e.code != 429:
+                break
+        except Exception as e:  # réseau, délai…
+            erreur = repr(e)[:300]
+        time.sleep(4 * (essai + 1))
+    return it["cle"], "ÉCHEC " + erreur, None
+
+
+def planches(dossier_sortie, par_planche=24):
+    """Planches contact (6 × 4 vignettes, avec leur clé) pour relire les images."""
+    fichiers = sorted(DOSSIER.glob("*.webp"))
+    dossier_sortie.mkdir(parents=True, exist_ok=True)
+    try:
+        police = ImageFont.truetype("DejaVuSans-Bold.ttf", 20)
+    except OSError:
+        police = ImageFont.load_default()
+    l, h, marge = 240, 427, 34
+    for p in range(0, len(fichiers), par_planche):
+        lot = fichiers[p: p + par_planche]
+        feuille = Image.new("RGB", (6 * l, 4 * (h + marge)), "white")
+        d = ImageDraw.Draw(feuille)
+        for i, f in enumerate(lot):
+            x, y = (i % 6) * l, (i // 6) * (h + marge)
+            feuille.paste(Image.open(f).convert("RGB").resize((l, h)), (x, y + marge))
+            d.text((x + 6, y + 6), f.stem, fill="black", font=police)
+        sortie = dossier_sortie / f"planche-{p // par_planche + 1:02d}.jpg"
+        feuille.save(sortie, quality=82)
+        print(sortie)
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("cles", nargs="*", help="clés d’images (ex. historacles-7) ; toutes par défaut")
+    ap.add_argument("--modele", default=os.environ.get("FAL_MODELE", "fal-ai/flux/dev"))
+    ap.add_argument("--essai", type=int, help="n’en faire que quelques-unes, prises dans des séries différentes")
+    ap.add_argument("--refaire", action="store_true", help="refaire les images demandées même si elles existent")
+    ap.add_argument("--meme-graine", action="store_true", help="avec --refaire : garder la graine notée")
+    ap.add_argument("--planches", nargs="?", const=str(Path.home() / "travail/planches"),
+                    help="faire les planches contact (dans ce dossier) au lieu de générer")
+    ap.add_argument("--paralleles", type=int, default=4)
+    a = ap.parse_args()
+    if a.planches:
+        planches(Path(a.planches))
+        return
+    toutes = scenes()
+    par_cle = {it["cle"]: it for it in toutes}
+    inconnues = [c for c in a.cles if c not in par_cle]
+    if inconnues:
+        raise SystemExit(f"clés inconnues : {', '.join(inconnues)}")
+    choix = [par_cle[c] for c in a.cles] if a.cles else toutes
+    if a.essai:
+        vues, lot = set(), []
+        for it in choix:
+            serie = it["cle"].rsplit("-", 1)[0]
+            if serie not in vues:
+                vues.add(serie)
+                lot.append(it)
+        choix = lot[: a.essai]
+    journal = charger_journal()
+    DOSSIER.mkdir(parents=True, exist_ok=True)
+    if not a.refaire:
+        choix = [it for it in choix if not (DOSSIER / f"{it['cle']}.webp").exists()]
+    elif a.meme_graine:
+        choix = [dict(it, graine=journal.get(it["cle"], {}).get("graine")) for it in choix]
+    if not choix:
+        print("Rien à faire : toutes ces images existent (--refaire pour les refaire).")
+        return
+    fichier_cle = Path.home() / ".fal_key"
+    cle_fal = os.environ.get("FAL_KEY") or (fichier_cle.read_text().strip() if fichier_cle.exists() else "")
+    if not cle_fal:
+        raise SystemExit("Clé fal.ai manquante : FAL_KEY=… python3 outils/shorts/generer_images.py (ou ~/.fal_key)")
+    print(f"{len(choix)} image(s) avec {a.modele}, {LARGEUR} × {HAUTEUR}", flush=True)
+    echecs = 0
+    with cf.ThreadPoolExecutor(a.paralleles) as ex:
+        for cle, etat, note in ex.map(lambda it: generer(it, a.modele, cle_fal), choix):
+            print(cle, etat, flush=True)
+            if note:
+                journal[cle] = note
+                JOURNAL.write_text(json.dumps(journal, ensure_ascii=False, indent=1, sort_keys=True) + "\n",
+                                   encoding="utf-8")
+            else:
+                echecs += 1
+    print(f"fini : {len(choix) - echecs} faite(s), {echecs} en échec")
+    sys.exit(1 if echecs else 0)
+
+
+if __name__ == "__main__":
+    main()

@@ -1746,8 +1746,9 @@
         .then((d) => d.shorts.map((x) => {
           const s = series[x.s];
           const l = s && s.lecons[x.n];
-          // les couvertures des livrets FAST sont des pages de titre : un fond de couleur leur va mieux
-          const img = l.image || (s.id.startsWith("fast-") ? "" : s.image);
+          // l’image peinte pour le short ; sinon celle de l’étude ; les couvertures des livrets FAST,
+          // des pages de titre, laissent la place à un fond de couleur
+          const img = x.p ? `shorts/${x.p}` : l.image || (s.id.startsWith("fast-") ? "" : s.image);
           return s && l && aTexte(x.f) ? { ...x, id: x.f, serie: s, lecon: l, niveau: s.niveau, img } : null;
         }).filter(Boolean));
       shortsCharges.catch(() => { shortsCharges = null; });
@@ -1787,7 +1788,7 @@
       return oui;
     },
   };
-  const imgShort = (nom) => `assets/images/${encodeURIComponent(nom)}.webp`;
+  const imgShort = (nom) => `assets/images/${nom.split("/").map(encodeURIComponent).join("/")}.webp`;
   const ouShort = (l) => (l.num ? `Étude ${l.num} · ${l.titre}` : l.titre);
 
   // sur l’accueil : une étagère des shorts du jour, comme sur les applications de vidéos
@@ -1806,7 +1807,7 @@
       const ol = app.querySelector("[data-etagere]");
       if (!ol) return;
       ol.innerHTML = ordreDuJour(tous).slice(0, 12).map((x) => `<li><a class="etagere-short" href="#/shorts/${esc(x.id)}">
-          ${x.img ? `<img src="${imgShort(x.img)}" alt="" width="800" height="600" loading="lazy" decoding="async" onerror="reessayer(this)">`
+          ${x.img ? `<img src="${imgShort(x.img)}" alt="" ${x.p ? 'width="720" height="1280"' : 'width="800" height="600"'} loading="lazy" decoding="async" onerror="reessayer(this)">`
             : `<span class="sans-photo" data-niveau="${x.niveau}">${picto(x.niveau, "fond-picto")}</span>`}
           <span class="etagere-texte">${fr(x.i)}</span>
           <span class="etagere-ref">${fr(x.r)}</span>
