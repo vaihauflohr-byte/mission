@@ -49,6 +49,11 @@
     maison: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11.2 12 4.2l8.5 7M6 9.5V20h4.5v-5.5h3V20H18V9.5"/></svg>',
     serie: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7.5" width="13" height="13" rx="2"/><path d="M7.5 4.5h10a2 2 0 0 1 2 2v10"/></svg>',
     haut: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0-5.5 5.5M12 5l5.5 5.5"/></svg>',
+    coche: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7"/></svg>',
+    groupe: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19.5c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M15.8 14.2c2.8-.4 5.2 1.4 5.2 4.6"/></svg>',
+    horloge: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4.5l2.8 1.8M9.5 2.5h5"/></svg>',
+    envoyer: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-7.5L3 9.5z"/></svg>',
+    copier: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8.5" y="8.5" width="12" height="12" rx="2"/><path d="M15.5 8.5V5a1.5 1.5 0 0 0-1.5-1.5H5A1.5 1.5 0 0 0 3.5 5v9A1.5 1.5 0 0 0 5 15.5h3.5"/></svg>',
   };
   const chevronDroit = '<svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg>';
   // images (assets/images/<nom>.webp, 4:3) : décoratives, le titre est juste à côté
@@ -144,10 +149,15 @@
           ${semaine ? ligne(semaine, "Toute la semaine", "la fiche du participant en un seul document", " jour-semaine") : ""}
         </ol>`;
     }
+    // coche « terminée », posée sur le coin de la vignette
+    const cle = s.lecons.length > 1 && cleLecon(l);
+    const fait = cle && faites.a(l);
+    const coche = cle ? `<button type="button" class="etude-faite" data-faite="${esc(cle)}" aria-pressed="${!!fait}"
+        aria-label="Étude terminée : ${esc(nomComplet)}">${icone.coche}</button>` : "";
     const vignette = l.image
-      ? `<span class="etude-vignette">${image(l.image, "")}${num}</span>`
-      : `<span class="etude-vignette sans-image">${picto(s.niveau, "fond-picto")}${num}</span>`;
-    return `<li class="etude${jours ? " avec-jours" : ""}">
+      ? `<span class="etude-vignette">${image(l.image, "")}${num}${coche}</span>`
+      : `<span class="etude-vignette sans-image">${picto(s.niveau, "fond-picto")}${num}${coche}</span>`;
+    return `<li class="etude${jours ? " avec-jours" : ""}${fait ? " faite" : ""}">
       ${vignette}
       <p class="etude-titre">${fr(l.titre)}${l.sujet ? `<span class="cache"> — sujet : </span><span class="etude-sujet">${fr(l.sujet)}</span>` : ""}</p>
       <div class="etude-docs">${boutons}</div>
@@ -311,6 +321,7 @@
           <h2 class="cep-titre">Trois étapes, de la rencontre à la maturité</h2>
           <ol class="cep-liste">${etapes}</ol>
         </div>
+        <div class="dedans accueil-groupe">${carteGroupe()}</div>
       </section>
       <section class="mode" aria-labelledby="mode-titre">
         <div class="dedans mode-dedans">
@@ -368,6 +379,65 @@
     </div>`;
   }
 
+  // ---------- études terminées (gardées sur l’appareil, clé mission.faites) ----------
+  // une étude = une leçon d’une série ; sa clé : le chemin de sa fiche du participant
+  const cleLecon = (l) => {
+    const d = l.docs.find((x) => x.f && x.role !== "animateur") || l.docs.find((x) => x.f);
+    return d ? d.f : null;
+  };
+  // document qui ouvre une étude : sa première leçon du jour, sinon la fiche du participant
+  const docLecon = (l) => (aDesJours(l) && l.jours[0].docs[0].f ? l.jours[0].docs[0]
+    : l.docs.find((x) => x.f && x.role !== "animateur") || l.docs.find((x) => x.f) || null);
+  const faites = {
+    lire() {
+      try {
+        const o = JSON.parse(memoire.lire("mission.faites", "{}"));
+        return o && typeof o === "object" && !Array.isArray(o) ? o : {};
+      } catch (e) { return {}; }
+    },
+    a(l) { const k = cleLecon(l); return !!(k && this.lire()[k]); },
+    mettre(l, oui) {
+      const k = cleLecon(l);
+      if (!k) return;
+      const o = this.lire();
+      if (oui) o[k] = o[k] || new Date().toISOString().slice(0, 10);
+      else delete o[k];
+      memoire.ecrire("mission.faites", JSON.stringify(o));
+    },
+    nombre(s) { const o = this.lire(); return s.lecons.filter((l) => { const k = cleLecon(l); return k && o[k]; }).length; },
+  };
+  // avancement d’une série (au moins deux études) : combien sont terminées, et l’étude à suivre
+  function progressionSerie(s) {
+    const total = s.lecons.length;
+    if (total < 2) return "";
+    const n = faites.nombre(s);
+    const prochaine = s.lecons.find((l) => !faites.a(l) && docLecon(l));
+    const d = prochaine && docLecon(prochaine);
+    const nom = prochaine ? (prochaine.num ? `Étude ${prochaine.num} · ` : "") + prochaine.titre : "";
+    const etat = n === total
+      ? `<p class="progression-texte progression-fini">${icone.coche}Série terminée : les ${total} études</p>`
+      : n ? `<p class="progression-texte"><strong>${n}</strong> sur ${total} études terminées</p>
+          <span class="progression-barre" aria-hidden="true"><span style="width:${Math.round((n / total) * 100)}%"></span></span>` : "";
+    return `${etat}${d ? `<a class="progression-suite" ${cible(d)}><span class="progression-etiquette">${n ? "Continuer" : "Commencer"}</span>
+        <span class="progression-nom">${fr(nom)}</span>${chevronDroit}</a>` : ""}`;
+  }
+
+  function avanceSerie(s) {
+    const n = s.lecons.length > 1 ? faites.nombre(s) : 0;
+    if (!n) return "";
+    const total = s.lecons.length;
+    return `<span class="serie-avance"><span class="progression-barre" aria-hidden="true"><span style="width:${Math.round((n / total) * 100)}%"></span></span>
+      ${n === total ? "Série terminée" : `${n} sur ${total} terminées`}</span>`;
+  }
+
+  // lien vers la page du petit groupe (accueil, étape « Devenir disciple »)
+  const carteGroupe = () => `<a class="carte-groupe" href="#/groupe">
+      <span class="carte-groupe-icone">${icone.groupe}</span>
+      <span class="carte-groupe-texte"><span class="carte-groupe-titre">Vous animez un petit groupe ?</span>
+        <span>Le déroulé de la rencontre avec un minuteur, les binômes de la semaine et le bilan en une minute.</span></span>
+      ${chevronDroit}
+    </a>`;
+
   function niveau(id) {
     const n = niveaux[id];
     if (!n) return introuvable();
@@ -387,6 +457,7 @@
           </div>
           ${image(n.image, "niveau-image", true)}
         </header>
+        ${id === "disciple" ? `<div class="niveau-groupe">${carteGroupe()}</div>` : ""}
         <h2 class="section-titre">Les séries</h2>
         <ul class="series-grille">
           ${ss
@@ -397,6 +468,7 @@
                   <span class="serie-titre">${fr(s.titre)}</span>
                   <span class="serie-texte">${fr(s.texte)}</span>
                   <span class="serie-compte">${compteSerie(s)}</span>
+                  ${avanceSerie(s)}
                 </span>
               </a></li>`
             )
@@ -460,11 +532,24 @@
             <h1 class="titre-page" tabindex="-1">${fr(s.titre)}</h1>
             <p class="chapeau">${fr(s.texte)}</p>
             <p class="compte">${compteSerie(s)}</p>
+            <div class="serie-progression">${progressionSerie(s)}</div>
             ${ressources}
           </div>
           ${liste}
         </div>
       </div>`;
+    app.querySelector(".page-serie").addEventListener("click", (ev) => {
+      const b = ev.target.closest("[data-faite]");
+      if (!b) return;
+      const l = s.lecons.find((x) => cleLecon(x) === b.dataset.faite);
+      if (!l) return;
+      const oui = b.getAttribute("aria-pressed") !== "true";
+      faites.mettre(l, oui);
+      b.setAttribute("aria-pressed", String(oui));
+      b.closest(".etude").classList.toggle("faite", oui);
+      app.querySelector(".serie-progression").innerHTML = progressionSerie(s);
+      bulle(oui ? "Étude marquée comme terminée" : "Étude remise à faire");
+    });
     return true;
   }
 
@@ -1223,6 +1308,9 @@
     const titreApres = !apres ? "" : !apres.j ? apres.l.titre
       : apres.l === l ? titreJour(apres.j) : `Semaine ${apres.l.num} — ${titreJour(apres.j)}`;
     const img = (l && l.image) || s.image;
+    // « J’ai terminé » : à la fin d’une étude, ou de la dernière leçon du jour d’une semaine
+    const peutCocher = !!(l && cleLecon(l) && (!j || l.jours[l.jours.length - 1] === j));
+    const quoi = j ? "la semaine" : "cette étude";
     app.innerHTML = `
       <div class="lecture">
         <div class="lecteur-barre">
@@ -1255,8 +1343,10 @@
               <article class="lecture-texte"><p class="lecture-attente">Ouverture de l’étude…</p></article>
               <footer class="lecture-fin">
                 <p class="lecture-fin-titre">Fin ${j ? "de la leçon" : l ? "de l’étude" : "du document"}</p>
+                ${peutCocher ? `<button type="button" class="lecture-action lecture-faite" data-faite-lecture aria-pressed="${faites.a(l)}">
+                    <span class="si-non">J’ai terminé ${quoi}</span><span class="si-oui">${j ? "Semaine terminée" : "Étude terminée"}</span>${icone.coche}</button>` : ""}
                 ${apres
-                  ? `<a class="lecture-action principale" href="#/lire/${esc(apres.d.f)}"><span>Suivante : ${fr(titreApres)}</span>${chevronDroit}</a>`
+                  ? `<a class="lecture-action principale" href="#/lire/${esc(apres.d.f)}"${peutCocher && apres.l !== l ? " data-terminer" : ""}><span>Suivante : ${fr(titreApres)}</span>${chevronDroit}</a>`
                   : `<a class="lecture-action principale" href="#/serie/${s.id}"><span>Retour à la série</span>${chevronDroit}</a>`}
                 <button type="button" class="lecture-action" data-ouvrir="imprimer"><span>Imprimer</span>${icone.imprimer}</button>
                 <a class="lecture-action" href="#/original/${esc(f)}"><span>Voir l’original (PDF)</span>${icone.original}</a>
@@ -1310,6 +1400,19 @@
     const { signal } = session.ac;
     const fermerPanneaux = brancherPanneaux(racine, signal);
     brancherImpression(racine, e, signal);
+    // fin de l’étude : la cocher, ou passer à la suivante (ce qui la coche aussi)
+    racine.querySelector(".lecture-fin").addEventListener("click", (ev) => {
+      const b = ev.target.closest("[data-faite-lecture]");
+      if (b) {
+        const oui = b.getAttribute("aria-pressed") !== "true";
+        faites.mettre(l, oui);
+        b.setAttribute("aria-pressed", String(oui));
+        bulle(oui ? `${j ? "Semaine" : "Étude"} marquée comme terminée` : `${j ? "Semaine" : "Étude"} remise à faire`);
+      } else if (ev.target.closest("[data-terminer]") && !faites.a(l)) {
+        faites.mettre(l, true);
+        bulle(`${l.num ? `${j ? "Semaine" : "Étude"} ${l.num}` : j ? "Semaine" : "Étude"} terminée`);
+      }
+    }, { signal });
     // toucher une référence biblique : le passage s’affiche dans le panneau (assets/bible.js)
     racine.addEventListener("click", (ev) => {
       const a = ev.target.closest('a.ref[data-ouvrir="bible"]');
@@ -2262,6 +2365,571 @@
     ? `<a class="lecteur-retour" href="#/shorts/${esc(f)}" aria-label="Retour aux shorts">${chevron}<span>Shorts</span></a>`
     : `<a class="lecteur-retour" href="#/serie/${s.id}" aria-label="Retour à la série ${esc(s.titre)}">${chevron}<span>${fr(s.titre)}</span></a>`);
 
+  // ---------- petit groupe : déroulé de la rencontre, binômes, bilan (#/groupe) ----------
+  // tout reste sur l’appareil du leader (mission.groupe…) : rien ne part tant qu’il ne partage pas
+  const ETAPES_RENCONTRE = [
+    { id: "accueil", nom: "Accueil", min: 5, aide: "On s’installe et on prend des nouvelles les uns des autres." },
+    { id: "priere", nom: "Prière", min: 3, aide: "Une prière pour ouvrir la rencontre." },
+    { id: "versets", nom: "Vérification des versets par binômes", min: 7,
+      aide: "Chaque binôme vérifie le verset de la semaine : l’un le récite, l’autre suit sur la carte." },
+    { id: "partage", nom: "Retour en groupe pour le partage", min: 20,
+      aide: "Un simple retour sur la semaine avec le fascicule. Pas d’étude biblique : la lecture et les questions se font à la maison." },
+    { id: "priere-partage", nom: "Prière pour clore le partage", min: 5, aide: "On prie pour ce qui a été partagé." },
+    { id: "carte", nom: "Le nouveau verset sur les cartes", min: 5,
+      aide: "Chacun écrit sur sa carte le verset de l’étude suivante, pris dans son fascicule, puis la plastifie et la met sur l’anneau." },
+    { id: "binomes", nom: "Les nouveaux binômes", min: 2,
+      aide: "Toujours un frère avec un frère, une sœur avec une sœur. Ils s’appellent dans la semaine pour prendre des nouvelles et prier ; le leader appelle aussi chacun." },
+    { id: "separation", nom: "Prière de séparation", min: 3, aide: "On se quitte dans la prière." },
+  ];
+  const ONGLETS_GROUPE = [["rencontre", "Rencontre"], ["binomes", "Binômes"], ["bilan", "Bilan"], ["membres", "Le groupe"]];
+  const lireJson = (cle, defaut, ok) => {
+    try { const v = JSON.parse(memoire.lire(cle, "null")); return v !== null && ok(v) ? v : defaut; } catch (e) { return defaut; }
+  };
+  const groupe = {
+    lire: () => lireJson("mission.groupe", {}, (g) => typeof g === "object" && !Array.isArray(g)),
+    maj(f) { const g = this.lire(); f(g); memoire.ecrire("mission.groupe", JSON.stringify(g)); return g; },
+  };
+  const membresDe = (g) => (Array.isArray(g.membres) ? g.membres.filter((m) => m && m.nom && (m.s === "f" || m.s === "s")) : []);
+  const dureesDe = (g) => ETAPES_RENCONTRE.map((e) => {
+    const v = g.durees && Number(g.durees[e.id]);
+    return v >= 1 && v <= 90 ? Math.round(v) : e.min;
+  });
+  // la rencontre en cours : { debut, etape, ecoule: [ms par étape], depuis: ms|null (null = en pause), fin }
+  const rencontre = {
+    // une rencontre restée ouverte plus de 12 h (minuteur oublié) est laissée de côté
+    lire: () => lireJson("mission.groupe.rencontre", null, (r) => Array.isArray(r.ecoule) && r.ecoule.length === ETAPES_RENCONTRE.length
+      && (r.fin || Date.now() - r.debut < 12 * 3600000)),
+    ecrire: (r) => memoire.ecrire("mission.groupe.rencontre", JSON.stringify(r)),
+  };
+  const ecouleEtape = (r, i, t) => r.ecoule[i] + (r.depuis && r.etape === i ? t - r.depuis : 0);
+  const ecouleTotal = (r, t) => r.ecoule.reduce((a, b) => a + b, 0) + (r.depuis ? t - r.depuis : 0);
+  const bilans = {
+    lire: () => lireJson("mission.groupe.bilans", [], (b) => Array.isArray(b)),
+    ajouter(b) {
+      const liste = this.lire().filter((x) => x.date !== b.date);
+      memoire.ecrire("mission.groupe.bilans", JSON.stringify([b, ...liste].slice(0, 40)));
+    },
+  };
+  const dateIso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  const dateLongue = (iso) => {
+    const [a, m, j] = String(iso).split("-").map(Number);
+    if (!a || !m || !j) return "";
+    const t = new Date(a, m - 1, j).toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" });
+    return t.charAt(0).toUpperCase() + t.slice(1);
+  };
+  const heureFr = (t) => { const d = new Date(t); return `${d.getHours()} h ${String(d.getMinutes()).padStart(2, "0")}`; };
+  const minSec = (ms, versLeHaut) => {
+    const s = Math.max(0, versLeHaut ? Math.ceil(ms / 1000) : Math.floor(ms / 1000));
+    return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+  };
+  const listeNoms = (noms) => (noms.length < 2 ? noms.join("") : `${noms.slice(0, -1).join(", ")} et ${noms[noms.length - 1]}`);
+  const numeroWhatsApp = (tel) => {
+    let n = String(tel || "").replace(/\D/g, "");
+    if (/^[48]\d{7}$/.test(n)) n = "689" + n; // numéro de Polynésie écrit sans l’indicatif
+    return n.length >= 8 ? n : "";
+  };
+  const lienWhatsApp = (texte, tel) => `https://wa.me/${numeroWhatsApp(tel)}?text=${encodeURIComponent(texte)}`;
+  async function copierTexte(texte) {
+    try {
+      await navigator.clipboard.writeText(texte);
+    } catch (e) {
+      const t = document.createElement("textarea");
+      t.value = texte;
+      t.setAttribute("readonly", "");
+      t.style.cssText = "position:fixed;top:0;opacity:0";
+      document.body.append(t);
+      t.select();
+      let ok = false;
+      try { ok = document.execCommand("copy"); } catch (e2) { /* rien */ }
+      t.remove();
+      if (!ok) { bulle("Copie impossible sur ce navigateur"); return false; }
+    }
+    bulle("Texte copié : collez-le dans WhatsApp ou Messenger");
+    return true;
+  }
+  async function partagerTexte(texte) {
+    if (navigator.share) {
+      try { await navigator.share({ text: texte }); return true; } catch (e) { if (e && e.name === "AbortError") return false; }
+    }
+    return copierTexte(texte);
+  }
+
+  // binômes : à tour de rôle (méthode du cercle), séparément entre frères et entre sœurs ;
+  // nombre impair : le dernier rejoint un binôme (trio), un autre chaque semaine
+  function tournoi(n) {
+    const ids = [...Array(n).keys()];
+    if (n % 2) ids.push(-1);
+    const m = ids.length;
+    const tours = [];
+    for (let t = 0; t < m - 1; t++) {
+      const paires = [];
+      for (let i = 0; i < m / 2; i++) paires.push([ids[i], ids[m - 1 - i]]);
+      tours.push(paires);
+      ids.splice(1, 0, ids.pop());
+    }
+    return tours;
+  }
+  function binomesDe(membres, tour) {
+    const sortie = [];
+    ["f", "s"].forEach((genre) => {
+      const liste = membres.filter((m) => m.s === genre);
+      if (!liste.length) return;
+      if (liste.length === 1) { sortie.push({ genre, noms: [liste[0].nom], seul: true }); return; }
+      const tours = tournoi(liste.length);
+      const groupes = [];
+      let reste = null;
+      tours[tour % tours.length].forEach(([a, b]) => {
+        if (a < 0 || b < 0) reste = liste[a < 0 ? b : a];
+        else groupes.push([liste[a], liste[b]]);
+      });
+      if (reste) groupes[tour % groupes.length].push(reste);
+      groupes.forEach((g) => sortie.push({ genre, noms: g.sort((x, y) => liste.indexOf(x) - liste.indexOf(y)).map((m) => m.nom) }));
+    });
+    return sortie;
+  }
+  const tourDe = (g) => Math.max(0, Math.floor(Number(g.tour) || 0));
+  function texteBinomes(g) {
+    const liste = binomesDe(membresDe(g), tourDe(g));
+    return [`*Binômes de la semaine${g.nom ? ` — ${g.nom}` : ""}*`,
+      ...liste.map((b) => `• ${listeNoms(b.noms)}${b.seul ? " (le leader l’appelle)" : ""}`),
+      "", "Appelez-vous dans la semaine pour prendre des nouvelles et prier ensemble."].join("\n");
+  }
+  function blocBinomes(g, dansRencontre) {
+    const membres = membresDe(g);
+    if (membres.length < 2) {
+      return `<p class="grp-vide">Ajoutez d’abord les membres du groupe, frère ou sœur : les binômes se font tout seuls.
+        <a href="#/groupe/membres">Ajouter les membres ›</a></p>`;
+    }
+    const tour = tourDe(g);
+    const liste = binomesDe(membres, tour);
+    return `<div class="binomes-bloc">
+      <p class="binomes-semaine">Semaine ${tour + 1}</p>
+      <ul class="binomes">${liste.map((b) => `<li class="binome ${b.genre === "f" ? "freres" : "soeurs"}${b.seul ? " seul" : ""}">
+          <span class="binome-genre">${b.genre === "f" ? "Frères" : "Sœurs"}</span>
+          <span class="binome-noms">${esc(listeNoms(b.noms))}</span>
+          ${b.seul ? `<span class="binome-note">${b.genre === "f" ? "Seul frère" : "Seule sœur"} du groupe : le leader l’appelle dans la semaine.</span>` : ""}
+        </li>`).join("")}</ul>
+      <div class="grp-boutons">
+        <button type="button" class="doc principal" data-binomes="+1">${icone.groupe}Faire les nouveaux binômes</button>
+        ${dansRencontre ? "" : `<button type="button" class="doc" data-binomes="partager">${icone.partager}Envoyer au groupe</button>`}
+        ${tour > 0 ? '<button type="button" class="grp-lien" data-binomes="-1">Revenir aux précédents</button>' : ""}
+      </div>
+    </div>`;
+  }
+  function actionBinomes(quoi) {
+    if (quoi === "partager") { partagerTexte(texteBinomes(groupe.lire())); return false; }
+    groupe.maj((g) => { g.tour = Math.max(0, tourDe(g) + (quoi === "+1" ? 1 : -1)); });
+    bulle(quoi === "+1" ? "Voici les binômes de la semaine" : "Binômes précédents");
+    return true;
+  }
+
+  // garder l’écran allumé pendant la rencontre
+  let verrouEcran = null;
+  async function garderEcran(oui) {
+    try {
+      if (oui && !verrouEcran && "wakeLock" in navigator && document.visibilityState === "visible") {
+        verrouEcran = await navigator.wakeLock.request("screen");
+        verrouEcran.addEventListener("release", () => { verrouEcran = null; });
+      } else if (!oui && verrouEcran) {
+        const v = verrouEcran;
+        verrouEcran = null;
+        await v.release();
+      }
+    } catch (e) { verrouEcran = null; }
+  }
+
+  function actionRencontre(quoi) {
+    const t = Date.now();
+    let r = rencontre.lire();
+    const arreter = () => { if (r.depuis) { r.ecoule[r.etape] += t - r.depuis; r.depuis = null; } };
+    if (quoi === "commencer") r = { debut: t, etape: 0, ecoule: ETAPES_RENCONTRE.map(() => 0), depuis: t, fin: null };
+    else if (!r) return;
+    else if (quoi === "pause") arreter();
+    else if (quoi === "reprendre") { if (!r.fin && !r.depuis) r.depuis = t; }
+    else if (quoi === "suivante" || quoi === "precedente") {
+      const enMarche = !!r.depuis;
+      arreter();
+      r.etape = Math.max(0, Math.min(ETAPES_RENCONTRE.length - 1, r.etape + (quoi === "suivante" ? 1 : -1)));
+      if (enMarche) r.depuis = t;
+    } else if (quoi === "terminer") { arreter(); r.fin = t; }
+    else if (quoi === "effacer") r = null;
+    rencontre.ecrire(r);
+  }
+
+  const CIRCONFERENCE = 2 * Math.PI * 52;
+  const signales = new Set(); // étapes déjà signalées (vibration) quand leur temps est écoulé
+  function ongletRencontre(zone, signal) {
+    const dessiner = () => {
+      const g = groupe.lire();
+      const r = rencontre.lire();
+      const durees = dureesDe(g);
+      const prevu = durees.reduce((a, b) => a + b, 0);
+      if (!r) {
+        zone.innerHTML = `
+          <p class="grp-intro">Le cadre : <strong>45 min à 1 h</strong>, un simple retour sur la semaine avec le fascicule. Réglez les durées si besoin, puis lancez le minuteur au début de la rencontre : l’écran reste allumé.</p>
+          <ol class="rv-etapes">${ETAPES_RENCONTRE.map((e, i) => `
+            <li class="rv-etape">
+              <span class="rv-num" aria-hidden="true">${i + 1}</span>
+              <span class="rv-nom">${fr(e.nom)}</span>
+              <span class="rv-duree" role="group" aria-label="Durée de l’étape ${i + 1}">
+                <button type="button" data-duree="${i}" data-pas="-1" aria-label="Une minute de moins"${durees[i] <= 1 ? " disabled" : ""}>${icone.moins}</button>
+                <span class="rv-min"><strong>${durees[i]}</strong> min</span>
+                <button type="button" data-duree="${i}" data-pas="1" aria-label="Une minute de plus"${durees[i] >= 90 ? " disabled" : ""}>${icone.plus}</button>
+              </span>
+            </li>`).join("")}</ol>
+          <p class="rv-prevu${prevu > 60 || prevu < 45 ? " hors-cadre" : ""}">Durée prévue : <strong>${prevu} min</strong>${
+            prevu > 60 ? " : plus d’une heure" : prevu < 45 ? " : moins de 45 min" : ""}</p>
+          <div class="grp-boutons">
+            <button type="button" class="doc principal grp-grand" data-rv="commencer">${icone.jouer}Commencer la rencontre</button>
+            ${g.durees ? '<button type="button" class="grp-lien" data-rv="defaut">Remettre les durées de départ</button>' : ""}
+          </div>`;
+        return;
+      }
+      if (r.fin) {
+        const total = Math.round(ecouleTotal(r, r.fin) / 60000);
+        zone.innerHTML = `
+          <div class="rv-finie">
+            <p class="rv-finie-titre">${icone.coche}Rencontre terminée</p>
+            <p class="rv-finie-texte"><strong>${total} min</strong> pour ${prevu} min prévues${r.debut ? `, de ${heureFr(r.debut)} à ${heureFr(r.fin)}` : ""}.</p>
+            <ol class="rv-bilan-etapes">${ETAPES_RENCONTRE.map((e, i) => {
+              const m = Math.round(r.ecoule[i] / 60000);
+              return `<li><span>${fr(e.nom)}</span><span class="${m > durees[i] ? "en-plus" : ""}">${m} min</span></li>`;
+            }).join("")}</ol>
+            <div class="grp-boutons">
+              <a class="doc principal grp-grand" href="#/groupe/bilan">${icone.envoyer}Faire le bilan</a>
+              <button type="button" class="doc" data-rv="effacer">Nouvelle rencontre</button>
+            </div>
+          </div>`;
+        return;
+      }
+      const i = r.etape;
+      const e = ETAPES_RENCONTRE[i];
+      const dernier = i === ETAPES_RENCONTRE.length - 1;
+      const pause = !r.depuis;
+      zone.innerHTML = `
+        <div class="rv-encours${pause ? " en-pause" : ""}">
+          <p class="rv-haut"><span>Étape ${i + 1} sur ${ETAPES_RENCONTRE.length}</span><span class="rv-fin-prevue"></span></p>
+          <div class="rv-cadran">
+            <svg class="rv-anneau" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="rv-anneau-fond" cx="60" cy="60" r="52"/>
+              <circle class="rv-anneau-avance" cx="60" cy="60" r="52" stroke-dasharray="${CIRCONFERENCE.toFixed(1)}"/>
+            </svg>
+            <p class="rv-temps"><span class="rv-reste" role="timer" aria-live="off"></span><span class="rv-sur">${pause ? "En pause" : `sur ${durees[i]} min`}</span></p>
+          </div>
+          <h2 class="rv-titre">${fr(e.nom)}</h2>
+          <p class="rv-aide">${fr(e.aide)}</p>
+          ${e.id === "binomes" ? blocBinomes(g, true) : ""}
+          <div class="rv-commandes">
+            <button type="button" class="rv-rond" data-rv="precedente" aria-label="Étape précédente"${i === 0 ? " disabled" : ""}>${chevron}</button>
+            <button type="button" class="rv-rond" data-rv="${pause ? "reprendre" : "pause"}" aria-label="${pause ? "Reprendre" : "Pause"}">${pause ? icone.jouer : icone.pause}</button>
+            <button type="button" class="doc principal rv-suivante" data-rv="${dernier ? "terminer" : "suivante"}">${dernier ? "Terminer la rencontre" : "Étape suivante"}${chevronDroit}</button>
+          </div>
+          <ol class="rv-fil" aria-label="Les étapes">${ETAPES_RENCONTRE.map((x, k) => `<li class="${k < i ? "passee" : k === i ? "courante" : ""}"${k === i ? ' aria-current="step"' : ""}>
+              <span class="rv-fil-nom">${fr(x.nom)}</span><span class="rv-fil-min">${k < i ? `${Math.round(r.ecoule[k] / 60000)} min` : `${durees[k]} min`}</span></li>`).join("")}</ol>
+          <p class="rv-total"></p>
+          ${dernier ? "" : '<button type="button" class="grp-lien rv-arreter" data-rv="arreter">Terminer la rencontre maintenant</button>'}
+        </div>`;
+      majRencontre(zone);
+    };
+    dessiner();
+    zone.addEventListener("click", (ev) => {
+      const b = ev.target.closest("[data-rv], [data-duree], [data-binomes]");
+      if (!b || b.disabled) return;
+      if (b.dataset.binomes) { if (actionBinomes(b.dataset.binomes)) dessiner(); return; }
+      if (b.dataset.duree) {
+        const i = Number(b.dataset.duree);
+        groupe.maj((g) => {
+          const d = dureesDe(g);
+          g.durees = Object.fromEntries(ETAPES_RENCONTRE.map((x, k) => [x.id, k === i ? Math.max(1, Math.min(90, d[k] + Number(b.dataset.pas))) : d[k]]));
+        });
+        dessiner();
+        return;
+      }
+      let quoi = b.dataset.rv;
+      if (quoi === "defaut") { groupe.maj((g) => { delete g.durees; }); dessiner(); return; }
+      if (quoi === "arreter") {
+        // terminer avant la dernière étape : on demande de toucher une seconde fois
+        if (!b.dataset.confirme) {
+          b.dataset.confirme = "1";
+          b.textContent = "Toucher encore pour terminer la rencontre";
+          setTimeout(() => { if (b.isConnected) { delete b.dataset.confirme; b.textContent = "Terminer la rencontre maintenant"; } }, 4000);
+          return;
+        }
+        quoi = "terminer";
+      }
+      actionRencontre(quoi);
+      const r = rencontre.lire();
+      garderEcran(!!(r && !r.fin));
+      dessiner();
+      if (quoi !== "pause" && quoi !== "reprendre") zone.scrollIntoView({ block: "start", behavior: mouvementReduit() ? "auto" : "smooth" });
+    }, { signal });
+    const minuterie = setInterval(() => majRencontre(zone), 500);
+    signal.addEventListener("abort", () => clearInterval(minuterie));
+  }
+  function majRencontre(zone) {
+    const r = rencontre.lire();
+    const reste = zone.querySelector(".rv-reste");
+    if (!r || r.fin || !reste) return;
+    const t = Date.now();
+    const durees = dureesDe(groupe.lire());
+    const i = r.etape;
+    const prevu = durees[i] * 60000;
+    const passe = ecouleEtape(r, i, t);
+    const restant = prevu - passe;
+    reste.textContent = restant >= 0 ? minSec(restant, true) : `+${minSec(-restant)}`;
+    zone.querySelector(".rv-encours").classList.toggle("depasse", restant < 0);
+    const anneau = zone.querySelector(".rv-anneau-avance");
+    anneau.style.strokeDashoffset = String(CIRCONFERENCE * (1 - Math.min(1, passe / prevu)));
+    anneau.style.opacity = passe > 1000 ? "1" : "0"; // pas de point rond au départ
+    const total = ecouleTotal(r, t);
+    const prevuTotal = durees.reduce((a, b) => a + b, 0);
+    zone.querySelector(".rv-total").textContent = `Rencontre : ${Math.floor(total / 60000)} min sur ${prevuTotal} prévues`;
+    const fin = t + Math.max(0, restant) + durees.slice(i + 1).reduce((a, b) => a + b, 0) * 60000;
+    zone.querySelector(".rv-fin-prevue").textContent = r.depuis ? `Fin vers ${heureFr(fin)}` : "";
+    const cle = `${r.debut}-${i}`;
+    if (restant < 0 && r.depuis && !signales.has(cle)) {
+      signales.add(cle);
+      if (navigator.vibrate) navigator.vibrate([180, 120, 180]);
+    }
+  }
+
+  function ongletBinomes(zone, signal) {
+    const dessiner = () => {
+      zone.innerHTML = `
+        <p class="grp-intro">Toujours un frère avec un frère, une sœur avec une sœur. Les binômes changent chaque semaine et s’appellent pour prendre des nouvelles et prier ; le leader appelle aussi chacun.</p>
+        ${blocBinomes(groupe.lire(), false)}`;
+    };
+    dessiner();
+    zone.addEventListener("click", (ev) => {
+      const b = ev.target.closest("[data-binomes]");
+      if (b && actionBinomes(b.dataset.binomes)) dessiner();
+    }, { signal });
+  }
+
+  function ongletMembres(zone, signal) {
+    const dessiner = () => {
+      const g = groupe.lire();
+      const membres = membresDe(g);
+      zone.innerHTML = `
+        <form class="grp-form" data-reglages autocomplete="off">
+          <label class="grp-champ"><span>Nom du groupe</span><input name="nom" value="${esc(g.nom || "")}" maxlength="60" placeholder="Par exemple : groupe de Mataiea"></label>
+          <label class="grp-champ"><span>Leader</span><input name="leader" value="${esc(g.leader || "")}" maxlength="40" placeholder="Votre prénom" autocomplete="given-name"></label>
+          <label class="grp-champ"><span>WhatsApp du responsable <small>pour envoyer le bilan, facultatif</small></span>
+            <input name="tel" type="tel" inputmode="tel" value="${esc(g.tel || "")}" maxlength="22" placeholder="+689 87 12 34 56"></label>
+        </form>
+        <h2 class="grp-titre">Les membres <span class="grp-compte">${membres.length}</span></h2>
+        <p class="grp-note">Ajoutez-vous aussi si vous faites partie des binômes. Les noms restent sur ce téléphone.</p>
+        ${membres.length ? `<ul class="membres">${membres.map((m, k) => `<li class="membre">
+            <span class="membre-nom">${esc(m.nom)}</span><span class="membre-genre ${m.s === "f" ? "frere" : "soeur"}">${m.s === "f" ? "Frère" : "Sœur"}</span>
+            <button type="button" class="membre-retirer" data-retirer="${k}" aria-label="Retirer ${esc(m.nom)} du groupe">${icone.moins}</button>
+          </li>`).join("")}</ul>` : ""}
+        <form class="membre-ajout" data-ajout autocomplete="off">
+          <label class="cache" for="membre-nom">Prénom du nouveau membre</label>
+          <input id="membre-nom" name="nom" maxlength="40" placeholder="Prénom" required autocomplete="off">
+          <fieldset class="membre-choix"><legend class="cache">Frère ou sœur</legend>
+            <label><input type="radio" name="s" value="f" required><span>Frère</span></label>
+            <label><input type="radio" name="s" value="s"><span>Sœur</span></label>
+          </fieldset>
+          <button type="submit" class="doc principal">${icone.plus}Ajouter</button>
+        </form>`;
+    };
+    dessiner();
+    zone.addEventListener("input", (ev) => {
+      const f = ev.target.form;
+      if (!f || !f.hasAttribute("data-reglages")) return;
+      groupe.maj((g) => { g.nom = f.nom.value.trim(); g.leader = f.leader.value.trim(); g.tel = f.tel.value.trim(); });
+      const h1 = app.querySelector(".page-groupe h1");
+      if (h1) h1.textContent = f.nom.value.trim() || "Petit groupe";
+    }, { signal });
+    zone.addEventListener("submit", (ev) => {
+      const f = ev.target;
+      if (!f.hasAttribute("data-ajout")) return;
+      ev.preventDefault();
+      const nom = f.nom.value.trim().replace(/\s+/g, " ");
+      const s = f.s.value;
+      if (!nom || !s) return;
+      groupe.maj((g) => { g.membres = [...membresDe(g), { nom, s }]; });
+      dessiner();
+      bulle(`${nom} ajouté${s === "s" ? "e" : ""} au groupe`);
+      const champ = zone.querySelector("#membre-nom");
+      if (champ) champ.focus();
+    }, { signal });
+    zone.addEventListener("click", (ev) => {
+      const b = ev.target.closest("[data-retirer]");
+      if (!b) return;
+      const k = Number(b.dataset.retirer);
+      let nom = "";
+      groupe.maj((g) => { const l = membresDe(g); nom = (l[k] || {}).nom || ""; l.splice(k, 1); g.membres = l; });
+      dessiner();
+      if (nom) bulle(`${nom} retiré du groupe`);
+    }, { signal });
+  }
+
+  // bilan : l’étude proposée est celle qui suit le dernier bilan
+  function etudeProposee() {
+    const h = bilans.lire()[0];
+    if (h && series[h.s] && series[h.s].lecons.length) {
+      const s = series[h.s];
+      return { s: h.s, i: Math.min(s.lecons.length - 1, (Number(h.i) || 0) + (h.date === dateIso(new Date()) ? 0 : 1)) };
+    }
+    return { s: "", i: 0 };
+  }
+  const nomEtude = (l, k) => (l.num ? `Étude ${l.num} · ` : `${k + 1}. `) + l.titre;
+  function optionsEtudes(sid, i) {
+    const s = series[sid];
+    return s ? s.lecons.map((l, k) => `<option value="${k}"${k === i ? " selected" : ""}>${esc(nomEtude(l, k))}</option>`).join("") : "";
+  }
+  function valeursBilan(f, membres) {
+    const presents = [...f.querySelectorAll('input[name="present"]:checked')].map((x) => Number(x.value));
+    return {
+      date: f.date.value || dateIso(new Date()),
+      duree: f.duree.value.trim(),
+      s: f.serie.value,
+      i: Number(f.etude.value) || 0,
+      presents: membres.filter((m, k) => presents.includes(k)).map((m) => m.nom),
+      absents: membres.filter((m, k) => !presents.includes(k)).map((m) => m.nom),
+      nombre: f.nombre ? Math.max(0, Number(f.nombre.value) || 0) : null,
+      visiteurs: Math.max(0, Number(f.visiteurs.value) || 0),
+      versets: f.versets.value === "" ? null : Math.max(0, Number(f.versets.value) || 0),
+      partage: f.partage.value.trim(),
+      priere: f.priere.value.trim(),
+    };
+  }
+  function texteBilan(g, v) {
+    const s = series[v.s];
+    const l = s && s.lecons[v.i];
+    const lignes = [`*Bilan${g.nom ? ` — ${g.nom}` : " du petit groupe"}*`, `${dateLongue(v.date)}${v.duree ? ` · ${v.duree}` : ""}`];
+    if (g.leader) lignes.push(`Leader : ${g.leader}`);
+    if (l) lignes.push(`Étude : ${s.titre} — ${l.num ? `étude ${l.num}, ` : ""}${l.titre}`);
+    const nbPresents = v.nombre !== null ? v.nombre : v.presents.length;
+    if (v.nombre === null) {
+      const total = v.presents.length + v.absents.length;
+      lignes.push(`Présents : ${v.presents.length} sur ${total}${v.presents.length ? ` (${v.presents.join(", ")})` : ""}`);
+      if (v.absents.length) lignes.push(`Absents : ${v.absents.join(", ")}`);
+    } else lignes.push(`Présents : ${v.nombre}`);
+    if (v.visiteurs) lignes.push(`Visiteurs : ${v.visiteurs}`);
+    if (v.versets !== null) lignes.push(`Versets récités : ${v.versets}${nbPresents ? ` sur ${nbPresents}` : ""}`);
+    if (v.partage) lignes.push("", `Partage : ${v.partage}`);
+    if (v.priere) lignes.push("", `Prière et besoins : ${v.priere}`);
+    return lignes.join("\n");
+  }
+  function ongletBilan(zone, signal) {
+    const g = groupe.lire();
+    const membres = membresDe(g);
+    const r = rencontre.lire();
+    const aujourdhui = dateIso(new Date());
+    const minutes = r && r.fin && dateIso(new Date(r.fin)) === aujourdhui ? Math.round(ecouleTotal(r, r.fin) / 60000) : 0;
+    const duree = minutes ? `${minutes} min` : "";
+    const choix = etudeProposee();
+    const anciens = bilans.lire();
+    const optionsSeries = B.niveaux.map((n) => {
+      const ss = seriesDe(n.id).filter((s) => s.lecons.length);
+      return ss.length ? `<optgroup label="${esc(`${n.num}. ${n.verbe}`)}">${ss.map((s) =>
+        `<option value="${s.id}"${s.id === choix.s ? " selected" : ""}>${esc(s.titre)}</option>`).join("")}</optgroup>` : "";
+    }).join("");
+    zone.innerHTML = `
+      <form class="grp-form bilan-form" autocomplete="off">
+        <div class="grp-deux">
+          <label class="grp-champ"><span>Date</span><input type="date" name="date" value="${aujourdhui}" required></label>
+          <label class="grp-champ"><span>Durée</span><input name="duree" value="${esc(duree)}" maxlength="20" placeholder="50 min"></label>
+        </div>
+        <label class="grp-champ"><span>Série</span><select name="serie"><option value="">Choisir la série…</option>${optionsSeries}</select></label>
+        <label class="grp-champ"><span>Étude de la semaine</span><select name="etude"${choix.s ? "" : " disabled"}>${optionsEtudes(choix.s, choix.i)}</select></label>
+        <fieldset class="grp-champ bilan-presents"><legend>Présents</legend>
+          ${membres.length
+            ? `<div class="presents">${membres.map((m, k) => `<label class="present"><input type="checkbox" name="present" value="${k}" checked><span>${esc(m.nom)}</span></label>`).join("")}</div>`
+            : `<label class="grp-ligne"><span>Nombre de présents</span><input type="number" name="nombre" min="0" max="99" inputmode="numeric" value=""></label>
+               <p class="grp-note">Pour cocher les présents par leur nom, ajoutez les membres dans <a href="#/groupe/membres">Le groupe</a>.</p>`}
+          <label class="grp-ligne"><span>Visiteurs</span><input type="number" name="visiteurs" min="0" max="99" inputmode="numeric" value="0"></label>
+        </fieldset>
+        <label class="grp-ligne"><span>Ont récité leur verset</span><input type="number" name="versets" min="0" max="99" inputmode="numeric" placeholder="nombre"></label>
+        <label class="grp-champ"><span>Le partage <small>facultatif</small></span><textarea name="partage" rows="3" maxlength="800" placeholder="Ce qui a touché le groupe, une victoire, une question…"></textarea></label>
+        <label class="grp-champ"><span>Prière et besoins <small>facultatif, à partager avec discrétion</small></span><textarea name="priere" rows="3" maxlength="800" placeholder="Sujets de prière, une personne à visiter ou à aider…"></textarea></label>
+      </form>
+      <div class="bilan-apercu">
+        <p class="grp-sous-titre">Le message</p>
+        <pre class="bilan-texte"></pre>
+      </div>
+      <div class="grp-boutons bilan-envoi">
+        <a class="doc principal grp-grand" data-envoi="whatsapp" href="#" target="_blank" rel="noopener">${icone.envoyer}${g.tel && numeroWhatsApp(g.tel) ? "Envoyer au responsable sur WhatsApp" : "Envoyer sur WhatsApp"}</a>
+        ${navigator.share ? `<button type="button" class="doc" data-envoi="partager">${icone.partager}Autre application</button>` : ""}
+        <button type="button" class="doc" data-envoi="copier">${icone.copier}Copier le texte</button>
+      </div>
+      ${anciens.length ? `<details class="bilans-anciens"><summary>Bilans déjà faits (${anciens.length})</summary>
+        <ul>${anciens.map((b, k) => `<li><span class="bilan-date">${esc(dateLongue(b.date))}</span>
+          <span class="bilan-etude">${esc(series[b.s] && series[b.s].lecons[b.i] ? `${series[b.s].titre} — ${nomEtude(series[b.s].lecons[b.i], b.i)}` : "")}</span>
+          <button type="button" class="grp-lien" data-ancien="${k}">Copier</button></li>`).join("")}</ul></details>` : ""}`;
+    const f = zone.querySelector(".bilan-form");
+    const sortie = zone.querySelector(".bilan-texte");
+    const whatsapp = zone.querySelector('[data-envoi="whatsapp"]');
+    const maj = () => {
+      const texte = texteBilan(groupe.lire(), valeursBilan(f, membres));
+      sortie.textContent = texte;
+      whatsapp.href = lienWhatsApp(texte, groupe.lire().tel);
+      return texte;
+    };
+    maj();
+    zone.addEventListener("input", maj, { signal });
+    zone.addEventListener("change", (ev) => {
+      if (ev.target.name === "serie") {
+        f.etude.innerHTML = optionsEtudes(f.serie.value, 0);
+        f.etude.disabled = !f.serie.value;
+      }
+      maj();
+    }, { signal });
+    const garder = () => {
+      const v = valeursBilan(f, membres);
+      bilans.ajouter({ date: v.date, s: v.s, i: v.i, texte: maj() });
+    };
+    zone.addEventListener("click", (ev) => {
+      const b = ev.target.closest("[data-envoi], [data-ancien]");
+      if (!b) return;
+      if (b.dataset.ancien) { const a = bilans.lire()[Number(b.dataset.ancien)]; if (a) copierTexte(a.texte); return; }
+      garder();
+      if (b.dataset.envoi === "partager") { ev.preventDefault(); partagerTexte(maj()); }
+      else if (b.dataset.envoi === "copier") { ev.preventDefault(); copierTexte(maj()); }
+      // WhatsApp : le lien s’ouvre de lui-même
+    }, { signal });
+  }
+
+  let groupeAc = null;
+  function fermerGroupe() {
+    if (groupeAc) { groupeAc.abort(); groupeAc = null; }
+    garderEcran(false);
+  }
+  function groupePage(arg) {
+    if (groupeAc) groupeAc.abort();
+    const onglet = ONGLETS_GROUPE.some(([id]) => id === arg) ? arg : "rencontre";
+    const g = groupe.lire();
+    const r = rencontre.lire();
+    const enCours = r && !r.fin;
+    document.title = `Petit groupe — Mission`;
+    app.innerHTML = `
+      <div class="page page-groupe">
+        ${fil([["Accueil", "#/"], ["Petit groupe"]])}
+        <h1 class="titre-page" tabindex="-1">${g.nom ? esc(g.nom) : "Petit groupe"}</h1>
+        ${enCours ? "" : '<p class="chapeau grp-chapeau">Pour le leader : le déroulé de la rencontre avec un minuteur, les binômes de la semaine et le bilan à envoyer en une minute.</p>'}
+        <nav class="grp-onglets" aria-label="Petit groupe">${ONGLETS_GROUPE.map(([id, nom]) =>
+          `<a href="#/groupe/${id}"${id === onglet ? ' aria-current="page"' : ""}>${nom}</a>`).join("")}</nav>
+        ${enCours && onglet !== "rencontre" ? `<a class="grp-en-cours" href="#/groupe/rencontre">${icone.horloge}<span>Rencontre en cours : étape ${r.etape + 1}, ${fr(ETAPES_RENCONTRE[r.etape].nom)}</span>${chevronDroit}</a>` : ""}
+        <section class="grp-zone" aria-label="${esc(ONGLETS_GROUPE.find(([id]) => id === onglet)[1])}"></section>
+      </div>`;
+    groupeAc = new AbortController();
+    const { signal } = groupeAc;
+    const zone = app.querySelector(".grp-zone");
+    ({ rencontre: ongletRencontre, binomes: ongletBinomes, bilan: ongletBilan, membres: ongletMembres })[onglet](zone, signal);
+    garderEcran(!!enCours);
+    // rencontre en cours : le minuteur s’affiche tout de suite, sans avoir à descendre
+    if (enCours && onglet === "rencontre") setTimeout(() => { if (!signal.aborted) zone.scrollIntoView({ block: "start" }); }, 0);
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState !== "visible") return;
+      const rr = rencontre.lire();
+      garderEcran(!!(rr && !rr.fin));
+      majRencontre(zone);
+    }, { signal });
+    return true;
+  }
+
   // ---------- navigation ----------
   const positions = new Map(); // défilement des pages quittées pour un document
   let premiere = true;
@@ -2276,6 +2944,7 @@
     const depuisDocument = docDe(precedente);
     if (page !== "lire" && page !== "original") { fermerLecteur(); fermerTexte(); }
     if (page !== "shorts") fermerShorts();
+    if (page !== "groupe") fermerGroupe();
     if (page === "lire" || page === "original") retourShorts = precedente.startsWith("shorts") || retourShorts === arg ? arg : null;
     corps.classList.toggle("en-lecture", page === "lire" || page === "original");
     corps.classList.toggle("en-shorts", page === "shorts");
@@ -2288,6 +2957,7 @@
     else if (page === "chercher") champ = chercher(arg);
     else if (page === "shorts") shortsPage(arg);
     else if (page === "application") application();
+    else if (page === "groupe") groupePage(arg);
     else if (page === "lire") { fermerLecteur(); fermerTexte(); if (aTexte(arg)) lireTexte(arg); else lire(arg); }
     else if (page === "original") { fermerLecteur(); fermerTexte(); lire(arg); }
     else introuvable();

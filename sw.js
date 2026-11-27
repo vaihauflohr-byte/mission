@@ -2,13 +2,13 @@
    Les documents (documents/*.pdf) passent directement par le réseau : ils sont lus par morceaux
    (requêtes partielles) et le bouton Télécharger permet de les garder sur l’appareil.
    Le mode lecture (lecture/*.html et ses images) est gardé en cache après une première lecture. */
-const CACHE = "mission-v35";
+const CACHE = "mission-v36";
 const COQUILLE = [
   "./",
   "index.html",
-  "assets/style.css?v=18",
+  "assets/style.css?v=19",
   "assets/bible.js?v=4",
-  "assets/app.js?v=24",
+  "assets/app.js?v=25",
   "donnees/shorts.json?v=4",
   "donnees/bibliotheque.js?v=21",
   "donnees/lecture.js?v=6",
