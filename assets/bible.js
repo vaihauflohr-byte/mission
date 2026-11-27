@@ -253,6 +253,39 @@
     }).join("");
   }
 
+  // le texte seul d’un passage (sans numéros), pour l’apprendre par cœur
+  function texteSimple(chapitres, seg) {
+    const morceaux = [];
+    seg.forEach((s) => {
+      for (let c = s.c1; c <= s.c2; c++) {
+        const liste = chapitres[c - 1] || [];
+        const de = c === s.c1 && s.v1 ? s.v1 : 1;
+        const a = c === s.c2 && s.v2 ? s.v2 : liste.length;
+        for (let v = de; v <= a; v++) morceaux.push((liste[v - 1] || "").replace(/\n/g, " ").trim());
+      }
+    });
+    return morceaux.join(" ");
+  }
+  const nombreVersets = (chapitres, seg) => seg.reduce((t, s) => {
+    let n = 0;
+    for (let c = s.c1; c <= s.c2; c++) {
+      const liste = chapitres[c - 1] || [];
+      const de = c === s.c1 && s.v1 ? s.v1 : 1;
+      const a = c === s.c2 && s.v2 ? s.v2 : liste.length;
+      n += Math.max(0, a - de + 1);
+    }
+    return t + n;
+  }, 0);
+  // un passage tapé ou lu (« Jean 3:16 ») : son titre, son texte et son nombre de versets
+  function texte(brut) {
+    if (!brut || !brut.length) return Promise.reject(new Error("passage"));
+    return charger(brut[0].livre).then((livre) => {
+      const { seg } = resoudre(brut, livre);
+      if (!seg.length) throw new Error("passage");
+      return { seg, titre: titre(seg), texte: texteSimple(livre.chapitres, seg), versets: nombreVersets(livre.chapitres, seg) };
+    });
+  }
+
   // remplit le panneau (déjà ouvert) avec le passage du lien
   function montrer(panneau, href) {
     montrerPassage(panneau, analyser(passageDuLien(href)), href);
@@ -309,12 +342,15 @@
       bouton.hidden = seg.every((s) => s.v1 === 0);
       strong.hidden = false;
       afficher();
+      // le site peut ajouter ce qui va avec le passage (les études qui le citent, l’apprendre par cœur)
+      panneau.dispatchEvent(new CustomEvent("passage", { detail: {
+        seg, titre: titre(seg), texte: texteSimple(livre.chapitres, seg), versets: nombreVersets(livre.chapitres, seg) } }));
     }).catch(() => {
       if (panneau.jeton !== jeton) return;
       zone.innerHTML = `<p class="bible-info">Le texte ne s’affiche pas (pas de connexion ?). <a href="${esc(href)}" target="_blank" rel="noopener">Le lire sur BibleGateway</a></p>`;
     });
   }
 
-  global.Bible = { analyser, passageDuLien, titre, resoudre, passage, adresseStrong, lireReference, montrer, montrerPassage };
+  global.Bible = { analyser, passageDuLien, titre, resoudre, passage, adresseStrong, lireReference, montrer, montrerPassage, texte };
   if (typeof module === "object" && module.exports) module.exports = global.Bible;
 })(typeof window !== "undefined" ? window : globalThis);

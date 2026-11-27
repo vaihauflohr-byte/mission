@@ -319,6 +319,7 @@
           <div class="accueil-texte">
             <h1 id="accueil-titre" class="accueil-titre" tabindex="-1">Des études bibliques prêtes pour votre petit groupe</h1>
             <p class="accueil-chapeau">${total} études en français, rangées en trois étapes. Chaque étude a sa fiche du participant, souvent un guide pour l’animateur, et tout se lit ici, sur téléphone comme sur ordinateur.</p>
+            <p class="accueil-commencer"><a class="lien-commencer" href="#/commencer">${icone.boussole}<span>Par où commencer ?<small>Trois questions pour trouver votre série</small></span></a></p>
             <p class="accueil-appli" data-installer><a class="lien-appli" href="#/application" data-action-installer>${icone.appli}Installer l’application ${
               appareil === "ordinateur" ? "sur cet ordinateur" : "sur ce téléphone"}</a></p>
           </div>
@@ -337,7 +338,7 @@
           <h2 class="cep-titre">Trois étapes, de la rencontre à la maturité</h2>
           <ol class="cep-liste">${etapes}</ol>
         </div>
-        <div class="dedans accueil-groupe">${carteGroupe()}${carteInviter()}</div>
+        <div class="dedans accueil-groupe">${carteCarnet()}${carteGroupe()}${carteInviter()}</div>
       </section>
       <section class="mode" aria-labelledby="mode-titre">
         <div class="dedans mode-dedans">
@@ -566,6 +567,8 @@
             <div class="serie-outils">
               <button type="button" class="serie-outil" data-partager-serie>${icone.partager}<span>Partager la série</span></button>
               <a class="serie-outil" href="#/inviter/${s.id}">${icone.qr}<span>Inviter, code QR</span></a>
+              <span class="serie-hors-ligne">${boutonHorsLigne(s)}</span>
+              ${docsLivret(s).length > 1 ? `<button type="button" class="serie-outil" data-livret>${icone.livre}<span>Livret A5 à imprimer</span></button>` : ""}
             </div>
             ${ressources}
           </div>
@@ -574,6 +577,21 @@
       </div>`;
     app.querySelector(".page-serie").addEventListener("click", (ev) => {
       if (ev.target.closest("[data-partager-serie]")) { partagerLien(s.titre, `${s.titre} : ${s.texte}`, lienPartage(s.id)); return; }
+      const lv = ev.target.closest("[data-livret]");
+      if (lv) {
+        if (lv.getAttribute("aria-busy")) return;
+        imprimerLivret({ titre: s.titre, sousTitre: compteSerie(s), texte: s.texte, image: s.image, lien: `${SITE}#/serie/${s.id}`, docs: docsLivret(s) }, lv);
+        return;
+      }
+      const hl = ev.target.closest("[data-hors-ligne]");
+      if (hl) {
+        if (hl.getAttribute("aria-busy")) return;
+        const zoneHl = app.querySelector(".serie-hors-ligne");
+        (hl.dataset.horsLigne === "retirer" ? retirerHorsLigne(s) : garderHorsLigne(s, hl)).then(() => {
+          if (zoneHl.isConnected) zoneHl.innerHTML = boutonHorsLigne(s);
+        });
+        return;
+      }
       const b = ev.target.closest("[data-faite]");
       if (!b) return;
       const l = s.lecons.find((x) => cleLecon(x) === b.dataset.faite);
@@ -724,7 +742,10 @@
       zone.innerHTML = resultats(texte);
       // une référence (« Jean 3:16 ») : le passage s’affiche en tête
       const carte = zone.querySelector(".bible-carte");
-      if (carte) Bible.montrerPassage(carte, Bible.lireReference(texte));
+      if (carte) {
+        brancherBiblePlus(carte, null);
+        Bible.montrerPassage(carte, Bible.lireReference(texte));
+      }
       clearTimeout(minuterie);
       minuterie = setTimeout(() => rechercheTexte(texte, zone), 220);
     };
@@ -782,7 +803,7 @@
       ? `<section class="bible-carte" aria-labelledby="titre-verset">
           <div class="bible-carte-tete"><h2 id="titre-verset" class="bible-titre"></h2><p class="bible-version">Louis Segond 1910</p></div>
           <div class="bible-outils"><button type="button" class="bible-tout" aria-pressed="false" hidden>Voir tout le chapitre</button><a class="bible-strong" href="https://www.lueur.org/bible/" target="_blank" rel="noopener" aria-label="Bible Strong : ce passage avec les mots hébreux et grecs, sur Lueur.org" hidden><span>Bible Strong</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
-          <div class="bible-corps"><div class="bible-texte" aria-live="polite"></div></div>
+          <div class="bible-corps"><div class="bible-texte" aria-live="polite"></div><div class="bible-plus" hidden></div></div>
         </section>`
       : "";
     return `${verset}${titres}<section class="recherche-texte" data-titres="${trouves.length}" aria-live="polite"></section>`;
@@ -1245,6 +1266,7 @@
         <div class="choix"><button type="button" data-choix="mode:defiler">Défiler<span class="aide">comme l’appli</span></button><button type="button" data-choix="mode:feuilleter">Feuilleter<span class="aide">comme un livre</span></button></div></div>
       <div class="reglage"><span class="reglage-titre">Caractères</span>
         <div class="choix"><button type="button" data-choix="police:lisible">Très lisibles</button><button type="button" data-choix="police:livre" style="font-family: var(--serif)">De livre</button></div></div>
+      <button type="button" class="lecture-action panneau-projeter" data-projeter><span>Projeter sur un écran<small>En grand, une idée ou une question à la fois : pour le groupe, sur une télé ou un vidéoprojecteur</small></span>${icone.projeter}</button>
     </div>`;
   }
 
@@ -1254,7 +1276,8 @@
       <div class="panneau-tete"><h2 id="titre-imprimer">Imprimer</h2><button type="button" class="panneau-fermer" data-fermer>Fermer</button></div>
       <div class="impression-choix">
         <button type="button" class="lecture-action" data-imprimer="original"><span>Le document d’origine<small>La mise en page du PDF, avec ses images et ses lignes pour écrire</small></span>${icone.imprimer}</button>
-        ${avecLecture ? `<button type="button" class="lecture-action" data-imprimer="lecture"><span>Ce que je lis, avec mes réponses<small>Le texte de cette page et ce que vous avez écrit</small></span>${icone.imprimer}</button>` : ""}
+        ${avecLecture ? `<button type="button" class="lecture-action" data-imprimer="lecture"><span>Ce que je lis, avec mes réponses<small>Le texte de cette page et ce que vous avez écrit</small></span>${icone.imprimer}</button>
+          <button type="button" class="lecture-action" data-imprimer="livret"><span>Livret A5, avec des lignes pour écrire<small>Pour le plier : choisissez « Livret » dans la fenêtre d’impression</small></span>${icone.livre}</button>` : ""}
         <a class="lecture-action" href="${fichierPdf(d)}" download="${esc(nomFichier(e))}"><span>Télécharger le PDF<small>Pour l’imprimer plus tard (${taille(d.o)})</small></span>${icone.telecharger}</a>
       </div>
       <p class="impression-etat" role="status" hidden></p>
@@ -1317,6 +1340,10 @@
       if (!b) return;
       const quoi = b.dataset.imprimer;
       if (quoi === "maintenant") { imprimerPdf(); return; }
+      if (quoi === "livret") {
+        imprimerLivret({ titre: titreDoc(e), lien: `${SITE}#/lire/${e.d.f}`, docs: [e.d.f] }, b);
+        return;
+      }
       if (quoi === "lecture") {
         racine.querySelectorAll(".reponse-imprimee").forEach((x) => x.remove());
         racine.querySelectorAll(".lecture-texte textarea").forEach((t) => {
@@ -1420,6 +1447,7 @@
             <button type="button" class="lecteur-bouton" data-ouvrir="sommaire" aria-label="Sommaire" hidden>${icone.sommaire}<span>Sommaire</span></button>
             <button type="button" class="lecteur-bouton" data-ecouter aria-label="Écouter l’étude à voix haute" hidden>${icone.ecouter}<span>Écouter</span></button>
             <button type="button" class="lecteur-bouton" data-ouvrir="affichage" aria-label="Affichage : taille du texte, fond, façon de lire">${icone.affichage}<span>Affichage</span></button>
+            <button type="button" class="lecteur-bouton seulement-large" data-projeter aria-label="Projeter sur un écran">${icone.projeter}<span>Projeter</span></button>
             <button type="button" class="lecteur-bouton" data-ouvrir="imprimer" aria-label="Imprimer">${icone.imprimer}<span>Imprimer</span></button>
             <a class="lecteur-bouton" href="#/original/${esc(f)}" aria-label="Voir l’original en PDF">${icone.original}<span>Original</span></a>
           </div>
@@ -1465,6 +1493,13 @@
               <button type="button" data-ecoute="vitesse" aria-label="Vitesse normale">1×</button>
               <button type="button" data-ecoute="stop" aria-label="Arrêter la lecture">${icone.arreter}</button>
             </div>
+            <div class="lecture-note surl-barre" role="toolbar" aria-label="Surligner le passage choisi" hidden>
+              <span class="surl-couleurs">${COULEURS_SURL.map(([c, nom]) =>
+                `<button type="button" class="surl-pastille c-${c}" data-couleur="${c}" aria-label="Surligner en ${nom}" aria-pressed="false"></button>`).join("")}</span>
+              <button type="button" class="surl-action" data-surl="note">${icone.note}<span>Note</span></button>
+              <button type="button" class="surl-action" data-surl="effacer" hidden>${icone.effacer}<span>Effacer</span></button>
+              <button type="button" class="surl-action" data-surl="fermer" aria-label="Fermer">${icone.fermer}</button>
+            </div>
             <div class="lecture-note trouve-barre" role="group" aria-label="Passages trouvés" hidden>
               <span class="trouve-mot"></span><span class="trouve-compte" aria-live="polite"></span>
               <button type="button" data-trouve="-1" aria-label="Passage précédent">‹</button>
@@ -1482,9 +1517,18 @@
         <div class="panneau-lecture panneau-bible" id="panneau-bible" role="dialog" aria-modal="true" aria-labelledby="titre-bible" hidden>
           <div class="panneau-tete"><div><h2 id="titre-bible" class="bible-titre">Bible</h2><p class="bible-version">Louis Segond 1910</p></div><button type="button" class="panneau-fermer" data-fermer>Fermer</button></div>
           <div class="bible-outils"><button type="button" class="bible-tout" aria-pressed="false" hidden>Voir tout le chapitre</button><a class="bible-strong" href="https://www.lueur.org/bible/" target="_blank" rel="noopener" aria-label="Bible Strong : ce passage avec les mots hébreux et grecs, sur Lueur.org" hidden><span>Bible Strong</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
-          <div class="bible-corps"><div class="bible-texte" aria-live="polite"></div></div>
+          <div class="bible-corps"><div class="bible-texte" aria-live="polite"></div><div class="bible-plus" hidden></div></div>
         </div>
         ${panneauImpression(e, true)}
+        <div class="panneau-lecture" id="panneau-note" role="dialog" aria-modal="true" aria-labelledby="titre-note" hidden>
+          <div class="panneau-tete"><h2 id="titre-note">Ma note</h2><button type="button" class="panneau-fermer" data-fermer>Fermer</button></div>
+          <blockquote class="note-passage"></blockquote>
+          <textarea class="note-texte" rows="5" maxlength="2000" aria-labelledby="titre-note" placeholder="Ce que ce passage me dit, une question à poser au groupe…"></textarea>
+          <div class="note-boutons">
+            <button type="button" class="lecture-action principale" data-note="garder"><span>Enregistrer</span>${icone.coche}</button>
+            <button type="button" class="lecture-action" data-note="effacer"><span>Effacer la note</span>${icone.effacer}</button>
+          </div>
+        </div>
       </div>`;
 
     const racine = app.querySelector(".lecture");
@@ -1520,8 +1564,18 @@
       const a = ev.target.closest('a.ref[data-ouvrir="bible"]');
       if (!a || ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey) return;
       ev.preventDefault();
+      racine.querySelector("#panneau-bible .bible-plus").hidden = true;
       Bible.montrer(racine.querySelector("#panneau-bible"), a.getAttribute("href"));
     }, { signal });
+    brancherBiblePlus(racine.querySelector("#panneau-bible"), f, signal);
+    racine.addEventListener("click", (ev) => {
+      const b = ev.target.closest("[data-projeter]");
+      if (!b) return;
+      if (!article.querySelector("p, li, .lec-q")) { bulle("Le texte de l’étude n’est pas encore là"); return; }
+      fermerPanneaux();
+      projeter(article, e, b);
+    }, { signal });
+    signal.addEventListener("abort", fermerProjection);
     const livre = () => racine.classList.contains("livre");
 
     const position = () => {
@@ -1826,7 +1880,7 @@
     // tourner les pages : glisser, toucher un bord, flèches du clavier
     let depart = null;
     defile.addEventListener("pointerdown", (ev) => {
-      if (!livre() || ev.target.closest("textarea, input, a, button, label, select")) return;
+      if (!livre() || ev.target.closest("textarea, input, a, button, label, select, mark.surl")) return;
       depart = { x: ev.clientX, y: ev.clientY };
     }, { signal });
     defile.addEventListener("pointerup", (ev) => {
@@ -1884,6 +1938,7 @@
           });
         }
         reponses(article, f, signal);
+        brancherSurlignage(racine, article, f, signal);
         let demande = null;
         try {
           demande = JSON.parse(sessionStorage.getItem("mission.surligner") || "null");
@@ -1921,10 +1976,10 @@
   }
 
   // réponses, mots à compléter et cases cochées : gardés sur l’appareil, par document
-  function reponses(article, f, signal) {
-    const cle = (k) => `mission.rep.${f}.${k}`;
-    // une question sans zone de réponse (études à compléter, comme Historacles) en reçoit une, comme dans
-    // les autres études ; pas dans les fiches de l’animateur, qui donnent déjà les réponses
+  // une question sans zone de réponse (études à compléter, comme Historacles) en reçoit une, comme dans
+  // les autres études ; pas dans les fiches de l’animateur, qui donnent déjà les réponses.
+  // (aussi utilisé par « Mon carnet » pour retrouver la question de chaque réponse)
+  function ajouterZonesReponse(article, f) {
     const e = documents.get(f);
     if (!(e && e.d && e.d.role === "animateur")) {
       article.querySelectorAll(".lec-q").forEach((q, i) => {
@@ -1948,6 +2003,10 @@
         }
       });
     }
+  }
+  function reponses(article, f, signal) {
+    const cle = (k) => `mission.rep.${f}.${k}`;
+    ajouterZonesReponse(article, f);
     article.querySelectorAll("textarea[data-q]").forEach((t) => {
       t.value = memoire.lire(cle(`q${t.dataset.q}`), "");
       t.addEventListener("input", () => memoire.ecrire(cle(`q${t.dataset.q}`), t.value), { signal });
@@ -1964,6 +2023,222 @@
       t.checked = memoire.lire(cle(`c${t.dataset.c}`), "") === "1";
       t.addEventListener("change", () => memoire.ecrire(cle(`c${t.dataset.c}`), t.checked ? "1" : ""), { signal });
     });
+  }
+
+  // ---------- passages surlignés et notes (mode lecture), gardés sur l’appareil : mission.surl.<document> ----------
+  // un passage = un morceau de texte d’un bloc (paragraphe, élément de liste, titre…) : { id, g (groupe), b (n° du bloc),
+  // d, f (début et fin dans le texte du bloc), t (le texte), c (couleur), n (note, sur le premier morceau du groupe), date }
+  const COULEURS_SURL = [["jaune", "jaune"], ["vert", "vert"], ["rose", "rose"], ["bleu", "bleu"]];
+  const BLOCS_SURL = "p, li, h2, h3, h4, blockquote, figcaption, td, th, dt, dd";
+  const surl = {
+    lire: (f) => lireJson(`mission.surl.${f}`, [], (l) => Array.isArray(l)),
+    ecrire(f, l) {
+      if (l.length) memoire.ecrire(`mission.surl.${f}`, JSON.stringify(l));
+      else try { localStorage.removeItem(`mission.surl.${f}`); } catch (e) { /* rien */ }
+    },
+  };
+  const blocsSurl = (article) => [...article.querySelectorAll(BLOCS_SURL)]
+    .filter((el) => !el.closest(".lec-credits") && !el.querySelector(BLOCS_SURL));
+  // le texte d’un bloc, sans les zones de réponse ni les étiquettes cachées
+  const textesDe = (bloc) => {
+    const l = [];
+    const w = document.createTreeWalker(bloc, NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) => (n.parentElement && n.parentElement.closest("textarea, .lec-cache, select") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT),
+    });
+    while (w.nextNode()) l.push(w.currentNode);
+    return l;
+  };
+  const texteBloc = (bloc) => textesDe(bloc).map((t) => t.data).join("");
+  // une position (nœud, décalage) dans un bloc → nombre de caractères du texte du bloc qui la précèdent
+  function decalage(bloc, noeud, off) {
+    const r = document.createRange();
+    r.setStart(bloc, 0);
+    try { r.setEnd(noeud, off); } catch (e) { return 0; }
+    let n = 0;
+    for (const t of textesDe(bloc)) {
+      if (!r.intersectsNode(t)) continue;
+      const debut = t === r.startContainer ? r.startOffset : 0;
+      const fin = t === r.endContainer ? r.endOffset : t.length;
+      n += Math.max(0, fin - debut);
+    }
+    return n;
+  }
+  function envelopper(bloc, d, f, classe, h) {
+    const marques = [];
+    let pos = 0;
+    for (const t of textesDe(bloc)) {
+      const a = pos;
+      const z = pos + t.length;
+      pos = z;
+      if (z <= d || a >= f) continue;
+      let n = t;
+      const i = Math.max(0, d - a);
+      const j = Math.min(t.length, f - a);
+      if (j < n.length) n.splitText(j);
+      if (i > 0) n = n.splitText(i);
+      const m = document.createElement("mark");
+      m.className = classe;
+      m.dataset.h = h;
+      n.replaceWith(m);
+      m.append(n);
+      marques.push(m);
+    }
+    return marques;
+  }
+  function brancherSurlignage(racine, article, f, signal) {
+    const barre = racine.querySelector(".surl-barre");
+    const panneauNote = racine.querySelector("#panneau-note");
+    const voile = racine.querySelector(".voile-lecture");
+    let choix = null; // passage choisi, pas encore surligné : [{ b, d, f, t }]
+    let groupe = null; // passage surligné touché
+    let noteDe = null; // groupe dont la note est ouverte
+    const appliquer = () => {
+      article.querySelectorAll("mark.surl").forEach((m) => m.replaceWith(...m.childNodes));
+      article.normalize();
+      const blocs = blocsSurl(article);
+      const liste = surl.lire(f);
+      const parGroupe = new Map();
+      liste.forEach((h) => {
+        const bloc = blocs[h.b];
+        if (!bloc) return;
+        let { d, f: fin } = h;
+        const texte = texteBloc(bloc);
+        if (texte.slice(d, fin) !== h.t) {
+          // le texte a bougé (étude corrigée) : on retrouve le passage dans son bloc
+          const k = texte.indexOf(h.t);
+          if (k < 0) return;
+          d = k;
+          fin = k + h.t.length;
+        }
+        const marques = envelopper(bloc, d, fin, `surl c-${h.c}`, h.g);
+        if (!parGroupe.has(h.g)) parGroupe.set(h.g, { note: "", marques: [] });
+        const x = parGroupe.get(h.g);
+        x.marques.push(...marques);
+        if (h.n) x.note = h.n;
+      });
+      parGroupe.forEach(({ note, marques }) => {
+        const der = marques[marques.length - 1];
+        if (note && der) { der.classList.add("a-note"); der.dataset.note = note; }
+      });
+    };
+    const cacher = () => {
+      barre.hidden = true;
+      choix = null;
+      groupe = null;
+    };
+    const montrer = (mode) => {
+      barre.hidden = false;
+      barre.querySelector('[data-surl="effacer"]').hidden = mode !== "edition";
+      const c = mode === "edition" ? (surl.lire(f).find((h) => h.g === groupe) || {}).c : "";
+      barre.querySelectorAll("[data-couleur]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.couleur === c)));
+    };
+    const lireChoix = () => {
+      const sel = document.getSelection();
+      if (!sel || sel.isCollapsed || !sel.rangeCount) { if (choix) cacher(); return; }
+      const r = sel.getRangeAt(0);
+      if (!article.contains(r.commonAncestorContainer) && !r.commonAncestorContainer.contains(article)) return;
+      const depart = r.startContainer.nodeType === 1 ? r.startContainer : r.startContainer.parentElement;
+      if (depart && depart.closest("textarea, input, select")) return;
+      const morceaux = [];
+      blocsSurl(article).forEach((bloc, b) => {
+        if (!r.intersectsNode(bloc)) return;
+        const texte = texteBloc(bloc);
+        let d = bloc.contains(r.startContainer) ? decalage(bloc, r.startContainer, r.startOffset) : 0;
+        let fin = bloc.contains(r.endContainer) ? decalage(bloc, r.endContainer, r.endOffset) : texte.length;
+        const brut = texte.slice(d, fin);
+        d += brut.length - brut.trimStart().length;
+        fin -= brut.length - brut.trimEnd().length;
+        // un mot coupé par la sélection est pris en entier
+        const lettre = /[\p{L}\p{N}’'-]/u;
+        while (d > 0 && d < fin && lettre.test(texte[d - 1]) && lettre.test(texte[d])) d -= 1;
+        while (fin < texte.length && fin > d && lettre.test(texte[fin]) && lettre.test(texte[fin - 1])) fin += 1;
+        if (fin > d) morceaux.push({ b, d, f: fin, t: texte.slice(d, fin) });
+      });
+      if (!morceaux.length) return;
+      choix = morceaux;
+      groupe = null;
+      montrer("nouveau");
+    };
+    let attente = 0;
+    document.addEventListener("selectionchange", () => { clearTimeout(attente); attente = setTimeout(lireChoix, 250); }, { signal });
+    signal.addEventListener("abort", () => clearTimeout(attente));
+    // toucher un passage surligné : changer sa couleur, sa note, ou l’effacer
+    article.addEventListener("click", (ev) => {
+      const m = ev.target.closest("mark.surl");
+      if (!m || ev.target.closest("a, textarea, input")) return;
+      const sel = document.getSelection();
+      if (sel && !sel.isCollapsed) return;
+      groupe = m.dataset.h;
+      choix = null;
+      montrer("edition");
+    }, { signal });
+    const creer = (couleur) => {
+      const g = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+      const date = dateIso(new Date());
+      surl.ecrire(f, [...surl.lire(f), ...choix.map((m, k) => ({ id: `${g}-${k}`, g, b: m.b, d: m.d, f: m.f, t: m.t, c: couleur, n: "", date }))]);
+      const sel = document.getSelection();
+      if (sel) sel.removeAllRanges();
+      appliquer();
+      return g;
+    };
+    const ouvrirNote = (g) => {
+      const liste = surl.lire(f).filter((h) => h.g === g);
+      if (!liste.length) return;
+      noteDe = g;
+      panneauNote.querySelector(".note-passage").textContent = liste.map((h) => h.t).join(" … ");
+      panneauNote.querySelector(".note-texte").value = liste[0].n || "";
+      voile.hidden = false;
+      panneauNote.hidden = false;
+      panneauNote.querySelector(".note-texte").focus();
+    };
+    // les boutons de la barre gardent le texte choisi (sinon le toucher le désélectionne avant le clic)
+    barre.addEventListener("pointerdown", (ev) => { if (ev.target.closest("button")) ev.preventDefault(); }, { signal });
+    barre.addEventListener("click", (ev) => {
+      const coul = ev.target.closest("[data-couleur]");
+      const act = ev.target.closest("[data-surl]");
+      if (coul) {
+        if (choix) { creer(coul.dataset.couleur); bulle("Passage surligné : il est aussi dans Mon carnet"); }
+        else if (groupe) {
+          surl.ecrire(f, surl.lire(f).map((h) => (h.g === groupe ? { ...h, c: coul.dataset.couleur } : h)));
+          appliquer();
+        }
+        cacher();
+        return;
+      }
+      if (!act) return;
+      const quoi = act.dataset.surl;
+      if (quoi === "fermer") { const sel = document.getSelection(); if (sel && choix) sel.removeAllRanges(); cacher(); return; }
+      if (quoi === "note") {
+        const g = choix ? creer("jaune") : groupe;
+        cacher();
+        if (g) ouvrirNote(g);
+        return;
+      }
+      if (quoi === "effacer" && groupe) {
+        surl.ecrire(f, surl.lire(f).filter((h) => h.g !== groupe));
+        appliquer();
+        cacher();
+        bulle("Surlignage effacé");
+      }
+    }, { signal });
+    panneauNote.addEventListener("click", (ev) => {
+      const b = ev.target.closest("[data-note]");
+      if (!b || !noteDe) return;
+      const texte = b.dataset.note === "garder" ? panneauNote.querySelector(".note-texte").value.trim() : "";
+      let premier = true;
+      surl.ecrire(f, surl.lire(f).map((h) => {
+        if (h.g !== noteDe) return h;
+        const n = premier ? texte : "";
+        premier = false;
+        return { ...h, n };
+      }));
+      appliquer();
+      voile.hidden = true;
+      panneauNote.hidden = true;
+      bulle(texte ? "Note enregistrée" : "Note effacée");
+      noteDe = null;
+    }, { signal });
+    appliquer();
   }
 
   // ---------- shorts des études : une idée clé et un verset clé par étude (donnees/shorts.json, outils/shorts/) ----------
@@ -3225,6 +3500,866 @@
     return true;
   }
 
+  // ---------- par où commencer ? trois questions pour trouver sa série (#/commencer) ----------
+  const QUESTIONS_DEBUT = [
+    { id: "bible", titre: "Où en êtes-vous avec la Bible ?", choix: [
+      ["decouvre", "Je la découvre"], ["un-peu", "Je la connais un peu"], ["souvent", "Je la lis depuis longtemps"]] },
+    { id: "envie", titre: "Qu’est-ce qui vous attire le plus ?", choix: [
+      ["jesus", "Mieux connaître Jésus"], ["questions", "Des réponses aux grandes questions", "La Bible, la mort, le mal, l’avenir"],
+      ["propheties", "Les prophéties", "Daniel, l’Apocalypse"], ["vie", "La vie de tous les jours", "Le couple, les enfants, les victoires"],
+      ["disciple", "Servir et former des disciples"]] },
+    { id: "comment", titre: "Vous allez étudier…", choix: [
+      ["seul", "Seul, à mon rythme"], ["deux", "À deux", "Avec quelqu’un qui m’accompagne"], ["groupe", "En petit groupe", "Je l’anime, ou j’y participe"]] },
+  ];
+  // la série conseillée, puis une autre ; selon ce qu’on connaît de la Bible et ce qui attire
+  const PARCOURS = {
+    decouvre: { jesus: ["prendre-vie", "vers-jesus"], questions: ["quete-certitude", "fiabilite-bible"], propheties: ["quete-certitude", "historacles"],
+      vie: ["prendre-vie", "vivre-avec-jesus"], disciple: ["prendre-vie", "fast-kit-de-survie"] },
+    "un-peu": { jesus: ["rencontre-avec-jesus", "cep-sarment"], questions: ["explorateur", "vivre-avec-jesus"], propheties: ["historacles", "daniel"],
+      vie: ["vivre-avec-jesus", "excellence"], disciple: ["fast-kit-de-survie", "fast-formation-de-base"] },
+    souvent: { jesus: ["cep-sarment", "rencontre-avec-jesus"], questions: ["sanctuaire", "trinite"], propheties: ["daniel", "sanctuaire"],
+      vie: ["excellence", "enfants"], disciple: ["disciple-incroyable", "fast-tactiques-d-equipe"] },
+  };
+  const SELON_SITUATION = ["frequentations", "enfants", "homme-de-dieu", "convoitise", "excellence"];
+  function commencerPage() {
+    document.title = "Par où commencer ? — Mission";
+    const garde = lireJson("mission.commencer", null, (o) => typeof o === "object" && PARCOURS[o.bible] && PARCOURS[o.bible][o.envie]);
+    const rep = garde ? { ...garde } : {};
+    let etape = garde ? QUESTIONS_DEBUT.length : 0;
+    app.innerHTML = `
+      <div class="page page-commencer">
+        ${fil([["Accueil", "#/"], ["Par où commencer ?"]])}
+        <h1 class="titre-page" tabindex="-1">Par où commencer ?</h1>
+        <div class="debut" aria-live="polite"></div>
+      </div>`;
+    const zone = app.querySelector(".debut");
+    const montrer = () => {
+      if (etape < QUESTIONS_DEBUT.length) {
+        const q = QUESTIONS_DEBUT[etape];
+        zone.innerHTML = `<p class="debut-etape">Question ${etape + 1} sur ${QUESTIONS_DEBUT.length}</p>
+          <span class="progression-barre" aria-hidden="true"><span style="width:${Math.round((etape / QUESTIONS_DEBUT.length) * 100)}%"></span></span>
+          <h2 class="debut-question" tabindex="-1">${fr(q.titre)}</h2>
+          <div class="debut-choix">${q.choix.map(([id, nom, aide]) => `<button type="button" class="debut-bouton" data-rep="${id}"${rep[q.id] === id ? ' aria-pressed="true"' : ""}>
+              <span>${fr(nom)}</span>${aide ? `<small>${fr(aide)}</small>` : ""}</button>`).join("")}</div>
+          ${etape ? '<button type="button" class="grp-lien debut-retour" data-debut="retour">Question précédente</button>' : ""}`;
+        const h = zone.querySelector(".debut-question");
+        if (h && etape) h.focus({ preventScroll: true });
+        return;
+      }
+      memoire.ecrire("mission.commencer", JSON.stringify({ ...rep, date: dateIso(new Date()) }));
+      const [id1, id2] = PARCOURS[rep.bible][rep.envie];
+      let liste = [id1, id2];
+      if (rep.comment === "groupe" && rep.envie === "propheties") liste = [id1, "secrets-prophetie"];
+      const [s1, s2] = liste.map((id) => series[id]).filter(Boolean);
+      const premiere = s1.lecons.find((l) => !faites.a(l) && docLecon(l)) || s1.lecons[0];
+      const d = premiere && docLecon(premiere);
+      const autres = rep.envie === "vie" ? SELON_SITUATION.filter((id) => id !== s1.id && (!s2 || id !== s2.id)).map((id) => series[id]).filter(Boolean) : [];
+      const conseil = {
+        seul: "Lisez une étude à la fois, à votre rythme : vos réponses restent sur votre téléphone, et chaque verset s’ouvre d’un toucher.",
+        deux: "Envoyez le lien de la série à la personne qui vous accompagne : vous lirez la même étude, chacun sur son téléphone.",
+        groupe: "Chaque étude a sa fiche du participant, et souvent un guide pour l’animateur, avec les réponses.",
+      }[rep.comment];
+      zone.innerHTML = `<p class="debut-etape">Pour vous</p>
+        <h2 class="debut-question" tabindex="-1">${fr(s1.titre)}</h2>
+        <a class="debut-serie" href="#/serie/${s1.id}">
+          ${image(s1.image, "debut-image")}
+          <span class="debut-serie-texte"><span>${fr(s1.texte)}</span><span class="compte">${compteSerie(s1)}</span></span>
+        </a>
+        <div class="grp-boutons">
+          ${d ? `<a class="doc principal grp-grand" ${cible(d)}>${icone.lecture}${faites.nombre(s1) ? "Continuer" : "Commencer"} : ${fr(premiere.num ? `Étude ${premiere.num}` : premiere.titre)}</a>` : ""}
+          <a class="doc" href="#/serie/${s1.id}">Voir la série</a>
+        </div>
+        <p class="debut-conseil">${fr(conseil)}</p>
+        ${rep.comment === "deux" ? `<p><a class="doc" href="#/inviter/${s1.id}">${icone.inviter}Inviter la personne qui m’accompagne</a></p>` : ""}
+        ${rep.comment === "groupe" ? `<div class="debut-groupe">${carteGroupe()}</div>` : ""}
+        ${s2 ? `<h3 class="debut-aussi">Aussi pour vous</h3>
+          <a class="debut-autre" href="#/serie/${s2.id}"><strong>${fr(s2.titre)}</strong><span>${fr(s2.texte)}</span>${chevronDroit}</a>` : ""}
+        ${autres.length ? `<h3 class="debut-aussi">Selon votre situation</h3>
+          <ul class="debut-liste">${autres.map((x) => `<li><a href="#/serie/${x.id}">${fr(x.titre)}</a>${x.note ? ` <span class="cep-serie-note">(${fr(x.note)})</span>` : ""}</li>`).join("")}</ul>` : ""}
+        <p><button type="button" class="grp-lien" data-debut="refaire">Refaire les trois questions</button></p>`;
+      const h = zone.querySelector(".debut-question");
+      if (h && !premiereFois) h.focus({ preventScroll: true });
+    };
+    let premiereFois = true;
+    zone.addEventListener("click", (ev) => {
+      premiereFois = false;
+      const b = ev.target.closest("[data-rep]");
+      if (b) { rep[QUESTIONS_DEBUT[etape].id] = b.dataset.rep; etape += 1; montrer(); return; }
+      const a = ev.target.closest("[data-debut]");
+      if (!a) return;
+      if (a.dataset.debut === "retour") etape = Math.max(0, etape - 1);
+      else { etape = 0; Object.keys(rep).forEach((k) => delete rep[k]); try { localStorage.removeItem("mission.commencer"); } catch (e) { /* rien */ } }
+      montrer();
+    });
+    montrer();
+    return true;
+  }
+
+  // ---------- mon carnet : réponses, passages surlignés et notes de toutes les études (#/carnet) ----------
+  // tout vient de l’appareil (mission.rep.*, mission.surl.*) ; les questions sont relues dans le texte des études
+  function contenuCarnet() {
+    const parDoc = new Map();
+    const ajouter = (f) => {
+      if (!parDoc.has(f)) parDoc.set(f, { reponses: 0, blancs: 0, coches: 0, surl: [] });
+      return parDoc.get(f);
+    };
+    let cles = [];
+    try { cles = Object.keys(localStorage); } catch (e) { cles = []; }
+    cles.forEach((k) => {
+      if (k.startsWith("mission.rep.")) {
+        const reste = k.slice(12);
+        const i = reste.lastIndexOf(".");
+        const f = reste.slice(0, i);
+        const quoi = reste.slice(i + 1);
+        const v = memoire.lire(k, "");
+        if (!documents.has(f) || !v.trim()) return;
+        const x = ajouter(f);
+        if (quoi.startsWith("q")) x.reponses += 1;
+        else if (quoi.startsWith("b")) x.blancs += 1;
+        else if (quoi.startsWith("c") && v === "1") x.coches += 1;
+      } else if (k.startsWith("mission.surl.")) {
+        const f = k.slice(13);
+        if (!documents.has(f)) return;
+        const l = surl.lire(f);
+        if (l.length) ajouter(f).surl = l;
+      }
+    });
+    const ordre = [...documents.keys()];
+    return [...parDoc.entries()].sort((a, b) => ordre.indexOf(a[0]) - ordre.indexOf(b[0]));
+  }
+  const groupesSurl = (l) => {
+    const m = new Map();
+    l.forEach((h) => {
+      if (!m.has(h.g)) m.set(h.g, { c: h.c, t: [], n: "", date: h.date });
+      const x = m.get(h.g);
+      x.t.push(h.t);
+      if (h.n) x.n = h.n;
+    });
+    return [...m.values()];
+  };
+  // les questions et les réponses d’une étude, relues dans son texte
+  const textesCarnet = new Map();
+  function detailCarnet(f) {
+    if (!textesCarnet.has(f)) {
+      const p = fetch(`lecture/${f.split("/").map(encodeURIComponent).join("/")}.html?v=${VERSION_LECTURE}`)
+        .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.text(); })
+        .then((h) => {
+          const a = document.createElement("article");
+          a.innerHTML = h;
+          ajouterZonesReponse(a, f);
+          const propre = (el) => {
+            const c = el.cloneNode(true);
+            c.querySelectorAll("textarea, .lec-cache, .lec-q-num, input").forEach((x) => x.remove());
+            return c.textContent.replace(/\s+/g, " ").trim();
+          };
+          const qr = [...a.querySelectorAll("textarea[data-q]")].map((t) => {
+            const v = memoire.lire(`mission.rep.${f}.q${t.dataset.q}`, "").trim();
+            if (!v) return null;
+            const q = t.closest(".lec-q");
+            const num = q && q.querySelector(".lec-q-num");
+            let question = q ? propre(q.querySelector(".lec-q-corps") || q) : "";
+            if (!question && t.previousElementSibling) question = propre(t.previousElementSibling);
+            return { num: num && /\d/.test(num.textContent) ? num.textContent.trim() : "", question, reponse: v };
+          }).filter(Boolean);
+          // phrases à compléter : la phrase, avec les mots écrits
+          const phrases = [];
+          const vus = new Set();
+          a.querySelectorAll("input.lec-blanc[data-b]").forEach((t) => {
+            const v = memoire.lire(`mission.rep.${f}.b${t.dataset.b}`, "").trim();
+            const bloc = t.closest("p, li, td, blockquote") || t.parentElement;
+            if (!v || vus.has(bloc)) return;
+            vus.add(bloc);
+            const c = bloc.cloneNode(true);
+            c.querySelectorAll("input.lec-blanc[data-b]").forEach((x) => {
+              const w = memoire.lire(`mission.rep.${f}.b${x.dataset.b}`, "").trim();
+              const m = document.createElement("strong");
+              m.textContent = w || "……";
+              x.replaceWith(m);
+            });
+            c.querySelectorAll("textarea, .lec-cache").forEach((x) => x.remove());
+            phrases.push(c.innerHTML.replace(/<(?!\/?strong>)[^>]+>/g, ""));
+          });
+          return { qr, phrases };
+        });
+      p.catch(() => textesCarnet.delete(f));
+      textesCarnet.set(f, p);
+    }
+    return textesCarnet.get(f);
+  }
+  const resumeCarnet = (x) => [
+    x.reponses && pluriel(x.reponses, "réponse", "réponses"),
+    x.blancs && pluriel(x.blancs, "mot complété", "mots complétés"),
+    x.surl.length && pluriel(groupesSurl(x.surl).length, "passage surligné", "passages surlignés"),
+    groupesSurl(x.surl).filter((g) => g.n).length && pluriel(groupesSurl(x.surl).filter((g) => g.n).length, "note", "notes"),
+  ].filter(Boolean).join(" · ");
+  function carnetPage() {
+    document.title = "Mon carnet — Mission";
+    const docs = contenuCarnet();
+    const nbFaites = Object.keys(faites.lire()).length;
+    const total = docs.reduce((t, [, x]) => t + x.reponses + x.blancs, 0);
+    const passages = docs.reduce((t, [, x]) => t + groupesSurl(x.surl).length, 0);
+    app.innerHTML = `
+      <div class="page page-carnet">
+        ${fil([["Accueil", "#/"], ["Mon carnet"]])}
+        <h1 class="titre-page" tabindex="-1">Mon carnet</h1>
+        <p class="chapeau">Vos réponses, les passages que vous avez surlignés et vos notes, étude par étude. Tout reste sur ce téléphone : rien n’est envoyé.</p>
+        <ul class="carnet-chiffres">
+          <li><strong>${docs.length}</strong> ${docs.length > 1 ? "études annotées" : "étude annotée"}</li>
+          <li><strong>${total}</strong> ${total > 1 ? "réponses" : "réponse"}</li>
+          <li><strong>${passages}</strong> ${passages > 1 ? "passages surlignés" : "passage surligné"}</li>
+          <li><strong>${nbFaites}</strong> ${nbFaites > 1 ? "études terminées" : "étude terminée"}</li>
+        </ul>
+        <div class="serie-outils carnet-outils">
+          <a class="serie-outil" href="#/versets">${icone.cartes}<span>Mémoriser les versets</span></a>
+          ${docs.length ? `<button type="button" class="serie-outil" data-carnet="copier">${icone.copier}<span>Copier tout</span></button>
+            ${navigator.share ? `<button type="button" class="serie-outil" data-carnet="partager">${icone.partager}<span>Partager</span></button>` : ""}
+            <button type="button" class="serie-outil" data-carnet="imprimer">${icone.imprimer}<span>Imprimer</span></button>` : ""}
+        </div>
+        ${docs.length ? `<div class="carnet-liste">${docs.map(([f, x]) => {
+          const e = documents.get(f);
+          const ou = e.j ? `Semaine ${e.l.num} · ` : e.l && e.l.num ? `Étude ${e.l.num} · ` : "";
+          return `<details class="carnet-doc" data-f="${esc(f)}">
+            <summary><span class="carnet-titre">${fr(titreDoc(e))}</span>
+              <span class="carnet-ou">${esc(ou)}${fr(e.s.titre)}</span>
+              <span class="carnet-resume">${esc(resumeCarnet(x))}</span></summary>
+            <div class="carnet-detail"><p class="grp-note">Ouverture…</p></div>
+          </details>`;
+        }).join("")}</div>`
+        : `<div class="carnet-vide">${icone.carnet}<p>Rien pour l’instant. Dans une étude, écrivez sous les questions, ou choisissez quelques mots du texte pour les surligner et y ajouter une note : tout se retrouvera ici.</p>
+            <a class="doc principal" href="#/commencer">${icone.boussole}Par où commencer ?</a></div>`}
+      </div>`;
+    const remplir = async (det) => {
+      const f = det.dataset.f;
+      const zone = det.querySelector(".carnet-detail");
+      if (zone.dataset.pret) return;
+      const x = docs.find(([g]) => g === f)[1];
+      const gs = groupesSurl(x.surl);
+      const blocSurl = gs.length ? `<h3 class="carnet-sous">Passages surlignés</h3><ul class="carnet-surl">${gs.map((g) =>
+        `<li class="c-${esc(g.c)}"><q>${fr(g.t.join(" … "))}</q>${g.n ? `<p class="carnet-note">${icone.note}<span>${fr(g.n)}</span></p>` : ""}</li>`).join("")}</ul>` : "";
+      try {
+        const { qr, phrases } = await detailCarnet(f);
+        zone.innerHTML = `${qr.length ? `<h3 class="carnet-sous">Mes réponses</h3><ol class="carnet-qr">${qr.map((r) =>
+          `<li><p class="carnet-q">${r.num ? `<span class="carnet-num">${esc(r.num)}</span>` : ""}${fr(r.question)}</p><p class="carnet-r">${fr(r.reponse).replace(/\n/g, "<br>")}</p></li>`).join("")}</ol>` : ""}
+          ${phrases.length ? `<h3 class="carnet-sous">Phrases complétées</h3><ul class="carnet-phrases">${phrases.map((h) => `<li>${h}</li>`).join("")}</ul>` : ""}
+          ${blocSurl}
+          <p><a class="doc" href="#/lire/${esc(f)}">${icone.lecture}Ouvrir l’étude</a></p>`;
+      } catch (e) {
+        zone.innerHTML = `${blocSurl}<p class="grp-note">Les questions ne s’affichent pas sans connexion.</p><p><a class="doc" href="#/lire/${esc(f)}">Ouvrir l’étude</a></p>`;
+      }
+      zone.dataset.pret = "1";
+    };
+    app.querySelectorAll(".carnet-doc").forEach((det) => det.addEventListener("toggle", () => { if (det.open) remplir(det); }));
+    // tout en texte : pour le copier, le partager, le garder
+    const enTexte = async () => {
+      const morceaux = ["Mon carnet — Mission", ""];
+      for (const [f, x] of docs) {
+        const e = documents.get(f);
+        morceaux.push(`== ${titreDoc(e)} (${e.s.titre})`);
+        try {
+          const { qr, phrases } = await detailCarnet(f);
+          qr.forEach((r) => morceaux.push(`${r.num ? `${r.num}. ` : ""}${r.question}`, `→ ${r.reponse}`, ""));
+          phrases.forEach((h) => morceaux.push(`• ${h.replace(/<\/?strong>/g, "")}`));
+        } catch (er) { /* sans connexion : les passages seulement */ }
+        groupesSurl(x.surl).forEach((g) => morceaux.push(`« ${g.t.join(" … ")} »${g.n ? `\n  Note : ${g.n}` : ""}`));
+        morceaux.push("");
+      }
+      return morceaux.join("\n").trim();
+    };
+    app.querySelector(".page-carnet").addEventListener("click", async (ev) => {
+      const b = ev.target.closest("[data-carnet]");
+      if (!b) return;
+      const quoi = b.dataset.carnet;
+      if (quoi === "imprimer") {
+        const dets = [...app.querySelectorAll(".carnet-doc")];
+        await Promise.all(dets.map((d) => { d.open = true; return remplir(d); }));
+        window.print();
+        return;
+      }
+      b.setAttribute("aria-busy", "true");
+      const t = await enTexte();
+      b.removeAttribute("aria-busy");
+      if (quoi === "copier") copierTexte(t); else partagerTexte(t);
+    });
+    return true;
+  }
+  const carteCarnet = () => `<a class="carte-groupe" href="#/carnet">
+      <span class="carte-groupe-icone">${icone.carnet}</span>
+      <span class="carte-groupe-texte"><span class="carte-groupe-titre">Mon carnet</span>
+        <span>Vos réponses, les passages surlignés et vos notes ; les versets à mémoriser.</span></span>
+      ${chevronDroit}
+    </a>`;
+
+  // ---------- mémoriser les versets (#/versets) : lire, premières lettres, mots cachés, réciter ; révision espacée ----------
+  // mission.versets = { appris: { <référence>: { r, t (texte), s (série d’où il vient, ou « perso »), b (boîte 1 à 5),
+  // p (prochaine révision, AAAA-MM-JJ) } } } ; un verset su passe à la boîte suivante et revient plus tard
+  const INTERVALLES = [0, 1, 3, 7, 14, 30];
+  const versets = {
+    lire() {
+      const o = lireJson("mission.versets", {}, (v) => typeof v === "object" && !Array.isArray(v));
+      return { appris: o.appris && typeof o.appris === "object" && !Array.isArray(o.appris) ? o.appris : {} };
+    },
+    maj(f) { const o = this.lire(); f(o); memoire.ecrire("mission.versets", JSON.stringify(o)); return o; },
+  };
+  const ajouterJours = (iso, n) => { const [a, m, j] = iso.split("-").map(Number); return dateIso(new Date(a, m - 1, j + n)); };
+  const aujourdhui = () => dateIso(new Date());
+  function apprendre(r, t, source) {
+    let nouveau = false;
+    versets.maj((o) => {
+      if (o.appris[r]) return;
+      o.appris[r] = { r, t, s: source, b: 1, p: aujourdhui() };
+      nouveau = true;
+    });
+    return nouveau;
+  }
+  const aRevoir = (o) => Object.values(o.appris).filter((x) => x.p <= aujourdhui())
+    .sort((a, b) => a.b - b.b || (a.p < b.p ? -1 : a.p > b.p ? 1 : 0));
+  const quand = (iso) => {
+    const [a, m, j] = iso.split("-").map(Number);
+    const n = Math.round((new Date(a, m - 1, j) - new Date(new Date().toDateString())) / 86400000);
+    return n <= 0 ? "aujourd’hui" : n === 1 ? "demain" : `dans ${n} jours`;
+  };
+  const motsDe = (t) => t.replace(/\s+/g, " ").trim().split(" ");
+  // « Car Dieu a tant aimé le monde, » → « C D a t a l m, »
+  const premieresLettres = (t) => motsDe(t).map((m) => m.replace(/[\p{L}\p{N}]+/gu, (x) => x[0])).join(" ");
+  function versetsPage() {
+    document.title = "Mémoriser les versets — Mission";
+    app.innerHTML = `
+      <div class="page page-versets">
+        ${fil([["Accueil", "#/"], ["Mon carnet", "#/carnet"], ["Mémoriser les versets"]])}
+        <h1 class="titre-page" tabindex="-1">Mémoriser les versets</h1>
+        <p class="chapeau">Lisez le verset, cachez des mots, puis récitez-le. Un verset su revient de moins en moins souvent : le lendemain, puis dans 3, 7, 14 et 30 jours.</p>
+        <div class="vs-zone"></div>
+      </div>`;
+    const zone = app.querySelector(".vs-zone");
+    let SH = [];
+    let revue = null; // { liste, i, mode, trous, sus }
+    const liste = () => {
+      const o = versets.lire();
+      const dus = aRevoir(o);
+      const tous = Object.values(o.appris).sort((a, b) => (a.p < b.p ? -1 : a.p > b.p ? 1 : a.r < b.r ? -1 : 1));
+      const parSerie = new Map();
+      SH.forEach((x) => {
+        if (!parSerie.has(x.serie.id)) parSerie.set(x.serie.id, { s: x.serie, v: new Map() });
+        const g = parSerie.get(x.serie.id);
+        if (!g.v.has(x.r)) g.v.set(x.r, x);
+      });
+      const boites = (b) => `<span class="vs-boites" aria-label="Boîte ${b} sur 5">${[1, 2, 3, 4, 5].map((k) => `<span${k <= b ? ' class="plein"' : ""}></span>`).join("")}</span>`;
+      zone.innerHTML = `
+        <section class="vs-revoir">
+          ${dus.length ? `<p class="vs-revoir-texte"><strong>${pluriel(dus.length, "verset", "versets")}</strong> à revoir aujourd’hui</p>
+            <button type="button" class="doc principal grp-grand" data-vs="reviser">${icone.cartes}Réviser maintenant</button>`
+            : tous.length ? `<p class="vs-revoir-texte">${icone.coche}Rien à revoir aujourd’hui. Prochaine révision : ${esc(quand(tous[0].p))}.</p>`
+              : `<p class="vs-revoir-texte">Choisissez un verset ci-dessous, ou ajoutez le vôtre : il apparaîtra ici chaque jour où il faut le revoir.</p>`}
+        </section>
+        <section class="vs-section" aria-labelledby="vs-miens">
+          <h2 id="vs-miens" class="section-titre">Mes versets</h2>
+          <form class="vs-ajout" autocomplete="off">
+            <label for="vs-ref">Ajouter un verset</label>
+            <div class="vs-ajout-ligne"><input id="vs-ref" name="ref" placeholder="Jean 3:16, Ps 23:1-3…" enterkeyhint="done"><button type="submit" class="doc principal">Ajouter</button></div>
+            <p class="grp-note vs-ajout-etat" role="status"></p>
+          </form>
+          ${tous.length ? `<ul class="vs-liste">${tous.map((x) => `<li>
+              <button type="button" class="vs-verset" data-vs-voir="${esc(x.r)}"><strong>${fr(x.r)}</strong><span>${fr(x.t)}</span></button>
+              <span class="vs-etat">${boites(x.b)}<span>${x.p <= aujourdhui() ? "à revoir" : esc(quand(x.p))}</span></span>
+              <button type="button" class="grp-lien" data-vs-retirer="${esc(x.r)}">Retirer</button>
+            </li>`).join("")}</ul>` : ""}
+        </section>
+        <section class="vs-section" aria-labelledby="vs-series">
+          <h2 id="vs-series" class="section-titre">Les versets clés des séries</h2>
+          <p class="grp-note">Un verset clé par étude, celui de son short.</p>
+          ${[...parSerie.values()].map(({ s, v }) => `<details class="vs-serie">
+              <summary><span>${fr(s.titre)}</span><span class="compte">${pluriel(v.size, "verset", "versets")}</span></summary>
+              <ul>${[...v.values()].map((x) => `<li><span class="vs-cle"><strong>${fr(x.r)}</strong> ${fr(x.t)}</span>
+                ${o.appris[x.r] ? `<span class="vs-deja">${icone.coche}Appris</span>` : `<button type="button" class="serie-outil" data-vs-apprendre="${esc(x.r)}">Apprendre</button>`}</li>`).join("")}</ul>
+              <p><button type="button" class="doc" data-vs-tout="${s.id}">Apprendre les ${v.size} versets</button></p>
+            </details>`).join("") || '<p class="grp-note">Chargement…</p>'}
+        </section>`;
+      zone.querySelector(".vs-ajout").addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        const etat = zone.querySelector(".vs-ajout-etat");
+        const brut = Bible.lireReference(ev.target.ref.value);
+        if (!brut) { etat.textContent = "Référence non reconnue : écrivez par exemple « Jean 3:16 » ou « Psaume 23:1-3 »."; return; }
+        try {
+          const x = await Bible.texte(brut);
+          if (x.versets > 8) { etat.textContent = `${x.titre} : ${x.versets} versets, c’est beaucoup. Choisissez-en au plus 8.`; return; }
+          apprendre(x.titre, x.texte, "perso");
+          bulle(`${x.titre} ajouté`);
+          liste();
+        } catch (e) {
+          etat.textContent = "Ce passage ne s’affiche pas (pas de connexion, ou référence inexistante).";
+        }
+      });
+    };
+    const texteSelon = () => {
+      const x = revue.liste[revue.i];
+      const mots = motsDe(x.t);
+      if (revue.mode === "lettres") return `<p class="vs-lettres">${esc(premieresLettres(x.t))}</p><p class="grp-note">Touchez le texte pour voir le verset.</p>`;
+      if (revue.mode === "reciter") return `<p class="vs-reciter">Dites le verset de mémoire, à voix haute ou dans votre tête.</p>`;
+      if (revue.mode === "trous") {
+        const part = [0.35, 0.6, 1][revue.niveau];
+        return `<p class="vs-trous">${mots.map((m, k) => {
+          const cache = ((k * 7 + 3) % 10) / 10 < part && /[\p{L}\p{N}]{2,}/u.test(m);
+          return cache ? `<button type="button" class="vs-trou" data-mot="${esc(m)}" aria-label="Mot caché : toucher pour le voir">${"_".repeat(Math.min(10, m.length))}</button>` : esc(m);
+        }).join(" ")}</p>
+        <p><button type="button" class="grp-lien" data-vs="plus-de-trous">${revue.niveau < 2 ? "Cacher plus de mots" : "Remettre quelques mots"}</button></p>`;
+      }
+      return `<p class="vs-lire">${fr(x.t)}</p>`;
+    };
+    const carte = () => {
+      const x = revue.liste[revue.i];
+      if (!x) {
+        zone.innerHTML = `<section class="vs-fini"><h2 class="debut-question">${icone.coche}Fini pour aujourd’hui</h2>
+          <p>${pluriel(revue.sus, "verset su", "versets sus")} sur ${revue.liste.length}. Les autres reviendront demain.</p>
+          <p><button type="button" class="doc principal" data-vs="liste">Revenir à mes versets</button></p></section>`;
+        revue = null;
+        return;
+      }
+      zone.innerHTML = `<section class="vs-carte" aria-live="polite">
+        <p class="vs-compte">${revue.seul ? "Entraînement" : `Verset ${revue.i + 1} sur ${revue.liste.length}`} · boîte ${x.b} sur 5</p>
+        <h2 class="vs-ref">${fr(x.r)}</h2>
+        <div class="vs-modes" role="group" aria-label="Façon de s’entraîner">${[["lire", "Lire"], ["lettres", "Premières lettres"], ["trous", "Mots cachés"], ["reciter", "Réciter"]]
+          .map(([id, nom]) => `<button type="button" data-vs-mode="${id}" aria-pressed="${revue.mode === id}">${nom}</button>`).join("")}</div>
+        <div class="vs-texte" data-vs="montrer">${texteSelon()}</div>
+        <div class="vs-boutons">
+          ${synthese ? `<button type="button" class="doc" data-vs="ecouter">${icone.ecouter}Écouter</button>` : ""}
+          <button type="button" class="doc" data-vs="revoir">À revoir</button>
+          <button type="button" class="doc principal" data-vs="su">${icone.coche}Je le savais</button>
+        </div>
+        <p><button type="button" class="grp-lien" data-vs="liste">Arrêter</button></p>
+      </section>`;
+    };
+    const reviser = (liste2, seul) => {
+      revue = { liste: liste2, i: 0, mode: "lire", niveau: 0, sus: 0, seul };
+      carte();
+      zone.scrollIntoView({ block: "start" });
+    };
+    zone.addEventListener("click", (ev) => {
+      const t = ev.target;
+      if (t.closest(".vs-trou")) { const b = t.closest(".vs-trou"); b.replaceWith(document.createTextNode(b.dataset.mot)); return; }
+      const m = t.closest("[data-vs-mode]");
+      if (m && revue) { revue.mode = m.dataset.vsMode; carte(); return; }
+      const ap = t.closest("[data-vs-apprendre]");
+      if (ap) {
+        const x = SH.find((y) => y.r === ap.dataset.vsApprendre);
+        if (x) { apprendre(x.r, x.t, x.serie.id); ap.outerHTML = `<span class="vs-deja">${icone.coche}Appris</span>`; bulle(`${x.r} : à revoir dès aujourd’hui`); }
+        return;
+      }
+      const tout = t.closest("[data-vs-tout]");
+      if (tout) {
+        let n = 0;
+        SH.filter((x) => x.serie.id === tout.dataset.vsTout).forEach((x) => { if (apprendre(x.r, x.t, x.serie.id)) n += 1; });
+        bulle(n ? `${pluriel(n, "verset ajouté", "versets ajoutés")}` : "Ces versets sont déjà dans votre liste");
+        liste();
+        return;
+      }
+      const ret = t.closest("[data-vs-retirer]");
+      if (ret) { versets.maj((o) => { delete o.appris[ret.dataset.vsRetirer]; }); liste(); return; }
+      const voir = t.closest("[data-vs-voir]");
+      if (voir) { const x = versets.lire().appris[voir.dataset.vsVoir]; if (x) reviser([x], true); return; }
+      const a = t.closest("[data-vs]");
+      if (!a) return;
+      const quoi = a.dataset.vs;
+      if (quoi === "reviser") { const l = aRevoir(versets.lire()); if (l.length) reviser(l, false); return; }
+      if (quoi === "liste") { arreterParole(); revue = null; liste(); return; }
+      if (!revue) return;
+      const x = revue.liste[revue.i];
+      if (quoi === "montrer" && revue.mode === "lettres") { a.innerHTML = `<p class="vs-lire">${fr(x.t)}</p>`; return; }
+      if (quoi === "plus-de-trous") { revue.niveau = (revue.niveau + 1) % 3; carte(); return; }
+      if (quoi === "ecouter") { parler(`${pourOreille(x.r)}. ${x.t}`); return; }
+      if (quoi === "su" || quoi === "revoir") {
+        arreterParole();
+        versets.maj((o) => {
+          const y = o.appris[x.r];
+          if (!y) return;
+          y.b = quoi === "su" ? Math.min(5, y.b + 1) : 1;
+          y.p = ajouterJours(aujourdhui(), quoi === "su" ? INTERVALLES[y.b] : 1);
+        });
+        if (quoi === "su") revue.sus += 1;
+        if (revue.seul) { bulle(quoi === "su" ? "Bien ! Il reviendra plus tard." : "Il reviendra demain."); revue = null; liste(); return; }
+        revue.i += 1;
+        revue.mode = "lire";
+        revue.niveau = 0;
+        carte();
+      }
+    });
+    liste();
+    chargerShorts().then((tous) => { SH = tous; if (!revue) liste(); }).catch(() => {});
+    return true;
+  }
+
+  // ---------- autour d’un passage biblique : l’apprendre par cœur, les études qui le citent (donnees/versets.json) ----------
+  const VERSION_VERSETS = "1";
+  let indexVersets = null;
+  function chargerIndexVersets() {
+    if (!indexVersets) {
+      indexVersets = fetch(`donnees/versets.json?v=${VERSION_VERSETS}`).then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); });
+      indexVersets.catch(() => { indexVersets = null; });
+    }
+    return indexVersets;
+  }
+  function etudesDuPassage(ix, seg, sauf) {
+    const score = new Map();
+    const compter = (cle, poids) => (ix.r[cle] || []).forEach((n) => score.set(n, (score.get(n) || 0) + poids));
+    seg.forEach((x) => {
+      for (let c = x.c1; c <= x.c2; c++) {
+        compter(`${x.livre}.${c}`, 0.5);
+        if (!x.v1) continue;
+        const de = c === x.c1 ? x.v1 : 1;
+        const a = c === x.c2 ? x.v2 : 180;
+        for (let v = de; v <= a; v++) compter(`${x.livre}.${c}.${v}`, 1);
+      }
+    });
+    const ici = sauf && documents.get(sauf);
+    return [...score.entries()]
+      .filter(([n]) => { const e = documents.get(ix.e[n][0]); return e && !(ici && ici.l && e.l === ici.l); })
+      .sort((a, b) => b[1] - a[1] || a[0] - b[0])
+      .map(([n]) => ix.e[n]);
+  }
+  function brancherBiblePlus(panneau, fCourant, signal) {
+    const plus = panneau.querySelector(".bible-plus");
+    if (!plus) return;
+    panneau.addEventListener("passage", (ev) => {
+      const { seg, titre: t, texte: tx, versets: nb } = ev.detail;
+      const jeton = {};
+      plus.jeton = jeton;
+      plus.hidden = false;
+      const deja = !!versets.lire().appris[t];
+      plus.innerHTML = `${nb <= 8 ? `<button type="button" class="bible-apprendre" data-apprendre${deja ? " disabled" : ""}>${icone.cartes}<span>${deja ? "Dans mes versets à mémoriser" : "Apprendre par cœur"}</span></button>` : ""}
+        <div class="bible-etudes"></div>`;
+      const b = plus.querySelector("[data-apprendre]");
+      if (b) b.addEventListener("click", () => {
+        apprendre(t, tx, "perso");
+        b.disabled = true;
+        b.querySelector("span").textContent = "Dans mes versets à mémoriser";
+        bulle(`${t} : à revoir dans « Mémoriser les versets »`);
+      });
+      chargerIndexVersets().then((ix) => {
+        if (plus.jeton !== jeton) return;
+        const liste = etudesDuPassage(ix, seg, fCourant);
+        if (!liste.length) return;
+        const ligne = ([f, titre, serie]) => `<li><a href="#/lire/${esc(f)}"><strong>${fr(titre)}</strong><span>${fr(serie)}</span></a></li>`;
+        const zoneE = plus.querySelector(".bible-etudes");
+        zoneE.innerHTML = `<h3 class="bible-etudes-titre">${fCourant ? "Dans d’autres études" : "Dans les études"} <span>${liste.length}</span></h3>
+          <ul class="bible-etudes-liste">${liste.slice(0, 5).map(ligne).join("")}</ul>
+          ${liste.length > 5 ? `<button type="button" class="grp-lien" data-tout>Voir les ${liste.length} études</button>` : ""}`;
+        const tout = zoneE.querySelector("[data-tout]");
+        if (tout) tout.addEventListener("click", () => { zoneE.querySelector("ul").innerHTML = liste.map(ligne).join(""); tout.remove(); });
+      }).catch(() => {});
+    }, signal ? { signal } : undefined);
+  }
+
+  // ---------- une série gardée hors ligne : le texte de ses études et leurs images (cache « mission-hors-ligne », sw.js) ----------
+  const CACHE_HORS_LIGNE = "mission-hors-ligne";
+  const horsLigne = {
+    lire: () => lireJson("mission.horsligne", {}, (o) => typeof o === "object" && !Array.isArray(o)),
+    maj(f) { const o = this.lire(); f(o); memoire.ecrire("mission.horsligne", JSON.stringify(o)); },
+  };
+  const docsAvecTexte = (s) => [...new Set([
+    ...s.lecons.flatMap((l) => [...l.docs, ...(l.jours || []).flatMap((j) => j.docs)]),
+    ...s.ressources,
+  ].map((d) => d.f).filter((f) => f && aTexte(f)))];
+  const adresseLecture = (f) => `lecture/${f.split("/").map(encodeURIComponent).join("/")}.html?v=${VERSION_LECTURE}`;
+  function etatHorsLigne(s) {
+    const x = horsLigne.lire()[s.id];
+    if (!x) return { garde: false };
+    return { garde: true, aJour: x.v === VERSION_LECTURE, ...x };
+  }
+  function boutonHorsLigne(s) {
+    if (!("caches" in window) || !docsAvecTexte(s).length) return "";
+    const e = etatHorsLigne(s);
+    if (!e.garde) return `<button type="button" class="serie-outil" data-hors-ligne="garder">${icone.horsLigne}<span>Garder hors ligne</span></button>`;
+    if (!e.aJour) return `<button type="button" class="serie-outil" data-hors-ligne="garder">${icone.horsLigne}<span>Mettre à jour (hors ligne)</span></button>`;
+    return `<button type="button" class="serie-outil" data-hors-ligne="retirer" aria-pressed="true">${icone.coche}<span>Hors ligne · ${taille(e.o)} · Retirer</span></button>`;
+  }
+  async function garderHorsLigne(s, bouton) {
+    const docs = docsAvecTexte(s);
+    const etiquette = bouton.querySelector("span");
+    bouton.setAttribute("aria-busy", "true");
+    try {
+      const c = await caches.open(CACHE_HORS_LIGNE);
+      const images = new Set([s.image, ...s.lecons.map((l) => l.image)].filter(Boolean).map((n) => `assets/images/${encodeURIComponent(n)}.webp`));
+      const gardees = [];
+      let octets = 0;
+      for (let k = 0; k < docs.length; k++) {
+        etiquette.textContent = `Études : ${k + 1} sur ${docs.length}…`;
+        const u = adresseLecture(docs[k]);
+        const r = await fetch(u);
+        if (!r.ok) throw new Error(String(r.status));
+        const h = await r.clone().text();
+        await c.put(u, r);
+        gardees.push(u);
+        octets += new Blob([h]).size;
+        (h.match(/src="lecture\/[^"]+"/g) || []).forEach((m) => images.add(m.slice(5, -1)));
+      }
+      const liste = [...images];
+      for (let k = 0; k < liste.length; k++) {
+        etiquette.textContent = `Images : ${k + 1} sur ${liste.length}…`;
+        const r = await fetch(liste[k]).catch(() => null);
+        if (!r || !r.ok) continue;
+        octets += Number(r.headers.get("content-length")) || (await r.clone().blob()).size;
+        await c.put(liste[k], r);
+        gardees.push(liste[k]);
+      }
+      if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
+      horsLigne.maj((o) => { o[s.id] = { v: VERSION_LECTURE, date: aujourdhui(), n: docs.length, o: octets, u: gardees }; });
+      bulle(`${s.titre} : disponible sans connexion`);
+    } catch (e) {
+      bulle("Pas tout gardé : vérifiez la connexion, puis réessayez.");
+    }
+    bouton.removeAttribute("aria-busy");
+  }
+  async function retirerHorsLigne(s) {
+    const x = horsLigne.lire()[s.id];
+    try {
+      const c = await caches.open(CACHE_HORS_LIGNE);
+      // une image partagée avec une autre série gardée reste
+      const autres = new Set(Object.entries(horsLigne.lire()).filter(([id]) => id !== s.id).flatMap(([, y]) => y.u || []));
+      await Promise.all(((x && x.u) || []).filter((u) => !autres.has(u)).map((u) => c.delete(u)));
+    } catch (e) { /* rien */ }
+    horsLigne.maj((o) => { delete o[s.id]; });
+    bulle(`${s.titre} n’est plus gardée hors ligne`);
+  }
+
+  // ---------- projeter une étude sur un écran (mode lecture) : une diapositive par idée, une par question ----------
+  // touche → ou toucher la droite : suivante ; ← ou la gauche : précédente ; Échap : quitter ; une référence s’affiche en grand
+  function diaposDe(article, e) {
+    const { s, l, j, d } = e;
+    const c = article.cloneNode(true);
+    c.querySelectorAll("textarea, .lec-cache, .lec-credits, .reponse-imprimee, .lec-rep-titre").forEach((x) => x.remove());
+    c.querySelectorAll("mark").forEach((m) => m.replaceWith(...m.childNodes));
+    c.querySelectorAll("input.lec-blanc").forEach((x) => { const b = document.createElement("span"); b.className = "proj-blanc"; x.replaceWith(b); });
+    c.querySelectorAll("img[loading]").forEach((i) => i.removeAttribute("loading"));
+    c.querySelectorAll("[id]").forEach((x) => x.removeAttribute("id"));
+    const titre = titreDoc(e);
+    const num = j ? `Semaine ${l.num}` : l && l.num ? `Étude ${l.num}` : "";
+    const img = (l && l.image) || s.image;
+    const lien = `${SITE}#/lire/${d.f}`;
+    const liste = [{ type: "titre", html: `${img ? `<img class="proj-fond" src="assets/images/${encodeURIComponent(img)}.webp" alt="">` : ""}
+      <div class="proj-titre-texte"><p class="proj-serie">${fr(s.titre)}${num ? ` · ${esc(num)}` : ""}</p><h2>${fr(titre)}</h2>
+      <div class="proj-qr"><span data-qr-proj="${esc(lien)}"></span><span>Suivre sur son téléphone :<br>${esc(adresseCourte(lien))}</span></div></div>` }];
+    let section = "";
+    let courante = null;
+    const fermer = () => { if (courante) liste.push(courante); courante = null; };
+    const entete = () => (section ? `<p class="proj-section">${esc(section)}</p>` : "");
+    // un très long paragraphe (sans lien ni mise en forme) est coupé entre deux phrases
+    const morceaux = (el) => {
+      if (el.tagName === "P" && !el.children.length && el.textContent.length > 650) {
+        const phrases = el.textContent.match(/[^.!?…]+[.!?…]+[»”)]*\s*|[^.!?…]+$/g) || [el.textContent];
+        const groupes = [];
+        let g = "";
+        phrases.forEach((ph) => { if (g && (g + ph).length > 460) { groupes.push(g); g = ""; } g += ph; });
+        if (g.trim()) groupes.push(g);
+        return groupes.map((t) => `<p>${fr(t.trim())}</p>`);
+      }
+      return [el.outerHTML];
+    };
+    let etiquette = ""; // petite ligne au-dessus d’un passage : elle suit le passage, jamais seule à l’écran
+    [...c.children].forEach((el) => {
+      if (el.matches(".lec-etiquette")) { etiquette += el.outerHTML; return; }
+      if (el.matches("h2, h3, h4")) { fermer(); section = el.textContent.trim(); return; }
+      if (etiquette && !el.matches("figure, .lec-galerie, .lec-table")) {
+        const h = etiquette;
+        etiquette = "";
+        if (el.matches(".lec-q")) { fermer(); liste.push({ type: "question", html: entete() + h + el.outerHTML }); return; }
+        if (courante) fermer();
+        courante = { type: "texte", html: entete() + h, taille: 0 };
+      }
+      if (el.matches(".lec-q")) { fermer(); liste.push({ type: "question", html: entete() + el.outerHTML }); return; }
+      if (el.matches("figure, .lec-galerie, .lec-table")) { fermer(); liste.push({ type: "image", html: entete() + el.outerHTML }); return; }
+      if (!el.textContent.replace(/\s+/g, " ").trim() && !el.querySelector("img")) return;
+      morceaux(el).forEach((h) => {
+        const t = h.replace(/<[^>]+>/g, "").length;
+        if (courante && courante.taille + t > 520) fermer();
+        if (!courante) courante = { type: "texte", html: entete(), taille: 0 };
+        courante.html += h;
+        courante.taille += t;
+      });
+    });
+    fermer();
+    liste.push({ type: "fin", html: `<h2>Fin ${j ? "de la leçon" : "de l’étude"}</h2><p class="proj-serie">${fr(titre)}</p>
+      <div class="proj-qr"><span data-qr-proj="${esc(lien)}"></span><span>Pour la relire chez soi :<br>${esc(adresseCourte(lien))}</span></div>` });
+    return liste;
+  }
+  let projection = null;
+  function fermerProjection() {
+    if (!projection) return;
+    const p = projection;
+    projection = null;
+    p.ac.abort();
+    p.boite.remove();
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    corps.classList.remove("en-projection");
+    garderEcran(false);
+    if (p.retour && p.retour.isConnected) p.retour.focus({ preventScroll: true });
+  }
+  function projeter(article, e, retour) {
+    fermerProjection();
+    const diapos = diaposDe(article, e);
+    const boite = document.createElement("div");
+    boite.className = "projection";
+    boite.setAttribute("role", "dialog");
+    boite.setAttribute("aria-modal", "true");
+    boite.setAttribute("aria-label", `Projection : ${titreDoc(e)}`);
+    boite.innerHTML = `<div class="proj-diapo" tabindex="-1"></div>
+      <div class="proj-verset" hidden><div class="proj-verset-boite">
+        <h2 class="bible-titre"></h2>
+        <div class="bible-outils"><button type="button" class="bible-tout" aria-pressed="false" hidden>Voir tout le chapitre</button><a class="bible-strong" hidden></a></div>
+        <div class="bible-corps"><div class="bible-texte"></div></div>
+        <button type="button" class="proj-verset-fermer" data-proj="verset">Revenir à l’étude</button>
+      </div></div>
+      <div class="proj-bas">
+        <span class="proj-barre" aria-hidden="true"><span></span></span>
+        <button type="button" data-proj="-1" aria-label="Diapositive précédente">${chevron}</button>
+        <span class="proj-num" aria-live="polite"></span>
+        <button type="button" data-proj="1" aria-label="Diapositive suivante">${chevronDroit}</button>
+        ${document.fullscreenEnabled ? `<button type="button" data-proj="plein" aria-label="Plein écran">${icone.ajuster}</button>` : ""}
+        <button type="button" data-proj="fin" aria-label="Quitter la projection">${icone.fermer}</button>
+      </div>`;
+    document.body.append(boite);
+    corps.classList.add("en-projection");
+    const ac = new AbortController();
+    const { signal } = ac;
+    projection = { boite, ac, retour };
+    garderEcran(true);
+    if (document.fullscreenEnabled) boite.requestFullscreen().catch(() => {});
+    const zone = boite.querySelector(".proj-diapo");
+    const verset = boite.querySelector(".proj-verset");
+    let i = 0;
+    // le texte rapetisse tant qu’il dépasse de l’écran
+    const ajuster = () => {
+      let k = 1;
+      zone.style.setProperty("--k", "1");
+      while (zone.scrollHeight > zone.clientHeight + 2 && k > 0.5) {
+        k -= 0.05;
+        zone.style.setProperty("--k", k.toFixed(2));
+      }
+    };
+    const montrer = (n) => {
+      i = Math.max(0, Math.min(diapos.length - 1, n));
+      const dp = diapos[i];
+      zone.className = `proj-diapo proj-${dp.type}`;
+      zone.innerHTML = dp.html;
+      boite.querySelector(".proj-num").textContent = `${i + 1} / ${diapos.length}`;
+      boite.querySelector(".proj-barre span").style.width = `${((i + 1) / diapos.length) * 100}%`;
+      boite.querySelector('[data-proj="-1"]').disabled = i === 0;
+      boite.querySelector('[data-proj="1"]').disabled = i === diapos.length - 1;
+      zone.querySelectorAll("[data-qr-proj]").forEach((q) => chargerQr().then(() => { q.innerHTML = svgQr(q.dataset.qrProj); }).catch(() => q.remove()));
+      ajuster();
+      zone.querySelectorAll("img").forEach((im) => { if (!im.complete) im.addEventListener("load", ajuster, { once: true }); });
+    };
+    const fermerVerset = () => { verset.hidden = true; zone.focus({ preventScroll: true }); };
+    boite.addEventListener("click", (ev) => {
+      const a = ev.target.closest("a.ref");
+      if (a) {
+        ev.preventDefault();
+        const brut = Bible.analyser(Bible.passageDuLien(a.getAttribute("href")));
+        if (!brut) return;
+        verset.hidden = false;
+        Bible.montrerPassage(verset, brut, a.getAttribute("href"));
+        return;
+      }
+      const b = ev.target.closest("[data-proj]");
+      if (b) {
+        const q = b.dataset.proj;
+        if (q === "fin") fermerProjection();
+        else if (q === "verset") fermerVerset();
+        else if (q === "plein") { if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); else boite.requestFullscreen().catch(() => {}); }
+        else montrer(i + Number(q));
+        return;
+      }
+      if (!verset.hidden || ev.target.closest("a, button, .proj-bas")) return;
+      // toucher la diapositive : à droite la suivante, à gauche la précédente
+      montrer(i + (ev.clientX > window.innerWidth / 3 ? 1 : -1));
+    }, { signal });
+    let depart = null;
+    boite.addEventListener("pointerdown", (ev) => { depart = { x: ev.clientX, y: ev.clientY }; }, { signal });
+    boite.addEventListener("pointerup", (ev) => {
+      if (!depart || !verset.hidden) return;
+      const dx = ev.clientX - depart.x;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(ev.clientY - depart.y)) { montrer(i + (dx < 0 ? 1 : -1)); depart = null; }
+    }, { signal });
+    document.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape") { ev.preventDefault(); if (!verset.hidden) fermerVerset(); else fermerProjection(); return; }
+      if (!verset.hidden) return;
+      const sens = { ArrowRight: 1, PageDown: 1, " ": 1, Enter: 1, ArrowDown: 1, ArrowLeft: -1, PageUp: -1, ArrowUp: -1, Backspace: -1 }[ev.key];
+      if (sens) { ev.preventDefault(); montrer(i + sens); } else if (ev.key === "Home") montrer(0); else if (ev.key === "End") montrer(diapos.length - 1);
+    }, { signal });
+    window.addEventListener("resize", ajuster, { signal });
+    montrer(0);
+    zone.focus({ preventScroll: true });
+  }
+
+  // ---------- livret A5 : une étude, ou toute une série, prête à imprimer et à plier ----------
+  // pages A5 ; dans la fenêtre d’impression, « Livret » (ou 2 pages par feuille) donne des feuilles A4 à plier
+  const docsLivret = (s) => s.lecons.flatMap((l) => (aDesJours(l)
+    ? l.jours.map((j) => j.docs[0] && j.docs[0].f).filter((f) => f && aTexte(f))
+    : [(l.docs.find((d) => d.f && d.role !== "animateur" && aTexte(d.f)) || l.docs.find((d) => d.f && aTexte(d.f)) || {}).f].filter(Boolean)));
+  async function imprimerLivret({ titre, sousTitre, texte, image: img, lien, docs }, bouton) {
+    if (bouton) bouton.setAttribute("aria-busy", "true");
+    const etiquetteEl = bouton && bouton.querySelector("span");
+    const etiquette = etiquetteEl ? etiquetteEl.firstChild : null;
+    const ancienTexte = etiquette && etiquette.nodeType === 3 ? etiquette.data : null;
+    try {
+      if (ancienTexte !== null) etiquette.data = "Préparation du livret…";
+      const textes = await Promise.all(docs.map((f) => fetch(adresseLecture(f)).then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.text(); })));
+      await chargerQr().catch(() => null);
+      const ancien = document.getElementById("impression-livret");
+      if (ancien) ancien.remove();
+      const zone = document.createElement("div");
+      zone.id = "impression-livret";
+      const qr = window.qrcode ? `<div class="livret-qr">${svgQr(lien)}<span>${esc(adresseCourte(lien))}</span></div>` : "";
+      const serie = docs.length > 1;
+      const etudes = docs.map((f, k) => {
+        const e = documents.get(f);
+        const a = document.createElement("div");
+        a.innerHTML = textes[k];
+        ajouterZonesReponse(a, f);
+        a.querySelectorAll("textarea").forEach((t) => {
+          const lignes = document.createElement("div");
+          lignes.className = "livret-lignes";
+          lignes.innerHTML = "<span></span>".repeat(Math.max(2, Math.min(4, Number(t.getAttribute("rows")) || 3)));
+          t.replaceWith(lignes);
+        });
+        a.querySelectorAll("input.lec-blanc").forEach((x) => {
+          const b = document.createElement("span");
+          b.className = "livret-blanc";
+          b.style.minWidth = `${Math.max(3, Number(x.getAttribute("size")) || 8) * 0.6}em`;
+          x.replaceWith(b);
+        });
+        a.querySelectorAll(".lec-cache, .lec-credits").forEach((x) => x.remove());
+        a.querySelectorAll("img[loading]").forEach((im) => im.setAttribute("loading", "eager"));
+        a.querySelectorAll("[id]").forEach((x) => x.removeAttribute("id"));
+        a.querySelectorAll("a.ref").forEach((r) => { const sp = document.createElement("span"); sp.className = "ref"; sp.textContent = r.textContent; r.replaceWith(sp); });
+        const { l, j } = e;
+        const ou = `${fr(e.s.titre)}${j ? ` · Semaine ${esc(l.num)}` : l && l.num ? ` · Étude ${esc(l.num)}` : ""}`;
+        return `<section class="livret-etude"><p class="livret-ou">${ou}</p><h2>${fr(titreDoc(e))}</h2>${a.innerHTML}${serie ? "" : qr}</section>`;
+      }).join("");
+      zone.innerHTML = (serie ? `<section class="livret-couverture">
+          ${img ? `<img src="assets/images/${encodeURIComponent(img)}.webp" alt="">` : ""}
+          <div class="livret-couverture-texte"><p class="livret-marque">Mission · études bibliques</p><h1>${fr(titre)}</h1>
+          ${sousTitre ? `<p class="livret-sous">${fr(sousTitre)}</p>` : ""}${texte ? `<p class="livret-texte">${fr(texte)}</p>` : ""}${qr}</div>
+        </section>
+        <section class="livret-sommaire"><h2>Sommaire</h2><ol>${docs.map((f) => `<li>${fr(titreDoc(documents.get(f)))}</li>`).join("")}</ol></section>` : "") + etudes;
+      document.body.append(zone);
+      const style = document.createElement("style");
+      style.id = "style-livret";
+      style.textContent = `@page { size: A5 portrait; margin: 13mm 12mm 15mm; @bottom-center { content: counter(page); font: 9pt sans-serif; color: #666; } }
+        ${serie ? "@page :first { margin: 0; @bottom-center { content: none; } }" : ""}`;
+      document.head.append(style);
+      corps.classList.add("impression-livret");
+      await Promise.all([...zone.querySelectorAll("img")].map((im) => (im.complete ? Promise.resolve()
+        : new Promise((ok) => { im.addEventListener("load", ok, { once: true }); im.addEventListener("error", ok, { once: true }); }))));
+      const fin = () => { corps.classList.remove("impression-livret"); zone.remove(); style.remove(); window.removeEventListener("afterprint", fin); };
+      window.addEventListener("afterprint", fin);
+      window.print();
+    } catch (err) {
+      bulle("Le livret n’a pas pu être préparé : vérifiez la connexion.");
+    } finally {
+      if (bouton) bouton.removeAttribute("aria-busy");
+      if (ancienTexte !== null) etiquette.data = ancienTexte;
+    }
+  }
+
   // ---------- tableau du responsable : bilans et pages lues, vers son Google Sheet (outils/groupe/tableau-apps-script.gs) ----------
   // vide tant que le script du tableau n’est pas déployé : alors rien ne part du site
   const SCRIPT_MISSION = "";
@@ -3493,6 +4628,9 @@
     else if (page === "application") application();
     else if (page === "groupe") groupePage(arg);
     else if (page === "inviter") inviterPage(arg);
+    else if (page === "commencer") commencerPage();
+    else if (page === "carnet") carnetPage();
+    else if (page === "versets") versetsPage();
     else if (page === "lire") { fermerLecteur(); fermerTexte(); if (aTexte(arg)) lireTexte(arg); else lire(arg); }
     else if (page === "original") { fermerLecteur(); fermerTexte(); lire(arg); }
     else introuvable();

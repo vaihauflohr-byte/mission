@@ -1,14 +1,15 @@
 /* Mission — fonctionnement hors ligne : la liste des études reste consultable sans réseau.
    Les documents (documents/*.pdf) passent directement par le réseau : ils sont lus par morceaux
    (requêtes partielles) et le bouton Télécharger permet de les garder sur l’appareil.
-   Le mode lecture (lecture/*.html et ses images) est gardé en cache après une première lecture. */
-const CACHE = "mission-v37";
+   Le mode lecture (lecture/*.html et ses images) est gardé en cache après une première lecture ;
+   une série entière peut être gardée d’avance (cache « mission-hors-ligne », rempli par la page de la série). */
+const CACHE = "mission-v38";
 const COQUILLE = [
   "./",
   "index.html",
-  "assets/style.css?v=20",
-  "assets/bible.js?v=4",
-  "assets/app.js?v=26",
+  "assets/style.css?v=21",
+  "assets/bible.js?v=5",
+  "assets/app.js?v=27",
   "assets/qr.js?v=1",
   "donnees/shorts.json?v=4",
   "donnees/bibliotheque.js?v=21",
@@ -31,7 +32,8 @@ self.addEventListener("install", (e) => {
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys()
-      .then((cles) => Promise.all(cles.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      // « mission-hors-ligne » : les séries que l’on a choisi de garder (bouton « Garder hors ligne ») ; jamais effacé ici
+      .then((cles) => Promise.all(cles.filter((k) => k !== CACHE && k !== "mission-hors-ligne").map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
