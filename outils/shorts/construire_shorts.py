@@ -2,8 +2,9 @@
 """Shorts des études : outils/shorts/shorts.txt → donnees/shorts.json
 
 Pour chaque étude : l’idée clé, la référence du verset clé et son texte (Segond 1910, donnees/bible/),
-et le document ouvert au toucher (#/lire/<f>). Le verset doit être cité dans ce document : le script
-le vérifie dans les liens de versets du mode lecture (lecture/<f>.html) et s’arrête sinon.
+et le document ouvert au toucher (#/lire/<f>). Le verset doit être cité dans ce document, et l’idée
+doit être une phrase de l’étude, mot pour mot (phrases.py) : le script le vérifie dans le mode lecture
+(lecture/<f>.html) et s’arrête sinon.
 
     python3 outils/shorts/construire_shorts.py
 
@@ -15,6 +16,9 @@ import re
 import sys
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from phrases import trouve  # noqa: E402
 
 RACINE = Path(__file__).resolve().parents[2]
 SOURCE = RACINE / "outils/shorts/shorts.txt"
@@ -134,6 +138,18 @@ def lire_source():
     return lignes
 
 
+def etude(s, cle, lecture):
+    """(rang de l’étude dans la série, ses documents en mode lecture) ; rang None si la clé ne mène à rien.
+    Clé : « - » pour l’étude unique, « #3 » pour la 3e, sinon le numéro de l’étude."""
+    if cle == "-":
+        i = next((k for k, l in enumerate(s["lecons"]) if l["docs"]), None)
+    elif cle.startswith("#"):
+        i = int(cle[1:]) - 1 if cle[1:].isdigit() and 0 < int(cle[1:]) <= len(s["lecons"]) else None
+    else:
+        i = next((k for k, l in enumerate(s["lecons"]) if str(l.get("num")) == cle), None)
+    return i, ([d for d in s["lecons"][i]["docs"] if d.get("f") in lecture] if i is not None else [])
+
+
 def main():
     B = donnees_js("donnees/bibliotheque.js")
     lecture = donnees_js("donnees/lecture.js")
@@ -145,20 +161,17 @@ def main():
         if not s:
             erreurs.append(f"ligne {n} : série inconnue {sid!r}")
             continue
-        if cle == "-":
-            i = next((k for k, l in enumerate(s["lecons"]) if l["docs"]), None)
-        elif cle.startswith("#"):
-            i = int(cle[1:]) - 1 if cle[1:].isdigit() and 0 < int(cle[1:]) <= len(s["lecons"]) else None
-        else:
-            i = next((k for k, l in enumerate(s["lecons"]) if str(l.get("num")) == cle), None)
+        i, docs = etude(s, cle, lecture)
         if i is None:
             erreurs.append(f"ligne {n} : pas d’étude {cle!r} dans {sid}")
             continue
-        docs = [d for d in s["lecons"][i]["docs"] if d.get("f") in lecture]
         d = next((d for d in docs if d.get("role") != "animateur"), docs[0] if docs else None)
         if not d:
             erreurs.append(f"ligne {n} : l’étude {cle} de {sid} n’a pas de mode lecture")
             continue
+        # l’idée est une phrase de l’étude, mot pour mot (version des participants ou de l’animateur)
+        if not any(trouve(x["f"], idee) for x in docs):
+            erreurs.append(f"ligne {n} : idée introuvable dans l’étude {d['f']} : {idee}")
         try:
             livre, chap, premier, dernier = lire_reference(ref)
             t = texte(livre, chap, premier, dernier)
