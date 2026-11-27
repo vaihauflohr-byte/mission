@@ -2618,3 +2618,227 @@ body.en-shorts .onglets a[aria-current] { color: var(--blanc); }
 @media print {
   .etude-faite, .serie-progression, .carte-groupe, .grp-onglets, .grp-boutons, .rv-commandes { display: none !important; }
 }
+
+/* ---------- Short du jour (accueil) ---------- */
+.du-jour { margin-bottom: 2.25rem; }
+.du-jour-tete { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.9rem; margin-bottom: 0.85rem; }
+.du-jour-date { color: var(--brume); font-size: var(--t-0); font-weight: 700; }
+.du-jour-carte {
+  position: relative;
+  max-width: 40rem;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #13302d;
+  box-shadow: 0 14px 34px -14px rgba(0, 0, 0, 0.55);
+}
+.du-jour-lien {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  max-height: min(36rem, 78vh);
+  width: 100%;
+  overflow: hidden;
+  color: var(--blanc);
+  text-decoration: none;
+}
+@media (min-width: 40rem) { .du-jour-lien { aspect-ratio: 16 / 11; } }
+.du-jour-fond { position: absolute; inset: 0; background: #1e3d3a center 30% / cover no-repeat; }
+.du-jour-fond::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6, 14, 13, 0.15) 0%, rgba(6, 14, 13, 0.25) 35%, rgba(6, 14, 13, 0.85) 68%, rgba(6, 14, 13, 0.95) 100%);
+}
+.du-jour-fond.sans-photo { background: linear-gradient(160deg, var(--feuille), #0f2321); }
+.du-jour-fond.sans-photo .fond-picto { position: absolute; top: 4%; right: -10%; width: 70%; color: var(--recif); opacity: 0.18; }
+.du-jour-contenu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.25rem 1.2rem 1.1rem;
+}
+.du-jour-idee { font-family: var(--serif); font-weight: 600; font-size: clamp(1.45rem, 1.15rem + 1.4vw, 2rem); line-height: 1.15; text-wrap: balance; }
+.du-jour-verset {
+  padding: 0.75rem 0.9rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: var(--t-0);
+  line-height: 1.45;
+}
+.du-jour-ref { display: block; margin-top: 0.3rem; color: var(--pua); font-weight: 700; }
+.du-jour-source { color: var(--brume); font-size: var(--t-petit); font-weight: 700; }
+.du-jour-actions { display: flex; border-top: 1px solid rgba(255, 255, 255, 0.12); }
+.du-jour-bouton {
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 52px;
+  padding: 0 0.5rem;
+  border: 0;
+  background: none;
+  color: var(--blanc);
+  font: inherit;
+  font-size: var(--t-0);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.du-jour-bouton + .du-jour-bouton { border-left: 1px solid rgba(255, 255, 255, 0.12); }
+.du-jour-bouton:hover { background: rgba(255, 255, 255, 0.07); }
+.du-jour-bouton svg { width: 1.25rem; height: 1.25rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.du-jour-bouton[aria-pressed="true"] { color: var(--pua); }
+
+/* la photo du short à l’écran bouge doucement (zoom lent), sauf si l’appareil demande moins d’animations */
+@keyframes zoom-lent {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.13) translate3d(-1.8%, -2.4%, 0); }
+}
+.short.actif .short-fond[data-img],
+.short.actif .short-fond[style],
+.du-jour-fond { animation: zoom-lent 18s ease-in-out infinite alternate; transform-origin: 60% 40%; }
+@media (prefers-reduced-motion: reduce) {
+  .short.actif .short-fond, .du-jour-fond { animation: none; }
+}
+
+/* shorts : lecture auto et écoute */
+.shorts-filtres { flex: 1 1 auto; min-width: 0; }
+.shorts-auto {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 36px;
+  margin-right: 0.6rem;
+  padding: 0 0.8rem 0 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.28);
+  color: var(--blanc);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.shorts-auto svg { width: 1rem; height: 1rem; fill: currentColor; stroke: none; }
+.shorts-auto[aria-pressed="true"] { background: var(--pua); border-color: var(--pua); color: #1b1b1b; }
+.short-action[data-ecouter-short][aria-pressed="true"] svg { background: var(--blanc); fill: none; stroke: var(--lagon); }
+.short.en-ecoute .short-idee { text-decoration: underline 3px var(--pua); text-underline-offset: 0.18em; }
+
+/* ---------- Feuille de partage (en bas de l’écran) ---------- */
+.feuille-voile { position: fixed; inset: 0; z-index: 70; background: rgba(6, 14, 13, 0.55); }
+.feuille {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  z-index: 71;
+  width: min(30rem, 100%);
+  transform: translateX(-50%);
+  display: grid;
+  gap: 0.5rem;
+  padding: 1.1rem 1rem calc(1rem + env(safe-area-inset-bottom));
+  border-radius: 20px 20px 0 0;
+  background: var(--blanc);
+  color: var(--encre);
+  box-shadow: 0 -12px 32px -10px rgba(0, 0, 0, 0.4);
+}
+.feuille-titre { margin: 0 0 0.25rem; color: var(--lagon); font-family: var(--serif); font-size: var(--t-2); font-weight: 600; }
+.feuille-choix {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: center;
+  min-height: 60px;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--ligne);
+  border-radius: 14px;
+  background: var(--ecume);
+  color: var(--lagon);
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+.feuille-choix:hover { background: var(--recif-pale); }
+.feuille-choix[aria-busy="true"] { opacity: 0.6; }
+.feuille-choix small { display: block; color: var(--gris); font-size: var(--t-petit); font-weight: 400; }
+.feuille-choix svg { width: 1.6rem; height: 1.6rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.feuille-annuler { min-height: 48px; border: 0; background: none; color: var(--gris); font: inherit; font-weight: 700; cursor: pointer; }
+.bulle { z-index: 80; }
+
+/* ---------- Bilan vers le tableau du responsable ; pages comptées (bas de page) ---------- */
+.bilan-tableau { display: grid; grid-template-columns: auto 1fr; gap: 0.6rem; align-items: start; margin-top: 1.25rem; color: var(--encre); font-weight: 700; cursor: pointer; }
+.bilan-tableau input { width: 1.3rem; height: 1.3rem; margin: 0.1rem 0 0; accent-color: var(--feuille); }
+.bilan-tableau small { display: block; color: var(--gris); font-size: var(--t-petit); font-weight: 400; }
+.bilan-tableau-etat { margin: 0.6rem 0 0; color: var(--feuille); font-weight: 700; }
+.pied-stats { margin: 0.75rem 0 0; color: var(--gris); font-size: var(--t-petit); }
+.pied-bouton { min-height: 36px; padding: 0 0.2rem; border: 0; background: none; color: var(--feuille); font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; }
+
+/* ---------- Série : partager, inviter (et plus bas : hors ligne, livret) ---------- */
+.serie-outils { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.serie-outil {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0 0.95rem 0 0.75rem;
+  border: 1.5px solid var(--ligne);
+  border-radius: 999px;
+  background: var(--blanc);
+  color: var(--lagon);
+  font: inherit;
+  font-size: var(--t-0);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.serie-outil:hover { background: var(--recif-pale); border-color: var(--recif); }
+.serie-outil svg { width: 1.15rem; height: 1.15rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.serie-outil[aria-pressed="true"] { background: var(--recif-pale); border-color: var(--feuille); }
+.serie-outil[aria-busy="true"] { opacity: 0.7; cursor: progress; }
+
+.accueil-groupe { display: grid; gap: 0.9rem; }
+@media (min-width: 52rem) { .accueil-groupe { grid-template-columns: repeat(2, minmax(0, 36rem)); } }
+
+/* ---------- Inviter un ami ---------- */
+.inviter-mise { display: grid; gap: 2rem; margin-top: 1.25rem; align-items: start; }
+@media (min-width: 52rem) { .inviter-mise { grid-template-columns: minmax(0, 1fr) 20rem; } }
+.inviter-form { max-width: 34rem; }
+.inviter-qr { display: grid; justify-items: center; gap: 0.8rem; margin: 0; padding: 1.25rem; border: 1px solid var(--ligne); border-radius: 18px; background: var(--blanc); text-align: center; }
+.qr-cadre { width: min(15rem, 70vw); aspect-ratio: 1; display: grid; place-items: center; }
+.qr-cadre svg { width: 100%; height: 100%; }
+.inviter-qr figcaption { display: grid; gap: 0.15rem; }
+.inviter-qr figcaption strong { color: var(--lagon); font-family: var(--serif); font-size: var(--t-2); }
+.inviter-qr figcaption span { color: var(--gris); font-size: var(--t-petit); overflow-wrap: anywhere; }
+#impression-cartes { display: none; }
+@media print {
+  body.impression-cartes > :not(#impression-cartes) { display: none !important; }
+  html:has(body.impression-cartes), body.impression-cartes { background: #fff !important; }
+  body.impression-cartes #impression-cartes { display: grid; grid-template-columns: 1fr 1fr; }
+  .carte-invit {
+    display: grid;
+    grid-template-columns: 1fr 3.4cm;
+    gap: 0.4cm;
+    align-items: center;
+    height: 6.6cm;
+    padding: 0.5cm 0.6cm;
+    border: 1px dashed #9ab;
+    break-inside: avoid;
+    font-family: var(--sans);
+    color: #1e3d3a;
+  }
+  .carte-invit p { margin: 0; }
+  .carte-invit-texte { display: grid; gap: 0.18cm; }
+  .carte-invit-nom { font-size: 9pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2f6b5e; }
+  .carte-invit-titre { font-family: var(--serif); font-size: 15pt; font-weight: 600; line-height: 1.1; }
+  .carte-invit-phrase { font-size: 8.5pt; line-height: 1.35; color: #333; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  .carte-invit-lien { font-size: 8pt; font-weight: 700; overflow-wrap: anywhere; }
+  .carte-invit-qr { display: grid; justify-items: center; gap: 0.1cm; font-size: 7.5pt; font-weight: 700; }
+  .carte-invit-qr svg { width: 3.4cm; height: 3.4cm; }
+  .serie-outils, .du-jour, .feuille, .feuille-voile { display: none !important; }
+}

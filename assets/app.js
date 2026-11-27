@@ -54,6 +54,21 @@
     horloge: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4.5l2.8 1.8M9.5 2.5h5"/></svg>',
     envoyer: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-7.5L3 9.5z"/></svg>',
     copier: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8.5" y="8.5" width="12" height="12" rx="2"/><path d="M15.5 8.5V5a1.5 1.5 0 0 0-1.5-1.5H5A1.5 1.5 0 0 0 3.5 5v9A1.5 1.5 0 0 0 5 15.5h3.5"/></svg>',
+    story: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><circle cx="12" cy="10" r="2.3"/><path d="M9.3 16.5h5.4"/></svg>',
+    image: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.7"/><path d="m4.5 17.5 5-4.5 3.5 3 2.5-2 4 3.5"/></svg>',
+    lien: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.2 1.2M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.2-1.2"/></svg>',
+    qr: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1"/><path d="M14 14h2.5v2.5H14zM18 18h2.5v2.5H18zM14 19v1.5M19 14h1.5"/></svg>',
+    inviter: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M19 7.5v6M16 10.5h6"/></svg>',
+    boussole: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>',
+    carnet: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11a1.5 1.5 0 0 1 1.5 1.5v14a1.5 1.5 0 0 1-1.5 1.5h-11z"/><path d="M6.5 3.5v17M4.5 7.5h4M4.5 12h4M4.5 16.5h4M10.5 8h5.5M10.5 11.5h5.5"/></svg>',
+    surligner: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 4.5 5 5-8 8H6.5v-5z"/><path d="M4 20.5h16"/></svg>',
+    note: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h14v10.5l-4.5 4.5H5z"/><path d="M14.5 19.5V15H19M8.5 9h7M8.5 12h4"/></svg>',
+    effacer: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13M10.5 11v5.5M13.5 11v5.5"/></svg>',
+    cartes: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7" width="12.5" height="13" rx="2"/><path d="M8 7V5.5A1.5 1.5 0 0 1 9.5 4h9.5a1.5 1.5 0 0 1 1.5 1.5V16a1.5 1.5 0 0 1-1.5 1.5H16"/><path d="M7 12h5.5M7 15.5h3.5"/></svg>',
+    livre: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-.5v13c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z"/><path d="M12 6v13"/></svg>',
+    horsLigne: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5a4.5 4.5 0 0 1-.6-9 6 6 0 0 1 11.5 1.6A3.8 3.8 0 0 1 17.5 18.5z"/><path d="M12 10v6m0 0-2.5-2.5M12 16l2.5-2.5"/></svg>',
+    fermer: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+    retourner: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12a7.5 7.5 0 0 1 13-5.1M19.5 12a7.5 7.5 0 0 1-13 5.1"/><path d="M17.5 3.5v3.4h-3.4M6.5 20.5v-3.4h3.4"/></svg>',
   };
   const chevronDroit = '<svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg>';
   // images (assets/images/<nom>.webp, 4:3) : décoratives, le titre est juste à côté
@@ -316,12 +331,13 @@
           </form>
         </div>
         ${reprise()}
+        <section class="dedans du-jour" data-du-jour aria-labelledby="du-jour-titre" hidden></section>
         ${etagereShorts()}
         <div class="dedans cep">
           <h2 class="cep-titre">Trois étapes, de la rencontre à la maturité</h2>
           <ol class="cep-liste">${etapes}</ol>
         </div>
-        <div class="dedans accueil-groupe">${carteGroupe()}</div>
+        <div class="dedans accueil-groupe">${carteGroupe()}${carteInviter()}</div>
       </section>
       <section class="mode" aria-labelledby="mode-titre">
         <div class="dedans mode-dedans">
@@ -438,6 +454,20 @@
       ${chevronDroit}
     </a>`;
 
+  const carteInviter = () => `<a class="carte-groupe" href="#/inviter">
+      <span class="carte-groupe-icone">${icone.inviter}</span>
+      <span class="carte-groupe-texte"><span class="carte-groupe-titre">Inviter un ami</span>
+        <span>Un message avec le lien, un code QR à scanner, des cartes d’invitation à imprimer.</span></span>
+      ${chevronDroit}
+    </a>`;
+  // partager un lien : la feuille de partage du téléphone, sinon le texte copié
+  async function partagerLien(titre, texte, lien) {
+    if (navigator.share) {
+      try { await navigator.share({ title: titre, text: texte, url: lien }); return; } catch (e) { if (e && e.name === "AbortError") return; }
+    }
+    await copierTexte(`${texte}\n${lien}`);
+  }
+
   function niveau(id) {
     const n = niveaux[id];
     if (!n) return introuvable();
@@ -533,12 +563,17 @@
             <p class="chapeau">${fr(s.texte)}</p>
             <p class="compte">${compteSerie(s)}</p>
             <div class="serie-progression">${progressionSerie(s)}</div>
+            <div class="serie-outils">
+              <button type="button" class="serie-outil" data-partager-serie>${icone.partager}<span>Partager la série</span></button>
+              <a class="serie-outil" href="#/inviter/${s.id}">${icone.qr}<span>Inviter, code QR</span></a>
+            </div>
             ${ressources}
           </div>
           ${liste}
         </div>
       </div>`;
     app.querySelector(".page-serie").addEventListener("click", (ev) => {
+      if (ev.target.closest("[data-partager-serie]")) { partagerLien(s.titre, `${s.titre} : ${s.texte}`, lienPartage(s.id)); return; }
       const b = ev.target.closest("[data-faite]");
       if (!b) return;
       const l = s.lecons.find((x) => cleLecon(x) === b.dataset.faite);
@@ -1116,6 +1151,68 @@
   if (!TAILLES.includes(reglages.taille)) reglages.taille = 18;
   const mouvementReduit = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // voix : synthèse vocale du navigateur, voix française (mode lecture, shorts, versets)
+  const synthese = "speechSynthesis" in window && typeof SpeechSynthesisUtterance === "function" ? window.speechSynthesis : null;
+  const voixFr = () => {
+    const v = synthese.getVoices().filter((x) => /^fr([-_]|$)/i.test(x.lang));
+    return v.find((x) => /fr[-_]FR/i.test(x.lang) && x.localService) || v.find((x) => /fr[-_]FR/i.test(x.lang)) || v[0] || null;
+  };
+  // « Jean 3:16-18 » se dit « Jean chapitre 3, versets 16 à 18 »
+  const pourOreille = (t) => t
+    .replace(/(\d+):(\d+) – (\d+):(\d+)/g, "chapitre $1, verset $2, au chapitre $3, verset $4")
+    .replace(/(\d+):(\d+)-(\d+)/g, "chapitre $1, versets $2 à $3")
+    .replace(/(\d+):(\d+)/g, "chapitre $1, verset $2");
+  // des morceaux courts : certaines voix s’arrêtent sur une phrase trop longue
+  const decouper = (t) => {
+    const sortie = [];
+    (t.match(/(?:[^.!?;:]|[.:](?=\d))+(?:[.!?;:]+(?:\s*[»”)])*|$)/g) || [t]).forEach((phrase) => {
+      let x = phrase.trim();
+      while (x.length > 200) {
+        const k = Math.max(x.lastIndexOf(", ", 200), x.lastIndexOf(" ", 200));
+        sortie.push(x.slice(0, k > 60 ? k + 1 : 200).trim());
+        x = x.slice(k > 60 ? k + 1 : 200).trim();
+      }
+      if (x) sortie.push(x);
+    });
+    return sortie;
+  };
+  // dire un texte court (short, verset) ; fin(true) quand tout est dit, fin(false) s’il est interrompu
+  let parole = null;
+  function arreterParole() {
+    if (!parole) return;
+    const p = parole;
+    parole = null;
+    if (synthese) synthese.cancel();
+    if (p.fin) p.fin(false);
+  }
+  function parler(texte, fin) {
+    arreterParole();
+    if (!synthese) return false;
+    const morceaux = decouper(texte);
+    const p = (parole = { fin });
+    let i = 0;
+    const suite = () => {
+      if (parole !== p) return;
+      if (i >= morceaux.length) { parole = null; if (fin) fin(true); return; }
+      const u = new SpeechSynthesisUtterance(morceaux[i]);
+      i += 1;
+      u.lang = "fr-FR";
+      const v = voixFr();
+      if (v) u.voice = v;
+      u.rate = Number(memoire.lire("mission.lecture.vitesse", "1")) || 1;
+      u.onend = suite;
+      u.onerror = (ev) => {
+        if (parole === p && !/interrupted|canceled/.test(ev.error || "")) { parole = null; if (fin) fin(false); }
+      };
+      p.u = u; // gardé : sans référence, certains navigateurs oublient l’énoncé et ne signalent jamais sa fin
+      synthese.speak(u);
+    };
+    synthese.cancel();
+    suite();
+    return true;
+  }
+  if (synthese) synthese.getVoices(); // certaines voix se chargent au premier appel
+
   // document suivant de la série, du même genre (participant, animateur…) ;
   // après une leçon du jour : le jour suivant, puis l’introduction de la semaine suivante
   function suivant(e) {
@@ -1348,6 +1445,7 @@
                 ${apres
                   ? `<a class="lecture-action principale" href="#/lire/${esc(apres.d.f)}"${peutCocher && apres.l !== l ? " data-terminer" : ""}><span>Suivante : ${fr(titreApres)}</span>${chevronDroit}</a>`
                   : `<a class="lecture-action principale" href="#/serie/${s.id}"><span>Retour à la série</span>${chevronDroit}</a>`}
+                <button type="button" class="lecture-action" data-partager-etude><span>Partager l’étude</span>${icone.partager}</button>
                 <button type="button" class="lecture-action" data-ouvrir="imprimer"><span>Imprimer</span>${icone.imprimer}</button>
                 <a class="lecture-action" href="#/original/${esc(f)}"><span>Voir l’original (PDF)</span>${icone.original}</a>
               </footer>
@@ -1402,6 +1500,10 @@
     brancherImpression(racine, e, signal);
     // fin de l’étude : la cocher, ou passer à la suivante (ce qui la coche aussi)
     racine.querySelector(".lecture-fin").addEventListener("click", (ev) => {
+      if (ev.target.closest("[data-partager-etude]")) {
+        partagerLien(titre, `${titre}${num ? ` (${num})` : ""}, ${s.titre}`, lienPartage(f));
+        return;
+      }
       const b = ev.target.closest("[data-faite-lecture]");
       if (b) {
         const oui = b.getAttribute("aria-pressed") !== "true";
@@ -1585,20 +1687,10 @@
     };
 
     // écouter : le téléphone lit l’étude à voix haute (synthèse vocale du navigateur, voix française)
-    const synthese = "speechSynthesis" in window && typeof SpeechSynthesisUtterance === "function" ? window.speechSynthesis : null;
     const boutonEcouter = racine.querySelector("[data-ecouter]");
     const barreEcoute = racine.querySelector(".ecoute-barre");
     const VITESSES = [[1, "1×", "Vitesse normale"], [1.25, "1,25×", "Plus rapide"], [0.8, "0,8×", "Plus lent"]];
     let ecoute = null; // { blocs, i, morceaux, j, vitesse, pause, u }
-    const voixFr = () => {
-      const v = synthese.getVoices().filter((x) => /^fr([-_]|$)/i.test(x.lang));
-      return v.find((x) => /fr[-_]FR/i.test(x.lang) && x.localService) || v.find((x) => /fr[-_]FR/i.test(x.lang)) || v[0] || null;
-    };
-    // « Jean 3:16-18 » se dit « Jean chapitre 3, versets 16 à 18 »
-    const pourOreille = (t) => t
-      .replace(/(\d+):(\d+) – (\d+):(\d+)/g, "chapitre $1, verset $2, au chapitre $3, verset $4")
-      .replace(/(\d+):(\d+)-(\d+)/g, "chapitre $1, versets $2 à $3")
-      .replace(/(\d+):(\d+)/g, "chapitre $1, verset $2");
     const texteADire = (el) => {
       const c = el.cloneNode(true);
       c.querySelectorAll(".lec-cache, textarea, .lec-credits").forEach((x) => x.remove());
@@ -1614,20 +1706,6 @@
         if (num && /\d/.test(num.textContent)) t = `Question ${num.textContent.trim()}. ${t}`;
       }
       return t;
-    };
-    // des morceaux courts : certaines voix s’arrêtent sur une phrase trop longue
-    const decouper = (t) => {
-      const sortie = [];
-      (t.match(/(?:[^.!?;:]|[.:](?=\d))+(?:[.!?;:]+(?:\s*[»”)])*|$)/g) || [t]).forEach((phrase) => {
-        let x = phrase.trim();
-        while (x.length > 200) {
-          const k = Math.max(x.lastIndexOf(", ", 200), x.lastIndexOf(" ", 200));
-          sortie.push(x.slice(0, k > 60 ? k + 1 : 200).trim());
-          x = x.slice(k > 60 ? k + 1 : 200).trim();
-        }
-        if (x) sortie.push(x);
-      });
-      return sortie;
     };
     const blocsADire = () => [...article.querySelectorAll("h2, h3, h4, p, li, blockquote, figcaption, td, th, dt, dd")]
       .filter((el) => !el.closest(".lec-credits, .lec-cache") && !el.querySelector("p, li, h2, h3, h4, blockquote, td, th"))
@@ -1959,6 +2037,53 @@
   };
   const imgShort = (nom) => `assets/images/${nom.split("/").map(encodeURIComponent).join("/")}.webp`;
   const ouShort = (l) => (l.num ? `Étude ${l.num} · ${l.titre}` : l.titre);
+  // ce que dit la voix : l’idée, puis le verset et sa référence
+  const texteAOreille = (x) => `${x.i} ${pourOreille(x.r)} : ${x.t.replace(/\n/g, " ")}`;
+  const hasardDe = (graine) => {
+    let a = graine >>> 0;
+    return () => {
+      a = (a + 0x6d2b79f5) | 0;
+      let t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  };
+  // le short du jour : le même pour tous ce jour-là, un autre le lendemain (ordre mélangé une fois pour toutes)
+  function shortDuJour(tous) {
+    if (!tous.length) return null;
+    const ordre = tous.slice().sort((a, b) => (a.id < b.id ? -1 : 1));
+    const h = hasardDe(1984);
+    for (let i = ordre.length - 1; i > 0; i--) {
+      const k = Math.floor(h() * (i + 1));
+      [ordre[i], ordre[k]] = [ordre[k], ordre[i]];
+    }
+    const j = new Date();
+    return ordre[Math.floor(Date.UTC(j.getFullYear(), j.getMonth(), j.getDate()) / 86400000) % ordre.length];
+  }
+  function carteDuJour(x) {
+    const { serie: s, lecon: l } = x;
+    const jour = new Date().toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" });
+    return `<div class="du-jour-tete">
+        <h2 id="du-jour-titre" class="etagere-titre">${icone.shorts}Le short du jour</h2>
+        <span class="du-jour-date">${esc(jour.charAt(0).toUpperCase() + jour.slice(1))}</span>
+      </div>
+      <article class="du-jour-carte">
+        <a class="du-jour-lien" href="#/shorts/${esc(x.id)}" aria-label="Voir le short : ${esc(x.i)}">
+          ${x.img ? `<span class="du-jour-fond" aria-hidden="true" style="background-image:url('${imgShort(x.img)}')"></span>`
+            : `<span class="du-jour-fond sans-photo" data-niveau="${x.niveau}" aria-hidden="true">${picto(x.niveau, "fond-picto")}</span>`}
+          <span class="du-jour-contenu">
+            <span class="du-jour-idee">${fr(x.i)}</span>
+            <span class="du-jour-verset">${x.t.split("\n").map(fr).join("<br>")} <span class="du-jour-ref">${fr(x.r)}</span></span>
+            <span class="du-jour-source">${fr(s.titre)} · ${fr(ouShort(l))}</span>
+          </span>
+        </a>
+        <div class="du-jour-actions">
+          ${synthese ? `<button type="button" class="du-jour-bouton" data-ecouter-jour aria-pressed="false">${icone.ecouter}<span>Écouter</span></button>` : ""}
+          <button type="button" class="du-jour-bouton" data-partager-jour>${icone.partager}<span>Partager</span></button>
+          <a class="du-jour-bouton" href="#/lire/${esc(x.f)}">${icone.lecture}<span>L’étude</span></a>
+        </div>
+      </article>`;
+  }
 
   // sur l’accueil : une étagère des shorts du jour, comme sur les applications de vidéos
   function etagereShorts() {
@@ -1975,7 +2100,24 @@
     chargerShorts().then((tous) => {
       const ol = app.querySelector("[data-etagere]");
       if (!ol) return;
-      ol.innerHTML = ordreDuJour(tous).slice(0, 12).map((x) => `<li><a class="etagere-short" href="#/shorts/${esc(x.id)}">
+      const x = shortDuJour(tous);
+      const zone = app.querySelector("[data-du-jour]");
+      if (zone && x) {
+        zone.innerHTML = carteDuJour(x);
+        zone.hidden = false;
+        zone.addEventListener("click", (ev) => {
+          const ec = ev.target.closest("[data-ecouter-jour]");
+          if (ec) {
+            if (ec.getAttribute("aria-pressed") === "true") { arreterParole(); return; }
+            ec.setAttribute("aria-pressed", "true");
+            parler(texteAOreille(x), () => ec.setAttribute("aria-pressed", "false"));
+            return;
+          }
+          const p = ev.target.closest("[data-partager-jour]");
+          if (p) feuillePartage(x, p);
+        });
+      }
+      ol.innerHTML = ordreDuJour(tous).filter((y) => !x || y.id !== x.id).slice(0, 12).map((x) => `<li><a class="etagere-short" href="#/shorts/${esc(x.id)}">
           ${x.img ? `<img src="${imgShort(x.img)}" alt="" ${x.p ? 'width="720" height="1280"' : 'width="800" height="600"'} loading="lazy" decoding="async" onerror="reessayer(this)">`
             : `<span class="sans-photo" data-niveau="${x.niveau}">${picto(x.niveau, "fond-picto")}</span>`}
           <span class="etagere-texte">${fr(x.i)}</span>
@@ -2006,6 +2148,7 @@
         </span>
       </a>
       <div class="short-actions">
+        ${synthese ? `<button type="button" class="short-action" data-ecouter-short aria-pressed="false">${icone.ecouter}<span>Écouter</span></button>` : ""}
         <button type="button" class="short-action" data-aimer aria-pressed="${aime}">${icone.coeur}<span>J’aime</span></button>
         <button type="button" class="short-action" data-partager-short>${icone.partager}<span>Partager</span></button>
         <a class="short-action" href="#/serie/${s.id}" aria-label="La série : ${esc(s.titre)}">${icone.serie}<span>Série</span></a>
@@ -2034,6 +2177,8 @@
           <h1 class="cache" tabindex="-1">Shorts : une idée clé et un verset clé par étude</h1>
           <div class="shorts-filtres" role="group" aria-label="Quels shorts">${FILTRES_SHORTS.map(([id, nom]) =>
             `<button type="button" data-filtre="${id}" aria-pressed="${id === filtreShorts}">${id === "aimes" ? icone.coeur : ""}${nom}</button>`).join("")}</div>
+          <button type="button" class="shorts-auto" data-auto aria-pressed="false"
+            aria-label="${synthese ? "Lecture automatique : chaque short est lu à voix haute, puis le suivant arrive" : "Défilement automatique"}">${icone.jouer}<span>Auto</span></button>
         </div>
         <div class="shorts" role="feed" aria-busy="true" aria-label="Shorts des études"></div>
       </div>`;
@@ -2057,10 +2202,61 @@
       const id = e.target.dataset.id;
       if (location.hash !== `#/shorts/${id}`) history.replaceState(null, "", `#/shorts/${id}`);
       if (e.target !== flux.firstElementChild) cacherAstuce();
+      // le short à l’écran : sa photo bouge doucement ; en lecture auto, il est lu
+      flux.querySelectorAll(".short.actif").forEach((a) => { if (a !== e.target) a.classList.remove("actif"); });
+      e.target.classList.add("actif");
+      if (auto) {
+        clearTimeout(minuterieAuto);
+        minuterieAuto = setTimeout(() => lireAuto(e.target), 500);
+      }
       clearTimeout(minuterieVu);
       minuterieVu = setTimeout(() => { if (!signal.aborted && location.hash === `#/shorts/${id}`) vus.noter(id); }, 1500);
     }), { root: flux, threshold: 0.6 });
     signal.addEventListener("abort", () => clearTimeout(minuterieVu));
+
+    // écouter un short ; lecture auto : chaque short est lu, puis le suivant arrive tout seul
+    // (sans voix sur l’appareil : le temps de lire, puis le suivant)
+    let auto = false;
+    let minuterieAuto = 0;
+    const boutonAuto = tete.querySelector("[data-auto]");
+    const marquerEcoute = (carte, oui) => {
+      carte.classList.toggle("en-ecoute", oui);
+      const b = carte.querySelector("[data-ecouter-short]");
+      if (b) b.setAttribute("aria-pressed", String(oui));
+    };
+    const avancer = (carte) => {
+      const n = carte.nextElementSibling;
+      if (!n || !n.classList.contains("short")) { arreterAuto(); bulle("C’était le dernier short"); return; }
+      n.scrollIntoView({ behavior: mouvementReduit() ? "auto" : "smooth", block: "start" });
+    };
+    function lireAuto(carte) {
+      if (!auto || signal.aborted || !carte.isConnected) return;
+      const x = SH.find((y) => y.id === carte.dataset.id);
+      if (!x) return;
+      clearTimeout(minuterieAuto);
+      marquerEcoute(carte, true);
+      const apres = (fini) => {
+        marquerEcoute(carte, false);
+        if (fini && auto && !signal.aborted) minuterieAuto = setTimeout(() => avancer(carte), 1000);
+      };
+      if (!parler(texteAOreille(x), apres)) minuterieAuto = setTimeout(() => apres(true), 3500 + 55 * (x.i.length + x.t.length));
+    }
+    function demarrerAuto() {
+      auto = true;
+      boutonAuto.setAttribute("aria-pressed", "true");
+      garderEcran(true);
+      const c = flux.querySelector(".short.actif") || flux.querySelector(".short");
+      if (c) lireAuto(c);
+    }
+    function arreterAuto() {
+      if (!auto) return;
+      auto = false;
+      clearTimeout(minuterieAuto);
+      arreterParole();
+      boutonAuto.setAttribute("aria-pressed", "false");
+      garderEcran(false);
+    }
+    signal.addEventListener("abort", () => { arreterAuto(); arreterParole(); });
     signal.addEventListener("abort", () => { voirImage.disconnect(); voirFin.disconnect(); voirCourant.disconnect(); });
 
     // texte trop long pour l’écran : on le resserre d’un cran, puis d’un autre
@@ -2145,9 +2341,18 @@
         return;
       }
       if (ev.target.closest("[data-recharger]")) { shortsPage(cible); return; }
+      if (ev.target.closest("[data-auto]")) { if (auto) arreterAuto(); else demarrerAuto(); return; }
       const carte = ev.target.closest(".short");
       const x = carte && SH.find((y) => y.id === carte.dataset.id);
       if (!x) return;
+      const ec = ev.target.closest("[data-ecouter-short]");
+      if (ec) {
+        if (ec.getAttribute("aria-pressed") === "true") { arreterAuto(); arreterParole(); return; }
+        arreterAuto();
+        marquerEcoute(carte, true);
+        parler(texteAOreille(x), () => marquerEcoute(carte, false));
+        return;
+      }
       const aimer = ev.target.closest("[data-aimer]");
       if (aimer) {
         const oui = aimes.basculer(x.id);
@@ -2157,15 +2362,16 @@
         return;
       }
       const p = ev.target.closest("[data-partager-short]");
-      if (p) partagerShort(x, p);
+      if (p) { arreterAuto(); feuillePartage(x, p); }
     }, { signal });
-    // l’image à partager se prépare dès que le doigt touche le bouton
+    // les images à partager se préparent dès que le doigt touche le bouton
     app.addEventListener("pointerdown", (ev) => {
       const p = ev.target.closest("[data-partager-short]");
       const carte = p && p.closest(".short");
       const x = carte && SH.find((y) => y.id === carte.dataset.id);
-      if (x) fichierShort(x).catch(() => {});
+      if (x) { fichierShort(x, "story").catch(() => {}); fichierShort(x, "carre").catch(() => {}); }
     }, { signal });
+    signal.addEventListener("abort", fermerFeuille);
     // au clavier : flèches, Page suivante, j et k
     document.addEventListener("keydown", (ev) => {
       if (ev.altKey || ev.ctrlKey || ev.metaKey || (ev.target.closest && ev.target.closest("input, textarea, select"))) return;
@@ -2212,8 +2418,12 @@
     g.arcTo(x, y, x + l, y, r);
     g.closePath();
   }
-  async function imageShort(x) {
-    const L = 1080, H = 1350, M = 84;
+  // l’image d’un short : « carre » (1080 × 1350, pour une publication ou un message)
+  // ou « story » (1080 × 1920 ; en haut et en bas, l’application met son nom et le champ de réponse : on y laisse de la place)
+  async function imageShort(x, format) {
+    const story = format === "story";
+    const L = 1080, H = story ? 1920 : 1350, M = 84;
+    const HAUT = story ? 200 : M, BAS = story ? 240 : M;
     const c = document.createElement("canvas");
     c.width = L;
     c.height = H;
@@ -2226,8 +2436,13 @@
       chargerImage("assets/icones/adventiste-blanc.svg").catch(() => null)]);
     g.fillStyle = "#0f2321";
     g.fillRect(0, 0, L, H);
-    if (photo) g.drawImage(photo, 0, 0, L, (L * photo.height) / photo.width);
-    else {
+    if (photo) {
+      if (story && photo.height > photo.width) {
+        // peinture verticale : elle remplit toute la story
+        const k = Math.max(L / photo.width, H / photo.height);
+        g.drawImage(photo, (L - photo.width * k) / 2, (H - photo.height * k) * 0.3, photo.width * k, photo.height * k);
+      } else g.drawImage(photo, 0, 0, L, (L * photo.height) / photo.width);
+    } else {
       // sans photo : le dégradé et le pictogramme de l’étape, comme à l’écran
       const fond = g.createLinearGradient(0, 0, L, H);
       fond.addColorStop(0, "#2f6b5e");
@@ -2239,14 +2454,14 @@
       const dessin = svg && await chargerImage(`data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`).catch(() => null);
       if (dessin) {
         g.globalAlpha = 0.16;
-        g.drawImage(dessin, L - 620, 60, 680, 680);
+        g.drawImage(dessin, L - 620, HAUT - 24, 680, 680);
         g.globalAlpha = 1;
       }
     }
     const voile = g.createLinearGradient(0, 0, 0, H);
     voile.addColorStop(0, "rgba(15,35,33,0.5)");
-    voile.addColorStop(0.28, "rgba(15,35,33,0.42)");
-    voile.addColorStop(0.58, "rgba(15,35,33,0.94)");
+    voile.addColorStop(story ? 0.32 : 0.28, "rgba(15,35,33,0.38)");
+    voile.addColorStop(story ? 0.6 : 0.58, "rgba(15,35,33,0.94)");
     voile.addColorStop(1, "#0f2321");
     g.fillStyle = voile;
     g.fillRect(0, 0, L, H);
@@ -2254,13 +2469,13 @@
     g.fillStyle = "#fff";
     // en haut : la série et l’étude
     g.font = '700 32px "Atkinson Hyperlegible", sans-serif';
-    g.fillText(couper(g, x.serie.titre, L - 2 * M)[0], M, M + 28);
+    g.fillText(couper(g, x.serie.titre, L - 2 * M)[0], M, HAUT + 28);
     g.font = '400 29px "Atkinson Hyperlegible", sans-serif';
     g.globalAlpha = 0.82;
-    g.fillText(couper(g, ouShort(x.lecon), L - 2 * M)[0], M, M + 72);
+    g.fillText(couper(g, ouShort(x.lecon), L - 2 * M)[0], M, HAUT + 72);
     g.globalAlpha = 1;
     // en bas : la signature
-    const bas = H - M;
+    const bas = H - BAS;
     if (symbole) g.drawImage(symbole, M, bas - 38, 44, 40);
     g.font = '700 30px "Atkinson Hyperlegible", sans-serif';
     g.fillText("Mission", M + 60, bas - 8);
@@ -2271,8 +2486,8 @@
     g.globalAlpha = 1;
     // au milieu, posés sur la signature : l’idée, puis le verset ; plus petits s’ils ne tiennent pas
     const large = L - 2 * M;
-    let k = 1, idee, vers, ref, hIdee, hVers, total;
-    for (let essai = 0; essai < 7; essai++, k *= 0.93) {
+    let k = story ? 1.12 : 1, idee, vers, hIdee, hVers, total;
+    for (let essai = 0; essai < 9; essai++, k *= 0.93) {
       g.font = `600 ${Math.round(62 * k)}px "Alegreya", serif`;
       idee = couper(g, x.i, large);
       g.font = `400 ${Math.round(36 * k)}px "Atkinson Hyperlegible", sans-serif`;
@@ -2280,7 +2495,7 @@
       hIdee = idee.length * 72 * k;
       hVers = vers.length * 51 * k + 30 * k + 22 + 80;
       total = hIdee + 48 + hVers;
-      if (bas - 90 - total >= M + 140) break;
+      if (bas - 90 - total >= HAUT + 140) break;
     }
     let y = bas - 90 - total;
     g.font = `600 ${Math.round(62 * k)}px "Alegreya", serif`;
@@ -2300,36 +2515,95 @@
     g.fillText(insecables(x.r), M + 40, y + 40 + vers.length * 51 * k + 22 + 26 * k);
     return new Promise((ok, ko) => c.toBlob((b) => (b ? ok(b) : ko(new Error("image"))), "image/jpeg", 0.9));
   }
-  function fichierShort(x) {
-    if (!imagesShorts.has(x.id)) {
-      const p = imageShort(x).then((b) => new File([b], `mission-${x.s}-${x.n + 1}.jpg`, { type: "image/jpeg" }));
-      p.catch(() => imagesShorts.delete(x.id));
-      imagesShorts.set(x.id, p);
+  function fichierShort(x, format) {
+    const cle = `${x.id}|${format}`;
+    if (!imagesShorts.has(cle)) {
+      const nom = `mission-${x.s}-${x.n + 1}${format === "story" ? "-story" : ""}.jpg`;
+      const p = imageShort(x, format).then((b) => new File([b], nom, { type: "image/jpeg" }));
+      p.catch(() => imagesShorts.delete(cle));
+      imagesShorts.set(cle, p);
     }
-    return imagesShorts.get(x.id);
+    return imagesShorts.get(cle);
   }
-  async function partagerShort(x, bouton) {
-    const lien = `${location.origin}${location.pathname}#/lire/${x.f}`;
+  // lien à partager : une petite page avec son aperçu (titre, phrase, image), qui ouvre le site (p/, outils/partage/)
+  const lienPartage = (chemin) => new URL(`p/${chemin.split("/").map(encodeURIComponent).join("/")}.html`, document.baseURI).href;
+  const peutPartagerFichier = () => {
+    if (!navigator.canShare) return false;
+    try { return navigator.canShare({ files: [new File(["x"], "x.jpg", { type: "image/jpeg" })] }); } catch (e) { return false; }
+  };
+  async function partagerShort(x, format, bouton) {
+    const lien = lienPartage(x.f);
     const texte = `${x.i}\n${x.r}`;
     bouton.setAttribute("aria-busy", "true");
     try {
-      let fichier = null;
-      if (navigator.canShare) fichier = await fichierShort(x).catch(() => null);
-      if (fichier && navigator.canShare({ files: [fichier] })) {
-        await navigator.share({ files: [fichier], title: x.lecon.titre, text: `${texte}\n${lien}` });
-      } else if (navigator.share) {
-        await navigator.share({ title: x.lecon.titre, text: texte, url: lien });
-      } else {
-        await navigator.clipboard.writeText(`${texte}\n${lien}`);
-        bulle("Lien copié : collez-le dans un message.");
+      if (format === "lien") {
+        if (navigator.share) await navigator.share({ title: x.lecon.titre, text: texte, url: lien });
+        else await copierTexte(`${texte}\n${lien}`);
+        return true;
       }
+      const fichier = await fichierShort(x, format);
+      if (peutPartagerFichier() && navigator.canShare({ files: [fichier] })) {
+        await navigator.share({ files: [fichier], title: x.lecon.titre, text: `${texte}\n${lien}` });
+      } else {
+        // pas de partage de fichiers (ordinateur) : l’image est enregistrée
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(fichier);
+        a.download = fichier.name;
+        document.body.append(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+        bulle("Image enregistrée dans vos téléchargements");
+      }
+      return true;
     } catch (e) {
+      if (e && e.name === "AbortError") return true;
       // le partage demande un toucher tout frais : l’image est prête, un second toucher suffit
-      if (e && e.name === "NotAllowedError") bulle("L’image est prête : touchez encore « Partager ».");
-      else if (!e || e.name !== "AbortError") bulle("Le partage n’a pas abouti.");
+      if (e && e.name === "NotAllowedError") { bulle("L’image est prête : touchez encore."); return false; }
+      bulle("Le partage n’a pas abouti.");
+      return false;
     } finally {
       bouton.removeAttribute("aria-busy");
     }
+  }
+  // le choix du partage, en bas de l’écran : story, image ou lien
+  let feuille = null;
+  function fermerFeuille() {
+    if (!feuille) return;
+    const { voile, boite, retour } = feuille;
+    feuille = null;
+    voile.remove();
+    boite.remove();
+    if (retour && retour.isConnected) retour.focus({ preventScroll: true });
+  }
+  function feuillePartage(x, retour) {
+    fermerFeuille();
+    fichierShort(x, "story").catch(() => {});
+    fichierShort(x, "carre").catch(() => {});
+    const fichiers = peutPartagerFichier();
+    const voile = document.createElement("div");
+    voile.className = "feuille-voile";
+    const boite = document.createElement("div");
+    boite.className = "feuille";
+    boite.setAttribute("role", "dialog");
+    boite.setAttribute("aria-modal", "true");
+    boite.setAttribute("aria-labelledby", "feuille-titre");
+    boite.innerHTML = `<p class="feuille-titre" id="feuille-titre">Partager ce short</p>
+      <button type="button" class="feuille-choix" data-format="story">${icone.story}<span>${fichiers ? "En story" : "Enregistrer la story"}<small>Image verticale : statut WhatsApp, story Facebook ou Instagram</small></span></button>
+      <button type="button" class="feuille-choix" data-format="carre">${icone.image}<span>${fichiers ? "En image" : "Enregistrer l’image"}<small>Pour un message ou une publication</small></span></button>
+      <button type="button" class="feuille-choix" data-format="lien">${icone.lien}<span>${navigator.share ? "Le lien seulement" : "Copier le lien"}<small>Il ouvre l’étude, avec un aperçu</small></span></button>
+      <button type="button" class="feuille-annuler" data-fermer-feuille>Annuler</button>`;
+    document.body.append(voile, boite);
+    feuille = { voile, boite, retour };
+    voile.addEventListener("click", fermerFeuille);
+    boite.addEventListener("keydown", (ev) => { if (ev.key === "Escape") fermerFeuille(); });
+    boite.addEventListener("click", async (ev) => {
+      if (ev.target.closest("[data-fermer-feuille]")) { fermerFeuille(); return; }
+      const b = ev.target.closest("[data-format]");
+      if (!b || b.getAttribute("aria-busy")) return;
+      if (await partagerShort(x, b.dataset.format, b)) fermerFeuille();
+    });
+    boite.querySelector("[data-format]").focus();
   }
   function bulle(texte) {
     let b = document.querySelector(".bulle");
@@ -2850,6 +3124,9 @@
         <p class="grp-sous-titre">Le message</p>
         <pre class="bilan-texte"></pre>
       </div>
+      ${SCRIPT_MISSION ? `<label class="bilan-tableau"><input type="checkbox" name="tableau"${memoire.lire("mission.groupe.tableau", "1") === "1" ? " checked" : ""}>
+          <span>Ranger aussi ce bilan dans le tableau du responsable<small>Il le reçoit dans son Google Sheet ; un bilan corrigé puis renvoyé remplace le précédent.</small></span></label>
+        <p class="grp-note bilan-tableau-etat" role="status" hidden></p>` : ""}
       <div class="grp-boutons bilan-envoi">
         <a class="doc principal grp-grand" data-envoi="whatsapp" href="#" target="_blank" rel="noopener">${icone.envoyer}${g.tel && numeroWhatsApp(g.tel) ? "Envoyer au responsable sur WhatsApp" : "Envoyer sur WhatsApp"}</a>
         ${navigator.share ? `<button type="button" class="doc" data-envoi="partager">${icone.partager}Autre application</button>` : ""}
@@ -2877,10 +3154,28 @@
       }
       maj();
     }, { signal });
+    const coche = zone.querySelector('input[name="tableau"]');
+    const etatTableau = zone.querySelector(".bilan-tableau-etat");
+    let dernierEnvoi = "";
+    const montrerEtat = (enCours) => {
+      if (!etatTableau || !dernierEnvoi) return;
+      etatTableau.hidden = false;
+      etatTableau.textContent = !enAttente(dernierEnvoi) ? "Rangé dans le tableau du responsable."
+        : enCours === true ? "Envoi au tableau du responsable…"
+          : "Pas encore arrivé dans le tableau : il partira tout seul dès que la connexion revient.";
+    };
+    document.addEventListener("mission-envoye", () => montrerEtat(), { signal });
     const garder = () => {
       const v = valeursBilan(f, membres);
       bilans.ajouter({ date: v.date, s: v.s, i: v.i, texte: maj() });
+      if (SCRIPT_MISSION && coche && coche.checked) {
+        const x = bilanPourTableau(groupe.lire(), v);
+        dernierEnvoi = x.id;
+        montrerEtat(true);
+        envoyerAuTableau(x).then(() => montrerEtat());
+      }
     };
+    if (coche) coche.addEventListener("change", () => memoire.ecrire("mission.groupe.tableau", coche.checked ? "1" : "0"), { signal });
     zone.addEventListener("click", (ev) => {
       const b = ev.target.closest("[data-envoi], [data-ancien]");
       if (!b) return;
@@ -2930,6 +3225,243 @@
     return true;
   }
 
+  // ---------- tableau du responsable : bilans et pages lues, vers son Google Sheet (outils/groupe/tableau-apps-script.gs) ----------
+  // vide tant que le script du tableau n’est pas déployé : alors rien ne part du site
+  const SCRIPT_MISSION = "";
+  const envois = {
+    lire: () => lireJson("mission.envois", [], (l) => Array.isArray(l)),
+    ecrire: (l) => memoire.ecrire("mission.envois", JSON.stringify(l.slice(-40))),
+  };
+  const enAttente = (id) => envois.lire().some((y) => y.id === id);
+  async function poster(x) {
+    const corps = { method: "POST", body: JSON.stringify(x), credentials: "omit", headers: { "Content-Type": "text/plain;charset=utf-8" } };
+    try {
+      const r = await fetch(SCRIPT_MISSION, corps);
+      const o = await r.json();
+      if (!o || !o.ok) throw new Error((o && o.erreur) || "refusé");
+      return true;
+    } catch (e) {
+      if (!navigator.onLine || (e && e.message && e.message !== "Failed to fetch" && !/NetworkError|Load failed/i.test(e.message))) return false;
+      // réponse illisible (le tableau renvoie ailleurs) : l’envoi est parti ; un double ne fait que remplacer sa ligne
+      await fetch(SCRIPT_MISSION, { ...corps, mode: "no-cors" });
+      return true;
+    }
+  }
+  let envoiEnCours = null;
+  // envoie ce qui attend, dans l’ordre ; ce qui échoue reste en attente (sans réseau : au retour du réseau)
+  function viderEnvois() {
+    if (!SCRIPT_MISSION || envoiEnCours || !navigator.onLine || !envois.lire().length) return envoiEnCours || Promise.resolve();
+    envoiEnCours = (async () => {
+      // la file est relue à chaque tour : un bilan ajouté (ou corrigé) pendant l’envoi part aussi
+      for (let tour = 0; tour < 50; tour++) {
+        const x = envois.lire()[0];
+        if (!x) break;
+        let ok = false;
+        try { ok = await poster(x); } catch (e) { ok = false; }
+        if (!ok) break;
+        const parti = JSON.stringify(x);
+        envois.ecrire(envois.lire().filter((y) => JSON.stringify(y) !== parti));
+        document.dispatchEvent(new CustomEvent("mission-envoye", { detail: x.id }));
+      }
+    })().finally(() => { envoiEnCours = null; });
+    return envoiEnCours;
+  }
+  function envoyerAuTableau(x) {
+    envois.ecrire([...envois.lire().filter((y) => y.id !== x.id), x]);
+    return viderEnvois();
+  }
+  window.addEventListener("online", () => viderEnvois());
+  const idGroupe = () => groupe.lire().id || groupe.maj((g) => { g.id = Math.random().toString(36).slice(2, 10); }).id;
+  function bilanPourTableau(g, v) {
+    const s = series[v.s];
+    const l = s && s.lecons[v.i];
+    return {
+      type: "bilan", id: `${idGroupe()}-${v.date}`, date: v.date, groupe: g.nom || "", leader: g.leader || "",
+      serie: s ? s.titre : "", etude: l ? nomEtude(l, v.i) : "", duree: v.duree,
+      presents: v.nombre !== null ? v.nombre : v.presents.length,
+      membres: v.nombre !== null ? "" : v.presents.length + v.absents.length,
+      nomsPresents: v.presents.join(", "), absents: v.absents.join(", "), visiteurs: v.visiteurs,
+      versets: v.versets === null ? "" : v.versets, partage: v.partage, priere: v.priere,
+    };
+  }
+
+  // pages lues : des totaux par jour et par page, sans cookie, sans identifiant, sans ce qu’on cherche ;
+  // gardés sur l’appareil puis envoyés par paquets. Le bas de page permet de refuser.
+  const statsRefusees = () => memoire.lire("mission.stats.non", "") === "1" || navigator.globalPrivacyControl === true;
+  const TITRES_STATS = { "": "Accueil", chercher: "Recherche", shorts: "Shorts", groupe: "Petit groupe", application: "L’application",
+    commencer: "Par où commencer ?", carnet: "Mon carnet", versets: "Mémoriser les versets", inviter: "Inviter un ami" };
+  function compterPage(page, arg) {
+    if (!SCRIPT_MISSION || statsRefusees()) return;
+    const p = ["niveau", "serie", "lire", "original"].includes(page) && arg ? `${page === "original" ? "lire" : page}/${arg}` : page || "accueil";
+    const t = TITRES_STATS[page] !== undefined && !(page === "inviter" && arg) ? TITRES_STATS[page] : document.title.replace(/ — Mission$/, "");
+    const o = lireJson("mission.stats", {}, (v) => typeof v === "object" && !Array.isArray(v));
+    const cle = `${dateIso(new Date())}|${p}`;
+    o[cle] = { t: t.slice(0, 200), n: ((o[cle] && o[cle].n) || 0) + 1 };
+    memoire.ecrire("mission.stats", JSON.stringify(o));
+    if (Object.values(o).reduce((a, x) => a + x.n, 0) >= 15) envoyerStats();
+  }
+  function envoyerStats() {
+    if (!SCRIPT_MISSION || !navigator.onLine) return;
+    const o = lireJson("mission.stats", {}, (v) => typeof v === "object" && !Array.isArray(v));
+    const pages = Object.entries(o).map(([k, v]) => {
+      const [jour, ...p] = k.split("|");
+      return { jour, p: p.join("|"), t: v.t, n: v.n };
+    });
+    if (!pages.length) return;
+    memoire.ecrire("mission.stats", "{}");
+    try {
+      fetch(SCRIPT_MISSION, { method: "POST", mode: "no-cors", keepalive: true, credentials: "omit",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ type: "visites", lot: Math.random().toString(36).slice(2, 12), pages }) }).catch(() => {});
+    } catch (e) { /* tant pis : ce ne sont que des totaux */ }
+  }
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") envoyerStats(); });
+  function majPiedStats() {
+    const zone = document.querySelector("[data-pied-stats]");
+    if (!zone) return;
+    zone.hidden = !SCRIPT_MISSION;
+    if (!SCRIPT_MISSION) return;
+    const non = statsRefusees();
+    zone.innerHTML = `Pour savoir quelles études servent, le site compte les pages lues : sans cookie, sans nom, sans ce que vous cherchez.
+      <button type="button" class="pied-bouton" data-stats>${non ? "Compter à nouveau mes visites" : "Ne pas compter mes visites"}</button>`;
+  }
+  document.addEventListener("click", (ev) => {
+    if (!ev.target.closest("[data-stats]")) return;
+    const non = memoire.lire("mission.stats.non", "") !== "1";
+    memoire.ecrire("mission.stats.non", non ? "1" : "");
+    if (non) memoire.ecrire("mission.stats", "{}");
+    majPiedStats();
+    bulle(non ? "Vos visites ne sont plus comptées" : "Vos visites sont à nouveau comptées");
+  });
+
+  // ---------- codes QR (assets/qr.js, chargé à la demande) ----------
+  let qrCharge = null;
+  function chargerQr() {
+    if (window.qrcode) return Promise.resolve(window.qrcode);
+    if (!qrCharge) {
+      qrCharge = new Promise((ok, ko) => {
+        const sc = document.createElement("script");
+        sc.src = "assets/qr.js?v=1";
+        sc.onload = () => (window.qrcode ? ok(window.qrcode) : ko(new Error("qr")));
+        sc.onerror = () => { qrCharge = null; ko(new Error("qr")); };
+        document.head.append(sc);
+      });
+    }
+    return qrCharge;
+  }
+  // le code QR d’une adresse, en SVG net à toute taille
+  function svgQr(texte, couleur) {
+    const q = window.qrcode(0, "M");
+    q.addData(texte);
+    q.make();
+    const n = q.getModuleCount();
+    let d = "";
+    for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (q.isDark(r, c)) d += `M${c + 4} ${r + 4}h1v1h-1z`;
+    return `<svg viewBox="0 0 ${n + 8} ${n + 8}" shape-rendering="crispEdges" aria-hidden="true"><rect width="${n + 8}" height="${n + 8}" fill="#fff"/><path d="${d}" fill="${couleur || "#0f2321"}"/></svg>`;
+  }
+  const SITE = "https://mission.ka-ilei.com/";
+  const adresseCourte = (u) => u.replace(/^https?:\/\//, "").replace(/\/$/, "");
+
+  // ---------- inviter un ami (#/inviter, #/inviter/<série>) : un message avec le lien, un code QR à scanner, des cartes à imprimer ----------
+  function messageInvitation(s, lien) {
+    return s
+      ? `Bonjour ! Je te propose la série « ${s.titre} » : ${s.texte.replace(/\s*$/, "")} Ça se lit sur le téléphone, seul ou en petit groupe : ${lien}`
+      : `Bonjour ! Je voulais te partager Mission : des études bibliques à lire sur le téléphone, seul ou en petit groupe. Tu peux commencer ici : ${lien}`;
+  }
+  function inviterPage(arg) {
+    const choisie = series[arg] ? arg : "";
+    document.title = "Inviter un ami — Mission";
+    const options = B.niveaux.map((n) => {
+      const ss = seriesDe(n.id).filter((s) => s.lecons.length);
+      return ss.length ? `<optgroup label="${esc(`${n.num}. ${n.verbe}`)}">${ss.map((s) =>
+        `<option value="${s.id}"${s.id === choisie ? " selected" : ""}>${esc(s.titre)}</option>`).join("")}</optgroup>` : "";
+    }).join("");
+    app.innerHTML = `
+      <div class="page page-inviter">
+        ${fil([["Accueil", "#/"], ["Inviter un ami"]])}
+        <h1 class="titre-page" tabindex="-1">Inviter un ami</h1>
+        <p class="chapeau">Envoyez un message avec le lien, ou montrez le code : on le scanne avec l’appareil photo du téléphone.</p>
+        <div class="inviter-mise">
+          <form class="grp-form inviter-form" autocomplete="off">
+            <label class="grp-champ"><span>Inviter à</span><select name="quoi"><option value="">Mission, tout le site</option>${options}</select></label>
+            <label class="grp-champ"><span>Le message</span><textarea name="message" rows="6" maxlength="1200"></textarea></label>
+            <div class="grp-boutons">
+              <a class="doc principal grp-grand" data-inviter="whatsapp" href="#" target="_blank" rel="noopener">${icone.envoyer}Envoyer sur WhatsApp</a>
+              ${navigator.share ? `<button type="button" class="doc" data-inviter="partager">${icone.partager}Autre application</button>` : ""}
+              <button type="button" class="doc" data-inviter="copier">${icone.copier}Copier</button>
+            </div>
+          </form>
+          <figure class="inviter-qr">
+            <div class="qr-cadre" data-qr></div>
+            <figcaption><strong data-qr-titre></strong><span data-qr-lien></span></figcaption>
+            <button type="button" class="doc" data-inviter="imprimer">${icone.imprimer}Imprimer des cartes d’invitation</button>
+          </figure>
+        </div>
+      </div>`;
+    const f = app.querySelector(".inviter-form");
+    const zoneQr = app.querySelector("[data-qr]");
+    const whatsapp = app.querySelector('[data-inviter="whatsapp"]');
+    let modifie = false;
+    const etat = () => {
+      const s = series[f.quoi.value] || null;
+      return { s, lien: s ? lienPartage(s.id) : lienPartage("inviter"), direct: s ? `${SITE}#/serie/${s.id}` : SITE };
+    };
+    const majQr = () => {
+      const { s, direct } = etat();
+      app.querySelector("[data-qr-titre]").textContent = s ? s.titre : "Mission, études bibliques";
+      app.querySelector("[data-qr-lien]").textContent = adresseCourte(direct);
+      chargerQr().then(() => { if (zoneQr.isConnected) zoneQr.innerHTML = svgQr(direct); })
+        .catch(() => { zoneQr.innerHTML = '<p class="grp-note">Le code ne s’affiche pas sans connexion.</p>'; });
+    };
+    const maj = (refaire) => {
+      const { s, lien } = etat();
+      if (refaire || !modifie) { f.message.value = messageInvitation(s, lien); modifie = false; }
+      whatsapp.href = `https://wa.me/?text=${encodeURIComponent(f.message.value)}`;
+    };
+    maj(true);
+    majQr();
+    f.addEventListener("input", (ev) => { if (ev.target.name === "message") modifie = true; maj(false); });
+    f.addEventListener("change", (ev) => {
+      if (ev.target.name !== "quoi") return;
+      history.replaceState(null, "", f.quoi.value ? `#/inviter/${f.quoi.value}` : "#/inviter");
+      maj(false);
+      majQr();
+    });
+    app.querySelector(".page-inviter").addEventListener("click", (ev) => {
+      const b = ev.target.closest("[data-inviter]");
+      if (!b) return;
+      const quoi = b.dataset.inviter;
+      if (quoi === "partager") { ev.preventDefault(); partagerTexte(f.message.value); }
+      else if (quoi === "copier") { ev.preventDefault(); copierTexte(f.message.value); }
+      else if (quoi === "imprimer") { ev.preventDefault(); imprimerCartes(etat()); }
+    });
+    return true;
+  }
+  // huit cartes par feuille A4, à découper : le nom, une phrase, le code QR et l’adresse
+  function imprimerCartes({ s, direct }) {
+    chargerQr().then(() => {
+      document.getElementById("impression-cartes")?.remove();
+      const zone = document.createElement("div");
+      zone.id = "impression-cartes";
+      const qr = svgQr(direct);
+      const carte = `<div class="carte-invit">
+          <div class="carte-invit-texte">
+            <p class="carte-invit-nom">Mission</p>
+            <p class="carte-invit-titre">${s ? fr(s.titre) : "Études bibliques"}</p>
+            <p class="carte-invit-phrase">${s ? fr(s.texte) : "Rencontrer, grandir, mûrir en Jésus-Christ : des études à lire sur le téléphone, seul ou en petit groupe."}</p>
+            <p class="carte-invit-lien">${esc(adresseCourte(direct))}</p>
+          </div>
+          <div class="carte-invit-qr">${qr}<span>Scannez-moi</span></div>
+        </div>`;
+      zone.innerHTML = carte.repeat(8);
+      document.body.append(zone);
+      corps.classList.add("impression-cartes");
+      const fin = () => { corps.classList.remove("impression-cartes"); zone.remove(); window.removeEventListener("afterprint", fin); };
+      window.addEventListener("afterprint", fin);
+      window.print();
+    }).catch(() => bulle("Le code QR ne s’affiche pas sans connexion."));
+  }
+
   // ---------- navigation ----------
   const positions = new Map(); // défilement des pages quittées pour un document
   let premiere = true;
@@ -2943,6 +3475,8 @@
     if ((page === "lire" || page === "original") && precedente && !estDoc(precedente)) positions.set(precedente, window.scrollY);
     const depuisDocument = docDe(precedente);
     if (page !== "lire" && page !== "original") { fermerLecteur(); fermerTexte(); }
+    arreterParole();
+    fermerFeuille();
     if (page !== "shorts") fermerShorts();
     if (page !== "groupe") fermerGroupe();
     if (page === "lire" || page === "original") retourShorts = precedente.startsWith("shorts") || retourShorts === arg ? arg : null;
@@ -2958,6 +3492,7 @@
     else if (page === "shorts") shortsPage(arg);
     else if (page === "application") application();
     else if (page === "groupe") groupePage(arg);
+    else if (page === "inviter") inviterPage(arg);
     else if (page === "lire") { fermerLecteur(); fermerTexte(); if (aTexte(arg)) lireTexte(arg); else lire(arg); }
     else if (page === "original") { fermerLecteur(); fermerTexte(); lire(arg); }
     else introuvable();
@@ -2983,10 +3518,13 @@
     }
     premiere = false;
     precedente = h;
+    compterPage(page, arg);
   }
 
   window.addEventListener("hashchange", route);
   route();
+  majPiedStats();
+  viderEnvois();
 
   if ("serviceWorker" in navigator && location.protocol === "https:") {
     navigator.serviceWorker.register("sw.js").catch(() => {});
