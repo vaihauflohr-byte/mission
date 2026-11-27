@@ -1,7 +1,8 @@
 # Images des shorts : pour chaque short, la scène à peindre (en anglais, pour le modèle d’image).
 # Mêmes clés que shorts.txt. La scène suit le verset clé et l’idée clé du short, et le récit de l’étude :
 # décor, vêtements et époque bibliques exacts. « TAHITI: » en tête : une scène d’aujourd’hui, à Tahiti.
-# Le style commun et le cadrage (sujet dans le haut de l’image, bas plus sombre pour le texte)
+# Le style commun (photographie douce, personnages surtout en silhouette, teinte bleue des couvertures
+# comme « Vivre avec Jésus ») et le cadrage (sujet dans le haut, bas plus sombre pour le texte)
 # sont ajoutés par outils/shorts/generer_images.py.
 
 [prendre-vie]
@@ -43,7 +44,7 @@
 24 | a man kneeling in repentance on a hill under a starry sky, a soft wind moving his robe and the grass around him, a gentle light touching him
 25 | the apostle John on the island of Patmos eating a small scroll from the hand of a mighty angel who stands with one foot on the sea and one on the land, a rainbow over the angel's head
 26 | four angels holding back the four winds at the corners of the earth while another angel rises from the east carrying a golden seal, sunrise over the world
-27 | a symbolic beast rising out of the earth in a vast open prairie, with two small horns like a lamb, under a dramatic sky, in the manner of a classic prophecy painting
+27 | a symbolic beast rising out of the earth in a vast open prairie, with two small horns like a lamb, under a dramatic sky, symbolic
 28 | a family keeping watch at night in a lit house, white garments ready, while hail and storm fall outside, a calm protective light around the house
 29 | a desolate dark earth with ruined cities under a black sky, while far above, in brilliant light, a multitude in white robes rises toward a radiant city
 30 | the redeemed in white robes walking beside the river of life toward a throne of light in the New Jerusalem, the tree of life on both banks, faces lifted in joy
@@ -89,7 +90,7 @@ G | the garden of Eden at dawn: a clear river, fruit trees, gentle animals resti
 12 | at dawn after the Sabbath, Mary Magdalene and the other Mary walking toward the garden tomb carrying spices, the first light of the first day of the week
 13 | TAHITI: a family bringing the first fruits of their harvest, breadfruit, bananas and taro, to a small church on a Sabbath morning, giving with joy
 14 | TAHITI: a young man running along the beach at sunrise, healthy and full of energy, the mountains behind him
-15 | the woman of Revelation 12, clothed with the sun, the moon under her feet and a crown of twelve stars on her head, in the sky, symbolic painting
+15 | the woman of Revelation 12, clothed with the sun, the moon under her feet and a crown of twelve stars on her head, high in the sky, symbolic
 
 [historacles]
 1 | Nebuchadnezzar's dream: a colossal statue with a head of gold, chest and arms of silver, belly and thighs of bronze, legs of iron and feet of iron mixed with clay, a great stone cut without hands striking its feet

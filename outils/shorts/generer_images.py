@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Images des shorts avec fal.ai : outils/shorts/images.txt → assets/images/shorts/<clé>.webp
 
-Une image verticale (720 × 1280) par short, peinte d’après la scène écrite dans images.txt, elle-même
-tirée du verset clé et de l’idée clé du short (shorts.txt). Le sujet est dans le haut de l’image : le bas
-reçoit le texte du short.
+Une photo verticale (720 × 1280) par short, d’après la scène écrite dans images.txt, elle-même tirée du
+verset clé et de l’idée clé du short (shorts.txt). Style des couvertures comme « Vivre avec Jésus » :
+photographie douce et symbolique, personnages surtout en silhouette ou par des détails (mains), puis une
+teinte bleue claire (bichromie) qui donne à tous les shorts le même ton. Le sujet est dans le haut de
+l’image : le bas reçoit le texte du short. La photo en couleur est gardée à part (--brut), pour pouvoir
+changer la teinte sans tout refaire (--reteinter).
 
     FAL_KEY=… python3 outils/shorts/generer_images.py                 # toutes les images qui manquent
     FAL_KEY=… python3 outils/shorts/generer_images.py --essai 8       # un essai : 8 images variées
@@ -11,6 +14,7 @@ reçoit le texte du short.
     FAL_KEY=… python3 outils/shorts/generer_images.py --refaire historacles-7 daniel-8
     python3 outils/shorts/generer_images.py --planches                # planches contact pour relire
     python3 outils/shorts/generer_images.py --vignettes               # après construire_shorts.py
+    python3 outils/shorts/generer_images.py --reteinter               # nouvelle teinte, depuis les photos brutes
 
 La clé fal.ai vient de FAL_KEY (ou de ~/.fal_key) : jamais dans le dépôt. Le modèle, la graine et la
 scène de chaque image sont notés dans outils/shorts/images.json, pour pouvoir refaire la même.
@@ -30,7 +34,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 RACINE = Path(__file__).resolve().parents[2]
 ICI = RACINE / "outils/shorts"
@@ -38,12 +42,21 @@ DOSSIER = RACINE / "assets/images/shorts"
 JOURNAL = ICI / "images.json"
 LARGEUR, HAUTEUR = 720, 1280  # moins d’un mégapixel : fal facture au mégapixel entamé
 
-STYLE = ("Warm painterly digital illustration in the style of a modern illustrated Bible storybook, "
-         "soft natural light, rich but gentle colors, respectful and expressive figures, "
-         "historically accurate clothing and setting, simple uncluttered composition. "
+STYLE = ("Cinematic photograph, soft natural light, gentle haze, shallow depth of field, subtle film grain, "
+         "quiet and reverent mood, minimal symbolic composition in the spirit of a Bible study booklet cover. "
+         "People mostly seen in silhouette, from behind or through details such as hands, faces not the focus; "
+         "for biblical scenes, historically accurate ancient Near Eastern clothing and setting. "
          "Tall vertical composition: the main subject in the upper half of the frame, "
-         "the lower third calmer and darker, simple ground or shadow. "
-         "No text, no letters, no words, no captions, no watermark.")
+         "the lower third calmer, simple ground or shadow. "
+         "No text, no letters, no words, no captions, no logos, no watermark.")
+# bichromie bleue claire, relevée sur la couverture de « Vivre avec Jésus » : ombres bleu acier, clairs presque blancs
+TEINTE = {"black": "#3f5f82", "mid": "#98b1c9", "white": "#f0f4f7", "midpoint": 115}
+BRUT = Path.home() / "travail/shorts-brut"  # photos en couleur, hors du dépôt
+
+
+def teinter(img):
+    gris = ImageOps.autocontrast(ImageOps.grayscale(img), cutoff=1)
+    return ImageOps.colorize(gris, **TEINTE)
 TAHITI = "Tahitian Polynesian people of today, lush green mountains and turquoise lagoon of Tahiti, "
 
 
@@ -92,7 +105,16 @@ def charger_journal():
     return json.loads(JOURNAL.read_text(encoding="utf-8")) if JOURNAL.exists() else {}
 
 
-def generer(it, modele, cle_fal):
+def enregistrer(img, cle, couleur=False):
+    """La photo brute (couleur) à part ; dans le site, la version teintée (ou en couleur avec --couleur)."""
+    if img.size != (LARGEUR, HAUTEUR):
+        img = img.resize((LARGEUR, HAUTEUR), Image.LANCZOS)
+    BRUT.mkdir(parents=True, exist_ok=True)
+    img.save(BRUT / f"{cle}.jpg", quality=92)
+    (img if couleur else teinter(img)).save(DOSSIER / f"{cle}.webp", "WEBP", quality=72, method=6)
+
+
+def generer(it, modele, cle_fal, couleur=False):
     dst = DOSSIER / f"{it['cle']}.webp"
     graine = it.get("graine") or random.randrange(1, 2**31)
     corps = {"prompt": it["prompt"], "image_size": {"width": LARGEUR, "height": HAUTEUR}, "num_images": 1,
@@ -108,11 +130,8 @@ def generer(it, modele, cle_fal):
             if (r.get("has_nsfw_concepts") or [False])[0]:
                 return it["cle"], "FILTRÉE (refaire avec une autre scène)", None
             brut = urllib.request.urlopen(r["images"][0]["url"], timeout=120).read()
-            img = Image.open(io.BytesIO(brut)).convert("RGB")
-            if img.size != (LARGEUR, HAUTEUR):
-                img = img.resize((LARGEUR, HAUTEUR), Image.LANCZOS)
-            img.save(dst, "WEBP", quality=72, method=6)
-            return it["cle"], "ok", {"modele": modele, "graine": graine, "prompt": it["prompt"]}
+            enregistrer(Image.open(io.BytesIO(brut)).convert("RGB"), it["cle"], couleur)
+            return it["cle"], "ok", {"modele": modele, "graine": graine, "prompt": it["prompt"], "teinte": not couleur}
         except urllib.error.HTTPError as e:
             erreur = f"HTTP {e.code} {e.read()[:300]!r}"
             if 400 <= e.code < 500 and e.code != 429:
@@ -186,6 +205,9 @@ def main():
     ap.add_argument("--planches", nargs="?", const=str(Path.home() / "travail/planches"),
                     help="faire les planches contact (dans ce dossier) au lieu de générer")
     ap.add_argument("--paralleles", type=int, default=4)
+    ap.add_argument("--couleur", action="store_true", help="garder les photos en couleur, sans la teinte bleue")
+    ap.add_argument("--reteinter", action="store_true",
+                    help="refaire la teinte de toutes les images depuis les photos brutes, sans fal.ai")
     ap.add_argument("--vignettes", action="store_true",
                     help="donner aux études sans image une vignette tirée de leur short (après construire_shorts.py)")
     a = ap.parse_args()
@@ -194,6 +216,12 @@ def main():
         return
     if a.vignettes:
         vignettes()
+        return
+    if a.reteinter:
+        bruts = sorted(BRUT.glob("*.jpg"))
+        for f in bruts:
+            enregistrer(Image.open(f).convert("RGB"), f.stem, a.couleur)
+        print(f"{len(bruts)} image(s) reteintée(s) depuis {BRUT}")
         return
     toutes = scenes()
     par_cle = {it["cle"]: it for it in toutes}
@@ -225,7 +253,7 @@ def main():
     print(f"{len(choix)} image(s) avec {a.modele}, {LARGEUR} × {HAUTEUR}", flush=True)
     echecs = 0
     with cf.ThreadPoolExecutor(a.paralleles) as ex:
-        for cle, etat, note in ex.map(lambda it: generer(it, a.modele, cle_fal), choix):
+        for cle, etat, note in ex.map(lambda it: generer(it, a.modele, cle_fal, a.couleur), choix):
             print(cle, etat, flush=True)
             if note:
                 journal[cle] = note
