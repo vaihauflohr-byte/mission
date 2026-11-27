@@ -1804,10 +1804,21 @@
     }
     return shortsCharges;
   }
-  // l’ordre du jour : le même pour tous, nouveau chaque jour, sans deux shorts de la même série à la suite
+  // shorts déjà regardés sur cet appareil (plus d’une seconde et demie à l’écran)
+  const vus = {
+    liste() { try { const l = JSON.parse(memoire.lire("mission.shorts.vus", "[]")); return Array.isArray(l) ? l : []; } catch (e) { return []; } },
+    noter(id) {
+      const l = this.liste().filter((x) => x !== id);
+      l.push(id);
+      memoire.ecrire("mission.shorts.vus", JSON.stringify(l.slice(-600)));
+    },
+  };
+  // l’ordre des shorts change toutes les heures (le même pour tous à la même heure), sans deux shorts
+  // de la même série à la suite ; puis ceux déjà vus passent après les autres : chaque visite montre du neuf.
+  // Quand tout a été vu, on repart pour un tour.
   function ordreDuJour(tous) {
     const j = new Date();
-    let a = (j.getFullYear() * 512 + j.getMonth() * 32 + j.getDate()) >>> 0;
+    let a = (((j.getFullYear() * 13 + j.getMonth()) * 32 + j.getDate()) * 24 + j.getHours()) >>> 0;
     const hasard = () => {
       a = (a + 0x6d2b79f5) | 0;
       let t = Math.imul(a ^ (a >>> 15), 1 | a);
@@ -1824,7 +1835,13 @@
       const k = l.findIndex((x, m) => m > i && x.s !== l[i - 1].s && (!l[m + 1] || l[m + 1].s !== l[i].s));
       if (k > 0) [l[i], l[k]] = [l[k], l[i]];
     }
-    return l;
+    const deja = new Set(vus.liste());
+    const neufs = l.filter((x) => !deja.has(x.id));
+    if (!neufs.length) {
+      memoire.ecrire("mission.shorts.vus", "[]");
+      return l;
+    }
+    return [...neufs, ...l.filter((x) => deja.has(x.id))];
   }
   // shorts aimés, gardés sur l’appareil, les derniers en premier
   const aimes = {
@@ -1931,12 +1948,16 @@
     const voirFin = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) ajouter(); },
       { root: flux, rootMargin: "300% 0px" });
     // le short à l’écran devient l’adresse : un retour depuis l’étude y ramène
+    let minuterieVu = 0;
     const voirCourant = new IntersectionObserver((es) => es.forEach((e) => {
       if (!e.isIntersecting) return;
       const id = e.target.dataset.id;
       if (location.hash !== `#/shorts/${id}`) history.replaceState(null, "", `#/shorts/${id}`);
       if (e.target !== flux.firstElementChild) cacherAstuce();
+      clearTimeout(minuterieVu);
+      minuterieVu = setTimeout(() => { if (!signal.aborted && location.hash === `#/shorts/${id}`) vus.noter(id); }, 1500);
     }), { root: flux, threshold: 0.6 });
+    signal.addEventListener("abort", () => clearTimeout(minuterieVu));
     signal.addEventListener("abort", () => { voirImage.disconnect(); voirFin.disconnect(); voirCourant.disconnect(); });
 
     // texte trop long pour l’écran : on le resserre d’un cran, puis d’un autre
@@ -1974,9 +1995,11 @@
           <button type="button" class="shorts-bouton" data-filtre="tout">Voir tous les shorts</button></div>`;
         return;
       }
+      // le short demandé (depuis l’accueil, ou au retour d’une étude) passe en tête ; la suite reste neuve
       const k = cibleId ? liste.findIndex((x) => x.id === cibleId) : -1;
-      do ajouter(); while (k >= rendus);
-      flux.scrollTop = k > 0 ? flux.children[k].offsetTop : 0;
+      if (k > 0) liste = [liste[k], ...liste.slice(0, k), ...liste.slice(k + 1)];
+      ajouter();
+      flux.scrollTop = 0;
     }
     function choisir(id) {
       filtreShorts = id;

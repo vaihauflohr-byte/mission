@@ -39,7 +39,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 RACINE = Path(__file__).resolve().parents[2]
 ICI = RACINE / "outils/shorts"
@@ -187,9 +187,25 @@ def planches(dossier_sortie, par_planche=24):
         print(sortie)
 
 
+def cadrer(img):
+    """Le bandeau 4:3 le plus parlant d’une photo verticale : celui où il y a le plus de détails (contours),
+    avec une légère préférence pour le haut-milieu, où le sujet est placé."""
+    l, h = img.size
+    hb = l * 3 // 4
+    contours = img.convert("L").resize((l // 4, h // 4)).filter(ImageFilter.FIND_EDGES)
+    lignes = [sum(contours.crop((0, y, contours.width, y + 1)).getdata()) for y in range(contours.height)]
+    meilleur, haut = -1, 0
+    for y in range(0, h - hb + 1, 8):
+        a, b = y // 4, (y + hb) // 4
+        score = sum(lignes[a:b]) * (1 - 0.35 * abs((y + hb / 2) / h - 0.42))
+        if score > meilleur:
+            meilleur, haut = score, y
+    return img.crop((0, haut, l, haut + hb))
+
+
 def vignettes():
     """Études sans image (livrets FAST…) : leur vignette, 800 × 600, est découpée dans le haut de l’image de
-    leur short, là où est le sujet. Elle est rangée sous le nom que lui donnerait outils/generer_bibliotheque.py
+    leur short, à l’endroit le plus parlant (cadrer). Elle est rangée sous le nom que lui donnerait outils/generer_bibliotheque.py
     (<série>-<numéro>), qui la reprendra donc à la prochaine reconstruction ; donnees/bibliotheque.js est
     complété tout de suite, sans autre changement."""
     shorts = json.loads((RACINE / "donnees/shorts.json").read_text(encoding="utf-8"))["shorts"]
@@ -208,9 +224,7 @@ def vignettes():
         dst = RACINE / f"assets/images/{nom}.webp"
         if not dst.exists():
             img = Image.open(DOSSIER / f"{x['p']}.webp").convert("RGB")
-            haut = int(img.height * 0.09)
-            img.crop((0, haut, img.width, haut + img.width * 3 // 4)).resize((800, 600), Image.LANCZOS) \
-                .save(dst, "WEBP", quality=72, method=6)
+            cadrer(img).resize((800, 600), Image.LANCZOS).save(dst, "WEBP", quality=72, method=6)
         l["image"] = nom
         faites.append(nom)
     if faites:
