@@ -1319,6 +1319,7 @@ summary.lecteur-bouton::-webkit-details-marker { display: none; }
 .lecture.livre .lec-table,
 .lecture.livre .lecture-fin,
 .lecture.livre li { break-inside: avoid; }
+.lecture.livre .lec-q { break-after: avoid; }
 .lecture-pages {
   position: absolute;
   left: 0;

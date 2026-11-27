@@ -1340,6 +1340,25 @@
       nav.querySelector('[data-page="1"]').disabled = session.page === session.pages - 1;
       progression();
     };
+    // une question ne termine jamais une page : le verset à compléter ou la zone de réponse qui la suit
+    // passerait seul à la page suivante, et la question semblerait sans place pour répondre
+    const garderQuestions = () => {
+      contenu.querySelectorAll(".lec-q[style]").forEach((q) => {
+        q.style.removeProperty("break-before");
+        q.style.removeProperty("-webkit-column-break-before");
+      });
+      const base = contenu.getBoundingClientRect();
+      const colonne = (r) => Math.floor((r.left - base.left + 1) / session.pas);
+      contenu.querySelectorAll(".lec-q").forEach((q) => {
+        const suite = q.nextElementSibling;
+        if (!suite || suite.classList.contains("lec-q")) return;
+        const rq = q.getBoundingClientRect();
+        const rs = suite.getClientRects()[0];
+        if (!rs || colonne(rs) <= colonne(rq) || rq.top - base.top < 8) return;
+        q.style.setProperty("break-before", "column");
+        q.style.setProperty("-webkit-column-break-before", "always");
+      });
+    };
     const paginer = (ratio) => {
       const m = parseFloat(getComputedStyle(defile).paddingLeft) || 16;
       const largeur = defile.clientWidth - 2 * m;
@@ -1349,6 +1368,7 @@
       contenu.style.columnGap = `${2 * m}px`;
       session.pas = largeur + 2 * m;
       defile.scrollLeft = 0;
+      garderQuestions();
       const fin = contenu.querySelector(".lecture-sentinelle");
       const x = fin.getBoundingClientRect().left - contenu.getBoundingClientRect().left;
       session.pages = Math.max(1, Math.floor((x + 1) / session.pas) + 1);
@@ -1722,13 +1742,29 @@
   // réponses, mots à compléter et cases cochées : gardés sur l’appareil, par document
   function reponses(article, f, signal) {
     const cle = (k) => `mission.rep.${f}.${k}`;
+    // une question sans zone de réponse (études à compléter, comme Historacles) en reçoit une, comme dans
+    // les autres études ; pas dans les fiches de l’animateur, qui donnent déjà les réponses
+    const e = documents.get(f);
+    if (!(e && e.d && e.d.role === "animateur")) {
+      article.querySelectorAll(".lec-q").forEach((q, i) => {
+        const corps = q.querySelector(".lec-q-corps");
+        if (!corps || q.querySelector("textarea, input") || !corps.textContent.includes("?")) return;
+        const num = (q.querySelector(".lec-q-num") || {}).textContent || String(i + 1);
+        corps.insertAdjacentHTML("beforeend", `<textarea data-q="l${i + 1}" rows="2" placeholder="Votre réponse"
+          aria-label="Votre réponse à la question ${esc(num.trim())}"></textarea>`);
+      });
+    }
     article.querySelectorAll("textarea[data-q]").forEach((t) => {
       t.value = memoire.lire(cle(`q${t.dataset.q}`), "");
       t.addEventListener("input", () => memoire.ecrire(cle(`q${t.dataset.q}`), t.value), { signal });
     });
+    // un mot à compléter s’élargit à mesure qu’on écrit : la réponse reste lisible en entier
+    const elargir = (t) => { t.size = Math.min(30, Math.max(Number(t.dataset.taille), t.value.length + 1)); };
     article.querySelectorAll("input.lec-blanc[data-b]").forEach((t) => {
+      t.dataset.taille = t.size;
       t.value = memoire.lire(cle(`b${t.dataset.b}`), "");
-      t.addEventListener("input", () => memoire.ecrire(cle(`b${t.dataset.b}`), t.value), { signal });
+      elargir(t);
+      t.addEventListener("input", () => { memoire.ecrire(cle(`b${t.dataset.b}`), t.value); elargir(t); }, { signal });
     });
     article.querySelectorAll('input[type="checkbox"][data-c]').forEach((t) => {
       t.checked = memoire.lire(cle(`c${t.dataset.c}`), "") === "1";
