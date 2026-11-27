@@ -1753,6 +1753,19 @@
         corps.insertAdjacentHTML("beforeend", `<textarea data-q="l${i + 1}" rows="2" placeholder="Votre réponse"
           aria-label="Votre réponse à la question ${esc(num.trim())}"></textarea>`);
       });
+      // section « Votre réponse » en fin d’étude (Historacles) : sa question personnelle reçoit aussi une zone
+      article.querySelectorAll("h2, h3").forEach((h, k) => {
+        if (!/votre réponse|votre réflexion/i.test(h.textContent)) return;
+        for (let el = h.nextElementSibling, m = 0; el && !/^H[1-3]$/.test(el.tagName); el = el.nextElementSibling) {
+          const apres = el.nextElementSibling;
+          if (el.tagName !== "P" || !el.textContent.trim().endsWith("?")
+            || (apres && (apres.matches("textarea") || apres.querySelector("textarea, input")))) continue;
+          m += 1;
+          el.insertAdjacentHTML("afterend", `<textarea data-q="r${k + 1}-${m}" rows="3" placeholder="Votre réponse"
+            aria-label="Votre réponse : ${esc(el.textContent.trim().slice(0, 90))}"></textarea>`);
+          el = el.nextElementSibling;
+        }
+      });
     }
     article.querySelectorAll("textarea[data-q]").forEach((t) => {
       t.value = memoire.lire(cle(`q${t.dataset.q}`), "");
