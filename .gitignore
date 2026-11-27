@@ -1,1 +1,6 @@
 __pycache__/
+# lanceur des photos des shorts sur un PC : la clé et les photos n’entrent jamais dans le dépôt
+outils/shorts/pc/fal.ai Key.txt
+outils/shorts/pc/demandes.json
+outils/shorts/pc/resultats.json
+outils/shorts/pc/photos/

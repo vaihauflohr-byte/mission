@@ -3652,7 +3652,8 @@ window.BIBLIO = {
       }
      ],
      "groupe": "Étude complémentaire du pasteur Jérémie Allamelou",
-     "sujet": "Apocalypse 15 et 16, fléau par fléau"
+     "sujet": "Apocalypse 15 et 16, fléau par fléau",
+     "image": "historacles-A"
     }
    ],
    "ressources": [],
@@ -4997,7 +4998,8 @@ window.BIBLIO = {
        "o": 280198,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-kit-de-survie-1"
     },
     {
      "num": "2",
@@ -5011,7 +5013,8 @@ window.BIBLIO = {
        "o": 278956,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-kit-de-survie-2"
     },
     {
      "num": "3",
@@ -5025,7 +5028,8 @@ window.BIBLIO = {
        "o": 280889,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-kit-de-survie-3"
     },
     {
      "num": "4",
@@ -5039,7 +5043,8 @@ window.BIBLIO = {
        "o": 282846,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-kit-de-survie-4"
     },
     {
      "num": "5",
@@ -5053,7 +5058,8 @@ window.BIBLIO = {
        "o": 280504,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-kit-de-survie-5"
     }
    ],
    "ressources": [
@@ -5092,7 +5098,8 @@ window.BIBLIO = {
        "o": 268245,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-formation-de-base-1"
     },
     {
      "num": "2",
@@ -5106,7 +5113,8 @@ window.BIBLIO = {
        "o": 275278,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-formation-de-base-2"
     },
     {
      "num": "3",
@@ -5120,7 +5128,8 @@ window.BIBLIO = {
        "o": 273970,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-formation-de-base-3"
     },
     {
      "num": "4",
@@ -5134,7 +5143,8 @@ window.BIBLIO = {
        "o": 271812,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-formation-de-base-4"
     },
     {
      "num": "5",
@@ -5148,7 +5158,8 @@ window.BIBLIO = {
        "o": 273567,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-formation-de-base-5"
     },
     {
      "num": "6",
@@ -5162,7 +5173,8 @@ window.BIBLIO = {
        "o": 271335,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-formation-de-base-6"
     },
     {
      "num": "7",
@@ -5176,7 +5188,8 @@ window.BIBLIO = {
        "o": 275525,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-formation-de-base-7"
     },
     {
      "num": "8",
@@ -5190,7 +5203,8 @@ window.BIBLIO = {
        "o": 273390,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-formation-de-base-8"
     },
     {
      "num": "9",
@@ -5204,7 +5218,8 @@ window.BIBLIO = {
        "o": 286600,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-formation-de-base-9"
     }
    ],
    "ressources": [
@@ -5243,7 +5258,8 @@ window.BIBLIO = {
        "o": 277926,
        "p": 9
       }
-     ]
+     ],
+     "image": "fast-tactiques-d-equipe-1"
     },
     {
      "num": "2",
@@ -5257,7 +5273,8 @@ window.BIBLIO = {
        "o": 277231,
        "p": 9
       }
-     ]
+     ],
+     "image": "fast-tactiques-d-equipe-2"
     },
     {
      "num": "3",
@@ -5271,7 +5288,8 @@ window.BIBLIO = {
        "o": 275745,
        "p": 9
       }
-     ]
+     ],
+     "image": "fast-tactiques-d-equipe-3"
     },
     {
      "num": "4",
@@ -5285,7 +5303,8 @@ window.BIBLIO = {
        "o": 274856,
        "p": 9
       }
-     ]
+     ],
+     "image": "fast-tactiques-d-equipe-4"
     },
     {
      "num": "5",
@@ -5299,7 +5318,8 @@ window.BIBLIO = {
        "o": 276975,
        "p": 9
       }
-     ]
+     ],
+     "image": "fast-tactiques-d-equipe-5"
     },
     {
      "num": "6",
@@ -5313,7 +5333,8 @@ window.BIBLIO = {
        "o": 278698,
        "p": 9
       }
-     ]
+     ],
+     "image": "fast-tactiques-d-equipe-6"
     },
     {
      "num": "7",
@@ -5327,7 +5348,8 @@ window.BIBLIO = {
        "o": 276713,
        "p": 9
       }
-     ]
+     ],
+     "image": "fast-tactiques-d-equipe-7"
     },
     {
      "num": "8",
@@ -5341,7 +5363,8 @@ window.BIBLIO = {
        "o": 273745,
        "p": 9
       }
-     ]
+     ],
+     "image": "fast-tactiques-d-equipe-8"
     },
     {
      "num": "9",
@@ -5355,7 +5378,8 @@ window.BIBLIO = {
        "o": 290799,
        "p": 9
       }
-     ]
+     ],
+     "image": "fast-tactiques-d-equipe-9"
     }
    ],
    "ressources": [
@@ -5394,7 +5418,8 @@ window.BIBLIO = {
        "o": 126121,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-cles-de-reveil-1"
     },
     {
      "num": "2",
@@ -5408,7 +5433,8 @@ window.BIBLIO = {
        "o": 140346,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-cles-de-reveil-2"
     },
     {
      "num": "3",
@@ -5422,7 +5448,8 @@ window.BIBLIO = {
        "o": 128903,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-cles-de-reveil-3"
     },
     {
      "num": "4",
@@ -5436,7 +5463,8 @@ window.BIBLIO = {
        "o": 128858,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-cles-de-reveil-4"
     },
     {
      "num": "5",
@@ -5450,7 +5478,8 @@ window.BIBLIO = {
        "o": 129611,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-cles-de-reveil-5"
     },
     {
      "num": "6",
@@ -5464,7 +5493,8 @@ window.BIBLIO = {
        "o": 129434,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-cles-de-reveil-6"
     },
     {
      "num": "7",
@@ -5478,7 +5508,8 @@ window.BIBLIO = {
        "o": 127616,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-cles-de-reveil-7"
     },
     {
      "num": "8",
@@ -5492,7 +5523,8 @@ window.BIBLIO = {
        "o": 135524,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-cles-de-reveil-8"
     },
     {
      "num": "9",
@@ -5506,7 +5538,8 @@ window.BIBLIO = {
        "o": 139569,
        "p": 8
       }
-     ]
+     ],
+     "image": "fast-cles-de-reveil-9"
     }
    ],
    "ressources": [],
@@ -5530,7 +5563,8 @@ window.BIBLIO = {
        "o": 449369,
        "p": 18
       }
-     ]
+     ],
+     "image": "fast-leaders-1"
     },
     {
      "num": "2",
@@ -5544,7 +5578,8 @@ window.BIBLIO = {
        "o": 419703,
        "p": 13
       }
-     ]
+     ],
+     "image": "fast-leaders-2"
     }
    ],
    "ressources": [],
@@ -5702,7 +5737,8 @@ window.BIBLIO = {
         }
        ]
       }
-     ]
+     ],
+     "image": "disciple-incroyable-1"
     },
     {
      "num": "2",
@@ -5850,7 +5886,8 @@ window.BIBLIO = {
         }
        ]
       }
-     ]
+     ],
+     "image": "disciple-incroyable-2"
     },
     {
      "num": "3",
@@ -5998,7 +6035,8 @@ window.BIBLIO = {
         }
        ]
       }
-     ]
+     ],
+     "image": "disciple-incroyable-3"
     },
     {
      "num": "4",
@@ -6146,7 +6184,8 @@ window.BIBLIO = {
         }
        ]
       }
-     ]
+     ],
+     "image": "disciple-incroyable-4"
     },
     {
      "num": "5",
@@ -6294,7 +6333,8 @@ window.BIBLIO = {
         }
        ]
       }
-     ]
+     ],
+     "image": "disciple-incroyable-5"
     },
     {
      "num": "6",
@@ -6442,7 +6482,8 @@ window.BIBLIO = {
         }
        ]
       }
-     ]
+     ],
+     "image": "disciple-incroyable-6"
     },
     {
      "num": "7",
@@ -6590,7 +6631,8 @@ window.BIBLIO = {
         }
        ]
       }
-     ]
+     ],
+     "image": "disciple-incroyable-7"
     },
     {
      "num": "8",
@@ -6738,7 +6780,8 @@ window.BIBLIO = {
         }
        ]
       }
-     ]
+     ],
+     "image": "disciple-incroyable-8"
     },
     {
      "num": "9",
@@ -6873,7 +6916,8 @@ window.BIBLIO = {
         }
        ]
       }
-     ]
+     ],
+     "image": "disciple-incroyable-9"
     },
     {
      "num": "10",
@@ -7021,7 +7065,8 @@ window.BIBLIO = {
         }
        ]
       }
-     ]
+     ],
+     "image": "disciple-incroyable-10"
     },
     {
      "num": "11",
@@ -7169,7 +7214,8 @@ window.BIBLIO = {
         }
        ]
       }
-     ]
+     ],
+     "image": "disciple-incroyable-11"
     },
     {
      "num": "12",
@@ -7317,7 +7363,8 @@ window.BIBLIO = {
         }
        ]
       }
-     ]
+     ],
+     "image": "disciple-incroyable-12"
     },
     {
      "num": "13",
@@ -7465,7 +7512,8 @@ window.BIBLIO = {
         }
        ]
       }
-     ]
+     ],
+     "image": "disciple-incroyable-13"
     }
    ],
    "ressources": [

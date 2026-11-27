@@ -104,7 +104,7 @@ python3 outils/shorts/construire_shorts.py
 
 Le script prend le texte du verset dans `donnees/bible/` (sans le titre des psaumes, vers par vers pour la poésie), vérifie que l’étude le cite (liens de versets de `lecture/<document>.html`) et écrit `donnees/shorts.json` (269 shorts, 100 Ko) ; il s’arrête sur toute erreur. Augmenter ensuite `VERSION_SHORTS` dans `assets/app.js` (et le `?v=` de `donnees/shorts.json` dans `sw.js`). Les études sans mode lecture (*Les secrets de la prophétie*, *Fiabilité de la Bible*) et sans verset cité n’ont pas de short. Shorts aimés : `localStorage`, clé `mission.shorts.aimes` ; filtre choisi : `sessionStorage`, `mission.shorts.filtre`.
 
-**Images des shorts.** Chaque short a sa propre photo, faite pour lui avec fal.ai : `outils/shorts/images.txt` décrit, pour chaque short (mêmes clés que `shorts.txt`), la scène, en anglais, fidèle au verset clé, à l’idée clé et au récit de l’étude (décor, vêtements et époque bibliques ; `TAHITI:` en tête pour une scène d’aujourd’hui à Tahiti). Le script ajoute le style commun, celui des couvertures comme *Vivre avec Jésus* : photographie douce et symbolique, personnages surtout en silhouette ou par des détails (mains), cadrage vertical (sujet dans le haut, bas plus calme pour le texte). Puis il pose sur chaque photo la même teinte bleue claire (bichromie relevée sur cette couverture, `TEINTE`) ; la photo en couleur est gardée hors du dépôt (`~/travail/shorts-brut/`) : `--reteinter` refait la teinte sans fal.ai, `--couleur` garde la couleur.
+**Images des shorts.** Chaque short a sa propre photo, faite pour lui avec fal.ai : `outils/shorts/images.txt` décrit, pour chaque short (mêmes clés que `shorts.txt`), la scène, en anglais, fidèle au verset clé, à l’idée clé et au récit de l’étude (décor, vêtements et époque bibliques ; `TAHITI:` en tête pour une scène d’aujourd’hui à Tahiti). Le script ajoute le style commun, celui des couvertures comme *Vivre avec Jésus* : photographie douce et symbolique, personnages surtout en silhouette ou par des détails (mains), tenues sobres, cadrage vertical (sujet haut placé, moitié basse calme pour le texte). Les photos restent en couleur (choix du 27 novembre 2026, après un essai avec la teinte bleue de la couverture : `--teinte` la pose). La photo brute est gardée hors du dépôt (`~/travail/shorts-brut/`) : `--refaire-webp` refait les images du site sans fal.ai, avec ou sans `--teinte`.
 
 ```
 FAL_KEY=… python3 outils/shorts/generer_images.py --essai 8      # un essai, 8 séries différentes
@@ -114,6 +114,17 @@ python3 outils/shorts/generer_images.py --planches               # planches cont
 python3 outils/shorts/construire_shorts.py                       # les shorts prennent leur image
 python3 outils/shorts/generer_images.py --vignettes              # les études sans image prennent celle de leur short
 ```
+
+**Sans accès à fal.ai depuis l’espace de travail** (réseau limité aux sites de modules), les photos se font sur un PC Windows avec Python, sans module à installer : `outils/shorts/pc/`.
+
+```
+python3 outils/shorts/generer_images.py --demandes demandes.json       # les photos à faire (mêmes choix : clés, --essai, --refaire)
+# sur le PC : un dossier avec generer_photos.py, « Lancer les photos des shorts.bat », demandes.json
+# et la clé dans « fal.ai Key.txt » (ce dossier ou le bureau) ; double-clic sur le .bat
+python3 outils/shorts/generer_images.py --importer <dossier du PC>     # photos/*.jpg + resultats.json → assets/images/shorts/
+```
+
+Le lanceur essaie les formes de clé possibles du fichier sur la première photo (un refus ne coûte rien), refait une seule fois une photo marquée `refaire`, et note graine, modèle et scène de chaque photo dans `resultats.json`, que `--importer` reporte dans `images.json`.
 
 Images : `assets/images/shorts/<série>-<numéro>.webp`, 720 × 1280 (moins d’un mégapixel : fal facture au mégapixel entamé). Modèle : `fal-ai/flux/dev` par défaut (`--modele` ou `FAL_MODELE` pour un autre) ; modèle, graine et scène de chaque image dans `outils/shorts/images.json`. La clé fal vient de `FAL_KEY` (ou `~/.fal_key`), jamais du dépôt ; l’espace de travail doit avoir l’accès réseau à `fal.run` et `fal.media`. Tant qu’un short n’a pas son image, il prend celle de l’étude ; les livrets FAST, dont l’image est une couverture, prennent un fond dégradé et le pictogramme de l’étape. Les études sans image (livrets FAST, *Devenir un disciple incroyable*…) montrent ce même dégradé dans la liste de leur série, jusqu’à ce que `--vignettes` leur donne une vignette découpée dans le haut de l’image de leur short (`assets/images/<série>-<numéro>.webp`, le nom que reprend `generer_bibliotheque.py`).
 

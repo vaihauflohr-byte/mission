@@ -1786,7 +1786,7 @@
   }
 
   // ---------- shorts des études : une idée clé et un verset clé par étude (donnees/shorts.json, outils/shorts/) ----------
-  const VERSION_SHORTS = "2";
+  const VERSION_SHORTS = "3";
   let shortsCharges = null;
   function chargerShorts() {
     if (!shortsCharges) {

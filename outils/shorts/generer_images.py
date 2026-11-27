@@ -3,10 +3,10 @@
 
 Une photo verticale (720 × 1280) par short, d’après la scène écrite dans images.txt, elle-même tirée du
 verset clé et de l’idée clé du short (shorts.txt). Style des couvertures comme « Vivre avec Jésus » :
-photographie douce et symbolique, personnages surtout en silhouette ou par des détails (mains), puis une
-teinte bleue claire (bichromie) qui donne à tous les shorts le même ton. Le sujet est dans le haut de
-l’image : le bas reçoit le texte du short. La photo en couleur est gardée à part (--brut), pour pouvoir
-changer la teinte sans tout refaire (--reteinter).
+photographie douce et symbolique, personnages surtout en silhouette ou par des détails (mains), en couleur
+(choix d’Olivier, 27 nov. 2026 ; --teinte pose la bichromie bleue de la couverture). Le sujet est dans le
+haut de l’image : le bas reçoit le texte du short. La photo brute est gardée à part (BRUT), pour refaire
+les images du site sans fal.ai (--refaire-webp, avec ou sans --teinte).
 
     FAL_KEY=… python3 outils/shorts/generer_images.py                 # toutes les images qui manquent
     FAL_KEY=… python3 outils/shorts/generer_images.py --essai 8       # un essai : 8 images variées
@@ -14,7 +14,12 @@ changer la teinte sans tout refaire (--reteinter).
     FAL_KEY=… python3 outils/shorts/generer_images.py --refaire historacles-7 daniel-8
     python3 outils/shorts/generer_images.py --planches                # planches contact pour relire
     python3 outils/shorts/generer_images.py --vignettes               # après construire_shorts.py
-    python3 outils/shorts/generer_images.py --reteinter               # nouvelle teinte, depuis les photos brutes
+    python3 outils/shorts/generer_images.py --refaire-webp            # images du site refaites depuis les photos brutes
+
+Si l’espace de travail ne joint pas fal.run, les photos se font sur un PC (outils/shorts/pc/) :
+    python3 outils/shorts/generer_images.py --demandes demandes.json [clés, --essai, --refaire]
+    (sur le PC : demandes.json à côté de generer_photos.py, double-clic sur « Lancer les photos des shorts.bat »)
+    python3 outils/shorts/generer_images.py --importer <dossier du PC>   # photos/*.jpg + resultats.json
 
 La clé fal.ai vient de FAL_KEY (ou de ~/.fal_key) : jamais dans le dépôt. Le modèle, la graine et la
 scène de chaque image sont notés dans outils/shorts/images.json, pour pouvoir refaire la même.
@@ -45,9 +50,9 @@ LARGEUR, HAUTEUR = 720, 1280  # moins d’un mégapixel : fal facture au mégapi
 STYLE = ("Cinematic photograph, soft natural light, gentle haze, shallow depth of field, subtle film grain, "
          "quiet and reverent mood, minimal symbolic composition in the spirit of a Bible study booklet cover. "
          "People mostly seen in silhouette, from behind or through details such as hands, faces not the focus; "
-         "for biblical scenes, historically accurate ancient Near Eastern clothing and setting. "
-         "Tall vertical composition: the main subject in the upper half of the frame, "
-         "the lower third calmer, simple ground or shadow. "
+         "for biblical scenes, historically accurate ancient Near Eastern clothing and setting; everyone modestly dressed. "
+         "Tall vertical composition: the main subject placed high in the frame, heads and key details in the upper third, "
+         "the lower half calm and simple, plain ground, water or soft shadow with nothing important in it. "
          "No text, no letters, no words, no captions, no logos, no watermark.")
 # bichromie bleue claire, relevée sur la couverture de « Vivre avec Jésus » : ombres bleu acier, clairs presque blancs
 TEINTE = {"black": "#3f5f82", "mid": "#98b1c9", "white": "#f0f4f7", "midpoint": 115}
@@ -57,7 +62,8 @@ BRUT = Path.home() / "travail/shorts-brut"  # photos en couleur, hors du dépôt
 def teinter(img):
     gris = ImageOps.autocontrast(ImageOps.grayscale(img), cutoff=1)
     return ImageOps.colorize(gris, **TEINTE)
-TAHITI = "Tahitian Polynesian people of today, lush green mountains and turquoise lagoon of Tahiti, "
+TAHITI = ("Tahitian Polynesian people of today, modestly dressed in t-shirts, shirts and long pareos, "
+          "lush green mountains and turquoise lagoon of Tahiti, ")
 
 
 def lire(fichier):
@@ -105,16 +111,33 @@ def charger_journal():
     return json.loads(JOURNAL.read_text(encoding="utf-8")) if JOURNAL.exists() else {}
 
 
-def enregistrer(img, cle, couleur=False):
-    """La photo brute (couleur) à part ; dans le site, la version teintée (ou en couleur avec --couleur)."""
+def enregistrer(img, cle, teinte=False):
+    """La photo brute à part ; dans le site, la photo en couleur (ou teintée avec --teinte)."""
     if img.size != (LARGEUR, HAUTEUR):
         img = img.resize((LARGEUR, HAUTEUR), Image.LANCZOS)
     BRUT.mkdir(parents=True, exist_ok=True)
     img.save(BRUT / f"{cle}.jpg", quality=92)
-    (img if couleur else teinter(img)).save(DOSSIER / f"{cle}.webp", "WEBP", quality=72, method=6)
+    DOSSIER.mkdir(parents=True, exist_ok=True)
+    (teinter(img) if teinte else img).save(DOSSIER / f"{cle}.webp", "WEBP", quality=72, method=6)
 
 
-def generer(it, modele, cle_fal, couleur=False):
+def importer(dossier, teinte=False):
+    """Photos faites sur un PC (outils/shorts/pc/) : <dossier>/photos/<clé>.jpg et <dossier>/resultats.json."""
+    dossier = Path(dossier)
+    res = json.loads((dossier / "resultats.json").read_text(encoding="utf-8"))
+    journal, faites = charger_journal(), []
+    for cle, note in sorted(res.items()):
+        f = dossier / "photos" / f"{cle}.jpg"
+        if note.get("etat") != "ok" or not f.exists():
+            continue
+        enregistrer(Image.open(f).convert("RGB"), cle, teinte)
+        journal[cle] = {"modele": note["modele"], "graine": note["graine"], "prompt": note["prompt"], "teinte": teinte}
+        faites.append(cle)
+    JOURNAL.write_text(json.dumps(journal, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    print(f"{len(faites)} photo(s) importée(s) depuis {dossier}")
+
+
+def generer(it, modele, cle_fal, teinte=False):
     dst = DOSSIER / f"{it['cle']}.webp"
     graine = it.get("graine") or random.randrange(1, 2**31)
     corps = {"prompt": it["prompt"], "image_size": {"width": LARGEUR, "height": HAUTEUR}, "num_images": 1,
@@ -130,8 +153,8 @@ def generer(it, modele, cle_fal, couleur=False):
             if (r.get("has_nsfw_concepts") or [False])[0]:
                 return it["cle"], "FILTRÉE (refaire avec une autre scène)", None
             brut = urllib.request.urlopen(r["images"][0]["url"], timeout=120).read()
-            enregistrer(Image.open(io.BytesIO(brut)).convert("RGB"), it["cle"], couleur)
-            return it["cle"], "ok", {"modele": modele, "graine": graine, "prompt": it["prompt"], "teinte": not couleur}
+            enregistrer(Image.open(io.BytesIO(brut)).convert("RGB"), it["cle"], teinte)
+            return it["cle"], "ok", {"modele": modele, "graine": graine, "prompt": it["prompt"], "teinte": teinte}
         except urllib.error.HTTPError as e:
             erreur = f"HTTP {e.code} {e.read()[:300]!r}"
             if 400 <= e.code < 500 and e.code != 429:
@@ -205,9 +228,12 @@ def main():
     ap.add_argument("--planches", nargs="?", const=str(Path.home() / "travail/planches"),
                     help="faire les planches contact (dans ce dossier) au lieu de générer")
     ap.add_argument("--paralleles", type=int, default=4)
-    ap.add_argument("--couleur", action="store_true", help="garder les photos en couleur, sans la teinte bleue")
-    ap.add_argument("--reteinter", action="store_true",
-                    help="refaire la teinte de toutes les images depuis les photos brutes, sans fal.ai")
+    ap.add_argument("--teinte", action="store_true", help="poser la teinte bleue de la couverture (sinon : couleur)")
+    ap.add_argument("--refaire-webp", action="store_true",
+                    help="refaire les images du site depuis les photos brutes, sans fal.ai")
+    ap.add_argument("--demandes", metavar="FICHIER",
+                    help="écrire les photos à faire dans ce fichier, pour outils/shorts/pc/, au lieu d’appeler fal.ai")
+    ap.add_argument("--importer", metavar="DOSSIER", help="importer les photos faites sur un PC (outils/shorts/pc/)")
     ap.add_argument("--vignettes", action="store_true",
                     help="donner aux études sans image une vignette tirée de leur short (après construire_shorts.py)")
     a = ap.parse_args()
@@ -217,11 +243,14 @@ def main():
     if a.vignettes:
         vignettes()
         return
-    if a.reteinter:
+    if a.refaire_webp:
         bruts = sorted(BRUT.glob("*.jpg"))
         for f in bruts:
-            enregistrer(Image.open(f).convert("RGB"), f.stem, a.couleur)
-        print(f"{len(bruts)} image(s) reteintée(s) depuis {BRUT}")
+            enregistrer(Image.open(f).convert("RGB"), f.stem, a.teinte)
+        print(f"{len(bruts)} image(s) refaite(s) depuis {BRUT}" + (" (teintées)" if a.teinte else ""))
+        return
+    if a.importer:
+        importer(a.importer, a.teinte)
         return
     toutes = scenes()
     par_cle = {it["cle"]: it for it in toutes}
@@ -246,6 +275,13 @@ def main():
     if not choix:
         print("Rien à faire : toutes ces images existent (--refaire pour les refaire).")
         return
+    if a.demandes:
+        photos = [{"cle": it["cle"], "prompt": it["prompt"], "graine": it.get("graine") or random.randrange(1, 2**31),
+                   "modele": a.modele, "largeur": LARGEUR, "hauteur": HAUTEUR, **({"refaire": True} if a.refaire else {})}
+                  for it in choix]
+        Path(a.demandes).write_text(json.dumps({"photos": photos}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        print(f"{len(photos)} photo(s) demandée(s) dans {a.demandes} (environ {len(photos) * 0.025:.2f} $)")
+        return
     fichier_cle = Path.home() / ".fal_key"
     cle_fal = os.environ.get("FAL_KEY") or (fichier_cle.read_text().strip() if fichier_cle.exists() else "")
     if not cle_fal:
@@ -253,7 +289,7 @@ def main():
     print(f"{len(choix)} image(s) avec {a.modele}, {LARGEUR} × {HAUTEUR}", flush=True)
     echecs = 0
     with cf.ThreadPoolExecutor(a.paralleles) as ex:
-        for cle, etat, note in ex.map(lambda it: generer(it, a.modele, cle_fal, a.couleur), choix):
+        for cle, etat, note in ex.map(lambda it: generer(it, a.modele, cle_fal, a.teinte), choix):
             print(cle, etat, flush=True)
             if note:
                 journal[cle] = note
