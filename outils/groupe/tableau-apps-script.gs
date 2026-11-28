@@ -1,3 +1,5 @@
+/** @OnlyCurrentDoc */
+// (le script ne peut ouvrir que ce tableau-ci, aucune autre feuille du Drive)
 /**
  * Mission — tableau du responsable des petits groupes
  *

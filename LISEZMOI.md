@@ -148,7 +148,7 @@ Images : `assets/images/shorts/<série>-<numéro>.webp`, 720 × 1280 (moins d’
 
 ### Tableau du responsable (Google Sheet)
 
-Le tableau a trois onglets : *Installation* (les étapes), *Bilans*, *Visites* ; le script crée *Résumé* (bilans par groupe, études les plus lues en 30 jours). Installation, une fois, sur ordinateur : Extensions › Apps Script, coller `outils/groupe/tableau-apps-script.gs`, exécuter `installer`, puis Déployer › Application Web (exécuter en tant que moi, accès : tout le monde). L’adresse `…/exec` va dans `SCRIPT_MISSION`. Le site envoie du texte JSON (`text/plain`, sans cookie) ; le script coupe les textes trop longs, n’écrit jamais une formule (`'` devant `=`), limite à 120 envois par minute, et ne compte qu’une fois un paquet de visites reçu deux fois.
+Le tableau a trois onglets : *Installation* (les étapes), *Bilans*, *Visites* ; le script crée *Résumé* (bilans par groupe, études les plus lues en 30 jours). Installation, une fois, sur ordinateur : Extensions › Apps Script, coller `outils/groupe/tableau-apps-script.gs`, exécuter `installer`, puis Déployer › Application Web (exécuter en tant que moi, accès : tout le monde). L’adresse `…/exec` va dans `SCRIPT_MISSION` (fait le 27 novembre 2026 : projet « Mission — tableau des bilans », accès limité à ce tableau par `@OnlyCurrentDoc`). Après une modification du script : Déployer › Gérer les déploiements › modifier › Nouvelle version (l’adresse reste la même). Le site envoie du texte JSON (`text/plain`, sans cookie) ; le script coupe les textes trop longs, n’écrit jamais une formule (`'` devant `=`), limite à 120 envois par minute, et ne compte qu’une fois un paquet de visites reçu deux fois.
 
 ## Mettre la bibliothèque à jour
 

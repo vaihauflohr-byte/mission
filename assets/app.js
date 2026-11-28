@@ -4361,8 +4361,9 @@
   }
 
   // ---------- tableau du responsable : bilans et pages lues, vers son Google Sheet (outils/groupe/tableau-apps-script.gs) ----------
-  // vide tant que le script du tableau n’est pas déployé : alors rien ne part du site
-  const SCRIPT_MISSION = "";
+  // l’application Web du script (projet « Mission — tableau des bilans », déployé le 27 novembre 2026) ;
+  // vide : rien ne part du site
+  const SCRIPT_MISSION = "https://script.google.com/macros/s/AKfycbw0nEBnOSPDm8xqZf0NnTIBnKoBR0DlvcCblQ7Ow6XxfZ_5i7AE1NEY12U7QcEimFsK9w/exec";
   const envois = {
     lire: () => lireJson("mission.envois", [], (l) => Array.isArray(l)),
     ecrire: (l) => memoire.ecrire("mission.envois", JSON.stringify(l.slice(-40))),
