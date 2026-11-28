@@ -1197,13 +1197,34 @@
     });
     return sortie;
   };
+  // Safari (iPhone, iPad, Mac) perd souvent un énoncé lancé juste après cancel() : rien n’est dit, et sa fin n’arrive
+  // jamais (bogues WebKit 191745 et 238189). On n’arrête donc la voix que si elle parle, et on attend un peu avant de
+  // reparler. Le premier énoncé, lui, part tout de suite, dans le toucher : l’iPhone l’exige.
+  const voixOccupee = () => !!(synthese && (synthese.speaking || synthese.pending));
+  function apresAnnulation(fn) {
+    if (voixOccupee()) {
+      synthese.cancel();
+      setTimeout(fn, 300);
+    } else {
+      if (synthese && synthese.paused) synthese.resume();
+      fn();
+    }
+  }
+  // sur iPhone, le bouton du mode silencieux coupe aussi la voix : on le dit une fois
+  const appareilApple = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  function conseilSilencieux() {
+    if (!appareilApple || memoire.lire("mission.voix.conseil", "") === "1") return;
+    memoire.ecrire("mission.voix.conseil", "1");
+    setTimeout(() => bulle("Pas de son ? Le mode silencieux de l’iPhone coupe aussi la voix."), 1200);
+  }
   // dire un texte court (short, verset) ; fin(true) quand tout est dit, fin(false) s’il est interrompu
   let parole = null;
   function arreterParole() {
     if (!parole) return;
     const p = parole;
     parole = null;
-    if (synthese) synthese.cancel();
+    clearTimeout(p.garde);
+    if (voixOccupee()) synthese.cancel();
     if (p.fin) p.fin(false);
   }
   function parler(texte, fin) {
@@ -1212,8 +1233,15 @@
     const morceaux = decouper(texte);
     const p = (parole = { fin });
     let i = 0;
+    const echec = () => {
+      if (parole !== p) return;
+      parole = null;
+      if (voixOccupee()) synthese.cancel();
+      if (fin) fin(false);
+    };
     const suite = () => {
       if (parole !== p) return;
+      clearTimeout(p.garde);
       if (i >= morceaux.length) { parole = null; if (fin) fin(true); return; }
       const u = new SpeechSynthesisUtterance(morceaux[i]);
       i += 1;
@@ -1221,15 +1249,16 @@
       const v = voixFr();
       if (v) u.voice = v;
       u.rate = Number(memoire.lire("mission.lecture.vitesse", "1")) || 1;
+      u.onstart = () => { clearTimeout(p.garde); };
       u.onend = suite;
-      u.onerror = (ev) => {
-        if (parole === p && !/interrupted|canceled/.test(ev.error || "")) { parole = null; if (fin) fin(false); }
-      };
+      u.onerror = (ev) => { if (!/interrupted|canceled/.test(ev.error || "")) echec(); };
       p.u = u; // gardé : sans référence, certains navigateurs oublient l’énoncé et ne signalent jamais sa fin
+      // garde-fou : une voix qui ne démarre pas en 5 secondes libère le bouton (sinon il resterait allumé)
+      p.garde = setTimeout(() => { if (!synthese.speaking) echec(); }, 5000);
       synthese.speak(u);
     };
-    synthese.cancel();
-    suite();
+    apresAnnulation(suite);
+    conseilSilencieux();
     return true;
   }
   if (synthese) synthese.getVoices(); // certaines voix se chargent au premier appel
@@ -1773,7 +1802,7 @@
       if (!ecoute) return;
       ecoute.u = null;
       ecoute = null;
-      synthese.cancel();
+      if (voixOccupee()) synthese.cancel();
       article.querySelectorAll(".lu-en-cours").forEach((x) => x.classList.remove("lu-en-cours"));
       barreEcoute.hidden = true;
       boutonEcouter.setAttribute("aria-pressed", "false");
@@ -1826,11 +1855,12 @@
         const depart = Math.max(0, blocs.findIndex(visible));
         ecoute = { blocs, i: depart, morceaux: null, j: 0, vitesse: Number(memoire.lire("mission.lecture.vitesse", "1")) || 1, pause: false, u: null };
         if (!VITESSES.some(([x]) => x === ecoute.vitesse)) ecoute.vitesse = 1;
-        synthese.cancel();
+        arreterParole();
         barreEcoute.hidden = false;
         boutonEcouter.setAttribute("aria-pressed", "true");
         majBarre();
-        dire();
+        apresAnnulation(dire);
+        conseilSilencieux();
       }, { signal });
       barreEcoute.addEventListener("click", (ev) => {
         const b = ev.target.closest("[data-ecoute]");
@@ -1840,13 +1870,12 @@
         if (quoi === "pause") {
           ecoute.pause = !ecoute.pause;
           ecoute.u = null;
-          synthese.cancel();
-          if (!ecoute.pause) dire();
+          if (ecoute.pause) { if (voixOccupee()) synthese.cancel(); } else apresAnnulation(dire);
         } else if (quoi === "vitesse") {
           const k = VITESSES.findIndex(([x]) => x === ecoute.vitesse);
           ecoute.vitesse = VITESSES[(k + 1) % VITESSES.length][0];
           memoire.ecrire("mission.lecture.vitesse", String(ecoute.vitesse));
-          if (!ecoute.pause) { ecoute.u = null; synthese.cancel(); dire(); }
+          if (!ecoute.pause) { ecoute.u = null; apresAnnulation(dire); }
         }
         majBarre();
       }, { signal });
