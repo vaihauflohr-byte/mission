@@ -3176,3 +3176,60 @@ body.en-projection { overflow: hidden; }
   .livret-etude .ref { font-weight: 700; color: #2F6B5E; }
   .livret-etude blockquote { margin: 0 0 3mm; padding-left: 3mm; border-left: 1pt solid #ccc; font-style: italic; }
 }
+
+/* ---------- Les études, mises en avant sur l’accueil ---------- */
+.accueil-commencer { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.lien-etudes {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 56px;
+  padding: 0.55rem 1.3rem 0.55rem 0.9rem;
+  border-radius: 16px;
+  background: var(--blanc);
+  color: var(--lagon);
+  font-weight: 700;
+  font-size: var(--t-1);
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.5);
+}
+.lien-etudes:hover { background: var(--ecume); }
+.lien-etudes small { display: block; color: var(--feuille); font-size: var(--t-petit); font-weight: 700; }
+.lien-etudes svg { flex: none; width: 1.7rem; height: 1.7rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.cep { scroll-margin-top: 1rem; outline: none; padding-top: 0.5rem; }
+.cep-titre { margin: 0; font-size: clamp(2.1rem, 1.6rem + 2vw, 3rem); font-weight: 600; line-height: 1.05; }
+.cep-sous { margin: 0.5rem 0 1.75rem; max-width: 40rem; color: var(--brume); font-size: var(--t-1); }
+.cep-series { margin-top: 1rem; border-top: 0; display: grid; gap: 0.6rem; }
+.cep-series li { border-bottom: 0; }
+.cep-series a.cep-serie {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 0;
+  padding: 0.55rem 0.8rem 0.55rem 0.55rem;
+  border: 1px solid rgba(143, 201, 182, 0.3);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--blanc);
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.cep-series a.cep-serie:hover { background: rgba(255, 255, 255, 0.13); border-color: var(--recif); }
+.cep-serie-image { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; background: var(--lagon-clair); }
+.cep-serie-corps { display: grid; gap: 0.2rem; min-width: 0; }
+.cep-series .cep-serie-titre { font-size: 1.08rem; line-height: 1.25; }
+.cep-series .cep-serie-compte { white-space: normal; }
+.cep-serie .progression-barre { height: 5px; max-width: 9rem; margin-top: 0.15rem; background: rgba(255, 255, 255, 0.18); }
+.cep-serie .progression-barre span { background: var(--recif); }
+.cep-serie > .chevron { width: 1.1rem; height: 1.1rem; color: var(--recif); }
+.cep-series a.cep-serie:hover .cep-serie-titre { text-decoration: underline 1.5px var(--recif); text-underline-offset: 0.2em; }
+@media (max-width: 30rem) {
+  .lien-etudes, .lien-commencer { width: 100%; }
+  .cep-series a.cep-serie { grid-template-columns: 4.5rem minmax(0, 1fr); gap: 0.7rem; padding-right: 0.7rem; }
+  .cep-serie > .chevron { display: none; }
+}
+@media (min-width: 52rem) {
+  .cep-series a.cep-serie { grid-template-columns: 4.75rem minmax(0, 1fr) auto; }
+}

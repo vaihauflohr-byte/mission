@@ -3,13 +3,13 @@
    (requêtes partielles) et le bouton Télécharger permet de les garder sur l’appareil.
    Le mode lecture (lecture/*.html et ses images) est gardé en cache après une première lecture ;
    une série entière peut être gardée d’avance (cache « mission-hors-ligne », rempli par la page de la série). */
-const CACHE = "mission-v40";
+const CACHE = "mission-v41";
 const COQUILLE = [
   "./",
   "index.html",
-  "assets/style.css?v=21",
+  "assets/style.css?v=22",
   "assets/bible.js?v=5",
-  "assets/app.js?v=29",
+  "assets/app.js?v=30",
   "assets/qr.js?v=1",
   "donnees/shorts.json?v=4",
   "donnees/bibliotheque.js?v=21",

@@ -299,17 +299,25 @@
         return `<li class="cep-niveau${n.parallele ? " cep-parallele" : ""}">
           <a class="cep-lien" href="#/niveau/${n.id}">
             <span class="cep-picto">${picto(n.id)}</span>
-            ${image(n.image, "cep-image", rang === 0)}
             ${n.parallele ? `<span class="cep-parallele-note">${fr(n.parallele)}</span>` : ""}
             <span class="cep-etape"><span class="num-etape" aria-hidden="true">${n.num}</span><span class="cep-verbe">${fr(n.titre)}</span></span>
             <span class="cep-texte">${fr(n.texte)}</span>
             ${n.invite ? `<strong class="cep-invite">${fr(n.invite)}</strong>` : ""}
             <span class="cep-compte">${pluriel(ss.length, "série", "séries")}, ${pluriel(nbEtudes(ss), "étude", "études")}</span>
           </a>
-          <ul class="cep-series" aria-label="Séries de l’étape ${n.num}">${ss
-            .map((s) => `<li><a href="#/serie/${s.id}"><span class="cep-serie-titre">${fr(s.titre)}${
-              s.note ? ` <span class="cep-serie-note">(${fr(s.note)})</span>` : ""}</span><span class="cep-serie-compte">${compteSerie(s)}</span></a></li>`)
-            .join("")}</ul>
+          <ul class="cep-series" aria-label="Séries de l’étape ${n.num}">${ss.map((s, k) => {
+            const total = s.lecons.length;
+            const fait = total > 1 ? faites.nombre(s) : 0;
+            return `<li><a class="cep-serie" href="#/serie/${s.id}">
+              ${image(s.image, "cep-serie-image", rang === 0 && k < 2)}
+              <span class="cep-serie-corps">
+                <span class="cep-serie-titre">${fr(s.titre)}${s.note ? ` <span class="cep-serie-note">(${fr(s.note)})</span>` : ""}</span>
+                <span class="cep-serie-compte">${compteSerie(s)}${fait ? ` · ${fait === total ? "terminée" : `${fait} faite${fait > 1 ? "s" : ""}`}` : ""}</span>
+                ${fait && fait < total ? `<span class="progression-barre" aria-hidden="true"><span style="width:${Math.round((fait / total) * 100)}%"></span></span>` : ""}
+              </span>
+              ${chevronDroit}
+            </a></li>`;
+          }).join("")}</ul>
         </li>`;
       })
       .join("");
@@ -319,7 +327,10 @@
           <div class="accueil-texte">
             <h1 id="accueil-titre" class="accueil-titre" tabindex="-1">Des études bibliques prêtes pour votre petit groupe</h1>
             <p class="accueil-chapeau">${total} études en français, rangées en trois étapes. Chaque étude a sa fiche du participant, souvent un guide pour l’animateur, et tout se lit ici, sur téléphone comme sur ordinateur.</p>
-            <p class="accueil-commencer"><a class="lien-commencer" href="#/commencer">${icone.boussole}<span>Par où commencer ?<small>Trois questions pour trouver votre série</small></span></a></p>
+            <p class="accueil-commencer">
+              <a class="lien-etudes" href="#etudes" data-aller-etudes>${icone.lecture}<span>Voir les ${total} études<small>${pluriel(B.series.length, "série", "séries")}, en trois étapes</small></span></a>
+              <a class="lien-commencer" href="#/commencer">${icone.boussole}<span>Par où commencer ?<small>Trois questions pour trouver votre série</small></span></a>
+            </p>
             <p class="accueil-appli" data-installer><a class="lien-appli" href="#/application" data-action-installer>${icone.appli}Installer l’application ${
               appareil === "ordinateur" ? "sur cet ordinateur" : "sur ce téléphone"}</a></p>
           </div>
@@ -332,12 +343,13 @@
           </form>
         </div>
         ${reprise()}
+        <section class="dedans cep" id="etudes" tabindex="-1" aria-labelledby="etudes-titre">
+          <h2 class="cep-titre" id="etudes-titre">Les études</h2>
+          <p class="cep-sous">${total} études en ${pluriel(B.series.length, "série", "séries")}, rangées en trois étapes : de la rencontre à la maturité.</p>
+          <ol class="cep-liste">${etapes}</ol>
+        </section>
         <section class="dedans du-jour" data-du-jour aria-labelledby="du-jour-titre" hidden></section>
         ${etagereShorts()}
-        <div class="dedans cep">
-          <h2 class="cep-titre">Trois étapes, de la rencontre à la maturité</h2>
-          <ol class="cep-liste">${etapes}</ol>
-        </div>
         <div class="dedans accueil-groupe">${carteCarnet()}${carteGroupe()}${carteInviter()}</div>
       </section>
       <section class="mode" aria-labelledby="mode-titre">
@@ -362,6 +374,13 @@
     app.querySelector(".recherche").addEventListener("submit", (e) => {
       e.preventDefault();
       location.hash = "#/chercher/" + encodeURIComponent(e.target.q.value.trim());
+    });
+    // « Voir les études » descend jusqu’aux études (sans changer d’adresse : l’adresse #etudes n’est pas une page)
+    app.querySelector("[data-aller-etudes]").addEventListener("click", (e) => {
+      e.preventDefault();
+      const zone = app.querySelector("#etudes");
+      zone.scrollIntoView({ behavior: mouvementReduit() ? "auto" : "smooth", block: "start" });
+      zone.focus({ preventScroll: true });
     });
     remplirEtagere();
     majInstallation();
